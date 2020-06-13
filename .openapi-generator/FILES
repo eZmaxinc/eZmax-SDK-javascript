@@ -1,0 +1,12 @@
+.babelrc
+.openapi-generator-ignore
+.travis.yml
+README.md
+docs/ActivesessionApi.md
+git_push.sh
+mocha.opts
+package.json
+src/ApiClient.js
+src/api/ActivesessionApi.js
+src/index.js
+test/api/ActivesessionApi.spec.js
