@@ -1,9 +1,9 @@
 {
   "name": "e_zmax_api_definition",
-  "version": "1.0.0",
-  "description": "TODO_Api_description",
-  "license": "MIT2",
-  "main": "dist/index.js",
+  "version": "1.0.27",
+  "description": "This_API_expose_all_the_functionnalities_for_the_eZmax_and_eZsign_application_We_provide_SDKs_for_customers__They_are_generated_using_OpenAPI_codegen_we_encourage_customers_to_use_them_as_we_also_provide_samples_for_them_You_can_choose_to_build_your_own_implementation_manually_or_can_use_any_compatible_OpenAPI_3_0_generator_like_Swagger_Codegen_OpenAPI_codegen_or_any_commercial_generators_If_you_need_helping_understanding_how_to_use_this_API_dont_waste_too_much_time_looking_for_it__Contact_support_apiezmax_ca_were_here_to_help__We_are_developpers_so_we_know_programmers_dont_like_bad_documentation__If_you_dont_find_what_you_need_in_the_documentation_let_us_know_well_improve_it_and_put_you_rapidly_up_on_track_",
+  "license": "MIT License",
+  "main": "dist/eZmaxAPI/index.js",
   "scripts": {
     "build": "babel src -d dist",
     "prepack": "npm run build",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
-    "superagent": "3.7.0"
+    "superagent": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/register": "^7.0.0",
     "expect.js": "^0.3.1",
-    "mocha": "^5.2.0",
+    "mocha": "^8.0.1",
     "sinon": "^7.2.0"
   },
   "files": [
