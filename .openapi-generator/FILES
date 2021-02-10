@@ -93,6 +93,8 @@ docs/FranchisereferalincomeCreateObjectV1Response.md
 docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md
 docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
+docs/GlobalCustomerApi.md
+docs/GlobalCustomerGetEndpointV1Response.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -123,6 +125,7 @@ git_push.sh
 mocha.opts
 package.json
 src/eZmaxAPI/ApiClient.js
+src/eZmaxAPI/api/GlobalCustomerApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
 src/eZmaxAPI/api/ObjectApikeyApi.js
@@ -225,6 +228,7 @@ src/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Response.js
 src/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/FranchisereferalincomeRequest.js
 src/eZmaxAPI/model/FranchisereferalincomeRequestCompound.js
+src/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.js
 src/eZmaxAPI/model/MultilingualApikeyDescription.js
 src/eZmaxAPI/model/PhoneRequest.js
 src/eZmaxAPI/model/UserCreateEzsignuserV1Request.js
@@ -240,6 +244,7 @@ src/eZmaxAPI/model/WebhookResponse.js
 src/eZmaxAPI/model/WebhookUserUserCreated.js
 src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
+test/eZmaxAPI/api/GlobalCustomerApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
 test/eZmaxAPI/api/ObjectApikeyApi.spec.js
@@ -341,6 +346,7 @@ test/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeRequest.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeRequestCompound.spec.js
+test/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.spec.js
 test/eZmaxAPI/model/MultilingualApikeyDescription.spec.js
 test/eZmaxAPI/model/PhoneRequest.spec.js
 test/eZmaxAPI/model/UserCreateEzsignuserV1Request.spec.js

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ezsignfolderCreateObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolderDeleteObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 [**ezsignfolderEditObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderEditObjectV1) | **PUT** /1/object/ezsignfolder/{pkiEzsignfolderID} | Modify an existing Ezsignfolder
-[**ezsignfolderGetObjectGetChildrenV1**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolderGetChildrenV1**](ObjectEzsignfolderApi.md#ezsignfolderGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
 [**ezsignfolderGetObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 [**ezsignfolderSendV1**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 
@@ -164,9 +164,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## ezsignfolderGetObjectGetChildrenV1
+## ezsignfolderGetChildrenV1
 
-> ezsignfolderGetObjectGetChildrenV1(pkiEzsignfolderID)
+> ezsignfolderGetChildrenV1(pkiEzsignfolderID)
 
 Retrieve an existing Ezsignfolder&#39;s children IDs
 
@@ -183,7 +183,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
 let pkiEzsignfolderID = 56; // Number | The unique ID of the Ezsignfolder
-apiInstance.ezsignfolderGetObjectGetChildrenV1(pkiEzsignfolderID, (error, data, response) => {
+apiInstance.ezsignfolderGetChildrenV1(pkiEzsignfolderID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
