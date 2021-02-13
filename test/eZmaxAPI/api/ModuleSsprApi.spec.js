@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload();
+    instance = new EZmaxApiDefinition.ModuleSsprApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,25 +47,17 @@
       object[property] = value;
   }
 
-  describe('UserCreateEzsignuserV1ResponseMPayload', function() {
-    it('should create an instance of UserCreateEzsignuserV1ResponseMPayload', function() {
-      // uncomment below and update the code to test UserCreateEzsignuserV1ResponseMPayload
-      //var instane = new EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload);
+  describe('ModuleSsprApi', function() {
+    describe('ssprRemindUsernamesV1', function() {
+      it('should call ssprRemindUsernamesV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprRemindUsernamesV1
+        //instance.ssprRemindUsernamesV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property a_sEmailAddressSuccess (base name: "a_sEmailAddressSuccess")', function() {
-      // uncomment below and update the code to test the property a_sEmailAddressSuccess
-      //var instance = new EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_sEmailAddressFailure (base name: "a_sEmailAddressFailure")', function() {
-      // uncomment below and update the code to test the property a_sEmailAddressFailure
-      //var instance = new EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

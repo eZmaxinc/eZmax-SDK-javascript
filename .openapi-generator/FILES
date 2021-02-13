@@ -95,6 +95,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -126,6 +127,7 @@ mocha.opts
 package.json
 src/eZmaxAPI/ApiClient.js
 src/eZmaxAPI/api/GlobalCustomerApi.js
+src/eZmaxAPI/api/ModuleSsprApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
 src/eZmaxAPI/api/ObjectApikeyApi.js
@@ -245,6 +247,7 @@ src/eZmaxAPI/model/WebhookUserUserCreated.js
 src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
+test/eZmaxAPI/api/ModuleSsprApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
 test/eZmaxAPI/api/ObjectApikeyApi.spec.js

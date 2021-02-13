@@ -13,18 +13,18 @@
 
 
 import ApiClient from "../ApiClient";
-import ActivesessionGetCurrentV1Response from '../model/ActivesessionGetCurrentV1Response';
+import CommonResponseError from '../model/CommonResponseError';
 
 /**
-* ObjectActivesession service.
-* @module eZmaxAPI/api/ObjectActivesessionApi
+* ModuleSspr service.
+* @module eZmaxAPI/api/ModuleSsprApi
 * @version 1.0.30
 */
-export default class ObjectActivesessionApi {
+export default class ModuleSsprApi {
 
     /**
-    * Constructs a new ObjectActivesessionApi. 
-    * @alias module:eZmaxAPI/api/ObjectActivesessionApi
+    * Constructs a new ModuleSsprApi. 
+    * @alias module:eZmaxAPI/api/ModuleSsprApi
     * @class
     * @param {module:eZmaxAPI/ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:eZmaxAPI/ApiClient#instance} if unspecified.
@@ -35,20 +35,19 @@ export default class ObjectActivesessionApi {
 
 
     /**
-     * Callback function to receive the result of the activesessionGetCurrentV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectActivesessionApi~activesessionGetCurrentV1Callback
+     * Callback function to receive the result of the ssprRemindUsernamesV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprRemindUsernamesV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/ActivesessionGetCurrentV1Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get Current Activesession
-     * Retrieve the details about the current activesession
-     * @param {module:eZmaxAPI/api/ObjectActivesessionApi~activesessionGetCurrentV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/ActivesessionGetCurrentV1Response}
+     * Remind of forgotten username(s)
+     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprRemindUsernamesV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    activesessionGetCurrentV1(callback) {
+    ssprRemindUsernamesV1(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -63,9 +62,9 @@ export default class ObjectActivesessionApi {
       let authNames = ['Authorization'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ActivesessionGetCurrentV1Response;
+      let returnType = null;
       return this.apiClient.callApi(
-        '/1/object/activesession/getCurrent', 'GET',
+        '/1/module/sspr/remindUsernames', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
