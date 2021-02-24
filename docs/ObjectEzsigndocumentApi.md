@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**ezsigndocumentApplyEzsigntemplateV1**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 [**ezsigndocumentCreateObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 [**ezsigndocumentDeleteObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
-[**ezsigndocumentEditObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEditObjectV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Modify an existing Ezsigndocument
 [**ezsigndocumentGetChildrenV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
 [**ezsigndocumentGetDownloadUrlV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
 [**ezsigndocumentGetObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
@@ -164,57 +163,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ezsigndocumentEditObjectV1
-
-> EzsigndocumentEditObjectV1Response ezsigndocumentEditObjectV1(pkiEzsigndocumentID, EzsigndocumentEditObjectV1Request)
-
-Modify an existing Ezsigndocument
-
-### Example
-
-```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
-let EzsigndocumentEditObjectV1Request = new EZmaxApiDefinition.EzsigndocumentEditObjectV1Request(); // EzsigndocumentEditObjectV1Request | 
-apiInstance.ezsigndocumentEditObjectV1(pkiEzsigndocumentID, EzsigndocumentEditObjectV1Request, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
- **EzsigndocumentEditObjectV1Request** | [**EzsigndocumentEditObjectV1Request**](EzsigndocumentEditObjectV1Request.md)|  | 
-
-### Return type
-
-[**EzsigndocumentEditObjectV1Response**](EzsigndocumentEditObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 

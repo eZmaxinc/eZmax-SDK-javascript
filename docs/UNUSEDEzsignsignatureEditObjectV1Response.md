@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderEditObjectV1Response
+# EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response
 
 ## Properties
 
