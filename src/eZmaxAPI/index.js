@@ -90,6 +90,7 @@ import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderS
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
 import FieldEPhoneType from './model/FieldEPhoneType';
 import FieldEUserType from './model/FieldEUserType';
+import FieldEUserTypeSSPR from './model/FieldEUserTypeSSPR';
 import FranchisereferalincomeCreateObjectV1Request from './model/FranchisereferalincomeCreateObjectV1Request';
 import FranchisereferalincomeCreateObjectV1Response from './model/FranchisereferalincomeCreateObjectV1Response';
 import FranchisereferalincomeCreateObjectV1ResponseMPayload from './model/FranchisereferalincomeCreateObjectV1ResponseMPayload';
@@ -98,6 +99,11 @@ import FranchisereferalincomeRequestCompound from './model/Franchisereferalincom
 import GlobalCustomerGetEndpointV1Response from './model/GlobalCustomerGetEndpointV1Response';
 import MultilingualApikeyDescription from './model/MultilingualApikeyDescription';
 import PhoneRequest from './model/PhoneRequest';
+import SsprResetPasswordRequestV1Request from './model/SsprResetPasswordRequestV1Request';
+import SsprResetPasswordV1Request from './model/SsprResetPasswordV1Request';
+import SsprSendUsernamesV1Request from './model/SsprSendUsernamesV1Request';
+import SsprUnlockAccountRequestV1Request from './model/SsprUnlockAccountRequestV1Request';
+import SsprUnlockAccountV1Request from './model/SsprUnlockAccountV1Request';
 import UNUSEDEzsigndocumentEditObjectV1Request from './model/UNUSEDEzsigndocumentEditObjectV1Request';
 import UNUSEDEzsigndocumentEditObjectV1Response from './model/UNUSEDEzsigndocumentEditObjectV1Response';
 import UNUSEDEzsignfolderEditObjectV1Request from './model/UNUSEDEzsignfolderEditObjectV1Request';
@@ -635,6 +641,12 @@ export {
     FieldEUserType,
 
     /**
+     * The FieldEUserTypeSSPR model constructor.
+     * @property {module:eZmaxAPI/model/FieldEUserTypeSSPR}
+     */
+    FieldEUserTypeSSPR,
+
+    /**
      * The FranchisereferalincomeCreateObjectV1Request model constructor.
      * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Request}
      */
@@ -681,6 +693,36 @@ export {
      * @property {module:eZmaxAPI/model/PhoneRequest}
      */
     PhoneRequest,
+
+    /**
+     * The SsprResetPasswordRequestV1Request model constructor.
+     * @property {module:eZmaxAPI/model/SsprResetPasswordRequestV1Request}
+     */
+    SsprResetPasswordRequestV1Request,
+
+    /**
+     * The SsprResetPasswordV1Request model constructor.
+     * @property {module:eZmaxAPI/model/SsprResetPasswordV1Request}
+     */
+    SsprResetPasswordV1Request,
+
+    /**
+     * The SsprSendUsernamesV1Request model constructor.
+     * @property {module:eZmaxAPI/model/SsprSendUsernamesV1Request}
+     */
+    SsprSendUsernamesV1Request,
+
+    /**
+     * The SsprUnlockAccountRequestV1Request model constructor.
+     * @property {module:eZmaxAPI/model/SsprUnlockAccountRequestV1Request}
+     */
+    SsprUnlockAccountRequestV1Request,
+
+    /**
+     * The SsprUnlockAccountV1Request model constructor.
+     * @property {module:eZmaxAPI/model/SsprUnlockAccountV1Request}
+     */
+    SsprUnlockAccountV1Request,
 
     /**
      * The UNUSEDEzsigndocumentEditObjectV1Request model constructor.

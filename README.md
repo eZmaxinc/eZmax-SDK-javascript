@@ -131,7 +131,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EZmaxApiDefinition.GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/GlobalCustomerApi.md#globalCustomerGetEndpointV1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
-*EZmaxApiDefinition.ModuleSsprApi* | [**ssprRemindUsernamesV1**](docs/ModuleSsprApi.md#ssprRemindUsernamesV1) | **POST** /1/module/sspr/remindUsernames | Remind of forgotten username(s)
+*EZmaxApiDefinition.ModuleSsprApi* | [**ssprResetPasswordRequestV1**](docs/ModuleSsprApi.md#ssprResetPasswordRequestV1) | **POST** /1/module/sspr/resetPasswordRequest/ | Reset Password Request
+*EZmaxApiDefinition.ModuleSsprApi* | [**ssprResetPasswordV1**](docs/ModuleSsprApi.md#ssprResetPasswordV1) | **POST** /1/module/sspr/resetPassword | Reset Password
+*EZmaxApiDefinition.ModuleSsprApi* | [**ssprSendUsernamesV1**](docs/ModuleSsprApi.md#ssprSendUsernamesV1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
+*EZmaxApiDefinition.ModuleSsprApi* | [**ssprUnlockAccountRequestV1**](docs/ModuleSsprApi.md#ssprUnlockAccountRequestV1) | **POST** /1/module/sspr/unlockAccountRequest | Unlock Account Request
+*EZmaxApiDefinition.ModuleSsprApi* | [**ssprUnlockAccountV1**](docs/ModuleSsprApi.md#ssprUnlockAccountV1) | **POST** /1/module/sspr/unlockAccount | Unlock Account
 *EZmaxApiDefinition.ModuleUserApi* | [**userCreateEzsignuserV1**](docs/ModuleUserApi.md#userCreateEzsignuserV1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
 *EZmaxApiDefinition.ObjectActivesessionApi* | [**activesessionGetCurrentV1**](docs/ObjectActivesessionApi.md#activesessionGetCurrentV1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 *EZmaxApiDefinition.ObjectApikeyApi* | [**apikeyCreateObjectV1**](docs/ObjectApikeyApi.md#apikeyCreateObjectV1) | **POST** /1/object/apikey | Create a new Apikey
@@ -240,6 +244,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EZmaxApiDefinition.FieldEPhoneType](docs/FieldEPhoneType.md)
  - [EZmaxApiDefinition.FieldEUserType](docs/FieldEUserType.md)
+ - [EZmaxApiDefinition.FieldEUserTypeSSPR](docs/FieldEUserTypeSSPR.md)
  - [EZmaxApiDefinition.FranchisereferalincomeCreateObjectV1Request](docs/FranchisereferalincomeCreateObjectV1Request.md)
  - [EZmaxApiDefinition.FranchisereferalincomeCreateObjectV1Response](docs/FranchisereferalincomeCreateObjectV1Response.md)
  - [EZmaxApiDefinition.FranchisereferalincomeCreateObjectV1ResponseMPayload](docs/FranchisereferalincomeCreateObjectV1ResponseMPayload.md)
@@ -248,6 +253,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
  - [EZmaxApiDefinition.MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EZmaxApiDefinition.PhoneRequest](docs/PhoneRequest.md)
+ - [EZmaxApiDefinition.SsprResetPasswordRequestV1Request](docs/SsprResetPasswordRequestV1Request.md)
+ - [EZmaxApiDefinition.SsprResetPasswordV1Request](docs/SsprResetPasswordV1Request.md)
+ - [EZmaxApiDefinition.SsprSendUsernamesV1Request](docs/SsprSendUsernamesV1Request.md)
+ - [EZmaxApiDefinition.SsprUnlockAccountRequestV1Request](docs/SsprUnlockAccountRequestV1Request.md)
+ - [EZmaxApiDefinition.SsprUnlockAccountV1Request](docs/SsprUnlockAccountV1Request.md)
  - [EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Request](docs/UNUSEDEzsigndocumentEditObjectV1Request.md)
  - [EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response](docs/UNUSEDEzsigndocumentEditObjectV1Response.md)
  - [EZmaxApiDefinition.UNUSEDEzsignfolderEditObjectV1Request](docs/UNUSEDEzsignfolderEditObjectV1Request.md)

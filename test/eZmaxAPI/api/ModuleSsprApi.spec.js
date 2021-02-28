@@ -48,10 +48,50 @@
   }
 
   describe('ModuleSsprApi', function() {
-    describe('ssprRemindUsernamesV1', function() {
-      it('should call ssprRemindUsernamesV1 successfully', function(done) {
-        //uncomment below and update the code to test ssprRemindUsernamesV1
-        //instance.ssprRemindUsernamesV1(function(error) {
+    describe('ssprResetPasswordRequestV1', function() {
+      it('should call ssprResetPasswordRequestV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprResetPasswordRequestV1
+        //instance.ssprResetPasswordRequestV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ssprResetPasswordV1', function() {
+      it('should call ssprResetPasswordV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprResetPasswordV1
+        //instance.ssprResetPasswordV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ssprSendUsernamesV1', function() {
+      it('should call ssprSendUsernamesV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprSendUsernamesV1
+        //instance.ssprSendUsernamesV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ssprUnlockAccountRequestV1', function() {
+      it('should call ssprUnlockAccountRequestV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprUnlockAccountRequestV1
+        //instance.ssprUnlockAccountRequestV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ssprUnlockAccountV1', function() {
+      it('should call ssprUnlockAccountV1 successfully', function(done) {
+        //uncomment below and update the code to test ssprUnlockAccountV1
+        //instance.ssprUnlockAccountV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -14,6 +14,11 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import SsprResetPasswordRequestV1Request from '../model/SsprResetPasswordRequestV1Request';
+import SsprResetPasswordV1Request from '../model/SsprResetPasswordV1Request';
+import SsprSendUsernamesV1Request from '../model/SsprSendUsernamesV1Request';
+import SsprUnlockAccountRequestV1Request from '../model/SsprUnlockAccountRequestV1Request';
+import SsprUnlockAccountV1Request from '../model/SsprUnlockAccountV1Request';
 
 /**
 * ModuleSspr service.
@@ -35,20 +40,25 @@ export default class ModuleSsprApi {
 
 
     /**
-     * Callback function to receive the result of the ssprRemindUsernamesV1 operation.
-     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprRemindUsernamesV1Callback
+     * Callback function to receive the result of the ssprResetPasswordRequestV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprResetPasswordRequestV1Callback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Remind of forgotten username(s)
-     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprRemindUsernamesV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * Reset Password Request
+     * This endpoint sends an email with a link to reset the user's password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @param {module:eZmaxAPI/model/SsprResetPasswordRequestV1Request} SsprResetPasswordRequestV1Request 
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprResetPasswordRequestV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
-    ssprRemindUsernamesV1(callback) {
-      let postBody = null;
+    ssprResetPasswordRequestV1(SsprResetPasswordRequestV1Request, callback) {
+      let postBody = SsprResetPasswordRequestV1Request;
+      // verify the required parameter 'SsprResetPasswordRequestV1Request' is set
+      if (SsprResetPasswordRequestV1Request === undefined || SsprResetPasswordRequestV1Request === null) {
+        throw new Error("Missing the required parameter 'SsprResetPasswordRequestV1Request' when calling ssprResetPasswordRequestV1");
+      }
 
       let pathParams = {
       };
@@ -60,11 +70,175 @@ export default class ModuleSsprApi {
       };
 
       let authNames = ['Authorization'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/1/module/sspr/remindUsernames', 'POST',
+        '/1/module/sspr/resetPasswordRequest/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ssprResetPasswordV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprResetPasswordV1Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Reset Password
+     * This endpoint resets the user's password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @param {module:eZmaxAPI/model/SsprResetPasswordV1Request} SsprResetPasswordV1Request 
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprResetPasswordV1Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    ssprResetPasswordV1(SsprResetPasswordV1Request, callback) {
+      let postBody = SsprResetPasswordV1Request;
+      // verify the required parameter 'SsprResetPasswordV1Request' is set
+      if (SsprResetPasswordV1Request === undefined || SsprResetPasswordV1Request === null) {
+        throw new Error("Missing the required parameter 'SsprResetPasswordV1Request' when calling ssprResetPasswordV1");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/1/module/sspr/resetPassword', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ssprSendUsernamesV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprSendUsernamesV1Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Send username(s)
+     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+     * @param {module:eZmaxAPI/model/SsprSendUsernamesV1Request} SsprSendUsernamesV1Request 
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprSendUsernamesV1Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    ssprSendUsernamesV1(SsprSendUsernamesV1Request, callback) {
+      let postBody = SsprSendUsernamesV1Request;
+      // verify the required parameter 'SsprSendUsernamesV1Request' is set
+      if (SsprSendUsernamesV1Request === undefined || SsprSendUsernamesV1Request === null) {
+        throw new Error("Missing the required parameter 'SsprSendUsernamesV1Request' when calling ssprSendUsernamesV1");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/1/module/sspr/sendUsernames', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ssprUnlockAccountRequestV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprUnlockAccountRequestV1Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Unlock Account Request
+     * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @param {module:eZmaxAPI/model/SsprUnlockAccountRequestV1Request} SsprUnlockAccountRequestV1Request 
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprUnlockAccountRequestV1Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    ssprUnlockAccountRequestV1(SsprUnlockAccountRequestV1Request, callback) {
+      let postBody = SsprUnlockAccountRequestV1Request;
+      // verify the required parameter 'SsprUnlockAccountRequestV1Request' is set
+      if (SsprUnlockAccountRequestV1Request === undefined || SsprUnlockAccountRequestV1Request === null) {
+        throw new Error("Missing the required parameter 'SsprUnlockAccountRequestV1Request' when calling ssprUnlockAccountRequestV1");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/1/module/sspr/unlockAccountRequest', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ssprUnlockAccountV1 operation.
+     * @callback module:eZmaxAPI/api/ModuleSsprApi~ssprUnlockAccountV1Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Unlock Account
+     * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @param {module:eZmaxAPI/model/SsprUnlockAccountV1Request} SsprUnlockAccountV1Request 
+     * @param {module:eZmaxAPI/api/ModuleSsprApi~ssprUnlockAccountV1Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+    ssprUnlockAccountV1(SsprUnlockAccountV1Request, callback) {
+      let postBody = SsprUnlockAccountV1Request;
+      // verify the required parameter 'SsprUnlockAccountV1Request' is set
+      if (SsprUnlockAccountV1Request === undefined || SsprUnlockAccountV1Request === null) {
+        throw new Error("Missing the required parameter 'SsprUnlockAccountV1Request' when calling ssprUnlockAccountV1");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/1/module/sspr/unlockAccount', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
