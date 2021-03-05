@@ -107,6 +107,7 @@ docs/SsprResetPasswordV1Request.md
 docs/SsprSendUsernamesV1Request.md
 docs/SsprUnlockAccountRequestV1Request.md
 docs/SsprUnlockAccountV1Request.md
+docs/SsprValidateTokenV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Request.md
 docs/UNUSEDEzsigndocumentEditObjectV1Response.md
 docs/UNUSEDEzsignfolderEditObjectV1Request.md
@@ -237,6 +238,7 @@ src/eZmaxAPI/model/SsprResetPasswordV1Request.js
 src/eZmaxAPI/model/SsprSendUsernamesV1Request.js
 src/eZmaxAPI/model/SsprUnlockAccountRequestV1Request.js
 src/eZmaxAPI/model/SsprUnlockAccountV1Request.js
+src/eZmaxAPI/model/SsprValidateTokenV1Request.js
 src/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Request.js
 src/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response.js
 src/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Request.js
@@ -362,6 +364,7 @@ test/eZmaxAPI/model/SsprResetPasswordV1Request.spec.js
 test/eZmaxAPI/model/SsprSendUsernamesV1Request.spec.js
 test/eZmaxAPI/model/SsprUnlockAccountRequestV1Request.spec.js
 test/eZmaxAPI/model/SsprUnlockAccountV1Request.spec.js
+test/eZmaxAPI/model/SsprValidateTokenV1Request.spec.js
 test/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Request.spec.js
 test/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response.spec.js
 test/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Request.spec.js

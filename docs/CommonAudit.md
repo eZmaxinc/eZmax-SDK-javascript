@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fkiUserIDCreated** | **Number** | The id of the User that created the object. | 
-**fkiUserIDModified** | **Number** | The id of the User that made the last modification on the object. | 
-**fkiApikeyIDCreated** | **Number** | The id of the API Key that created the object. | [optional] 
-**fkiApikeyIDModified** | **Number** | The id of the API Key that made the last modification on the object. | [optional] 
+**fkiUserIDCreated** | **Number** | The unique ID of the User | 
+**fkiUserIDModified** | **Number** | The unique ID of the User | 
+**fkiApikeyIDCreated** | **Number** | The unique ID of the Apikey | [optional] 
+**fkiApikeyIDModified** | **Number** | The unique ID of the Apikey | [optional] 
 **dtCreatedDate** | **String** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. | 
 **dtModifiedDate** | **String** | Represent a Date Time. The timezone is the one configured in the User&#39;s profile. | 
 

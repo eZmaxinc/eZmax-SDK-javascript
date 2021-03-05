@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.SsprResetPasswordV1Request
+# EZmaxApiDefinition.SsprValidateTokenV1Request
 
 ## Properties
 
@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **sEmailAddress** | **String** | The email address. | [optional] 
 **sUserLoginname** | **String** | The Login name of the User. | [optional] 
 **binUserSSPRtoken** | **String** | Hex Encoded Secret SSPR token | 
-**sPassword** | **String** | A Password.  Must meet complexity requirements | 
 
 
