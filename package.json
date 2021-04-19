@@ -1,12 +1,12 @@
 {
   "name": "e_zmax_api_definition",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "description": "This_API_expose_all_the_functionnalities_for_the_eZmax_and_eZsign_applications_",
   "license": "MIT License",
   "main": "dist/eZmaxAPI/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepack": "npm run build",
+    "prepare": "npm run build",
     "test": "mocha --require @babel/register --recursive"
   },
   "browser": {
