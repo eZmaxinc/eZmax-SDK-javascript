@@ -13,6 +13,9 @@ docs/ApikeyRequest.md
 docs/ApikeyRequestCompound.md
 docs/ApikeyResponse.md
 docs/AttemptResponse.md
+docs/AuthenticateAuthenticateV2Request.md
+docs/AuthenticateAuthenticateV2Response.md
+docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
@@ -88,6 +91,7 @@ docs/FranchisereferalincomeRequest.md
 docs/FranchisereferalincomeRequestCompound.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
@@ -134,6 +138,7 @@ mocha.opts
 package.json
 src/eZmaxAPI/ApiClient.js
 src/eZmaxAPI/api/GlobalCustomerApi.js
+src/eZmaxAPI/api/ModuleAuthenticateApi.js
 src/eZmaxAPI/api/ModuleSsprApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
@@ -157,6 +162,9 @@ src/eZmaxAPI/model/ApikeyRequest.js
 src/eZmaxAPI/model/ApikeyRequestCompound.js
 src/eZmaxAPI/model/ApikeyResponse.js
 src/eZmaxAPI/model/AttemptResponse.js
+src/eZmaxAPI/model/AuthenticateAuthenticateV2Request.js
+src/eZmaxAPI/model/AuthenticateAuthenticateV2Response.js
+src/eZmaxAPI/model/AuthenticateAuthenticateV2ResponseMPayload.js
 src/eZmaxAPI/model/CommonAudit.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1Response.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.js
@@ -261,6 +269,7 @@ src/eZmaxAPI/model/WebhookUserUserCreated.js
 src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
+test/eZmaxAPI/api/ModuleAuthenticateApi.spec.js
 test/eZmaxAPI/api/ModuleSsprApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
@@ -283,6 +292,9 @@ test/eZmaxAPI/model/ApikeyRequest.spec.js
 test/eZmaxAPI/model/ApikeyRequestCompound.spec.js
 test/eZmaxAPI/model/ApikeyResponse.spec.js
 test/eZmaxAPI/model/AttemptResponse.spec.js
+test/eZmaxAPI/model/AuthenticateAuthenticateV2Request.spec.js
+test/eZmaxAPI/model/AuthenticateAuthenticateV2Response.spec.js
+test/eZmaxAPI/model/AuthenticateAuthenticateV2ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonAudit.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1Response.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.spec.js
