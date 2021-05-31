@@ -13,45 +13,52 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class FieldEEzsigndocumentStep.
+* Enum class FieldEEzsignsignatureType.
 * @enum {}
 * @readonly
 */
-export default class FieldEEzsigndocumentStep {
+export default class FieldEEzsignsignatureType {
     
         /**
-         * value: "Unsent"
+         * value: "Acknowledgement"
          * @const
          */
-        "Unsent" = "Unsent";
+        "Acknowledgement" = "Acknowledgement";
 
     
         /**
-         * value: "Unsigned"
+         * value: "City"
          * @const
          */
-        "Unsigned" = "Unsigned";
+        "City" = "City";
 
     
         /**
-         * value: "PartiallySigned"
+         * value: "Handwritten"
          * @const
          */
-        "PartiallySigned" = "PartiallySigned";
+        "Handwritten" = "Handwritten";
 
     
         /**
-         * value: "Completed"
+         * value: "Initials"
          * @const
          */
-        "Completed" = "Completed";
+        "Initials" = "Initials";
+
+    
+        /**
+         * value: "Name"
+         * @const
+         */
+        "Name" = "Name";
 
     
 
     /**
-    * Returns a <code>FieldEEzsigndocumentStep</code> enum value from a Javascript object name.
+    * Returns a <code>FieldEEzsignsignatureType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
-    * @return {module:eZmaxAPI/model/FieldEEzsigndocumentStep} The enum <code>FieldEEzsigndocumentStep</code> value.
+    * @return {module:eZmaxAPI/model/FieldEEzsignsignatureType} The enum <code>FieldEEzsignsignatureType</code> value.
     */
     static constructFromObject(object) {
         return object;

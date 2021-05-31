@@ -28,7 +28,6 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,17 +46,11 @@
       object[property] = value;
   }
 
-  describe('EzsigndocumentCreateObjectV1ResponseMPayload', function() {
-    it('should create an instance of EzsigndocumentCreateObjectV1ResponseMPayload', function() {
-      // uncomment below and update the code to test EzsigndocumentCreateObjectV1ResponseMPayload
-      //var instane = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentCreateObjectV1ResponseMPayload);
-    });
-
-    it('should have the property a_pkiEzsigndocumentID (base name: "a_pkiEzsigndocumentID")', function() {
-      // uncomment below and update the code to test the property a_pkiEzsigndocumentID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1ResponseMPayload();
-      //expect(instance).to.be();
+  describe('FieldEEzsignsignatureType', function() {
+    it('should create an instance of FieldEEzsignsignatureType', function() {
+      // uncomment below and update the code to test FieldEEzsignsignatureType
+      //var instane = new EZmaxApiDefinition.FieldEEzsignsignatureType();
+      //expect(instance).to.be.a(EZmaxApiDefinition.FieldEEzsignsignatureType);
     });
 
   });
