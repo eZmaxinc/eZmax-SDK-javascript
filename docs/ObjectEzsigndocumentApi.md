@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ezsigndocumentDeleteObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocumentGetChildrenV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetChildrenV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren | Retrieve an existing Ezsigndocument&#39;s children IDs
 [**ezsigndocumentGetDownloadUrlV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+[**ezsigndocumentGetEzsignpagesV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 [**ezsigndocumentGetFormDataV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocumentGetObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 [**ezsigndocumentGetWordsPositionsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
@@ -35,7 +36,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 let EzsigndocumentApplyEzsigntemplateV1Request = new EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV1Request(); // EzsigndocumentApplyEzsigntemplateV1Request | 
 apiInstance.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateV1Request, (error, data, response) => {
   if (error) {
@@ -51,7 +52,7 @@ apiInstance.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, Ezsigndocum
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
  **EzsigndocumentApplyEzsigntemplateV1Request** | [**EzsigndocumentApplyEzsigntemplateV1Request**](EzsigndocumentApplyEzsigntemplateV1Request.md)|  | 
 
 ### Return type
@@ -137,7 +138,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -152,7 +153,7 @@ apiInstance.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
 
 ### Return type
 
@@ -188,7 +189,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetChildrenV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -203,7 +204,7 @@ apiInstance.ezsigndocumentGetChildrenV1(pkiEzsigndocumentID, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
 
 ### Return type
 
@@ -239,7 +240,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 let eDocumentType = "eDocumentType_example"; // String | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
 apiInstance.ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType, (error, data, response) => {
   if (error) {
@@ -255,12 +256,63 @@ apiInstance.ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
  **eDocumentType** | **String**| The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more.  | 
 
 ### Return type
 
 [**EzsigndocumentGetDownloadUrlV1Response**](EzsigndocumentGetDownloadUrlV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigndocumentGetEzsignpagesV1
+
+> EzsigndocumentGetEzsignpagesV1Response ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID)
+
+Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
+
+```javascript
+import EZmaxApiDefinition from 'e_zmax_api_definition';
+let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let pkiEzsigndocumentID = 56; // Number | 
+apiInstance.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **Number**|  | 
+
+### Return type
+
+[**EzsigndocumentGetEzsignpagesV1Response**](EzsigndocumentGetEzsignpagesV1Response.md)
 
 ### Authorization
 
@@ -292,7 +344,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetFormDataV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -307,7 +359,7 @@ apiInstance.ezsigndocumentGetFormDataV1(pkiEzsigndocumentID, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
 
 ### Return type
 
@@ -343,7 +395,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetObjectV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -358,7 +410,7 @@ apiInstance.ezsigndocumentGetObjectV1(pkiEzsigndocumentID, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
 
 ### Return type
 
@@ -394,7 +446,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let pkiEzsigndocumentID = 56; // Number | The unique ID of the Ezsigndocument
+let pkiEzsigndocumentID = 56; // Number | 
 let EzsigndocumentGetWordsPositionsV1Request = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request(); // EzsigndocumentGetWordsPositionsV1Request | 
 apiInstance.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, EzsigndocumentGetWordsPositionsV1Request, (error, data, response) => {
   if (error) {
@@ -410,7 +462,7 @@ apiInstance.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, Ezsigndocumen
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsigndocumentID** | **Number**| The unique ID of the Ezsigndocument | 
+ **pkiEzsigndocumentID** | **Number**|  | 
  **EzsigndocumentGetWordsPositionsV1Request** | [**EzsigndocumentGetWordsPositionsV1Request**](EzsigndocumentGetWordsPositionsV1Request.md)|  | 
 
 ### Return type

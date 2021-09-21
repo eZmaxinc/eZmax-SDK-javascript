@@ -90,7 +90,7 @@ export default class ObjectEzsignsignatureApi {
 
     /**
      * Delete an existing Ezsignsignature
-     * @param {Number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {Number} pkiEzsignsignatureID 
      * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureDeleteObjectV1Response}
      */
@@ -133,7 +133,7 @@ export default class ObjectEzsignsignatureApi {
     /**
      * Retrieve an existing Ezsignsignature's children IDs
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {Number} pkiEzsignsignatureID 
      * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetChildrenV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     ezsignsignatureGetChildrenV1(pkiEzsignsignatureID, callback) {
@@ -175,7 +175,7 @@ export default class ObjectEzsignsignatureApi {
     /**
      * Retrieve an existing Ezsignsignature
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {Number} pkiEzsignsignatureID 
      * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureGetObjectV1Response}
      */

@@ -81,7 +81,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi();
-let pkiEzsignfoldersignerassociationID = 56; // Number | The unique ID of the Ezsignfoldersignerassociation
+let pkiEzsignfoldersignerassociationID = 56; // Number | 
 apiInstance.ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -96,7 +96,7 @@ apiInstance.ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerass
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **Number**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pkiEzsignfoldersignerassociationID** | **Number**|  | 
 
 ### Return type
 
@@ -132,7 +132,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi();
-let pkiEzsignfoldersignerassociationID = 56; // Number | The unique ID of the Ezsignfoldersignerassociation
+let pkiEzsignfoldersignerassociationID = 56; // Number | 
 apiInstance.ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -147,7 +147,7 @@ apiInstance.ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerasso
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **Number**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pkiEzsignfoldersignerassociationID** | **Number**|  | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi();
-let pkiEzsignfoldersignerassociationID = 56; // Number | The unique ID of the Ezsignfoldersignerassociation
+let pkiEzsignfoldersignerassociationID = 56; // Number | 
 apiInstance.ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -198,7 +198,7 @@ apiInstance.ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **Number**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pkiEzsignfoldersignerassociationID** | **Number**|  | 
 
 ### Return type
 
@@ -234,7 +234,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi();
-let pkiEzsignfoldersignerassociationID = 56; // Number | The unique ID of the Ezsignfoldersignerassociation
+let pkiEzsignfoldersignerassociationID = 56; // Number | 
 apiInstance.ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -249,7 +249,7 @@ apiInstance.ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassoci
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfoldersignerassociationID** | **Number**| The unique ID of the Ezsignfoldersignerassociation | 
+ **pkiEzsignfoldersignerassociationID** | **Number**|  | 
 
 ### Return type
 

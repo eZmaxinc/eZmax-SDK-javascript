@@ -92,7 +92,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Delete an existing Ezsignfolder
-     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderDeleteObjectV1Response}
      */
@@ -135,7 +135,7 @@ export default class ObjectEzsignfolderApi {
     /**
      * Retrieve an existing Ezsignfolder's children IDs
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetChildrenV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     ezsignfolderGetChildrenV1(pkiEzsignfolderID, callback) {
@@ -167,6 +167,49 @@ export default class ObjectEzsignfolderApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsignfolderGetFormsDataV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetFormsDataV1Callback
+     * @param {String} error Error message, if any.
+     * @param {File} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignfolder's forms data
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetFormsDataV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link File}
+     */
+    ezsignfolderGetFormsDataV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetFormsDataV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/zip', 'application/json'];
+      let returnType = File;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsignfolderGetObjectV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetObjectV1Callback
      * @param {String} error Error message, if any.
@@ -177,7 +220,7 @@ export default class ObjectEzsignfolderApi {
     /**
      * Retrieve an existing Ezsignfolder
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetObjectV1Response}
      */
@@ -219,7 +262,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Send the Ezsignfolder to the signatories for signature
-     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/model/EzsignfolderSendV1Request} EzsignfolderSendV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderSendV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderSendV1Response}

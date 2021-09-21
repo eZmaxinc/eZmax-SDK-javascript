@@ -25,12 +25,12 @@ class EzsignsignatureRequest {
      * An Ezsignsignature Object
      * @alias module:eZmaxAPI/model/EzsignsignatureRequest
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
-     * @param iEzsignpagePagenumber {Number} The page number in the document where to apply the signature
+     * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign.
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
-     * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigntemplate
+     * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      */
     constructor(fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID) { 
         
@@ -104,7 +104,7 @@ class EzsignsignatureRequest {
         this['fkiEzsignfoldersignerassociationID'] = fkiEzsignfoldersignerassociationID;
     }
 /**
-     * Returns The page number in the document where to apply the signature
+     * Returns The page number in the Ezsigndocument
      * @return {Number}
      */
     getIEzsignpagePagenumber() {
@@ -112,8 +112,8 @@ class EzsignsignatureRequest {
     }
 
     /**
-     * Sets The page number in the document where to apply the signature
-     * @param {Number} iEzsignpagePagenumber The page number in the document where to apply the signature
+     * Sets The page number in the Ezsigndocument
+     * @param {Number} iEzsignpagePagenumber The page number in the Ezsigndocument
      */
     setIEzsignpagePagenumber(iEzsignpagePagenumber) {
         this['iEzsignpagePagenumber'] = iEzsignpagePagenumber;
@@ -177,7 +177,7 @@ class EzsignsignatureRequest {
         this['eEzsignsignatureType'] = eEzsignsignatureType;
     }
 /**
-     * Returns The unique ID of the Ezsigntemplate
+     * Returns The unique ID of the Ezsigndocument
      * @return {Number}
      */
     getFkiEzsigndocumentID() {
@@ -185,8 +185,8 @@ class EzsignsignatureRequest {
     }
 
     /**
-     * Sets The unique ID of the Ezsigntemplate
-     * @param {Number} fkiEzsigndocumentID The unique ID of the Ezsigntemplate
+     * Sets The unique ID of the Ezsigndocument
+     * @param {Number} fkiEzsigndocumentID The unique ID of the Ezsigndocument
      */
     setFkiEzsigndocumentID(fkiEzsigndocumentID) {
         this['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
@@ -201,7 +201,7 @@ class EzsignsignatureRequest {
 EzsignsignatureRequest.prototype['fkiEzsignfoldersignerassociationID'] = undefined;
 
 /**
- * The page number in the document where to apply the signature
+ * The page number in the Ezsigndocument
  * @member {Number} iEzsignpagePagenumber
  */
 EzsignsignatureRequest.prototype['iEzsignpagePagenumber'] = undefined;
@@ -230,7 +230,7 @@ EzsignsignatureRequest.prototype['iEzsignsignatureStep'] = undefined;
 EzsignsignatureRequest.prototype['eEzsignsignatureType'] = undefined;
 
 /**
- * The unique ID of the Ezsigntemplate
+ * The unique ID of the Ezsigndocument
  * @member {Number} fkiEzsigndocumentID
  */
 EzsignsignatureRequest.prototype['fkiEzsigndocumentID'] = undefined;

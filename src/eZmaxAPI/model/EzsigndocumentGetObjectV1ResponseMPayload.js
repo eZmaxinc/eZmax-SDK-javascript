@@ -31,7 +31,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param dtEzsigndocumentDuedate {String} The maximum date and time at which the document can be signed.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sEzsigndocumentName {String} The name of the document that will be presented to Ezsignfoldersignerassociations
-     * @param pkiEzsigndocumentID {Number} The unique ID of the Ezsigntemplate
+     * @param pkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param eEzsigndocumentStep {module:eZmaxAPI/model/FieldEEzsigndocumentStep} 
      * @param dtEzsigndocumentFirstsend {String} The date and time when the Ezsigndocument was first sent.
      * @param dtEzsigndocumentLastsend {String} The date and time when the Ezsigndocument was sent the last time.
@@ -195,7 +195,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
         this['sEzsigndocumentName'] = sEzsigndocumentName;
     }
 /**
-     * Returns The unique ID of the Ezsigntemplate
+     * Returns The unique ID of the Ezsigndocument
      * @return {Number}
      */
     getPkiEzsigndocumentID() {
@@ -203,8 +203,8 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
     }
 
     /**
-     * Sets The unique ID of the Ezsigntemplate
-     * @param {Number} pkiEzsigndocumentID The unique ID of the Ezsigntemplate
+     * Sets The unique ID of the Ezsigndocument
+     * @param {Number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
      */
     setPkiEzsigndocumentID(pkiEzsigndocumentID) {
         this['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
@@ -383,7 +383,7 @@ EzsigndocumentGetObjectV1ResponseMPayload.prototype['fkiLanguageID'] = undefined
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['sEzsigndocumentName'] = undefined;
 
 /**
- * The unique ID of the Ezsigntemplate
+ * The unique ID of the Ezsigndocument
  * @member {Number} pkiEzsigndocumentID
  */
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['pkiEzsigndocumentID'] = undefined;
@@ -469,7 +469,7 @@ EzsigndocumentResponse.prototype['fkiLanguageID'] = undefined;
  */
 EzsigndocumentResponse.prototype['sEzsigndocumentName'] = undefined;
 /**
- * The unique ID of the Ezsigntemplate
+ * The unique ID of the Ezsigndocument
  * @member {Number} pkiEzsigndocumentID
  */
 EzsigndocumentResponse.prototype['pkiEzsigndocumentID'] = undefined;

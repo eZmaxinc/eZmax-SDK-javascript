@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('ezsignfolderGetFormsDataV1', function() {
+      it('should call ezsignfolderGetFormsDataV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetFormsDataV1
+        //instance.ezsignfolderGetFormsDataV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetObjectV1', function() {
       it('should call ezsignfolderGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetObjectV1

@@ -91,7 +91,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
 
     /**
      * Delete an existing Ezsignfoldersignerassociation
-     * @param {Number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationDeleteObjectV1Response}
      */
@@ -134,7 +134,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
     /**
      * Retrieve an existing Ezsignfoldersignerassociation's children IDs
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationGetChildrenV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID, callback) {
@@ -176,7 +176,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
     /**
      * Retrieve a Login Url to allow In-Person signing
      * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
-     * @param {Number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationGetInPersonLoginUrlV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response}
      */
@@ -219,7 +219,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
     /**
      * Retrieve an existing Ezsignfoldersignerassociation
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-     * @param {Number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1Response}
      */

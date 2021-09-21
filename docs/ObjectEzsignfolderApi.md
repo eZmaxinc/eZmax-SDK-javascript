@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ezsignfolderCreateObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolderDeleteObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
 [**ezsignfolderGetChildrenV1**](ObjectEzsignfolderApi.md#ezsignfolderGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolderGetFormsDataV1**](ObjectEzsignfolderApi.md#ezsignfolderGetFormsDataV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 [**ezsignfolderGetObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
 [**ezsignfolderSendV1**](ObjectEzsignfolderApi.md#ezsignfolderSendV1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 
@@ -81,7 +82,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
-let pkiEzsignfolderID = 56; // Number | The unique ID of the Ezsignfolder
+let pkiEzsignfolderID = 56; // Number | 
 apiInstance.ezsignfolderDeleteObjectV1(pkiEzsignfolderID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -96,7 +97,7 @@ apiInstance.ezsignfolderDeleteObjectV1(pkiEzsignfolderID, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **Number**| The unique ID of the Ezsignfolder | 
+ **pkiEzsignfolderID** | **Number**|  | 
 
 ### Return type
 
@@ -132,7 +133,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
-let pkiEzsignfolderID = 56; // Number | The unique ID of the Ezsignfolder
+let pkiEzsignfolderID = 56; // Number | 
 apiInstance.ezsignfolderGetChildrenV1(pkiEzsignfolderID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -147,7 +148,7 @@ apiInstance.ezsignfolderGetChildrenV1(pkiEzsignfolderID, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **Number**| The unique ID of the Ezsignfolder | 
+ **pkiEzsignfolderID** | **Number**|  | 
 
 ### Return type
 
@@ -161,6 +162,57 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## ezsignfolderGetFormsDataV1
+
+> File ezsignfolderGetFormsDataV1(pkiEzsignfolderID)
+
+Retrieve an existing Ezsignfolder&#39;s forms data
+
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+
+### Example
+
+```javascript
+import EZmaxApiDefinition from 'e_zmax_api_definition';
+let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
+let pkiEzsignfolderID = 56; // Number | 
+apiInstance.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsignfolderID** | **Number**|  | 
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/zip, application/json
 
 
 ## ezsignfolderGetObjectV1
@@ -183,7 +235,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
-let pkiEzsignfolderID = 56; // Number | The unique ID of the Ezsignfolder
+let pkiEzsignfolderID = 56; // Number | 
 apiInstance.ezsignfolderGetObjectV1(pkiEzsignfolderID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -198,7 +250,7 @@ apiInstance.ezsignfolderGetObjectV1(pkiEzsignfolderID, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **Number**| The unique ID of the Ezsignfolder | 
+ **pkiEzsignfolderID** | **Number**|  | 
 
 ### Return type
 
@@ -232,7 +284,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
-let pkiEzsignfolderID = 56; // Number | The unique ID of the Ezsignfolder
+let pkiEzsignfolderID = 56; // Number | 
 let EzsignfolderSendV1Request = new EZmaxApiDefinition.EzsignfolderSendV1Request(); // EzsignfolderSendV1Request | 
 apiInstance.ezsignfolderSendV1(pkiEzsignfolderID, EzsignfolderSendV1Request, (error, data, response) => {
   if (error) {
@@ -248,7 +300,7 @@ apiInstance.ezsignfolderSendV1(pkiEzsignfolderID, EzsignfolderSendV1Request, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignfolderID** | **Number**| The unique ID of the Ezsignfolder | 
+ **pkiEzsignfolderID** | **Number**|  | 
  **EzsignfolderSendV1Request** | [**EzsignfolderSendV1Request**](EzsignfolderSendV1Request.md)|  | 
 
 ### Return type

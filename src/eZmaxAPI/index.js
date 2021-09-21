@@ -56,6 +56,9 @@ import EzsigndocumentDeleteObjectV1Response from './model/EzsigndocumentDeleteOb
 import EzsigndocumentGetDownloadUrlV1Response from './model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetDownloadUrlV1ResponseAllOf from './model/EzsigndocumentGetDownloadUrlV1ResponseAllOf';
 import EzsigndocumentGetDownloadUrlV1ResponseMPayload from './model/EzsigndocumentGetDownloadUrlV1ResponseMPayload';
+import EzsigndocumentGetEzsignpagesV1Response from './model/EzsigndocumentGetEzsignpagesV1Response';
+import EzsigndocumentGetEzsignpagesV1ResponseAllOf from './model/EzsigndocumentGetEzsignpagesV1ResponseAllOf';
+import EzsigndocumentGetEzsignpagesV1ResponseMPayload from './model/EzsigndocumentGetEzsignpagesV1ResponseMPayload';
 import EzsigndocumentGetObjectV1Response from './model/EzsigndocumentGetObjectV1Response';
 import EzsigndocumentGetObjectV1ResponseAllOf from './model/EzsigndocumentGetObjectV1ResponseAllOf';
 import EzsigndocumentGetObjectV1ResponseMPayload from './model/EzsigndocumentGetObjectV1ResponseMPayload';
@@ -66,7 +69,6 @@ import EzsigndocumentGetWordsPositionsV1ResponseMPayload from './model/Ezsigndoc
 import EzsigndocumentRequest from './model/EzsigndocumentRequest';
 import EzsigndocumentRequestCompound from './model/EzsigndocumentRequestCompound';
 import EzsigndocumentResponse from './model/EzsigndocumentResponse';
-import EzsigndocumentResponseAllOf from './model/EzsigndocumentResponseAllOf';
 import EzsigndocumentResponseCompound from './model/EzsigndocumentResponseCompound';
 import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObjectV1Response';
@@ -95,6 +97,7 @@ import EzsignfoldersignerassociationGetObjectV1ResponseAllOf from './model/Ezsig
 import EzsignfoldersignerassociationRequest from './model/EzsignfoldersignerassociationRequest';
 import EzsignfoldersignerassociationRequestCompound from './model/EzsignfoldersignerassociationRequestCompound';
 import EzsignfoldersignerassociationRequestCompoundAllOf from './model/EzsignfoldersignerassociationRequestCompoundAllOf';
+import EzsignpageResponse from './model/EzsignpageResponse';
 import EzsignsignatureCreateObjectV1Request from './model/EzsignsignatureCreateObjectV1Request';
 import EzsignsignatureCreateObjectV1Response from './model/EzsignsignatureCreateObjectV1Response';
 import EzsignsignatureCreateObjectV1ResponseAllOf from './model/EzsignsignatureCreateObjectV1ResponseAllOf';
@@ -466,6 +469,24 @@ export {
     EzsigndocumentGetDownloadUrlV1ResponseMPayload,
 
     /**
+     * The EzsigndocumentGetEzsignpagesV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1Response}
+     */
+    EzsigndocumentGetEzsignpagesV1Response,
+
+    /**
+     * The EzsigndocumentGetEzsignpagesV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseAllOf}
+     */
+    EzsigndocumentGetEzsignpagesV1ResponseAllOf,
+
+    /**
+     * The EzsigndocumentGetEzsignpagesV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseMPayload}
+     */
+    EzsigndocumentGetEzsignpagesV1ResponseMPayload,
+
+    /**
      * The EzsigndocumentGetObjectV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentGetObjectV1Response}
      */
@@ -524,12 +545,6 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentResponse}
      */
     EzsigndocumentResponse,
-
-    /**
-     * The EzsigndocumentResponseAllOf model constructor.
-     * @property {module:eZmaxAPI/model/EzsigndocumentResponseAllOf}
-     */
-    EzsigndocumentResponseAllOf,
 
     /**
      * The EzsigndocumentResponseCompound model constructor.
@@ -698,6 +713,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf}
      */
     EzsignfoldersignerassociationRequestCompoundAllOf,
+
+    /**
+     * The EzsignpageResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignpageResponse}
+     */
+    EzsignpageResponse,
 
     /**
      * The EzsignsignatureCreateObjectV1Request model constructor.

@@ -28,7 +28,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.GlobalCustomerApi();
-let pksCustomerCode = "pksCustomerCode_example"; // String | The customer code assigned to your account
+let pksCustomerCode = "pksCustomerCode_example"; // String | 
 let opts = {
   'sInfrastructureproductCode': "sInfrastructureproductCode_example" // String | The infrastructure product Code  If undefined, \"appcluster01\" is assumed
 };
@@ -46,7 +46,7 @@ apiInstance.globalCustomerGetEndpointV1(pksCustomerCode, opts, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pksCustomerCode** | **String**| The customer code assigned to your account | 
+ **pksCustomerCode** | **String**|  | 
  **sInfrastructureproductCode** | **String**| The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed | [optional] 
 
 ### Return type

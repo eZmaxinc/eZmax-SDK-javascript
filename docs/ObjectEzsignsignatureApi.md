@@ -80,7 +80,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignsignatureApi();
-let pkiEzsignsignatureID = 56; // Number | The unique ID of the Ezsignsignature
+let pkiEzsignsignatureID = 56; // Number | 
 apiInstance.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -95,7 +95,7 @@ apiInstance.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **Number**| The unique ID of the Ezsignsignature | 
+ **pkiEzsignsignatureID** | **Number**|  | 
 
 ### Return type
 
@@ -131,7 +131,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignsignatureApi();
-let pkiEzsignsignatureID = 56; // Number | The unique ID of the Ezsignsignature
+let pkiEzsignsignatureID = 56; // Number | 
 apiInstance.ezsignsignatureGetChildrenV1(pkiEzsignsignatureID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -146,7 +146,7 @@ apiInstance.ezsignsignatureGetChildrenV1(pkiEzsignsignatureID, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **Number**| The unique ID of the Ezsignsignature | 
+ **pkiEzsignsignatureID** | **Number**|  | 
 
 ### Return type
 
@@ -182,7 +182,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignsignatureApi();
-let pkiEzsignsignatureID = 56; // Number | The unique ID of the Ezsignsignature
+let pkiEzsignsignatureID = 56; // Number | 
 apiInstance.ezsignsignatureGetObjectV1(pkiEzsignsignatureID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -197,7 +197,7 @@ apiInstance.ezsignsignatureGetObjectV1(pkiEzsignsignatureID, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiEzsignsignatureID** | **Number**| The unique ID of the Ezsignsignature | 
+ **pkiEzsignsignatureID** | **Number**|  | 
 
 ### Return type
 

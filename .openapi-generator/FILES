@@ -46,6 +46,9 @@ docs/EzsigndocumentDeleteObjectV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
+docs/EzsigndocumentGetEzsignpagesV1Response.md
+docs/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md
+docs/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md
 docs/EzsigndocumentGetObjectV1Response.md
 docs/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/EzsigndocumentGetObjectV1ResponseMPayload.md
@@ -56,7 +59,6 @@ docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
-docs/EzsigndocumentResponseAllOf.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
@@ -85,6 +87,7 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignpageResponse.md
 docs/EzsignsignatureCreateObjectV1Request.md
 docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseAllOf.md
@@ -219,6 +222,9 @@ src/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1Response.js
+src/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.js
@@ -229,7 +235,6 @@ src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentRequest.js
 src/eZmaxAPI/model/EzsigndocumentRequestCompound.js
 src/eZmaxAPI/model/EzsigndocumentResponse.js
-src/eZmaxAPI/model/EzsigndocumentResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompound.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.js
@@ -258,6 +263,7 @@ src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequest.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.js
+src/eZmaxAPI/model/EzsignpageResponse.js
 src/eZmaxAPI/model/EzsignsignatureCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignsignatureCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseAllOf.js
@@ -373,6 +379,9 @@ test/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1Response.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.spec.js
@@ -383,7 +392,6 @@ test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequest.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequestCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponse.spec.js
-test/eZmaxAPI/model/EzsigndocumentResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompound.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.spec.js
@@ -412,6 +420,7 @@ test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.spec.j
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequest.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.spec.js
+test/eZmaxAPI/model/EzsignpageResponse.spec.js
 test/eZmaxAPI/model/EzsignsignatureCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignsignatureCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseAllOf.spec.js
