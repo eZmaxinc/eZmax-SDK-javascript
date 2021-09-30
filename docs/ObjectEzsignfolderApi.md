@@ -166,7 +166,7 @@ null (empty response body)
 
 ## ezsignfolderGetFormsDataV1
 
-> File ezsignfolderGetFormsDataV1(pkiEzsignfolderID)
+> EzsignfolderGetFormsDataV1Response ezsignfolderGetFormsDataV1(pkiEzsignfolderID)
 
 Retrieve an existing Ezsignfolder&#39;s forms data
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+[**EzsignfolderGetFormsDataV1Response**](EzsignfolderGetFormsDataV1Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/zip, application/json
+- **Accept**: application/json, application/zip
 
 
 ## ezsignfolderGetObjectV1

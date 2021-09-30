@@ -1,6 +1,6 @@
 {
   "name": "e_zmax_api_definition",
-  "version": "1.0.48",
+  "version": "1.1.0",
   "description": "This_API_expose_all_the_functionnalities_for_the_eZmax_and_eZsign_applications_",
   "license": "MIT License",
   "main": "dist/eZmaxAPI/index.js",
