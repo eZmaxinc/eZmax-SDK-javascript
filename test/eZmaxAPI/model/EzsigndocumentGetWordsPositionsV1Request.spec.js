@@ -54,8 +54,14 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request);
     });
 
-    it('should have the property a_sWords (base name: "a_sWords")', function() {
-      // uncomment below and update the code to test the property a_sWords
+    it('should have the property eGet (base name: "eGet")', function() {
+      // uncomment below and update the code to test the property eGet
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_sWord (base name: "a_sWord")', function() {
+      // uncomment below and update the code to test the property a_sWord
       //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
       //expect(instance).to.be();
     });

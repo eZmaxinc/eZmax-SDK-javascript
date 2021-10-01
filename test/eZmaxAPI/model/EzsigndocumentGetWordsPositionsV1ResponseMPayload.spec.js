@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1ResponseMPayload);
     });
 
-    it('should have the property a_sWords (base name: "a_sWords")', function() {
-      // uncomment below and update the code to test the property a_sWords
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

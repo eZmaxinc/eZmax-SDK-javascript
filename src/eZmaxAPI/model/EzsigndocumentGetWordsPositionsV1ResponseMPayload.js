@@ -24,11 +24,10 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload {
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload
-     * @param a_sWords {Array.<module:eZmaxAPI/model/CustomWordPositionResponse>} An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
      */
-    constructor(a_sWords) { 
+    constructor() { 
         
-        EzsigndocumentGetWordsPositionsV1ResponseMPayload.initialize(this, a_sWords);
+        EzsigndocumentGetWordsPositionsV1ResponseMPayload.initialize(this);
     }
 
     /**
@@ -36,8 +35,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_sWords) { 
-        obj['a_sWords'] = a_sWords;
+    static initialize(obj) { 
     }
 
     /**
@@ -51,36 +49,12 @@ class EzsigndocumentGetWordsPositionsV1ResponseMPayload {
         if (data) {
             obj = obj || new EzsigndocumentGetWordsPositionsV1ResponseMPayload();
 
-            if (data.hasOwnProperty('a_sWords')) {
-                obj['a_sWords'] = ApiClient.convertToType(data['a_sWords'], [CustomWordPositionResponse]);
-            }
         }
         return obj;
     }
 
-/**
-     * Returns An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-     * @return {Array.<module:eZmaxAPI/model/CustomWordPositionResponse>}
-     */
-    getASWords() {
-        return this.a_sWords;
-    }
-
-    /**
-     * Sets An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionResponse>} a_sWords An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-     */
-    setASWords(a_sWords) {
-        this['a_sWords'] = a_sWords;
-    }
 
 }
-
-/**
- * An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
- * @member {Array.<module:eZmaxAPI/model/CustomWordPositionResponse>} a_sWords
- */
-EzsigndocumentGetWordsPositionsV1ResponseMPayload.prototype['a_sWords'] = undefined;
 
 
 

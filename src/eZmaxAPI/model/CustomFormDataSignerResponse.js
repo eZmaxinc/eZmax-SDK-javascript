@@ -27,7 +27,7 @@ class CustomFormDataSignerResponse {
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param sContactFirstname {String} The First name of the contact
      * @param sContactLastname {String} The Last name of the contact
-     * @param a_objEzsignformfieldgroupCompound {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} This array contains the labels or each Form fields in the form but WITHOUT the values
+     * @param a_objEzsignformfieldgroupCompound {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} 
      */
     constructor(fkiEzsignfoldersignerassociationID, sContactFirstname, sContactLastname, a_objEzsignformfieldgroupCompound) { 
         
@@ -137,7 +137,6 @@ class CustomFormDataSignerResponse {
         this['sContactLastname'] = sContactLastname;
     }
 /**
-     * Returns This array contains the labels or each Form fields in the form but WITHOUT the values
      * @return {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>}
      */
     getAObjEzsignformfieldgroupCompound() {
@@ -145,8 +144,7 @@ class CustomFormDataSignerResponse {
     }
 
     /**
-     * Sets This array contains the labels or each Form fields in the form but WITHOUT the values
-     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound This array contains the labels or each Form fields in the form but WITHOUT the values
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound
      */
     setAObjEzsignformfieldgroupCompound(a_objEzsignformfieldgroupCompound) {
         this['a_objEzsignformfieldgroupCompound'] = a_objEzsignformfieldgroupCompound;
@@ -179,7 +177,6 @@ CustomFormDataSignerResponse.prototype['sContactFirstname'] = undefined;
 CustomFormDataSignerResponse.prototype['sContactLastname'] = undefined;
 
 /**
- * This array contains the labels or each Form fields in the form but WITHOUT the values
  * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound
  */
 CustomFormDataSignerResponse.prototype['a_objEzsignformfieldgroupCompound'] = undefined;

@@ -23,11 +23,10 @@ class EzsigndocumentGetWordsPositionsV1Request {
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1Request</code>.
      * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request
-     * @param a_sWords {Array.<String>} 
      */
-    constructor(a_sWords) { 
+    constructor() { 
         
-        EzsigndocumentGetWordsPositionsV1Request.initialize(this, a_sWords);
+        EzsigndocumentGetWordsPositionsV1Request.initialize(this);
     }
 
     /**
@@ -35,8 +34,7 @@ class EzsigndocumentGetWordsPositionsV1Request {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_sWords) { 
-        obj['a_sWords'] = a_sWords;
+    static initialize(obj) { 
     }
 
     /**
@@ -50,36 +48,84 @@ class EzsigndocumentGetWordsPositionsV1Request {
         if (data) {
             obj = obj || new EzsigndocumentGetWordsPositionsV1Request();
 
-            if (data.hasOwnProperty('a_sWords')) {
-                obj['a_sWords'] = ApiClient.convertToType(data['a_sWords'], ['String']);
+            if (data.hasOwnProperty('eGet')) {
+                obj['eGet'] = ApiClient.convertToType(data['eGet'], 'String');
+            }
+            if (data.hasOwnProperty('a_sWord')) {
+                obj['a_sWord'] = ApiClient.convertToType(data['a_sWord'], ['String']);
             }
         }
         return obj;
     }
 
 /**
-     * @return {Array.<String>}
+     * Returns Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+     * @return {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum}
      */
-    getASWords() {
-        return this.a_sWords;
+    getEGet() {
+        return this.eGet;
     }
 
     /**
-     * @param {Array.<String>} a_sWords
+     * Sets Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} eGet Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
      */
-    setASWords(a_sWords) {
-        this['a_sWords'] = a_sWords;
+    setEGet(eGet) {
+        this['eGet'] = eGet;
+    }
+/**
+     * Returns Array of words to find in the document
+     * @return {Array.<String>}
+     */
+    getASWord() {
+        return this.a_sWord;
+    }
+
+    /**
+     * Sets Array of words to find in the document
+     * @param {Array.<String>} a_sWord Array of words to find in the document
+     */
+    setASWord(a_sWord) {
+        this['a_sWord'] = a_sWord;
     }
 
 }
 
 /**
- * @member {Array.<String>} a_sWords
+ * Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+ * @member {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} eGet
  */
-EzsigndocumentGetWordsPositionsV1Request.prototype['a_sWords'] = undefined;
+EzsigndocumentGetWordsPositionsV1Request.prototype['eGet'] = undefined;
+
+/**
+ * Array of words to find in the document
+ * @member {Array.<String>} a_sWord
+ */
+EzsigndocumentGetWordsPositionsV1Request.prototype['a_sWord'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>eGet</code> property.
+ * @enum {String}
+ * @readonly
+ */
+EzsigndocumentGetWordsPositionsV1Request['EGetEnum'] = {
+
+    /**
+     * value: "All"
+     * @const
+     */
+    "All": "All",
+
+    /**
+     * value: "Words"
+     * @const
+     */
+    "Words": "Words"
+};
 
 
 
