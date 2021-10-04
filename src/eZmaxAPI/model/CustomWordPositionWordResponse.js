@@ -25,11 +25,11 @@ class CustomWordPositionWordResponse {
      * A Word Position Object
      * @alias module:eZmaxAPI/model/CustomWordPositionWordResponse
      * @param sWord {String} The searched word
-     * @param objWordPositionOccurence {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} The found occurences for the seached word
+     * @param a_objWordPositionOccurence {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} The found occurences for the seached word
      */
-    constructor(sWord, objWordPositionOccurence) { 
+    constructor(sWord, a_objWordPositionOccurence) { 
         
-        CustomWordPositionWordResponse.initialize(this, sWord, objWordPositionOccurence);
+        CustomWordPositionWordResponse.initialize(this, sWord, a_objWordPositionOccurence);
     }
 
     /**
@@ -37,9 +37,9 @@ class CustomWordPositionWordResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sWord, objWordPositionOccurence) { 
+    static initialize(obj, sWord, a_objWordPositionOccurence) { 
         obj['sWord'] = sWord;
-        obj['objWordPositionOccurence'] = objWordPositionOccurence;
+        obj['a_objWordPositionOccurence'] = a_objWordPositionOccurence;
     }
 
     /**
@@ -56,8 +56,8 @@ class CustomWordPositionWordResponse {
             if (data.hasOwnProperty('sWord')) {
                 obj['sWord'] = ApiClient.convertToType(data['sWord'], 'String');
             }
-            if (data.hasOwnProperty('objWordPositionOccurence')) {
-                obj['objWordPositionOccurence'] = ApiClient.convertToType(data['objWordPositionOccurence'], [CustomWordPositionOccurenceResponse]);
+            if (data.hasOwnProperty('a_objWordPositionOccurence')) {
+                obj['a_objWordPositionOccurence'] = ApiClient.convertToType(data['a_objWordPositionOccurence'], [CustomWordPositionOccurenceResponse]);
             }
         }
         return obj;
@@ -82,16 +82,16 @@ class CustomWordPositionWordResponse {
      * Returns The found occurences for the seached word
      * @return {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>}
      */
-    getObjWordPositionOccurence() {
-        return this.objWordPositionOccurence;
+    getAObjWordPositionOccurence() {
+        return this.a_objWordPositionOccurence;
     }
 
     /**
      * Sets The found occurences for the seached word
-     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} objWordPositionOccurence The found occurences for the seached word
+     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} a_objWordPositionOccurence The found occurences for the seached word
      */
-    setObjWordPositionOccurence(objWordPositionOccurence) {
-        this['objWordPositionOccurence'] = objWordPositionOccurence;
+    setAObjWordPositionOccurence(a_objWordPositionOccurence) {
+        this['a_objWordPositionOccurence'] = a_objWordPositionOccurence;
     }
 
 }
@@ -104,9 +104,9 @@ CustomWordPositionWordResponse.prototype['sWord'] = undefined;
 
 /**
  * The found occurences for the seached word
- * @member {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} objWordPositionOccurence
+ * @member {Array.<module:eZmaxAPI/model/CustomWordPositionOccurenceResponse>} a_objWordPositionOccurence
  */
-CustomWordPositionWordResponse.prototype['objWordPositionOccurence'] = undefined;
+CustomWordPositionWordResponse.prototype['a_objWordPositionOccurence'] = undefined;
 
 
 

@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property objWordPositionOccurence (base name: "objWordPositionOccurence")', function() {
-      // uncomment below and update the code to test the property objWordPositionOccurence
+    it('should have the property a_objWordPositionOccurence (base name: "a_objWordPositionOccurence")', function() {
+      // uncomment below and update the code to test the property a_objWordPositionOccurence
       //var instance = new EZmaxApiDefinition.CustomWordPositionWordResponse();
       //expect(instance).to.be();
     });
