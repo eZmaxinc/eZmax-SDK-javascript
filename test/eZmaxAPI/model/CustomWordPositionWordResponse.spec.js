@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1ResponseMPayload();
+    instance = new EZmaxApiDefinition.CustomWordPositionWordResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,11 +47,23 @@
       object[property] = value;
   }
 
-  describe('EzsigndocumentGetWordsPositionsV1ResponseMPayload', function() {
-    it('should create an instance of EzsigndocumentGetWordsPositionsV1ResponseMPayload', function() {
-      // uncomment below and update the code to test EzsigndocumentGetWordsPositionsV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1ResponseMPayload);
+  describe('CustomWordPositionWordResponse', function() {
+    it('should create an instance of CustomWordPositionWordResponse', function() {
+      // uncomment below and update the code to test CustomWordPositionWordResponse
+      //var instance = new EZmaxApiDefinition.CustomWordPositionWordResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CustomWordPositionWordResponse);
+    });
+
+    it('should have the property sWord (base name: "sWord")', function() {
+      // uncomment below and update the code to test the property sWord
+      //var instance = new EZmaxApiDefinition.CustomWordPositionWordResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objWordPositionOccurence (base name: "objWordPositionOccurence")', function() {
+      // uncomment below and update the code to test the property objWordPositionOccurence
+      //var instance = new EZmaxApiDefinition.CustomWordPositionWordResponse();
+      //expect(instance).to.be();
     });
 
   });

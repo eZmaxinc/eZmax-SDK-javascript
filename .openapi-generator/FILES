@@ -38,7 +38,8 @@ docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
-docs/CustomWordPositionResponse.md
+docs/CustomWordPositionOccurenceResponse.md
+docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
@@ -64,7 +65,6 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
-docs/EzsigndocumentGetWordsPositionsV1ResponseMPayload.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
@@ -230,7 +230,8 @@ src/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.js
 src/eZmaxAPI/model/CustomFormDataDocumentResponse.js
 src/eZmaxAPI/model/CustomFormDataFolderResponse.js
 src/eZmaxAPI/model/CustomFormDataSignerResponse.js
-src/eZmaxAPI/model/CustomWordPositionResponse.js
+src/eZmaxAPI/model/CustomWordPositionOccurenceResponse.js
+src/eZmaxAPI/model/CustomWordPositionWordResponse.js
 src/eZmaxAPI/model/EmailRequest.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.js
@@ -256,7 +257,6 @@ src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.js
-src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentRequest.js
 src/eZmaxAPI/model/EzsigndocumentRequestCompound.js
 src/eZmaxAPI/model/EzsigndocumentResponse.js
@@ -403,7 +403,8 @@ test/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/CustomFormDataDocumentResponse.spec.js
 test/eZmaxAPI/model/CustomFormDataFolderResponse.spec.js
 test/eZmaxAPI/model/CustomFormDataSignerResponse.spec.js
-test/eZmaxAPI/model/CustomWordPositionResponse.spec.js
+test/eZmaxAPI/model/CustomWordPositionOccurenceResponse.spec.js
+test/eZmaxAPI/model/CustomWordPositionWordResponse.spec.js
 test/eZmaxAPI/model/EmailRequest.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.spec.js
@@ -429,7 +430,6 @@ test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.spec.js
-test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequest.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequestCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponse.spec.js

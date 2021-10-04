@@ -48,7 +48,8 @@ import ContactinformationsRequestCompoundAllOf from './model/Contactinformations
 import CustomFormDataDocumentResponse from './model/CustomFormDataDocumentResponse';
 import CustomFormDataFolderResponse from './model/CustomFormDataFolderResponse';
 import CustomFormDataSignerResponse from './model/CustomFormDataSignerResponse';
-import CustomWordPositionResponse from './model/CustomWordPositionResponse';
+import CustomWordPositionOccurenceResponse from './model/CustomWordPositionOccurenceResponse';
+import CustomWordPositionWordResponse from './model/CustomWordPositionWordResponse';
 import EmailRequest from './model/EmailRequest';
 import EzsigndocumentApplyEzsigntemplateV1Request from './model/EzsigndocumentApplyEzsigntemplateV1Request';
 import EzsigndocumentApplyEzsigntemplateV1Response from './model/EzsigndocumentApplyEzsigntemplateV1Response';
@@ -74,7 +75,6 @@ import EzsigndocumentGetObjectV1ResponseMPayload from './model/EzsigndocumentGet
 import EzsigndocumentGetWordsPositionsV1Request from './model/EzsigndocumentGetWordsPositionsV1Request';
 import EzsigndocumentGetWordsPositionsV1Response from './model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentGetWordsPositionsV1ResponseAllOf from './model/EzsigndocumentGetWordsPositionsV1ResponseAllOf';
-import EzsigndocumentGetWordsPositionsV1ResponseMPayload from './model/EzsigndocumentGetWordsPositionsV1ResponseMPayload';
 import EzsigndocumentRequest from './model/EzsigndocumentRequest';
 import EzsigndocumentRequestCompound from './model/EzsigndocumentRequestCompound';
 import EzsigndocumentResponse from './model/EzsigndocumentResponse';
@@ -437,10 +437,16 @@ export {
     CustomFormDataSignerResponse,
 
     /**
-     * The CustomWordPositionResponse model constructor.
-     * @property {module:eZmaxAPI/model/CustomWordPositionResponse}
+     * The CustomWordPositionOccurenceResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomWordPositionOccurenceResponse}
      */
-    CustomWordPositionResponse,
+    CustomWordPositionOccurenceResponse,
+
+    /**
+     * The CustomWordPositionWordResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomWordPositionWordResponse}
+     */
+    CustomWordPositionWordResponse,
 
     /**
      * The EmailRequest model constructor.
@@ -591,12 +597,6 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf}
      */
     EzsigndocumentGetWordsPositionsV1ResponseAllOf,
-
-    /**
-     * The EzsigndocumentGetWordsPositionsV1ResponseMPayload model constructor.
-     * @property {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseMPayload}
-     */
-    EzsigndocumentGetWordsPositionsV1ResponseMPayload,
 
     /**
      * The EzsigndocumentRequest model constructor.

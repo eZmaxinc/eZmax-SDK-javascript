@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomWordPositionResponse();
+    instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,28 @@
       object[property] = value;
   }
 
-  describe('CustomWordPositionResponse', function() {
-    it('should create an instance of CustomWordPositionResponse', function() {
-      // uncomment below and update the code to test CustomWordPositionResponse
-      //var instance = new EZmaxApiDefinition.CustomWordPositionResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomWordPositionResponse);
+  describe('CustomWordPositionOccurenceResponse', function() {
+    it('should create an instance of CustomWordPositionOccurenceResponse', function() {
+      // uncomment below and update the code to test CustomWordPositionOccurenceResponse
+      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CustomWordPositionOccurenceResponse);
     });
 
     it('should have the property iPage (base name: "iPage")', function() {
       // uncomment below and update the code to test the property iPage
-      //var instance = new EZmaxApiDefinition.CustomWordPositionResponse();
+      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iX (base name: "iX")', function() {
       // uncomment below and update the code to test the property iX
-      //var instance = new EZmaxApiDefinition.CustomWordPositionResponse();
+      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iY (base name: "iY")', function() {
       // uncomment below and update the code to test the property iY
-      //var instance = new EZmaxApiDefinition.CustomWordPositionResponse();
+      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 

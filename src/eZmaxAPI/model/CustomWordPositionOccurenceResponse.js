@@ -14,19 +14,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The CustomWordPositionResponse model module.
- * @module eZmaxAPI/model/CustomWordPositionResponse
+ * The CustomWordPositionOccurenceResponse model module.
+ * @module eZmaxAPI/model/CustomWordPositionOccurenceResponse
  * @version 1.1.0
  */
-class CustomWordPositionResponse {
+class CustomWordPositionOccurenceResponse {
     /**
-     * Constructs a new <code>CustomWordPositionResponse</code>.
+     * Constructs a new <code>CustomWordPositionOccurenceResponse</code>.
      * A Word Position Object
-     * @alias module:eZmaxAPI/model/CustomWordPositionResponse
+     * @alias module:eZmaxAPI/model/CustomWordPositionOccurenceResponse
      */
     constructor() { 
         
-        CustomWordPositionResponse.initialize(this);
+        CustomWordPositionOccurenceResponse.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class CustomWordPositionResponse {
     }
 
     /**
-     * Constructs a <code>CustomWordPositionResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>CustomWordPositionOccurenceResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/CustomWordPositionResponse} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/CustomWordPositionResponse} The populated <code>CustomWordPositionResponse</code> instance.
+     * @param {module:eZmaxAPI/model/CustomWordPositionOccurenceResponse} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/CustomWordPositionOccurenceResponse} The populated <code>CustomWordPositionOccurenceResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new CustomWordPositionResponse();
+            obj = obj || new CustomWordPositionOccurenceResponse();
 
             if (data.hasOwnProperty('iPage')) {
                 obj['iPage'] = ApiClient.convertToType(data['iPage'], 'Number');
@@ -116,24 +116,24 @@ class CustomWordPositionResponse {
  * The page where the word occurence was found
  * @member {Number} iPage
  */
-CustomWordPositionResponse.prototype['iPage'] = undefined;
+CustomWordPositionOccurenceResponse.prototype['iPage'] = undefined;
 
 /**
  * The X coordinate (Horizontal) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
  * @member {Number} iX
  */
-CustomWordPositionResponse.prototype['iX'] = undefined;
+CustomWordPositionOccurenceResponse.prototype['iX'] = undefined;
 
 /**
  * The Y coordinate (Vertical) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
  * @member {Number} iY
  */
-CustomWordPositionResponse.prototype['iY'] = undefined;
+CustomWordPositionOccurenceResponse.prototype['iY'] = undefined;
 
 
 
 
 
 
-export default CustomWordPositionResponse;
+export default CustomWordPositionOccurenceResponse;
 
