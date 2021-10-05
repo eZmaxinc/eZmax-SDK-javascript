@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,28 @@
       object[property] = value;
   }
 
-  describe('EzsigndocumentGetWordsPositionsV1Request', function() {
-    it('should create an instance of EzsigndocumentGetWordsPositionsV1Request', function() {
-      // uncomment below and update the code to test EzsigndocumentGetWordsPositionsV1Request
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request);
+  describe('EzsignfoldertypeGetListV1Response', function() {
+    it('should create an instance of EzsignfoldertypeGetListV1Response', function() {
+      // uncomment below and update the code to test EzsignfoldertypeGetListV1Response
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldertypeGetListV1Response);
     });
 
-    it('should have the property eGet (base name: "eGet")', function() {
-      // uncomment below and update the code to test the property eGet
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1Response();
       //expect(instance).to.be();
     });
 
-    it('should have the property bWordCaseSensitive (base name: "bWordCaseSensitive")', function() {
-      // uncomment below and update the code to test the property bWordCaseSensitive
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
+      // uncomment below and update the code to test the property objDebugPayload
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1Response();
       //expect(instance).to.be();
     });
 
-    it('should have the property a_sWord (base name: "a_sWord")', function() {
-      // uncomment below and update the code to test the property a_sWord
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    it('should have the property objDebug (base name: "objDebug")', function() {
+      // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1Response();
       //expect(instance).to.be();
     });
 

@@ -23,6 +23,7 @@ docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetAutocompleteV1ResponseMPayload.md
+docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
 docs/CommonResponseObjDebug.md
@@ -99,6 +100,11 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignfoldertypeGetListV1Response.md
+docs/EzsignfoldertypeGetListV1ResponseAllOf.md
+docs/EzsignfoldertypeGetListV1ResponseMPayload.md
+docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md
+docs/EzsignfoldertypeListElement.md
 docs/EzsignformfieldResponse.md
 docs/EzsignformfieldResponseCompound.md
 docs/EzsignformfieldgroupResponse.md
@@ -143,6 +149,7 @@ docs/ObjectApikeyApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
+docs/ObjectEzsignfoldertypeApi.md
 docs/ObjectEzsignsignatureApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
@@ -189,6 +196,7 @@ src/eZmaxAPI/api/ObjectApikeyApi.js
 src/eZmaxAPI/api/ObjectEzsigndocumentApi.js
 src/eZmaxAPI/api/ObjectEzsignfolderApi.js
 src/eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi.js
+src/eZmaxAPI/api/ObjectEzsignfoldertypeApi.js
 src/eZmaxAPI/api/ObjectEzsignsignatureApi.js
 src/eZmaxAPI/api/ObjectFranchisebrokerApi.js
 src/eZmaxAPI/api/ObjectFranchiseofficeApi.js
@@ -215,6 +223,7 @@ src/eZmaxAPI/model/CommonAudit.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1Response.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.js
+src/eZmaxAPI/model/CommonGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonResponse.js
 src/eZmaxAPI/model/CommonResponseError.js
 src/eZmaxAPI/model/CommonResponseObjDebug.js
@@ -291,6 +300,11 @@ src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequest.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.js
+src/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.js
+src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.js
+src/eZmaxAPI/model/EzsignfoldertypeListElement.js
 src/eZmaxAPI/model/EzsignformfieldResponse.js
 src/eZmaxAPI/model/EzsignformfieldResponseCompound.js
 src/eZmaxAPI/model/EzsignformfieldgroupResponse.js
@@ -363,6 +377,7 @@ test/eZmaxAPI/api/ObjectApikeyApi.spec.js
 test/eZmaxAPI/api/ObjectEzsigndocumentApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignfolderApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi.spec.js
+test/eZmaxAPI/api/ObjectEzsignfoldertypeApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignsignatureApi.spec.js
 test/eZmaxAPI/api/ObjectFranchisebrokerApi.spec.js
 test/eZmaxAPI/api/ObjectFranchiseofficeApi.spec.js
@@ -388,6 +403,7 @@ test/eZmaxAPI/model/CommonAudit.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1Response.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/CommonGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonResponse.spec.js
 test/eZmaxAPI/model/CommonResponseError.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebug.spec.js
@@ -464,6 +480,11 @@ test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseAllOf.spec.j
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequest.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.spec.js
+test/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.spec.js
+test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.spec.js
+test/eZmaxAPI/model/EzsignfoldertypeListElement.spec.js
 test/eZmaxAPI/model/EzsignformfieldResponse.spec.js
 test/eZmaxAPI/model/EzsignformfieldResponseCompound.spec.js
 test/eZmaxAPI/model/EzsignformfieldgroupResponse.spec.js

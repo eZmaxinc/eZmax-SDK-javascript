@@ -33,6 +33,7 @@ import CommonAudit from './model/CommonAudit';
 import CommonGetAutocompleteV1Response from './model/CommonGetAutocompleteV1Response';
 import CommonGetAutocompleteV1ResponseAllOf from './model/CommonGetAutocompleteV1ResponseAllOf';
 import CommonGetAutocompleteV1ResponseMPayload from './model/CommonGetAutocompleteV1ResponseMPayload';
+import CommonGetListV1ResponseMPayload from './model/CommonGetListV1ResponseMPayload';
 import CommonResponse from './model/CommonResponse';
 import CommonResponseError from './model/CommonResponseError';
 import CommonResponseObjDebug from './model/CommonResponseObjDebug';
@@ -109,6 +110,11 @@ import EzsignfoldersignerassociationGetObjectV1ResponseAllOf from './model/Ezsig
 import EzsignfoldersignerassociationRequest from './model/EzsignfoldersignerassociationRequest';
 import EzsignfoldersignerassociationRequestCompound from './model/EzsignfoldersignerassociationRequestCompound';
 import EzsignfoldersignerassociationRequestCompoundAllOf from './model/EzsignfoldersignerassociationRequestCompoundAllOf';
+import EzsignfoldertypeGetListV1Response from './model/EzsignfoldertypeGetListV1Response';
+import EzsignfoldertypeGetListV1ResponseAllOf from './model/EzsignfoldertypeGetListV1ResponseAllOf';
+import EzsignfoldertypeGetListV1ResponseMPayload from './model/EzsignfoldertypeGetListV1ResponseMPayload';
+import EzsignfoldertypeGetListV1ResponseMPayloadAllOf from './model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf';
+import EzsignfoldertypeListElement from './model/EzsignfoldertypeListElement';
 import EzsignformfieldResponse from './model/EzsignformfieldResponse';
 import EzsignformfieldResponseCompound from './model/EzsignformfieldResponseCompound';
 import EzsignformfieldgroupResponse from './model/EzsignformfieldgroupResponse';
@@ -181,6 +187,7 @@ import ObjectApikeyApi from './api/ObjectApikeyApi';
 import ObjectEzsigndocumentApi from './api/ObjectEzsigndocumentApi';
 import ObjectEzsignfolderApi from './api/ObjectEzsignfolderApi';
 import ObjectEzsignfoldersignerassociationApi from './api/ObjectEzsignfoldersignerassociationApi';
+import ObjectEzsignfoldertypeApi from './api/ObjectEzsignfoldertypeApi';
 import ObjectEzsignsignatureApi from './api/ObjectEzsignsignatureApi';
 import ObjectFranchisebrokerApi from './api/ObjectFranchisebrokerApi';
 import ObjectFranchiseofficeApi from './api/ObjectFranchiseofficeApi';
@@ -345,6 +352,12 @@ export {
      * @property {module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload}
      */
     CommonGetAutocompleteV1ResponseMPayload,
+
+    /**
+     * The CommonGetListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/CommonGetListV1ResponseMPayload}
+     */
+    CommonGetListV1ResponseMPayload,
 
     /**
      * The CommonResponse model constructor.
@@ -803,6 +816,36 @@ export {
     EzsignfoldersignerassociationRequestCompoundAllOf,
 
     /**
+     * The EzsignfoldertypeGetListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldertypeGetListV1Response}
+     */
+    EzsignfoldertypeGetListV1Response,
+
+    /**
+     * The EzsignfoldertypeGetListV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf}
+     */
+    EzsignfoldertypeGetListV1ResponseAllOf,
+
+    /**
+     * The EzsignfoldertypeGetListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload}
+     */
+    EzsignfoldertypeGetListV1ResponseMPayload,
+
+    /**
+     * The EzsignfoldertypeGetListV1ResponseMPayloadAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf}
+     */
+    EzsignfoldertypeGetListV1ResponseMPayloadAllOf,
+
+    /**
+     * The EzsignfoldertypeListElement model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldertypeListElement}
+     */
+    EzsignfoldertypeListElement,
+
+    /**
      * The EzsignformfieldResponse model constructor.
      * @property {module:eZmaxAPI/model/EzsignformfieldResponse}
      */
@@ -1233,6 +1276,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi}
     */
     ObjectEzsignfoldersignerassociationApi,
+
+    /**
+    * The ObjectEzsignfoldertypeApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi}
+    */
+    ObjectEzsignfoldertypeApi,
 
     /**
     * The ObjectEzsignsignatureApi service constructor.

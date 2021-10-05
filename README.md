@@ -162,6 +162,7 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetChildrenV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetChildrenV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren | Retrieve an existing Ezsignfoldersignerassociation&#39;s children IDs
 *EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetInPersonLoginUrlV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetInPersonLoginUrlV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing
 *EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetObjectV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
+*EZmaxApiDefinition.ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetListV1**](docs/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureCreateObjectV1**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureDeleteObjectV1**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureGetChildrenV1**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureGetChildrenV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren | Retrieve an existing Ezsignsignature&#39;s children IDs
@@ -194,6 +195,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.CommonGetAutocompleteV1Response](docs/CommonGetAutocompleteV1Response.md)
  - [EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf](docs/CommonGetAutocompleteV1ResponseAllOf.md)
  - [EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload](docs/CommonGetAutocompleteV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EZmaxApiDefinition.CommonResponse](docs/CommonResponse.md)
  - [EZmaxApiDefinition.CommonResponseError](docs/CommonResponseError.md)
  - [EZmaxApiDefinition.CommonResponseObjDebug](docs/CommonResponseObjDebug.md)
@@ -270,6 +272,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignfoldersignerassociationRequest](docs/EzsignfoldersignerassociationRequest.md)
  - [EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound](docs/EzsignfoldersignerassociationRequestCompound.md)
  - [EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
+ - [EZmaxApiDefinition.EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
+ - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf](docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md)
+ - [EZmaxApiDefinition.EzsignfoldertypeListElement](docs/EzsignfoldertypeListElement.md)
  - [EZmaxApiDefinition.EzsignformfieldResponse](docs/EzsignformfieldResponse.md)
  - [EZmaxApiDefinition.EzsignformfieldResponseCompound](docs/EzsignformfieldResponseCompound.md)
  - [EZmaxApiDefinition.EzsignformfieldgroupResponse](docs/EzsignformfieldgroupResponse.md)

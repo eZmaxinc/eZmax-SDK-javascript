@@ -23,10 +23,12 @@ class EzsigndocumentGetWordsPositionsV1Request {
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1Request</code>.
      * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request
+     * @param eGet {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
+     * @param bWordCaseSensitive {Boolean} IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
      */
-    constructor() { 
+    constructor(eGet, bWordCaseSensitive) { 
         
-        EzsigndocumentGetWordsPositionsV1Request.initialize(this);
+        EzsigndocumentGetWordsPositionsV1Request.initialize(this, eGet, bWordCaseSensitive);
     }
 
     /**
@@ -34,7 +36,9 @@ class EzsigndocumentGetWordsPositionsV1Request {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, eGet, bWordCaseSensitive) { 
+        obj['eGet'] = eGet;
+        obj['bWordCaseSensitive'] = bWordCaseSensitive;
     }
 
     /**
@@ -51,6 +55,9 @@ class EzsigndocumentGetWordsPositionsV1Request {
             if (data.hasOwnProperty('eGet')) {
                 obj['eGet'] = ApiClient.convertToType(data['eGet'], 'String');
             }
+            if (data.hasOwnProperty('bWordCaseSensitive')) {
+                obj['bWordCaseSensitive'] = ApiClient.convertToType(data['bWordCaseSensitive'], 'Boolean');
+            }
             if (data.hasOwnProperty('a_sWord')) {
                 obj['a_sWord'] = ApiClient.convertToType(data['a_sWord'], ['String']);
             }
@@ -59,7 +66,7 @@ class EzsigndocumentGetWordsPositionsV1Request {
     }
 
 /**
-     * Returns Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+     * Returns Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
      * @return {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum}
      */
     getEGet() {
@@ -67,11 +74,26 @@ class EzsigndocumentGetWordsPositionsV1Request {
     }
 
     /**
-     * Sets Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
-     * @param {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} eGet Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+     * Sets Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} eGet Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
      */
     setEGet(eGet) {
         this['eGet'] = eGet;
+    }
+/**
+     * Returns IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
+     * @return {Boolean}
+     */
+    getBWordCaseSensitive() {
+        return this.bWordCaseSensitive;
+    }
+
+    /**
+     * Sets IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
+     * @param {Boolean} bWordCaseSensitive IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
+     */
+    setBWordCaseSensitive(bWordCaseSensitive) {
+        this['bWordCaseSensitive'] = bWordCaseSensitive;
     }
 /**
      * Returns Array of words to find in the document
@@ -92,10 +114,16 @@ class EzsigndocumentGetWordsPositionsV1Request {
 }
 
 /**
- * Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+ * Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
  * @member {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} eGet
  */
 EzsigndocumentGetWordsPositionsV1Request.prototype['eGet'] = undefined;
+
+/**
+ * IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
+ * @member {Boolean} bWordCaseSensitive
+ */
+EzsigndocumentGetWordsPositionsV1Request.prototype['bWordCaseSensitive'] = undefined;
 
 /**
  * Array of words to find in the document

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    instance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,31 +47,17 @@
       object[property] = value;
   }
 
-  describe('EzsigndocumentGetWordsPositionsV1Request', function() {
-    it('should create an instance of EzsigndocumentGetWordsPositionsV1Request', function() {
-      // uncomment below and update the code to test EzsigndocumentGetWordsPositionsV1Request
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request);
+  describe('ObjectEzsignfoldertypeApi', function() {
+    describe('ezsignfoldertypeGetListV1', function() {
+      it('should call ezsignfoldertypeGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldertypeGetListV1
+        //instance.ezsignfoldertypeGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property eGet (base name: "eGet")', function() {
-      // uncomment below and update the code to test the property eGet
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bWordCaseSensitive (base name: "bWordCaseSensitive")', function() {
-      // uncomment below and update the code to test the property bWordCaseSensitive
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_sWord (base name: "a_sWord")', function() {
-      // uncomment below and update the code to test the property a_sWord
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
