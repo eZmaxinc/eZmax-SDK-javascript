@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import EzsignfolderCreateObjectV1ResponseAllOf from './EzsignfolderCreateObjectV1ResponseAllOf';
 import EzsignfolderCreateObjectV1ResponseMPayload from './EzsignfolderCreateObjectV1ResponseMPayload';
 
 /**
@@ -27,11 +28,13 @@ class EzsignfolderCreateObjectV1Response {
      * Constructs a new <code>EzsignfolderCreateObjectV1Response</code>.
      * Response for the /1/object/ezsignfolder/createObject API Request
      * @alias module:eZmaxAPI/model/EzsignfolderCreateObjectV1Response
+     * @implements module:eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param mPayload {module:eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseMPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsignfolderCreateObjectV1Response.initialize(this);
+    constructor(mPayload) { 
+        EzsignfolderCreateObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        EzsignfolderCreateObjectV1Response.initialize(this, mPayload);
     }
 
     /**
@@ -39,7 +42,7 @@ class EzsignfolderCreateObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, mPayload) { 
         obj['mPayload'] = mPayload;
     }
 
@@ -53,6 +56,7 @@ class EzsignfolderCreateObjectV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderCreateObjectV1Response();
+            EzsignfolderCreateObjectV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('mPayload')) {
@@ -126,6 +130,11 @@ EzsignfolderCreateObjectV1Response.prototype['objDebugPayload'] = undefined;
 EzsignfolderCreateObjectV1Response.prototype['objDebug'] = undefined;
 
 
+// Implement EzsignfolderCreateObjectV1ResponseAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseMPayload} mPayload
+ */
+EzsignfolderCreateObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

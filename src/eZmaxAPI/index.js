@@ -82,6 +82,7 @@ import EzsigndocumentResponse from './model/EzsigndocumentResponse';
 import EzsigndocumentResponseCompound from './model/EzsigndocumentResponseCompound';
 import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObjectV1Response';
+import EzsignfolderCreateObjectV1ResponseAllOf from './model/EzsignfolderCreateObjectV1ResponseAllOf';
 import EzsignfolderCreateObjectV1ResponseMPayload from './model/EzsignfolderCreateObjectV1ResponseMPayload';
 import EzsignfolderDeleteObjectV1Response from './model/EzsignfolderDeleteObjectV1Response';
 import EzsignfolderGetFormsDataV1Response from './model/EzsignfolderGetFormsDataV1Response';
@@ -647,6 +648,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV1Response}
      */
     EzsignfolderCreateObjectV1Response,
+
+    /**
+     * The EzsignfolderCreateObjectV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf}
+     */
+    EzsignfolderCreateObjectV1ResponseAllOf,
 
     /**
      * The EzsignfolderCreateObjectV1ResponseMPayload model constructor.
