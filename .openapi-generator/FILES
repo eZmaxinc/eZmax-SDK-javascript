@@ -37,8 +37,8 @@ docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
 docs/CustomFormDataDocumentResponse.md
-docs/CustomFormDataFolderResponse.md
 docs/CustomFormDataSignerResponse.md
+docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
@@ -140,6 +140,7 @@ docs/FranchisereferalincomeRequestCompound.md
 docs/FranchisereferalincomeRequestCompoundAllOf.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
+docs/HeaderAcceptLanguage.md
 docs/ModuleAuthenticateApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
@@ -237,8 +238,8 @@ src/eZmaxAPI/model/ContactinformationsRequest.js
 src/eZmaxAPI/model/ContactinformationsRequestCompound.js
 src/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.js
 src/eZmaxAPI/model/CustomFormDataDocumentResponse.js
-src/eZmaxAPI/model/CustomFormDataFolderResponse.js
 src/eZmaxAPI/model/CustomFormDataSignerResponse.js
+src/eZmaxAPI/model/CustomFormsDataFolderResponse.js
 src/eZmaxAPI/model/CustomWordPositionOccurenceResponse.js
 src/eZmaxAPI/model/CustomWordPositionWordResponse.js
 src/eZmaxAPI/model/EmailRequest.js
@@ -339,6 +340,7 @@ src/eZmaxAPI/model/FranchisereferalincomeRequest.js
 src/eZmaxAPI/model/FranchisereferalincomeRequestCompound.js
 src/eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf.js
 src/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.js
+src/eZmaxAPI/model/HeaderAcceptLanguage.js
 src/eZmaxAPI/model/MultilingualApikeyDescription.js
 src/eZmaxAPI/model/PhoneRequest.js
 src/eZmaxAPI/model/SsprResetPasswordRequestV1Request.js
@@ -417,8 +419,8 @@ test/eZmaxAPI/model/ContactinformationsRequest.spec.js
 test/eZmaxAPI/model/ContactinformationsRequestCompound.spec.js
 test/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/CustomFormDataDocumentResponse.spec.js
-test/eZmaxAPI/model/CustomFormDataFolderResponse.spec.js
 test/eZmaxAPI/model/CustomFormDataSignerResponse.spec.js
+test/eZmaxAPI/model/CustomFormsDataFolderResponse.spec.js
 test/eZmaxAPI/model/CustomWordPositionOccurenceResponse.spec.js
 test/eZmaxAPI/model/CustomWordPositionWordResponse.spec.js
 test/eZmaxAPI/model/EmailRequest.spec.js
@@ -519,6 +521,7 @@ test/eZmaxAPI/model/FranchisereferalincomeRequest.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeRequestCompound.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.spec.js
+test/eZmaxAPI/model/HeaderAcceptLanguage.spec.js
 test/eZmaxAPI/model/MultilingualApikeyDescription.spec.js
 test/eZmaxAPI/model/PhoneRequest.spec.js
 test/eZmaxAPI/model/SsprResetPasswordRequestV1Request.spec.js

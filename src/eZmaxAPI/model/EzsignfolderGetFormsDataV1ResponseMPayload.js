@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CustomFormDataDocumentResponse from './CustomFormDataDocumentResponse';
-import CustomFormDataFolderResponse from './CustomFormDataFolderResponse';
+import CustomFormsDataFolderResponse from './CustomFormsDataFolderResponse';
 
 /**
  * The EzsignfolderGetFormsDataV1ResponseMPayload model module.
@@ -25,13 +25,13 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetFormsDataV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
      * @alias module:eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/CustomFormDataFolderResponse
+     * @implements module:eZmaxAPI/model/CustomFormsDataFolderResponse
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
      * @param a_objFormDataDocument {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} 
      */
     constructor(pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument) { 
-        CustomFormDataFolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
+        CustomFormsDataFolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
         EzsignfolderGetFormsDataV1ResponseMPayload.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
     }
 
@@ -56,7 +56,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetFormsDataV1ResponseMPayload();
-            CustomFormDataFolderResponse.constructFromObject(data, obj);
+            CustomFormsDataFolderResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfolderID')) {
                 obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
@@ -135,21 +135,21 @@ EzsignfolderGetFormsDataV1ResponseMPayload.prototype['sEzsignfolderDescription']
 EzsignfolderGetFormsDataV1ResponseMPayload.prototype['a_objFormDataDocument'] = undefined;
 
 
-// Implement CustomFormDataFolderResponse interface:
+// Implement CustomFormsDataFolderResponse interface:
 /**
  * The unique ID of the Ezsignfolder
  * @member {Number} pkiEzsignfolderID
  */
-CustomFormDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
+CustomFormsDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
 /**
  * The description of the Ezsign Folder
  * @member {String} sEzsignfolderDescription
  */
-CustomFormDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
+CustomFormsDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
 /**
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
  */
-CustomFormDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;
+CustomFormsDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;
 
 
 

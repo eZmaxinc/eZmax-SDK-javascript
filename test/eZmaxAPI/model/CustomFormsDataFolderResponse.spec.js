@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomFormDataFolderResponse();
+    instance = new EZmaxApiDefinition.CustomFormsDataFolderResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,28 @@
       object[property] = value;
   }
 
-  describe('CustomFormDataFolderResponse', function() {
-    it('should create an instance of CustomFormDataFolderResponse', function() {
-      // uncomment below and update the code to test CustomFormDataFolderResponse
-      //var instance = new EZmaxApiDefinition.CustomFormDataFolderResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomFormDataFolderResponse);
+  describe('CustomFormsDataFolderResponse', function() {
+    it('should create an instance of CustomFormsDataFolderResponse', function() {
+      // uncomment below and update the code to test CustomFormsDataFolderResponse
+      //var instance = new EZmaxApiDefinition.CustomFormsDataFolderResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CustomFormsDataFolderResponse);
     });
 
     it('should have the property pkiEzsignfolderID (base name: "pkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property pkiEzsignfolderID
-      //var instance = new EZmaxApiDefinition.CustomFormDataFolderResponse();
+      //var instance = new EZmaxApiDefinition.CustomFormsDataFolderResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfolderDescription (base name: "sEzsignfolderDescription")', function() {
       // uncomment below and update the code to test the property sEzsignfolderDescription
-      //var instance = new EZmaxApiDefinition.CustomFormDataFolderResponse();
+      //var instance = new EZmaxApiDefinition.CustomFormsDataFolderResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objFormDataDocument (base name: "a_objFormDataDocument")', function() {
       // uncomment below and update the code to test the property a_objFormDataDocument
-      //var instance = new EZmaxApiDefinition.CustomFormDataFolderResponse();
+      //var instance = new EZmaxApiDefinition.CustomFormsDataFolderResponse();
       //expect(instance).to.be();
     });
 

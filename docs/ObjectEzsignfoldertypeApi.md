@@ -10,11 +10,11 @@ Method | HTTP request | Description
 
 ## ezsignfoldertypeGetListV1
 
-> EzsignfoldertypeGetListV1Response ezsignfoldertypeGetListV1()
+> EzsignfoldertypeGetListV1Response ezsignfoldertypeGetListV1(opts)
 
 Retrieve Ezsignfoldertype list
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User&lt;br&gt;Usergroup |
 
 ### Example
 
@@ -28,7 +28,14 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
-apiInstance.ezsignfoldertypeGetListV1((error, data, response) => {
+let opts = {
+  'eOrderBy': "eOrderBy_example", // String | Specify how you want the results to be sorted
+  'iRowMax': 56, // Number | 
+  'iRowOffset': 56, // Number | 
+  'Accept_Language': new EZmaxApiDefinition.HeaderAcceptLanguage(), // HeaderAcceptLanguage | 
+  'sFilter': "sFilter_example" // String | 
+};
+apiInstance.ezsignfoldertypeGetListV1(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -39,7 +46,14 @@ apiInstance.ezsignfoldertypeGetListV1((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eOrderBy** | **String**| Specify how you want the results to be sorted | [optional] 
+ **iRowMax** | **Number**|  | [optional] 
+ **iRowOffset** | **Number**|  | [optional] 
+ **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
+ **sFilter** | **String**|  | [optional] 
 
 ### Return type
 
@@ -52,5 +66,5 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 

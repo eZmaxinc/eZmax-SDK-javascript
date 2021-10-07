@@ -47,8 +47,8 @@ import ContactinformationsRequest from './model/ContactinformationsRequest';
 import ContactinformationsRequestCompound from './model/ContactinformationsRequestCompound';
 import ContactinformationsRequestCompoundAllOf from './model/ContactinformationsRequestCompoundAllOf';
 import CustomFormDataDocumentResponse from './model/CustomFormDataDocumentResponse';
-import CustomFormDataFolderResponse from './model/CustomFormDataFolderResponse';
 import CustomFormDataSignerResponse from './model/CustomFormDataSignerResponse';
+import CustomFormsDataFolderResponse from './model/CustomFormsDataFolderResponse';
 import CustomWordPositionOccurenceResponse from './model/CustomWordPositionOccurenceResponse';
 import CustomWordPositionWordResponse from './model/CustomWordPositionWordResponse';
 import EmailRequest from './model/EmailRequest';
@@ -149,6 +149,7 @@ import FranchisereferalincomeRequest from './model/FranchisereferalincomeRequest
 import FranchisereferalincomeRequestCompound from './model/FranchisereferalincomeRequestCompound';
 import FranchisereferalincomeRequestCompoundAllOf from './model/FranchisereferalincomeRequestCompoundAllOf';
 import GlobalCustomerGetEndpointV1Response from './model/GlobalCustomerGetEndpointV1Response';
+import HeaderAcceptLanguage from './model/HeaderAcceptLanguage';
 import MultilingualApikeyDescription from './model/MultilingualApikeyDescription';
 import PhoneRequest from './model/PhoneRequest';
 import SsprResetPasswordRequestV1Request from './model/SsprResetPasswordRequestV1Request';
@@ -438,16 +439,16 @@ export {
     CustomFormDataDocumentResponse,
 
     /**
-     * The CustomFormDataFolderResponse model constructor.
-     * @property {module:eZmaxAPI/model/CustomFormDataFolderResponse}
-     */
-    CustomFormDataFolderResponse,
-
-    /**
      * The CustomFormDataSignerResponse model constructor.
      * @property {module:eZmaxAPI/model/CustomFormDataSignerResponse}
      */
     CustomFormDataSignerResponse,
+
+    /**
+     * The CustomFormsDataFolderResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomFormsDataFolderResponse}
+     */
+    CustomFormsDataFolderResponse,
 
     /**
      * The CustomWordPositionOccurenceResponse model constructor.
@@ -1048,6 +1049,12 @@ export {
      * @property {module:eZmaxAPI/model/GlobalCustomerGetEndpointV1Response}
      */
     GlobalCustomerGetEndpointV1Response,
+
+    /**
+     * The HeaderAcceptLanguage model constructor.
+     * @property {module:eZmaxAPI/model/HeaderAcceptLanguage}
+     */
+    HeaderAcceptLanguage,
 
     /**
      * The MultilingualApikeyDescription model constructor.

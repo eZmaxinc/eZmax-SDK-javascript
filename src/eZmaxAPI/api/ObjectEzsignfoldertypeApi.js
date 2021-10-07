@@ -13,7 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import CommonResponseError from '../model/CommonResponseError';
 import EzsignfoldertypeGetListV1Response from '../model/EzsignfoldertypeGetListV1Response';
+import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectEzsignfoldertype service.
@@ -44,25 +46,37 @@ export default class ObjectEzsignfoldertypeApi {
 
     /**
      * Retrieve Ezsignfoldertype list
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
+     * @param {Number} opts.iRowMax 
+     * @param {Number} opts.iRowOffset 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {String} opts.sFilter 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeGetListV1Response}
      */
-    ezsignfoldertypeGetListV1(callback) {
+    ezsignfoldertypeGetListV1(opts, callback) {
+      opts = opts || {};
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
       };
       let headerParams = {
+        'Accept-Language': opts['Accept_Language']
       };
       let formParams = {
       };
 
       let authNames = ['Authorization'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
       let returnType = EzsignfoldertypeGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfoldertype/getList', 'GET',

@@ -15,22 +15,22 @@ import ApiClient from '../ApiClient';
 import CustomFormDataDocumentResponse from './CustomFormDataDocumentResponse';
 
 /**
- * The CustomFormDataFolderResponse model module.
- * @module eZmaxAPI/model/CustomFormDataFolderResponse
+ * The CustomFormsDataFolderResponse model module.
+ * @module eZmaxAPI/model/CustomFormsDataFolderResponse
  * @version 1.1.0
  */
-class CustomFormDataFolderResponse {
+class CustomFormsDataFolderResponse {
     /**
-     * Constructs a new <code>CustomFormDataFolderResponse</code>.
-     * A form Data Folder Object
-     * @alias module:eZmaxAPI/model/CustomFormDataFolderResponse
+     * Constructs a new <code>CustomFormsDataFolderResponse</code>.
+     * A forms Data Folder Object
+     * @alias module:eZmaxAPI/model/CustomFormsDataFolderResponse
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
      * @param a_objFormDataDocument {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} 
      */
     constructor(pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument) { 
         
-        CustomFormDataFolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
+        CustomFormsDataFolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
     }
 
     /**
@@ -45,15 +45,15 @@ class CustomFormDataFolderResponse {
     }
 
     /**
-     * Constructs a <code>CustomFormDataFolderResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>CustomFormsDataFolderResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/CustomFormDataFolderResponse} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/CustomFormDataFolderResponse} The populated <code>CustomFormDataFolderResponse</code> instance.
+     * @param {module:eZmaxAPI/model/CustomFormsDataFolderResponse} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/CustomFormsDataFolderResponse} The populated <code>CustomFormsDataFolderResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new CustomFormDataFolderResponse();
+            obj = obj || new CustomFormsDataFolderResponse();
 
             if (data.hasOwnProperty('pkiEzsignfolderID')) {
                 obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
@@ -118,23 +118,23 @@ class CustomFormDataFolderResponse {
  * The unique ID of the Ezsignfolder
  * @member {Number} pkiEzsignfolderID
  */
-CustomFormDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
+CustomFormsDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
 
 /**
  * The description of the Ezsign Folder
  * @member {String} sEzsignfolderDescription
  */
-CustomFormDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
+CustomFormsDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
 
 /**
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
  */
-CustomFormDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;
+CustomFormsDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;
 
 
 
 
 
 
-export default CustomFormDataFolderResponse;
+export default CustomFormsDataFolderResponse;
 
