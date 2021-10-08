@@ -60,8 +60,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignfoldertypePrivacylevel (base name: "eEzsignfoldertypePrivacylevel")', function() {
+      // uncomment below and update the code to test the property eEzsignfoldertypePrivacylevel
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
       // uncomment below and update the code to test the property sEzsignfoldertypeNameX
+      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeIsactive (base name: "bEzsignfoldertypeIsactive")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeIsactive
       //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
       //expect(instance).to.be();
     });

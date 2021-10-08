@@ -26,8 +26,12 @@ docs/CommonGetAutocompleteV1ResponseMPayload.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
+docs/CommonResponseFilter.md
+docs/CommonResponseGetList.md
 docs/CommonResponseObjDebug.md
 docs/CommonResponseObjDebugPayload.md
+docs/CommonResponseObjDebugPayloadGetList.md
+docs/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/CommonResponseObjSQLQuery.md
 docs/CommonWebhook.md
 docs/ContactRequest.md
@@ -128,6 +132,7 @@ docs/EzsignsignerRequestCompoundContact.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
+docs/FieldEEzsignfoldertypePrivacylevel.md
 docs/FieldEEzsignsignatureType.md
 docs/FieldEPhoneType.md
 docs/FieldEUserType.md
@@ -228,8 +233,12 @@ src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonResponse.js
 src/eZmaxAPI/model/CommonResponseError.js
+src/eZmaxAPI/model/CommonResponseFilter.js
+src/eZmaxAPI/model/CommonResponseGetList.js
 src/eZmaxAPI/model/CommonResponseObjDebug.js
 src/eZmaxAPI/model/CommonResponseObjDebugPayload.js
+src/eZmaxAPI/model/CommonResponseObjDebugPayloadGetList.js
+src/eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf.js
 src/eZmaxAPI/model/CommonResponseObjSQLQuery.js
 src/eZmaxAPI/model/CommonWebhook.js
 src/eZmaxAPI/model/ContactRequest.js
@@ -330,6 +339,7 @@ src/eZmaxAPI/model/EzsignsignerRequestCompoundContact.js
 src/eZmaxAPI/model/FieldEEzsigndocumentStep.js
 src/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.js
 src/eZmaxAPI/model/FieldEEzsignfolderStep.js
+src/eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel.js
 src/eZmaxAPI/model/FieldEEzsignsignatureType.js
 src/eZmaxAPI/model/FieldEPhoneType.js
 src/eZmaxAPI/model/FieldEUserType.js
@@ -410,8 +420,12 @@ test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonResponse.spec.js
 test/eZmaxAPI/model/CommonResponseError.spec.js
+test/eZmaxAPI/model/CommonResponseFilter.spec.js
+test/eZmaxAPI/model/CommonResponseGetList.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebug.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebugPayload.spec.js
+test/eZmaxAPI/model/CommonResponseObjDebugPayloadGetList.spec.js
+test/eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf.spec.js
 test/eZmaxAPI/model/CommonResponseObjSQLQuery.spec.js
 test/eZmaxAPI/model/CommonWebhook.spec.js
 test/eZmaxAPI/model/ContactRequest.spec.js
@@ -512,6 +526,7 @@ test/eZmaxAPI/model/EzsignsignerRequestCompoundContact.spec.js
 test/eZmaxAPI/model/FieldEEzsigndocumentStep.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderStep.spec.js
+test/eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel.spec.js
 test/eZmaxAPI/model/FieldEEzsignsignatureType.spec.js
 test/eZmaxAPI/model/FieldEPhoneType.spec.js
 test/eZmaxAPI/model/FieldEUserType.spec.js

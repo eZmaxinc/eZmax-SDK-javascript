@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
 
 /**
  * The EzsignfoldertypeListElement model module.
@@ -24,11 +25,13 @@ class EzsignfoldertypeListElement {
      * An Ezsignfoldertype List Element
      * @alias module:eZmaxAPI/model/EzsignfoldertypeListElement
      * @param pkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
+     * @param eEzsignfoldertypePrivacylevel {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} 
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
+     * @param bEzsignfoldertypeIsactive {Boolean} Whether the Ezsignfoldertype is active or not
      */
-    constructor(pkiEzsignfoldertypeID, sEzsignfoldertypeNameX) { 
+    constructor(pkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, bEzsignfoldertypeIsactive) { 
         
-        EzsignfoldertypeListElement.initialize(this, pkiEzsignfoldertypeID, sEzsignfoldertypeNameX);
+        EzsignfoldertypeListElement.initialize(this, pkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, bEzsignfoldertypeIsactive);
     }
 
     /**
@@ -36,9 +39,11 @@ class EzsignfoldertypeListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldertypeID, sEzsignfoldertypeNameX) { 
+    static initialize(obj, pkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, bEzsignfoldertypeIsactive) { 
         obj['pkiEzsignfoldertypeID'] = pkiEzsignfoldertypeID;
+        obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
+        obj['bEzsignfoldertypeIsactive'] = bEzsignfoldertypeIsactive;
     }
 
     /**
@@ -55,8 +60,14 @@ class EzsignfoldertypeListElement {
             if (data.hasOwnProperty('pkiEzsignfoldertypeID')) {
                 obj['pkiEzsignfoldertypeID'] = ApiClient.convertToType(data['pkiEzsignfoldertypeID'], 'Number');
             }
+            if (data.hasOwnProperty('eEzsignfoldertypePrivacylevel')) {
+                obj['eEzsignfoldertypePrivacylevel'] = FieldEEzsignfoldertypePrivacylevel.constructFromObject(data['eEzsignfoldertypePrivacylevel']);
+            }
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeIsactive')) {
+                obj['bEzsignfoldertypeIsactive'] = ApiClient.convertToType(data['bEzsignfoldertypeIsactive'], 'Boolean');
             }
         }
         return obj;
@@ -78,6 +89,19 @@ class EzsignfoldertypeListElement {
         this['pkiEzsignfoldertypeID'] = pkiEzsignfoldertypeID;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel}
+     */
+    getEEzsignfoldertypePrivacylevel() {
+        return this.eEzsignfoldertypePrivacylevel;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} eEzsignfoldertypePrivacylevel
+     */
+    setEEzsignfoldertypePrivacylevel(eEzsignfoldertypePrivacylevel) {
+        this['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
+    }
+/**
      * Returns The name of the Ezsignfoldertype in the language of the requester
      * @return {String}
      */
@@ -92,6 +116,21 @@ class EzsignfoldertypeListElement {
     setSEzsignfoldertypeNameX(sEzsignfoldertypeNameX) {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
+/**
+     * Returns Whether the Ezsignfoldertype is active or not
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeIsactive() {
+        return this.bEzsignfoldertypeIsactive;
+    }
+
+    /**
+     * Sets Whether the Ezsignfoldertype is active or not
+     * @param {Boolean} bEzsignfoldertypeIsactive Whether the Ezsignfoldertype is active or not
+     */
+    setBEzsignfoldertypeIsactive(bEzsignfoldertypeIsactive) {
+        this['bEzsignfoldertypeIsactive'] = bEzsignfoldertypeIsactive;
+    }
 
 }
 
@@ -102,10 +141,21 @@ class EzsignfoldertypeListElement {
 EzsignfoldertypeListElement.prototype['pkiEzsignfoldertypeID'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} eEzsignfoldertypePrivacylevel
+ */
+EzsignfoldertypeListElement.prototype['eEzsignfoldertypePrivacylevel'] = undefined;
+
+/**
  * The name of the Ezsignfoldertype in the language of the requester
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsignfoldertypeListElement.prototype['sEzsignfoldertypeNameX'] = undefined;
+
+/**
+ * Whether the Ezsignfoldertype is active or not
+ * @member {Boolean} bEzsignfoldertypeIsactive
+ */
+EzsignfoldertypeListElement.prototype['bEzsignfoldertypeIsactive'] = undefined;
 
 
 

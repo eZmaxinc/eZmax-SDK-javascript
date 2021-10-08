@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,40 @@
       object[property] = value;
   }
 
-  describe('CommonResponseObjDebugPayload', function() {
-    it('should create an instance of CommonResponseObjDebugPayload', function() {
-      // uncomment below and update the code to test CommonResponseObjDebugPayload
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayload);
+  describe('CommonResponseObjDebugPayloadGetList', function() {
+    it('should create an instance of CommonResponseObjDebugPayloadGetList', function() {
+      // uncomment below and update the code to test CommonResponseObjDebugPayloadGetList
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList);
     });
 
     it('should have the property iVersionMin (base name: "iVersionMin")', function() {
       // uncomment below and update the code to test the property iVersionMin
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property iVersionMax (base name: "iVersionMax")', function() {
       // uncomment below and update the code to test the property iVersionMax
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property a_RequiredPermission (base name: "a_RequiredPermission")', function() {
       // uncomment below and update the code to test the property a_RequiredPermission
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_Filter (base name: "a_Filter")', function() {
+      // uncomment below and update the code to test the property a_Filter
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_OrderBy (base name: "a_OrderBy")', function() {
+      // uncomment below and update the code to test the property a_OrderBy
+      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 

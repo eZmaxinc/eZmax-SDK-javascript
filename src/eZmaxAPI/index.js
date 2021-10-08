@@ -36,8 +36,12 @@ import CommonGetAutocompleteV1ResponseMPayload from './model/CommonGetAutocomple
 import CommonGetListV1ResponseMPayload from './model/CommonGetListV1ResponseMPayload';
 import CommonResponse from './model/CommonResponse';
 import CommonResponseError from './model/CommonResponseError';
+import CommonResponseFilter from './model/CommonResponseFilter';
+import CommonResponseGetList from './model/CommonResponseGetList';
 import CommonResponseObjDebug from './model/CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './model/CommonResponseObjDebugPayload';
+import CommonResponseObjDebugPayloadGetList from './model/CommonResponseObjDebugPayloadGetList';
+import CommonResponseObjDebugPayloadGetListAllOf from './model/CommonResponseObjDebugPayloadGetListAllOf';
 import CommonResponseObjSQLQuery from './model/CommonResponseObjSQLQuery';
 import CommonWebhook from './model/CommonWebhook';
 import ContactRequest from './model/ContactRequest';
@@ -138,6 +142,7 @@ import EzsignsignerRequestCompoundContact from './model/EzsignsignerRequestCompo
 import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
+import FieldEEzsignfoldertypePrivacylevel from './model/FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignsignatureType from './model/FieldEEzsignsignatureType';
 import FieldEPhoneType from './model/FieldEPhoneType';
 import FieldEUserType from './model/FieldEUserType';
@@ -374,6 +379,18 @@ export {
     CommonResponseError,
 
     /**
+     * The CommonResponseFilter model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseFilter}
+     */
+    CommonResponseFilter,
+
+    /**
+     * The CommonResponseGetList model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseGetList}
+     */
+    CommonResponseGetList,
+
+    /**
      * The CommonResponseObjDebug model constructor.
      * @property {module:eZmaxAPI/model/CommonResponseObjDebug}
      */
@@ -384,6 +401,18 @@ export {
      * @property {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
     CommonResponseObjDebugPayload,
+
+    /**
+     * The CommonResponseObjDebugPayloadGetList model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
+     */
+    CommonResponseObjDebugPayloadGetList,
+
+    /**
+     * The CommonResponseObjDebugPayloadGetListAllOf model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf}
+     */
+    CommonResponseObjDebugPayloadGetListAllOf,
 
     /**
      * The CommonResponseObjSQLQuery model constructor.
@@ -984,6 +1013,12 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsignfolderStep}
      */
     FieldEEzsignfolderStep,
+
+    /**
+     * The FieldEEzsignfoldertypePrivacylevel model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel}
+     */
+    FieldEEzsignfoldertypePrivacylevel,
 
     /**
      * The FieldEEzsignsignatureType model constructor.

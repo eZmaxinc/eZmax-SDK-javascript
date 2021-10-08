@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+    instance = new EZmaxApiDefinition.CommonResponseFilter();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,22 @@
       object[property] = value;
   }
 
-  describe('CommonResponseObjDebugPayload', function() {
-    it('should create an instance of CommonResponseObjDebugPayload', function() {
-      // uncomment below and update the code to test CommonResponseObjDebugPayload
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayload);
+  describe('CommonResponseFilter', function() {
+    it('should create an instance of CommonResponseFilter', function() {
+      // uncomment below and update the code to test CommonResponseFilter
+      //var instance = new EZmaxApiDefinition.CommonResponseFilter();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseFilter);
     });
 
-    it('should have the property iVersionMin (base name: "iVersionMin")', function() {
-      // uncomment below and update the code to test the property iVersionMin
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+    it('should have the property a_AutoType (base name: "a_AutoType")', function() {
+      // uncomment below and update the code to test the property a_AutoType
+      //var instance = new EZmaxApiDefinition.CommonResponseFilter();
       //expect(instance).to.be();
     });
 
-    it('should have the property iVersionMax (base name: "iVersionMax")', function() {
-      // uncomment below and update the code to test the property iVersionMax
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_RequiredPermission (base name: "a_RequiredPermission")', function() {
-      // uncomment below and update the code to test the property a_RequiredPermission
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+    it('should have the property a_Enum (base name: "a_Enum")', function() {
+      // uncomment below and update the code to test the property a_Enum
+      //var instance = new EZmaxApiDefinition.CommonResponseFilter();
       //expect(instance).to.be();
     });
 

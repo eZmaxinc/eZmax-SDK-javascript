@@ -25,11 +25,11 @@ class CommonResponseObjDebugPayload {
      * @alias module:eZmaxAPI/model/CommonResponseObjDebugPayload
      * @param iVersionMin {Number} The minimum version of the function that can be called
      * @param iVersionMax {Number} The maximum version of the function that can be called
-     * @param a_RequiredPermissions {Array.<Number>} An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param a_RequiredPermission {Array.<Number>} An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
      */
-    constructor(iVersionMin, iVersionMax, a_RequiredPermissions) { 
+    constructor(iVersionMin, iVersionMax, a_RequiredPermission) { 
         
-        CommonResponseObjDebugPayload.initialize(this, iVersionMin, iVersionMax, a_RequiredPermissions);
+        CommonResponseObjDebugPayload.initialize(this, iVersionMin, iVersionMax, a_RequiredPermission);
     }
 
     /**
@@ -37,10 +37,10 @@ class CommonResponseObjDebugPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, iVersionMin, iVersionMax, a_RequiredPermissions) { 
+    static initialize(obj, iVersionMin, iVersionMax, a_RequiredPermission) { 
         obj['iVersionMin'] = iVersionMin;
         obj['iVersionMax'] = iVersionMax;
-        obj['a_RequiredPermissions'] = a_RequiredPermissions;
+        obj['a_RequiredPermission'] = a_RequiredPermission;
     }
 
     /**
@@ -60,8 +60,8 @@ class CommonResponseObjDebugPayload {
             if (data.hasOwnProperty('iVersionMax')) {
                 obj['iVersionMax'] = ApiClient.convertToType(data['iVersionMax'], 'Number');
             }
-            if (data.hasOwnProperty('a_RequiredPermissions')) {
-                obj['a_RequiredPermissions'] = ApiClient.convertToType(data['a_RequiredPermissions'], ['Number']);
+            if (data.hasOwnProperty('a_RequiredPermission')) {
+                obj['a_RequiredPermission'] = ApiClient.convertToType(data['a_RequiredPermission'], ['Number']);
             }
         }
         return obj;
@@ -101,16 +101,16 @@ class CommonResponseObjDebugPayload {
      * Returns An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
      * @return {Array.<Number>}
      */
-    getARequiredPermissions() {
-        return this.a_RequiredPermissions;
+    getARequiredPermission() {
+        return this.a_RequiredPermission;
     }
 
     /**
      * Sets An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
-     * @param {Array.<Number>} a_RequiredPermissions An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param {Array.<Number>} a_RequiredPermission An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
      */
-    setARequiredPermissions(a_RequiredPermissions) {
-        this['a_RequiredPermissions'] = a_RequiredPermissions;
+    setARequiredPermission(a_RequiredPermission) {
+        this['a_RequiredPermission'] = a_RequiredPermission;
     }
 
 }
@@ -129,9 +129,9 @@ CommonResponseObjDebugPayload.prototype['iVersionMax'] = undefined;
 
 /**
  * An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
- * @member {Array.<Number>} a_RequiredPermissions
+ * @member {Array.<Number>} a_RequiredPermission
  */
-CommonResponseObjDebugPayload.prototype['a_RequiredPermissions'] = undefined;
+CommonResponseObjDebugPayload.prototype['a_RequiredPermission'] = undefined;
 
 
 

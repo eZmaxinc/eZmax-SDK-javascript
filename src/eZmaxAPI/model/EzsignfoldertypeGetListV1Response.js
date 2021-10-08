@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import CommonResponse from './CommonResponse';
+import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
-import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import CommonResponseObjDebugPayloadGetList from './CommonResponseObjDebugPayloadGetList';
 import EzsignfoldertypeGetListV1ResponseAllOf from './EzsignfoldertypeGetListV1ResponseAllOf';
 import EzsignfoldertypeGetListV1ResponseMPayload from './EzsignfoldertypeGetListV1ResponseMPayload';
 
@@ -29,11 +29,11 @@ class EzsignfoldertypeGetListV1Response {
      * Response for the /1/object/ezsignfoldertype/getList API Request
      * @alias module:eZmaxAPI/model/EzsignfoldertypeGetListV1Response
      * @implements module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf
-     * @implements module:eZmaxAPI/model/CommonResponse
+     * @implements module:eZmaxAPI/model/CommonResponseGetList
      * @param mPayload {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload} 
      */
     constructor(mPayload) { 
-        EzsignfoldertypeGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        EzsignfoldertypeGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
         EzsignfoldertypeGetListV1Response.initialize(this, mPayload);
     }
 
@@ -57,13 +57,13 @@ class EzsignfoldertypeGetListV1Response {
         if (data) {
             obj = obj || new EzsignfoldertypeGetListV1Response();
             EzsignfoldertypeGetListV1ResponseAllOf.constructFromObject(data, obj);
-            CommonResponse.constructFromObject(data, obj);
+            CommonResponseGetList.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('mPayload')) {
                 obj['mPayload'] = EzsignfoldertypeGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
             if (data.hasOwnProperty('objDebugPayload')) {
-                obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
+                obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
@@ -86,14 +86,14 @@ class EzsignfoldertypeGetListV1Response {
         this['mPayload'] = mPayload;
     }
 /**
-     * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
+     * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
     getObjDebugPayload() {
         return this.objDebugPayload;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+     * @param {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
      */
     setObjDebugPayload(objDebugPayload) {
         this['objDebugPayload'] = objDebugPayload;
@@ -120,7 +120,7 @@ class EzsignfoldertypeGetListV1Response {
 EzsignfoldertypeGetListV1Response.prototype['mPayload'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+ * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
  */
 EzsignfoldertypeGetListV1Response.prototype['objDebugPayload'] = undefined;
 
@@ -135,15 +135,15 @@ EzsignfoldertypeGetListV1Response.prototype['objDebug'] = undefined;
  * @member {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload} mPayload
  */
 EzsignfoldertypeGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
-// Implement CommonResponse interface:
+// Implement CommonResponseGetList interface:
 /**
- * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+ * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
  */
-CommonResponse.prototype['objDebugPayload'] = undefined;
+CommonResponseGetList.prototype['objDebugPayload'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-CommonResponse.prototype['objDebug'] = undefined;
+CommonResponseGetList.prototype['objDebug'] = undefined;
 
 
 
