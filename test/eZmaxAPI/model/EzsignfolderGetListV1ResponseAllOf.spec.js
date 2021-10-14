@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload();
+    instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,16 @@
       object[property] = value;
   }
 
-  describe('CommonGetAutocompleteV1ResponseMPayload', function() {
-    it('should create an instance of CommonGetAutocompleteV1ResponseMPayload', function() {
-      // uncomment below and update the code to test CommonGetAutocompleteV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload);
+  describe('EzsignfolderGetListV1ResponseAllOf', function() {
+    it('should create an instance of EzsignfolderGetListV1ResponseAllOf', function() {
+      // uncomment below and update the code to test EzsignfolderGetListV1ResponseAllOf
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderGetListV1ResponseAllOf);
     });
 
-    it('should have the property group (base name: "group")', function() {
-      // uncomment below and update the code to test the property group
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property option (base name: "option")', function() {
-      // uncomment below and update the code to test the property option
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseMPayload();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseAllOf();
       //expect(instance).to.be();
     });
 

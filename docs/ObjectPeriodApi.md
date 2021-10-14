@@ -30,7 +30,7 @@ Authorization.apiKey = 'YOUR API KEY';
 let apiInstance = new EZmaxApiDefinition.ObjectPeriodApi();
 let sSelector = "sSelector_example"; // String | The types of Periods to return
 let opts = {
-  'sQuery': "sQuery_example" // String | Allow to filter on the option value
+  'sQuery': "sQuery_example" // String | Allow to filter the returned results
 };
 apiInstance.periodGetAutocompleteV1(sSelector, opts, (error, data, response) => {
   if (error) {
@@ -47,7 +47,7 @@ apiInstance.periodGetAutocompleteV1(sSelector, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **String**| The types of Periods to return | 
- **sQuery** | **String**| Allow to filter on the option value | [optional] 
+ **sQuery** | **String**| Allow to filter the returned results | [optional] 
 
 ### Return type
 

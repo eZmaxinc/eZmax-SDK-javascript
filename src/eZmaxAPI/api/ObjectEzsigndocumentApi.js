@@ -370,7 +370,6 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve an existing Ezsigndocument's Form Data
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetFormDataV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetFormDataV1Response}
@@ -456,7 +455,6 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve positions X,Y of given words from a Ezsigndocument
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request} EzsigndocumentGetWordsPositionsV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetWordsPositionsV1Callback} callback The callback function, accepting three arguments: error, data, response

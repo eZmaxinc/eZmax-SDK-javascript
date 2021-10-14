@@ -18,9 +18,11 @@ import EzsignfolderCreateObjectV1Request from '../model/EzsignfolderCreateObject
 import EzsignfolderCreateObjectV1Response from '../model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderDeleteObjectV1Response from '../model/EzsignfolderDeleteObjectV1Response';
 import EzsignfolderGetFormsDataV1Response from '../model/EzsignfolderGetFormsDataV1Response';
+import EzsignfolderGetListV1Response from '../model/EzsignfolderGetListV1Response';
 import EzsignfolderGetObjectV1Response from '../model/EzsignfolderGetObjectV1Response';
 import EzsignfolderSendV1Request from '../model/EzsignfolderSendV1Request';
 import EzsignfolderSendV1Response from '../model/EzsignfolderSendV1Response';
+import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectEzsignfolder service.
@@ -177,7 +179,6 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve an existing Ezsignfolder's forms data
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetFormsDataV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetFormsDataV1Response}
@@ -205,6 +206,54 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderGetFormsDataV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderGetListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Ezsignfolder list
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
+     * @param {Number} opts.iRowMax 
+     * @param {Number} opts.iRowOffset 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetListV1Response}
+     */
+    ezsignfolderGetListV1(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
+      };
+      let headerParams = {
+        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+      let returnType = EzsignfolderGetListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/getList', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -30,7 +30,7 @@ Authorization.apiKey = 'YOUR API KEY';
 let apiInstance = new EZmaxApiDefinition.ObjectFranchisebrokerApi();
 let sSelector = "sSelector_example"; // String | The type of Franchisebrokers to return
 let opts = {
-  'sQuery': "sQuery_example" // String | Allow to filter on the option value
+  'sQuery': "sQuery_example" // String | Allow to filter the returned results
 };
 apiInstance.franchisebrokerGetAutocompleteV1(sSelector, opts, (error, data, response) => {
   if (error) {
@@ -47,7 +47,7 @@ apiInstance.franchisebrokerGetAutocompleteV1(sSelector, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **String**| The type of Franchisebrokers to return | 
- **sQuery** | **String**| Allow to filter on the option value | [optional] 
+ **sQuery** | **String**| Allow to filter the returned results | [optional] 
 
 ### Return type
 

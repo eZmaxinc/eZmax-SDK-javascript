@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
+    instance = new EZmaxApiDefinition.EzsignfolderListElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,25 @@
       object[property] = value;
   }
 
-  describe('ObjectEzsignfoldertypeApi', function() {
-    describe('ezsignfoldertypeGetAutocompleteV1', function() {
-      it('should call ezsignfoldertypeGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetAutocompleteV1
-        //instance.ezsignfoldertypeGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('EzsignfolderListElement', function() {
+    it('should create an instance of EzsignfolderListElement', function() {
+      // uncomment below and update the code to test EzsignfolderListElement
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderListElement);
     });
-    describe('ezsignfoldertypeGetListV1', function() {
-      it('should call ezsignfoldertypeGetListV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetListV1
-        //instance.ezsignfoldertypeGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property pkiEzsignfolderID (base name: "pkiEzsignfolderID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignfolderID
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
     });
+
+    it('should have the property sEzsignfolderDescription (base name: "sEzsignfolderDescription")', function() {
+      // uncomment below and update the code to test the property sEzsignfolderDescription
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

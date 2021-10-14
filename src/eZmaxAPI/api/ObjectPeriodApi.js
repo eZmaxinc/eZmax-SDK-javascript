@@ -47,7 +47,7 @@ export default class ObjectPeriodApi {
      * Get the list of Periods to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The types of Periods to return
      * @param {Object} opts Optional parameters
-     * @param {String} opts.sQuery Allow to filter on the option value
+     * @param {String} opts.sQuery Allow to filter the returned results
      * @param {module:eZmaxAPI/api/ObjectPeriodApi~periodGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
      */

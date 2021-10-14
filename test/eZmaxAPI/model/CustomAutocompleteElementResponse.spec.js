@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
+    instance = new EZmaxApiDefinition.CustomAutocompleteElementResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,31 @@
       object[property] = value;
   }
 
-  describe('ObjectEzsignfoldertypeApi', function() {
-    describe('ezsignfoldertypeGetAutocompleteV1', function() {
-      it('should call ezsignfoldertypeGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetAutocompleteV1
-        //instance.ezsignfoldertypeGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('CustomAutocompleteElementResponse', function() {
+    it('should create an instance of CustomAutocompleteElementResponse', function() {
+      // uncomment below and update the code to test CustomAutocompleteElementResponse
+      //var instance = new EZmaxApiDefinition.CustomAutocompleteElementResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinition.CustomAutocompleteElementResponse);
     });
-    describe('ezsignfoldertypeGetListV1', function() {
-      it('should call ezsignfoldertypeGetListV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetListV1
-        //instance.ezsignfoldertypeGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property sCategory (base name: "sCategory")', function() {
+      // uncomment below and update the code to test the property sCategory
+      //var instance = new EZmaxApiDefinition.CustomAutocompleteElementResponse();
+      //expect(instance).to.be();
     });
+
+    it('should have the property sLabel (base name: "sLabel")', function() {
+      // uncomment below and update the code to test the property sLabel
+      //var instance = new EZmaxApiDefinition.CustomAutocompleteElementResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mValue (base name: "mValue")', function() {
+      // uncomment below and update the code to test the property mValue
+      //var instance = new EZmaxApiDefinition.CustomAutocompleteElementResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

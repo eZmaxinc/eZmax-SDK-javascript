@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
+    instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseMPayloadAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,27 +47,19 @@
       object[property] = value;
   }
 
-  describe('ObjectEzsignfoldertypeApi', function() {
-    describe('ezsignfoldertypeGetAutocompleteV1', function() {
-      it('should call ezsignfoldertypeGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetAutocompleteV1
-        //instance.ezsignfoldertypeGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('EzsignfolderGetListV1ResponseMPayloadAllOf', function() {
+    it('should create an instance of EzsignfolderGetListV1ResponseMPayloadAllOf', function() {
+      // uncomment below and update the code to test EzsignfolderGetListV1ResponseMPayloadAllOf
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseMPayloadAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderGetListV1ResponseMPayloadAllOf);
     });
-    describe('ezsignfoldertypeGetListV1', function() {
-      it('should call ezsignfoldertypeGetListV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetListV1
-        //instance.ezsignfoldertypeGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property a_objEzsignfolder (base name: "a_objEzsignfolder")', function() {
+      // uncomment below and update the code to test the property a_objEzsignfolder
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetListV1ResponseMPayloadAllOf();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

@@ -88,6 +88,16 @@
         done();
       });
     });
+    describe('ezsignfolderGetListV1', function() {
+      it('should call ezsignfolderGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetListV1
+        //instance.ezsignfolderGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetObjectV1', function() {
       it('should call ezsignfolderGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetObjectV1

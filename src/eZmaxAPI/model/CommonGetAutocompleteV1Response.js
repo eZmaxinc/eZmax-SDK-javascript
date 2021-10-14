@@ -13,10 +13,10 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetAutocompleteV1ResponseAllOf from './CommonGetAutocompleteV1ResponseAllOf';
-import CommonGetAutocompleteV1ResponseMPayload from './CommonGetAutocompleteV1ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import CustomAutocompleteElementResponse from './CustomAutocompleteElementResponse';
 
 /**
  * The CommonGetAutocompleteV1Response model module.
@@ -30,7 +30,7 @@ class CommonGetAutocompleteV1Response {
      * @alias module:eZmaxAPI/model/CommonGetAutocompleteV1Response
      * @implements module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
-     * @param mPayload {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} 
+     * @param mPayload {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} Generic Autocomplete Response
      */
     constructor(mPayload) { 
         CommonGetAutocompleteV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
@@ -60,7 +60,7 @@ class CommonGetAutocompleteV1Response {
             CommonResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CommonGetAutocompleteV1ResponseMPayload]);
+                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CustomAutocompleteElementResponse]);
             }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
@@ -73,14 +73,16 @@ class CommonGetAutocompleteV1Response {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>}
+     * Returns Generic Autocomplete Response
+     * @return {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>}
      */
     getMPayload() {
         return this.mPayload;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} mPayload
+     * Sets Generic Autocomplete Response
+     * @param {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} mPayload Generic Autocomplete Response
      */
     setMPayload(mPayload) {
         this['mPayload'] = mPayload;
@@ -115,7 +117,8 @@ class CommonGetAutocompleteV1Response {
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} mPayload
+ * Generic Autocomplete Response
+ * @member {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} mPayload
  */
 CommonGetAutocompleteV1Response.prototype['mPayload'] = undefined;
 
@@ -132,7 +135,8 @@ CommonGetAutocompleteV1Response.prototype['objDebug'] = undefined;
 
 // Implement CommonGetAutocompleteV1ResponseAllOf interface:
 /**
- * @member {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} mPayload
+ * Generic Autocomplete Response
+ * @member {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} mPayload
  */
 CommonGetAutocompleteV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:

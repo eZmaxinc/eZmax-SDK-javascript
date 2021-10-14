@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CommonGetAutocompleteV1ResponseMPayload from './CommonGetAutocompleteV1ResponseMPayload';
+import CustomAutocompleteElementResponse from './CustomAutocompleteElementResponse';
 
 /**
  * The CommonGetAutocompleteV1ResponseAllOf model module.
@@ -23,7 +23,7 @@ class CommonGetAutocompleteV1ResponseAllOf {
     /**
      * Constructs a new <code>CommonGetAutocompleteV1ResponseAllOf</code>.
      * @alias module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf
-     * @param mPayload {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} 
+     * @param mPayload {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} Generic Autocomplete Response
      */
     constructor(mPayload) { 
         
@@ -51,21 +51,23 @@ class CommonGetAutocompleteV1ResponseAllOf {
             obj = obj || new CommonGetAutocompleteV1ResponseAllOf();
 
             if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CommonGetAutocompleteV1ResponseMPayload]);
+                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CustomAutocompleteElementResponse]);
             }
         }
         return obj;
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>}
+     * Returns Generic Autocomplete Response
+     * @return {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>}
      */
     getMPayload() {
         return this.mPayload;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} mPayload
+     * Sets Generic Autocomplete Response
+     * @param {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} mPayload Generic Autocomplete Response
      */
     setMPayload(mPayload) {
         this['mPayload'] = mPayload;
@@ -74,7 +76,8 @@ class CommonGetAutocompleteV1ResponseAllOf {
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload>} mPayload
+ * Generic Autocomplete Response
+ * @member {Array.<module:eZmaxAPI/model/CustomAutocompleteElementResponse>} mPayload
  */
 CommonGetAutocompleteV1ResponseAllOf.prototype['mPayload'] = undefined;
 

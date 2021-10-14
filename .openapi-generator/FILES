@@ -22,7 +22,6 @@ docs/AuthenticateAuthenticateV2ResponseMPayload.md
 docs/CommonAudit.md
 docs/CommonGetAutocompleteV1Response.md
 docs/CommonGetAutocompleteV1ResponseAllOf.md
-docs/CommonGetAutocompleteV1ResponseMPayload.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
@@ -40,6 +39,7 @@ docs/ContactRequestCompoundAllOf.md
 docs/ContactinformationsRequest.md
 docs/ContactinformationsRequestCompound.md
 docs/ContactinformationsRequestCompoundAllOf.md
+docs/CustomAutocompleteElementResponse.md
 docs/CustomFormDataDocumentResponse.md
 docs/CustomFormDataSignerResponse.md
 docs/CustomFormsDataFolderResponse.md
@@ -82,9 +82,14 @@ docs/EzsignfolderDeleteObjectV1Response.md
 docs/EzsignfolderGetFormsDataV1Response.md
 docs/EzsignfolderGetFormsDataV1ResponseAllOf.md
 docs/EzsignfolderGetFormsDataV1ResponseMPayload.md
+docs/EzsignfolderGetListV1Response.md
+docs/EzsignfolderGetListV1ResponseAllOf.md
+docs/EzsignfolderGetListV1ResponseMPayload.md
+docs/EzsignfolderGetListV1ResponseMPayloadAllOf.md
 docs/EzsignfolderGetObjectV1Response.md
 docs/EzsignfolderGetObjectV1ResponseAllOf.md
 docs/EzsignfolderGetObjectV1ResponseMPayload.md
+docs/EzsignfolderListElement.md
 docs/EzsignfolderRequest.md
 docs/EzsignfolderRequestCompound.md
 docs/EzsignfolderRequestCompoundAllOf.md
@@ -229,7 +234,6 @@ src/eZmaxAPI/model/AuthenticateAuthenticateV2ResponseMPayload.js
 src/eZmaxAPI/model/CommonAudit.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1Response.js
 src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.js
-src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonResponse.js
 src/eZmaxAPI/model/CommonResponseError.js
@@ -247,6 +251,7 @@ src/eZmaxAPI/model/ContactRequestCompoundAllOf.js
 src/eZmaxAPI/model/ContactinformationsRequest.js
 src/eZmaxAPI/model/ContactinformationsRequestCompound.js
 src/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.js
+src/eZmaxAPI/model/CustomAutocompleteElementResponse.js
 src/eZmaxAPI/model/CustomFormDataDocumentResponse.js
 src/eZmaxAPI/model/CustomFormDataSignerResponse.js
 src/eZmaxAPI/model/CustomFormsDataFolderResponse.js
@@ -289,9 +294,14 @@ src/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetFormsDataV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsignfolderGetListV1Response.js
+src/eZmaxAPI/model/EzsignfolderGetListV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayloadAllOf.js
 src/eZmaxAPI/model/EzsignfolderGetObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfolderGetObjectV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsignfolderListElement.js
 src/eZmaxAPI/model/EzsignfolderRequest.js
 src/eZmaxAPI/model/EzsignfolderRequestCompound.js
 src/eZmaxAPI/model/EzsignfolderRequestCompoundAllOf.js
@@ -416,7 +426,6 @@ test/eZmaxAPI/model/AuthenticateAuthenticateV2ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonAudit.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1Response.spec.js
 test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.spec.js
-test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonResponse.spec.js
 test/eZmaxAPI/model/CommonResponseError.spec.js
@@ -434,6 +443,7 @@ test/eZmaxAPI/model/ContactRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/ContactinformationsRequest.spec.js
 test/eZmaxAPI/model/ContactinformationsRequestCompound.spec.js
 test/eZmaxAPI/model/ContactinformationsRequestCompoundAllOf.spec.js
+test/eZmaxAPI/model/CustomAutocompleteElementResponse.spec.js
 test/eZmaxAPI/model/CustomFormDataDocumentResponse.spec.js
 test/eZmaxAPI/model/CustomFormDataSignerResponse.spec.js
 test/eZmaxAPI/model/CustomFormsDataFolderResponse.spec.js
@@ -476,9 +486,14 @@ test/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetFormsDataV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignfolderGetListV1Response.spec.js
+test/eZmaxAPI/model/EzsignfolderGetListV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayloadAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderGetObjectV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignfolderListElement.spec.js
 test/eZmaxAPI/model/EzsignfolderRequest.spec.js
 test/eZmaxAPI/model/EzsignfolderRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfolderRequestCompoundAllOf.spec.js

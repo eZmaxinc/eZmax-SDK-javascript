@@ -13,28 +13,28 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import EzsignfoldertypeGetListV1ResponseMPayloadAllOf from './EzsignfoldertypeGetListV1ResponseMPayloadAllOf';
-import EzsignfoldertypeListElement from './EzsignfoldertypeListElement';
+import EzsignfolderGetListV1ResponseMPayloadAllOf from './EzsignfolderGetListV1ResponseMPayloadAllOf';
+import EzsignfolderListElement from './EzsignfolderListElement';
 
 /**
- * The EzsignfoldertypeGetListV1ResponseMPayload model module.
- * @module eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload
+ * The EzsignfolderGetListV1ResponseMPayload model module.
+ * @module eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload
  * @version 1.1.0
  */
-class EzsignfoldertypeGetListV1ResponseMPayload {
+class EzsignfolderGetListV1ResponseMPayload {
     /**
-     * Constructs a new <code>EzsignfoldertypeGetListV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignfoldertype/getList API Request
-     * @alias module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf
+     * Constructs a new <code>EzsignfolderGetListV1ResponseMPayload</code>.
+     * Payload for the /1/object/ezsignfolder/getList API Request
+     * @alias module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload
+     * @implements module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objEzsignfoldertype {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} 
+     * @param a_objEzsignfolder {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
      */
-    constructor(a_objEzsignfoldertype, iRowReturned, iRowFiltered) { 
-        EzsignfoldertypeGetListV1ResponseMPayloadAllOf.initialize(this, a_objEzsignfoldertype);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        EzsignfoldertypeGetListV1ResponseMPayload.initialize(this, a_objEzsignfoldertype, iRowReturned, iRowFiltered);
+    constructor(a_objEzsignfolder, iRowReturned, iRowFiltered) { 
+        EzsignfolderGetListV1ResponseMPayloadAllOf.initialize(this, a_objEzsignfolder);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        EzsignfolderGetListV1ResponseMPayload.initialize(this, a_objEzsignfolder, iRowReturned, iRowFiltered);
     }
 
     /**
@@ -42,27 +42,27 @@ class EzsignfoldertypeGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objEzsignfoldertype, iRowReturned, iRowFiltered) { 
-        obj['a_objEzsignfoldertype'] = a_objEzsignfoldertype;
+    static initialize(obj, a_objEzsignfolder, iRowReturned, iRowFiltered) { 
+        obj['a_objEzsignfolder'] = a_objEzsignfolder;
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
     }
 
     /**
-     * Constructs a <code>EzsignfoldertypeGetListV1ResponseMPayload</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EzsignfolderGetListV1ResponseMPayload</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload} The populated <code>EzsignfoldertypeGetListV1ResponseMPayload</code> instance.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload} The populated <code>EzsignfolderGetListV1ResponseMPayload</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EzsignfoldertypeGetListV1ResponseMPayload();
-            EzsignfoldertypeGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
+            obj = obj || new EzsignfolderGetListV1ResponseMPayload();
+            EzsignfolderGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objEzsignfoldertype')) {
-                obj['a_objEzsignfoldertype'] = ApiClient.convertToType(data['a_objEzsignfoldertype'], [EzsignfoldertypeListElement]);
+            if (data.hasOwnProperty('a_objEzsignfolder')) {
+                obj['a_objEzsignfolder'] = ApiClient.convertToType(data['a_objEzsignfolder'], [EzsignfolderListElement]);
             }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
@@ -75,17 +75,17 @@ class EzsignfoldertypeGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>}
+     * @return {Array.<module:eZmaxAPI/model/EzsignfolderListElement>}
      */
-    getAObjEzsignfoldertype() {
-        return this.a_objEzsignfoldertype;
+    getAObjEzsignfolder() {
+        return this.a_objEzsignfolder;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype
+     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
      */
-    setAObjEzsignfoldertype(a_objEzsignfoldertype) {
-        this['a_objEzsignfoldertype'] = a_objEzsignfoldertype;
+    setAObjEzsignfolder(a_objEzsignfolder) {
+        this['a_objEzsignfolder'] = a_objEzsignfolder;
     }
 /**
      * Returns The number of rows returned
@@ -121,28 +121,28 @@ class EzsignfoldertypeGetListV1ResponseMPayload {
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype
+ * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
-EzsignfoldertypeGetListV1ResponseMPayload.prototype['a_objEzsignfoldertype'] = undefined;
+EzsignfolderGetListV1ResponseMPayload.prototype['a_objEzsignfolder'] = undefined;
 
 /**
  * The number of rows returned
  * @member {Number} iRowReturned
  */
-EzsignfoldertypeGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
+EzsignfolderGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
 
 /**
  * The number of rows matching your filters (if any) or the total number of rows
  * @member {Number} iRowFiltered
  */
-EzsignfoldertypeGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
+EzsignfolderGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
 
-// Implement EzsignfoldertypeGetListV1ResponseMPayloadAllOf interface:
+// Implement EzsignfolderGetListV1ResponseMPayloadAllOf interface:
 /**
- * @member {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype
+ * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
-EzsignfoldertypeGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfoldertype'] = undefined;
+EzsignfolderGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfolder'] = undefined;
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned
@@ -158,5 +158,5 @@ CommonGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
 
 
-export default EzsignfoldertypeGetListV1ResponseMPayload;
+export default EzsignfolderGetListV1ResponseMPayload;
 
