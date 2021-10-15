@@ -48,13 +48,6 @@ export default class FieldEEzsignfolderStep {
 
     
         /**
-         * value: "Signed"
-         * @const
-         */
-        "Signed" = "Signed";
-
-    
-        /**
          * value: "Completed"
          * @const
          */

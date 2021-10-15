@@ -221,6 +221,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve Ezsignfolder list
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
      * @param {Object} opts Optional parameters
      * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
      * @param {Number} opts.iRowMax 

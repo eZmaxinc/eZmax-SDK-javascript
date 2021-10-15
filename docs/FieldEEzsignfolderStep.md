@@ -11,8 +11,6 @@
 
 * `Expired` (value: `"Expired"`)
 
-* `Signed` (value: `"Signed"`)
-
 * `Completed` (value: `"Completed"`)
 
 * `Archived` (value: `"Archived"`)

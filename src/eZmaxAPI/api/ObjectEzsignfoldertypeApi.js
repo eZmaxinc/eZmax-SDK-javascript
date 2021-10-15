@@ -80,7 +80,7 @@ export default class ObjectEzsignfoldertypeApi {
       let accepts = ['application/json'];
       let returnType = CommonGetAutocompleteV1Response;
       return this.apiClient.callApi(
-        '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/', 'GET',
+        '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

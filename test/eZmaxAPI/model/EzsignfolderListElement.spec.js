@@ -60,8 +60,68 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiEzsignfoldertypeID (base name: "fkiEzsignfoldertypeID")', function() {
+      // uncomment below and update the code to test the property fkiEzsignfoldertypeID
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
+      // uncomment below and update the code to test the property sEzsignfoldertypeNameX
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignfolderDescription (base name: "sEzsignfolderDescription")', function() {
       // uncomment below and update the code to test the property sEzsignfolderDescription
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsignfolderStep (base name: "eEzsignfolderStep")', function() {
+      // uncomment below and update the code to test the property eEzsignfolderStep
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtCreatedDate (base name: "dtCreatedDate")', function() {
+      // uncomment below and update the code to test the property dtCreatedDate
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtEzsignfolderSentdate (base name: "dtEzsignfolderSentdate")', function() {
+      // uncomment below and update the code to test the property dtEzsignfolderSentdate
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtDueDate (base name: "dtDueDate")', function() {
+      // uncomment below and update the code to test the property dtDueDate
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iTotalDocument (base name: "iTotalDocument")', function() {
+      // uncomment below and update the code to test the property iTotalDocument
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iTotalDocumentEdm (base name: "iTotalDocumentEdm")', function() {
+      // uncomment below and update the code to test the property iTotalDocumentEdm
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iTotalSignature (base name: "iTotalSignature")', function() {
+      // uncomment below and update the code to test the property iTotalSignature
+      //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iTotalSignatureSigned (base name: "iTotalSignatureSigned")', function() {
+      // uncomment below and update the code to test the property iTotalSignatureSigned
       //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
       //expect(instance).to.be();
     });
