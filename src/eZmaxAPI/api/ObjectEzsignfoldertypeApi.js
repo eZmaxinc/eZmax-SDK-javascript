@@ -50,8 +50,8 @@ export default class ObjectEzsignfoldertypeApi {
      * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsignfoldertypes to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
      * @param {String} opts.sQuery Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
      */

@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
-import OneOfstringnull from './OneOfstringnull';
+import OneOfstringobject from './OneOfstringobject';
 
 /**
  * The EzsignfolderListElement model module.
@@ -31,8 +31,8 @@ class EzsignfolderListElement {
      * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param dtCreatedDate {String} The date and time at which the object was created
-     * @param dtEzsignfolderSentdate {module:eZmaxAPI/model/OneOfstringnull} 
-     * @param dtDueDate {module:eZmaxAPI/model/OneOfstringnull} The date at which no more signature will be accepted on the folder
+     * @param dtEzsignfolderSentdate {module:eZmaxAPI/model/OneOfstringobject} 
+     * @param dtDueDate {module:eZmaxAPI/model/OneOfstringobject} The date at which no more signature will be accepted on the folder
      * @param iTotalDocument {Number} The total number of Ezsigndocument in the folder
      * @param iTotalDocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
      * @param iTotalSignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
@@ -93,10 +93,10 @@ class EzsignfolderListElement {
                 obj['dtCreatedDate'] = ApiClient.convertToType(data['dtCreatedDate'], 'String');
             }
             if (data.hasOwnProperty('dtEzsignfolderSentdate')) {
-                obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], OneOfstringnull);
+                obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], OneOfstringobject);
             }
             if (data.hasOwnProperty('dtDueDate')) {
-                obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], OneOfstringnull);
+                obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], OneOfstringobject);
             }
             if (data.hasOwnProperty('iTotalDocument')) {
                 obj['iTotalDocument'] = ApiClient.convertToType(data['iTotalDocument'], 'Number');
@@ -203,21 +203,21 @@ class EzsignfolderListElement {
         this['dtCreatedDate'] = dtCreatedDate;
     }
 /**
-     * @return {module:eZmaxAPI/model/OneOfstringnull}
+     * @return {module:eZmaxAPI/model/OneOfstringobject}
      */
     getDtEzsignfolderSentdate() {
         return this.dtEzsignfolderSentdate;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/OneOfstringnull} dtEzsignfolderSentdate
+     * @param {module:eZmaxAPI/model/OneOfstringobject} dtEzsignfolderSentdate
      */
     setDtEzsignfolderSentdate(dtEzsignfolderSentdate) {
         this['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
     }
 /**
      * Returns The date at which no more signature will be accepted on the folder
-     * @return {module:eZmaxAPI/model/OneOfstringnull}
+     * @return {module:eZmaxAPI/model/OneOfstringobject}
      */
     getDtDueDate() {
         return this.dtDueDate;
@@ -225,7 +225,7 @@ class EzsignfolderListElement {
 
     /**
      * Sets The date at which no more signature will be accepted on the folder
-     * @param {module:eZmaxAPI/model/OneOfstringnull} dtDueDate The date at which no more signature will be accepted on the folder
+     * @param {module:eZmaxAPI/model/OneOfstringobject} dtDueDate The date at which no more signature will be accepted on the folder
      */
     setDtDueDate(dtDueDate) {
         this['dtDueDate'] = dtDueDate;
@@ -329,13 +329,13 @@ EzsignfolderListElement.prototype['eEzsignfolderStep'] = undefined;
 EzsignfolderListElement.prototype['dtCreatedDate'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/OneOfstringnull} dtEzsignfolderSentdate
+ * @member {module:eZmaxAPI/model/OneOfstringobject} dtEzsignfolderSentdate
  */
 EzsignfolderListElement.prototype['dtEzsignfolderSentdate'] = undefined;
 
 /**
  * The date at which no more signature will be accepted on the folder
- * @member {module:eZmaxAPI/model/OneOfstringnull} dtDueDate
+ * @member {module:eZmaxAPI/model/OneOfstringobject} dtDueDate
  */
 EzsignfolderListElement.prototype['dtDueDate'] = undefined;
 

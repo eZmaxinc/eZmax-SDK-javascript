@@ -31,8 +31,8 @@ Authorization.apiKey = 'YOUR API KEY';
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
 let sSelector = "sSelector_example"; // String | The type of Ezsignfoldertypes to return
 let opts = {
-  'Accept_Language': new EZmaxApiDefinition.HeaderAcceptLanguage(), // HeaderAcceptLanguage | 
-  'sQuery': "sQuery_example" // String | Allow to filter the returned results
+  'sQuery': "sQuery_example", // String | Allow to filter the returned results
+  'Accept_Language': new EZmaxApiDefinition.HeaderAcceptLanguage() // HeaderAcceptLanguage | 
 };
 apiInstance.ezsignfoldertypeGetAutocompleteV1(sSelector, opts, (error, data, response) => {
   if (error) {
@@ -49,8 +49,8 @@ apiInstance.ezsignfoldertypeGetAutocompleteV1(sSelector, opts, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **String**| The type of Ezsignfoldertypes to return | 
- **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
  **sQuery** | **String**| Allow to filter the returned results | [optional] 
+ **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 
 ### Return type
 
