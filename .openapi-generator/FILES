@@ -97,6 +97,7 @@ docs/EzsignfolderResponse.md
 docs/EzsignfolderResponseCompound.md
 docs/EzsignfolderSendV1Request.md
 docs/EzsignfolderSendV1Response.md
+docs/EzsignfolderUnsendV1Response.md
 docs/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/EzsignfoldersignerassociationCreateObjectV1Response.md
 docs/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.md
@@ -152,7 +153,13 @@ docs/FranchisereferalincomeRequestCompoundAllOf.md
 docs/GlobalCustomerApi.md
 docs/GlobalCustomerGetEndpointV1Response.md
 docs/HeaderAcceptLanguage.md
+docs/ListSaveListpresentationV1Request.md
+docs/ListSaveListpresentationV1Response.md
+docs/ListSaveListpresentationV1ResponseAllOf.md
+docs/ListSaveListpresentationV1ResponseMPayload.md
+docs/ListpresentationRequest.md
 docs/ModuleAuthenticateApi.md
+docs/ModuleListApi.md
 docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
@@ -201,6 +208,7 @@ package.json
 src/eZmaxAPI/ApiClient.js
 src/eZmaxAPI/api/GlobalCustomerApi.js
 src/eZmaxAPI/api/ModuleAuthenticateApi.js
+src/eZmaxAPI/api/ModuleListApi.js
 src/eZmaxAPI/api/ModuleSsprApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
@@ -309,6 +317,7 @@ src/eZmaxAPI/model/EzsignfolderResponse.js
 src/eZmaxAPI/model/EzsignfolderResponseCompound.js
 src/eZmaxAPI/model/EzsignfolderSendV1Request.js
 src/eZmaxAPI/model/EzsignfolderSendV1Response.js
+src/eZmaxAPI/model/EzsignfolderUnsendV1Response.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.js
@@ -363,6 +372,11 @@ src/eZmaxAPI/model/FranchisereferalincomeRequestCompound.js
 src/eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf.js
 src/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.js
 src/eZmaxAPI/model/HeaderAcceptLanguage.js
+src/eZmaxAPI/model/ListSaveListpresentationV1Request.js
+src/eZmaxAPI/model/ListSaveListpresentationV1Response.js
+src/eZmaxAPI/model/ListSaveListpresentationV1ResponseAllOf.js
+src/eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload.js
+src/eZmaxAPI/model/ListpresentationRequest.js
 src/eZmaxAPI/model/MultilingualApikeyDescription.js
 src/eZmaxAPI/model/PhoneRequest.js
 src/eZmaxAPI/model/SsprResetPasswordRequestV1Request.js
@@ -394,6 +408,7 @@ src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
 test/eZmaxAPI/api/ModuleAuthenticateApi.spec.js
+test/eZmaxAPI/api/ModuleListApi.spec.js
 test/eZmaxAPI/api/ModuleSsprApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
@@ -501,6 +516,7 @@ test/eZmaxAPI/model/EzsignfolderResponse.spec.js
 test/eZmaxAPI/model/EzsignfolderResponseCompound.spec.js
 test/eZmaxAPI/model/EzsignfolderSendV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderSendV1Response.spec.js
+test/eZmaxAPI/model/EzsignfolderUnsendV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf.spec.js
@@ -555,6 +571,11 @@ test/eZmaxAPI/model/FranchisereferalincomeRequestCompound.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.spec.js
 test/eZmaxAPI/model/HeaderAcceptLanguage.spec.js
+test/eZmaxAPI/model/ListSaveListpresentationV1Request.spec.js
+test/eZmaxAPI/model/ListSaveListpresentationV1Response.spec.js
+test/eZmaxAPI/model/ListSaveListpresentationV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/ListpresentationRequest.spec.js
 test/eZmaxAPI/model/MultilingualApikeyDescription.spec.js
 test/eZmaxAPI/model/PhoneRequest.spec.js
 test/eZmaxAPI/model/SsprResetPasswordRequestV1Request.spec.js
