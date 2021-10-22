@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bListpresentationDefault (base name: "bListpresentationDefault")', function() {
+      // uncomment below and update the code to test the property bListpresentationDefault
+      //var instance = new EZmaxApiDefinition.ListpresentationRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

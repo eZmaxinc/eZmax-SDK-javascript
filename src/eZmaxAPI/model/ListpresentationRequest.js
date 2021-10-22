@@ -29,10 +29,11 @@ class ListpresentationRequest {
      * @param a_sColumnName {Array.<String>} An array of column names that the user chose to bee visible
      * @param iListpresentationRowMax {Number} The maximum numbers of results to be returned
      * @param iListpresentationRowOffset {Number} The starting element from where to start retrieving the results. For example if you started at iRowOffset=0 and asked for iRowMax=100, to get the next 100 results, you could specify iRowOffset=100&iRowMax=100,
+     * @param bListpresentationDefault {Boolean} Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
      */
-    constructor(sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset) { 
+    constructor(sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset, bListpresentationDefault) { 
         
-        ListpresentationRequest.initialize(this, sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset);
+        ListpresentationRequest.initialize(this, sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset, bListpresentationDefault);
     }
 
     /**
@@ -40,13 +41,14 @@ class ListpresentationRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset) { 
+    static initialize(obj, sListpresentationDescription, sListpresentationFilter, sListpresentationOrderby, a_sColumnName, iListpresentationRowMax, iListpresentationRowOffset, bListpresentationDefault) { 
         obj['sListpresentationDescription'] = sListpresentationDescription;
         obj['sListpresentationFilter'] = sListpresentationFilter;
         obj['sListpresentationOrderby'] = sListpresentationOrderby;
         obj['a_sColumnName'] = a_sColumnName;
         obj['iListpresentationRowMax'] = iListpresentationRowMax;
         obj['iListpresentationRowOffset'] = iListpresentationRowOffset;
+        obj['bListpresentationDefault'] = bListpresentationDefault;
     }
 
     /**
@@ -77,6 +79,9 @@ class ListpresentationRequest {
             }
             if (data.hasOwnProperty('iListpresentationRowOffset')) {
                 obj['iListpresentationRowOffset'] = ApiClient.convertToType(data['iListpresentationRowOffset'], 'Number');
+            }
+            if (data.hasOwnProperty('bListpresentationDefault')) {
+                obj['bListpresentationDefault'] = ApiClient.convertToType(data['bListpresentationDefault'], 'Boolean');
             }
         }
         return obj;
@@ -172,6 +177,21 @@ class ListpresentationRequest {
     setIListpresentationRowOffset(iListpresentationRowOffset) {
         this['iListpresentationRowOffset'] = iListpresentationRowOffset;
     }
+/**
+     * Returns Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+     * @return {Boolean}
+     */
+    getBListpresentationDefault() {
+        return this.bListpresentationDefault;
+    }
+
+    /**
+     * Sets Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+     * @param {Boolean} bListpresentationDefault Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+     */
+    setBListpresentationDefault(bListpresentationDefault) {
+        this['bListpresentationDefault'] = bListpresentationDefault;
+    }
 
 }
 
@@ -210,6 +230,12 @@ ListpresentationRequest.prototype['iListpresentationRowMax'] = undefined;
  * @member {Number} iListpresentationRowOffset
  */
 ListpresentationRequest.prototype['iListpresentationRowOffset'] = undefined;
+
+/**
+ * Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+ * @member {Boolean} bListpresentationDefault
+ */
+ListpresentationRequest.prototype['bListpresentationDefault'] = undefined;
 
 
 
