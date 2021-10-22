@@ -162,10 +162,11 @@ import FranchisereferalincomeRequestCompound from './model/Franchisereferalincom
 import FranchisereferalincomeRequestCompoundAllOf from './model/FranchisereferalincomeRequestCompoundAllOf';
 import GlobalCustomerGetEndpointV1Response from './model/GlobalCustomerGetEndpointV1Response';
 import HeaderAcceptLanguage from './model/HeaderAcceptLanguage';
+import ListGetListpresentationV1Response from './model/ListGetListpresentationV1Response';
+import ListGetListpresentationV1ResponseAllOf from './model/ListGetListpresentationV1ResponseAllOf';
+import ListGetListpresentationV1ResponseMPayload from './model/ListGetListpresentationV1ResponseMPayload';
 import ListSaveListpresentationV1Request from './model/ListSaveListpresentationV1Request';
 import ListSaveListpresentationV1Response from './model/ListSaveListpresentationV1Response';
-import ListSaveListpresentationV1ResponseAllOf from './model/ListSaveListpresentationV1ResponseAllOf';
-import ListSaveListpresentationV1ResponseMPayload from './model/ListSaveListpresentationV1ResponseMPayload';
 import ListpresentationRequest from './model/ListpresentationRequest';
 import MultilingualApikeyDescription from './model/MultilingualApikeyDescription';
 import PhoneRequest from './model/PhoneRequest';
@@ -1147,6 +1148,24 @@ export {
     HeaderAcceptLanguage,
 
     /**
+     * The ListGetListpresentationV1Response model constructor.
+     * @property {module:eZmaxAPI/model/ListGetListpresentationV1Response}
+     */
+    ListGetListpresentationV1Response,
+
+    /**
+     * The ListGetListpresentationV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/ListGetListpresentationV1ResponseAllOf}
+     */
+    ListGetListpresentationV1ResponseAllOf,
+
+    /**
+     * The ListGetListpresentationV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload}
+     */
+    ListGetListpresentationV1ResponseMPayload,
+
+    /**
      * The ListSaveListpresentationV1Request model constructor.
      * @property {module:eZmaxAPI/model/ListSaveListpresentationV1Request}
      */
@@ -1157,18 +1176,6 @@ export {
      * @property {module:eZmaxAPI/model/ListSaveListpresentationV1Response}
      */
     ListSaveListpresentationV1Response,
-
-    /**
-     * The ListSaveListpresentationV1ResponseAllOf model constructor.
-     * @property {module:eZmaxAPI/model/ListSaveListpresentationV1ResponseAllOf}
-     */
-    ListSaveListpresentationV1ResponseAllOf,
-
-    /**
-     * The ListSaveListpresentationV1ResponseMPayload model constructor.
-     * @property {module:eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload}
-     */
-    ListSaveListpresentationV1ResponseMPayload,
 
     /**
      * The ListpresentationRequest model constructor.

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ListSaveListpresentationV1Response();
+    instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,16 @@
       object[property] = value;
   }
 
-  describe('ListSaveListpresentationV1Response', function() {
-    it('should create an instance of ListSaveListpresentationV1Response', function() {
-      // uncomment below and update the code to test ListSaveListpresentationV1Response
-      //var instance = new EZmaxApiDefinition.ListSaveListpresentationV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ListSaveListpresentationV1Response);
+  describe('ListGetListpresentationV1ResponseMPayload', function() {
+    it('should create an instance of ListGetListpresentationV1ResponseMPayload', function() {
+      // uncomment below and update the code to test ListGetListpresentationV1ResponseMPayload
+      //var instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload);
     });
 
-    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
-      // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.ListSaveListpresentationV1Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objDebug (base name: "objDebug")', function() {
-      // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.ListSaveListpresentationV1Response();
+    it('should have the property a_objListpresentation (base name: "a_objListpresentation")', function() {
+      // uncomment below and update the code to test the property a_objListpresentation
+      //var instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

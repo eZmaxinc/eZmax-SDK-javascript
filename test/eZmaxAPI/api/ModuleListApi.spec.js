@@ -48,10 +48,20 @@
   }
 
   describe('ModuleListApi', function() {
-    describe('listListpresentationV1', function() {
-      it('should call listListpresentationV1 successfully', function(done) {
-        //uncomment below and update the code to test listListpresentationV1
-        //instance.listListpresentationV1(function(error) {
+    describe('listGetListpresentationV1', function() {
+      it('should call listGetListpresentationV1 successfully', function(done) {
+        //uncomment below and update the code to test listGetListpresentationV1
+        //instance.listGetListpresentationV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listSaveListpresentationV1', function() {
+      it('should call listSaveListpresentationV1 successfully', function(done) {
+        //uncomment below and update the code to test listSaveListpresentationV1
+        //instance.listSaveListpresentationV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

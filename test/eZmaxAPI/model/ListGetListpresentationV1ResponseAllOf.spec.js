@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload();
+    instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('ListSaveListpresentationV1ResponseMPayload', function() {
-    it('should create an instance of ListSaveListpresentationV1ResponseMPayload', function() {
-      // uncomment below and update the code to test ListSaveListpresentationV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload);
+  describe('ListGetListpresentationV1ResponseAllOf', function() {
+    it('should create an instance of ListGetListpresentationV1ResponseAllOf', function() {
+      // uncomment below and update the code to test ListGetListpresentationV1ResponseAllOf
+      //var instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinition.ListGetListpresentationV1ResponseAllOf);
     });
 
-    it('should have the property a_objListpresentation (base name: "a_objListpresentation")', function() {
-      // uncomment below and update the code to test the property a_objListpresentation
-      //var instance = new EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.ListGetListpresentationV1ResponseAllOf();
       //expect(instance).to.be();
     });
 

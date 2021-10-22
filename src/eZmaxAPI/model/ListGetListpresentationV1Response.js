@@ -15,22 +15,26 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import ListGetListpresentationV1ResponseAllOf from './ListGetListpresentationV1ResponseAllOf';
+import ListGetListpresentationV1ResponseMPayload from './ListGetListpresentationV1ResponseMPayload';
 
 /**
- * The ListSaveListpresentationV1Response model module.
- * @module eZmaxAPI/model/ListSaveListpresentationV1Response
+ * The ListGetListpresentationV1Response model module.
+ * @module eZmaxAPI/model/ListGetListpresentationV1Response
  * @version 1.1.1
  */
-class ListSaveListpresentationV1Response {
+class ListGetListpresentationV1Response {
     /**
-     * Constructs a new <code>ListSaveListpresentationV1Response</code>.
-     * Response for the POST /1/module/list/listpresentation/{sListName} API Request
-     * @alias module:eZmaxAPI/model/ListSaveListpresentationV1Response
+     * Constructs a new <code>ListGetListpresentationV1Response</code>.
+     * Response for the GET /1/module/list/listpresentation/{sListName} API Request
+     * @alias module:eZmaxAPI/model/ListGetListpresentationV1Response
+     * @implements module:eZmaxAPI/model/ListGetListpresentationV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param mPayload {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        ListSaveListpresentationV1Response.initialize(this);
+    constructor(mPayload) { 
+        ListGetListpresentationV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        ListGetListpresentationV1Response.initialize(this, mPayload);
     }
 
     /**
@@ -38,21 +42,26 @@ class ListSaveListpresentationV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, mPayload) { 
+        obj['mPayload'] = mPayload;
     }
 
     /**
-     * Constructs a <code>ListSaveListpresentationV1Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListGetListpresentationV1Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/ListSaveListpresentationV1Response} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/ListSaveListpresentationV1Response} The populated <code>ListSaveListpresentationV1Response</code> instance.
+     * @param {module:eZmaxAPI/model/ListGetListpresentationV1Response} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/ListGetListpresentationV1Response} The populated <code>ListGetListpresentationV1Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ListSaveListpresentationV1Response();
+            obj = obj || new ListGetListpresentationV1Response();
+            ListGetListpresentationV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = ListGetListpresentationV1ResponseMPayload.constructFromObject(data['mPayload']);
+            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
@@ -63,6 +72,19 @@ class ListSaveListpresentationV1Response {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -93,16 +115,26 @@ class ListSaveListpresentationV1Response {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} mPayload
+ */
+ListGetListpresentationV1Response.prototype['mPayload'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
-ListSaveListpresentationV1Response.prototype['objDebugPayload'] = undefined;
+ListGetListpresentationV1Response.prototype['objDebugPayload'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-ListSaveListpresentationV1Response.prototype['objDebug'] = undefined;
+ListGetListpresentationV1Response.prototype['objDebug'] = undefined;
 
 
+// Implement ListGetListpresentationV1ResponseAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} mPayload
+ */
+ListGetListpresentationV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -116,5 +148,5 @@ CommonResponse.prototype['objDebug'] = undefined;
 
 
 
-export default ListSaveListpresentationV1Response;
+export default ListGetListpresentationV1Response;
 

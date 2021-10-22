@@ -132,7 +132,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EZmaxApiDefinition.GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/GlobalCustomerApi.md#globalCustomerGetEndpointV1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
 *EZmaxApiDefinition.ModuleAuthenticateApi* | [**authenticateAuthenticateV2**](docs/ModuleAuthenticateApi.md#authenticateAuthenticateV2) | **POST** /2/module/authenticate/authenticate/{eSessionType} | Authenticate a user
-*EZmaxApiDefinition.ModuleListApi* | [**listListpresentationV1**](docs/ModuleListApi.md#listListpresentationV1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
+*EZmaxApiDefinition.ModuleListApi* | [**listGetListpresentationV1**](docs/ModuleListApi.md#listGetListpresentationV1) | **GET** /1/module/list/listpresentation/{sListName} | Get all Listpresentation for a specific list
+*EZmaxApiDefinition.ModuleListApi* | [**listSaveListpresentationV1**](docs/ModuleListApi.md#listSaveListpresentationV1) | **POST** /1/module/list/listpresentation/{sListName} | Save all Listpresentation for a specific list
 *EZmaxApiDefinition.ModuleSsprApi* | [**ssprResetPasswordRequestV1**](docs/ModuleSsprApi.md#ssprResetPasswordRequestV1) | **POST** /1/module/sspr/resetPasswordRequest | Reset Password Request
 *EZmaxApiDefinition.ModuleSsprApi* | [**ssprResetPasswordV1**](docs/ModuleSsprApi.md#ssprResetPasswordV1) | **POST** /1/module/sspr/resetPassword | Reset Password
 *EZmaxApiDefinition.ModuleSsprApi* | [**ssprSendUsernamesV1**](docs/ModuleSsprApi.md#ssprSendUsernamesV1) | **POST** /1/module/sspr/sendUsernames | Send username(s)
@@ -328,10 +329,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.FranchisereferalincomeRequestCompoundAllOf](docs/FranchisereferalincomeRequestCompoundAllOf.md)
  - [EZmaxApiDefinition.GlobalCustomerGetEndpointV1Response](docs/GlobalCustomerGetEndpointV1Response.md)
  - [EZmaxApiDefinition.HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EZmaxApiDefinition.ListGetListpresentationV1Response](docs/ListGetListpresentationV1Response.md)
+ - [EZmaxApiDefinition.ListGetListpresentationV1ResponseAllOf](docs/ListGetListpresentationV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload](docs/ListGetListpresentationV1ResponseMPayload.md)
  - [EZmaxApiDefinition.ListSaveListpresentationV1Request](docs/ListSaveListpresentationV1Request.md)
  - [EZmaxApiDefinition.ListSaveListpresentationV1Response](docs/ListSaveListpresentationV1Response.md)
- - [EZmaxApiDefinition.ListSaveListpresentationV1ResponseAllOf](docs/ListSaveListpresentationV1ResponseAllOf.md)
- - [EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload](docs/ListSaveListpresentationV1ResponseMPayload.md)
  - [EZmaxApiDefinition.ListpresentationRequest](docs/ListpresentationRequest.md)
  - [EZmaxApiDefinition.MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EZmaxApiDefinition.PhoneRequest](docs/PhoneRequest.md)

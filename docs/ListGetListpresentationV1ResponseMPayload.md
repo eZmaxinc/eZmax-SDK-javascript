@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ListSaveListpresentationV1ResponseMPayload
+# EZmaxApiDefinition.ListGetListpresentationV1ResponseMPayload
 
 ## Properties
 

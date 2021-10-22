@@ -15,20 +15,20 @@ import ApiClient from '../ApiClient';
 import ListpresentationRequest from './ListpresentationRequest';
 
 /**
- * The ListSaveListpresentationV1ResponseMPayload model module.
- * @module eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload
+ * The ListGetListpresentationV1ResponseMPayload model module.
+ * @module eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload
  * @version 1.1.1
  */
-class ListSaveListpresentationV1ResponseMPayload {
+class ListGetListpresentationV1ResponseMPayload {
     /**
-     * Constructs a new <code>ListSaveListpresentationV1ResponseMPayload</code>.
-     * Payload for the POST /1/module/list/listpresentation/{sListName} API Request
-     * @alias module:eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload
+     * Constructs a new <code>ListGetListpresentationV1ResponseMPayload</code>.
+     * Payload for the GET /1/module/list/listpresentation/{sListName} API Request
+     * @alias module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload
      * @param a_objListpresentation {Array.<module:eZmaxAPI/model/ListpresentationRequest>} 
      */
     constructor(a_objListpresentation) { 
         
-        ListSaveListpresentationV1ResponseMPayload.initialize(this, a_objListpresentation);
+        ListGetListpresentationV1ResponseMPayload.initialize(this, a_objListpresentation);
     }
 
     /**
@@ -41,15 +41,15 @@ class ListSaveListpresentationV1ResponseMPayload {
     }
 
     /**
-     * Constructs a <code>ListSaveListpresentationV1ResponseMPayload</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListGetListpresentationV1ResponseMPayload</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/ListSaveListpresentationV1ResponseMPayload} The populated <code>ListSaveListpresentationV1ResponseMPayload</code> instance.
+     * @param {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload} The populated <code>ListGetListpresentationV1ResponseMPayload</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ListSaveListpresentationV1ResponseMPayload();
+            obj = obj || new ListGetListpresentationV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objListpresentation')) {
                 obj['a_objListpresentation'] = ApiClient.convertToType(data['a_objListpresentation'], [ListpresentationRequest]);
@@ -77,12 +77,12 @@ class ListSaveListpresentationV1ResponseMPayload {
 /**
  * @member {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation
  */
-ListSaveListpresentationV1ResponseMPayload.prototype['a_objListpresentation'] = undefined;
+ListGetListpresentationV1ResponseMPayload.prototype['a_objListpresentation'] = undefined;
 
 
 
 
 
 
-export default ListSaveListpresentationV1ResponseMPayload;
+export default ListGetListpresentationV1ResponseMPayload;
 
