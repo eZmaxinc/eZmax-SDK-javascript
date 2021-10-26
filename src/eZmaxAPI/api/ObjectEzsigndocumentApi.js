@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import CommonResponseErrorSTemporaryFileUrl from '../model/CommonResponseErrorSTemporaryFileUrl';
 import EzsigndocumentApplyEzsigntemplateV1Request from '../model/EzsigndocumentApplyEzsigntemplateV1Request';
 import EzsigndocumentApplyEzsigntemplateV1Response from '../model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from '../model/EzsigndocumentApplyEzsigntemplateV2Request';

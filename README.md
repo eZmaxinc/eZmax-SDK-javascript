@@ -202,6 +202,8 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
  - [EZmaxApiDefinition.CommonResponse](docs/CommonResponse.md)
  - [EZmaxApiDefinition.CommonResponseError](docs/CommonResponseError.md)
+ - [EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl](docs/CommonResponseErrorSTemporaryFileUrl.md)
+ - [EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrlAllOf](docs/CommonResponseErrorSTemporaryFileUrlAllOf.md)
  - [EZmaxApiDefinition.CommonResponseFilter](docs/CommonResponseFilter.md)
  - [EZmaxApiDefinition.CommonResponseGetList](docs/CommonResponseGetList.md)
  - [EZmaxApiDefinition.CommonResponseObjDebug](docs/CommonResponseObjDebug.md)

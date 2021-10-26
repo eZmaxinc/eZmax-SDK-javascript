@@ -35,6 +35,8 @@ import CommonGetAutocompleteV1ResponseAllOf from './model/CommonGetAutocompleteV
 import CommonGetListV1ResponseMPayload from './model/CommonGetListV1ResponseMPayload';
 import CommonResponse from './model/CommonResponse';
 import CommonResponseError from './model/CommonResponseError';
+import CommonResponseErrorSTemporaryFileUrl from './model/CommonResponseErrorSTemporaryFileUrl';
+import CommonResponseErrorSTemporaryFileUrlAllOf from './model/CommonResponseErrorSTemporaryFileUrlAllOf';
 import CommonResponseFilter from './model/CommonResponseFilter';
 import CommonResponseGetList from './model/CommonResponseGetList';
 import CommonResponseObjDebug from './model/CommonResponseObjDebug';
@@ -384,6 +386,18 @@ export {
      * @property {module:eZmaxAPI/model/CommonResponseError}
      */
     CommonResponseError,
+
+    /**
+     * The CommonResponseErrorSTemporaryFileUrl model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrl}
+     */
+    CommonResponseErrorSTemporaryFileUrl,
+
+    /**
+     * The CommonResponseErrorSTemporaryFileUrlAllOf model constructor.
+     * @property {module:eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrlAllOf}
+     */
+    CommonResponseErrorSTemporaryFileUrlAllOf,
 
     /**
      * The CommonResponseFilter model constructor.

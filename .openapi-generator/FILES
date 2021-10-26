@@ -25,6 +25,8 @@ docs/CommonGetAutocompleteV1ResponseAllOf.md
 docs/CommonGetListV1ResponseMPayload.md
 docs/CommonResponse.md
 docs/CommonResponseError.md
+docs/CommonResponseErrorSTemporaryFileUrl.md
+docs/CommonResponseErrorSTemporaryFileUrlAllOf.md
 docs/CommonResponseFilter.md
 docs/CommonResponseGetList.md
 docs/CommonResponseObjDebug.md
@@ -246,6 +248,8 @@ src/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.js
 src/eZmaxAPI/model/CommonGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/CommonResponse.js
 src/eZmaxAPI/model/CommonResponseError.js
+src/eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrl.js
+src/eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrlAllOf.js
 src/eZmaxAPI/model/CommonResponseFilter.js
 src/eZmaxAPI/model/CommonResponseGetList.js
 src/eZmaxAPI/model/CommonResponseObjDebug.js
@@ -446,6 +450,8 @@ test/eZmaxAPI/model/CommonGetAutocompleteV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/CommonGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/CommonResponse.spec.js
 test/eZmaxAPI/model/CommonResponseError.spec.js
+test/eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrl.spec.js
+test/eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrlAllOf.spec.js
 test/eZmaxAPI/model/CommonResponseFilter.spec.js
 test/eZmaxAPI/model/CommonResponseGetList.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebug.spec.js
