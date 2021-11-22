@@ -30,19 +30,19 @@ class EzsignfolderListElement {
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param eEzsignfoldertypePrivacylevel {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} 
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
-     * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
+     * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param dtCreatedDate {String} The date and time at which the object was created
      * @param dtEzsignfolderSentdate {module:eZmaxAPI/model/OneOfstringobject} 
      * @param dtDueDate {module:eZmaxAPI/model/OneOfstringobject} The date at which no more signature will be accepted on the folder
-     * @param iTotalDocument {Number} The total number of Ezsigndocument in the folder
-     * @param iTotalDocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
-     * @param iTotalSignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
-     * @param iTotalSignatureSigned {Number} The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     * @param iEzsigndocument {Number} The total number of Ezsigndocument in the folder
+     * @param iEzsigndocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
+     * @param iEzsignsignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
+     * @param iEzsignsignatureSigned {Number} The total number of already signed signature blocks in all Ezsigndocuments in the folder
      */
-    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iTotalDocument, iTotalDocumentEdm, iTotalSignature, iTotalSignatureSigned) { 
+    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
         
-        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iTotalDocument, iTotalDocumentEdm, iTotalSignature, iTotalSignatureSigned);
+        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned);
     }
 
     /**
@@ -50,7 +50,7 @@ class EzsignfolderListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iTotalDocument, iTotalDocumentEdm, iTotalSignature, iTotalSignatureSigned) { 
+    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
@@ -60,10 +60,10 @@ class EzsignfolderListElement {
         obj['dtCreatedDate'] = dtCreatedDate;
         obj['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
         obj['dtDueDate'] = dtDueDate;
-        obj['iTotalDocument'] = iTotalDocument;
-        obj['iTotalDocumentEdm'] = iTotalDocumentEdm;
-        obj['iTotalSignature'] = iTotalSignature;
-        obj['iTotalSignatureSigned'] = iTotalSignatureSigned;
+        obj['iEzsigndocument'] = iEzsigndocument;
+        obj['iEzsigndocumentEdm'] = iEzsigndocumentEdm;
+        obj['iEzsignsignature'] = iEzsignsignature;
+        obj['iEzsignsignatureSigned'] = iEzsignsignatureSigned;
     }
 
     /**
@@ -104,17 +104,17 @@ class EzsignfolderListElement {
             if (data.hasOwnProperty('dtDueDate')) {
                 obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], OneOfstringobject);
             }
-            if (data.hasOwnProperty('iTotalDocument')) {
-                obj['iTotalDocument'] = ApiClient.convertToType(data['iTotalDocument'], 'Number');
+            if (data.hasOwnProperty('iEzsigndocument')) {
+                obj['iEzsigndocument'] = ApiClient.convertToType(data['iEzsigndocument'], 'Number');
             }
-            if (data.hasOwnProperty('iTotalDocumentEdm')) {
-                obj['iTotalDocumentEdm'] = ApiClient.convertToType(data['iTotalDocumentEdm'], 'Number');
+            if (data.hasOwnProperty('iEzsigndocumentEdm')) {
+                obj['iEzsigndocumentEdm'] = ApiClient.convertToType(data['iEzsigndocumentEdm'], 'Number');
             }
-            if (data.hasOwnProperty('iTotalSignature')) {
-                obj['iTotalSignature'] = ApiClient.convertToType(data['iTotalSignature'], 'Number');
+            if (data.hasOwnProperty('iEzsignsignature')) {
+                obj['iEzsignsignature'] = ApiClient.convertToType(data['iEzsignsignature'], 'Number');
             }
-            if (data.hasOwnProperty('iTotalSignatureSigned')) {
-                obj['iTotalSignatureSigned'] = ApiClient.convertToType(data['iTotalSignatureSigned'], 'Number');
+            if (data.hasOwnProperty('iEzsignsignatureSigned')) {
+                obj['iEzsignsignatureSigned'] = ApiClient.convertToType(data['iEzsignsignatureSigned'], 'Number');
             }
         }
         return obj;
@@ -179,7 +179,7 @@ class EzsignfolderListElement {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
 /**
-     * Returns The description of the Ezsign Folder
+     * Returns The description of the Ezsignfolder
      * @return {String}
      */
     getSEzsignfolderDescription() {
@@ -187,8 +187,8 @@ class EzsignfolderListElement {
     }
 
     /**
-     * Sets The description of the Ezsign Folder
-     * @param {String} sEzsignfolderDescription The description of the Ezsign Folder
+     * Sets The description of the Ezsignfolder
+     * @param {String} sEzsignfolderDescription The description of the Ezsignfolder
      */
     setSEzsignfolderDescription(sEzsignfolderDescription) {
         this['sEzsignfolderDescription'] = sEzsignfolderDescription;
@@ -253,61 +253,61 @@ class EzsignfolderListElement {
      * Returns The total number of Ezsigndocument in the folder
      * @return {Number}
      */
-    getITotalDocument() {
-        return this.iTotalDocument;
+    getIEzsigndocument() {
+        return this.iEzsigndocument;
     }
 
     /**
      * Sets The total number of Ezsigndocument in the folder
-     * @param {Number} iTotalDocument The total number of Ezsigndocument in the folder
+     * @param {Number} iEzsigndocument The total number of Ezsigndocument in the folder
      */
-    setITotalDocument(iTotalDocument) {
-        this['iTotalDocument'] = iTotalDocument;
+    setIEzsigndocument(iEzsigndocument) {
+        this['iEzsigndocument'] = iEzsigndocument;
     }
 /**
      * Returns The total number of Ezsigndocument in the folder that were saved in the edm system
      * @return {Number}
      */
-    getITotalDocumentEdm() {
-        return this.iTotalDocumentEdm;
+    getIEzsigndocumentEdm() {
+        return this.iEzsigndocumentEdm;
     }
 
     /**
      * Sets The total number of Ezsigndocument in the folder that were saved in the edm system
-     * @param {Number} iTotalDocumentEdm The total number of Ezsigndocument in the folder that were saved in the edm system
+     * @param {Number} iEzsigndocumentEdm The total number of Ezsigndocument in the folder that were saved in the edm system
      */
-    setITotalDocumentEdm(iTotalDocumentEdm) {
-        this['iTotalDocumentEdm'] = iTotalDocumentEdm;
+    setIEzsigndocumentEdm(iEzsigndocumentEdm) {
+        this['iEzsigndocumentEdm'] = iEzsigndocumentEdm;
     }
 /**
      * Returns The total number of signature blocks in all Ezsigndocuments in the folder
      * @return {Number}
      */
-    getITotalSignature() {
-        return this.iTotalSignature;
+    getIEzsignsignature() {
+        return this.iEzsignsignature;
     }
 
     /**
      * Sets The total number of signature blocks in all Ezsigndocuments in the folder
-     * @param {Number} iTotalSignature The total number of signature blocks in all Ezsigndocuments in the folder
+     * @param {Number} iEzsignsignature The total number of signature blocks in all Ezsigndocuments in the folder
      */
-    setITotalSignature(iTotalSignature) {
-        this['iTotalSignature'] = iTotalSignature;
+    setIEzsignsignature(iEzsignsignature) {
+        this['iEzsignsignature'] = iEzsignsignature;
     }
 /**
      * Returns The total number of already signed signature blocks in all Ezsigndocuments in the folder
      * @return {Number}
      */
-    getITotalSignatureSigned() {
-        return this.iTotalSignatureSigned;
+    getIEzsignsignatureSigned() {
+        return this.iEzsignsignatureSigned;
     }
 
     /**
      * Sets The total number of already signed signature blocks in all Ezsigndocuments in the folder
-     * @param {Number} iTotalSignatureSigned The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     * @param {Number} iEzsignsignatureSigned The total number of already signed signature blocks in all Ezsigndocuments in the folder
      */
-    setITotalSignatureSigned(iTotalSignatureSigned) {
-        this['iTotalSignatureSigned'] = iTotalSignatureSigned;
+    setIEzsignsignatureSigned(iEzsignsignatureSigned) {
+        this['iEzsignsignatureSigned'] = iEzsignsignatureSigned;
     }
 
 }
@@ -336,7 +336,7 @@ EzsignfolderListElement.prototype['eEzsignfoldertypePrivacylevel'] = undefined;
 EzsignfolderListElement.prototype['sEzsignfoldertypeNameX'] = undefined;
 
 /**
- * The description of the Ezsign Folder
+ * The description of the Ezsignfolder
  * @member {String} sEzsignfolderDescription
  */
 EzsignfolderListElement.prototype['sEzsignfolderDescription'] = undefined;
@@ -365,27 +365,27 @@ EzsignfolderListElement.prototype['dtDueDate'] = undefined;
 
 /**
  * The total number of Ezsigndocument in the folder
- * @member {Number} iTotalDocument
+ * @member {Number} iEzsigndocument
  */
-EzsignfolderListElement.prototype['iTotalDocument'] = undefined;
+EzsignfolderListElement.prototype['iEzsigndocument'] = undefined;
 
 /**
  * The total number of Ezsigndocument in the folder that were saved in the edm system
- * @member {Number} iTotalDocumentEdm
+ * @member {Number} iEzsigndocumentEdm
  */
-EzsignfolderListElement.prototype['iTotalDocumentEdm'] = undefined;
+EzsignfolderListElement.prototype['iEzsigndocumentEdm'] = undefined;
 
 /**
  * The total number of signature blocks in all Ezsigndocuments in the folder
- * @member {Number} iTotalSignature
+ * @member {Number} iEzsignsignature
  */
-EzsignfolderListElement.prototype['iTotalSignature'] = undefined;
+EzsignfolderListElement.prototype['iEzsignsignature'] = undefined;
 
 /**
  * The total number of already signed signature blocks in all Ezsigndocuments in the folder
- * @member {Number} iTotalSignatureSigned
+ * @member {Number} iEzsignsignatureSigned
  */
-EzsignfolderListElement.prototype['iTotalSignatureSigned'] = undefined;
+EzsignfolderListElement.prototype['iEzsignsignatureSigned'] = undefined;
 
 
 

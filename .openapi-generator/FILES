@@ -48,6 +48,11 @@ docs/CustomFormsDataFolderResponse.md
 docs/CustomWordPositionOccurenceResponse.md
 docs/CustomWordPositionWordResponse.md
 docs/EmailRequest.md
+docs/EzsignbulksendGetListV1Response.md
+docs/EzsignbulksendGetListV1ResponseAllOf.md
+docs/EzsignbulksendGetListV1ResponseMPayload.md
+docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/EzsignbulksendListElement.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -168,6 +173,7 @@ docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
 docs/ObjectApikeyApi.md
+docs/ObjectEzsignbulksendApi.md
 docs/ObjectEzsigndocumentApi.md
 docs/ObjectEzsignfolderApi.md
 docs/ObjectEzsignfoldersignerassociationApi.md
@@ -216,6 +222,7 @@ src/eZmaxAPI/api/ModuleSsprApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
 src/eZmaxAPI/api/ObjectApikeyApi.js
+src/eZmaxAPI/api/ObjectEzsignbulksendApi.js
 src/eZmaxAPI/api/ObjectEzsigndocumentApi.js
 src/eZmaxAPI/api/ObjectEzsignfolderApi.js
 src/eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi.js
@@ -271,6 +278,11 @@ src/eZmaxAPI/model/CustomFormsDataFolderResponse.js
 src/eZmaxAPI/model/CustomWordPositionOccurenceResponse.js
 src/eZmaxAPI/model/CustomWordPositionWordResponse.js
 src/eZmaxAPI/model/EmailRequest.js
+src/eZmaxAPI/model/EzsignbulksendGetListV1Response.js
+src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf.js
+src/eZmaxAPI/model/EzsignbulksendListElement.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Request.js
@@ -419,6 +431,7 @@ test/eZmaxAPI/api/ModuleSsprApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
 test/eZmaxAPI/api/ObjectApikeyApi.spec.js
+test/eZmaxAPI/api/ObjectEzsignbulksendApi.spec.js
 test/eZmaxAPI/api/ObjectEzsigndocumentApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignfolderApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi.spec.js
@@ -473,6 +486,11 @@ test/eZmaxAPI/model/CustomFormsDataFolderResponse.spec.js
 test/eZmaxAPI/model/CustomWordPositionOccurenceResponse.spec.js
 test/eZmaxAPI/model/CustomWordPositionWordResponse.spec.js
 test/eZmaxAPI/model/EmailRequest.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetListV1Response.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf.spec.js
+test/eZmaxAPI/model/EzsignbulksendListElement.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Request.spec.js

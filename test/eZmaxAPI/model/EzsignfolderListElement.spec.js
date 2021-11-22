@@ -108,26 +108,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property iTotalDocument (base name: "iTotalDocument")', function() {
-      // uncomment below and update the code to test the property iTotalDocument
+    it('should have the property iEzsigndocument (base name: "iEzsigndocument")', function() {
+      // uncomment below and update the code to test the property iEzsigndocument
       //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property iTotalDocumentEdm (base name: "iTotalDocumentEdm")', function() {
-      // uncomment below and update the code to test the property iTotalDocumentEdm
+    it('should have the property iEzsigndocumentEdm (base name: "iEzsigndocumentEdm")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentEdm
       //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property iTotalSignature (base name: "iTotalSignature")', function() {
-      // uncomment below and update the code to test the property iTotalSignature
+    it('should have the property iEzsignsignature (base name: "iEzsignsignature")', function() {
+      // uncomment below and update the code to test the property iEzsignsignature
       //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property iTotalSignatureSigned (base name: "iTotalSignatureSigned")', function() {
-      // uncomment below and update the code to test the property iTotalSignatureSigned
+    it('should have the property iEzsignsignatureSigned (base name: "iEzsignsignatureSigned")', function() {
+      // uncomment below and update the code to test the property iEzsignsignatureSigned
       //var instance = new EZmaxApiDefinition.EzsignfolderListElement();
       //expect(instance).to.be();
     });

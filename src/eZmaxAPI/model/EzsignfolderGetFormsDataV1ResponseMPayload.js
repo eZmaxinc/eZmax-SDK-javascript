@@ -27,7 +27,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
      * @alias module:eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseMPayload
      * @implements module:eZmaxAPI/model/CustomFormsDataFolderResponse
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
-     * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
+     * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param a_objFormDataDocument {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} 
      */
     constructor(pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument) { 
@@ -87,7 +87,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
         this['pkiEzsignfolderID'] = pkiEzsignfolderID;
     }
 /**
-     * Returns The description of the Ezsign Folder
+     * Returns The description of the Ezsignfolder
      * @return {String}
      */
     getSEzsignfolderDescription() {
@@ -95,8 +95,8 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
     }
 
     /**
-     * Sets The description of the Ezsign Folder
-     * @param {String} sEzsignfolderDescription The description of the Ezsign Folder
+     * Sets The description of the Ezsignfolder
+     * @param {String} sEzsignfolderDescription The description of the Ezsignfolder
      */
     setSEzsignfolderDescription(sEzsignfolderDescription) {
         this['sEzsignfolderDescription'] = sEzsignfolderDescription;
@@ -124,7 +124,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
 EzsignfolderGetFormsDataV1ResponseMPayload.prototype['pkiEzsignfolderID'] = undefined;
 
 /**
- * The description of the Ezsign Folder
+ * The description of the Ezsignfolder
  * @member {String} sEzsignfolderDescription
  */
 EzsignfolderGetFormsDataV1ResponseMPayload.prototype['sEzsignfolderDescription'] = undefined;
@@ -142,7 +142,7 @@ EzsignfolderGetFormsDataV1ResponseMPayload.prototype['a_objFormDataDocument'] = 
  */
 CustomFormsDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
 /**
- * The description of the Ezsign Folder
+ * The description of the Ezsignfolder
  * @member {String} sEzsignfolderDescription
  */
 CustomFormsDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;

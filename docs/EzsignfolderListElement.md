@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **Number** | The unique ID of the Ezsignfoldertype. | 
 **eEzsignfoldertypePrivacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  | 
 **sEzsignfoldertypeNameX** | **String** | The name of the Ezsignfoldertype in the language of the requester | 
-**sEzsignfolderDescription** | **String** | The description of the Ezsign Folder | 
+**sEzsignfolderDescription** | **String** | The description of the Ezsignfolder | 
 **eEzsignfolderStep** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | 
 **dtCreatedDate** | **String** | The date and time at which the object was created | 
 **dtEzsignfolderSentdate** | [**OneOfstringobject**](OneOfstringobject.md) |  | 
 **dtDueDate** | [**OneOfstringobject**](OneOfstringobject.md) | The date at which no more signature will be accepted on the folder | 
-**iTotalDocument** | **Number** | The total number of Ezsigndocument in the folder | 
-**iTotalDocumentEdm** | **Number** | The total number of Ezsigndocument in the folder that were saved in the edm system | 
-**iTotalSignature** | **Number** | The total number of signature blocks in all Ezsigndocuments in the folder | 
-**iTotalSignatureSigned** | **Number** | The total number of already signed signature blocks in all Ezsigndocuments in the folder | 
+**iEzsigndocument** | **Number** | The total number of Ezsigndocument in the folder | 
+**iEzsigndocumentEdm** | **Number** | The total number of Ezsigndocument in the folder that were saved in the edm system | 
+**iEzsignsignature** | **Number** | The total number of signature blocks in all Ezsigndocuments in the folder | 
+**iEzsignsignatureSigned** | **Number** | The total number of already signed signature blocks in all Ezsigndocuments in the folder | 
 
 

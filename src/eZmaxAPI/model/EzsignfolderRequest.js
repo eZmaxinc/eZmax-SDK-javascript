@@ -26,7 +26,7 @@ class EzsignfolderRequest {
      * @alias module:eZmaxAPI/model/EzsignfolderRequest
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiEzsigntsarequirementID {Number} The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
-     * @param sEzsignfolderDescription {String} The description of the Ezsign Folder
+     * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param tEzsignfolderNote {String} Somes extra notes about the eZsign Folder
      * @param eEzsignfolderSendreminderfrequency {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} 
      */
@@ -111,7 +111,7 @@ class EzsignfolderRequest {
         this['fkiEzsigntsarequirementID'] = fkiEzsigntsarequirementID;
     }
 /**
-     * Returns The description of the Ezsign Folder
+     * Returns The description of the Ezsignfolder
      * @return {String}
      */
     getSEzsignfolderDescription() {
@@ -119,8 +119,8 @@ class EzsignfolderRequest {
     }
 
     /**
-     * Sets The description of the Ezsign Folder
-     * @param {String} sEzsignfolderDescription The description of the Ezsign Folder
+     * Sets The description of the Ezsignfolder
+     * @param {String} sEzsignfolderDescription The description of the Ezsignfolder
      */
     setSEzsignfolderDescription(sEzsignfolderDescription) {
         this['sEzsignfolderDescription'] = sEzsignfolderDescription;
@@ -169,7 +169,7 @@ EzsignfolderRequest.prototype['fkiEzsignfoldertypeID'] = undefined;
 EzsignfolderRequest.prototype['fkiEzsigntsarequirementID'] = undefined;
 
 /**
- * The description of the Ezsign Folder
+ * The description of the Ezsignfolder
  * @member {String} sEzsignfolderDescription
  */
 EzsignfolderRequest.prototype['sEzsignfolderDescription'] = undefined;

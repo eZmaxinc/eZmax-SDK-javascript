@@ -58,6 +58,11 @@ import CustomFormsDataFolderResponse from './model/CustomFormsDataFolderResponse
 import CustomWordPositionOccurenceResponse from './model/CustomWordPositionOccurenceResponse';
 import CustomWordPositionWordResponse from './model/CustomWordPositionWordResponse';
 import EmailRequest from './model/EmailRequest';
+import EzsignbulksendGetListV1Response from './model/EzsignbulksendGetListV1Response';
+import EzsignbulksendGetListV1ResponseAllOf from './model/EzsignbulksendGetListV1ResponseAllOf';
+import EzsignbulksendGetListV1ResponseMPayload from './model/EzsignbulksendGetListV1ResponseMPayload';
+import EzsignbulksendGetListV1ResponseMPayloadAllOf from './model/EzsignbulksendGetListV1ResponseMPayloadAllOf';
+import EzsignbulksendListElement from './model/EzsignbulksendListElement';
 import EzsigndocumentApplyEzsigntemplateV1Request from './model/EzsigndocumentApplyEzsigntemplateV1Request';
 import EzsigndocumentApplyEzsigntemplateV1Response from './model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from './model/EzsigndocumentApplyEzsigntemplateV2Request';
@@ -206,6 +211,7 @@ import ModuleSsprApi from './api/ModuleSsprApi';
 import ModuleUserApi from './api/ModuleUserApi';
 import ObjectActivesessionApi from './api/ObjectActivesessionApi';
 import ObjectApikeyApi from './api/ObjectApikeyApi';
+import ObjectEzsignbulksendApi from './api/ObjectEzsignbulksendApi';
 import ObjectEzsigndocumentApi from './api/ObjectEzsigndocumentApi';
 import ObjectEzsignfolderApi from './api/ObjectEzsignfolderApi';
 import ObjectEzsignfoldersignerassociationApi from './api/ObjectEzsignfoldersignerassociationApi';
@@ -524,6 +530,36 @@ export {
      * @property {module:eZmaxAPI/model/EmailRequest}
      */
     EmailRequest,
+
+    /**
+     * The EzsignbulksendGetListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetListV1Response}
+     */
+    EzsignbulksendGetListV1Response,
+
+    /**
+     * The EzsignbulksendGetListV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetListV1ResponseAllOf}
+     */
+    EzsignbulksendGetListV1ResponseAllOf,
+
+    /**
+     * The EzsignbulksendGetListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayload}
+     */
+    EzsignbulksendGetListV1ResponseMPayload,
+
+    /**
+     * The EzsignbulksendGetListV1ResponseMPayloadAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf}
+     */
+    EzsignbulksendGetListV1ResponseMPayloadAllOf,
+
+    /**
+     * The EzsignbulksendListElement model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendListElement}
+     */
+    EzsignbulksendListElement,
 
     /**
      * The EzsigndocumentApplyEzsigntemplateV1Request model constructor.
@@ -1412,6 +1448,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectApikeyApi}
     */
     ObjectApikeyApi,
+
+    /**
+    * The ObjectEzsignbulksendApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsignbulksendApi}
+    */
+    ObjectEzsignbulksendApi,
 
     /**
     * The ObjectEzsigndocumentApi service constructor.
