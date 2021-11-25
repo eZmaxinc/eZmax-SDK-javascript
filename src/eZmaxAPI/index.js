@@ -152,11 +152,17 @@ import EzsignsignerRequest from './model/EzsignsignerRequest';
 import EzsignsignerRequestCompound from './model/EzsignsignerRequestCompound';
 import EzsignsignerRequestCompoundAllOf from './model/EzsignsignerRequestCompoundAllOf';
 import EzsignsignerRequestCompoundContact from './model/EzsignsignerRequestCompoundContact';
+import EzsigntemplatepackageGetListV1Response from './model/EzsigntemplatepackageGetListV1Response';
+import EzsigntemplatepackageGetListV1ResponseAllOf from './model/EzsigntemplatepackageGetListV1ResponseAllOf';
+import EzsigntemplatepackageGetListV1ResponseMPayload from './model/EzsigntemplatepackageGetListV1ResponseMPayload';
+import EzsigntemplatepackageGetListV1ResponseMPayloadAllOf from './model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf';
+import EzsigntemplatepackageListElement from './model/EzsigntemplatepackageListElement';
 import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
 import FieldEEzsignfoldertypePrivacylevel from './model/FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignsignatureType from './model/FieldEEzsignsignatureType';
+import FieldEEzsigntemplatepackageType from './model/FieldEEzsigntemplatepackageType';
 import FieldEPhoneType from './model/FieldEPhoneType';
 import FieldEUserType from './model/FieldEUserType';
 import FieldEUserTypeSSPR from './model/FieldEUserTypeSSPR';
@@ -217,6 +223,7 @@ import ObjectEzsignfolderApi from './api/ObjectEzsignfolderApi';
 import ObjectEzsignfoldersignerassociationApi from './api/ObjectEzsignfoldersignerassociationApi';
 import ObjectEzsignfoldertypeApi from './api/ObjectEzsignfoldertypeApi';
 import ObjectEzsignsignatureApi from './api/ObjectEzsignsignatureApi';
+import ObjectEzsigntemplatepackageApi from './api/ObjectEzsigntemplatepackageApi';
 import ObjectFranchisebrokerApi from './api/ObjectFranchisebrokerApi';
 import ObjectFranchiseofficeApi from './api/ObjectFranchiseofficeApi';
 import ObjectFranchisereferalincomeApi from './api/ObjectFranchisereferalincomeApi';
@@ -1096,6 +1103,36 @@ export {
     EzsignsignerRequestCompoundContact,
 
     /**
+     * The EzsigntemplatepackageGetListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplatepackageGetListV1Response}
+     */
+    EzsigntemplatepackageGetListV1Response,
+
+    /**
+     * The EzsigntemplatepackageGetListV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseAllOf}
+     */
+    EzsigntemplatepackageGetListV1ResponseAllOf,
+
+    /**
+     * The EzsigntemplatepackageGetListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload}
+     */
+    EzsigntemplatepackageGetListV1ResponseMPayload,
+
+    /**
+     * The EzsigntemplatepackageGetListV1ResponseMPayloadAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf}
+     */
+    EzsigntemplatepackageGetListV1ResponseMPayloadAllOf,
+
+    /**
+     * The EzsigntemplatepackageListElement model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplatepackageListElement}
+     */
+    EzsigntemplatepackageListElement,
+
+    /**
      * The FieldEEzsigndocumentStep model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsigndocumentStep}
      */
@@ -1124,6 +1161,12 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsignsignatureType}
      */
     FieldEEzsignsignatureType,
+
+    /**
+     * The FieldEEzsigntemplatepackageType model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplatepackageType}
+     */
+    FieldEEzsigntemplatepackageType,
 
     /**
      * The FieldEPhoneType model constructor.
@@ -1484,6 +1527,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectEzsignsignatureApi}
     */
     ObjectEzsignsignatureApi,
+
+    /**
+    * The ObjectEzsigntemplatepackageApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsigntemplatepackageApi}
+    */
+    ObjectEzsigntemplatepackageApi,
 
     /**
     * The ObjectFranchisebrokerApi service constructor.
