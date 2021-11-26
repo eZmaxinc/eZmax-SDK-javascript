@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload);
     });
 
-    it('should have the property a_objEzsignfolder (base name: "a_objEzsignfolder")', function() {
-      // uncomment below and update the code to test the property a_objEzsignfolder
+    it('should have the property a_objEzsignbulksend (base name: "a_objEzsignbulksend")', function() {
+      // uncomment below and update the code to test the property a_objEzsignbulksend
       //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });

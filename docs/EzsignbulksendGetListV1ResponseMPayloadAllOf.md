@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objEzsignfolder** | [**[EzsignbulksendListElement]**](EzsignbulksendListElement.md) |  | [optional] 
+**a_objEzsignbulksend** | [**[EzsignbulksendListElement]**](EzsignbulksendListElement.md) |  | 
 
 

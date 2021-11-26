@@ -23,10 +23,11 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
     /**
      * Constructs a new <code>EzsignbulksendGetListV1ResponseMPayloadAllOf</code>.
      * @alias module:eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf
+     * @param a_objEzsignbulksend {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} 
      */
-    constructor() { 
+    constructor(a_objEzsignbulksend) { 
         
-        EzsignbulksendGetListV1ResponseMPayloadAllOf.initialize(this);
+        EzsignbulksendGetListV1ResponseMPayloadAllOf.initialize(this, a_objEzsignbulksend);
     }
 
     /**
@@ -34,7 +35,8 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objEzsignbulksend) { 
+        obj['a_objEzsignbulksend'] = a_objEzsignbulksend;
     }
 
     /**
@@ -48,8 +50,8 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
         if (data) {
             obj = obj || new EzsignbulksendGetListV1ResponseMPayloadAllOf();
 
-            if (data.hasOwnProperty('a_objEzsignfolder')) {
-                obj['a_objEzsignfolder'] = ApiClient.convertToType(data['a_objEzsignfolder'], [EzsignbulksendListElement]);
+            if (data.hasOwnProperty('a_objEzsignbulksend')) {
+                obj['a_objEzsignbulksend'] = ApiClient.convertToType(data['a_objEzsignbulksend'], [EzsignbulksendListElement]);
             }
         }
         return obj;
@@ -58,23 +60,23 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
 /**
      * @return {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>}
      */
-    getAObjEzsignfolder() {
-        return this.a_objEzsignfolder;
+    getAObjEzsignbulksend() {
+        return this.a_objEzsignbulksend;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignfolder
+     * @param {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignbulksend
      */
-    setAObjEzsignfolder(a_objEzsignfolder) {
-        this['a_objEzsignfolder'] = a_objEzsignfolder;
+    setAObjEzsignbulksend(a_objEzsignbulksend) {
+        this['a_objEzsignbulksend'] = a_objEzsignbulksend;
     }
 
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignfolder
+ * @member {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignbulksend
  */
-EzsignbulksendGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfolder'] = undefined;
+EzsignbulksendGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignbulksend'] = undefined;
 
 
 
