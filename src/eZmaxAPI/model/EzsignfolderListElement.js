@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
 import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
-import OneOfstringobject from './OneOfstringobject';
 
 /**
  * The EzsignfolderListElement model module.
@@ -33,8 +32,8 @@ class EzsignfolderListElement {
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param dtCreatedDate {String} The date and time at which the object was created
-     * @param dtEzsignfolderSentdate {module:eZmaxAPI/model/OneOfstringobject} 
-     * @param dtDueDate {module:eZmaxAPI/model/OneOfstringobject} The date at which no more signature will be accepted on the folder
+     * @param dtEzsignfolderSentdate {String} The date and time at which the Ezsign folder was sent the last time.
+     * @param dtDueDate {String} Represent a Date Time. The timezone is the one configured in the User's profile.
      * @param iEzsigndocument {Number} The total number of Ezsigndocument in the folder
      * @param iEzsigndocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
      * @param iEzsignsignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
@@ -99,10 +98,10 @@ class EzsignfolderListElement {
                 obj['dtCreatedDate'] = ApiClient.convertToType(data['dtCreatedDate'], 'String');
             }
             if (data.hasOwnProperty('dtEzsignfolderSentdate')) {
-                obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], OneOfstringobject);
+                obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], 'String');
             }
             if (data.hasOwnProperty('dtDueDate')) {
-                obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], OneOfstringobject);
+                obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], 'String');
             }
             if (data.hasOwnProperty('iEzsigndocument')) {
                 obj['iEzsigndocument'] = ApiClient.convertToType(data['iEzsigndocument'], 'Number');
@@ -222,29 +221,31 @@ class EzsignfolderListElement {
         this['dtCreatedDate'] = dtCreatedDate;
     }
 /**
-     * @return {module:eZmaxAPI/model/OneOfstringobject}
+     * Returns The date and time at which the Ezsign folder was sent the last time.
+     * @return {String}
      */
     getDtEzsignfolderSentdate() {
         return this.dtEzsignfolderSentdate;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/OneOfstringobject} dtEzsignfolderSentdate
+     * Sets The date and time at which the Ezsign folder was sent the last time.
+     * @param {String} dtEzsignfolderSentdate The date and time at which the Ezsign folder was sent the last time.
      */
     setDtEzsignfolderSentdate(dtEzsignfolderSentdate) {
         this['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
     }
 /**
-     * Returns The date at which no more signature will be accepted on the folder
-     * @return {module:eZmaxAPI/model/OneOfstringobject}
+     * Returns Represent a Date Time. The timezone is the one configured in the User's profile.
+     * @return {String}
      */
     getDtDueDate() {
         return this.dtDueDate;
     }
 
     /**
-     * Sets The date at which no more signature will be accepted on the folder
-     * @param {module:eZmaxAPI/model/OneOfstringobject} dtDueDate The date at which no more signature will be accepted on the folder
+     * Sets Represent a Date Time. The timezone is the one configured in the User's profile.
+     * @param {String} dtDueDate Represent a Date Time. The timezone is the one configured in the User's profile.
      */
     setDtDueDate(dtDueDate) {
         this['dtDueDate'] = dtDueDate;
@@ -353,13 +354,14 @@ EzsignfolderListElement.prototype['eEzsignfolderStep'] = undefined;
 EzsignfolderListElement.prototype['dtCreatedDate'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/OneOfstringobject} dtEzsignfolderSentdate
+ * The date and time at which the Ezsign folder was sent the last time.
+ * @member {String} dtEzsignfolderSentdate
  */
 EzsignfolderListElement.prototype['dtEzsignfolderSentdate'] = undefined;
 
 /**
- * The date at which no more signature will be accepted on the folder
- * @member {module:eZmaxAPI/model/OneOfstringobject} dtDueDate
+ * Represent a Date Time. The timezone is the one configured in the User's profile.
+ * @member {String} dtDueDate
  */
 EzsignfolderListElement.prototype['dtDueDate'] = undefined;
 

@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import OneOfintegerstring from './OneOfintegerstring';
 
 /**
  * The CustomAutocompleteElementResponse model module.
@@ -26,7 +25,7 @@ class CustomAutocompleteElementResponse {
      * @alias module:eZmaxAPI/model/CustomAutocompleteElementResponse
      * @param sCategory {String} The Category for the dropdown or an empty string if not categorized
      * @param sLabel {String} The Description of the element
-     * @param mValue {module:eZmaxAPI/model/OneOfintegerstring} The Unique ID of the element
+     * @param mValue {String} The Unique ID of the element
      */
     constructor(sCategory, sLabel, mValue) { 
         
@@ -62,7 +61,7 @@ class CustomAutocompleteElementResponse {
                 obj['sLabel'] = ApiClient.convertToType(data['sLabel'], 'String');
             }
             if (data.hasOwnProperty('mValue')) {
-                obj['mValue'] = ApiClient.convertToType(data['mValue'], OneOfintegerstring);
+                obj['mValue'] = ApiClient.convertToType(data['mValue'], 'String');
             }
         }
         return obj;
@@ -100,7 +99,7 @@ class CustomAutocompleteElementResponse {
     }
 /**
      * Returns The Unique ID of the element
-     * @return {module:eZmaxAPI/model/OneOfintegerstring}
+     * @return {String}
      */
     getMValue() {
         return this.mValue;
@@ -108,7 +107,7 @@ class CustomAutocompleteElementResponse {
 
     /**
      * Sets The Unique ID of the element
-     * @param {module:eZmaxAPI/model/OneOfintegerstring} mValue The Unique ID of the element
+     * @param {String} mValue The Unique ID of the element
      */
     setMValue(mValue) {
         this['mValue'] = mValue;
@@ -130,7 +129,7 @@ CustomAutocompleteElementResponse.prototype['sLabel'] = undefined;
 
 /**
  * The Unique ID of the element
- * @member {module:eZmaxAPI/model/OneOfintegerstring} mValue
+ * @member {String} mValue
  */
 CustomAutocompleteElementResponse.prototype['mValue'] = undefined;
 

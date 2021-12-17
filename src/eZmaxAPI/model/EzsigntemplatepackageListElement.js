@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import FieldEEzsigntemplatepackageType from './FieldEEzsigntemplatepackageType';
-import OneOfintegerobject from './OneOfintegerobject';
 
 /**
  * The EzsigntemplatepackageListElement model module.
@@ -26,9 +25,9 @@ class EzsigntemplatepackageListElement {
      * An Ezsigntemplatepackage List Element
      * @alias module:eZmaxAPI/model/EzsigntemplatepackageListElement
      * @param pkiEzsigntemplatepackageID {Number} The unique ID of the Ezsigntemplatepackage
-     * @param fkiDepartmentID {module:eZmaxAPI/model/OneOfintegerobject} 
-     * @param fkiTeamID {module:eZmaxAPI/model/OneOfintegerobject} 
-     * @param fkiEzsignfoldertypeID {module:eZmaxAPI/model/OneOfintegerobject} 
+     * @param fkiDepartmentID {Number} The unique ID of the Department.
+     * @param fkiTeamID {Number} The unique ID of the Team
+     * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param eEzsigntemplatepackageType {module:eZmaxAPI/model/FieldEEzsigntemplatepackageType} 
      * @param sEzsigntemplatepackageDescription {String} The description of the Ezsigntemplatepackage
@@ -72,13 +71,13 @@ class EzsigntemplatepackageListElement {
                 obj['pkiEzsigntemplatepackageID'] = ApiClient.convertToType(data['pkiEzsigntemplatepackageID'], 'Number');
             }
             if (data.hasOwnProperty('fkiDepartmentID')) {
-                obj['fkiDepartmentID'] = ApiClient.convertToType(data['fkiDepartmentID'], OneOfintegerobject);
+                obj['fkiDepartmentID'] = ApiClient.convertToType(data['fkiDepartmentID'], 'Number');
             }
             if (data.hasOwnProperty('fkiTeamID')) {
-                obj['fkiTeamID'] = ApiClient.convertToType(data['fkiTeamID'], OneOfintegerobject);
+                obj['fkiTeamID'] = ApiClient.convertToType(data['fkiTeamID'], 'Number');
             }
             if (data.hasOwnProperty('fkiEzsignfoldertypeID')) {
-                obj['fkiEzsignfoldertypeID'] = ApiClient.convertToType(data['fkiEzsignfoldertypeID'], OneOfintegerobject);
+                obj['fkiEzsignfoldertypeID'] = ApiClient.convertToType(data['fkiEzsignfoldertypeID'], 'Number');
             }
             if (data.hasOwnProperty('fkiLanguageID')) {
                 obj['fkiLanguageID'] = ApiClient.convertToType(data['fkiLanguageID'], 'Number');
@@ -115,40 +114,46 @@ class EzsigntemplatepackageListElement {
         this['pkiEzsigntemplatepackageID'] = pkiEzsigntemplatepackageID;
     }
 /**
-     * @return {module:eZmaxAPI/model/OneOfintegerobject}
+     * Returns The unique ID of the Department.
+     * @return {Number}
      */
     getFkiDepartmentID() {
         return this.fkiDepartmentID;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/OneOfintegerobject} fkiDepartmentID
+     * Sets The unique ID of the Department.
+     * @param {Number} fkiDepartmentID The unique ID of the Department.
      */
     setFkiDepartmentID(fkiDepartmentID) {
         this['fkiDepartmentID'] = fkiDepartmentID;
     }
 /**
-     * @return {module:eZmaxAPI/model/OneOfintegerobject}
+     * Returns The unique ID of the Team
+     * @return {Number}
      */
     getFkiTeamID() {
         return this.fkiTeamID;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/OneOfintegerobject} fkiTeamID
+     * Sets The unique ID of the Team
+     * @param {Number} fkiTeamID The unique ID of the Team
      */
     setFkiTeamID(fkiTeamID) {
         this['fkiTeamID'] = fkiTeamID;
     }
 /**
-     * @return {module:eZmaxAPI/model/OneOfintegerobject}
+     * Returns The unique ID of the Ezsignfoldertype.
+     * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
         return this.fkiEzsignfoldertypeID;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/OneOfintegerobject} fkiEzsignfoldertypeID
+     * Sets The unique ID of the Ezsignfoldertype.
+     * @param {Number} fkiEzsignfoldertypeID The unique ID of the Ezsignfoldertype.
      */
     setFkiEzsignfoldertypeID(fkiEzsignfoldertypeID) {
         this['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
@@ -238,17 +243,20 @@ class EzsigntemplatepackageListElement {
 EzsigntemplatepackageListElement.prototype['pkiEzsigntemplatepackageID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/OneOfintegerobject} fkiDepartmentID
+ * The unique ID of the Department.
+ * @member {Number} fkiDepartmentID
  */
 EzsigntemplatepackageListElement.prototype['fkiDepartmentID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/OneOfintegerobject} fkiTeamID
+ * The unique ID of the Team
+ * @member {Number} fkiTeamID
  */
 EzsigntemplatepackageListElement.prototype['fkiTeamID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/OneOfintegerobject} fkiEzsignfoldertypeID
+ * The unique ID of the Ezsignfoldertype.
+ * @member {Number} fkiEzsignfoldertypeID
  */
 EzsigntemplatepackageListElement.prototype['fkiEzsignfoldertypeID'] = undefined;
 
