@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ezsignfolderCreateObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderCreateObjectV1) | **POST** /1/object/ezsignfolder | Create a new Ezsignfolder
 [**ezsignfolderDeleteObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderDeleteObjectV1) | **DELETE** /1/object/ezsignfolder/{pkiEzsignfolderID} | Delete an existing Ezsignfolder
-[**ezsignfolderGetChildrenV1**](ObjectEzsignfolderApi.md#ezsignfolderGetChildrenV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren | Retrieve an existing Ezsignfolder&#39;s children IDs
+[**ezsignfolderGetEzsigndocumentsV1**](ObjectEzsignfolderApi.md#ezsignfolderGetEzsigndocumentsV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 [**ezsignfolderGetFormsDataV1**](ObjectEzsignfolderApi.md#ezsignfolderGetFormsDataV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData | Retrieve an existing Ezsignfolder&#39;s forms data
 [**ezsignfolderGetListV1**](ObjectEzsignfolderApi.md#ezsignfolderGetListV1) | **GET** /1/object/ezsignfolder/getList | Retrieve Ezsignfolder list
 [**ezsignfolderGetObjectV1**](ObjectEzsignfolderApi.md#ezsignfolderGetObjectV1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID} | Retrieve an existing Ezsignfolder
@@ -115,13 +115,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## ezsignfolderGetChildrenV1
+## ezsignfolderGetEzsigndocumentsV1
 
-> ezsignfolderGetChildrenV1(pkiEzsignfolderID)
+> EzsignfolderGetEzsigndocumentsV1Response ezsignfolderGetEzsigndocumentsV1(pkiEzsignfolderID)
 
-Retrieve an existing Ezsignfolder&#39;s children IDs
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 
 ### Example
 
@@ -136,11 +134,11 @@ Authorization.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
 let pkiEzsignfolderID = 56; // Number | 
-apiInstance.ezsignfolderGetChildrenV1(pkiEzsignfolderID, (error, data, response) => {
+apiInstance.ezsignfolderGetEzsigndocumentsV1(pkiEzsignfolderID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -154,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**EzsignfolderGetEzsigndocumentsV1Response**](EzsignfolderGetEzsigndocumentsV1Response.md)
 
 ### Authorization
 
@@ -281,8 +279,6 @@ Name | Type | Description  | Notes
 > EzsignfolderGetObjectV1Response ezsignfolderGetObjectV1(pkiEzsignfolderID)
 
 Retrieve an existing Ezsignfolder
-
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
 
 ### Example
 
