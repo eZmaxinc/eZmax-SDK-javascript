@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfolderRequestCompoundAllOf();
+    instance = new EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('EzsignfolderRequestCompoundAllOf', function() {
-    it('should create an instance of EzsignfolderRequestCompoundAllOf', function() {
-      // uncomment below and update the code to test EzsignfolderRequestCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequestCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderRequestCompoundAllOf);
+  describe('EzsignfolderGetEzsignfoldersignerassociationsV1Response', function() {
+    it('should create an instance of EzsignfolderGetEzsignfoldersignerassociationsV1Response', function() {
+      // uncomment below and update the code to test EzsignfolderGetEzsignfoldersignerassociationsV1Response
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response);
     });
 
-    it('should have the property a_Ezsignfoldersignerassociation (base name: "a_Ezsignfoldersignerassociation")', function() {
-      // uncomment below and update the code to test the property a_Ezsignfoldersignerassociation
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequestCompoundAllOf();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
+      // uncomment below and update the code to test the property objDebugPayload
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDebug (base name: "objDebug")', function() {
+      // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1Response();
       //expect(instance).to.be();
     });
 

@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**iEzsigndocumentStepformtotal** | **Number** | The total number of steps in the form filling phase | 
+**iEzsigndocumentStepformcurrent** | **Number** | The current step in the form filling phase | 
+**iEzsigndocumentStepsignaturetotal** | **Number** | The total number of steps in the signature filling phase | 
+**iEzsigndocumentStepsignatureCurrent** | **Number** | The current step in the signature phase | 
+**a_objEzsignfoldersignerassociationstatus** | [**[CustomEzsignfoldersignerassociationstatusResponse]**](CustomEzsignfoldersignerassociationstatusResponse.md) |  | 
 **fkiEzsignfolderID** | **Number** | The unique ID of the Ezsignfolder | 
 **dtEzsigndocumentDuedate** | **String** | The maximum date and time at which the Ezsigndocument can be signed. | 
 **fkiLanguageID** | **Number** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 

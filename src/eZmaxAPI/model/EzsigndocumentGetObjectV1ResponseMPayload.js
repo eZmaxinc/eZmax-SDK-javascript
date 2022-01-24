@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
-import EzsigndocumentResponse from './EzsigndocumentResponse';
+import EzsigndocumentResponseCompound from './EzsigndocumentResponseCompound';
 import FieldEEzsigndocumentStep from './FieldEEzsigndocumentStep';
 
 /**
@@ -26,7 +26,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * Constructs a new <code>EzsigndocumentGetObjectV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsigndocument/getObject API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsigndocumentResponse
+     * @implements module:eZmaxAPI/model/EzsigndocumentResponseCompound
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param dtEzsigndocumentDuedate {String} The maximum date and time at which the Ezsigndocument can be signed.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
@@ -44,7 +44,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
     constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit) { 
-        EzsigndocumentResponse.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit);
+        EzsigndocumentResponseCompound.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit);
         EzsigndocumentGetObjectV1ResponseMPayload.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit);
     }
 
@@ -81,7 +81,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentGetObjectV1ResponseMPayload();
-            EzsigndocumentResponse.constructFromObject(data, obj);
+            EzsigndocumentResponseCompound.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('fkiEzsignfolderID')) {
                 obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
@@ -447,80 +447,80 @@ EzsigndocumentGetObjectV1ResponseMPayload.prototype['sEzsigndocumentMD5signed'] 
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['objAudit'] = undefined;
 
 
-// Implement EzsigndocumentResponse interface:
+// Implement EzsigndocumentResponseCompound interface:
 /**
  * The unique ID of the Ezsignfolder
  * @member {Number} fkiEzsignfolderID
  */
-EzsigndocumentResponse.prototype['fkiEzsignfolderID'] = undefined;
+EzsigndocumentResponseCompound.prototype['fkiEzsignfolderID'] = undefined;
 /**
  * The maximum date and time at which the Ezsigndocument can be signed.
  * @member {String} dtEzsigndocumentDuedate
  */
-EzsigndocumentResponse.prototype['dtEzsigndocumentDuedate'] = undefined;
+EzsigndocumentResponseCompound.prototype['dtEzsigndocumentDuedate'] = undefined;
 /**
  * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
  * @member {Number} fkiLanguageID
  */
-EzsigndocumentResponse.prototype['fkiLanguageID'] = undefined;
+EzsigndocumentResponseCompound.prototype['fkiLanguageID'] = undefined;
 /**
  * The name of the document that will be presented to Ezsignfoldersignerassociations
  * @member {String} sEzsigndocumentName
  */
-EzsigndocumentResponse.prototype['sEzsigndocumentName'] = undefined;
+EzsigndocumentResponseCompound.prototype['sEzsigndocumentName'] = undefined;
 /**
  * The unique ID of the Ezsigndocument
  * @member {Number} pkiEzsigndocumentID
  */
-EzsigndocumentResponse.prototype['pkiEzsigndocumentID'] = undefined;
+EzsigndocumentResponseCompound.prototype['pkiEzsigndocumentID'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEEzsigndocumentStep} eEzsigndocumentStep
  */
-EzsigndocumentResponse.prototype['eEzsigndocumentStep'] = undefined;
+EzsigndocumentResponseCompound.prototype['eEzsigndocumentStep'] = undefined;
 /**
  * The date and time when the Ezsigndocument was first sent.
  * @member {String} dtEzsigndocumentFirstsend
  */
-EzsigndocumentResponse.prototype['dtEzsigndocumentFirstsend'] = undefined;
+EzsigndocumentResponseCompound.prototype['dtEzsigndocumentFirstsend'] = undefined;
 /**
  * The date and time when the Ezsigndocument was sent the last time.
  * @member {String} dtEzsigndocumentLastsend
  */
-EzsigndocumentResponse.prototype['dtEzsigndocumentLastsend'] = undefined;
+EzsigndocumentResponseCompound.prototype['dtEzsigndocumentLastsend'] = undefined;
 /**
  * The order in which the Ezsigndocument will be presented to the signatory in the Ezsignfolder.
  * @member {Number} iEzsigndocumentOrder
  */
-EzsigndocumentResponse.prototype['iEzsigndocumentOrder'] = undefined;
+EzsigndocumentResponseCompound.prototype['iEzsigndocumentOrder'] = undefined;
 /**
  * The number of pages in the Ezsigndocument.
  * @member {Number} iEzsigndocumentPagetotal
  */
-EzsigndocumentResponse.prototype['iEzsigndocumentPagetotal'] = undefined;
+EzsigndocumentResponseCompound.prototype['iEzsigndocumentPagetotal'] = undefined;
 /**
  * The number of signatures that were signed in the document.
  * @member {Number} iEzsigndocumentSignaturesigned
  */
-EzsigndocumentResponse.prototype['iEzsigndocumentSignaturesigned'] = undefined;
+EzsigndocumentResponseCompound.prototype['iEzsigndocumentSignaturesigned'] = undefined;
 /**
  * The number of total signatures that were requested in the Ezsigndocument.
  * @member {Number} iEzsigndocumentSignaturetotal
  */
-EzsigndocumentResponse.prototype['iEzsigndocumentSignaturetotal'] = undefined;
+EzsigndocumentResponseCompound.prototype['iEzsigndocumentSignaturetotal'] = undefined;
 /**
  * MD5 Hash of the initial PDF Document before signatures were applied to it.
  * @member {String} sEzsigndocumentMD5initial
  */
-EzsigndocumentResponse.prototype['sEzsigndocumentMD5initial'] = undefined;
+EzsigndocumentResponseCompound.prototype['sEzsigndocumentMD5initial'] = undefined;
 /**
  * MD5 Hash of the final PDF Document after all signatures were applied to it.
  * @member {String} sEzsigndocumentMD5signed
  */
-EzsigndocumentResponse.prototype['sEzsigndocumentMD5signed'] = undefined;
+EzsigndocumentResponseCompound.prototype['sEzsigndocumentMD5signed'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
-EzsigndocumentResponse.prototype['objAudit'] = undefined;
+EzsigndocumentResponseCompound.prototype['objAudit'] = undefined;
 
 
 

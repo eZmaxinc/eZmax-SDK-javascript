@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignsignerRequestCompoundContact
+# EZmaxApiDefinition.EzsignsignerResponseCompoundContact
 
 ## Properties
 

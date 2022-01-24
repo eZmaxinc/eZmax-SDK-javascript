@@ -13,8 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfolderRequest from './EzsignfolderRequest';
-import EzsignfolderRequestCompoundAllOf from './EzsignfolderRequestCompoundAllOf';
-import EzsignfoldersignerassociationRequest from './EzsignfoldersignerassociationRequest';
 import FieldEEzsignfolderSendreminderfrequency from './FieldEEzsignfolderSendreminderfrequency';
 
 /**
@@ -27,18 +25,16 @@ class EzsignfolderRequestCompound {
      * Constructs a new <code>EzsignfolderRequestCompound</code>.
      * An Ezsignfolder Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignfolderRequestCompound
-     * @implements module:eZmaxAPI/model/EzsignfolderRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignfolderRequest
-     * @param a_Ezsignfoldersignerassociation {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationRequest>} An array of signers that will be invited to sign the Ezsigndocuments
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiEzsigntsarequirementID {Number} The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param tEzsignfolderNote {String} Somes extra notes about the eZsign Folder
      * @param eEzsignfolderSendreminderfrequency {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} 
      */
-    constructor(a_Ezsignfoldersignerassociation, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
-        EzsignfolderRequestCompoundAllOf.initialize(this, a_Ezsignfoldersignerassociation);EzsignfolderRequest.initialize(this, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency);
-        EzsignfolderRequestCompound.initialize(this, a_Ezsignfoldersignerassociation, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency);
+    constructor(fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
+        EzsignfolderRequest.initialize(this, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency);
+        EzsignfolderRequestCompound.initialize(this, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency);
     }
 
     /**
@@ -46,8 +42,7 @@ class EzsignfolderRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_Ezsignfoldersignerassociation, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
-        obj['a_Ezsignfoldersignerassociation'] = a_Ezsignfoldersignerassociation;
+    static initialize(obj, fkiEzsignfoldertypeID, fkiEzsigntsarequirementID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiEzsigntsarequirementID'] = fkiEzsigntsarequirementID;
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
@@ -65,12 +60,8 @@ class EzsignfolderRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderRequestCompound();
-            EzsignfolderRequestCompoundAllOf.constructFromObject(data, obj);
             EzsignfolderRequest.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_Ezsignfoldersignerassociation')) {
-                obj['a_Ezsignfoldersignerassociation'] = ApiClient.convertToType(data['a_Ezsignfoldersignerassociation'], [EzsignfoldersignerassociationRequest]);
-            }
             if (data.hasOwnProperty('fkiEzsignfoldertypeID')) {
                 obj['fkiEzsignfoldertypeID'] = ApiClient.convertToType(data['fkiEzsignfoldertypeID'], 'Number');
             }
@@ -90,21 +81,6 @@ class EzsignfolderRequestCompound {
         return obj;
     }
 
-/**
-     * Returns An array of signers that will be invited to sign the Ezsigndocuments
-     * @return {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationRequest>}
-     */
-    getAEzsignfoldersignerassociation() {
-        return this.a_Ezsignfoldersignerassociation;
-    }
-
-    /**
-     * Sets An array of signers that will be invited to sign the Ezsigndocuments
-     * @param {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationRequest>} a_Ezsignfoldersignerassociation An array of signers that will be invited to sign the Ezsigndocuments
-     */
-    setAEzsignfoldersignerassociation(a_Ezsignfoldersignerassociation) {
-        this['a_Ezsignfoldersignerassociation'] = a_Ezsignfoldersignerassociation;
-    }
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * @return {Number}
@@ -184,12 +160,6 @@ class EzsignfolderRequestCompound {
 }
 
 /**
- * An array of signers that will be invited to sign the Ezsigndocuments
- * @member {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationRequest>} a_Ezsignfoldersignerassociation
- */
-EzsignfolderRequestCompound.prototype['a_Ezsignfoldersignerassociation'] = undefined;
-
-/**
  * The unique ID of the Ezsignfoldertype.
  * @member {Number} fkiEzsignfoldertypeID
  */
@@ -219,12 +189,6 @@ EzsignfolderRequestCompound.prototype['tEzsignfolderNote'] = undefined;
 EzsignfolderRequestCompound.prototype['eEzsignfolderSendreminderfrequency'] = undefined;
 
 
-// Implement EzsignfolderRequestCompoundAllOf interface:
-/**
- * An array of signers that will be invited to sign the Ezsigndocuments
- * @member {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationRequest>} a_Ezsignfoldersignerassociation
- */
-EzsignfolderRequestCompoundAllOf.prototype['a_Ezsignfoldersignerassociation'] = undefined;
 // Implement EzsignfolderRequest interface:
 /**
  * The unique ID of the Ezsignfoldertype.

@@ -28,7 +28,7 @@ class EzsignsignatureRequest {
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign.
+     * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign or fill form fields
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      */
@@ -149,7 +149,7 @@ class EzsignsignatureRequest {
         this['iEzsignsignatureY'] = iEzsignsignatureY;
     }
 /**
-     * Returns The step when the Ezsignsigner will be invited to sign.
+     * Returns The step when the Ezsignsigner will be invited to sign or fill form fields
      * @return {Number}
      */
     getIEzsignsignatureStep() {
@@ -157,8 +157,8 @@ class EzsignsignatureRequest {
     }
 
     /**
-     * Sets The step when the Ezsignsigner will be invited to sign.
-     * @param {Number} iEzsignsignatureStep The step when the Ezsignsigner will be invited to sign.
+     * Sets The step when the Ezsignsigner will be invited to sign or fill form fields
+     * @param {Number} iEzsignsignatureStep The step when the Ezsignsigner will be invited to sign or fill form fields
      */
     setIEzsignsignatureStep(iEzsignsignatureStep) {
         this['iEzsignsignatureStep'] = iEzsignsignatureStep;
@@ -219,7 +219,7 @@ EzsignsignatureRequest.prototype['iEzsignsignatureX'] = undefined;
 EzsignsignatureRequest.prototype['iEzsignsignatureY'] = undefined;
 
 /**
- * The step when the Ezsignsigner will be invited to sign.
+ * The step when the Ezsignsigner will be invited to sign or fill form fields
  * @member {Number} iEzsignsignatureStep
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureStep'] = undefined;

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objEzsigndocument** | [**[EzsigndocumentResponse]**](EzsigndocumentResponse.md) |  | 
+**a_objEzsigndocument** | [**[EzsigndocumentResponseCompound]**](EzsigndocumentResponseCompound.md) |  | 
 
 

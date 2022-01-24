@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsigndocumentResponse from './EzsigndocumentResponse';
+import EzsigndocumentResponseCompound from './EzsigndocumentResponseCompound';
 
 /**
  * The EzsignfolderGetEzsigndocumentsV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetEzsigndocumentsV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments API Request
      * @alias module:eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload
-     * @param a_objEzsigndocument {Array.<module:eZmaxAPI/model/EzsigndocumentResponse>} 
+     * @param a_objEzsigndocument {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} 
      */
     constructor(a_objEzsigndocument) { 
         
@@ -52,21 +52,21 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
             obj = obj || new EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objEzsigndocument')) {
-                obj['a_objEzsigndocument'] = ApiClient.convertToType(data['a_objEzsigndocument'], [EzsigndocumentResponse]);
+                obj['a_objEzsigndocument'] = ApiClient.convertToType(data['a_objEzsigndocument'], [EzsigndocumentResponseCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/EzsigndocumentResponse>}
+     * @return {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>}
      */
     getAObjEzsigndocument() {
         return this.a_objEzsigndocument;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsigndocumentResponse>} a_objEzsigndocument
+     * @param {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} a_objEzsigndocument
      */
     setAObjEzsigndocument(a_objEzsigndocument) {
         this['a_objEzsigndocument'] = a_objEzsigndocument;
@@ -75,7 +75,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/EzsigndocumentResponse>} a_objEzsigndocument
+ * @member {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} a_objEzsigndocument
  */
 EzsignfolderGetEzsigndocumentsV1ResponseMPayload.prototype['a_objEzsigndocument'] = undefined;
 

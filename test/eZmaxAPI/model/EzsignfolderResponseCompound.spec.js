@@ -126,6 +126,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dtEzsignfolderScheduledarchive (base name: "dtEzsignfolderScheduledarchive")', function() {
+      // uncomment below and update the code to test the property dtEzsignfolderScheduledarchive
+      //var instance = new EZmaxApiDefinition.EzsignfolderResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtEzsignfolderScheduleddestruction (base name: "dtEzsignfolderScheduleddestruction")', function() {
+      // uncomment below and update the code to test the property dtEzsignfolderScheduleddestruction
+      //var instance = new EZmaxApiDefinition.EzsignfolderResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsignfolderStep (base name: "eEzsignfolderStep")', function() {
       // uncomment below and update the code to test the property eEzsignfolderStep
       //var instance = new EZmaxApiDefinition.EzsignfolderResponseCompound();

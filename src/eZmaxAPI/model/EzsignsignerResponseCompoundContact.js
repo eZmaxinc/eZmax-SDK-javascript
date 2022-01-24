@@ -14,22 +14,22 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The EzsignsignerRequestCompoundContact model module.
- * @module eZmaxAPI/model/EzsignsignerRequestCompoundContact
+ * The EzsignsignerResponseCompoundContact model module.
+ * @module eZmaxAPI/model/EzsignsignerResponseCompoundContact
  * @version 1.1.4
  */
-class EzsignsignerRequestCompoundContact {
+class EzsignsignerResponseCompoundContact {
     /**
-     * Constructs a new <code>EzsignsignerRequestCompoundContact</code>.
+     * Constructs a new <code>EzsignsignerResponseCompoundContact</code>.
      * A Ezsignsigner-&gt;Contact Object and children to create a complete structure
-     * @alias module:eZmaxAPI/model/EzsignsignerRequestCompoundContact
+     * @alias module:eZmaxAPI/model/EzsignsignerResponseCompoundContact
      * @param sContactFirstname {String} The First name of the contact
      * @param sContactLastname {String} The Last name of the contact
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      */
     constructor(sContactFirstname, sContactLastname, fkiLanguageID) { 
         
-        EzsignsignerRequestCompoundContact.initialize(this, sContactFirstname, sContactLastname, fkiLanguageID);
+        EzsignsignerResponseCompoundContact.initialize(this, sContactFirstname, sContactLastname, fkiLanguageID);
     }
 
     /**
@@ -44,15 +44,15 @@ class EzsignsignerRequestCompoundContact {
     }
 
     /**
-     * Constructs a <code>EzsignsignerRequestCompoundContact</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EzsignsignerResponseCompoundContact</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/EzsignsignerRequestCompoundContact} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/EzsignsignerRequestCompoundContact} The populated <code>EzsignsignerRequestCompoundContact</code> instance.
+     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} The populated <code>EzsignsignerResponseCompoundContact</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EzsignsignerRequestCompoundContact();
+            obj = obj || new EzsignsignerResponseCompoundContact();
 
             if (data.hasOwnProperty('sContactFirstname')) {
                 obj['sContactFirstname'] = ApiClient.convertToType(data['sContactFirstname'], 'String');
@@ -175,42 +175,42 @@ class EzsignsignerRequestCompoundContact {
  * The First name of the contact
  * @member {String} sContactFirstname
  */
-EzsignsignerRequestCompoundContact.prototype['sContactFirstname'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sContactFirstname'] = undefined;
 
 /**
  * The Last name of the contact
  * @member {String} sContactLastname
  */
-EzsignsignerRequestCompoundContact.prototype['sContactLastname'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sContactLastname'] = undefined;
 
 /**
  * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
  * @member {Number} fkiLanguageID
  */
-EzsignsignerRequestCompoundContact.prototype['fkiLanguageID'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['fkiLanguageID'] = undefined;
 
 /**
  * The email address.
  * @member {String} sEmailAddress
  */
-EzsignsignerRequestCompoundContact.prototype['sEmailAddress'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sEmailAddress'] = undefined;
 
 /**
  * The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
  * @member {String} sPhoneNumber
  */
-EzsignsignerRequestCompoundContact.prototype['sPhoneNumber'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sPhoneNumber'] = undefined;
 
 /**
  * The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
  * @member {String} sPhoneNumberCell
  */
-EzsignsignerRequestCompoundContact.prototype['sPhoneNumberCell'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sPhoneNumberCell'] = undefined;
 
 
 
 
 
 
-export default EzsignsignerRequestCompoundContact;
+export default EzsignsignerResponseCompoundContact;
 

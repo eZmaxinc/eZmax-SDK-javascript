@@ -18,6 +18,7 @@ import EzsignfolderCreateObjectV1Request from '../model/EzsignfolderCreateObject
 import EzsignfolderCreateObjectV1Response from '../model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderDeleteObjectV1Response from '../model/EzsignfolderDeleteObjectV1Response';
 import EzsignfolderGetEzsigndocumentsV1Response from '../model/EzsignfolderGetEzsigndocumentsV1Response';
+import EzsignfolderGetEzsignfoldersignerassociationsV1Response from '../model/EzsignfolderGetEzsignfoldersignerassociationsV1Response';
 import EzsignfolderGetFormsDataV1Response from '../model/EzsignfolderGetFormsDataV1Response';
 import EzsignfolderGetListV1Response from '../model/EzsignfolderGetListV1Response';
 import EzsignfolderGetObjectV1Response from '../model/EzsignfolderGetObjectV1Response';
@@ -166,6 +167,48 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderGetEzsigndocumentsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderGetEzsignfoldersignerassociationsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsignfoldersignerassociationsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignfolder's Ezsignfoldersignerassociations
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsignfoldersignerassociationsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1Response}
+     */
+    ezsignfolderGetEzsignfoldersignerassociationsV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetEzsignfoldersignerassociationsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetEzsignfoldersignerassociationsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
