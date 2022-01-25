@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
-import EzsignfolderResponse from './EzsignfolderResponse';
+import EzsignfolderResponseCompound from './EzsignfolderResponseCompound';
 import FieldEEzsignfolderSendreminderfrequency from './FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
 
@@ -27,7 +27,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetObjectV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsignfolder/getObject API Request
      * @alias module:eZmaxAPI/model/EzsignfolderGetObjectV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsignfolderResponse
+     * @implements module:eZmaxAPI/model/EzsignfolderResponseCompound
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
@@ -47,7 +47,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
     constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit) { 
-        EzsignfolderResponse.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
+        EzsignfolderResponseCompound.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
         EzsignfolderGetObjectV1ResponseMPayload.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
     }
 
@@ -86,7 +86,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetObjectV1ResponseMPayload();
-            EzsignfolderResponse.constructFromObject(data, obj);
+            EzsignfolderResponseCompound.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfolderID')) {
                 obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
@@ -497,89 +497,89 @@ EzsignfolderGetObjectV1ResponseMPayload.prototype['dtEzsignfolderClose'] = undef
 EzsignfolderGetObjectV1ResponseMPayload.prototype['objAudit'] = undefined;
 
 
-// Implement EzsignfolderResponse interface:
+// Implement EzsignfolderResponseCompound interface:
 /**
  * The unique ID of the Ezsignfolder
  * @member {Number} pkiEzsignfolderID
  */
-EzsignfolderResponse.prototype['pkiEzsignfolderID'] = undefined;
+EzsignfolderResponseCompound.prototype['pkiEzsignfolderID'] = undefined;
 /**
  * The unique ID of the Ezsignfoldertype.
  * @member {Number} fkiEzsignfoldertypeID
  */
-EzsignfolderResponse.prototype['fkiEzsignfoldertypeID'] = undefined;
+EzsignfolderResponseCompound.prototype['fkiEzsignfoldertypeID'] = undefined;
 /**
  * The name of the Ezsignfoldertype in the language of the requester
  * @member {String} sEzsignfoldertypeNameX
  */
-EzsignfolderResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
+EzsignfolderResponseCompound.prototype['sEzsignfoldertypeNameX'] = undefined;
 /**
  * The unique ID of the Billingentityinternal.
  * @member {Number} fkiBillingentityinternalID
  */
-EzsignfolderResponse.prototype['fkiBillingentityinternalID'] = undefined;
+EzsignfolderResponseCompound.prototype['fkiBillingentityinternalID'] = undefined;
 /**
  * The description of the Billingentityinternal in the language of the requester
  * @member {String} sBillingentityinternalDescriptionX
  */
-EzsignfolderResponse.prototype['sBillingentityinternalDescriptionX'] = undefined;
+EzsignfolderResponseCompound.prototype['sBillingentityinternalDescriptionX'] = undefined;
 /**
  * The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server's time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server's time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
  * @member {Number} fkiEzsigntsarequirementID
  */
-EzsignfolderResponse.prototype['fkiEzsigntsarequirementID'] = undefined;
+EzsignfolderResponseCompound.prototype['fkiEzsigntsarequirementID'] = undefined;
 /**
  * The description of the Ezsigntsarequirement in the language of the requester
  * @member {String} sEzsigntsarequirementDescriptionX
  */
-EzsignfolderResponse.prototype['sEzsigntsarequirementDescriptionX'] = undefined;
+EzsignfolderResponseCompound.prototype['sEzsigntsarequirementDescriptionX'] = undefined;
 /**
  * The description of the Ezsignfolder
  * @member {String} sEzsignfolderDescription
  */
-EzsignfolderResponse.prototype['sEzsignfolderDescription'] = undefined;
+EzsignfolderResponseCompound.prototype['sEzsignfolderDescription'] = undefined;
 /**
  * Somes extra notes about the eZsign Folder
  * @member {String} tEzsignfolderNote
  */
-EzsignfolderResponse.prototype['tEzsignfolderNote'] = undefined;
+EzsignfolderResponseCompound.prototype['tEzsignfolderNote'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} eEzsignfolderSendreminderfrequency
  */
-EzsignfolderResponse.prototype['eEzsignfolderSendreminderfrequency'] = undefined;
+EzsignfolderResponseCompound.prototype['eEzsignfolderSendreminderfrequency'] = undefined;
 /**
  * The maximum date and time at which the Ezsignfolder can be signed.
  * @member {String} dtEzsignfolderDuedate
  */
-EzsignfolderResponse.prototype['dtEzsignfolderDuedate'] = undefined;
+EzsignfolderResponseCompound.prototype['dtEzsignfolderDuedate'] = undefined;
 /**
  * The date and time at which the Ezsign folder was sent the last time.
  * @member {String} dtEzsignfolderSentdate
  */
-EzsignfolderResponse.prototype['dtEzsignfolderSentdate'] = undefined;
+EzsignfolderResponseCompound.prototype['dtEzsignfolderSentdate'] = undefined;
 /**
  * The scheduled date and time at which the Ezsignfolder should be archived.
  * @member {String} dtEzsignfolderScheduledarchive
  */
-EzsignfolderResponse.prototype['dtEzsignfolderScheduledarchive'] = undefined;
+EzsignfolderResponseCompound.prototype['dtEzsignfolderScheduledarchive'] = undefined;
 /**
  * The scheduled date and time at which the Ezsignfolder should be Destroyed.
  * @member {String} dtEzsignfolderScheduleddestruction
  */
-EzsignfolderResponse.prototype['dtEzsignfolderScheduleddestruction'] = undefined;
+EzsignfolderResponseCompound.prototype['dtEzsignfolderScheduleddestruction'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEEzsignfolderStep} eEzsignfolderStep
  */
-EzsignfolderResponse.prototype['eEzsignfolderStep'] = undefined;
+EzsignfolderResponseCompound.prototype['eEzsignfolderStep'] = undefined;
 /**
  * The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely.
  * @member {String} dtEzsignfolderClose
  */
-EzsignfolderResponse.prototype['dtEzsignfolderClose'] = undefined;
+EzsignfolderResponseCompound.prototype['dtEzsignfolderClose'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
-EzsignfolderResponse.prototype['objAudit'] = undefined;
+EzsignfolderResponseCompound.prototype['objAudit'] = undefined;
 
 
 
