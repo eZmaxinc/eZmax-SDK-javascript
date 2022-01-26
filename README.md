@@ -325,6 +325,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EZmaxApiDefinition.EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
+ - [EZmaxApiDefinition.EzsignsignaturecustomdateRequest](docs/EzsignsignaturecustomdateRequest.md)
  - [EZmaxApiDefinition.EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EZmaxApiDefinition.EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EZmaxApiDefinition.EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)

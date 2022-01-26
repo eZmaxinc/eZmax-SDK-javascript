@@ -148,6 +148,7 @@ docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
+docs/EzsignsignaturecustomdateRequest.md
 docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
 docs/EzsignsignerRequestCompoundAllOf.md
@@ -400,6 +401,7 @@ src/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignsignatureRequest.js
 src/eZmaxAPI/model/EzsignsignatureRequestCompound.js
+src/eZmaxAPI/model/EzsignsignaturecustomdateRequest.js
 src/eZmaxAPI/model/EzsignsignerRequest.js
 src/eZmaxAPI/model/EzsignsignerRequestCompound.js
 src/eZmaxAPI/model/EzsignsignerRequestCompoundAllOf.js
@@ -629,6 +631,7 @@ test/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignatureRequest.spec.js
 test/eZmaxAPI/model/EzsignsignatureRequestCompound.spec.js
+test/eZmaxAPI/model/EzsignsignaturecustomdateRequest.spec.js
 test/eZmaxAPI/model/EzsignsignerRequest.spec.js
 test/eZmaxAPI/model/EzsignsignerRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignsignerRequestCompoundAllOf.spec.js

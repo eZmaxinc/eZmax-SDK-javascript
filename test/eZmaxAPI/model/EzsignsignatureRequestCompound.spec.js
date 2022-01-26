@@ -54,6 +54,18 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignatureRequestCompound);
     });
 
+    it('should have the property bEzsignsignatureCustomdate (base name: "bEzsignsignatureCustomdate")', function() {
+      // uncomment below and update the code to test the property bEzsignsignatureCustomdate
+      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignsignaturecustomdate (base name: "a_objEzsignsignaturecustomdate")', function() {
+      // uncomment below and update the code to test the property a_objEzsignsignaturecustomdate
+      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiEzsignfoldersignerassociationID (base name: "fkiEzsignfoldersignerassociationID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldersignerassociationID
       //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();

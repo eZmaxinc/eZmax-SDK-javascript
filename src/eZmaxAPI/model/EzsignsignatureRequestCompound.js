@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EzsignsignatureRequest from './EzsignsignatureRequest';
+import EzsignsignaturecustomdateRequest from './EzsignsignaturecustomdateRequest';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
 
 /**
@@ -66,6 +67,12 @@ class EzsignsignatureRequestCompound {
             obj = obj || new EzsignsignatureRequestCompound();
             EzsignsignatureRequest.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
+                obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
+                obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequest]);
+            }
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
                 obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
             }
@@ -91,6 +98,36 @@ class EzsignsignatureRequestCompound {
         return obj;
     }
 
+/**
+     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @return {Boolean}
+     */
+    getBEzsignsignatureCustomdate() {
+        return this.bEzsignsignatureCustomdate;
+    }
+
+    /**
+     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     */
+    setBEzsignsignatureCustomdate(bEzsignsignatureCustomdate) {
+        this['bEzsignsignatureCustomdate'] = bEzsignsignatureCustomdate;
+    }
+/**
+     * Returns An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @return {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>}
+     */
+    getAObjEzsignsignaturecustomdate() {
+        return this.a_objEzsignsignaturecustomdate;
+    }
+
+    /**
+     * Sets An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @param {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     */
+    setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
+        this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
      * @return {Number}
@@ -196,6 +233,18 @@ class EzsignsignatureRequestCompound {
     }
 
 }
+
+/**
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * @member {Boolean} bEzsignsignatureCustomdate
+ */
+EzsignsignatureRequestCompound.prototype['bEzsignsignatureCustomdate'] = undefined;
+
+/**
+ * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+ * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate
+ */
+EzsignsignatureRequestCompound.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 
 /**
  * The unique ID of the Ezsignfoldersignerassociation

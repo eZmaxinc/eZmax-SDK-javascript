@@ -158,6 +158,7 @@ import EzsignsignatureGetObjectV1Response from './model/EzsignsignatureGetObject
 import EzsignsignatureGetObjectV1ResponseAllOf from './model/EzsignsignatureGetObjectV1ResponseAllOf';
 import EzsignsignatureRequest from './model/EzsignsignatureRequest';
 import EzsignsignatureRequestCompound from './model/EzsignsignatureRequestCompound';
+import EzsignsignaturecustomdateRequest from './model/EzsignsignaturecustomdateRequest';
 import EzsignsignerRequest from './model/EzsignsignerRequest';
 import EzsignsignerRequestCompound from './model/EzsignsignerRequestCompound';
 import EzsignsignerRequestCompoundAllOf from './model/EzsignsignerRequestCompoundAllOf';
@@ -1151,6 +1152,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsignsignatureRequestCompound}
      */
     EzsignsignatureRequestCompound,
+
+    /**
+     * The EzsignsignaturecustomdateRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateRequest}
+     */
+    EzsignsignaturecustomdateRequest,
 
     /**
      * The EzsignsignerRequest model constructor.
