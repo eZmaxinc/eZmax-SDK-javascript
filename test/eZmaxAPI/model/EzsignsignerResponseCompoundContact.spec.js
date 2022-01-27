@@ -78,14 +78,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sPhoneNumber (base name: "sPhoneNumber")', function() {
-      // uncomment below and update the code to test the property sPhoneNumber
+    it('should have the property sPhoneE164 (base name: "sPhoneE164")', function() {
+      // uncomment below and update the code to test the property sPhoneE164
       //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundContact();
       //expect(instance).to.be();
     });
 
-    it('should have the property sPhoneNumberCell (base name: "sPhoneNumberCell")', function() {
-      // uncomment below and update the code to test the property sPhoneNumberCell
+    it('should have the property sPhoneE164Cell (base name: "sPhoneE164Cell")', function() {
+      // uncomment below and update the code to test the property sPhoneE164Cell
       //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundContact();
       //expect(instance).to.be();
     });

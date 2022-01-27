@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfoldersignerassociationResponse from './EzsignfoldersignerassociationResponse';
+import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
+import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
 
 /**
  * The EzsignfoldersignerassociationResponseCompound model module.
@@ -27,13 +29,11 @@ class EzsignfoldersignerassociationResponseCompound {
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponse
      * @param pkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
-     * @param fkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
-     * @param fkiUserID {Number} The unique ID of the User
      * @param bEzsignfoldersignerassociationReceivecopy {Boolean} If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
      */
-    constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, fkiEzsignsignerID, fkiUserID, bEzsignfoldersignerassociationReceivecopy) { 
-        EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, fkiEzsignsignerID, fkiUserID, bEzsignfoldersignerassociationReceivecopy);
-        EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, fkiEzsignsignerID, fkiUserID, bEzsignfoldersignerassociationReceivecopy);
+    constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy) { 
+        EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy);
+        EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy);
     }
 
     /**
@@ -41,11 +41,9 @@ class EzsignfoldersignerassociationResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, fkiEzsignsignerID, fkiUserID, bEzsignfoldersignerassociationReceivecopy) { 
+    static initialize(obj, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy) { 
         obj['pkiEzsignfoldersignerassociationID'] = pkiEzsignfoldersignerassociationID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
-        obj['fkiEzsignsignerID'] = fkiEzsignsignerID;
-        obj['fkiUserID'] = fkiUserID;
         obj['bEzsignfoldersignerassociationReceivecopy'] = bEzsignfoldersignerassociationReceivecopy;
     }
 
@@ -61,17 +59,17 @@ class EzsignfoldersignerassociationResponseCompound {
             obj = obj || new EzsignfoldersignerassociationResponseCompound();
             EzsignfoldersignerassociationResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('objUser')) {
+                obj['objUser'] = EzsignfoldersignerassociationResponseCompoundUser.constructFromObject(data['objUser']);
+            }
+            if (data.hasOwnProperty('objEzsignsigner')) {
+                obj['objEzsignsigner'] = EzsignsignerResponseCompound.constructFromObject(data['objEzsignsigner']);
+            }
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
             }
             if (data.hasOwnProperty('fkiEzsignfolderID')) {
                 obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
-            }
-            if (data.hasOwnProperty('fkiEzsignsignerID')) {
-                obj['fkiEzsignsignerID'] = ApiClient.convertToType(data['fkiEzsignsignerID'], 'Number');
-            }
-            if (data.hasOwnProperty('fkiUserID')) {
-                obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
             if (data.hasOwnProperty('bEzsignfoldersignerassociationReceivecopy')) {
                 obj['bEzsignfoldersignerassociationReceivecopy'] = ApiClient.convertToType(data['bEzsignfoldersignerassociationReceivecopy'], 'Boolean');
@@ -80,6 +78,32 @@ class EzsignfoldersignerassociationResponseCompound {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser}
+     */
+    getObjUser() {
+        return this.objUser;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+     */
+    setObjUser(objUser) {
+        this['objUser'] = objUser;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompound}
+     */
+    getObjEzsignsigner() {
+        return this.objEzsignsigner;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+     */
+    setObjEzsignsigner(objEzsignsigner) {
+        this['objEzsignsigner'] = objEzsignsigner;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
      * @return {Number}
@@ -111,36 +135,6 @@ class EzsignfoldersignerassociationResponseCompound {
         this['fkiEzsignfolderID'] = fkiEzsignfolderID;
     }
 /**
-     * Returns The unique ID of the Ezsignsigner
-     * @return {Number}
-     */
-    getFkiEzsignsignerID() {
-        return this.fkiEzsignsignerID;
-    }
-
-    /**
-     * Sets The unique ID of the Ezsignsigner
-     * @param {Number} fkiEzsignsignerID The unique ID of the Ezsignsigner
-     */
-    setFkiEzsignsignerID(fkiEzsignsignerID) {
-        this['fkiEzsignsignerID'] = fkiEzsignsignerID;
-    }
-/**
-     * Returns The unique ID of the User
-     * @return {Number}
-     */
-    getFkiUserID() {
-        return this.fkiUserID;
-    }
-
-    /**
-     * Sets The unique ID of the User
-     * @param {Number} fkiUserID The unique ID of the User
-     */
-    setFkiUserID(fkiUserID) {
-        this['fkiUserID'] = fkiUserID;
-    }
-/**
      * Returns If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
      * @return {Boolean}
      */
@@ -159,6 +153,16 @@ class EzsignfoldersignerassociationResponseCompound {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+ */
+EzsignfoldersignerassociationResponseCompound.prototype['objUser'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+ */
+EzsignfoldersignerassociationResponseCompound.prototype['objEzsignsigner'] = undefined;
+
+/**
  * The unique ID of the Ezsignfoldersignerassociation
  * @member {Number} pkiEzsignfoldersignerassociationID
  */
@@ -169,18 +173,6 @@ EzsignfoldersignerassociationResponseCompound.prototype['pkiEzsignfoldersigneras
  * @member {Number} fkiEzsignfolderID
  */
 EzsignfoldersignerassociationResponseCompound.prototype['fkiEzsignfolderID'] = undefined;
-
-/**
- * The unique ID of the Ezsignsigner
- * @member {Number} fkiEzsignsignerID
- */
-EzsignfoldersignerassociationResponseCompound.prototype['fkiEzsignsignerID'] = undefined;
-
-/**
- * The unique ID of the User
- * @member {Number} fkiUserID
- */
-EzsignfoldersignerassociationResponseCompound.prototype['fkiUserID'] = undefined;
 
 /**
  * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
@@ -200,16 +192,6 @@ EzsignfoldersignerassociationResponse.prototype['pkiEzsignfoldersignerassociatio
  * @member {Number} fkiEzsignfolderID
  */
 EzsignfoldersignerassociationResponse.prototype['fkiEzsignfolderID'] = undefined;
-/**
- * The unique ID of the Ezsignsigner
- * @member {Number} fkiEzsignsignerID
- */
-EzsignfoldersignerassociationResponse.prototype['fkiEzsignsignerID'] = undefined;
-/**
- * The unique ID of the User
- * @member {Number} fkiUserID
- */
-EzsignfoldersignerassociationResponse.prototype['fkiUserID'] = undefined;
 /**
  * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
  * @member {Boolean} bEzsignfoldersignerassociationReceivecopy

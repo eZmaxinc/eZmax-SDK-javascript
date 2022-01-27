@@ -54,6 +54,18 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound);
     });
 
+    it('should have the property objUser (base name: "objUser")', function() {
+      // uncomment below and update the code to test the property objUser
+      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEzsignsigner (base name: "objEzsignsigner")', function() {
+      // uncomment below and update the code to test the property objEzsignsigner
+      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pkiEzsignfoldersignerassociationID (base name: "pkiEzsignfoldersignerassociationID")', function() {
       // uncomment below and update the code to test the property pkiEzsignfoldersignerassociationID
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
@@ -62,18 +74,6 @@
 
     it('should have the property fkiEzsignfolderID (base name: "fkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfolderID
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiEzsignsignerID (base name: "fkiEzsignsignerID")', function() {
-      // uncomment below and update the code to test the property fkiEzsignsignerID
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiUserID (base name: "fkiUserID")', function() {
-      // uncomment below and update the code to test the property fkiUserID
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound();
       //expect(instance).to.be();
     });

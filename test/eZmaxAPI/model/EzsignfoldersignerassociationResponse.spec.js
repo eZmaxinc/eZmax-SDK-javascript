@@ -66,18 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiEzsignsignerID (base name: "fkiEzsignsignerID")', function() {
-      // uncomment below and update the code to test the property fkiEzsignsignerID
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiUserID (base name: "fkiUserID")', function() {
-      // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property bEzsignfoldersignerassociationReceivecopy (base name: "bEzsignfoldersignerassociationReceivecopy")', function() {
       // uncomment below and update the code to test the property bEzsignfoldersignerassociationReceivecopy
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponse();

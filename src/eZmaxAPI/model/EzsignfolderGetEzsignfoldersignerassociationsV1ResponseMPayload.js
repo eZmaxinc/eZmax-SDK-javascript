@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsignfoldersignerassociationResponse from './EzsignfoldersignerassociationResponse';
+import EzsignfoldersignerassociationResponseCompound from './EzsignfoldersignerassociationResponseCompound';
 
 /**
  * The EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
      * @alias module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
-     * @param a_objEzsignfoldersignerassociation {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponse>} 
+     * @param a_objEzsignfoldersignerassociation {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} 
      */
     constructor(a_objEzsignfoldersignerassociation) { 
         
@@ -52,21 +52,21 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
             obj = obj || new EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objEzsignfoldersignerassociation')) {
-                obj['a_objEzsignfoldersignerassociation'] = ApiClient.convertToType(data['a_objEzsignfoldersignerassociation'], [EzsignfoldersignerassociationResponse]);
+                obj['a_objEzsignfoldersignerassociation'] = ApiClient.convertToType(data['a_objEzsignfoldersignerassociation'], [EzsignfoldersignerassociationResponseCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponse>}
+     * @return {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>}
      */
     getAObjEzsignfoldersignerassociation() {
         return this.a_objEzsignfoldersignerassociation;
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponse>} a_objEzsignfoldersignerassociation
+     * @param {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} a_objEzsignfoldersignerassociation
      */
     setAObjEzsignfoldersignerassociation(a_objEzsignfoldersignerassociation) {
         this['a_objEzsignfoldersignerassociation'] = a_objEzsignfoldersignerassociation;
@@ -75,7 +75,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
 }
 
 /**
- * @member {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponse>} a_objEzsignfoldersignerassociation
+ * @member {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} a_objEzsignfoldersignerassociation
  */
 EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.prototype['a_objEzsignfoldersignerassociation'] = undefined;
 

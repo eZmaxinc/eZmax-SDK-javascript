@@ -128,6 +128,7 @@ docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
+docs/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/EzsignfoldertypeGetListV1Response.md
 docs/EzsignfoldertypeGetListV1ResponseAllOf.md
 docs/EzsignfoldertypeGetListV1ResponseMPayload.md
@@ -381,6 +382,7 @@ src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponse.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.js
+src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser.js
 src/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.js
 src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload.js
@@ -611,6 +613,7 @@ test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponse.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.spec.js
+test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser.spec.js
 test/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseMPayload.spec.js

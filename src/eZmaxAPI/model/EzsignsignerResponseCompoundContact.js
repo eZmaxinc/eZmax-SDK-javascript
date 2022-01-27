@@ -66,11 +66,11 @@ class EzsignsignerResponseCompoundContact {
             if (data.hasOwnProperty('sEmailAddress')) {
                 obj['sEmailAddress'] = ApiClient.convertToType(data['sEmailAddress'], 'String');
             }
-            if (data.hasOwnProperty('sPhoneNumber')) {
-                obj['sPhoneNumber'] = ApiClient.convertToType(data['sPhoneNumber'], 'String');
+            if (data.hasOwnProperty('sPhoneE164')) {
+                obj['sPhoneE164'] = ApiClient.convertToType(data['sPhoneE164'], 'String');
             }
-            if (data.hasOwnProperty('sPhoneNumberCell')) {
-                obj['sPhoneNumberCell'] = ApiClient.convertToType(data['sPhoneNumberCell'], 'String');
+            if (data.hasOwnProperty('sPhoneE164Cell')) {
+                obj['sPhoneE164Cell'] = ApiClient.convertToType(data['sPhoneE164Cell'], 'String');
             }
         }
         return obj;
@@ -139,34 +139,34 @@ class EzsignsignerResponseCompoundContact {
         this['sEmailAddress'] = sEmailAddress;
     }
 /**
-     * Returns The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * Returns A phone number in E.164 Format
      * @return {String}
      */
-    getSPhoneNumber() {
-        return this.sPhoneNumber;
+    getSPhoneE164() {
+        return this.sPhoneE164;
     }
 
     /**
-     * Sets The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
-     * @param {String} sPhoneNumber The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * Sets A phone number in E.164 Format
+     * @param {String} sPhoneE164 A phone number in E.164 Format
      */
-    setSPhoneNumber(sPhoneNumber) {
-        this['sPhoneNumber'] = sPhoneNumber;
+    setSPhoneE164(sPhoneE164) {
+        this['sPhoneE164'] = sPhoneE164;
     }
 /**
-     * Returns The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * Returns A phone number in E.164 Format
      * @return {String}
      */
-    getSPhoneNumberCell() {
-        return this.sPhoneNumberCell;
+    getSPhoneE164Cell() {
+        return this.sPhoneE164Cell;
     }
 
     /**
-     * Sets The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
-     * @param {String} sPhoneNumberCell The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
+     * Sets A phone number in E.164 Format
+     * @param {String} sPhoneE164Cell A phone number in E.164 Format
      */
-    setSPhoneNumberCell(sPhoneNumberCell) {
-        this['sPhoneNumberCell'] = sPhoneNumberCell;
+    setSPhoneE164Cell(sPhoneE164Cell) {
+        this['sPhoneE164Cell'] = sPhoneE164Cell;
     }
 
 }
@@ -196,16 +196,16 @@ EzsignsignerResponseCompoundContact.prototype['fkiLanguageID'] = undefined;
 EzsignsignerResponseCompoundContact.prototype['sEmailAddress'] = undefined;
 
 /**
- * The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
- * @member {String} sPhoneNumber
+ * A phone number in E.164 Format
+ * @member {String} sPhoneE164
  */
-EzsignsignerResponseCompoundContact.prototype['sPhoneNumber'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sPhoneE164'] = undefined;
 
 /**
- * The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
- * @member {String} sPhoneNumberCell
+ * A phone number in E.164 Format
+ * @member {String} sPhoneE164Cell
  */
-EzsignsignerResponseCompoundContact.prototype['sPhoneNumberCell'] = undefined;
+EzsignsignerResponseCompoundContact.prototype['sPhoneE164Cell'] = undefined;
 
 
 

@@ -152,7 +152,7 @@ class PhoneRequest {
         this['sPhoneNumber'] = sPhoneNumber;
     }
 /**
-     * Returns The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
+     * Returns A phone number in E.164 Format
      * @return {String}
      */
     getSPhoneInternational() {
@@ -160,8 +160,8 @@ class PhoneRequest {
     }
 
     /**
-     * Sets The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
-     * @param {String} sPhoneInternational The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
+     * Sets A phone number in E.164 Format
+     * @param {String} sPhoneInternational A phone number in E.164 Format
      */
     setSPhoneInternational(sPhoneInternational) {
         this['sPhoneInternational'] = sPhoneInternational;
@@ -214,7 +214,7 @@ PhoneRequest.prototype['sPhoneExchange'] = undefined;
 PhoneRequest.prototype['sPhoneNumber'] = undefined;
 
 /**
- * The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
+ * A phone number in E.164 Format
  * @member {String} sPhoneInternational
  */
 PhoneRequest.prototype['sPhoneInternational'] = undefined;

@@ -305,6 +305,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompoundAllOf](docs/EzsignfoldersignerassociationRequestCompoundAllOf.md)
  - [EZmaxApiDefinition.EzsignfoldersignerassociationResponse](docs/EzsignfoldersignerassociationResponse.md)
  - [EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompound](docs/EzsignfoldersignerassociationResponseCompound.md)
+ - [EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundUser](docs/EzsignfoldersignerassociationResponseCompoundUser.md)
  - [EZmaxApiDefinition.EzsignfoldertypeGetListV1Response](docs/EzsignfoldertypeGetListV1Response.md)
  - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseAllOf](docs/EzsignfoldertypeGetListV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)

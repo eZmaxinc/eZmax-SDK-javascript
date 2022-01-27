@@ -138,6 +138,7 @@ import EzsignfoldersignerassociationRequestCompound from './model/Ezsignfoldersi
 import EzsignfoldersignerassociationRequestCompoundAllOf from './model/EzsignfoldersignerassociationRequestCompoundAllOf';
 import EzsignfoldersignerassociationResponse from './model/EzsignfoldersignerassociationResponse';
 import EzsignfoldersignerassociationResponseCompound from './model/EzsignfoldersignerassociationResponseCompound';
+import EzsignfoldersignerassociationResponseCompoundUser from './model/EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignfoldertypeGetListV1Response from './model/EzsignfoldertypeGetListV1Response';
 import EzsignfoldertypeGetListV1ResponseAllOf from './model/EzsignfoldertypeGetListV1ResponseAllOf';
 import EzsignfoldertypeGetListV1ResponseMPayload from './model/EzsignfoldertypeGetListV1ResponseMPayload';
@@ -1032,6 +1033,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound}
      */
     EzsignfoldersignerassociationResponseCompound,
+
+    /**
+     * The EzsignfoldersignerassociationResponseCompoundUser model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser}
+     */
+    EzsignfoldersignerassociationResponseCompoundUser,
 
     /**
      * The EzsignfoldertypeGetListV1Response model constructor.

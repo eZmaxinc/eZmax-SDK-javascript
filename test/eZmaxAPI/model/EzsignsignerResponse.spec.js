@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerResponse);
     });
 
+    it('should have the property pkiEzsignsignerID (base name: "pkiEzsignsignerID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignsignerID
+      //var instance = new EZmaxApiDefinition.EzsignsignerResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiTaxassignmentID (base name: "fkiTaxassignmentID")', function() {
       // uncomment below and update the code to test the property fkiTaxassignmentID
       //var instance = new EZmaxApiDefinition.EzsignsignerResponse();
@@ -66,14 +72,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property eEzsignsignerLogintype (base name: "eEzsignsignerLogintype")', function() {
-      // uncomment below and update the code to test the property eEzsignsignerLogintype
+    it('should have the property fkiUserlogintypeID (base name: "fkiUserlogintypeID")', function() {
+      // uncomment below and update the code to test the property fkiUserlogintypeID
       //var instance = new EZmaxApiDefinition.EzsignsignerResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property sEzsignsignerSecretanswer (base name: "sEzsignsignerSecretanswer")', function() {
-      // uncomment below and update the code to test the property sEzsignsignerSecretanswer
+    it('should have the property sUserlogintypeDescriptionX (base name: "sUserlogintypeDescriptionX")', function() {
+      // uncomment below and update the code to test the property sUserlogintypeDescriptionX
       //var instance = new EZmaxApiDefinition.EzsignsignerResponse();
       //expect(instance).to.be();
     });

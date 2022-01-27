@@ -29,12 +29,14 @@ class EzsignsignerResponseCompound {
      * @implements module:eZmaxAPI/model/EzsignsignerResponseCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignsignerResponse
      * @param objContact {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} 
+     * @param pkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
      * @param fkiTaxassignmentID {Number} The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
-     * @param eEzsignsignerLogintype {module:eZmaxAPI/model/EzsignsignerResponseCompound.EEzsignsignerLogintypeEnum} The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
+     * @param fkiUserlogintypeID {Number} The unique ID of the Userlogintype
+     * @param sUserlogintypeDescriptionX {String} The description of the Userlogintype in the language of the requester
      */
-    constructor(objContact, fkiTaxassignmentID, eEzsignsignerLogintype) { 
-        EzsignsignerResponseCompoundAllOf.initialize(this, objContact);EzsignsignerResponse.initialize(this, fkiTaxassignmentID, eEzsignsignerLogintype);
-        EzsignsignerResponseCompound.initialize(this, objContact, fkiTaxassignmentID, eEzsignsignerLogintype);
+    constructor(objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX) { 
+        EzsignsignerResponseCompoundAllOf.initialize(this, objContact);EzsignsignerResponse.initialize(this, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX);
+        EzsignsignerResponseCompound.initialize(this, objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX);
     }
 
     /**
@@ -42,10 +44,12 @@ class EzsignsignerResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objContact, fkiTaxassignmentID, eEzsignsignerLogintype) { 
+    static initialize(obj, objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX) { 
         obj['objContact'] = objContact;
+        obj['pkiEzsignsignerID'] = pkiEzsignsignerID;
         obj['fkiTaxassignmentID'] = fkiTaxassignmentID;
-        obj['eEzsignsignerLogintype'] = eEzsignsignerLogintype;
+        obj['fkiUserlogintypeID'] = fkiUserlogintypeID;
+        obj['sUserlogintypeDescriptionX'] = sUserlogintypeDescriptionX;
     }
 
     /**
@@ -64,17 +68,20 @@ class EzsignsignerResponseCompound {
             if (data.hasOwnProperty('objContact')) {
                 obj['objContact'] = EzsignsignerResponseCompoundContact.constructFromObject(data['objContact']);
             }
+            if (data.hasOwnProperty('pkiEzsignsignerID')) {
+                obj['pkiEzsignsignerID'] = ApiClient.convertToType(data['pkiEzsignsignerID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiTaxassignmentID')) {
                 obj['fkiTaxassignmentID'] = ApiClient.convertToType(data['fkiTaxassignmentID'], 'Number');
             }
             if (data.hasOwnProperty('fkiSecretquestionID')) {
                 obj['fkiSecretquestionID'] = ApiClient.convertToType(data['fkiSecretquestionID'], 'Number');
             }
-            if (data.hasOwnProperty('eEzsignsignerLogintype')) {
-                obj['eEzsignsignerLogintype'] = ApiClient.convertToType(data['eEzsignsignerLogintype'], 'String');
+            if (data.hasOwnProperty('fkiUserlogintypeID')) {
+                obj['fkiUserlogintypeID'] = ApiClient.convertToType(data['fkiUserlogintypeID'], 'Number');
             }
-            if (data.hasOwnProperty('sEzsignsignerSecretanswer')) {
-                obj['sEzsignsignerSecretanswer'] = ApiClient.convertToType(data['sEzsignsignerSecretanswer'], 'String');
+            if (data.hasOwnProperty('sUserlogintypeDescriptionX')) {
+                obj['sUserlogintypeDescriptionX'] = ApiClient.convertToType(data['sUserlogintypeDescriptionX'], 'String');
             }
         }
         return obj;
@@ -92,6 +99,21 @@ class EzsignsignerResponseCompound {
      */
     setObjContact(objContact) {
         this['objContact'] = objContact;
+    }
+/**
+     * Returns The unique ID of the Ezsignsigner
+     * @return {Number}
+     */
+    getPkiEzsignsignerID() {
+        return this.pkiEzsignsignerID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsigner
+     * @param {Number} pkiEzsignsignerID The unique ID of the Ezsignsigner
+     */
+    setPkiEzsignsignerID(pkiEzsignsignerID) {
+        this['pkiEzsignsignerID'] = pkiEzsignsignerID;
     }
 /**
      * Returns The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
@@ -126,34 +148,34 @@ class EzsignsignerResponseCompound {
         this['fkiSecretquestionID'] = fkiSecretquestionID;
     }
 /**
-     * Returns The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
-     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompound.EEzsignsignerLogintypeEnum}
+     * Returns The unique ID of the Userlogintype
+     * @return {Number}
      */
-    getEEzsignsignerLogintype() {
-        return this.eEzsignsignerLogintype;
+    getFkiUserlogintypeID() {
+        return this.fkiUserlogintypeID;
     }
 
     /**
-     * Sets The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
-     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompound.EEzsignsignerLogintypeEnum} eEzsignsignerLogintype The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
+     * Sets The unique ID of the Userlogintype
+     * @param {Number} fkiUserlogintypeID The unique ID of the Userlogintype
      */
-    setEEzsignsignerLogintype(eEzsignsignerLogintype) {
-        this['eEzsignsignerLogintype'] = eEzsignsignerLogintype;
+    setFkiUserlogintypeID(fkiUserlogintypeID) {
+        this['fkiUserlogintypeID'] = fkiUserlogintypeID;
     }
 /**
-     * Returns The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
+     * Returns The description of the Userlogintype in the language of the requester
      * @return {String}
      */
-    getSEzsignsignerSecretanswer() {
-        return this.sEzsignsignerSecretanswer;
+    getSUserlogintypeDescriptionX() {
+        return this.sUserlogintypeDescriptionX;
     }
 
     /**
-     * Sets The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
-     * @param {String} sEzsignsignerSecretanswer The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
+     * Sets The description of the Userlogintype in the language of the requester
+     * @param {String} sUserlogintypeDescriptionX The description of the Userlogintype in the language of the requester
      */
-    setSEzsignsignerSecretanswer(sEzsignsignerSecretanswer) {
-        this['sEzsignsignerSecretanswer'] = sEzsignsignerSecretanswer;
+    setSUserlogintypeDescriptionX(sUserlogintypeDescriptionX) {
+        this['sUserlogintypeDescriptionX'] = sUserlogintypeDescriptionX;
     }
 
 }
@@ -162,6 +184,12 @@ class EzsignsignerResponseCompound {
  * @member {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
  */
 EzsignsignerResponseCompound.prototype['objContact'] = undefined;
+
+/**
+ * The unique ID of the Ezsignsigner
+ * @member {Number} pkiEzsignsignerID
+ */
+EzsignsignerResponseCompound.prototype['pkiEzsignsignerID'] = undefined;
 
 /**
  * The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
@@ -176,16 +204,16 @@ EzsignsignerResponseCompound.prototype['fkiTaxassignmentID'] = undefined;
 EzsignsignerResponseCompound.prototype['fkiSecretquestionID'] = undefined;
 
 /**
- * The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
- * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound.EEzsignsignerLogintypeEnum} eEzsignsignerLogintype
+ * The unique ID of the Userlogintype
+ * @member {Number} fkiUserlogintypeID
  */
-EzsignsignerResponseCompound.prototype['eEzsignsignerLogintype'] = undefined;
+EzsignsignerResponseCompound.prototype['fkiUserlogintypeID'] = undefined;
 
 /**
- * The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
- * @member {String} sEzsignsignerSecretanswer
+ * The description of the Userlogintype in the language of the requester
+ * @member {String} sUserlogintypeDescriptionX
  */
-EzsignsignerResponseCompound.prototype['sEzsignsignerSecretanswer'] = undefined;
+EzsignsignerResponseCompound.prototype['sUserlogintypeDescriptionX'] = undefined;
 
 
 // Implement EzsignsignerResponseCompoundAllOf interface:
@@ -194,6 +222,11 @@ EzsignsignerResponseCompound.prototype['sEzsignsignerSecretanswer'] = undefined;
  */
 EzsignsignerResponseCompoundAllOf.prototype['objContact'] = undefined;
 // Implement EzsignsignerResponse interface:
+/**
+ * The unique ID of the Ezsignsigner
+ * @member {Number} pkiEzsignsignerID
+ */
+EzsignsignerResponse.prototype['pkiEzsignsignerID'] = undefined;
 /**
  * The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
  * @member {Number} fkiTaxassignmentID
@@ -205,55 +238,16 @@ EzsignsignerResponse.prototype['fkiTaxassignmentID'] = undefined;
  */
 EzsignsignerResponse.prototype['fkiSecretquestionID'] = undefined;
 /**
- * The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
- * @member {module:eZmaxAPI/model/EzsignsignerResponse.EEzsignsignerLogintypeEnum} eEzsignsignerLogintype
+ * The unique ID of the Userlogintype
+ * @member {Number} fkiUserlogintypeID
  */
-EzsignsignerResponse.prototype['eEzsignsignerLogintype'] = undefined;
+EzsignsignerResponse.prototype['fkiUserlogintypeID'] = undefined;
 /**
- * The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
- * @member {String} sEzsignsignerSecretanswer
+ * The description of the Userlogintype in the language of the requester
+ * @member {String} sUserlogintypeDescriptionX
  */
-EzsignsignerResponse.prototype['sEzsignsignerSecretanswer'] = undefined;
+EzsignsignerResponse.prototype['sUserlogintypeDescriptionX'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>eEzsignsignerLogintype</code> property.
- * @enum {String}
- * @readonly
- */
-EzsignsignerResponseCompound['EEzsignsignerLogintypeEnum'] = {
-
-    /**
-     * value: "Password"
-     * @const
-     */
-    "Password": "Password",
-
-    /**
-     * value: "PasswordPhone"
-     * @const
-     */
-    "PasswordPhone": "PasswordPhone",
-
-    /**
-     * value: "PasswordQuestion"
-     * @const
-     */
-    "PasswordQuestion": "PasswordQuestion",
-
-    /**
-     * value: "InPersonPhone"
-     * @const
-     */
-    "InPersonPhone": "InPersonPhone",
-
-    /**
-     * value: "InPerson"
-     * @const
-     */
-    "InPerson": "InPerson"
-};
 
 
 
