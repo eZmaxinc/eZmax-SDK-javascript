@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerResponseCompoundContact);
     });
 
+    it('should have the property pkiContactID (base name: "pkiContactID")', function() {
+      // uncomment below and update the code to test the property pkiContactID
+      //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundContact();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sContactFirstname (base name: "sContactFirstname")', function() {
       // uncomment below and update the code to test the property sContactFirstname
       //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundContact();

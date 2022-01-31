@@ -23,13 +23,14 @@ class EzsignsignerResponseCompoundContact {
      * Constructs a new <code>EzsignsignerResponseCompoundContact</code>.
      * A Ezsignsigner-&gt;Contact Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignerResponseCompoundContact
+     * @param pkiContactID {Number} The unique ID of the Contact
      * @param sContactFirstname {String} The First name of the contact
      * @param sContactLastname {String} The Last name of the contact
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      */
-    constructor(sContactFirstname, sContactLastname, fkiLanguageID) { 
+    constructor(pkiContactID, sContactFirstname, sContactLastname, fkiLanguageID) { 
         
-        EzsignsignerResponseCompoundContact.initialize(this, sContactFirstname, sContactLastname, fkiLanguageID);
+        EzsignsignerResponseCompoundContact.initialize(this, pkiContactID, sContactFirstname, sContactLastname, fkiLanguageID);
     }
 
     /**
@@ -37,7 +38,8 @@ class EzsignsignerResponseCompoundContact {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sContactFirstname, sContactLastname, fkiLanguageID) { 
+    static initialize(obj, pkiContactID, sContactFirstname, sContactLastname, fkiLanguageID) { 
+        obj['pkiContactID'] = pkiContactID;
         obj['sContactFirstname'] = sContactFirstname;
         obj['sContactLastname'] = sContactLastname;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -54,6 +56,9 @@ class EzsignsignerResponseCompoundContact {
         if (data) {
             obj = obj || new EzsignsignerResponseCompoundContact();
 
+            if (data.hasOwnProperty('pkiContactID')) {
+                obj['pkiContactID'] = ApiClient.convertToType(data['pkiContactID'], 'Number');
+            }
             if (data.hasOwnProperty('sContactFirstname')) {
                 obj['sContactFirstname'] = ApiClient.convertToType(data['sContactFirstname'], 'String');
             }
@@ -76,6 +81,21 @@ class EzsignsignerResponseCompoundContact {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Contact
+     * @return {Number}
+     */
+    getPkiContactID() {
+        return this.pkiContactID;
+    }
+
+    /**
+     * Sets The unique ID of the Contact
+     * @param {Number} pkiContactID The unique ID of the Contact
+     */
+    setPkiContactID(pkiContactID) {
+        this['pkiContactID'] = pkiContactID;
+    }
 /**
      * Returns The First name of the contact
      * @return {String}
@@ -170,6 +190,12 @@ class EzsignsignerResponseCompoundContact {
     }
 
 }
+
+/**
+ * The unique ID of the Contact
+ * @member {Number} pkiContactID
+ */
+EzsignsignerResponseCompoundContact.prototype['pkiContactID'] = undefined;
 
 /**
  * The First name of the contact

@@ -393,6 +393,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EZmaxApiDefinition.WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EZmaxApiDefinition.WebsiteRequest](docs/WebsiteRequest.md)
+ - [EZmaxApiDefinition.Xxxx](docs/Xxxx.md)
 
 
 ## Documentation for Authorization

@@ -226,6 +226,7 @@ import WebhookResponse from './model/WebhookResponse';
 import WebhookUserUserCreated from './model/WebhookUserUserCreated';
 import WebhookUserUserCreatedAllOf from './model/WebhookUserUserCreatedAllOf';
 import WebsiteRequest from './model/WebsiteRequest';
+import Xxxx from './model/Xxxx';
 import GlobalCustomerApi from './api/GlobalCustomerApi';
 import ModuleAuthenticateApi from './api/ModuleAuthenticateApi';
 import ModuleListApi from './api/ModuleListApi';
@@ -1561,6 +1562,12 @@ export {
      * @property {module:eZmaxAPI/model/WebsiteRequest}
      */
     WebsiteRequest,
+
+    /**
+     * The Xxxx model constructor.
+     * @property {module:eZmaxAPI/model/Xxxx}
+     */
+    Xxxx,
 
     /**
     * The GlobalCustomerApi service constructor.

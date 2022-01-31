@@ -234,6 +234,7 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
+docs/Xxxx.md
 git_push.sh
 mocha.opts
 package.json
@@ -470,6 +471,7 @@ src/eZmaxAPI/model/WebhookResponse.js
 src/eZmaxAPI/model/WebhookUserUserCreated.js
 src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
+src/eZmaxAPI/model/Xxxx.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
 test/eZmaxAPI/api/ModuleAuthenticateApi.spec.js
 test/eZmaxAPI/api/ModuleListApi.spec.js
@@ -701,3 +703,4 @@ test/eZmaxAPI/model/WebhookResponse.spec.js
 test/eZmaxAPI/model/WebhookUserUserCreated.spec.js
 test/eZmaxAPI/model/WebhookUserUserCreatedAllOf.spec.js
 test/eZmaxAPI/model/WebsiteRequest.spec.js
+test/eZmaxAPI/model/Xxxx.spec.js

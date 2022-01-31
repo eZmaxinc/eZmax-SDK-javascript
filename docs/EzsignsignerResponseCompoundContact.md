@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiContactID** | **Number** | The unique ID of the Contact | 
 **sContactFirstname** | **String** | The First name of the contact | 
 **sContactLastname** | **String** | The Last name of the contact | 
 **fkiLanguageID** | **Number** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | 
