@@ -93,6 +93,7 @@ import EzsigndocumentRequest from './model/EzsigndocumentRequest';
 import EzsigndocumentRequestCompound from './model/EzsigndocumentRequestCompound';
 import EzsigndocumentResponse from './model/EzsigndocumentResponse';
 import EzsigndocumentResponseCompound from './model/EzsigndocumentResponseCompound';
+import EzsigndocumentResponseCompoundAllOf from './model/EzsigndocumentResponseCompoundAllOf';
 import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderCreateObjectV1ResponseAllOf from './model/EzsignfolderCreateObjectV1ResponseAllOf';
@@ -138,6 +139,7 @@ import EzsignfoldersignerassociationRequestCompound from './model/Ezsignfoldersi
 import EzsignfoldersignerassociationRequestCompoundAllOf from './model/EzsignfoldersignerassociationRequestCompoundAllOf';
 import EzsignfoldersignerassociationResponse from './model/EzsignfoldersignerassociationResponse';
 import EzsignfoldersignerassociationResponseCompound from './model/EzsignfoldersignerassociationResponseCompound';
+import EzsignfoldersignerassociationResponseCompoundAllOf from './model/EzsignfoldersignerassociationResponseCompoundAllOf';
 import EzsignfoldersignerassociationResponseCompoundUser from './model/EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignfoldertypeGetListV1Response from './model/EzsignfoldertypeGetListV1Response';
 import EzsignfoldertypeGetListV1ResponseAllOf from './model/EzsignfoldertypeGetListV1ResponseAllOf';
@@ -159,6 +161,7 @@ import EzsignsignatureGetObjectV1Response from './model/EzsignsignatureGetObject
 import EzsignsignatureGetObjectV1ResponseAllOf from './model/EzsignsignatureGetObjectV1ResponseAllOf';
 import EzsignsignatureRequest from './model/EzsignsignatureRequest';
 import EzsignsignatureRequestCompound from './model/EzsignsignatureRequestCompound';
+import EzsignsignatureRequestCompoundAllOf from './model/EzsignsignatureRequestCompoundAllOf';
 import EzsignsignaturecustomdateRequest from './model/EzsignsignaturecustomdateRequest';
 import EzsignsignerRequest from './model/EzsignsignerRequest';
 import EzsignsignerRequestCompound from './model/EzsignsignerRequestCompound';
@@ -173,6 +176,7 @@ import EzsigntemplatepackageGetListV1ResponseAllOf from './model/Ezsigntemplatep
 import EzsigntemplatepackageGetListV1ResponseMPayload from './model/EzsigntemplatepackageGetListV1ResponseMPayload';
 import EzsigntemplatepackageGetListV1ResponseMPayloadAllOf from './model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf';
 import EzsigntemplatepackageListElement from './model/EzsigntemplatepackageListElement';
+import FieldEActivesessionWeekdaystart from './model/FieldEActivesessionWeekdaystart';
 import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
@@ -766,6 +770,12 @@ export {
     EzsigndocumentResponseCompound,
 
     /**
+     * The EzsigndocumentResponseCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf}
+     */
+    EzsigndocumentResponseCompoundAllOf,
+
+    /**
      * The EzsignfolderCreateObjectV1Request model constructor.
      * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV1Request}
      */
@@ -1036,6 +1046,12 @@ export {
     EzsignfoldersignerassociationResponseCompound,
 
     /**
+     * The EzsignfoldersignerassociationResponseCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf}
+     */
+    EzsignfoldersignerassociationResponseCompoundAllOf,
+
+    /**
      * The EzsignfoldersignerassociationResponseCompoundUser model constructor.
      * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser}
      */
@@ -1162,6 +1178,12 @@ export {
     EzsignsignatureRequestCompound,
 
     /**
+     * The EzsignsignatureRequestCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf}
+     */
+    EzsignsignatureRequestCompoundAllOf,
+
+    /**
      * The EzsignsignaturecustomdateRequest model constructor.
      * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateRequest}
      */
@@ -1244,6 +1266,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsigntemplatepackageListElement}
      */
     EzsigntemplatepackageListElement,
+
+    /**
+     * The FieldEActivesessionWeekdaystart model constructor.
+     * @property {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
+     */
+    FieldEActivesessionWeekdaystart,
 
     /**
      * The FieldEEzsigndocumentStep model constructor.

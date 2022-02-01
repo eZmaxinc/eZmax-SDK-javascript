@@ -83,6 +83,7 @@ docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
+docs/EzsigndocumentResponseCompoundAllOf.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -128,6 +129,7 @@ docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
+docs/EzsignfoldersignerassociationResponseCompoundAllOf.md
 docs/EzsignfoldersignerassociationResponseCompoundUser.md
 docs/EzsignfoldertypeGetListV1Response.md
 docs/EzsignfoldertypeGetListV1ResponseAllOf.md
@@ -149,6 +151,7 @@ docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
 docs/EzsignsignatureRequestCompound.md
+docs/EzsignsignatureRequestCompoundAllOf.md
 docs/EzsignsignaturecustomdateRequest.md
 docs/EzsignsignerRequest.md
 docs/EzsignsignerRequestCompound.md
@@ -163,6 +166,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
@@ -338,6 +342,7 @@ src/eZmaxAPI/model/EzsigndocumentRequest.js
 src/eZmaxAPI/model/EzsigndocumentRequestCompound.js
 src/eZmaxAPI/model/EzsigndocumentResponse.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompound.js
+src/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.js
@@ -383,6 +388,7 @@ src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponse.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.js
+src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser.js
 src/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.js
 src/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.js
@@ -404,6 +410,7 @@ src/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignsignatureRequest.js
 src/eZmaxAPI/model/EzsignsignatureRequestCompound.js
+src/eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf.js
 src/eZmaxAPI/model/EzsignsignaturecustomdateRequest.js
 src/eZmaxAPI/model/EzsignsignerRequest.js
 src/eZmaxAPI/model/EzsignsignerRequestCompound.js
@@ -418,6 +425,7 @@ src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.js
 src/eZmaxAPI/model/EzsigntemplatepackageListElement.js
+src/eZmaxAPI/model/FieldEActivesessionWeekdaystart.js
 src/eZmaxAPI/model/FieldEEzsigndocumentStep.js
 src/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.js
 src/eZmaxAPI/model/FieldEEzsignfolderStep.js
@@ -570,6 +578,7 @@ test/eZmaxAPI/model/EzsigndocumentRequest.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequestCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponse.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompound.spec.js
+test/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.spec.js
@@ -615,6 +624,7 @@ test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponse.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.spec.js
+test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser.spec.js
 test/eZmaxAPI/model/EzsignfoldertypeGetListV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldertypeGetListV1ResponseAllOf.spec.js
@@ -636,6 +646,7 @@ test/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignatureRequest.spec.js
 test/eZmaxAPI/model/EzsignsignatureRequestCompound.spec.js
+test/eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignaturecustomdateRequest.spec.js
 test/eZmaxAPI/model/EzsignsignerRequest.spec.js
 test/eZmaxAPI/model/EzsignsignerRequestCompound.spec.js
@@ -650,6 +661,7 @@ test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageListElement.spec.js
+test/eZmaxAPI/model/FieldEActivesessionWeekdaystart.spec.js
 test/eZmaxAPI/model/FieldEEzsigndocumentStep.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderStep.spec.js

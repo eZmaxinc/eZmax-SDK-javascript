@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfoldersignerassociationResponse from './EzsignfoldersignerassociationResponse';
+import EzsignfoldersignerassociationResponseCompoundAllOf from './EzsignfoldersignerassociationResponseCompoundAllOf';
 import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
 
@@ -26,13 +27,14 @@ class EzsignfoldersignerassociationResponseCompound {
      * Constructs a new <code>EzsignfoldersignerassociationResponseCompound</code>.
      * An Ezsignfoldersignerassociation Object
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound
+     * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponse
      * @param pkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param bEzsignfoldersignerassociationReceivecopy {Boolean} If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
      */
     constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy) { 
-        EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy);
+        EzsignfoldersignerassociationResponseCompoundAllOf.initialize(this);EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy);
         EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationReceivecopy);
     }
 
@@ -57,6 +59,7 @@ class EzsignfoldersignerassociationResponseCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfoldersignerassociationResponseCompound();
+            EzsignfoldersignerassociationResponseCompoundAllOf.constructFromObject(data, obj);
             EzsignfoldersignerassociationResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objUser')) {
@@ -181,6 +184,15 @@ EzsignfoldersignerassociationResponseCompound.prototype['fkiEzsignfolderID'] = u
 EzsignfoldersignerassociationResponseCompound.prototype['bEzsignfoldersignerassociationReceivecopy'] = undefined;
 
 
+// Implement EzsignfoldersignerassociationResponseCompoundAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+ */
+EzsignfoldersignerassociationResponseCompoundAllOf.prototype['objUser'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+ */
+EzsignfoldersignerassociationResponseCompoundAllOf.prototype['objEzsignsigner'] = undefined;
 // Implement EzsignfoldersignerassociationResponse interface:
 /**
  * The unique ID of the Ezsignfoldersignerassociation

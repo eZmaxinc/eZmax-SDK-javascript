@@ -54,6 +54,36 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload);
     });
 
+    it('should have the property iEzsigndocumentStepformtotal (base name: "iEzsigndocumentStepformtotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentStepformtotal
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigndocumentStepformcurrent (base name: "iEzsigndocumentStepformcurrent")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentStepformcurrent
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigndocumentStepsignaturetotal (base name: "iEzsigndocumentStepsignaturetotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentStepsignaturetotal
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigndocumentStepsignatureCurrent (base name: "iEzsigndocumentStepsignatureCurrent")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentStepsignatureCurrent
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignfoldersignerassociationstatus (base name: "a_objEzsignfoldersignerassociationstatus")', function() {
+      // uncomment below and update the code to test the property a_objEzsignfoldersignerassociationstatus
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiEzsignfolderID (base name: "fkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfolderID
       //var instance = new EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload();

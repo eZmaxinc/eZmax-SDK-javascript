@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 
 /**
  * The ActivesessionGetCurrentV1ResponseMPayload model module.
@@ -25,6 +26,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @alias module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload
      * @param sCustomerCode {String} The customer code specific to the client in which the API request is being made
      * @param eActivesessionSessiontype {module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload.EActivesessionSessiontypeEnum} The type of session used for the API request call
+     * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sCompanyNameX {String} The name of the active Company in the current language
      * @param sDepartmentNameX {String} The name of the active Department in the current language
@@ -33,9 +35,9 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @param fkiUserID {Number} The unique ID of the User
      * @param fkiApikeyID {Number} The unique ID of the Apikey
      */
-    constructor(sCustomerCode, eActivesessionSessiontype, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID) { 
+    constructor(sCustomerCode, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID) { 
         
-        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, sCustomerCode, eActivesessionSessiontype, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID);
+        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, sCustomerCode, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID);
     }
 
     /**
@@ -43,9 +45,10 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sCustomerCode, eActivesessionSessiontype, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID) { 
+    static initialize(obj, sCustomerCode, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, a_RegisteredModules, a_Permissions, fkiUserID, fkiApikeyID) { 
         obj['sCustomerCode'] = sCustomerCode;
         obj['eActivesessionSessiontype'] = eActivesessionSessiontype;
+        obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sCompanyNameX'] = sCompanyNameX;
         obj['sDepartmentNameX'] = sDepartmentNameX;
@@ -71,6 +74,9 @@ class ActivesessionGetCurrentV1ResponseMPayload {
             }
             if (data.hasOwnProperty('eActivesessionSessiontype')) {
                 obj['eActivesessionSessiontype'] = ApiClient.convertToType(data['eActivesessionSessiontype'], 'String');
+            }
+            if (data.hasOwnProperty('eActivesessionWeekdaystart')) {
+                obj['eActivesessionWeekdaystart'] = FieldEActivesessionWeekdaystart.constructFromObject(data['eActivesessionWeekdaystart']);
             }
             if (data.hasOwnProperty('fkiLanguageID')) {
                 obj['fkiLanguageID'] = ApiClient.convertToType(data['fkiLanguageID'], 'Number');
@@ -126,6 +132,19 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      */
     setEActivesessionSessiontype(eActivesessionSessiontype) {
         this['eActivesessionSessiontype'] = eActivesessionSessiontype;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
+     */
+    getEActivesessionWeekdaystart() {
+        return this.eActivesessionWeekdaystart;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
+     */
+    setEActivesessionWeekdaystart(eActivesessionWeekdaystart) {
+        this['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
     }
 /**
      * Returns The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
@@ -248,6 +267,11 @@ ActivesessionGetCurrentV1ResponseMPayload.prototype['sCustomerCode'] = undefined
  * @member {module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload.EActivesessionSessiontypeEnum} eActivesessionSessiontype
  */
 ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionSessiontype'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
+ */
+ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionWeekdaystart'] = undefined;
 
 /**
  * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|

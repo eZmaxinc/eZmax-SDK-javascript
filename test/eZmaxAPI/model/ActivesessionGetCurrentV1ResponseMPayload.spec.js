@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eActivesessionWeekdaystart (base name: "eActivesessionWeekdaystart")', function() {
+      // uncomment below and update the code to test the property eActivesessionWeekdaystart
+      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiLanguageID (base name: "fkiLanguageID")', function() {
       // uncomment below and update the code to test the property fkiLanguageID
       //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();

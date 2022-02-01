@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EzsignsignatureRequest from './EzsignsignatureRequest';
+import EzsignsignatureRequestCompoundAllOf from './EzsignsignatureRequestCompoundAllOf';
 import EzsignsignaturecustomdateRequest from './EzsignsignaturecustomdateRequest';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
 
@@ -26,6 +27,7 @@ class EzsignsignatureRequestCompound {
      * Constructs a new <code>EzsignsignatureRequestCompound</code>.
      * An Ezsignsignature Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignatureRequestCompound
+     * @implements module:eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignsignatureRequest
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
@@ -36,7 +38,7 @@ class EzsignsignatureRequestCompound {
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      */
     constructor(fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID) { 
-        EzsignsignatureRequest.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
+        EzsignsignatureRequestCompoundAllOf.initialize(this);EzsignsignatureRequest.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
         EzsignsignatureRequestCompound.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
     }
 
@@ -65,6 +67,7 @@ class EzsignsignatureRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignsignatureRequestCompound();
+            EzsignsignatureRequestCompoundAllOf.constructFromObject(data, obj);
             EzsignsignatureRequest.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
@@ -288,6 +291,17 @@ EzsignsignatureRequestCompound.prototype['eEzsignsignatureType'] = undefined;
 EzsignsignatureRequestCompound.prototype['fkiEzsigndocumentID'] = undefined;
 
 
+// Implement EzsignsignatureRequestCompoundAllOf interface:
+/**
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * @member {Boolean} bEzsignsignatureCustomdate
+ */
+EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;
+/**
+ * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+ * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate
+ */
+EzsignsignatureRequestCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 // Implement EzsignsignatureRequest interface:
 /**
  * The unique ID of the Ezsignfoldersignerassociation

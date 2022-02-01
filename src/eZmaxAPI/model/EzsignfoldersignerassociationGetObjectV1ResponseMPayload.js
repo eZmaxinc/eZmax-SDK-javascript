@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfoldersignerassociationResponseCompound from './EzsignfoldersignerassociationResponseCompound';
+import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
+import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
 
 /**
  * The EzsignfoldersignerassociationGetObjectV1ResponseMPayload model module.
@@ -57,6 +59,12 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
             obj = obj || new EzsignfoldersignerassociationGetObjectV1ResponseMPayload();
             EzsignfoldersignerassociationResponseCompound.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('objUser')) {
+                obj['objUser'] = EzsignfoldersignerassociationResponseCompoundUser.constructFromObject(data['objUser']);
+            }
+            if (data.hasOwnProperty('objEzsignsigner')) {
+                obj['objEzsignsigner'] = EzsignsignerResponseCompound.constructFromObject(data['objEzsignsigner']);
+            }
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
             }
@@ -70,6 +78,32 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser}
+     */
+    getObjUser() {
+        return this.objUser;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+     */
+    setObjUser(objUser) {
+        this['objUser'] = objUser;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompound}
+     */
+    getObjEzsignsigner() {
+        return this.objEzsignsigner;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+     */
+    setObjEzsignsigner(objEzsignsigner) {
+        this['objEzsignsigner'] = objEzsignsigner;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
      * @return {Number}
@@ -119,6 +153,16 @@ class EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+ */
+EzsignfoldersignerassociationGetObjectV1ResponseMPayload.prototype['objUser'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+ */
+EzsignfoldersignerassociationGetObjectV1ResponseMPayload.prototype['objEzsignsigner'] = undefined;
+
+/**
  * The unique ID of the Ezsignfoldersignerassociation
  * @member {Number} pkiEzsignfoldersignerassociationID
  */
@@ -138,6 +182,14 @@ EzsignfoldersignerassociationGetObjectV1ResponseMPayload.prototype['bEzsignfolde
 
 
 // Implement EzsignfoldersignerassociationResponseCompound interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
+ */
+EzsignfoldersignerassociationResponseCompound.prototype['objUser'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
+ */
+EzsignfoldersignerassociationResponseCompound.prototype['objEzsignsigner'] = undefined;
 /**
  * The unique ID of the Ezsignfoldersignerassociation
  * @member {Number} pkiEzsignfoldersignerassociationID
