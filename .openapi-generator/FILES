@@ -6,6 +6,11 @@ README.md
 docs/ActivesessionGetCurrentV1Response.md
 docs/ActivesessionGetCurrentV1ResponseAllOf.md
 docs/ActivesessionGetCurrentV1ResponseMPayload.md
+docs/ActivesessionResponse.md
+docs/ActivesessionResponseCompound.md
+docs/ActivesessionResponseCompoundAllOf.md
+docs/ActivesessionResponseCompoundApikey.md
+docs/ActivesessionResponseCompoundUser.md
 docs/AddressRequest.md
 docs/ApikeyCreateObjectV1Request.md
 docs/ApikeyCreateObjectV1Response.md
@@ -166,6 +171,7 @@ docs/EzsigntemplatepackageGetListV1ResponseAllOf.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayload.md
 docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md
 docs/EzsigntemplatepackageListElement.md
+docs/FieldEActivesessionSessiontype.md
 docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
@@ -238,7 +244,6 @@ docs/WebhookResponse.md
 docs/WebhookUserUserCreated.md
 docs/WebhookUserUserCreatedAllOf.md
 docs/WebsiteRequest.md
-docs/Xxxx.md
 git_push.sh
 mocha.opts
 package.json
@@ -265,6 +270,11 @@ src/eZmaxAPI/index.js
 src/eZmaxAPI/model/ActivesessionGetCurrentV1Response.js
 src/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseAllOf.js
 src/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload.js
+src/eZmaxAPI/model/ActivesessionResponse.js
+src/eZmaxAPI/model/ActivesessionResponseCompound.js
+src/eZmaxAPI/model/ActivesessionResponseCompoundAllOf.js
+src/eZmaxAPI/model/ActivesessionResponseCompoundApikey.js
+src/eZmaxAPI/model/ActivesessionResponseCompoundUser.js
 src/eZmaxAPI/model/AddressRequest.js
 src/eZmaxAPI/model/ApikeyCreateObjectV1Request.js
 src/eZmaxAPI/model/ApikeyCreateObjectV1Response.js
@@ -425,6 +435,7 @@ src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.js
 src/eZmaxAPI/model/EzsigntemplatepackageListElement.js
+src/eZmaxAPI/model/FieldEActivesessionSessiontype.js
 src/eZmaxAPI/model/FieldEActivesessionWeekdaystart.js
 src/eZmaxAPI/model/FieldEEzsigndocumentStep.js
 src/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.js
@@ -479,7 +490,6 @@ src/eZmaxAPI/model/WebhookResponse.js
 src/eZmaxAPI/model/WebhookUserUserCreated.js
 src/eZmaxAPI/model/WebhookUserUserCreatedAllOf.js
 src/eZmaxAPI/model/WebsiteRequest.js
-src/eZmaxAPI/model/Xxxx.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
 test/eZmaxAPI/api/ModuleAuthenticateApi.spec.js
 test/eZmaxAPI/api/ModuleListApi.spec.js
@@ -501,6 +511,11 @@ test/eZmaxAPI/api/ObjectPeriodApi.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1Response.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/ActivesessionResponse.spec.js
+test/eZmaxAPI/model/ActivesessionResponseCompound.spec.js
+test/eZmaxAPI/model/ActivesessionResponseCompoundAllOf.spec.js
+test/eZmaxAPI/model/ActivesessionResponseCompoundApikey.spec.js
+test/eZmaxAPI/model/ActivesessionResponseCompoundUser.spec.js
 test/eZmaxAPI/model/AddressRequest.spec.js
 test/eZmaxAPI/model/ApikeyCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/ApikeyCreateObjectV1Response.spec.js
@@ -661,6 +676,7 @@ test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatepackageListElement.spec.js
+test/eZmaxAPI/model/FieldEActivesessionSessiontype.spec.js
 test/eZmaxAPI/model/FieldEActivesessionWeekdaystart.spec.js
 test/eZmaxAPI/model/FieldEEzsigndocumentStep.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.spec.js
@@ -715,4 +731,3 @@ test/eZmaxAPI/model/WebhookResponse.spec.js
 test/eZmaxAPI/model/WebhookUserUserCreated.spec.js
 test/eZmaxAPI/model/WebhookUserUserCreatedAllOf.spec.js
 test/eZmaxAPI/model/WebsiteRequest.spec.js
-test/eZmaxAPI/model/Xxxx.spec.js

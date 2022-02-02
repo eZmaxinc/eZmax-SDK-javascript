@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload
+# EZmaxApiDefinition.ActivesessionResponseCompound
 
 ## Properties
 

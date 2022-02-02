@@ -28,7 +28,6 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.Xxxx();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,23 +46,11 @@
       object[property] = value;
   }
 
-  describe('Xxxx', function() {
-    it('should create an instance of Xxxx', function() {
-      // uncomment below and update the code to test Xxxx
-      //var instance = new EZmaxApiDefinition.Xxxx();
-      //expect(instance).to.be.a(EZmaxApiDefinition.Xxxx);
-    });
-
-    it('should have the property foo (base name: "foo")', function() {
-      // uncomment below and update the code to test the property foo
-      //var instance = new EZmaxApiDefinition.Xxxx();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bar (base name: "bar")', function() {
-      // uncomment below and update the code to test the property bar
-      //var instance = new EZmaxApiDefinition.Xxxx();
-      //expect(instance).to.be();
+  describe('FieldEActivesessionSessiontype', function() {
+    it('should create an instance of FieldEActivesessionSessiontype', function() {
+      // uncomment below and update the code to test FieldEActivesessionSessiontype
+      //var instance = new EZmaxApiDefinition.FieldEActivesessionSessiontype();
+      //expect(instance).to.be.a(EZmaxApiDefinition.FieldEActivesessionSessiontype);
     });
 
   });

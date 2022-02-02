@@ -183,6 +183,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.ActivesessionGetCurrentV1Response](docs/ActivesessionGetCurrentV1Response.md)
  - [EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseAllOf](docs/ActivesessionGetCurrentV1ResponseAllOf.md)
  - [EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload](docs/ActivesessionGetCurrentV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.ActivesessionResponse](docs/ActivesessionResponse.md)
+ - [EZmaxApiDefinition.ActivesessionResponseCompound](docs/ActivesessionResponseCompound.md)
+ - [EZmaxApiDefinition.ActivesessionResponseCompoundAllOf](docs/ActivesessionResponseCompoundAllOf.md)
+ - [EZmaxApiDefinition.ActivesessionResponseCompoundApikey](docs/ActivesessionResponseCompoundApikey.md)
+ - [EZmaxApiDefinition.ActivesessionResponseCompoundUser](docs/ActivesessionResponseCompoundUser.md)
  - [EZmaxApiDefinition.AddressRequest](docs/AddressRequest.md)
  - [EZmaxApiDefinition.ApikeyCreateObjectV1Request](docs/ApikeyCreateObjectV1Request.md)
  - [EZmaxApiDefinition.ApikeyCreateObjectV1Response](docs/ApikeyCreateObjectV1Response.md)
@@ -343,6 +348,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsigntemplatepackageGetListV1ResponseMPayload](docs/EzsigntemplatepackageGetListV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsigntemplatepackageGetListV1ResponseMPayloadAllOf](docs/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.md)
  - [EZmaxApiDefinition.EzsigntemplatepackageListElement](docs/EzsigntemplatepackageListElement.md)
+ - [EZmaxApiDefinition.FieldEActivesessionSessiontype](docs/FieldEActivesessionSessiontype.md)
  - [EZmaxApiDefinition.FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EZmaxApiDefinition.FieldEEzsigndocumentStep](docs/FieldEEzsigndocumentStep.md)
  - [EZmaxApiDefinition.FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
@@ -397,7 +403,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EZmaxApiDefinition.WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EZmaxApiDefinition.WebsiteRequest](docs/WebsiteRequest.md)
- - [EZmaxApiDefinition.Xxxx](docs/Xxxx.md)
 
 
 ## Documentation for Authorization

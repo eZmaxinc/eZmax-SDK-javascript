@@ -12,23 +12,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import ActivesessionResponseCompound from './ActivesessionResponseCompound';
+import ActivesessionResponse from './ActivesessionResponse';
+import ActivesessionResponseCompoundAllOf from './ActivesessionResponseCompoundAllOf';
 import ActivesessionResponseCompoundApikey from './ActivesessionResponseCompoundApikey';
 import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUser';
 import FieldEActivesessionSessiontype from './FieldEActivesessionSessiontype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 
 /**
- * The ActivesessionGetCurrentV1ResponseMPayload model module.
- * @module eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload
+ * The ActivesessionResponseCompound model module.
+ * @module eZmaxAPI/model/ActivesessionResponseCompound
  * @version 1.1.4
  */
-class ActivesessionGetCurrentV1ResponseMPayload {
+class ActivesessionResponseCompound {
     /**
-     * Constructs a new <code>ActivesessionGetCurrentV1ResponseMPayload</code>.
+     * Constructs a new <code>ActivesessionResponseCompound</code>.
      * Payload for the /1/object/activesession/getCurrent API Request
-     * @alias module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/ActivesessionResponseCompound
+     * @alias module:eZmaxAPI/model/ActivesessionResponseCompound
+     * @implements module:eZmaxAPI/model/ActivesessionResponseCompoundAllOf
+     * @implements module:eZmaxAPI/model/ActivesessionResponse
      * @param a_pkiPermissionID {Array.<Number>} An array of permissions granted to the user or api key
      * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
@@ -41,8 +43,8 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @param pksCustomerCode {String} The customer code assigned to your account
      */
     constructor(a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
+        ActivesessionResponseCompoundAllOf.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname);ActivesessionResponse.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
         ActivesessionResponseCompound.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
-        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
     }
 
     /**
@@ -64,16 +66,17 @@ class ActivesessionGetCurrentV1ResponseMPayload {
     }
 
     /**
-     * Constructs a <code>ActivesessionGetCurrentV1ResponseMPayload</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ActivesessionResponseCompound</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload} The populated <code>ActivesessionGetCurrentV1ResponseMPayload</code> instance.
+     * @param {module:eZmaxAPI/model/ActivesessionResponseCompound} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/ActivesessionResponseCompound} The populated <code>ActivesessionResponseCompound</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ActivesessionGetCurrentV1ResponseMPayload();
-            ActivesessionResponseCompound.constructFromObject(data, obj);
+            obj = obj || new ActivesessionResponseCompound();
+            ActivesessionResponseCompoundAllOf.constructFromObject(data, obj);
+            ActivesessionResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('a_pkiPermissionID')) {
                 obj['a_pkiPermissionID'] = ApiClient.convertToType(data['a_pkiPermissionID'], ['Number']);
@@ -294,121 +297,63 @@ class ActivesessionGetCurrentV1ResponseMPayload {
  * An array of permissions granted to the user or api key
  * @member {Array.<Number>} a_pkiPermissionID
  */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['a_pkiPermissionID'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserReal'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserCloned'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objApikey'] = undefined;
-
-/**
- * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
- * @member {Array.<String>} a_eModuleInternalname
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['a_eModuleInternalname'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionSessiontype'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionWeekdaystart'] = undefined;
-
-/**
- * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
- * @member {Number} fkiLanguageID
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['fkiLanguageID'] = undefined;
-
-/**
- * The Name of the Company in the language of the requester
- * @member {String} sCompanyNameX
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['sCompanyNameX'] = undefined;
-
-/**
- * The Name of the Department in the language of the requester
- * @member {String} sDepartmentNameX
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['sDepartmentNameX'] = undefined;
-
-/**
- * Whether the active session is in debug or not
- * @member {Boolean} bActivesessionDebug
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['bActivesessionDebug'] = undefined;
-
-/**
- * The customer code assigned to your account
- * @member {String} pksCustomerCode
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['pksCustomerCode'] = undefined;
-
-
-// Implement ActivesessionResponseCompound interface:
-/**
- * An array of permissions granted to the user or api key
- * @member {Array.<Number>} a_pkiPermissionID
- */
 ActivesessionResponseCompound.prototype['a_pkiPermissionID'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
  */
 ActivesessionResponseCompound.prototype['objUserReal'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
  */
 ActivesessionResponseCompound.prototype['objUserCloned'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
  */
 ActivesessionResponseCompound.prototype['objApikey'] = undefined;
+
 /**
  * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
  * @member {Array.<String>} a_eModuleInternalname
  */
 ActivesessionResponseCompound.prototype['a_eModuleInternalname'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
  */
 ActivesessionResponseCompound.prototype['eActivesessionSessiontype'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
  */
 ActivesessionResponseCompound.prototype['eActivesessionWeekdaystart'] = undefined;
+
 /**
  * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
  * @member {Number} fkiLanguageID
  */
 ActivesessionResponseCompound.prototype['fkiLanguageID'] = undefined;
+
 /**
  * The Name of the Company in the language of the requester
  * @member {String} sCompanyNameX
  */
 ActivesessionResponseCompound.prototype['sCompanyNameX'] = undefined;
+
 /**
  * The Name of the Department in the language of the requester
  * @member {String} sDepartmentNameX
  */
 ActivesessionResponseCompound.prototype['sDepartmentNameX'] = undefined;
+
 /**
  * Whether the active session is in debug or not
  * @member {Boolean} bActivesessionDebug
  */
 ActivesessionResponseCompound.prototype['bActivesessionDebug'] = undefined;
+
 /**
  * The customer code assigned to your account
  * @member {String} pksCustomerCode
@@ -416,7 +361,66 @@ ActivesessionResponseCompound.prototype['bActivesessionDebug'] = undefined;
 ActivesessionResponseCompound.prototype['pksCustomerCode'] = undefined;
 
 
+// Implement ActivesessionResponseCompoundAllOf interface:
+/**
+ * An array of permissions granted to the user or api key
+ * @member {Array.<Number>} a_pkiPermissionID
+ */
+ActivesessionResponseCompoundAllOf.prototype['a_pkiPermissionID'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
+ */
+ActivesessionResponseCompoundAllOf.prototype['objUserReal'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
+ */
+ActivesessionResponseCompoundAllOf.prototype['objUserCloned'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
+ */
+ActivesessionResponseCompoundAllOf.prototype['objApikey'] = undefined;
+/**
+ * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+ * @member {Array.<String>} a_eModuleInternalname
+ */
+ActivesessionResponseCompoundAllOf.prototype['a_eModuleInternalname'] = undefined;
+// Implement ActivesessionResponse interface:
+/**
+ * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+ */
+ActivesessionResponse.prototype['eActivesessionSessiontype'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
+ */
+ActivesessionResponse.prototype['eActivesessionWeekdaystart'] = undefined;
+/**
+ * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+ * @member {Number} fkiLanguageID
+ */
+ActivesessionResponse.prototype['fkiLanguageID'] = undefined;
+/**
+ * The Name of the Company in the language of the requester
+ * @member {String} sCompanyNameX
+ */
+ActivesessionResponse.prototype['sCompanyNameX'] = undefined;
+/**
+ * The Name of the Department in the language of the requester
+ * @member {String} sDepartmentNameX
+ */
+ActivesessionResponse.prototype['sDepartmentNameX'] = undefined;
+/**
+ * Whether the active session is in debug or not
+ * @member {Boolean} bActivesessionDebug
+ */
+ActivesessionResponse.prototype['bActivesessionDebug'] = undefined;
+/**
+ * The customer code assigned to your account
+ * @member {String} pksCustomerCode
+ */
+ActivesessionResponse.prototype['pksCustomerCode'] = undefined;
 
 
-export default ActivesessionGetCurrentV1ResponseMPayload;
+
+
+export default ActivesessionResponseCompound;
 

@@ -16,6 +16,11 @@ import ApiClient from './ApiClient';
 import ActivesessionGetCurrentV1Response from './model/ActivesessionGetCurrentV1Response';
 import ActivesessionGetCurrentV1ResponseAllOf from './model/ActivesessionGetCurrentV1ResponseAllOf';
 import ActivesessionGetCurrentV1ResponseMPayload from './model/ActivesessionGetCurrentV1ResponseMPayload';
+import ActivesessionResponse from './model/ActivesessionResponse';
+import ActivesessionResponseCompound from './model/ActivesessionResponseCompound';
+import ActivesessionResponseCompoundAllOf from './model/ActivesessionResponseCompoundAllOf';
+import ActivesessionResponseCompoundApikey from './model/ActivesessionResponseCompoundApikey';
+import ActivesessionResponseCompoundUser from './model/ActivesessionResponseCompoundUser';
 import AddressRequest from './model/AddressRequest';
 import ApikeyCreateObjectV1Request from './model/ApikeyCreateObjectV1Request';
 import ApikeyCreateObjectV1Response from './model/ApikeyCreateObjectV1Response';
@@ -176,6 +181,7 @@ import EzsigntemplatepackageGetListV1ResponseAllOf from './model/Ezsigntemplatep
 import EzsigntemplatepackageGetListV1ResponseMPayload from './model/EzsigntemplatepackageGetListV1ResponseMPayload';
 import EzsigntemplatepackageGetListV1ResponseMPayloadAllOf from './model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf';
 import EzsigntemplatepackageListElement from './model/EzsigntemplatepackageListElement';
+import FieldEActivesessionSessiontype from './model/FieldEActivesessionSessiontype';
 import FieldEActivesessionWeekdaystart from './model/FieldEActivesessionWeekdaystart';
 import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
@@ -230,7 +236,6 @@ import WebhookResponse from './model/WebhookResponse';
 import WebhookUserUserCreated from './model/WebhookUserUserCreated';
 import WebhookUserUserCreatedAllOf from './model/WebhookUserUserCreatedAllOf';
 import WebsiteRequest from './model/WebsiteRequest';
-import Xxxx from './model/Xxxx';
 import GlobalCustomerApi from './api/GlobalCustomerApi';
 import ModuleAuthenticateApi from './api/ModuleAuthenticateApi';
 import ModuleListApi from './api/ModuleListApi';
@@ -306,6 +311,36 @@ export {
      * @property {module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload}
      */
     ActivesessionGetCurrentV1ResponseMPayload,
+
+    /**
+     * The ActivesessionResponse model constructor.
+     * @property {module:eZmaxAPI/model/ActivesessionResponse}
+     */
+    ActivesessionResponse,
+
+    /**
+     * The ActivesessionResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/ActivesessionResponseCompound}
+     */
+    ActivesessionResponseCompound,
+
+    /**
+     * The ActivesessionResponseCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/ActivesessionResponseCompoundAllOf}
+     */
+    ActivesessionResponseCompoundAllOf,
+
+    /**
+     * The ActivesessionResponseCompoundApikey model constructor.
+     * @property {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey}
+     */
+    ActivesessionResponseCompoundApikey,
+
+    /**
+     * The ActivesessionResponseCompoundUser model constructor.
+     * @property {module:eZmaxAPI/model/ActivesessionResponseCompoundUser}
+     */
+    ActivesessionResponseCompoundUser,
 
     /**
      * The AddressRequest model constructor.
@@ -1268,6 +1303,12 @@ export {
     EzsigntemplatepackageListElement,
 
     /**
+     * The FieldEActivesessionSessiontype model constructor.
+     * @property {module:eZmaxAPI/model/FieldEActivesessionSessiontype}
+     */
+    FieldEActivesessionSessiontype,
+
+    /**
      * The FieldEActivesessionWeekdaystart model constructor.
      * @property {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
      */
@@ -1590,12 +1631,6 @@ export {
      * @property {module:eZmaxAPI/model/WebsiteRequest}
      */
     WebsiteRequest,
-
-    /**
-     * The Xxxx model constructor.
-     * @property {module:eZmaxAPI/model/Xxxx}
-     */
-    Xxxx,
 
     /**
     * The GlobalCustomerApi service constructor.
