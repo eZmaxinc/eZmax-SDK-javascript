@@ -88,6 +88,9 @@ class FranchisereferalincomeRequestCompound {
             if (data.hasOwnProperty('a_objContact')) {
                 obj['a_objContact'] = ApiClient.convertToType(data['a_objContact'], [ContactRequestCompound]);
             }
+            if (data.hasOwnProperty('pkiFranchisereferalincomeID')) {
+                obj['pkiFranchisereferalincomeID'] = ApiClient.convertToType(data['pkiFranchisereferalincomeID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiFranchisebrokerID')) {
                 obj['fkiFranchisebrokerID'] = ApiClient.convertToType(data['fkiFranchisebrokerID'], 'Number');
             }
@@ -150,6 +153,21 @@ class FranchisereferalincomeRequestCompound {
      */
     setAObjContact(a_objContact) {
         this['a_objContact'] = a_objContact;
+    }
+/**
+     * Returns The unique ID of the Franchisereferalincome
+     * @return {Number}
+     */
+    getPkiFranchisereferalincomeID() {
+        return this.pkiFranchisereferalincomeID;
+    }
+
+    /**
+     * Sets The unique ID of the Franchisereferalincome
+     * @param {Number} pkiFranchisereferalincomeID The unique ID of the Franchisereferalincome
+     */
+    setPkiFranchisereferalincomeID(pkiFranchisereferalincomeID) {
+        this['pkiFranchisereferalincomeID'] = pkiFranchisereferalincomeID;
     }
 /**
      * Returns The unique ID of the Franchisebroker
@@ -328,6 +346,12 @@ FranchisereferalincomeRequestCompound.prototype['objAddress'] = undefined;
 FranchisereferalincomeRequestCompound.prototype['a_objContact'] = undefined;
 
 /**
+ * The unique ID of the Franchisereferalincome
+ * @member {Number} pkiFranchisereferalincomeID
+ */
+FranchisereferalincomeRequestCompound.prototype['pkiFranchisereferalincomeID'] = undefined;
+
+/**
  * The unique ID of the Franchisebroker
  * @member {Number} fkiFranchisebrokerID
  */
@@ -403,6 +427,11 @@ FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
  */
 FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;
 // Implement FranchisereferalincomeRequest interface:
+/**
+ * The unique ID of the Franchisereferalincome
+ * @member {Number} pkiFranchisereferalincomeID
+ */
+FranchisereferalincomeRequest.prototype['pkiFranchisereferalincomeID'] = undefined;
 /**
  * The unique ID of the Franchisebroker
  * @member {Number} fkiFranchisebrokerID

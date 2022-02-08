@@ -60,6 +60,9 @@ class EzsignfoldersignerassociationRequestCompound {
             if (data.hasOwnProperty('objEzsignsigner')) {
                 obj['objEzsignsigner'] = EzsignsignerRequestCompound.constructFromObject(data['objEzsignsigner']);
             }
+            if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
+                obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
@@ -85,6 +88,21 @@ class EzsignfoldersignerassociationRequestCompound {
      */
     setObjEzsignsigner(objEzsignsigner) {
         this['objEzsignsigner'] = objEzsignsigner;
+    }
+/**
+     * Returns The unique ID of the Ezsignfoldersignerassociation
+     * @return {Number}
+     */
+    getPkiEzsignfoldersignerassociationID() {
+        return this.pkiEzsignfoldersignerassociationID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     */
+    setPkiEzsignfoldersignerassociationID(pkiEzsignfoldersignerassociationID) {
+        this['pkiEzsignfoldersignerassociationID'] = pkiEzsignfoldersignerassociationID;
     }
 /**
      * Returns The unique ID of the User
@@ -140,6 +158,12 @@ class EzsignfoldersignerassociationRequestCompound {
 EzsignfoldersignerassociationRequestCompound.prototype['objEzsignsigner'] = undefined;
 
 /**
+ * The unique ID of the Ezsignfoldersignerassociation
+ * @member {Number} pkiEzsignfoldersignerassociationID
+ */
+EzsignfoldersignerassociationRequestCompound.prototype['pkiEzsignfoldersignerassociationID'] = undefined;
+
+/**
  * The unique ID of the User
  * @member {Number} fkiUserID
  */
@@ -164,6 +188,11 @@ EzsignfoldersignerassociationRequestCompound.prototype['bEzsignfoldersignerassoc
  */
 EzsignfoldersignerassociationRequestCompoundAllOf.prototype['objEzsignsigner'] = undefined;
 // Implement EzsignfoldersignerassociationRequest interface:
+/**
+ * The unique ID of the Ezsignfoldersignerassociation
+ * @member {Number} pkiEzsignfoldersignerassociationID
+ */
+EzsignfoldersignerassociationRequest.prototype['pkiEzsignfoldersignerassociationID'] = undefined;
 /**
  * The unique ID of the User
  * @member {Number} fkiUserID

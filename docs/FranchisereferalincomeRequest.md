@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiFranchisereferalincomeID** | **Number** | The unique ID of the Franchisereferalincome | [optional] 
 **fkiFranchisebrokerID** | **Number** | The unique ID of the Franchisebroker | 
 **fkiFranchisereferalincomeprogramID** | **Number** | The unique ID of the Franchisereferalincomeprogram | 
 **fkiPeriodID** | **Number** | The unique ID of the Period | 

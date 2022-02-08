@@ -76,6 +76,9 @@ class EzsignsignatureRequestCompound {
             if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
                 obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequest]);
             }
+            if (data.hasOwnProperty('pkiEzsignsignatureID')) {
+                obj['pkiEzsignsignatureID'] = ApiClient.convertToType(data['pkiEzsignsignatureID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
                 obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
             }
@@ -130,6 +133,21 @@ class EzsignsignatureRequestCompound {
      */
     setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
         this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
+    }
+/**
+     * Returns The unique ID of the Ezsignsignature
+     * @return {Number}
+     */
+    getPkiEzsignsignatureID() {
+        return this.pkiEzsignsignatureID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsignature
+     * @param {Number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     */
+    setPkiEzsignsignatureID(pkiEzsignsignatureID) {
+        this['pkiEzsignsignatureID'] = pkiEzsignsignatureID;
     }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
@@ -250,6 +268,12 @@ EzsignsignatureRequestCompound.prototype['bEzsignsignatureCustomdate'] = undefin
 EzsignsignatureRequestCompound.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 
 /**
+ * The unique ID of the Ezsignsignature
+ * @member {Number} pkiEzsignsignatureID
+ */
+EzsignsignatureRequestCompound.prototype['pkiEzsignsignatureID'] = undefined;
+
+/**
  * The unique ID of the Ezsignfoldersignerassociation
  * @member {Number} fkiEzsignfoldersignerassociationID
  */
@@ -303,6 +327,11 @@ EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = un
  */
 EzsignsignatureRequestCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 // Implement EzsignsignatureRequest interface:
+/**
+ * The unique ID of the Ezsignsignature
+ * @member {Number} pkiEzsignsignatureID
+ */
+EzsignsignatureRequest.prototype['pkiEzsignsignatureID'] = undefined;
 /**
  * The unique ID of the Ezsignfoldersignerassociation
  * @member {Number} fkiEzsignfoldersignerassociationID

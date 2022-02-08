@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pkiEzsignfoldersignerassociationID (base name: "pkiEzsignfoldersignerassociationID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignfoldersignerassociationID
+      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();

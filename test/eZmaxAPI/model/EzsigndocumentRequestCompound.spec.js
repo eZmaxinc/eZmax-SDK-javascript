@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentRequestCompound);
     });
 
+    it('should have the property pkiEzsigndocumentID (base name: "pkiEzsigndocumentID")', function() {
+      // uncomment below and update the code to test the property pkiEzsigndocumentID
+      //var instance = new EZmaxApiDefinition.EzsigndocumentRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsigndocumentSource (base name: "eEzsigndocumentSource")', function() {
       // uncomment below and update the code to test the property eEzsigndocumentSource
       //var instance = new EZmaxApiDefinition.EzsigndocumentRequestCompound();

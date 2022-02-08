@@ -63,6 +63,9 @@ class EzsignsignatureRequest {
         if (data) {
             obj = obj || new EzsignsignatureRequest();
 
+            if (data.hasOwnProperty('pkiEzsignsignatureID')) {
+                obj['pkiEzsignsignatureID'] = ApiClient.convertToType(data['pkiEzsignsignatureID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
                 obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
             }
@@ -88,6 +91,21 @@ class EzsignsignatureRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsignsignature
+     * @return {Number}
+     */
+    getPkiEzsignsignatureID() {
+        return this.pkiEzsignsignatureID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsignature
+     * @param {Number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     */
+    setPkiEzsignsignatureID(pkiEzsignsignatureID) {
+        this['pkiEzsignsignatureID'] = pkiEzsignsignatureID;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
      * @return {Number}
@@ -193,6 +211,12 @@ class EzsignsignatureRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Ezsignsignature
+ * @member {Number} pkiEzsignsignatureID
+ */
+EzsignsignatureRequest.prototype['pkiEzsignsignatureID'] = undefined;
 
 /**
  * The unique ID of the Ezsignfoldersignerassociation

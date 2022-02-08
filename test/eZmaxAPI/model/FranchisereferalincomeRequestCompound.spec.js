@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property pkiFranchisereferalincomeID (base name: "pkiFranchisereferalincomeID")', function() {
+      // uncomment below and update the code to test the property pkiFranchisereferalincomeID
+      //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiFranchisebrokerID (base name: "fkiFranchisebrokerID")', function() {
       // uncomment below and update the code to test the property fkiFranchisebrokerID
       //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();

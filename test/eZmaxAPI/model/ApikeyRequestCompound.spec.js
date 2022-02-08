@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.ApikeyRequestCompound);
     });
 
+    it('should have the property pkiApikeyID (base name: "pkiApikeyID")', function() {
+      // uncomment below and update the code to test the property pkiApikeyID
+      //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
       //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();

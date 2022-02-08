@@ -62,6 +62,9 @@ class EzsignfolderRequestCompound {
             obj = obj || new EzsignfolderRequestCompound();
             EzsignfolderRequest.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('pkiEzsignfolderID')) {
+                obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiEzsignfoldertypeID')) {
                 obj['fkiEzsignfoldertypeID'] = ApiClient.convertToType(data['fkiEzsignfoldertypeID'], 'Number');
             }
@@ -81,6 +84,21 @@ class EzsignfolderRequestCompound {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsignfolder
+     * @return {Number}
+     */
+    getPkiEzsignfolderID() {
+        return this.pkiEzsignfolderID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     */
+    setPkiEzsignfolderID(pkiEzsignfolderID) {
+        this['pkiEzsignfolderID'] = pkiEzsignfolderID;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * @return {Number}
@@ -160,6 +178,12 @@ class EzsignfolderRequestCompound {
 }
 
 /**
+ * The unique ID of the Ezsignfolder
+ * @member {Number} pkiEzsignfolderID
+ */
+EzsignfolderRequestCompound.prototype['pkiEzsignfolderID'] = undefined;
+
+/**
  * The unique ID of the Ezsignfoldertype.
  * @member {Number} fkiEzsignfoldertypeID
  */
@@ -190,6 +214,11 @@ EzsignfolderRequestCompound.prototype['eEzsignfolderSendreminderfrequency'] = un
 
 
 // Implement EzsignfolderRequest interface:
+/**
+ * The unique ID of the Ezsignfolder
+ * @member {Number} pkiEzsignfolderID
+ */
+EzsignfolderRequest.prototype['pkiEzsignfolderID'] = undefined;
 /**
  * The unique ID of the Ezsignfoldertype.
  * @member {Number} fkiEzsignfoldertypeID

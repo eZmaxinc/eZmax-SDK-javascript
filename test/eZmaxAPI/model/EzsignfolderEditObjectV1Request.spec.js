@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ApikeyRequest();
+    instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,16 @@
       object[property] = value;
   }
 
-  describe('ApikeyRequest', function() {
-    it('should create an instance of ApikeyRequest', function() {
-      // uncomment below and update the code to test ApikeyRequest
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ApikeyRequest);
+  describe('EzsignfolderEditObjectV1Request', function() {
+    it('should create an instance of EzsignfolderEditObjectV1Request', function() {
+      // uncomment below and update the code to test EzsignfolderEditObjectV1Request
+      //var instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Request();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderEditObjectV1Request);
     });
 
-    it('should have the property pkiApikeyID (base name: "pkiApikeyID")', function() {
-      // uncomment below and update the code to test the property pkiApikeyID
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiUserID (base name: "fkiUserID")', function() {
-      // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objApikeyDescription (base name: "objApikeyDescription")', function() {
-      // uncomment below and update the code to test the property objApikeyDescription
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
+    it('should have the property objEzsignfolder (base name: "objEzsignfolder")', function() {
+      // uncomment below and update the code to test the property objEzsignfolder
+      //var instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Request();
       //expect(instance).to.be();
     });
 

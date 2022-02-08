@@ -59,6 +59,9 @@ class EzsignfolderRequest {
         if (data) {
             obj = obj || new EzsignfolderRequest();
 
+            if (data.hasOwnProperty('pkiEzsignfolderID')) {
+                obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiEzsignfoldertypeID')) {
                 obj['fkiEzsignfoldertypeID'] = ApiClient.convertToType(data['fkiEzsignfoldertypeID'], 'Number');
             }
@@ -78,6 +81,21 @@ class EzsignfolderRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsignfolder
+     * @return {Number}
+     */
+    getPkiEzsignfolderID() {
+        return this.pkiEzsignfolderID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignfolder
+     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     */
+    setPkiEzsignfolderID(pkiEzsignfolderID) {
+        this['pkiEzsignfolderID'] = pkiEzsignfolderID;
+    }
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * @return {Number}
@@ -155,6 +173,12 @@ class EzsignfolderRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Ezsignfolder
+ * @member {Number} pkiEzsignfolderID
+ */
+EzsignfolderRequest.prototype['pkiEzsignfolderID'] = undefined;
 
 /**
  * The unique ID of the Ezsignfoldertype.

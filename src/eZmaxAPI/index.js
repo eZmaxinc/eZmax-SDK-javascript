@@ -104,6 +104,8 @@ import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObject
 import EzsignfolderCreateObjectV1ResponseAllOf from './model/EzsignfolderCreateObjectV1ResponseAllOf';
 import EzsignfolderCreateObjectV1ResponseMPayload from './model/EzsignfolderCreateObjectV1ResponseMPayload';
 import EzsignfolderDeleteObjectV1Response from './model/EzsignfolderDeleteObjectV1Response';
+import EzsignfolderEditObjectV1Request from './model/EzsignfolderEditObjectV1Request';
+import EzsignfolderEditObjectV1Response from './model/EzsignfolderEditObjectV1Response';
 import EzsignfolderGetEzsigndocumentsV1Response from './model/EzsignfolderGetEzsigndocumentsV1Response';
 import EzsignfolderGetEzsigndocumentsV1ResponseAllOf from './model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf';
 import EzsignfolderGetEzsigndocumentsV1ResponseMPayload from './model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload';
@@ -839,6 +841,18 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfolderDeleteObjectV1Response}
      */
     EzsignfolderDeleteObjectV1Response,
+
+    /**
+     * The EzsignfolderEditObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderEditObjectV1Request}
+     */
+    EzsignfolderEditObjectV1Request,
+
+    /**
+     * The EzsignfolderEditObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderEditObjectV1Response}
+     */
+    EzsignfolderEditObjectV1Response,
 
     /**
      * The EzsignfolderGetEzsigndocumentsV1Response model constructor.

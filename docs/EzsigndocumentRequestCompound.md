@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiEzsigndocumentID** | **Number** | The unique ID of the Ezsigndocument | [optional] 
 **eEzsigndocumentSource** | **String** | Indicates where to look for the document binary content. | 
 **eEzsigndocumentFormat** | **String** | Indicates the format of the document. | 
 **sEzsigndocumentBase64** | **Blob** | The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource &#x3D; Base64. | [optional] 

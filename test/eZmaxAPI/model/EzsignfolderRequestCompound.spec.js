@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderRequestCompound);
     });
 
+    it('should have the property pkiEzsignfolderID (base name: "pkiEzsignfolderID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignfolderID
+      //var instance = new EZmaxApiDefinition.EzsignfolderRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiEzsignfoldertypeID (base name: "fkiEzsignfoldertypeID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldertypeID
       //var instance = new EZmaxApiDefinition.EzsignfolderRequestCompound();

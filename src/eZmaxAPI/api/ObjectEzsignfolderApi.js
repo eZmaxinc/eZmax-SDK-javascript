@@ -17,6 +17,8 @@ import CommonResponseError from '../model/CommonResponseError';
 import EzsignfolderCreateObjectV1Request from '../model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from '../model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderDeleteObjectV1Response from '../model/EzsignfolderDeleteObjectV1Response';
+import EzsignfolderEditObjectV1Request from '../model/EzsignfolderEditObjectV1Request';
+import EzsignfolderEditObjectV1Response from '../model/EzsignfolderEditObjectV1Response';
 import EzsignfolderGetEzsigndocumentsV1Response from '../model/EzsignfolderGetEzsigndocumentsV1Response';
 import EzsignfolderGetEzsignfoldersignerassociationsV1Response from '../model/EzsignfolderGetEzsignfoldersignerassociationsV1Response';
 import EzsignfolderGetFormsDataV1Response from '../model/EzsignfolderGetFormsDataV1Response';
@@ -125,6 +127,53 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderEditObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEditObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderEditObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit an Ezsignfolder
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/model/EzsignfolderEditObjectV1Request} EzsignfolderEditObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderEditObjectV1Response}
+     */
+    ezsignfolderEditObjectV1(pkiEzsignfolderID, EzsignfolderEditObjectV1Request, callback) {
+      let postBody = EzsignfolderEditObjectV1Request;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderEditObjectV1");
+      }
+      // verify the required parameter 'EzsignfolderEditObjectV1Request' is set
+      if (EzsignfolderEditObjectV1Request === undefined || EzsignfolderEditObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfolderEditObjectV1Request' when calling ezsignfolderEditObjectV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderEditObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

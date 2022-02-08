@@ -60,6 +60,9 @@ class EzsigndocumentRequest {
         if (data) {
             obj = obj || new EzsigndocumentRequest();
 
+            if (data.hasOwnProperty('pkiEzsigndocumentID')) {
+                obj['pkiEzsigndocumentID'] = ApiClient.convertToType(data['pkiEzsigndocumentID'], 'Number');
+            }
             if (data.hasOwnProperty('eEzsigndocumentSource')) {
                 obj['eEzsigndocumentSource'] = ApiClient.convertToType(data['eEzsigndocumentSource'], 'String');
             }
@@ -94,6 +97,21 @@ class EzsigndocumentRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsigndocument
+     * @return {Number}
+     */
+    getPkiEzsigndocumentID() {
+        return this.pkiEzsigndocumentID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsigndocument
+     * @param {Number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     */
+    setPkiEzsigndocumentID(pkiEzsigndocumentID) {
+        this['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
+    }
 /**
      * Returns Indicates where to look for the document binary content.
      * @return {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentSourceEnum}
@@ -248,6 +266,12 @@ class EzsigndocumentRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Ezsigndocument
+ * @member {Number} pkiEzsigndocumentID
+ */
+EzsigndocumentRequest.prototype['pkiEzsigndocumentID'] = undefined;
 
 /**
  * Indicates where to look for the document binary content.

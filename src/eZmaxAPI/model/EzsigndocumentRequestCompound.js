@@ -63,6 +63,9 @@ class EzsigndocumentRequestCompound {
             obj = obj || new EzsigndocumentRequestCompound();
             EzsigndocumentRequest.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('pkiEzsigndocumentID')) {
+                obj['pkiEzsigndocumentID'] = ApiClient.convertToType(data['pkiEzsigndocumentID'], 'Number');
+            }
             if (data.hasOwnProperty('eEzsigndocumentSource')) {
                 obj['eEzsigndocumentSource'] = ApiClient.convertToType(data['eEzsigndocumentSource'], 'String');
             }
@@ -97,6 +100,21 @@ class EzsigndocumentRequestCompound {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsigndocument
+     * @return {Number}
+     */
+    getPkiEzsigndocumentID() {
+        return this.pkiEzsigndocumentID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsigndocument
+     * @param {Number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     */
+    setPkiEzsigndocumentID(pkiEzsigndocumentID) {
+        this['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
+    }
 /**
      * Returns Indicates where to look for the document binary content.
      * @return {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentSourceEnum}
@@ -253,6 +271,12 @@ class EzsigndocumentRequestCompound {
 }
 
 /**
+ * The unique ID of the Ezsigndocument
+ * @member {Number} pkiEzsigndocumentID
+ */
+EzsigndocumentRequestCompound.prototype['pkiEzsigndocumentID'] = undefined;
+
+/**
  * Indicates where to look for the document binary content.
  * @member {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentSourceEnum} eEzsigndocumentSource
  */
@@ -316,6 +340,11 @@ EzsigndocumentRequestCompound.prototype['sEzsigndocumentName'] = undefined;
 
 
 // Implement EzsigndocumentRequest interface:
+/**
+ * The unique ID of the Ezsigndocument
+ * @member {Number} pkiEzsigndocumentID
+ */
+EzsigndocumentRequest.prototype['pkiEzsigndocumentID'] = undefined;
 /**
  * Indicates where to look for the document binary content.
  * @member {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentSourceEnum} eEzsigndocumentSource

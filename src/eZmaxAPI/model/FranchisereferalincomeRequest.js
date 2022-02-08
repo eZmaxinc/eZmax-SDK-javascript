@@ -70,6 +70,9 @@ class FranchisereferalincomeRequest {
         if (data) {
             obj = obj || new FranchisereferalincomeRequest();
 
+            if (data.hasOwnProperty('pkiFranchisereferalincomeID')) {
+                obj['pkiFranchisereferalincomeID'] = ApiClient.convertToType(data['pkiFranchisereferalincomeID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiFranchisebrokerID')) {
                 obj['fkiFranchisebrokerID'] = ApiClient.convertToType(data['fkiFranchisebrokerID'], 'Number');
             }
@@ -107,6 +110,21 @@ class FranchisereferalincomeRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Franchisereferalincome
+     * @return {Number}
+     */
+    getPkiFranchisereferalincomeID() {
+        return this.pkiFranchisereferalincomeID;
+    }
+
+    /**
+     * Sets The unique ID of the Franchisereferalincome
+     * @param {Number} pkiFranchisereferalincomeID The unique ID of the Franchisereferalincome
+     */
+    setPkiFranchisereferalincomeID(pkiFranchisereferalincomeID) {
+        this['pkiFranchisereferalincomeID'] = pkiFranchisereferalincomeID;
+    }
 /**
      * Returns The unique ID of the Franchisebroker
      * @return {Number}
@@ -272,6 +290,12 @@ class FranchisereferalincomeRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Franchisereferalincome
+ * @member {Number} pkiFranchisereferalincomeID
+ */
+FranchisereferalincomeRequest.prototype['pkiFranchisereferalincomeID'] = undefined;
 
 /**
  * The unique ID of the Franchisebroker

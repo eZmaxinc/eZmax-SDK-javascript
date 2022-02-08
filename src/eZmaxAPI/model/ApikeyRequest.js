@@ -53,6 +53,9 @@ class ApikeyRequest {
         if (data) {
             obj = obj || new ApikeyRequest();
 
+            if (data.hasOwnProperty('pkiApikeyID')) {
+                obj['pkiApikeyID'] = ApiClient.convertToType(data['pkiApikeyID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
@@ -63,6 +66,21 @@ class ApikeyRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Apikey
+     * @return {Number}
+     */
+    getPkiApikeyID() {
+        return this.pkiApikeyID;
+    }
+
+    /**
+     * Sets The unique ID of the Apikey
+     * @param {Number} pkiApikeyID The unique ID of the Apikey
+     */
+    setPkiApikeyID(pkiApikeyID) {
+        this['pkiApikeyID'] = pkiApikeyID;
+    }
 /**
      * Returns The unique ID of the User
      * @return {Number}
@@ -93,6 +111,12 @@ class ApikeyRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Apikey
+ * @member {Number} pkiApikeyID
+ */
+ApikeyRequest.prototype['pkiApikeyID'] = undefined;
 
 /**
  * The unique ID of the User

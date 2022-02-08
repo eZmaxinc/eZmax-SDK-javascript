@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ApikeyRequest();
+    instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,28 +47,22 @@
       object[property] = value;
   }
 
-  describe('ApikeyRequest', function() {
-    it('should create an instance of ApikeyRequest', function() {
-      // uncomment below and update the code to test ApikeyRequest
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ApikeyRequest);
+  describe('EzsignfolderEditObjectV1Response', function() {
+    it('should create an instance of EzsignfolderEditObjectV1Response', function() {
+      // uncomment below and update the code to test EzsignfolderEditObjectV1Response
+      //var instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderEditObjectV1Response);
     });
 
-    it('should have the property pkiApikeyID (base name: "pkiApikeyID")', function() {
-      // uncomment below and update the code to test the property pkiApikeyID
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
+    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
+      // uncomment below and update the code to test the property objDebugPayload
+      //var instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Response();
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiUserID (base name: "fkiUserID")', function() {
-      // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objApikeyDescription (base name: "objApikeyDescription")', function() {
-      // uncomment below and update the code to test the property objApikeyDescription
-      //var instance = new EZmaxApiDefinition.ApikeyRequest();
+    it('should have the property objDebug (base name: "objDebug")', function() {
+      // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinition.EzsignfolderEditObjectV1Response();
       //expect(instance).to.be();
     });
 

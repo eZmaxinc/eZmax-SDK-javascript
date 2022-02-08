@@ -94,6 +94,8 @@ docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
 docs/EzsignfolderCreateObjectV1ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
+docs/EzsignfolderEditObjectV1Request.md
+docs/EzsignfolderEditObjectV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1Response.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.md
 docs/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.md
@@ -358,6 +360,8 @@ src/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.js
+src/eZmaxAPI/model/EzsignfolderEditObjectV1Request.js
+src/eZmaxAPI/model/EzsignfolderEditObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.js
@@ -599,6 +603,8 @@ test/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsignfolderEditObjectV1Request.spec.js
+test/eZmaxAPI/model/EzsignfolderEditObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload.spec.js

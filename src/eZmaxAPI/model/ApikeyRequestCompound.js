@@ -56,6 +56,9 @@ class ApikeyRequestCompound {
             obj = obj || new ApikeyRequestCompound();
             ApikeyRequest.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('pkiApikeyID')) {
+                obj['pkiApikeyID'] = ApiClient.convertToType(data['pkiApikeyID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
@@ -66,6 +69,21 @@ class ApikeyRequestCompound {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Apikey
+     * @return {Number}
+     */
+    getPkiApikeyID() {
+        return this.pkiApikeyID;
+    }
+
+    /**
+     * Sets The unique ID of the Apikey
+     * @param {Number} pkiApikeyID The unique ID of the Apikey
+     */
+    setPkiApikeyID(pkiApikeyID) {
+        this['pkiApikeyID'] = pkiApikeyID;
+    }
 /**
      * Returns The unique ID of the User
      * @return {Number}
@@ -98,6 +116,12 @@ class ApikeyRequestCompound {
 }
 
 /**
+ * The unique ID of the Apikey
+ * @member {Number} pkiApikeyID
+ */
+ApikeyRequestCompound.prototype['pkiApikeyID'] = undefined;
+
+/**
  * The unique ID of the User
  * @member {Number} fkiUserID
  */
@@ -110,6 +134,11 @@ ApikeyRequestCompound.prototype['objApikeyDescription'] = undefined;
 
 
 // Implement ApikeyRequest interface:
+/**
+ * The unique ID of the Apikey
+ * @member {Number} pkiApikeyID
+ */
+ApikeyRequest.prototype['pkiApikeyID'] = undefined;
 /**
  * The unique ID of the User
  * @member {Number} fkiUserID
