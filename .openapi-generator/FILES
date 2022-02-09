@@ -84,8 +84,11 @@ docs/EzsigndocumentGetObjectV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
+docs/EzsigndocumentPatchObjectV1Request.md
+docs/EzsigndocumentPatchObjectV1Response.md
 docs/EzsigndocumentRequest.md
 docs/EzsigndocumentRequestCompound.md
+docs/EzsigndocumentRequestPatch.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsigndocumentResponseCompoundAllOf.md
@@ -350,8 +353,11 @@ src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsigndocumentPatchObjectV1Request.js
+src/eZmaxAPI/model/EzsigndocumentPatchObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentRequest.js
 src/eZmaxAPI/model/EzsigndocumentRequestCompound.js
+src/eZmaxAPI/model/EzsigndocumentRequestPatch.js
 src/eZmaxAPI/model/EzsigndocumentResponse.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompound.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.js
@@ -593,8 +599,11 @@ test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsigndocumentPatchObjectV1Request.spec.js
+test/eZmaxAPI/model/EzsigndocumentPatchObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequest.spec.js
 test/eZmaxAPI/model/EzsigndocumentRequestCompound.spec.js
+test/eZmaxAPI/model/EzsigndocumentRequestPatch.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponse.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.spec.js

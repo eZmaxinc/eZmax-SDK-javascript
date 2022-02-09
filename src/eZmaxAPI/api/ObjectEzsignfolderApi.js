@@ -141,7 +141,7 @@ export default class ObjectEzsignfolderApi {
      */
 
     /**
-     * Edit an Ezsignfolder
+     * Modify an existing Ezsignfolder
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/model/EzsignfolderEditObjectV1Request} EzsignfolderEditObjectV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response

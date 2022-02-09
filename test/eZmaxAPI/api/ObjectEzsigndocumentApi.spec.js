@@ -138,6 +138,16 @@
         done();
       });
     });
+    describe('ezsigndocumentPatchObjectV1', function() {
+      it('should call ezsigndocumentPatchObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentPatchObjectV1
+        //instance.ezsigndocumentPatchObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

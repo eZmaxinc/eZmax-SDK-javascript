@@ -28,6 +28,8 @@ import EzsigndocumentGetFormDataV1Response from '../model/EzsigndocumentGetFormD
 import EzsigndocumentGetObjectV1Response from '../model/EzsigndocumentGetObjectV1Response';
 import EzsigndocumentGetWordsPositionsV1Request from '../model/EzsigndocumentGetWordsPositionsV1Request';
 import EzsigndocumentGetWordsPositionsV1Response from '../model/EzsigndocumentGetWordsPositionsV1Response';
+import EzsigndocumentPatchObjectV1Request from '../model/EzsigndocumentPatchObjectV1Request';
+import EzsigndocumentPatchObjectV1Response from '../model/EzsigndocumentPatchObjectV1Response';
 
 /**
 * ObjectEzsigndocument service.
@@ -446,6 +448,53 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentGetWordsPositionsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentPatchObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentPatchObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Patch an existing Ezsigndocument
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Request} EzsigndocumentPatchObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentPatchObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Response}
+     */
+    ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, EzsigndocumentPatchObjectV1Request, callback) {
+      let postBody = EzsigndocumentPatchObjectV1Request;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentPatchObjectV1");
+      }
+      // verify the required parameter 'EzsigndocumentPatchObjectV1Request' is set
+      if (EzsigndocumentPatchObjectV1Request === undefined || EzsigndocumentPatchObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsigndocumentPatchObjectV1Request' when calling ezsigndocumentPatchObjectV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentPatchObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

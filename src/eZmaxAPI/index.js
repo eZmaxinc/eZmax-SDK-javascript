@@ -94,8 +94,11 @@ import EzsigndocumentGetObjectV1ResponseMPayload from './model/EzsigndocumentGet
 import EzsigndocumentGetWordsPositionsV1Request from './model/EzsigndocumentGetWordsPositionsV1Request';
 import EzsigndocumentGetWordsPositionsV1Response from './model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentGetWordsPositionsV1ResponseAllOf from './model/EzsigndocumentGetWordsPositionsV1ResponseAllOf';
+import EzsigndocumentPatchObjectV1Request from './model/EzsigndocumentPatchObjectV1Request';
+import EzsigndocumentPatchObjectV1Response from './model/EzsigndocumentPatchObjectV1Response';
 import EzsigndocumentRequest from './model/EzsigndocumentRequest';
 import EzsigndocumentRequestCompound from './model/EzsigndocumentRequestCompound';
+import EzsigndocumentRequestPatch from './model/EzsigndocumentRequestPatch';
 import EzsigndocumentResponse from './model/EzsigndocumentResponse';
 import EzsigndocumentResponseCompound from './model/EzsigndocumentResponseCompound';
 import EzsigndocumentResponseCompoundAllOf from './model/EzsigndocumentResponseCompoundAllOf';
@@ -783,6 +786,18 @@ export {
     EzsigndocumentGetWordsPositionsV1ResponseAllOf,
 
     /**
+     * The EzsigndocumentPatchObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Request}
+     */
+    EzsigndocumentPatchObjectV1Request,
+
+    /**
+     * The EzsigndocumentPatchObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Response}
+     */
+    EzsigndocumentPatchObjectV1Response,
+
+    /**
      * The EzsigndocumentRequest model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentRequest}
      */
@@ -793,6 +808,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentRequestCompound}
      */
     EzsigndocumentRequestCompound,
+
+    /**
+     * The EzsigndocumentRequestPatch model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentRequestPatch}
+     */
+    EzsigndocumentRequestPatch,
 
     /**
      * The EzsigndocumentResponse model constructor.
