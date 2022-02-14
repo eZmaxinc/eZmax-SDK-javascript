@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('ezsignsignatureEditObjectV1', function() {
+      it('should call ezsignsignatureEditObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignsignatureEditObjectV1
+        //instance.ezsignsignatureEditObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignsignatureGetObjectV1', function() {
       it('should call ezsignsignatureGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignsignatureGetObjectV1

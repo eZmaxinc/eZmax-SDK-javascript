@@ -157,6 +157,8 @@ docs/EzsignsignatureCreateObjectV1Response.md
 docs/EzsignsignatureCreateObjectV1ResponseAllOf.md
 docs/EzsignsignatureCreateObjectV1ResponseMPayload.md
 docs/EzsignsignatureDeleteObjectV1Response.md
+docs/EzsignsignatureEditObjectV1Request.md
+docs/EzsignsignatureEditObjectV1Response.md
 docs/EzsignsignatureGetObjectV1Response.md
 docs/EzsignsignatureGetObjectV1ResponseAllOf.md
 docs/EzsignsignatureRequest.md
@@ -426,6 +428,8 @@ src/eZmaxAPI/model/EzsignsignatureCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsignsignatureDeleteObjectV1Response.js
+src/eZmaxAPI/model/EzsignsignatureEditObjectV1Request.js
+src/eZmaxAPI/model/EzsignsignatureEditObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.js
 src/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignsignatureRequest.js
@@ -672,6 +676,8 @@ test/eZmaxAPI/model/EzsignsignatureCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsignsignatureDeleteObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsignsignatureEditObjectV1Request.spec.js
+test/eZmaxAPI/model/EzsignsignatureEditObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignatureRequest.spec.js
