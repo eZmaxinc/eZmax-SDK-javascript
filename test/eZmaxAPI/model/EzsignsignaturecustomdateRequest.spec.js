@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignaturecustomdateRequest);
     });
 
+    it('should have the property pkiEzsignsignaturecustomdateID (base name: "pkiEzsignsignaturecustomdateID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignsignaturecustomdateID
+      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsignsignaturecustomdateX (base name: "iEzsignsignaturecustomdateX")', function() {
       // uncomment below and update the code to test the property iEzsignsignaturecustomdateX
       //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequest();

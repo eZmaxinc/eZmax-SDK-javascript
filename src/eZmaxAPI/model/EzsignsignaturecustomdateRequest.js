@@ -54,6 +54,9 @@ class EzsignsignaturecustomdateRequest {
         if (data) {
             obj = obj || new EzsignsignaturecustomdateRequest();
 
+            if (data.hasOwnProperty('pkiEzsignsignaturecustomdateID')) {
+                obj['pkiEzsignsignaturecustomdateID'] = ApiClient.convertToType(data['pkiEzsignsignaturecustomdateID'], 'Number');
+            }
             if (data.hasOwnProperty('iEzsignsignaturecustomdateX')) {
                 obj['iEzsignsignaturecustomdateX'] = ApiClient.convertToType(data['iEzsignsignaturecustomdateX'], 'Number');
             }
@@ -67,6 +70,21 @@ class EzsignsignaturecustomdateRequest {
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsignsignaturecustomdate
+     * @return {Number}
+     */
+    getPkiEzsignsignaturecustomdateID() {
+        return this.pkiEzsignsignaturecustomdateID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsignaturecustomdate
+     * @param {Number} pkiEzsignsignaturecustomdateID The unique ID of the Ezsignsignaturecustomdate
+     */
+    setPkiEzsignsignaturecustomdateID(pkiEzsignsignaturecustomdateID) {
+        this['pkiEzsignsignaturecustomdateID'] = pkiEzsignsignaturecustomdateID;
+    }
 /**
      * Returns The X coordinate (Horizontal) where to put the custom date block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the custom date block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @return {Number}
@@ -114,6 +132,12 @@ class EzsignsignaturecustomdateRequest {
     }
 
 }
+
+/**
+ * The unique ID of the Ezsignsignaturecustomdate
+ * @member {Number} pkiEzsignsignaturecustomdateID
+ */
+EzsignsignaturecustomdateRequest.prototype['pkiEzsignsignaturecustomdateID'] = undefined;
 
 /**
  * The X coordinate (Horizontal) where to put the custom date block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the custom date block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
