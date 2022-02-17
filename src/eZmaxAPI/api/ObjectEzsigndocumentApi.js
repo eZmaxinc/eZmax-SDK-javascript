@@ -22,6 +22,7 @@ import EzsigndocumentApplyEzsigntemplateV2Response from '../model/Ezsigndocument
 import EzsigndocumentCreateObjectV1Request from '../model/EzsigndocumentCreateObjectV1Request';
 import EzsigndocumentCreateObjectV1Response from '../model/EzsigndocumentCreateObjectV1Response';
 import EzsigndocumentDeleteObjectV1Response from '../model/EzsigndocumentDeleteObjectV1Response';
+import EzsigndocumentEditEzsignsignaturesV1Request from '../model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
@@ -31,7 +32,6 @@ import EzsigndocumentGetWordsPositionsV1Request from '../model/EzsigndocumentGet
 import EzsigndocumentGetWordsPositionsV1Response from '../model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentPatchObjectV1Request from '../model/EzsigndocumentPatchObjectV1Request';
 import EzsigndocumentPatchObjectV1Response from '../model/EzsigndocumentPatchObjectV1Response';
-import EzsignsignatureRequestCompound from '../model/EzsignsignatureRequestCompound';
 
 /**
 * ObjectEzsigndocument service.
@@ -244,19 +244,19 @@ export default class ObjectEzsigndocumentApi {
      * Edit multiple ezsignsignatures
      * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
      * @param {Number} pkiEzsigndocumentID 
-     * @param {Array.<module:eZmaxAPI/model/EzsignsignatureRequestCompound>} EzsignsignatureRequestCompound 
+     * @param {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request} EzsigndocumentEditEzsignsignaturesV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentEditEzsignsignaturesV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response}
      */
-    ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsignsignatureRequestCompound, callback) {
-      let postBody = EzsignsignatureRequestCompound;
+    ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsigndocumentEditEzsignsignaturesV1Request, callback) {
+      let postBody = EzsigndocumentEditEzsignsignaturesV1Request;
       // verify the required parameter 'pkiEzsigndocumentID' is set
       if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
         throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentEditEzsignsignaturesV1");
       }
-      // verify the required parameter 'EzsignsignatureRequestCompound' is set
-      if (EzsignsignatureRequestCompound === undefined || EzsignsignatureRequestCompound === null) {
-        throw new Error("Missing the required parameter 'EzsignsignatureRequestCompound' when calling ezsigndocumentEditEzsignsignaturesV1");
+      // verify the required parameter 'EzsigndocumentEditEzsignsignaturesV1Request' is set
+      if (EzsigndocumentEditEzsignsignaturesV1Request === undefined || EzsigndocumentEditEzsignsignaturesV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsigndocumentEditEzsignsignaturesV1Request' when calling ezsigndocumentEditEzsignsignaturesV1");
       }
 
       let pathParams = {

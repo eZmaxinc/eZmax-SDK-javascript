@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ## ezsigndocumentEditEzsignsignaturesV1
 
-> EzsigndocumentEditEzsignsignaturesV1Response ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsignsignatureRequestCompound)
+> EzsigndocumentEditEzsignsignaturesV1Response ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsigndocumentEditEzsignsignaturesV1Request)
 
 Edit multiple ezsignsignatures
 
@@ -245,8 +245,8 @@ Authorization.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsignsignatureRequestCompound = [new EZmaxApiDefinition.EzsignsignatureRequestCompound()]; // [EzsignsignatureRequestCompound] | 
-apiInstance.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsignsignatureRequestCompound, (error, data, response) => {
+let EzsigndocumentEditEzsignsignaturesV1Request = new EZmaxApiDefinition.EzsigndocumentEditEzsignsignaturesV1Request(); // EzsigndocumentEditEzsignsignaturesV1Request | 
+apiInstance.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsigndocumentEditEzsignsignaturesV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -261,7 +261,7 @@ apiInstance.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, Ezsignsign
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsigndocumentID** | **Number**|  | 
- **EzsignsignatureRequestCompound** | [**[EzsignsignatureRequestCompound]**](EzsignsignatureRequestCompound.md)|  | 
+ **EzsigndocumentEditEzsignsignaturesV1Request** | [**EzsigndocumentEditEzsignsignaturesV1Request**](EzsigndocumentEditEzsignsignaturesV1Request.md)|  | 
 
 ### Return type
 

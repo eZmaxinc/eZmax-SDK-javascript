@@ -79,6 +79,7 @@ import EzsigndocumentCreateObjectV1Response from './model/EzsigndocumentCreateOb
 import EzsigndocumentCreateObjectV1ResponseAllOf from './model/EzsigndocumentCreateObjectV1ResponseAllOf';
 import EzsigndocumentCreateObjectV1ResponseMPayload from './model/EzsigndocumentCreateObjectV1ResponseMPayload';
 import EzsigndocumentDeleteObjectV1Response from './model/EzsigndocumentDeleteObjectV1Response';
+import EzsigndocumentEditEzsignsignaturesV1Request from './model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from './model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from './model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetDownloadUrlV1ResponseAllOf from './model/EzsigndocumentGetDownloadUrlV1ResponseAllOf';
@@ -697,6 +698,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response}
      */
     EzsigndocumentDeleteObjectV1Response,
+
+    /**
+     * The EzsigndocumentEditEzsignsignaturesV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request}
+     */
+    EzsigndocumentEditEzsignsignaturesV1Request,
 
     /**
      * The EzsigndocumentEditEzsignsignaturesV1Response model constructor.

@@ -69,6 +69,7 @@ docs/EzsigndocumentCreateObjectV1Response.md
 docs/EzsigndocumentCreateObjectV1ResponseAllOf.md
 docs/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/EzsigndocumentDeleteObjectV1Response.md
+docs/EzsigndocumentEditEzsignsignaturesV1Request.md
 docs/EzsigndocumentEditEzsignsignaturesV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
@@ -341,6 +342,7 @@ src/eZmaxAPI/model/EzsigndocumentCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.js
+src/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request.js
 src/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.js
@@ -590,6 +592,7 @@ test/eZmaxAPI/model/EzsigndocumentCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.spec.js
