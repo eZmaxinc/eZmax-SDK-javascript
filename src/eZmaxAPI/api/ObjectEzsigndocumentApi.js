@@ -22,6 +22,7 @@ import EzsigndocumentApplyEzsigntemplateV2Response from '../model/Ezsigndocument
 import EzsigndocumentCreateObjectV1Request from '../model/EzsigndocumentCreateObjectV1Request';
 import EzsigndocumentCreateObjectV1Response from '../model/EzsigndocumentCreateObjectV1Response';
 import EzsigndocumentDeleteObjectV1Response from '../model/EzsigndocumentDeleteObjectV1Response';
+import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
 import EzsigndocumentGetFormDataV1Response from '../model/EzsigndocumentGetFormDataV1Response';
@@ -30,6 +31,7 @@ import EzsigndocumentGetWordsPositionsV1Request from '../model/EzsigndocumentGet
 import EzsigndocumentGetWordsPositionsV1Response from '../model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentPatchObjectV1Request from '../model/EzsigndocumentPatchObjectV1Request';
 import EzsigndocumentPatchObjectV1Response from '../model/EzsigndocumentPatchObjectV1Response';
+import EzsignsignatureRequestCompound from '../model/EzsignsignatureRequestCompound';
 
 /**
 * ObjectEzsigndocument service.
@@ -225,6 +227,54 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentEditEzsignsignaturesV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentEditEzsignsignaturesV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit multiple ezsignsignatures
+     * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {Array.<module:eZmaxAPI/model/EzsignsignatureRequestCompound>} EzsignsignatureRequestCompound 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentEditEzsignsignaturesV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response}
+     */
+    ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsignsignatureRequestCompound, callback) {
+      let postBody = EzsignsignatureRequestCompound;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentEditEzsignsignaturesV1");
+      }
+      // verify the required parameter 'EzsignsignatureRequestCompound' is set
+      if (EzsignsignatureRequestCompound === undefined || EzsignsignatureRequestCompound === null) {
+        throw new Error("Missing the required parameter 'EzsignsignatureRequestCompound' when calling ezsigndocumentEditEzsignsignaturesV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentEditEzsignsignaturesV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
