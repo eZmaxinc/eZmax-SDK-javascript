@@ -142,6 +142,7 @@ class EzsigndocumentGetFormDataV1ResponseMPayload {
         this['dtModifiedDate'] = dtModifiedDate;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/CustomFormDataSignerResponse>}
      */
     getAObjFormDataSigner() {
@@ -149,7 +150,8 @@ class EzsigndocumentGetFormDataV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/CustomFormDataSignerResponse>} a_objFormDataSigner
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/CustomFormDataSignerResponse>} a_objFormDataSigner 
      */
     setAObjFormDataSigner(a_objFormDataSigner) {
         this['a_objFormDataSigner'] = a_objFormDataSigner;
@@ -182,6 +184,7 @@ EzsigndocumentGetFormDataV1ResponseMPayload.prototype['sEzsigndocumentName'] = u
 EzsigndocumentGetFormDataV1ResponseMPayload.prototype['dtModifiedDate'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataSignerResponse>} a_objFormDataSigner
  */
 EzsigndocumentGetFormDataV1ResponseMPayload.prototype['a_objFormDataSigner'] = undefined;
@@ -209,6 +212,7 @@ CustomFormDataDocumentResponse.prototype['sEzsigndocumentName'] = undefined;
  */
 CustomFormDataDocumentResponse.prototype['dtModifiedDate'] = undefined;
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataSignerResponse>} a_objFormDataSigner
  */
 CustomFormDataDocumentResponse.prototype['a_objFormDataSigner'] = undefined;

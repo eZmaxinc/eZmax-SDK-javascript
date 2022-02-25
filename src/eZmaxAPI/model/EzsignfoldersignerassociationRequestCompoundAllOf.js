@@ -23,10 +23,11 @@ class EzsignfoldersignerassociationRequestCompoundAllOf {
     /**
      * Constructs a new <code>EzsignfoldersignerassociationRequestCompoundAllOf</code>.
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf
+     * @param objEzsignsigner {module:eZmaxAPI/model/EzsignsignerRequestCompound} 
      */
-    constructor() { 
+    constructor(objEzsignsigner) { 
         
-        EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this);
+        EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this, objEzsignsigner);
     }
 
     /**
@@ -34,7 +35,8 @@ class EzsignfoldersignerassociationRequestCompoundAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objEzsignsigner) { 
+        obj['objEzsignsigner'] = objEzsignsigner;
     }
 
     /**

@@ -100,6 +100,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Delete an existing Ezsignfolder
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderDeleteObjectV1Response}
@@ -142,6 +143,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Edit an existing Ezsignfolder
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/model/EzsignfolderEditObjectV1Request} EzsignfolderEditObjectV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
@@ -189,6 +191,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve an existing Ezsignfolder's Ezsigndocuments
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsigndocumentsV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1Response}
@@ -231,6 +234,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve an existing Ezsignfolder's Ezsignfoldersignerassociations
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsignfoldersignerassociationsV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1Response}
@@ -273,6 +277,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve an existing Ezsignfolder's forms data
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetFormsDataV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetFormsDataV1Response}
@@ -364,6 +369,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Retrieve an existing Ezsignfolder
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetObjectV1Response}
@@ -406,6 +412,7 @@ export default class ObjectEzsignfolderApi {
 
     /**
      * Send the Ezsignfolder to the signatories for signature
+     * 
      * @param {Number} pkiEzsignfolderID 
      * @param {module:eZmaxAPI/model/EzsignfolderSendV1Request} EzsignfolderSendV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderSendV1Callback} callback The callback function, accepting three arguments: error, data, response
@@ -455,7 +462,7 @@ export default class ObjectEzsignfolderApi {
      * Unsend the Ezsignfolder
      * Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
      * @param {Number} pkiEzsignfolderID 
-     * @param {String} body 
+     * @param {Object.<String, Object>} body 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderUnsendV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderUnsendV1Response}
      */

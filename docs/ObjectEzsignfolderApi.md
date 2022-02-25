@@ -74,6 +74,8 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignfolder
 
+
+
 ### Example
 
 ```javascript
@@ -122,6 +124,8 @@ Name | Type | Description  | Notes
 > EzsignfolderEditObjectV1Response ezsignfolderEditObjectV1(pkiEzsignfolderID, EzsignfolderEditObjectV1Request)
 
 Edit an existing Ezsignfolder
+
+
 
 ### Example
 
@@ -174,6 +178,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder&#39;s Ezsigndocuments
 
+
+
 ### Example
 
 ```javascript
@@ -223,6 +229,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder&#39;s Ezsignfoldersignerassociations
 
+
+
 ### Example
 
 ```javascript
@@ -271,6 +279,8 @@ Name | Type | Description  | Notes
 > EzsignfolderGetFormsDataV1Response ezsignfolderGetFormsDataV1(pkiEzsignfolderID)
 
 Retrieve an existing Ezsignfolder&#39;s forms data
+
+
 
 ### Example
 
@@ -382,6 +392,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsignfolder
 
+
+
 ### Example
 
 ```javascript
@@ -430,6 +442,8 @@ Name | Type | Description  | Notes
 > EzsignfolderSendV1Response ezsignfolderSendV1(pkiEzsignfolderID, EzsignfolderSendV1Request)
 
 Send the Ezsignfolder to the signatories for signature
+
+
 
 ### Example
 
@@ -497,7 +511,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
 let pkiEzsignfolderID = 56; // Number | 
-let body = "body_example"; // String | 
+let body = {key: null}; // Object | 
 apiInstance.ezsignfolderUnsendV1(pkiEzsignfolderID, body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -513,7 +527,7 @@ apiInstance.ezsignfolderUnsendV1(pkiEzsignfolderID, body, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiEzsignfolderID** | **Number**|  | 
- **body** | **String**|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 

@@ -92,6 +92,7 @@ export default class ObjectEzsignsignatureApi {
 
     /**
      * Delete an existing Ezsignsignature
+     * 
      * @param {Number} pkiEzsignsignatureID 
      * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureDeleteObjectV1Response}
@@ -134,6 +135,7 @@ export default class ObjectEzsignsignatureApi {
 
     /**
      * Edit an existing Ezsignsignature
+     * 
      * @param {Number} pkiEzsignsignatureID 
      * @param {module:eZmaxAPI/model/EzsignsignatureEditObjectV1Request} EzsignsignatureEditObjectV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response

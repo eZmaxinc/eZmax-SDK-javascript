@@ -28,11 +28,12 @@ class EzsignfoldersignerassociationRequestCompound {
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequest
+     * @param objEzsignsigner {module:eZmaxAPI/model/EzsignsignerRequestCompound} 
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      */
-    constructor(fkiEzsignfolderID) { 
-        EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this);EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);
-        EzsignfoldersignerassociationRequestCompound.initialize(this, fkiEzsignfolderID);
+    constructor(objEzsignsigner, fkiEzsignfolderID) { 
+        EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this, objEzsignsigner);EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);
+        EzsignfoldersignerassociationRequestCompound.initialize(this, objEzsignsigner, fkiEzsignfolderID);
     }
 
     /**
@@ -40,7 +41,8 @@ class EzsignfoldersignerassociationRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignfolderID) { 
+    static initialize(obj, objEzsignsigner, fkiEzsignfolderID) { 
+        obj['objEzsignsigner'] = objEzsignsigner;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
     }
 

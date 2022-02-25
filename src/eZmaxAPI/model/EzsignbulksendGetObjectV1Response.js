@@ -15,22 +15,26 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import EzsignbulksendGetObjectV1ResponseAllOf from './EzsignbulksendGetObjectV1ResponseAllOf';
+import EzsignbulksendGetObjectV1ResponseMPayload from './EzsignbulksendGetObjectV1ResponseMPayload';
 
 /**
- * The UNUSEDEzsignfolderEditObjectV1Response model module.
- * @module eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response
+ * The EzsignbulksendGetObjectV1Response model module.
+ * @module eZmaxAPI/model/EzsignbulksendGetObjectV1Response
  * @version 1.1.4
  */
-class UNUSEDEzsignfolderEditObjectV1Response {
+class EzsignbulksendGetObjectV1Response {
     /**
-     * Constructs a new <code>UNUSEDEzsignfolderEditObjectV1Response</code>.
-     * Response for the /1/object/ezsignfolder/editObject API Request
-     * @alias module:eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response
+     * Constructs a new <code>EzsignbulksendGetObjectV1Response</code>.
+     * Response for the /1/object/ezsignbulksend/getObject API Request
+     * @alias module:eZmaxAPI/model/EzsignbulksendGetObjectV1Response
+     * @implements module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param mPayload {module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        UNUSEDEzsignfolderEditObjectV1Response.initialize(this);
+    constructor(mPayload) { 
+        EzsignbulksendGetObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        EzsignbulksendGetObjectV1Response.initialize(this, mPayload);
     }
 
     /**
@@ -38,21 +42,26 @@ class UNUSEDEzsignfolderEditObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, mPayload) { 
+        obj['mPayload'] = mPayload;
     }
 
     /**
-     * Constructs a <code>UNUSEDEzsignfolderEditObjectV1Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EzsignbulksendGetObjectV1Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response} The populated <code>UNUSEDEzsignfolderEditObjectV1Response</code> instance.
+     * @param {module:eZmaxAPI/model/EzsignbulksendGetObjectV1Response} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/EzsignbulksendGetObjectV1Response} The populated <code>EzsignbulksendGetObjectV1Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new UNUSEDEzsignfolderEditObjectV1Response();
+            obj = obj || new EzsignbulksendGetObjectV1Response();
+            EzsignbulksendGetObjectV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsignbulksendGetObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
+            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
@@ -63,6 +72,19 @@ class UNUSEDEzsignfolderEditObjectV1Response {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -93,16 +115,26 @@ class UNUSEDEzsignfolderEditObjectV1Response {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload} mPayload
+ */
+EzsignbulksendGetObjectV1Response.prototype['mPayload'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
-UNUSEDEzsignfolderEditObjectV1Response.prototype['objDebugPayload'] = undefined;
+EzsignbulksendGetObjectV1Response.prototype['objDebugPayload'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-UNUSEDEzsignfolderEditObjectV1Response.prototype['objDebug'] = undefined;
+EzsignbulksendGetObjectV1Response.prototype['objDebug'] = undefined;
 
 
+// Implement EzsignbulksendGetObjectV1ResponseAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload} mPayload
+ */
+EzsignbulksendGetObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -116,5 +148,5 @@ CommonResponse.prototype['objDebug'] = undefined;
 
 
 
-export default UNUSEDEzsignfolderEditObjectV1Response;
+export default EzsignbulksendGetObjectV1Response;
 

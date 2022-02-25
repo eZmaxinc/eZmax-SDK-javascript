@@ -58,6 +58,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayloadAllOf {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>}
      */
     getAObjEzsigntemplatepackage() {
@@ -65,7 +66,8 @@ class EzsigntemplatepackageGetListV1ResponseMPayloadAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage 
      */
     setAObjEzsigntemplatepackage(a_objEzsigntemplatepackage) {
         this['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
@@ -74,6 +76,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayloadAllOf {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
  */
 EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.prototype['a_objEzsigntemplatepackage'] = undefined;

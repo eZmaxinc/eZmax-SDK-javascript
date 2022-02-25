@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objEzsignsigner** | [**EzsignsignerRequestCompound**](EzsignsignerRequestCompound.md) |  | [optional] 
+**objEzsignsigner** | [**EzsignsignerRequestCompound**](EzsignsignerRequestCompound.md) |  | 
 **pkiEzsignfoldersignerassociationID** | **Number** | The unique ID of the Ezsignfoldersignerassociation | [optional] 
 **fkiUserID** | **Number** | The unique ID of the User | [optional] 
 **fkiEzsignfolderID** | **Number** | The unique ID of the Ezsignfolder | 

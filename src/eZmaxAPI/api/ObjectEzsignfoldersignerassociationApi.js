@@ -91,6 +91,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
 
     /**
      * Delete an existing Ezsignfoldersignerassociation
+     * 
      * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationDeleteObjectV1Response}
@@ -176,6 +177,7 @@ export default class ObjectEzsignfoldersignerassociationApi {
 
     /**
      * Retrieve an existing Ezsignfoldersignerassociation
+     * 
      * @param {Number} pkiEzsignfoldersignerassociationID 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1Response}

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Request();
+    instance = new EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,22 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsignfoldersignerassociationEditObjectV1Request', function() {
-    it('should create an instance of UNUSEDEzsignfoldersignerassociationEditObjectV1Request', function() {
-      // uncomment below and update the code to test UNUSEDEzsignfoldersignerassociationEditObjectV1Request
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Request);
+  describe('EzsigndocumentEndPrematurelyV1Response', function() {
+    it('should create an instance of EzsigndocumentEndPrematurelyV1Response', function() {
+      // uncomment below and update the code to test EzsigndocumentEndPrematurelyV1Response
+      //var instance = new EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response);
     });
 
-    it('should have the property objEzsignfoldersignerassociation (base name: "objEzsignfoldersignerassociation")', function() {
-      // uncomment below and update the code to test the property objEzsignfoldersignerassociation
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Request();
+    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
+      // uncomment below and update the code to test the property objDebugPayload
+      //var instance = new EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDebug (base name: "objDebug")', function() {
+      // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response();
       //expect(instance).to.be();
     });
 

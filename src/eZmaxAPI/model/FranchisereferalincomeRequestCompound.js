@@ -39,7 +39,7 @@ class FranchisereferalincomeRequestCompound {
      * @param dFranchisereferalincomeFranchisoramount {String} The amount that will be kept by the franchisor
      * @param dFranchisereferalincomeAgentamount {String} The amount that will be given to the agent
      * @param dtFranchisereferalincomeDisbursed {String} The date the amounts were disbursed
-     * @param tFranchisereferalincomeComment {String} A comment about the transaction
+     * @param tFranchisereferalincomeComment {String} Comment about the transaction
      * @param fkiFranchiseofficeID {Number} The unique ID of the Franchisereoffice
      * @param sFranchisereferalincomeRemoteid {String} 
      */
@@ -142,6 +142,7 @@ class FranchisereferalincomeRequestCompound {
         this['objAddress'] = objAddress;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/ContactRequestCompound>}
      */
     getAObjContact() {
@@ -149,7 +150,8 @@ class FranchisereferalincomeRequestCompound {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact 
      */
     setAObjContact(a_objContact) {
         this['a_objContact'] = a_objContact;
@@ -290,7 +292,7 @@ class FranchisereferalincomeRequestCompound {
         this['dtFranchisereferalincomeDisbursed'] = dtFranchisereferalincomeDisbursed;
     }
 /**
-     * Returns A comment about the transaction
+     * Returns Comment about the transaction
      * @return {String}
      */
     getTFranchisereferalincomeComment() {
@@ -298,8 +300,8 @@ class FranchisereferalincomeRequestCompound {
     }
 
     /**
-     * Sets A comment about the transaction
-     * @param {String} tFranchisereferalincomeComment A comment about the transaction
+     * Sets Comment about the transaction
+     * @param {String} tFranchisereferalincomeComment Comment about the transaction
      */
     setTFranchisereferalincomeComment(tFranchisereferalincomeComment) {
         this['tFranchisereferalincomeComment'] = tFranchisereferalincomeComment;
@@ -320,6 +322,7 @@ class FranchisereferalincomeRequestCompound {
         this['fkiFranchiseofficeID'] = fkiFranchiseofficeID;
     }
 /**
+     * Returns 
      * @return {String}
      */
     getSFranchisereferalincomeRemoteid() {
@@ -327,7 +330,8 @@ class FranchisereferalincomeRequestCompound {
     }
 
     /**
-     * @param {String} sFranchisereferalincomeRemoteid
+     * Sets 
+     * @param {String} sFranchisereferalincomeRemoteid 
      */
     setSFranchisereferalincomeRemoteid(sFranchisereferalincomeRemoteid) {
         this['sFranchisereferalincomeRemoteid'] = sFranchisereferalincomeRemoteid;
@@ -341,6 +345,7 @@ class FranchisereferalincomeRequestCompound {
 FranchisereferalincomeRequestCompound.prototype['objAddress'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
  */
 FranchisereferalincomeRequestCompound.prototype['a_objContact'] = undefined;
@@ -400,7 +405,7 @@ FranchisereferalincomeRequestCompound.prototype['dFranchisereferalincomeAgentamo
 FranchisereferalincomeRequestCompound.prototype['dtFranchisereferalincomeDisbursed'] = undefined;
 
 /**
- * A comment about the transaction
+ * Comment about the transaction
  * @member {String} tFranchisereferalincomeComment
  */
 FranchisereferalincomeRequestCompound.prototype['tFranchisereferalincomeComment'] = undefined;
@@ -412,6 +417,7 @@ FranchisereferalincomeRequestCompound.prototype['tFranchisereferalincomeComment'
 FranchisereferalincomeRequestCompound.prototype['fkiFranchiseofficeID'] = undefined;
 
 /**
+ * 
  * @member {String} sFranchisereferalincomeRemoteid
  */
 FranchisereferalincomeRequestCompound.prototype['sFranchisereferalincomeRemoteid'] = undefined;
@@ -423,6 +429,7 @@ FranchisereferalincomeRequestCompound.prototype['sFranchisereferalincomeRemoteid
  */
 FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
  */
 FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;
@@ -473,7 +480,7 @@ FranchisereferalincomeRequest.prototype['dFranchisereferalincomeAgentamount'] = 
  */
 FranchisereferalincomeRequest.prototype['dtFranchisereferalincomeDisbursed'] = undefined;
 /**
- * A comment about the transaction
+ * Comment about the transaction
  * @member {String} tFranchisereferalincomeComment
  */
 FranchisereferalincomeRequest.prototype['tFranchisereferalincomeComment'] = undefined;
@@ -483,6 +490,7 @@ FranchisereferalincomeRequest.prototype['tFranchisereferalincomeComment'] = unde
  */
 FranchisereferalincomeRequest.prototype['fkiFranchiseofficeID'] = undefined;
 /**
+ * 
  * @member {String} sFranchisereferalincomeRemoteid
  */
 FranchisereferalincomeRequest.prototype['sFranchisereferalincomeRemoteid'] = undefined;

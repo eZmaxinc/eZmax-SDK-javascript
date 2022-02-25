@@ -102,6 +102,7 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
         this['sEzsignfolderDescription'] = sEzsignfolderDescription;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>}
      */
     getAObjFormDataDocument() {
@@ -109,7 +110,8 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument 
      */
     setAObjFormDataDocument(a_objFormDataDocument) {
         this['a_objFormDataDocument'] = a_objFormDataDocument;
@@ -130,6 +132,7 @@ EzsignfolderGetFormsDataV1ResponseMPayload.prototype['pkiEzsignfolderID'] = unde
 EzsignfolderGetFormsDataV1ResponseMPayload.prototype['sEzsignfolderDescription'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
  */
 EzsignfolderGetFormsDataV1ResponseMPayload.prototype['a_objFormDataDocument'] = undefined;
@@ -147,6 +150,7 @@ CustomFormsDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
  */
 CustomFormsDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
  */
 CustomFormsDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;

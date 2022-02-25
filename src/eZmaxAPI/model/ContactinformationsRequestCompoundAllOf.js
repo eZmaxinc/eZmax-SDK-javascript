@@ -76,6 +76,7 @@ class ContactinformationsRequestCompoundAllOf {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/AddressRequest>}
      */
     getAObjAddress() {
@@ -83,12 +84,14 @@ class ContactinformationsRequestCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/AddressRequest>} a_objAddress
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/AddressRequest>} a_objAddress 
      */
     setAObjAddress(a_objAddress) {
         this['a_objAddress'] = a_objAddress;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/PhoneRequest>}
      */
     getAObjPhone() {
@@ -96,12 +99,14 @@ class ContactinformationsRequestCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/PhoneRequest>} a_objPhone
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/PhoneRequest>} a_objPhone 
      */
     setAObjPhone(a_objPhone) {
         this['a_objPhone'] = a_objPhone;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EmailRequest>}
      */
     getAObjEmail() {
@@ -109,12 +114,14 @@ class ContactinformationsRequestCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EmailRequest>} a_objEmail
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EmailRequest>} a_objEmail 
      */
     setAObjEmail(a_objEmail) {
         this['a_objEmail'] = a_objEmail;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/WebsiteRequest>}
      */
     getAObjWebsite() {
@@ -122,7 +129,8 @@ class ContactinformationsRequestCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/WebsiteRequest>} a_objWebsite
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/WebsiteRequest>} a_objWebsite 
      */
     setAObjWebsite(a_objWebsite) {
         this['a_objWebsite'] = a_objWebsite;
@@ -131,21 +139,25 @@ class ContactinformationsRequestCompoundAllOf {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/AddressRequest>} a_objAddress
  */
 ContactinformationsRequestCompoundAllOf.prototype['a_objAddress'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/PhoneRequest>} a_objPhone
  */
 ContactinformationsRequestCompoundAllOf.prototype['a_objPhone'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EmailRequest>} a_objEmail
  */
 ContactinformationsRequestCompoundAllOf.prototype['a_objEmail'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/WebsiteRequest>} a_objWebsite
  */
 ContactinformationsRequestCompoundAllOf.prototype['a_objWebsite'] = undefined;

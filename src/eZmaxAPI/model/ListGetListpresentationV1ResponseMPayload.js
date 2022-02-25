@@ -59,6 +59,7 @@ class ListGetListpresentationV1ResponseMPayload {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/ListpresentationRequest>}
      */
     getAObjListpresentation() {
@@ -66,7 +67,8 @@ class ListGetListpresentationV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation 
      */
     setAObjListpresentation(a_objListpresentation) {
         this['a_objListpresentation'] = a_objListpresentation;
@@ -75,6 +77,7 @@ class ListGetListpresentationV1ResponseMPayload {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation
  */
 ListGetListpresentationV1ResponseMPayload.prototype['a_objListpresentation'] = undefined;

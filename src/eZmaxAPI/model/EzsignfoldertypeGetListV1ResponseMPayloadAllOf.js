@@ -58,6 +58,7 @@ class EzsignfoldertypeGetListV1ResponseMPayloadAllOf {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>}
      */
     getAObjEzsignfoldertype() {
@@ -65,7 +66,8 @@ class EzsignfoldertypeGetListV1ResponseMPayloadAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype 
      */
     setAObjEzsignfoldertype(a_objEzsignfoldertype) {
         this['a_objEzsignfoldertype'] = a_objEzsignfoldertype;
@@ -74,6 +76,7 @@ class EzsignfoldertypeGetListV1ResponseMPayloadAllOf {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignfoldertypeListElement>} a_objEzsignfoldertype
  */
 EzsignfoldertypeGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfoldertype'] = undefined;

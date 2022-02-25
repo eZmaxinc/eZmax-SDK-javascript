@@ -59,7 +59,12 @@ docs/EzsignbulksendGetListV1Response.md
 docs/EzsignbulksendGetListV1ResponseAllOf.md
 docs/EzsignbulksendGetListV1ResponseMPayload.md
 docs/EzsignbulksendGetListV1ResponseMPayloadAllOf.md
+docs/EzsignbulksendGetObjectV1Response.md
+docs/EzsignbulksendGetObjectV1ResponseAllOf.md
+docs/EzsignbulksendGetObjectV1ResponseMPayload.md
 docs/EzsignbulksendListElement.md
+docs/EzsignbulksendResponse.md
+docs/EzsignbulksendResponseCompound.md
 docs/EzsigndocumentApplyEzsigntemplateV1Request.md
 docs/EzsigndocumentApplyEzsigntemplateV1Response.md
 docs/EzsigndocumentApplyEzsigntemplateV2Request.md
@@ -71,6 +76,7 @@ docs/EzsigndocumentCreateObjectV1ResponseMPayload.md
 docs/EzsigndocumentDeleteObjectV1Response.md
 docs/EzsigndocumentEditEzsignsignaturesV1Request.md
 docs/EzsigndocumentEditEzsignsignaturesV1Response.md
+docs/EzsigndocumentEndPrematurelyV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1Response.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md
 docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md
@@ -83,6 +89,9 @@ docs/EzsigndocumentGetFormDataV1ResponseMPayload.md
 docs/EzsigndocumentGetObjectV1Response.md
 docs/EzsigndocumentGetObjectV1ResponseAllOf.md
 docs/EzsigndocumentGetObjectV1ResponseMPayload.md
+docs/EzsigndocumentGetTemporaryProofV1Response.md
+docs/EzsigndocumentGetTemporaryProofV1ResponseAllOf.md
+docs/EzsigndocumentGetTemporaryProofV1ResponseMPayload.md
 docs/EzsigndocumentGetWordsPositionsV1Request.md
 docs/EzsigndocumentGetWordsPositionsV1Response.md
 docs/EzsigndocumentGetWordsPositionsV1ResponseAllOf.md
@@ -94,6 +103,7 @@ docs/EzsigndocumentRequestPatch.md
 docs/EzsigndocumentResponse.md
 docs/EzsigndocumentResponseCompound.md
 docs/EzsigndocumentResponseCompoundAllOf.md
+docs/EzsigndocumentlogResponse.md
 docs/EzsignfolderCreateObjectV1Request.md
 docs/EzsignfolderCreateObjectV1Response.md
 docs/EzsignfolderCreateObjectV1ResponseAllOf.md
@@ -183,6 +193,7 @@ docs/EzsigntemplatepackageListElement.md
 docs/FieldEActivesessionSessiontype.md
 docs/FieldEActivesessionWeekdaystart.md
 docs/FieldEEzsigndocumentStep.md
+docs/FieldEEzsigndocumentlogType.md
 docs/FieldEEzsignfolderSendreminderfrequency.md
 docs/FieldEEzsignfolderStep.md
 docs/FieldEEzsignfoldertypePrivacylevel.md
@@ -209,7 +220,6 @@ docs/ListSaveListpresentationV1Response.md
 docs/ListpresentationRequest.md
 docs/ModuleAuthenticateApi.md
 docs/ModuleListApi.md
-docs/ModuleSsprApi.md
 docs/ModuleUserApi.md
 docs/MultilingualApikeyDescription.md
 docs/ObjectActivesessionApi.md
@@ -232,14 +242,6 @@ docs/SsprSendUsernamesV1Request.md
 docs/SsprUnlockAccountRequestV1Request.md
 docs/SsprUnlockAccountV1Request.md
 docs/SsprValidateTokenV1Request.md
-docs/UNUSEDEzsigndocumentEditObjectV1Request.md
-docs/UNUSEDEzsigndocumentEditObjectV1Response.md
-docs/UNUSEDEzsignfolderEditObjectV1Request.md
-docs/UNUSEDEzsignfolderEditObjectV1Response.md
-docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.md
-docs/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.md
-docs/UNUSEDEzsignsignatureEditObjectV1Request.md
-docs/UNUSEDEzsignsignatureEditObjectV1Response.md
 docs/UserCreateEzsignuserV1Request.md
 docs/UserCreateEzsignuserV1Response.md
 docs/UserCreateEzsignuserV1ResponseAllOf.md
@@ -260,7 +262,6 @@ src/eZmaxAPI/ApiClient.js
 src/eZmaxAPI/api/GlobalCustomerApi.js
 src/eZmaxAPI/api/ModuleAuthenticateApi.js
 src/eZmaxAPI/api/ModuleListApi.js
-src/eZmaxAPI/api/ModuleSsprApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
 src/eZmaxAPI/api/ObjectApikeyApi.js
@@ -332,7 +333,12 @@ src/eZmaxAPI/model/EzsignbulksendGetListV1Response.js
 src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf.js
+src/eZmaxAPI/model/EzsignbulksendGetObjectV1Response.js
+src/eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsignbulksendListElement.js
+src/eZmaxAPI/model/EzsignbulksendResponse.js
+src/eZmaxAPI/model/EzsignbulksendResponseCompound.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.js
 src/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Request.js
@@ -344,6 +350,7 @@ src/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request.js
 src/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response.js
+src/eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.js
@@ -356,6 +363,9 @@ src/eZmaxAPI/model/EzsigndocumentGetFormDataV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.js
+src/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1Response.js
+src/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.js
 src/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.js
@@ -367,6 +377,7 @@ src/eZmaxAPI/model/EzsigndocumentRequestPatch.js
 src/eZmaxAPI/model/EzsigndocumentResponse.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompound.js
 src/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.js
+src/eZmaxAPI/model/EzsigndocumentlogResponse.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.js
@@ -456,6 +467,7 @@ src/eZmaxAPI/model/EzsigntemplatepackageListElement.js
 src/eZmaxAPI/model/FieldEActivesessionSessiontype.js
 src/eZmaxAPI/model/FieldEActivesessionWeekdaystart.js
 src/eZmaxAPI/model/FieldEEzsigndocumentStep.js
+src/eZmaxAPI/model/FieldEEzsigndocumentlogType.js
 src/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.js
 src/eZmaxAPI/model/FieldEEzsignfolderStep.js
 src/eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel.js
@@ -487,14 +499,6 @@ src/eZmaxAPI/model/SsprSendUsernamesV1Request.js
 src/eZmaxAPI/model/SsprUnlockAccountRequestV1Request.js
 src/eZmaxAPI/model/SsprUnlockAccountV1Request.js
 src/eZmaxAPI/model/SsprValidateTokenV1Request.js
-src/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Request.js
-src/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response.js
-src/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Request.js
-src/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response.js
-src/eZmaxAPI/model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.js
-src/eZmaxAPI/model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.js
-src/eZmaxAPI/model/UNUSEDEzsignsignatureEditObjectV1Request.js
-src/eZmaxAPI/model/UNUSEDEzsignsignatureEditObjectV1Response.js
 src/eZmaxAPI/model/UserCreateEzsignuserV1Request.js
 src/eZmaxAPI/model/UserCreateEzsignuserV1Response.js
 src/eZmaxAPI/model/UserCreateEzsignuserV1ResponseAllOf.js
@@ -511,7 +515,6 @@ src/eZmaxAPI/model/WebsiteRequest.js
 test/eZmaxAPI/api/GlobalCustomerApi.spec.js
 test/eZmaxAPI/api/ModuleAuthenticateApi.spec.js
 test/eZmaxAPI/api/ModuleListApi.spec.js
-test/eZmaxAPI/api/ModuleSsprApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
 test/eZmaxAPI/api/ObjectApikeyApi.spec.js
@@ -582,7 +585,12 @@ test/eZmaxAPI/model/EzsignbulksendGetListV1Response.spec.js
 test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsignbulksendGetListV1ResponseMPayloadAllOf.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsignbulksendGetObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsignbulksendListElement.spec.js
+test/eZmaxAPI/model/EzsignbulksendResponse.spec.js
+test/eZmaxAPI/model/EzsignbulksendResponseCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Request.spec.js
@@ -594,6 +602,7 @@ test/eZmaxAPI/model/EzsigndocumentCreateObjectV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response.spec.js
+test/eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseMPayload.spec.js
@@ -606,6 +615,9 @@ test/eZmaxAPI/model/EzsigndocumentGetFormDataV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1Response.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response.spec.js
 test/eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf.spec.js
@@ -617,6 +629,7 @@ test/eZmaxAPI/model/EzsigndocumentRequestPatch.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponse.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompound.spec.js
 test/eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf.spec.js
+test/eZmaxAPI/model/EzsigndocumentlogResponse.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV1ResponseAllOf.spec.js
@@ -706,6 +719,7 @@ test/eZmaxAPI/model/EzsigntemplatepackageListElement.spec.js
 test/eZmaxAPI/model/FieldEActivesessionSessiontype.spec.js
 test/eZmaxAPI/model/FieldEActivesessionWeekdaystart.spec.js
 test/eZmaxAPI/model/FieldEEzsigndocumentStep.spec.js
+test/eZmaxAPI/model/FieldEEzsigndocumentlogType.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency.spec.js
 test/eZmaxAPI/model/FieldEEzsignfolderStep.spec.js
 test/eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel.spec.js
@@ -737,14 +751,6 @@ test/eZmaxAPI/model/SsprSendUsernamesV1Request.spec.js
 test/eZmaxAPI/model/SsprUnlockAccountRequestV1Request.spec.js
 test/eZmaxAPI/model/SsprUnlockAccountV1Request.spec.js
 test/eZmaxAPI/model/SsprValidateTokenV1Request.spec.js
-test/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Request.spec.js
-test/eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Request.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignfolderEditObjectV1Response.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignfoldersignerassociationEditObjectV1Request.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignfoldersignerassociationEditObjectV1Response.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignsignatureEditObjectV1Request.spec.js
-test/eZmaxAPI/model/UNUSEDEzsignsignatureEditObjectV1Response.spec.js
 test/eZmaxAPI/model/UserCreateEzsignuserV1Request.spec.js
 test/eZmaxAPI/model/UserCreateEzsignuserV1Response.spec.js
 test/eZmaxAPI/model/UserCreateEzsignuserV1ResponseAllOf.spec.js

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response();
+    instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,28 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsignsignatureEditObjectV1Response', function() {
-    it('should create an instance of UNUSEDEzsignsignatureEditObjectV1Response', function() {
-      // uncomment below and update the code to test UNUSEDEzsignsignatureEditObjectV1Response
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response);
+  describe('EzsigndocumentGetTemporaryProofV1Response', function() {
+    it('should create an instance of EzsigndocumentGetTemporaryProofV1Response', function() {
+      // uncomment below and update the code to test EzsigndocumentGetTemporaryProofV1Response
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response);
+    });
+
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response();
+      //expect(instance).to.be();
     });
 
     it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
       // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response();
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response();
       //expect(instance).to.be();
     });
 
     it('should have the property objDebug (base name: "objDebug")', function() {
       // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignsignatureEditObjectV1Response();
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response();
       //expect(instance).to.be();
     });
 

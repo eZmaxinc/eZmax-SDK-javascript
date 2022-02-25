@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Request();
+    instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsigndocumentEditObjectV1Request', function() {
-    it('should create an instance of UNUSEDEzsigndocumentEditObjectV1Request', function() {
-      // uncomment below and update the code to test UNUSEDEzsigndocumentEditObjectV1Request
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Request);
+  describe('EzsigndocumentGetTemporaryProofV1ResponseMPayload', function() {
+    it('should create an instance of EzsigndocumentGetTemporaryProofV1ResponseMPayload', function() {
+      // uncomment below and update the code to test EzsigndocumentGetTemporaryProofV1ResponseMPayload
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1ResponseMPayload);
     });
 
-    it('should have the property objEzsigndocument (base name: "objEzsigndocument")', function() {
-      // uncomment below and update the code to test the property objEzsigndocument
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Request();
+    it('should have the property a_objEzsigndocumentlog (base name: "a_objEzsigndocumentlog")', function() {
+      // uncomment below and update the code to test the property a_objEzsigndocumentlog
+      //var instance = new EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

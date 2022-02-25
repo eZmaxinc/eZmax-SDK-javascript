@@ -98,6 +98,16 @@
         done();
       });
     });
+    describe('ezsigndocumentEndPrematurelyV1', function() {
+      it('should call ezsigndocumentEndPrematurelyV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentEndPrematurelyV1
+        //instance.ezsigndocumentEndPrematurelyV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetDownloadUrlV1', function() {
       it('should call ezsigndocumentGetDownloadUrlV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetDownloadUrlV1
@@ -132,6 +142,16 @@
       it('should call ezsigndocumentGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetObjectV1
         //instance.ezsigndocumentGetObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigndocumentGetTemporaryProofV1', function() {
+      it('should call ezsigndocumentGetTemporaryProofV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetTemporaryProofV1
+        //instance.ezsigndocumentGetTemporaryProofV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

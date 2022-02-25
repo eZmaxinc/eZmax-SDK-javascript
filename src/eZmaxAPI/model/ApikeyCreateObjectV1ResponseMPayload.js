@@ -59,6 +59,7 @@ class ApikeyCreateObjectV1ResponseMPayload {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/ApikeyResponse>}
      */
     getAObjApikey() {
@@ -66,7 +67,8 @@ class ApikeyCreateObjectV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/ApikeyResponse>} a_objApikey
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/ApikeyResponse>} a_objApikey 
      */
     setAObjApikey(a_objApikey) {
         this['a_objApikey'] = a_objApikey;
@@ -75,6 +77,7 @@ class ApikeyCreateObjectV1ResponseMPayload {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/ApikeyResponse>} a_objApikey
  */
 ApikeyCreateObjectV1ResponseMPayload.prototype['a_objApikey'] = undefined;

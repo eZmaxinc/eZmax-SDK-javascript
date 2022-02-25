@@ -59,6 +59,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignpageResponse>}
      */
     getAObjEzsignpage() {
@@ -66,7 +67,8 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignpageResponse>} a_objEzsignpage
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignpageResponse>} a_objEzsignpage 
      */
     setAObjEzsignpage(a_objEzsignpage) {
         this['a_objEzsignpage'] = a_objEzsignpage;
@@ -75,6 +77,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignpageResponse>} a_objEzsignpage
  */
 EzsigndocumentGetEzsignpagesV1ResponseMPayload.prototype['a_objEzsignpage'] = undefined;

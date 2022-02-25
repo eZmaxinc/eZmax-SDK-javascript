@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('ezsignbulksendGetObjectV1', function() {
+      it('should call ezsignbulksendGetObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignbulksendGetObjectV1
+        //instance.ezsignbulksendGetObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

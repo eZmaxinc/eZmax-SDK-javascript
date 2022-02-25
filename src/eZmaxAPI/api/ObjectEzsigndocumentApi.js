@@ -24,10 +24,12 @@ import EzsigndocumentCreateObjectV1Response from '../model/EzsigndocumentCreateO
 import EzsigndocumentDeleteObjectV1Response from '../model/EzsigndocumentDeleteObjectV1Response';
 import EzsigndocumentEditEzsignsignaturesV1Request from '../model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
+import EzsigndocumentEndPrematurelyV1Response from '../model/EzsigndocumentEndPrematurelyV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
 import EzsigndocumentGetFormDataV1Response from '../model/EzsigndocumentGetFormDataV1Response';
 import EzsigndocumentGetObjectV1Response from '../model/EzsigndocumentGetObjectV1Response';
+import EzsigndocumentGetTemporaryProofV1Response from '../model/EzsigndocumentGetTemporaryProofV1Response';
 import EzsigndocumentGetWordsPositionsV1Request from '../model/EzsigndocumentGetWordsPositionsV1Request';
 import EzsigndocumentGetWordsPositionsV1Response from '../model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentPatchObjectV1Request from '../model/EzsigndocumentPatchObjectV1Request';
@@ -200,6 +202,7 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Delete an existing Ezsigndocument
+     * 
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response}
@@ -281,6 +284,49 @@ export default class ObjectEzsigndocumentApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsigndocumentEndPrematurelyV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentEndPrematurelyV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * End prematurely
+     * End prematurely an Ezsigndocument when some signatures are still required
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentEndPrematurelyV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response}
+     */
+    ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentEndPrematurelyV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentEndPrematurelyV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsigndocumentGetDownloadUrlV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetDownloadUrlV1Callback
      * @param {String} error Error message, if any.
@@ -339,6 +385,7 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve an existing Ezsigndocument's Ezsignpages
+     * 
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignpagesV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1Response}
@@ -381,6 +428,7 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve an existing Ezsigndocument's Form Data
+     * 
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetFormDataV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetFormDataV1Response}
@@ -423,7 +471,6 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve an existing Ezsigndocument
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetObjectV1Response}
@@ -457,6 +504,49 @@ export default class ObjectEzsigndocumentApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsigndocumentGetTemporaryProofV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetTemporaryProofV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve the temporary proof
+     * Retrieve the temporary proof while the Ezsigndocument is being processed since the proof isn't available until the Ezsigndocument is completed
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetTemporaryProofV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1Response}
+     */
+    ezsigndocumentGetTemporaryProofV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetTemporaryProofV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetTemporaryProofV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsigndocumentGetWordsPositionsV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetWordsPositionsV1Callback
      * @param {String} error Error message, if any.
@@ -466,6 +556,7 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Retrieve positions X,Y of given words from a Ezsigndocument
+     * 
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request} EzsigndocumentGetWordsPositionsV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetWordsPositionsV1Callback} callback The callback function, accepting three arguments: error, data, response
@@ -513,6 +604,7 @@ export default class ObjectEzsigndocumentApi {
 
     /**
      * Patch an existing Ezsigndocument
+     * 
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Request} EzsigndocumentPatchObjectV1Request 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentPatchObjectV1Callback} callback The callback function, accepting three arguments: error, data, response

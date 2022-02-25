@@ -137,6 +137,7 @@ class CustomFormDataSignerResponse {
         this['sContactLastname'] = sContactLastname;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>}
      */
     getAObjEzsignformfieldgroupCompound() {
@@ -144,7 +145,8 @@ class CustomFormDataSignerResponse {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound 
      */
     setAObjEzsignformfieldgroupCompound(a_objEzsignformfieldgroupCompound) {
         this['a_objEzsignformfieldgroupCompound'] = a_objEzsignformfieldgroupCompound;
@@ -177,6 +179,7 @@ CustomFormDataSignerResponse.prototype['sContactFirstname'] = undefined;
 CustomFormDataSignerResponse.prototype['sContactLastname'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} a_objEzsignformfieldgroupCompound
  */
 CustomFormDataSignerResponse.prototype['a_objEzsignformfieldgroupCompound'] = undefined;

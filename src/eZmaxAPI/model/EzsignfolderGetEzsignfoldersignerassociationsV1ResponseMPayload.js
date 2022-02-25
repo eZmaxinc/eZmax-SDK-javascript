@@ -59,6 +59,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>}
      */
     getAObjEzsignfoldersignerassociation() {
@@ -66,7 +67,8 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} a_objEzsignfoldersignerassociation
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} a_objEzsignfoldersignerassociation 
      */
     setAObjEzsignfoldersignerassociation(a_objEzsignfoldersignerassociation) {
         this['a_objEzsignfoldersignerassociation'] = a_objEzsignfoldersignerassociation;
@@ -75,6 +77,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} a_objEzsignfoldersignerassociation
  */
 EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload.prototype['a_objEzsignfoldersignerassociation'] = undefined;

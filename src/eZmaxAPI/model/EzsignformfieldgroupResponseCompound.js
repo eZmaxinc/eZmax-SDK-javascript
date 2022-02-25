@@ -85,6 +85,7 @@ class EzsignformfieldgroupResponseCompound {
         this['sEzsignformfieldgroupLabel'] = sEzsignformfieldgroupLabel;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>}
      */
     getAObjEzsignformfield() {
@@ -92,7 +93,8 @@ class EzsignformfieldgroupResponseCompound {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield 
      */
     setAObjEzsignformfield(a_objEzsignformfield) {
         this['a_objEzsignformfield'] = a_objEzsignformfield;
@@ -107,6 +109,7 @@ class EzsignformfieldgroupResponseCompound {
 EzsignformfieldgroupResponseCompound.prototype['sEzsignformfieldgroupLabel'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
  */
 EzsignformfieldgroupResponseCompound.prototype['a_objEzsignformfield'] = undefined;
@@ -120,6 +123,7 @@ EzsignformfieldgroupResponseCompound.prototype['a_objEzsignformfield'] = undefin
 EzsignformfieldgroupResponse.prototype['sEzsignformfieldgroupLabel'] = undefined;
 // Implement EzsignformfieldgroupResponseCompoundAllOf interface:
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
  */
 EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfield'] = undefined;

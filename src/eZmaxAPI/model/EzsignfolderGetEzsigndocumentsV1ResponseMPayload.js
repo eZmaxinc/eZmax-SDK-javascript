@@ -59,6 +59,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>}
      */
     getAObjEzsigndocument() {
@@ -66,7 +67,8 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} a_objEzsigndocument
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} a_objEzsigndocument 
      */
     setAObjEzsigndocument(a_objEzsigndocument) {
         this['a_objEzsigndocument'] = a_objEzsigndocument;
@@ -75,6 +77,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsigndocumentResponseCompound>} a_objEzsigndocument
  */
 EzsignfolderGetEzsigndocumentsV1ResponseMPayload.prototype['a_objEzsigndocument'] = undefined;

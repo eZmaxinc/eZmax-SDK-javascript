@@ -58,6 +58,7 @@ class EzsignformfieldgroupResponseCompoundAllOf {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>}
      */
     getAObjEzsignformfield() {
@@ -65,7 +66,8 @@ class EzsignformfieldgroupResponseCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield 
      */
     setAObjEzsignformfield(a_objEzsignformfield) {
         this['a_objEzsignformfield'] = a_objEzsignformfield;
@@ -74,6 +76,7 @@ class EzsignformfieldgroupResponseCompoundAllOf {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
  */
 EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfield'] = undefined;

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsignfolderEditObjectV1Request();
+    instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,28 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsignfolderEditObjectV1Request', function() {
-    it('should create an instance of UNUSEDEzsignfolderEditObjectV1Request', function() {
-      // uncomment below and update the code to test UNUSEDEzsignfolderEditObjectV1Request
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfolderEditObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsignfolderEditObjectV1Request);
+  describe('EzsignbulksendGetObjectV1Response', function() {
+    it('should create an instance of EzsignbulksendGetObjectV1Response', function() {
+      // uncomment below and update the code to test EzsignbulksendGetObjectV1Response
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendGetObjectV1Response);
     });
 
-    it('should have the property objEzsignfolder (base name: "objEzsignfolder")', function() {
-      // uncomment below and update the code to test the property objEzsignfolder
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfolderEditObjectV1Request();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
+      // uncomment below and update the code to test the property objDebugPayload
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDebug (base name: "objDebug")', function() {
+      // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1Response();
       //expect(instance).to.be();
     });
 

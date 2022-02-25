@@ -75,6 +75,7 @@ class FranchisereferalincomeRequestCompoundAllOf {
         this['objAddress'] = objAddress;
     }
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/ContactRequestCompound>}
      */
     getAObjContact() {
@@ -82,7 +83,8 @@ class FranchisereferalincomeRequestCompoundAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact 
      */
     setAObjContact(a_objContact) {
         this['a_objContact'] = a_objContact;
@@ -96,6 +98,7 @@ class FranchisereferalincomeRequestCompoundAllOf {
 FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
  */
 FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;

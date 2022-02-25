@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Response();
+    instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1ResponseAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,16 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsignfoldersignerassociationEditObjectV1Response', function() {
-    it('should create an instance of UNUSEDEzsignfoldersignerassociationEditObjectV1Response', function() {
-      // uncomment below and update the code to test UNUSEDEzsignfoldersignerassociationEditObjectV1Response
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Response);
+  describe('EzsignbulksendGetObjectV1ResponseAllOf', function() {
+    it('should create an instance of EzsignbulksendGetObjectV1ResponseAllOf', function() {
+      // uncomment below and update the code to test EzsignbulksendGetObjectV1ResponseAllOf
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1ResponseAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendGetObjectV1ResponseAllOf);
     });
 
-    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
-      // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objDebug (base name: "objDebug")', function() {
-      // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsignfoldersignerassociationEditObjectV1Response();
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinition.EzsignbulksendGetObjectV1ResponseAllOf();
       //expect(instance).to.be();
     });
 

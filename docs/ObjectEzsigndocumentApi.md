@@ -9,10 +9,12 @@ Method | HTTP request | Description
 [**ezsigndocumentCreateObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 [**ezsigndocumentDeleteObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocumentEditEzsignsignaturesV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple ezsignsignatures
+[**ezsigndocumentEndPrematurelyV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 [**ezsigndocumentGetDownloadUrlV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
 [**ezsigndocumentGetEzsignpagesV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 [**ezsigndocumentGetFormDataV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 [**ezsigndocumentGetObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
+[**ezsigndocumentGetTemporaryProofV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
 [**ezsigndocumentGetWordsPositionsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 [**ezsigndocumentPatchObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
 
@@ -181,6 +183,8 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsigndocument
 
+
+
 ### Example
 
 ```javascript
@@ -277,6 +281,57 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## ezsigndocumentEndPrematurelyV1
+
+> EzsigndocumentEndPrematurelyV1Response ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID)
+
+End prematurely
+
+End prematurely an Ezsigndocument when some signatures are still required
+
+### Example
+
+```javascript
+import EZmaxApiDefinition from 'e_zmax_api_definition';
+let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let pkiEzsigndocumentID = 56; // Number | 
+apiInstance.ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **Number**|  | 
+
+### Return type
+
+[**EzsigndocumentEndPrematurelyV1Response**](EzsigndocumentEndPrematurelyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## ezsigndocumentGetDownloadUrlV1
 
 > EzsigndocumentGetDownloadUrlV1Response ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType)
@@ -336,6 +391,8 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 
+
+
 ### Example
 
 ```javascript
@@ -384,6 +441,8 @@ Name | Type | Description  | Notes
 > EzsigndocumentGetFormDataV1Response ezsigndocumentGetFormDataV1(pkiEzsigndocumentID)
 
 Retrieve an existing Ezsigndocument&#39;s Form Data
+
+
 
 ### Example
 
@@ -434,8 +493,6 @@ Name | Type | Description  | Notes
 
 Retrieve an existing Ezsigndocument
 
-## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
-
 ### Example
 
 ```javascript
@@ -479,11 +536,64 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## ezsigndocumentGetTemporaryProofV1
+
+> EzsigndocumentGetTemporaryProofV1Response ezsigndocumentGetTemporaryProofV1(pkiEzsigndocumentID)
+
+Retrieve the temporary proof
+
+Retrieve the temporary proof while the Ezsigndocument is being processed since the proof isn&#39;t available until the Ezsigndocument is completed
+
+### Example
+
+```javascript
+import EZmaxApiDefinition from 'e_zmax_api_definition';
+let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let pkiEzsigndocumentID = 56; // Number | 
+apiInstance.ezsigndocumentGetTemporaryProofV1(pkiEzsigndocumentID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **Number**|  | 
+
+### Return type
+
+[**EzsigndocumentGetTemporaryProofV1Response**](EzsigndocumentGetTemporaryProofV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## ezsigndocumentGetWordsPositionsV1
 
 > EzsigndocumentGetWordsPositionsV1Response ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, EzsigndocumentGetWordsPositionsV1Request)
 
 Retrieve positions X,Y of given words from a Ezsigndocument
+
+
 
 ### Example
 
@@ -535,6 +645,8 @@ Name | Type | Description  | Notes
 > EzsigndocumentPatchObjectV1Response ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, EzsigndocumentPatchObjectV1Request)
 
 Patch an existing Ezsigndocument
+
+
 
 ### Example
 

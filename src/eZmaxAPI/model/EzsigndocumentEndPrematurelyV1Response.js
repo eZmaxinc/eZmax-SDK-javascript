@@ -17,20 +17,20 @@ import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 
 /**
- * The UNUSEDEzsigndocumentEditObjectV1Response model module.
- * @module eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response
+ * The EzsigndocumentEndPrematurelyV1Response model module.
+ * @module eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response
  * @version 1.1.4
  */
-class UNUSEDEzsigndocumentEditObjectV1Response {
+class EzsigndocumentEndPrematurelyV1Response {
     /**
-     * Constructs a new <code>UNUSEDEzsigndocumentEditObjectV1Response</code>.
-     * Response for the /1/object/ezsigndocument/editObject API Request
-     * @alias module:eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response
+     * Constructs a new <code>EzsigndocumentEndPrematurelyV1Response</code>.
+     * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/endPrematurely API Request
+     * @alias module:eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      */
     constructor() { 
         CommonResponse.initialize(this);
-        UNUSEDEzsigndocumentEditObjectV1Response.initialize(this);
+        EzsigndocumentEndPrematurelyV1Response.initialize(this);
     }
 
     /**
@@ -42,15 +42,15 @@ class UNUSEDEzsigndocumentEditObjectV1Response {
     }
 
     /**
-     * Constructs a <code>UNUSEDEzsigndocumentEditObjectV1Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EzsigndocumentEndPrematurelyV1Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/UNUSEDEzsigndocumentEditObjectV1Response} The populated <code>UNUSEDEzsigndocumentEditObjectV1Response</code> instance.
+     * @param {module:eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/EzsigndocumentEndPrematurelyV1Response} The populated <code>EzsigndocumentEndPrematurelyV1Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new UNUSEDEzsigndocumentEditObjectV1Response();
+            obj = obj || new EzsigndocumentEndPrematurelyV1Response();
             CommonResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objDebugPayload')) {
@@ -95,12 +95,12 @@ class UNUSEDEzsigndocumentEditObjectV1Response {
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
-UNUSEDEzsigndocumentEditObjectV1Response.prototype['objDebugPayload'] = undefined;
+EzsigndocumentEndPrematurelyV1Response.prototype['objDebugPayload'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-UNUSEDEzsigndocumentEditObjectV1Response.prototype['objDebug'] = undefined;
+EzsigndocumentEndPrematurelyV1Response.prototype['objDebug'] = undefined;
 
 
 // Implement CommonResponse interface:
@@ -116,5 +116,5 @@ CommonResponse.prototype['objDebug'] = undefined;
 
 
 
-export default UNUSEDEzsigndocumentEditObjectV1Response;
+export default EzsigndocumentEndPrematurelyV1Response;
 

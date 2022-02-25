@@ -58,6 +58,7 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
     }
 
 /**
+     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>}
      */
     getAObjEzsignbulksend() {
@@ -65,7 +66,8 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
     }
 
     /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignbulksend
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignbulksend 
      */
     setAObjEzsignbulksend(a_objEzsignbulksend) {
         this['a_objEzsignbulksend'] = a_objEzsignbulksend;
@@ -74,6 +76,7 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
 }
 
 /**
+ * 
  * @member {Array.<module:eZmaxAPI/model/EzsignbulksendListElement>} a_objEzsignbulksend
  */
 EzsignbulksendGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignbulksend'] = undefined;

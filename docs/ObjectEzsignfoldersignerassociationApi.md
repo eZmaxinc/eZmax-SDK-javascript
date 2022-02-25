@@ -68,6 +68,8 @@ Name | Type | Description  | Notes
 
 Delete an existing Ezsignfoldersignerassociation
 
+
+
 ### Example
 
 ```javascript
@@ -167,6 +169,8 @@ Name | Type | Description  | Notes
 > EzsignfoldersignerassociationGetObjectV1Response ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID)
 
 Retrieve an existing Ezsignfoldersignerassociation
+
+
 
 ### Example
 

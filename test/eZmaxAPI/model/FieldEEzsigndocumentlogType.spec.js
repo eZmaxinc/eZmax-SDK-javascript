@@ -28,7 +28,6 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,23 +46,11 @@
       object[property] = value;
   }
 
-  describe('UNUSEDEzsigndocumentEditObjectV1Response', function() {
-    it('should create an instance of UNUSEDEzsigndocumentEditObjectV1Response', function() {
-      // uncomment below and update the code to test UNUSEDEzsigndocumentEditObjectV1Response
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response);
-    });
-
-    it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
-      // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objDebug (base name: "objDebug")', function() {
-      // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.UNUSEDEzsigndocumentEditObjectV1Response();
-      //expect(instance).to.be();
+  describe('FieldEEzsigndocumentlogType', function() {
+    it('should create an instance of FieldEEzsigndocumentlogType', function() {
+      // uncomment below and update the code to test FieldEEzsigndocumentlogType
+      //var instance = new EZmaxApiDefinition.FieldEEzsigndocumentlogType();
+      //expect(instance).to.be.a(EZmaxApiDefinition.FieldEEzsigndocumentlogType);
     });
 
   });
