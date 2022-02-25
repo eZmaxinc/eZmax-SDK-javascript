@@ -16,6 +16,8 @@ import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
 import EzsignfoldersignerassociationCreateObjectV1Request from '../model/EzsignfoldersignerassociationCreateObjectV1Request';
 import EzsignfoldersignerassociationCreateObjectV1Response from '../model/EzsignfoldersignerassociationCreateObjectV1Response';
+import EzsignfoldersignerassociationCreateObjectV2Request from '../model/EzsignfoldersignerassociationCreateObjectV2Request';
+import EzsignfoldersignerassociationCreateObjectV2Response from '../model/EzsignfoldersignerassociationCreateObjectV2Response';
 import EzsignfoldersignerassociationDeleteObjectV1Response from '../model/EzsignfoldersignerassociationDeleteObjectV1Response';
 import EzsignfoldersignerassociationGetInPersonLoginUrlV1Response from '../model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response';
 import EzsignfoldersignerassociationGetObjectV1Response from '../model/EzsignfoldersignerassociationGetObjectV1Response';
@@ -76,6 +78,48 @@ export default class ObjectEzsignfoldersignerassociationApi {
       let returnType = EzsignfoldersignerassociationCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfoldersignerassociation', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfoldersignerassociationCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Ezsignfoldersignerassociation
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Request} EzsignfoldersignerassociationCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Response}
+     */
+    ezsignfoldersignerassociationCreateObjectV2(EzsignfoldersignerassociationCreateObjectV2Request, callback) {
+      let postBody = EzsignfoldersignerassociationCreateObjectV2Request;
+      // verify the required parameter 'EzsignfoldersignerassociationCreateObjectV2Request' is set
+      if (EzsignfoldersignerassociationCreateObjectV2Request === undefined || EzsignfoldersignerassociationCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfoldersignerassociationCreateObjectV2Request' when calling ezsignfoldersignerassociationCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfoldersignerassociationCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsignfoldersignerassociation', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

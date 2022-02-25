@@ -16,6 +16,8 @@ import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
 import EzsignfolderCreateObjectV1Request from '../model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from '../model/EzsignfolderCreateObjectV1Response';
+import EzsignfolderCreateObjectV2Request from '../model/EzsignfolderCreateObjectV2Request';
+import EzsignfolderCreateObjectV2Response from '../model/EzsignfolderCreateObjectV2Response';
 import EzsignfolderDeleteObjectV1Response from '../model/EzsignfolderDeleteObjectV1Response';
 import EzsignfolderEditObjectV1Request from '../model/EzsignfolderEditObjectV1Request';
 import EzsignfolderEditObjectV1Response from '../model/EzsignfolderEditObjectV1Response';
@@ -85,6 +87,48 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Ezsignfolder
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/EzsignfolderCreateObjectV2Request} EzsignfolderCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderCreateObjectV2Response}
+     */
+    ezsignfolderCreateObjectV2(EzsignfolderCreateObjectV2Request, callback) {
+      let postBody = EzsignfolderCreateObjectV2Request;
+      // verify the required parameter 'EzsignfolderCreateObjectV2Request' is set
+      if (EzsignfolderCreateObjectV2Request === undefined || EzsignfolderCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfolderCreateObjectV2Request' when calling ezsignfolderCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsignfolder', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

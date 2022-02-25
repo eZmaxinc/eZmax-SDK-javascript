@@ -21,6 +21,8 @@ import EzsigndocumentApplyEzsigntemplateV2Request from '../model/EzsigndocumentA
 import EzsigndocumentApplyEzsigntemplateV2Response from '../model/EzsigndocumentApplyEzsigntemplateV2Response';
 import EzsigndocumentCreateObjectV1Request from '../model/EzsigndocumentCreateObjectV1Request';
 import EzsigndocumentCreateObjectV1Response from '../model/EzsigndocumentCreateObjectV1Response';
+import EzsigndocumentCreateObjectV2Request from '../model/EzsigndocumentCreateObjectV2Request';
+import EzsigndocumentCreateObjectV2Response from '../model/EzsigndocumentCreateObjectV2Response';
 import EzsigndocumentDeleteObjectV1Response from '../model/EzsigndocumentDeleteObjectV1Response';
 import EzsigndocumentEditEzsignsignaturesV1Request from '../model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
@@ -187,6 +189,48 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Ezsigndocument
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Request} EzsigndocumentCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Response}
+     */
+    ezsigndocumentCreateObjectV2(EzsigndocumentCreateObjectV2Request, callback) {
+      let postBody = EzsigndocumentCreateObjectV2Request;
+      // verify the required parameter 'EzsigndocumentCreateObjectV2Request' is set
+      if (EzsigndocumentCreateObjectV2Request === undefined || EzsigndocumentCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsigndocumentCreateObjectV2Request' when calling ezsigndocumentCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsigndocument', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

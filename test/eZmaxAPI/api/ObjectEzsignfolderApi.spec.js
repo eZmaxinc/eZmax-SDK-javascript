@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('ezsignfolderCreateObjectV2', function() {
+      it('should call ezsignfolderCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderCreateObjectV2
+        //instance.ezsignfolderCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderDeleteObjectV1', function() {
       it('should call ezsignfolderDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderDeleteObjectV1

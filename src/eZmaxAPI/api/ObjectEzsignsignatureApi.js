@@ -16,6 +16,8 @@ import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
 import EzsignsignatureCreateObjectV1Request from '../model/EzsignsignatureCreateObjectV1Request';
 import EzsignsignatureCreateObjectV1Response from '../model/EzsignsignatureCreateObjectV1Response';
+import EzsignsignatureCreateObjectV2Request from '../model/EzsignsignatureCreateObjectV2Request';
+import EzsignsignatureCreateObjectV2Response from '../model/EzsignsignatureCreateObjectV2Response';
 import EzsignsignatureDeleteObjectV1Response from '../model/EzsignsignatureDeleteObjectV1Response';
 import EzsignsignatureEditObjectV1Request from '../model/EzsignsignatureEditObjectV1Request';
 import EzsignsignatureEditObjectV1Response from '../model/EzsignsignatureEditObjectV1Response';
@@ -77,6 +79,48 @@ export default class ObjectEzsignsignatureApi {
       let returnType = EzsignsignatureCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignsignature', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignsignatureCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Ezsignsignature
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2Request} EzsignsignatureCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureCreateObjectV2Response}
+     */
+    ezsignsignatureCreateObjectV2(EzsignsignatureCreateObjectV2Request, callback) {
+      let postBody = EzsignsignatureCreateObjectV2Request;
+      // verify the required parameter 'EzsignsignatureCreateObjectV2Request' is set
+      if (EzsignsignatureCreateObjectV2Request === undefined || EzsignsignatureCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsignsignatureCreateObjectV2Request' when calling ezsignsignatureCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignsignatureCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsignsignature', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('ezsigndocumentCreateObjectV2', function() {
+      it('should call ezsigndocumentCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentCreateObjectV2
+        //instance.ezsigndocumentCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentDeleteObjectV1', function() {
       it('should call ezsigndocumentDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentDeleteObjectV1

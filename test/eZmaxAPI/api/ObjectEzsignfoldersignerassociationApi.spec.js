@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('ezsignfoldersignerassociationCreateObjectV2', function() {
+      it('should call ezsignfoldersignerassociationCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldersignerassociationCreateObjectV2
+        //instance.ezsignfoldersignerassociationCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfoldersignerassociationDeleteObjectV1', function() {
       it('should call ezsignfoldersignerassociationDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfoldersignerassociationDeleteObjectV1

@@ -26,6 +26,10 @@ import ApikeyCreateObjectV1Request from './model/ApikeyCreateObjectV1Request';
 import ApikeyCreateObjectV1Response from './model/ApikeyCreateObjectV1Response';
 import ApikeyCreateObjectV1ResponseAllOf from './model/ApikeyCreateObjectV1ResponseAllOf';
 import ApikeyCreateObjectV1ResponseMPayload from './model/ApikeyCreateObjectV1ResponseMPayload';
+import ApikeyCreateObjectV2Request from './model/ApikeyCreateObjectV2Request';
+import ApikeyCreateObjectV2Response from './model/ApikeyCreateObjectV2Response';
+import ApikeyCreateObjectV2ResponseAllOf from './model/ApikeyCreateObjectV2ResponseAllOf';
+import ApikeyCreateObjectV2ResponseMPayload from './model/ApikeyCreateObjectV2ResponseMPayload';
 import ApikeyRequest from './model/ApikeyRequest';
 import ApikeyRequestCompound from './model/ApikeyRequestCompound';
 import ApikeyResponse from './model/ApikeyResponse';
@@ -83,6 +87,10 @@ import EzsigndocumentCreateObjectV1Request from './model/EzsigndocumentCreateObj
 import EzsigndocumentCreateObjectV1Response from './model/EzsigndocumentCreateObjectV1Response';
 import EzsigndocumentCreateObjectV1ResponseAllOf from './model/EzsigndocumentCreateObjectV1ResponseAllOf';
 import EzsigndocumentCreateObjectV1ResponseMPayload from './model/EzsigndocumentCreateObjectV1ResponseMPayload';
+import EzsigndocumentCreateObjectV2Request from './model/EzsigndocumentCreateObjectV2Request';
+import EzsigndocumentCreateObjectV2Response from './model/EzsigndocumentCreateObjectV2Response';
+import EzsigndocumentCreateObjectV2ResponseAllOf from './model/EzsigndocumentCreateObjectV2ResponseAllOf';
+import EzsigndocumentCreateObjectV2ResponseMPayload from './model/EzsigndocumentCreateObjectV2ResponseMPayload';
 import EzsigndocumentDeleteObjectV1Response from './model/EzsigndocumentDeleteObjectV1Response';
 import EzsigndocumentEditEzsignsignaturesV1Request from './model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from './model/EzsigndocumentEditEzsignsignaturesV1Response';
@@ -118,6 +126,10 @@ import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV
 import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderCreateObjectV1ResponseAllOf from './model/EzsignfolderCreateObjectV1ResponseAllOf';
 import EzsignfolderCreateObjectV1ResponseMPayload from './model/EzsignfolderCreateObjectV1ResponseMPayload';
+import EzsignfolderCreateObjectV2Request from './model/EzsignfolderCreateObjectV2Request';
+import EzsignfolderCreateObjectV2Response from './model/EzsignfolderCreateObjectV2Response';
+import EzsignfolderCreateObjectV2ResponseAllOf from './model/EzsignfolderCreateObjectV2ResponseAllOf';
+import EzsignfolderCreateObjectV2ResponseMPayload from './model/EzsignfolderCreateObjectV2ResponseMPayload';
 import EzsignfolderDeleteObjectV1Response from './model/EzsignfolderDeleteObjectV1Response';
 import EzsignfolderEditObjectV1Request from './model/EzsignfolderEditObjectV1Request';
 import EzsignfolderEditObjectV1Response from './model/EzsignfolderEditObjectV1Response';
@@ -149,6 +161,10 @@ import EzsignfoldersignerassociationCreateObjectV1Request from './model/Ezsignfo
 import EzsignfoldersignerassociationCreateObjectV1Response from './model/EzsignfoldersignerassociationCreateObjectV1Response';
 import EzsignfoldersignerassociationCreateObjectV1ResponseAllOf from './model/EzsignfoldersignerassociationCreateObjectV1ResponseAllOf';
 import EzsignfoldersignerassociationCreateObjectV1ResponseMPayload from './model/EzsignfoldersignerassociationCreateObjectV1ResponseMPayload';
+import EzsignfoldersignerassociationCreateObjectV2Request from './model/EzsignfoldersignerassociationCreateObjectV2Request';
+import EzsignfoldersignerassociationCreateObjectV2Response from './model/EzsignfoldersignerassociationCreateObjectV2Response';
+import EzsignfoldersignerassociationCreateObjectV2ResponseAllOf from './model/EzsignfoldersignerassociationCreateObjectV2ResponseAllOf';
+import EzsignfoldersignerassociationCreateObjectV2ResponseMPayload from './model/EzsignfoldersignerassociationCreateObjectV2ResponseMPayload';
 import EzsignfoldersignerassociationDeleteObjectV1Response from './model/EzsignfoldersignerassociationDeleteObjectV1Response';
 import EzsignfoldersignerassociationGetInPersonLoginUrlV1Response from './model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response';
 import EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf from './model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf';
@@ -178,6 +194,10 @@ import EzsignsignatureCreateObjectV1Request from './model/EzsignsignatureCreateO
 import EzsignsignatureCreateObjectV1Response from './model/EzsignsignatureCreateObjectV1Response';
 import EzsignsignatureCreateObjectV1ResponseAllOf from './model/EzsignsignatureCreateObjectV1ResponseAllOf';
 import EzsignsignatureCreateObjectV1ResponseMPayload from './model/EzsignsignatureCreateObjectV1ResponseMPayload';
+import EzsignsignatureCreateObjectV2Request from './model/EzsignsignatureCreateObjectV2Request';
+import EzsignsignatureCreateObjectV2Response from './model/EzsignsignatureCreateObjectV2Response';
+import EzsignsignatureCreateObjectV2ResponseAllOf from './model/EzsignsignatureCreateObjectV2ResponseAllOf';
+import EzsignsignatureCreateObjectV2ResponseMPayload from './model/EzsignsignatureCreateObjectV2ResponseMPayload';
 import EzsignsignatureDeleteObjectV1Response from './model/EzsignsignatureDeleteObjectV1Response';
 import EzsignsignatureEditObjectV1Request from './model/EzsignsignatureEditObjectV1Request';
 import EzsignsignatureEditObjectV1Response from './model/EzsignsignatureEditObjectV1Response';
@@ -216,6 +236,10 @@ import FranchisereferalincomeCreateObjectV1Request from './model/Franchiserefera
 import FranchisereferalincomeCreateObjectV1Response from './model/FranchisereferalincomeCreateObjectV1Response';
 import FranchisereferalincomeCreateObjectV1ResponseAllOf from './model/FranchisereferalincomeCreateObjectV1ResponseAllOf';
 import FranchisereferalincomeCreateObjectV1ResponseMPayload from './model/FranchisereferalincomeCreateObjectV1ResponseMPayload';
+import FranchisereferalincomeCreateObjectV2Request from './model/FranchisereferalincomeCreateObjectV2Request';
+import FranchisereferalincomeCreateObjectV2Response from './model/FranchisereferalincomeCreateObjectV2Response';
+import FranchisereferalincomeCreateObjectV2ResponseAllOf from './model/FranchisereferalincomeCreateObjectV2ResponseAllOf';
+import FranchisereferalincomeCreateObjectV2ResponseMPayload from './model/FranchisereferalincomeCreateObjectV2ResponseMPayload';
 import FranchisereferalincomeRequest from './model/FranchisereferalincomeRequest';
 import FranchisereferalincomeRequestCompound from './model/FranchisereferalincomeRequestCompound';
 import FranchisereferalincomeRequestCompoundAllOf from './model/FranchisereferalincomeRequestCompoundAllOf';
@@ -382,6 +406,30 @@ export {
      * @property {module:eZmaxAPI/model/ApikeyCreateObjectV1ResponseMPayload}
      */
     ApikeyCreateObjectV1ResponseMPayload,
+
+    /**
+     * The ApikeyCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/ApikeyCreateObjectV2Request}
+     */
+    ApikeyCreateObjectV2Request,
+
+    /**
+     * The ApikeyCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/ApikeyCreateObjectV2Response}
+     */
+    ApikeyCreateObjectV2Response,
+
+    /**
+     * The ApikeyCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/ApikeyCreateObjectV2ResponseAllOf}
+     */
+    ApikeyCreateObjectV2ResponseAllOf,
+
+    /**
+     * The ApikeyCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/ApikeyCreateObjectV2ResponseMPayload}
+     */
+    ApikeyCreateObjectV2ResponseMPayload,
 
     /**
      * The ApikeyRequest model constructor.
@@ -726,6 +774,30 @@ export {
     EzsigndocumentCreateObjectV1ResponseMPayload,
 
     /**
+     * The EzsigndocumentCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Request}
+     */
+    EzsigndocumentCreateObjectV2Request,
+
+    /**
+     * The EzsigndocumentCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Response}
+     */
+    EzsigndocumentCreateObjectV2Response,
+
+    /**
+     * The EzsigndocumentCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2ResponseAllOf}
+     */
+    EzsigndocumentCreateObjectV2ResponseAllOf,
+
+    /**
+     * The EzsigndocumentCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateObjectV2ResponseMPayload}
+     */
+    EzsigndocumentCreateObjectV2ResponseMPayload,
+
+    /**
      * The EzsigndocumentDeleteObjectV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentDeleteObjectV1Response}
      */
@@ -936,6 +1008,30 @@ export {
     EzsignfolderCreateObjectV1ResponseMPayload,
 
     /**
+     * The EzsignfolderCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV2Request}
+     */
+    EzsignfolderCreateObjectV2Request,
+
+    /**
+     * The EzsignfolderCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV2Response}
+     */
+    EzsignfolderCreateObjectV2Response,
+
+    /**
+     * The EzsignfolderCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseAllOf}
+     */
+    EzsignfolderCreateObjectV2ResponseAllOf,
+
+    /**
+     * The EzsignfolderCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseMPayload}
+     */
+    EzsignfolderCreateObjectV2ResponseMPayload,
+
+    /**
      * The EzsignfolderDeleteObjectV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsignfolderDeleteObjectV1Response}
      */
@@ -1122,6 +1218,30 @@ export {
     EzsignfoldersignerassociationCreateObjectV1ResponseMPayload,
 
     /**
+     * The EzsignfoldersignerassociationCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Request}
+     */
+    EzsignfoldersignerassociationCreateObjectV2Request,
+
+    /**
+     * The EzsignfoldersignerassociationCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Response}
+     */
+    EzsignfoldersignerassociationCreateObjectV2Response,
+
+    /**
+     * The EzsignfoldersignerassociationCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2ResponseAllOf}
+     */
+    EzsignfoldersignerassociationCreateObjectV2ResponseAllOf,
+
+    /**
+     * The EzsignfoldersignerassociationCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2ResponseMPayload}
+     */
+    EzsignfoldersignerassociationCreateObjectV2ResponseMPayload,
+
+    /**
      * The EzsignfoldersignerassociationDeleteObjectV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsignfoldersignerassociationDeleteObjectV1Response}
      */
@@ -1294,6 +1414,30 @@ export {
      * @property {module:eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseMPayload}
      */
     EzsignsignatureCreateObjectV1ResponseMPayload,
+
+    /**
+     * The EzsignsignatureCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2Request}
+     */
+    EzsignsignatureCreateObjectV2Request,
+
+    /**
+     * The EzsignsignatureCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2Response}
+     */
+    EzsignsignatureCreateObjectV2Response,
+
+    /**
+     * The EzsignsignatureCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2ResponseAllOf}
+     */
+    EzsignsignatureCreateObjectV2ResponseAllOf,
+
+    /**
+     * The EzsignsignatureCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureCreateObjectV2ResponseMPayload}
+     */
+    EzsignsignatureCreateObjectV2ResponseMPayload,
 
     /**
      * The EzsignsignatureDeleteObjectV1Response model constructor.
@@ -1522,6 +1666,30 @@ export {
      * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV1ResponseMPayload}
      */
     FranchisereferalincomeCreateObjectV1ResponseMPayload,
+
+    /**
+     * The FranchisereferalincomeCreateObjectV2Request model constructor.
+     * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Request}
+     */
+    FranchisereferalincomeCreateObjectV2Request,
+
+    /**
+     * The FranchisereferalincomeCreateObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Response}
+     */
+    FranchisereferalincomeCreateObjectV2Response,
+
+    /**
+     * The FranchisereferalincomeCreateObjectV2ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseAllOf}
+     */
+    FranchisereferalincomeCreateObjectV2ResponseAllOf,
+
+    /**
+     * The FranchisereferalincomeCreateObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload}
+     */
+    FranchisereferalincomeCreateObjectV2ResponseMPayload,
 
     /**
      * The FranchisereferalincomeRequest model constructor.

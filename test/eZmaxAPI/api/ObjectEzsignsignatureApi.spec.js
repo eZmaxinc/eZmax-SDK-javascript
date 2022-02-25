@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('ezsignsignatureCreateObjectV2', function() {
+      it('should call ezsignsignatureCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsignsignatureCreateObjectV2
+        //instance.ezsignsignatureCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignsignatureDeleteObjectV1', function() {
       it('should call ezsignsignatureDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignsignatureDeleteObjectV1

@@ -15,6 +15,8 @@
 import ApiClient from "../ApiClient";
 import FranchisereferalincomeCreateObjectV1Request from '../model/FranchisereferalincomeCreateObjectV1Request';
 import FranchisereferalincomeCreateObjectV1Response from '../model/FranchisereferalincomeCreateObjectV1Response';
+import FranchisereferalincomeCreateObjectV2Request from '../model/FranchisereferalincomeCreateObjectV2Request';
+import FranchisereferalincomeCreateObjectV2Response from '../model/FranchisereferalincomeCreateObjectV2Response';
 
 /**
 * ObjectFranchisereferalincome service.
@@ -72,6 +74,48 @@ export default class ObjectFranchisereferalincomeApi {
       let returnType = FranchisereferalincomeCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/franchisereferalincome', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the franchisereferalincomeCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectFranchisereferalincomeApi~franchisereferalincomeCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Franchisereferalincome
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Request} FranchisereferalincomeCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectFranchisereferalincomeApi~franchisereferalincomeCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Response}
+     */
+    franchisereferalincomeCreateObjectV2(FranchisereferalincomeCreateObjectV2Request, callback) {
+      let postBody = FranchisereferalincomeCreateObjectV2Request;
+      // verify the required parameter 'FranchisereferalincomeCreateObjectV2Request' is set
+      if (FranchisereferalincomeCreateObjectV2Request === undefined || FranchisereferalincomeCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'FranchisereferalincomeCreateObjectV2Request' when calling franchisereferalincomeCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = FranchisereferalincomeCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/franchisereferalincome', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
