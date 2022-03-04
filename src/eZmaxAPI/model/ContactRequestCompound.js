@@ -26,18 +26,18 @@ class ContactRequestCompound {
      * Constructs a new <code>ContactRequestCompound</code>.
      * A Contact Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/ContactRequestCompound
-     * @implements module:eZmaxAPI/model/ContactRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/ContactRequest
-     * @param objContactinformations {module:eZmaxAPI/model/ContactinformationsRequestCompound} 
+     * @implements module:eZmaxAPI/model/ContactRequestCompoundAllOf
      * @param fkiContacttitleID {Number} The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sContactFirstname {String} The First name of the contact
      * @param sContactLastname {String} The Last name of the contact
      * @param sContactCompany {String} The Company name of the contact
+     * @param objContactinformations {module:eZmaxAPI/model/ContactinformationsRequestCompound} 
      */
-    constructor(objContactinformations, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany) { 
-        ContactRequestCompoundAllOf.initialize(this, objContactinformations);ContactRequest.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany);
-        ContactRequestCompound.initialize(this, objContactinformations, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany);
+    constructor(fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany, objContactinformations) { 
+        ContactRequest.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany);ContactRequestCompoundAllOf.initialize(this, objContactinformations);
+        ContactRequestCompound.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany, objContactinformations);
     }
 
     /**
@@ -45,13 +45,13 @@ class ContactRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objContactinformations, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany) { 
-        obj['objContactinformations'] = objContactinformations;
+    static initialize(obj, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany, objContactinformations) { 
         obj['fkiContacttitleID'] = fkiContacttitleID;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sContactFirstname'] = sContactFirstname;
         obj['sContactLastname'] = sContactLastname;
         obj['sContactCompany'] = sContactCompany;
+        obj['objContactinformations'] = objContactinformations;
     }
 
     /**
@@ -64,12 +64,9 @@ class ContactRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ContactRequestCompound();
-            ContactRequestCompoundAllOf.constructFromObject(data, obj);
             ContactRequest.constructFromObject(data, obj);
+            ContactRequestCompoundAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objContactinformations')) {
-                obj['objContactinformations'] = ContactinformationsRequestCompound.constructFromObject(data['objContactinformations']);
-            }
             if (data.hasOwnProperty('fkiContacttitleID')) {
                 obj['fkiContacttitleID'] = ApiClient.convertToType(data['fkiContacttitleID'], 'Number');
             }
@@ -88,23 +85,13 @@ class ContactRequestCompound {
             if (data.hasOwnProperty('dtContactBirthdate')) {
                 obj['dtContactBirthdate'] = ApiClient.convertToType(data['dtContactBirthdate'], 'String');
             }
+            if (data.hasOwnProperty('objContactinformations')) {
+                obj['objContactinformations'] = ContactinformationsRequestCompound.constructFromObject(data['objContactinformations']);
+            }
         }
         return obj;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/ContactinformationsRequestCompound}
-     */
-    getObjContactinformations() {
-        return this.objContactinformations;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
-     */
-    setObjContactinformations(objContactinformations) {
-        this['objContactinformations'] = objContactinformations;
-    }
 /**
      * Returns The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
      * @return {Number}
@@ -197,13 +184,21 @@ class ContactRequestCompound {
     setDtContactBirthdate(dtContactBirthdate) {
         this['dtContactBirthdate'] = dtContactBirthdate;
     }
+/**
+     * @return {module:eZmaxAPI/model/ContactinformationsRequestCompound}
+     */
+    getObjContactinformations() {
+        return this.objContactinformations;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
+     */
+    setObjContactinformations(objContactinformations) {
+        this['objContactinformations'] = objContactinformations;
+    }
 
 }
-
-/**
- * @member {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
- */
-ContactRequestCompound.prototype['objContactinformations'] = undefined;
 
 /**
  * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
@@ -241,12 +236,12 @@ ContactRequestCompound.prototype['sContactCompany'] = undefined;
  */
 ContactRequestCompound.prototype['dtContactBirthdate'] = undefined;
 
-
-// Implement ContactRequestCompoundAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
  */
-ContactRequestCompoundAllOf.prototype['objContactinformations'] = undefined;
+ContactRequestCompound.prototype['objContactinformations'] = undefined;
+
+
 // Implement ContactRequest interface:
 /**
  * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
@@ -278,6 +273,11 @@ ContactRequest.prototype['sContactCompany'] = undefined;
  * @member {String} dtContactBirthdate
  */
 ContactRequest.prototype['dtContactBirthdate'] = undefined;
+// Implement ContactRequestCompoundAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
+ */
+ContactRequestCompoundAllOf.prototype['objContactinformations'] = undefined;
 
 
 

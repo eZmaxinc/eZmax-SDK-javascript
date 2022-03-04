@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAuditdetail from './CommonAuditdetail';
 
 /**
  * The CommonAudit model module.
@@ -21,16 +22,13 @@ import ApiClient from '../ApiClient';
 class CommonAudit {
     /**
      * Constructs a new <code>CommonAudit</code>.
-     * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, both Created and Modified informations will be the same.  Apikey details will only be provided if the changes were made by an API key.  
+     * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, objAuditdetailModified won&#39;t be returned. 
      * @alias module:eZmaxAPI/model/CommonAudit
-     * @param fkiUserIDCreated {Number} The unique ID of the User
-     * @param fkiUserIDModified {Number} The unique ID of the User
-     * @param dtCreatedDate {String} Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @param dtModifiedDate {String} Represent a Date Time. The timezone is the one configured in the User's profile.
+     * @param objAuditdetailCreated {module:eZmaxAPI/model/CommonAuditdetail} 
      */
-    constructor(fkiUserIDCreated, fkiUserIDModified, dtCreatedDate, dtModifiedDate) { 
+    constructor(objAuditdetailCreated) { 
         
-        CommonAudit.initialize(this, fkiUserIDCreated, fkiUserIDModified, dtCreatedDate, dtModifiedDate);
+        CommonAudit.initialize(this, objAuditdetailCreated);
     }
 
     /**
@@ -38,11 +36,8 @@ class CommonAudit {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiUserIDCreated, fkiUserIDModified, dtCreatedDate, dtModifiedDate) { 
-        obj['fkiUserIDCreated'] = fkiUserIDCreated;
-        obj['fkiUserIDModified'] = fkiUserIDModified;
-        obj['dtCreatedDate'] = dtCreatedDate;
-        obj['dtModifiedDate'] = dtModifiedDate;
+    static initialize(obj, objAuditdetailCreated) { 
+        obj['objAuditdetailCreated'] = objAuditdetailCreated;
     }
 
     /**
@@ -56,156 +51,54 @@ class CommonAudit {
         if (data) {
             obj = obj || new CommonAudit();
 
-            if (data.hasOwnProperty('fkiUserIDCreated')) {
-                obj['fkiUserIDCreated'] = ApiClient.convertToType(data['fkiUserIDCreated'], 'Number');
+            if (data.hasOwnProperty('objAuditdetailCreated')) {
+                obj['objAuditdetailCreated'] = CommonAuditdetail.constructFromObject(data['objAuditdetailCreated']);
             }
-            if (data.hasOwnProperty('fkiUserIDModified')) {
-                obj['fkiUserIDModified'] = ApiClient.convertToType(data['fkiUserIDModified'], 'Number');
-            }
-            if (data.hasOwnProperty('fkiApikeyIDCreated')) {
-                obj['fkiApikeyIDCreated'] = ApiClient.convertToType(data['fkiApikeyIDCreated'], 'Number');
-            }
-            if (data.hasOwnProperty('fkiApikeyIDModified')) {
-                obj['fkiApikeyIDModified'] = ApiClient.convertToType(data['fkiApikeyIDModified'], 'Number');
-            }
-            if (data.hasOwnProperty('dtCreatedDate')) {
-                obj['dtCreatedDate'] = ApiClient.convertToType(data['dtCreatedDate'], 'String');
-            }
-            if (data.hasOwnProperty('dtModifiedDate')) {
-                obj['dtModifiedDate'] = ApiClient.convertToType(data['dtModifiedDate'], 'String');
+            if (data.hasOwnProperty('objAuditdetailModified')) {
+                obj['objAuditdetailModified'] = CommonAuditdetail.constructFromObject(data['objAuditdetailModified']);
             }
         }
         return obj;
     }
 
 /**
-     * Returns The unique ID of the User
-     * @return {Number}
+     * @return {module:eZmaxAPI/model/CommonAuditdetail}
      */
-    getFkiUserIDCreated() {
-        return this.fkiUserIDCreated;
+    getObjAuditdetailCreated() {
+        return this.objAuditdetailCreated;
     }
 
     /**
-     * Sets The unique ID of the User
-     * @param {Number} fkiUserIDCreated The unique ID of the User
+     * @param {module:eZmaxAPI/model/CommonAuditdetail} objAuditdetailCreated
      */
-    setFkiUserIDCreated(fkiUserIDCreated) {
-        this['fkiUserIDCreated'] = fkiUserIDCreated;
+    setObjAuditdetailCreated(objAuditdetailCreated) {
+        this['objAuditdetailCreated'] = objAuditdetailCreated;
     }
 /**
-     * Returns The unique ID of the User
-     * @return {Number}
+     * @return {module:eZmaxAPI/model/CommonAuditdetail}
      */
-    getFkiUserIDModified() {
-        return this.fkiUserIDModified;
+    getObjAuditdetailModified() {
+        return this.objAuditdetailModified;
     }
 
     /**
-     * Sets The unique ID of the User
-     * @param {Number} fkiUserIDModified The unique ID of the User
+     * @param {module:eZmaxAPI/model/CommonAuditdetail} objAuditdetailModified
      */
-    setFkiUserIDModified(fkiUserIDModified) {
-        this['fkiUserIDModified'] = fkiUserIDModified;
-    }
-/**
-     * Returns The unique ID of the Apikey
-     * @return {Number}
-     */
-    getFkiApikeyIDCreated() {
-        return this.fkiApikeyIDCreated;
-    }
-
-    /**
-     * Sets The unique ID of the Apikey
-     * @param {Number} fkiApikeyIDCreated The unique ID of the Apikey
-     */
-    setFkiApikeyIDCreated(fkiApikeyIDCreated) {
-        this['fkiApikeyIDCreated'] = fkiApikeyIDCreated;
-    }
-/**
-     * Returns The unique ID of the Apikey
-     * @return {Number}
-     */
-    getFkiApikeyIDModified() {
-        return this.fkiApikeyIDModified;
-    }
-
-    /**
-     * Sets The unique ID of the Apikey
-     * @param {Number} fkiApikeyIDModified The unique ID of the Apikey
-     */
-    setFkiApikeyIDModified(fkiApikeyIDModified) {
-        this['fkiApikeyIDModified'] = fkiApikeyIDModified;
-    }
-/**
-     * Returns Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @return {String}
-     */
-    getDtCreatedDate() {
-        return this.dtCreatedDate;
-    }
-
-    /**
-     * Sets Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @param {String} dtCreatedDate Represent a Date Time. The timezone is the one configured in the User's profile.
-     */
-    setDtCreatedDate(dtCreatedDate) {
-        this['dtCreatedDate'] = dtCreatedDate;
-    }
-/**
-     * Returns Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @return {String}
-     */
-    getDtModifiedDate() {
-        return this.dtModifiedDate;
-    }
-
-    /**
-     * Sets Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @param {String} dtModifiedDate Represent a Date Time. The timezone is the one configured in the User's profile.
-     */
-    setDtModifiedDate(dtModifiedDate) {
-        this['dtModifiedDate'] = dtModifiedDate;
+    setObjAuditdetailModified(objAuditdetailModified) {
+        this['objAuditdetailModified'] = objAuditdetailModified;
     }
 
 }
 
 /**
- * The unique ID of the User
- * @member {Number} fkiUserIDCreated
+ * @member {module:eZmaxAPI/model/CommonAuditdetail} objAuditdetailCreated
  */
-CommonAudit.prototype['fkiUserIDCreated'] = undefined;
+CommonAudit.prototype['objAuditdetailCreated'] = undefined;
 
 /**
- * The unique ID of the User
- * @member {Number} fkiUserIDModified
+ * @member {module:eZmaxAPI/model/CommonAuditdetail} objAuditdetailModified
  */
-CommonAudit.prototype['fkiUserIDModified'] = undefined;
-
-/**
- * The unique ID of the Apikey
- * @member {Number} fkiApikeyIDCreated
- */
-CommonAudit.prototype['fkiApikeyIDCreated'] = undefined;
-
-/**
- * The unique ID of the Apikey
- * @member {Number} fkiApikeyIDModified
- */
-CommonAudit.prototype['fkiApikeyIDModified'] = undefined;
-
-/**
- * Represent a Date Time. The timezone is the one configured in the User's profile.
- * @member {String} dtCreatedDate
- */
-CommonAudit.prototype['dtCreatedDate'] = undefined;
-
-/**
- * Represent a Date Time. The timezone is the one configured in the User's profile.
- * @member {String} dtModifiedDate
- */
-CommonAudit.prototype['dtModifiedDate'] = undefined;
+CommonAudit.prototype['objAuditdetailModified'] = undefined;
 
 
 

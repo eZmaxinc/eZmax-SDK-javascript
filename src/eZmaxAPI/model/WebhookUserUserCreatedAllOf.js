@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import UserResponse from './UserResponse';
+import UserResponseCompound from './UserResponseCompound';
 
 /**
  * The WebhookUserUserCreatedAllOf model module.
@@ -23,7 +23,7 @@ class WebhookUserUserCreatedAllOf {
     /**
      * Constructs a new <code>WebhookUserUserCreatedAllOf</code>.
      * @alias module:eZmaxAPI/model/WebhookUserUserCreatedAllOf
-     * @param objUser {module:eZmaxAPI/model/UserResponse} 
+     * @param objUser {module:eZmaxAPI/model/UserResponseCompound} 
      */
     constructor(objUser) { 
         
@@ -51,21 +51,21 @@ class WebhookUserUserCreatedAllOf {
             obj = obj || new WebhookUserUserCreatedAllOf();
 
             if (data.hasOwnProperty('objUser')) {
-                obj['objUser'] = UserResponse.constructFromObject(data['objUser']);
+                obj['objUser'] = UserResponseCompound.constructFromObject(data['objUser']);
             }
         }
         return obj;
     }
 
 /**
-     * @return {module:eZmaxAPI/model/UserResponse}
+     * @return {module:eZmaxAPI/model/UserResponseCompound}
      */
     getObjUser() {
         return this.objUser;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/UserResponse} objUser
+     * @param {module:eZmaxAPI/model/UserResponseCompound} objUser
      */
     setObjUser(objUser) {
         this['objUser'] = objUser;
@@ -74,7 +74,7 @@ class WebhookUserUserCreatedAllOf {
 }
 
 /**
- * @member {module:eZmaxAPI/model/UserResponse} objUser
+ * @member {module:eZmaxAPI/model/UserResponseCompound} objUser
  */
 WebhookUserUserCreatedAllOf.prototype['objUser'] = undefined;
 

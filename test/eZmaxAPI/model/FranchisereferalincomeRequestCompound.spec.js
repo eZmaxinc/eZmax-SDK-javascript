@@ -54,18 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.FranchisereferalincomeRequestCompound);
     });
 
-    it('should have the property objAddress (base name: "objAddress")', function() {
-      // uncomment below and update the code to test the property objAddress
-      //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objContact (base name: "a_objContact")', function() {
-      // uncomment below and update the code to test the property a_objContact
-      //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pkiFranchisereferalincomeID (base name: "pkiFranchisereferalincomeID")', function() {
       // uncomment below and update the code to test the property pkiFranchisereferalincomeID
       //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
@@ -134,6 +122,18 @@
 
     it('should have the property sFranchisereferalincomeRemoteid (base name: "sFranchisereferalincomeRemoteid")', function() {
       // uncomment below and update the code to test the property sFranchisereferalincomeRemoteid
+      //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objAddress (base name: "objAddress")', function() {
+      // uncomment below and update the code to test the property objAddress
+      //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objContact (base name: "a_objContact")', function() {
+      // uncomment below and update the code to test the property a_objContact
       //var instance = new EZmaxApiDefinition.FranchisereferalincomeRequestCompound();
       //expect(instance).to.be();
     });

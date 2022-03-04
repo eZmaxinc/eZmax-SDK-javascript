@@ -54,30 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.ContactinformationsRequestCompound);
     });
 
-    it('should have the property a_objAddress (base name: "a_objAddress")', function() {
-      // uncomment below and update the code to test the property a_objAddress
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objPhone (base name: "a_objPhone")', function() {
-      // uncomment below and update the code to test the property a_objPhone
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objEmail (base name: "a_objEmail")', function() {
-      // uncomment below and update the code to test the property a_objEmail
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objWebsite (base name: "a_objWebsite")', function() {
-      // uncomment below and update the code to test the property a_objWebsite
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
-      //expect(instance).to.be();
-    });
-
     it('should have the property iAddressDefault (base name: "iAddressDefault")', function() {
       // uncomment below and update the code to test the property iAddressDefault
       //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
@@ -98,6 +74,30 @@
 
     it('should have the property iWebsiteDefault (base name: "iWebsiteDefault")', function() {
       // uncomment below and update the code to test the property iWebsiteDefault
+      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objAddress (base name: "a_objAddress")', function() {
+      // uncomment below and update the code to test the property a_objAddress
+      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objPhone (base name: "a_objPhone")', function() {
+      // uncomment below and update the code to test the property a_objPhone
+      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEmail (base name: "a_objEmail")', function() {
+      // uncomment below and update the code to test the property a_objEmail
+      //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objWebsite (base name: "a_objWebsite")', function() {
+      // uncomment below and update the code to test the property a_objWebsite
       //var instance = new EZmaxApiDefinition.ContactinformationsRequestCompound();
       //expect(instance).to.be();
     });

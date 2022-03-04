@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class EmailRequest {
     /**
      * Constructs a new <code>EmailRequest</code>.
-     * A Contact Object
+     * An Email Object
      * @alias module:eZmaxAPI/model/EmailRequest
      * @param fkiEmailtypeID {Number} The unique ID of the Emailtype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home|
      * @param sEmailAddress {String} The email address.

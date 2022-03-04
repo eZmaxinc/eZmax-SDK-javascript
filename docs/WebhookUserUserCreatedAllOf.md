@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objUser** | [**UserResponse**](UserResponse.md) |  | 
+**objUser** | [**UserResponseCompound**](UserResponseCompound.md) |  | 
 
 

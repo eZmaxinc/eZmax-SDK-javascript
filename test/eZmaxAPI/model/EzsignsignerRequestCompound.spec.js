@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerRequestCompound);
     });
 
-    it('should have the property objContact (base name: "objContact")', function() {
-      // uncomment below and update the code to test the property objContact
+    it('should have the property fkiUserlogintypeID (base name: "fkiUserlogintypeID")', function() {
+      // uncomment below and update the code to test the property fkiUserlogintypeID
       //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
@@ -80,6 +80,12 @@
 
     it('should have the property sEzsignsignerSecretanswer (base name: "sEzsignsignerSecretanswer")', function() {
       // uncomment below and update the code to test the property sEzsignsignerSecretanswer
+      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objContact (base name: "objContact")', function() {
+      // uncomment below and update the code to test the property objContact
       //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });

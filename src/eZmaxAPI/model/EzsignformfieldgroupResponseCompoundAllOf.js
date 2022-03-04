@@ -12,7 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsignformfieldResponse from './EzsignformfieldResponse';
+import CustomDropdownElementResponseCompound from './CustomDropdownElementResponseCompound';
+import EzsignformfieldResponseCompound from './EzsignformfieldResponseCompound';
+import EzsignformfieldgroupsignerResponseCompound from './EzsignformfieldgroupsignerResponseCompound';
 
 /**
  * The EzsignformfieldgroupResponseCompoundAllOf model module.
@@ -23,11 +25,12 @@ class EzsignformfieldgroupResponseCompoundAllOf {
     /**
      * Constructs a new <code>EzsignformfieldgroupResponseCompoundAllOf</code>.
      * @alias module:eZmaxAPI/model/EzsignformfieldgroupResponseCompoundAllOf
-     * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} 
+     * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>} 
+     * @param a_objEzsignformfieldgroupsigner {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} 
      */
-    constructor(a_objEzsignformfield) { 
+    constructor(a_objEzsignformfield, a_objEzsignformfieldgroupsigner) { 
         
-        EzsignformfieldgroupResponseCompoundAllOf.initialize(this, a_objEzsignformfield);
+        EzsignformfieldgroupResponseCompoundAllOf.initialize(this, a_objEzsignformfield, a_objEzsignformfieldgroupsigner);
     }
 
     /**
@@ -35,8 +38,9 @@ class EzsignformfieldgroupResponseCompoundAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objEzsignformfield) { 
+    static initialize(obj, a_objEzsignformfield, a_objEzsignformfieldgroupsigner) { 
         obj['a_objEzsignformfield'] = a_objEzsignformfield;
+        obj['a_objEzsignformfieldgroupsigner'] = a_objEzsignformfieldgroupsigner;
     }
 
     /**
@@ -51,35 +55,74 @@ class EzsignformfieldgroupResponseCompoundAllOf {
             obj = obj || new EzsignformfieldgroupResponseCompoundAllOf();
 
             if (data.hasOwnProperty('a_objEzsignformfield')) {
-                obj['a_objEzsignformfield'] = ApiClient.convertToType(data['a_objEzsignformfield'], [EzsignformfieldResponse]);
+                obj['a_objEzsignformfield'] = ApiClient.convertToType(data['a_objEzsignformfield'], [EzsignformfieldResponseCompound]);
+            }
+            if (data.hasOwnProperty('a_objDropdownElement')) {
+                obj['a_objDropdownElement'] = ApiClient.convertToType(data['a_objDropdownElement'], [CustomDropdownElementResponseCompound]);
+            }
+            if (data.hasOwnProperty('a_objEzsignformfieldgroupsigner')) {
+                obj['a_objEzsignformfieldgroupsigner'] = EzsignformfieldgroupsignerResponseCompound.constructFromObject(data['a_objEzsignformfieldgroupsigner']);
             }
         }
         return obj;
     }
 
 /**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>}
+     * @return {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>}
      */
     getAObjEzsignformfield() {
         return this.a_objEzsignformfield;
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield 
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>} a_objEzsignformfield
      */
     setAObjEzsignformfield(a_objEzsignformfield) {
         this['a_objEzsignformfield'] = a_objEzsignformfield;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/CustomDropdownElementResponseCompound>}
+     */
+    getAObjDropdownElement() {
+        return this.a_objDropdownElement;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/CustomDropdownElementResponseCompound>} a_objDropdownElement
+     */
+    setAObjDropdownElement(a_objDropdownElement) {
+        this['a_objDropdownElement'] = a_objDropdownElement;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound}
+     */
+    getAObjEzsignformfieldgroupsigner() {
+        return this.a_objEzsignformfieldgroupsigner;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} a_objEzsignformfieldgroupsigner
+     */
+    setAObjEzsignformfieldgroupsigner(a_objEzsignformfieldgroupsigner) {
+        this['a_objEzsignformfieldgroupsigner'] = a_objEzsignformfieldgroupsigner;
     }
 
 }
 
 /**
- * 
- * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponse>} a_objEzsignformfield
+ * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>} a_objEzsignformfield
  */
 EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfield'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/CustomDropdownElementResponseCompound>} a_objDropdownElement
+ */
+EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objDropdownElement'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} a_objEzsignformfieldgroupsigner
+ */
+EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfieldgroupsigner'] = undefined;
 
 
 

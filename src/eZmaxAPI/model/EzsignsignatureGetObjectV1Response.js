@@ -16,6 +16,7 @@ import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 import EzsignsignatureGetObjectV1ResponseAllOf from './EzsignsignatureGetObjectV1ResponseAllOf';
+import EzsignsignatureGetObjectV1ResponseMPayload from './EzsignsignatureGetObjectV1ResponseMPayload';
 
 /**
  * The EzsignsignatureGetObjectV1Response model module.
@@ -29,7 +30,7 @@ class EzsignsignatureGetObjectV1Response {
      * @alias module:eZmaxAPI/model/EzsignsignatureGetObjectV1Response
      * @implements module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
-     * @param mPayload {Object} Payload for the /1/object/ezsignsignature/getObject API Request
+     * @param mPayload {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} 
      */
     constructor(mPayload) { 
         EzsignsignatureGetObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
@@ -59,7 +60,7 @@ class EzsignsignatureGetObjectV1Response {
             CommonResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], Object);
+                obj['mPayload'] = EzsignsignatureGetObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
@@ -72,16 +73,14 @@ class EzsignsignatureGetObjectV1Response {
     }
 
 /**
-     * Returns Payload for the /1/object/ezsignsignature/getObject API Request
-     * @return {Object}
+     * @return {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload}
      */
     getMPayload() {
         return this.mPayload;
     }
 
     /**
-     * Sets Payload for the /1/object/ezsignsignature/getObject API Request
-     * @param {Object} mPayload Payload for the /1/object/ezsignsignature/getObject API Request
+     * @param {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} mPayload
      */
     setMPayload(mPayload) {
         this['mPayload'] = mPayload;
@@ -116,8 +115,7 @@ class EzsignsignatureGetObjectV1Response {
 }
 
 /**
- * Payload for the /1/object/ezsignsignature/getObject API Request
- * @member {Object} mPayload
+ * @member {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} mPayload
  */
 EzsignsignatureGetObjectV1Response.prototype['mPayload'] = undefined;
 
@@ -134,8 +132,7 @@ EzsignsignatureGetObjectV1Response.prototype['objDebug'] = undefined;
 
 // Implement EzsignsignatureGetObjectV1ResponseAllOf interface:
 /**
- * Payload for the /1/object/ezsignsignature/getObject API Request
- * @member {Object} mPayload
+ * @member {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} mPayload
  */
 EzsignsignatureGetObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:

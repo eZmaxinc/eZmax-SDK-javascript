@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsignsignaturecustomdateRequest from './EzsignsignaturecustomdateRequest';
+import EzsignsignaturecustomdateRequestCompound from './EzsignsignaturecustomdateRequestCompound';
 
 /**
  * The EzsignsignatureRequestCompoundAllOf model module.
@@ -52,7 +52,7 @@ class EzsignsignatureRequestCompoundAllOf {
                 obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
             }
             if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
-                obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequest]);
+                obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequestCompound]);
             }
         }
         return obj;
@@ -75,7 +75,7 @@ class EzsignsignatureRequestCompoundAllOf {
     }
 /**
      * Returns An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
-     * @return {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>}
+     * @return {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>}
      */
     getAObjEzsignsignaturecustomdate() {
         return this.a_objEzsignsignaturecustomdate;
@@ -83,7 +83,7 @@ class EzsignsignatureRequestCompoundAllOf {
 
     /**
      * Sets An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
-     * @param {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @param {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>} a_objEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
      */
     setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
         this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
@@ -99,7 +99,7 @@ EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = un
 
 /**
  * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
- * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate
+ * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>} a_objEzsignsignaturecustomdate
  */
 EzsignsignatureRequestCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 

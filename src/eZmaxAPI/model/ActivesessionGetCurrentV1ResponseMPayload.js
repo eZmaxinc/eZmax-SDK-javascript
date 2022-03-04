@@ -29,9 +29,6 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * Payload for the /1/object/activesession/getCurrent API Request
      * @alias module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload
      * @implements module:eZmaxAPI/model/ActivesessionResponseCompound
-     * @param a_pkiPermissionID {Array.<Number>} An array of permissions granted to the user or api key
-     * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
-     * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      * @param eActivesessionSessiontype {module:eZmaxAPI/model/FieldEActivesessionSessiontype} 
      * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
@@ -39,10 +36,13 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @param sDepartmentNameX {String} The Name of the Department in the language of the requester
      * @param bActivesessionDebug {Boolean} Whether the active session is in debug or not
      * @param pksCustomerCode {String} The customer code assigned to your account
+     * @param a_pkiPermissionID {Array.<Number>} An array of permissions granted to the user or api key
+     * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
+     * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
-    constructor(a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
-        ActivesessionResponseCompound.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
-        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
+    constructor(eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+        ActivesessionResponseCompound.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
     /**
@@ -50,10 +50,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_pkiPermissionID, objUserReal, a_eModuleInternalname, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
-        obj['a_pkiPermissionID'] = a_pkiPermissionID;
-        obj['objUserReal'] = objUserReal;
-        obj['a_eModuleInternalname'] = a_eModuleInternalname;
+    static initialize(obj, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
         obj['eActivesessionSessiontype'] = eActivesessionSessiontype;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -61,6 +58,9 @@ class ActivesessionGetCurrentV1ResponseMPayload {
         obj['sDepartmentNameX'] = sDepartmentNameX;
         obj['bActivesessionDebug'] = bActivesessionDebug;
         obj['pksCustomerCode'] = pksCustomerCode;
+        obj['a_pkiPermissionID'] = a_pkiPermissionID;
+        obj['objUserReal'] = objUserReal;
+        obj['a_eModuleInternalname'] = a_eModuleInternalname;
     }
 
     /**
@@ -75,21 +75,6 @@ class ActivesessionGetCurrentV1ResponseMPayload {
             obj = obj || new ActivesessionGetCurrentV1ResponseMPayload();
             ActivesessionResponseCompound.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_pkiPermissionID')) {
-                obj['a_pkiPermissionID'] = ApiClient.convertToType(data['a_pkiPermissionID'], ['Number']);
-            }
-            if (data.hasOwnProperty('objUserReal')) {
-                obj['objUserReal'] = ActivesessionResponseCompoundUser.constructFromObject(data['objUserReal']);
-            }
-            if (data.hasOwnProperty('objUserCloned')) {
-                obj['objUserCloned'] = ActivesessionResponseCompoundUser.constructFromObject(data['objUserCloned']);
-            }
-            if (data.hasOwnProperty('objApikey')) {
-                obj['objApikey'] = ActivesessionResponseCompoundApikey.constructFromObject(data['objApikey']);
-            }
-            if (data.hasOwnProperty('a_eModuleInternalname')) {
-                obj['a_eModuleInternalname'] = ApiClient.convertToType(data['a_eModuleInternalname'], ['String']);
-            }
             if (data.hasOwnProperty('eActivesessionSessiontype')) {
                 obj['eActivesessionSessiontype'] = FieldEActivesessionSessiontype.constructFromObject(data['eActivesessionSessiontype']);
             }
@@ -111,79 +96,25 @@ class ActivesessionGetCurrentV1ResponseMPayload {
             if (data.hasOwnProperty('pksCustomerCode')) {
                 obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
             }
+            if (data.hasOwnProperty('a_pkiPermissionID')) {
+                obj['a_pkiPermissionID'] = ApiClient.convertToType(data['a_pkiPermissionID'], ['Number']);
+            }
+            if (data.hasOwnProperty('objUserReal')) {
+                obj['objUserReal'] = ActivesessionResponseCompoundUser.constructFromObject(data['objUserReal']);
+            }
+            if (data.hasOwnProperty('objUserCloned')) {
+                obj['objUserCloned'] = ActivesessionResponseCompoundUser.constructFromObject(data['objUserCloned']);
+            }
+            if (data.hasOwnProperty('objApikey')) {
+                obj['objApikey'] = ActivesessionResponseCompoundApikey.constructFromObject(data['objApikey']);
+            }
+            if (data.hasOwnProperty('a_eModuleInternalname')) {
+                obj['a_eModuleInternalname'] = ApiClient.convertToType(data['a_eModuleInternalname'], ['String']);
+            }
         }
         return obj;
     }
 
-/**
-     * Returns An array of permissions granted to the user or api key
-     * @return {Array.<Number>}
-     */
-    getAPkiPermissionID() {
-        return this.a_pkiPermissionID;
-    }
-
-    /**
-     * Sets An array of permissions granted to the user or api key
-     * @param {Array.<Number>} a_pkiPermissionID An array of permissions granted to the user or api key
-     */
-    setAPkiPermissionID(a_pkiPermissionID) {
-        this['a_pkiPermissionID'] = a_pkiPermissionID;
-    }
-/**
-     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundUser}
-     */
-    getObjUserReal() {
-        return this.objUserReal;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
-     */
-    setObjUserReal(objUserReal) {
-        this['objUserReal'] = objUserReal;
-    }
-/**
-     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundUser}
-     */
-    getObjUserCloned() {
-        return this.objUserCloned;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
-     */
-    setObjUserCloned(objUserCloned) {
-        this['objUserCloned'] = objUserCloned;
-    }
-/**
-     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey}
-     */
-    getObjApikey() {
-        return this.objApikey;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
-     */
-    setObjApikey(objApikey) {
-        this['objApikey'] = objApikey;
-    }
-/**
-     * Returns An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
-     * @return {Array.<String>}
-     */
-    getAEModuleInternalname() {
-        return this.a_eModuleInternalname;
-    }
-
-    /**
-     * Sets An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
-     * @param {Array.<String>} a_eModuleInternalname An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
-     */
-    setAEModuleInternalname(a_eModuleInternalname) {
-        this['a_eModuleInternalname'] = a_eModuleInternalname;
-    }
 /**
      * @return {module:eZmaxAPI/model/FieldEActivesessionSessiontype}
      */
@@ -287,35 +218,77 @@ class ActivesessionGetCurrentV1ResponseMPayload {
     setPksCustomerCode(pksCustomerCode) {
         this['pksCustomerCode'] = pksCustomerCode;
     }
+/**
+     * Returns An array of permissions granted to the user or api key
+     * @return {Array.<Number>}
+     */
+    getAPkiPermissionID() {
+        return this.a_pkiPermissionID;
+    }
+
+    /**
+     * Sets An array of permissions granted to the user or api key
+     * @param {Array.<Number>} a_pkiPermissionID An array of permissions granted to the user or api key
+     */
+    setAPkiPermissionID(a_pkiPermissionID) {
+        this['a_pkiPermissionID'] = a_pkiPermissionID;
+    }
+/**
+     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundUser}
+     */
+    getObjUserReal() {
+        return this.objUserReal;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
+     */
+    setObjUserReal(objUserReal) {
+        this['objUserReal'] = objUserReal;
+    }
+/**
+     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundUser}
+     */
+    getObjUserCloned() {
+        return this.objUserCloned;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
+     */
+    setObjUserCloned(objUserCloned) {
+        this['objUserCloned'] = objUserCloned;
+    }
+/**
+     * @return {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey}
+     */
+    getObjApikey() {
+        return this.objApikey;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
+     */
+    setObjApikey(objApikey) {
+        this['objApikey'] = objApikey;
+    }
+/**
+     * Returns An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+     * @return {Array.<String>}
+     */
+    getAEModuleInternalname() {
+        return this.a_eModuleInternalname;
+    }
+
+    /**
+     * Sets An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+     * @param {Array.<String>} a_eModuleInternalname An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+     */
+    setAEModuleInternalname(a_eModuleInternalname) {
+        this['a_eModuleInternalname'] = a_eModuleInternalname;
+    }
 
 }
-
-/**
- * An array of permissions granted to the user or api key
- * @member {Array.<Number>} a_pkiPermissionID
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['a_pkiPermissionID'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserReal'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserCloned'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['objApikey'] = undefined;
-
-/**
- * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
- * @member {Array.<String>} a_eModuleInternalname
- */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['a_eModuleInternalname'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
@@ -357,30 +330,35 @@ ActivesessionGetCurrentV1ResponseMPayload.prototype['bActivesessionDebug'] = und
  */
 ActivesessionGetCurrentV1ResponseMPayload.prototype['pksCustomerCode'] = undefined;
 
-
-// Implement ActivesessionResponseCompound interface:
 /**
  * An array of permissions granted to the user or api key
  * @member {Array.<Number>} a_pkiPermissionID
  */
-ActivesessionResponseCompound.prototype['a_pkiPermissionID'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['a_pkiPermissionID'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
  */
-ActivesessionResponseCompound.prototype['objUserReal'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserReal'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
  */
-ActivesessionResponseCompound.prototype['objUserCloned'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['objUserCloned'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
  */
-ActivesessionResponseCompound.prototype['objApikey'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['objApikey'] = undefined;
+
 /**
  * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
  * @member {Array.<String>} a_eModuleInternalname
  */
-ActivesessionResponseCompound.prototype['a_eModuleInternalname'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['a_eModuleInternalname'] = undefined;
+
+
+// Implement ActivesessionResponseCompound interface:
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
  */
@@ -414,6 +392,28 @@ ActivesessionResponseCompound.prototype['bActivesessionDebug'] = undefined;
  * @member {String} pksCustomerCode
  */
 ActivesessionResponseCompound.prototype['pksCustomerCode'] = undefined;
+/**
+ * An array of permissions granted to the user or api key
+ * @member {Array.<Number>} a_pkiPermissionID
+ */
+ActivesessionResponseCompound.prototype['a_pkiPermissionID'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
+ */
+ActivesessionResponseCompound.prototype['objUserReal'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
+ */
+ActivesessionResponseCompound.prototype['objUserCloned'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
+ */
+ActivesessionResponseCompound.prototype['objApikey'] = undefined;
+/**
+ * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
+ * @member {Array.<String>} a_eModuleInternalname
+ */
+ActivesessionResponseCompound.prototype['a_eModuleInternalname'] = undefined;
 
 
 

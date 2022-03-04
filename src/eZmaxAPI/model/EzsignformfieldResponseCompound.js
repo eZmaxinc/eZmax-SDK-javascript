@@ -25,12 +25,18 @@ class EzsignformfieldResponseCompound {
      * An Ezsignformfield Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignformfieldResponseCompound
      * @implements module:eZmaxAPI/model/EzsignformfieldResponse
+     * @param pkiEzsignformfieldID {Number} The unique ID of the Ezsignformfield
+     * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      * @param sEzsignformfieldLabel {String} The Label for the Ezsignformfield
-     * @param sEzsignformfieldValue {String} The Value for the Ezsignformfield
+     * @param sEzsignformfieldValue {String} The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
+     * @param iEzsignformfieldX {Number} The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param iEzsignformfieldY {Number} The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param iEzsignformfieldWidth {Number} The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * @param iEzsignformfieldHeight {Number} The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
      */
-    constructor(sEzsignformfieldLabel, sEzsignformfieldValue) { 
-        EzsignformfieldResponse.initialize(this, sEzsignformfieldLabel, sEzsignformfieldValue);
-        EzsignformfieldResponseCompound.initialize(this, sEzsignformfieldLabel, sEzsignformfieldValue);
+    constructor(pkiEzsignformfieldID, iEzsignpagePagenumber, sEzsignformfieldLabel, sEzsignformfieldValue, iEzsignformfieldX, iEzsignformfieldY, iEzsignformfieldWidth, iEzsignformfieldHeight) { 
+        EzsignformfieldResponse.initialize(this, pkiEzsignformfieldID, iEzsignpagePagenumber, sEzsignformfieldLabel, sEzsignformfieldValue, iEzsignformfieldX, iEzsignformfieldY, iEzsignformfieldWidth, iEzsignformfieldHeight);
+        EzsignformfieldResponseCompound.initialize(this, pkiEzsignformfieldID, iEzsignpagePagenumber, sEzsignformfieldLabel, sEzsignformfieldValue, iEzsignformfieldX, iEzsignformfieldY, iEzsignformfieldWidth, iEzsignformfieldHeight);
     }
 
     /**
@@ -38,9 +44,15 @@ class EzsignformfieldResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sEzsignformfieldLabel, sEzsignformfieldValue) { 
+    static initialize(obj, pkiEzsignformfieldID, iEzsignpagePagenumber, sEzsignformfieldLabel, sEzsignformfieldValue, iEzsignformfieldX, iEzsignformfieldY, iEzsignformfieldWidth, iEzsignformfieldHeight) { 
+        obj['pkiEzsignformfieldID'] = pkiEzsignformfieldID;
+        obj['iEzsignpagePagenumber'] = iEzsignpagePagenumber;
         obj['sEzsignformfieldLabel'] = sEzsignformfieldLabel;
         obj['sEzsignformfieldValue'] = sEzsignformfieldValue;
+        obj['iEzsignformfieldX'] = iEzsignformfieldX;
+        obj['iEzsignformfieldY'] = iEzsignformfieldY;
+        obj['iEzsignformfieldWidth'] = iEzsignformfieldWidth;
+        obj['iEzsignformfieldHeight'] = iEzsignformfieldHeight;
     }
 
     /**
@@ -55,16 +67,70 @@ class EzsignformfieldResponseCompound {
             obj = obj || new EzsignformfieldResponseCompound();
             EzsignformfieldResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('pkiEzsignformfieldID')) {
+                obj['pkiEzsignformfieldID'] = ApiClient.convertToType(data['pkiEzsignformfieldID'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsignpagePagenumber')) {
+                obj['iEzsignpagePagenumber'] = ApiClient.convertToType(data['iEzsignpagePagenumber'], 'Number');
+            }
             if (data.hasOwnProperty('sEzsignformfieldLabel')) {
                 obj['sEzsignformfieldLabel'] = ApiClient.convertToType(data['sEzsignformfieldLabel'], 'String');
             }
             if (data.hasOwnProperty('sEzsignformfieldValue')) {
                 obj['sEzsignformfieldValue'] = ApiClient.convertToType(data['sEzsignformfieldValue'], 'String');
             }
+            if (data.hasOwnProperty('iEzsignformfieldX')) {
+                obj['iEzsignformfieldX'] = ApiClient.convertToType(data['iEzsignformfieldX'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsignformfieldY')) {
+                obj['iEzsignformfieldY'] = ApiClient.convertToType(data['iEzsignformfieldY'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsignformfieldWidth')) {
+                obj['iEzsignformfieldWidth'] = ApiClient.convertToType(data['iEzsignformfieldWidth'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsignformfieldHeight')) {
+                obj['iEzsignformfieldHeight'] = ApiClient.convertToType(data['iEzsignformfieldHeight'], 'Number');
+            }
+            if (data.hasOwnProperty('bEzsignformfieldSelected')) {
+                obj['bEzsignformfieldSelected'] = ApiClient.convertToType(data['bEzsignformfieldSelected'], 'Boolean');
+            }
+            if (data.hasOwnProperty('sEzsignformfieldEnteredvalue')) {
+                obj['sEzsignformfieldEnteredvalue'] = ApiClient.convertToType(data['sEzsignformfieldEnteredvalue'], 'String');
+            }
         }
         return obj;
     }
 
+/**
+     * Returns The unique ID of the Ezsignformfield
+     * @return {Number}
+     */
+    getPkiEzsignformfieldID() {
+        return this.pkiEzsignformfieldID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignformfield
+     * @param {Number} pkiEzsignformfieldID The unique ID of the Ezsignformfield
+     */
+    setPkiEzsignformfieldID(pkiEzsignformfieldID) {
+        this['pkiEzsignformfieldID'] = pkiEzsignformfieldID;
+    }
+/**
+     * Returns The page number in the Ezsigndocument
+     * @return {Number}
+     */
+    getIEzsignpagePagenumber() {
+        return this.iEzsignpagePagenumber;
+    }
+
+    /**
+     * Sets The page number in the Ezsigndocument
+     * @param {Number} iEzsignpagePagenumber The page number in the Ezsigndocument
+     */
+    setIEzsignpagePagenumber(iEzsignpagePagenumber) {
+        this['iEzsignpagePagenumber'] = iEzsignpagePagenumber;
+    }
 /**
      * Returns The Label for the Ezsignformfield
      * @return {String}
@@ -81,7 +147,7 @@ class EzsignformfieldResponseCompound {
         this['sEzsignformfieldLabel'] = sEzsignformfieldLabel;
     }
 /**
-     * Returns The Value for the Ezsignformfield
+     * Returns The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
      * @return {String}
      */
     getSEzsignformfieldValue() {
@@ -89,14 +155,116 @@ class EzsignformfieldResponseCompound {
     }
 
     /**
-     * Sets The Value for the Ezsignformfield
-     * @param {String} sEzsignformfieldValue The Value for the Ezsignformfield
+     * Sets The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
+     * @param {String} sEzsignformfieldValue The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
      */
     setSEzsignformfieldValue(sEzsignformfieldValue) {
         this['sEzsignformfieldValue'] = sEzsignformfieldValue;
     }
+/**
+     * Returns The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @return {Number}
+     */
+    getIEzsignformfieldX() {
+        return this.iEzsignformfieldX;
+    }
+
+    /**
+     * Sets The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param {Number} iEzsignformfieldX The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     */
+    setIEzsignformfieldX(iEzsignformfieldX) {
+        this['iEzsignformfieldX'] = iEzsignformfieldX;
+    }
+/**
+     * Returns The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @return {Number}
+     */
+    getIEzsignformfieldY() {
+        return this.iEzsignformfieldY;
+    }
+
+    /**
+     * Sets The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param {Number} iEzsignformfieldY The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     */
+    setIEzsignformfieldY(iEzsignformfieldY) {
+        this['iEzsignformfieldY'] = iEzsignformfieldY;
+    }
+/**
+     * Returns The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * @return {Number}
+     */
+    getIEzsignformfieldWidth() {
+        return this.iEzsignformfieldWidth;
+    }
+
+    /**
+     * Sets The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * @param {Number} iEzsignformfieldWidth The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     */
+    setIEzsignformfieldWidth(iEzsignformfieldWidth) {
+        this['iEzsignformfieldWidth'] = iEzsignformfieldWidth;
+    }
+/**
+     * Returns The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     * @return {Number}
+     */
+    getIEzsignformfieldHeight() {
+        return this.iEzsignformfieldHeight;
+    }
+
+    /**
+     * Sets The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     * @param {Number} iEzsignformfieldHeight The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     */
+    setIEzsignformfieldHeight(iEzsignformfieldHeight) {
+        this['iEzsignformfieldHeight'] = iEzsignformfieldHeight;
+    }
+/**
+     * Returns Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+     * @return {Boolean}
+     */
+    getBEzsignformfieldSelected() {
+        return this.bEzsignformfieldSelected;
+    }
+
+    /**
+     * Sets Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+     * @param {Boolean} bEzsignformfieldSelected Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+     */
+    setBEzsignformfieldSelected(bEzsignformfieldSelected) {
+        this['bEzsignformfieldSelected'] = bEzsignformfieldSelected;
+    }
+/**
+     * Returns This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+     * @return {String}
+     */
+    getSEzsignformfieldEnteredvalue() {
+        return this.sEzsignformfieldEnteredvalue;
+    }
+
+    /**
+     * Sets This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+     * @param {String} sEzsignformfieldEnteredvalue This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+     */
+    setSEzsignformfieldEnteredvalue(sEzsignformfieldEnteredvalue) {
+        this['sEzsignformfieldEnteredvalue'] = sEzsignformfieldEnteredvalue;
+    }
 
 }
+
+/**
+ * The unique ID of the Ezsignformfield
+ * @member {Number} pkiEzsignformfieldID
+ */
+EzsignformfieldResponseCompound.prototype['pkiEzsignformfieldID'] = undefined;
+
+/**
+ * The page number in the Ezsigndocument
+ * @member {Number} iEzsignpagePagenumber
+ */
+EzsignformfieldResponseCompound.prototype['iEzsignpagePagenumber'] = undefined;
 
 /**
  * The Label for the Ezsignformfield
@@ -105,23 +273,99 @@ class EzsignformfieldResponseCompound {
 EzsignformfieldResponseCompound.prototype['sEzsignformfieldLabel'] = undefined;
 
 /**
- * The Value for the Ezsignformfield
+ * The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
  * @member {String} sEzsignformfieldValue
  */
 EzsignformfieldResponseCompound.prototype['sEzsignformfieldValue'] = undefined;
 
+/**
+ * The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+ * @member {Number} iEzsignformfieldX
+ */
+EzsignformfieldResponseCompound.prototype['iEzsignformfieldX'] = undefined;
+
+/**
+ * The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+ * @member {Number} iEzsignformfieldY
+ */
+EzsignformfieldResponseCompound.prototype['iEzsignformfieldY'] = undefined;
+
+/**
+ * The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+ * @member {Number} iEzsignformfieldWidth
+ */
+EzsignformfieldResponseCompound.prototype['iEzsignformfieldWidth'] = undefined;
+
+/**
+ * The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+ * @member {Number} iEzsignformfieldHeight
+ */
+EzsignformfieldResponseCompound.prototype['iEzsignformfieldHeight'] = undefined;
+
+/**
+ * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+ * @member {Boolean} bEzsignformfieldSelected
+ */
+EzsignformfieldResponseCompound.prototype['bEzsignformfieldSelected'] = undefined;
+
+/**
+ * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+ * @member {String} sEzsignformfieldEnteredvalue
+ */
+EzsignformfieldResponseCompound.prototype['sEzsignformfieldEnteredvalue'] = undefined;
+
 
 // Implement EzsignformfieldResponse interface:
+/**
+ * The unique ID of the Ezsignformfield
+ * @member {Number} pkiEzsignformfieldID
+ */
+EzsignformfieldResponse.prototype['pkiEzsignformfieldID'] = undefined;
+/**
+ * The page number in the Ezsigndocument
+ * @member {Number} iEzsignpagePagenumber
+ */
+EzsignformfieldResponse.prototype['iEzsignpagePagenumber'] = undefined;
 /**
  * The Label for the Ezsignformfield
  * @member {String} sEzsignformfieldLabel
  */
 EzsignformfieldResponse.prototype['sEzsignformfieldLabel'] = undefined;
 /**
- * The Value for the Ezsignformfield
+ * The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
  * @member {String} sEzsignformfieldValue
  */
 EzsignformfieldResponse.prototype['sEzsignformfieldValue'] = undefined;
+/**
+ * The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+ * @member {Number} iEzsignformfieldX
+ */
+EzsignformfieldResponse.prototype['iEzsignformfieldX'] = undefined;
+/**
+ * The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+ * @member {Number} iEzsignformfieldY
+ */
+EzsignformfieldResponse.prototype['iEzsignformfieldY'] = undefined;
+/**
+ * The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+ * @member {Number} iEzsignformfieldWidth
+ */
+EzsignformfieldResponse.prototype['iEzsignformfieldWidth'] = undefined;
+/**
+ * The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+ * @member {Number} iEzsignformfieldHeight
+ */
+EzsignformfieldResponse.prototype['iEzsignformfieldHeight'] = undefined;
+/**
+ * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+ * @member {Boolean} bEzsignformfieldSelected
+ */
+EzsignformfieldResponse.prototype['bEzsignformfieldSelected'] = undefined;
+/**
+ * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+ * @member {String} sEzsignformfieldEnteredvalue
+ */
+EzsignformfieldResponse.prototype['sEzsignformfieldEnteredvalue'] = undefined;
 
 
 

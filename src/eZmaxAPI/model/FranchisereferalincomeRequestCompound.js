@@ -27,10 +27,8 @@ class FranchisereferalincomeRequestCompound {
      * Constructs a new <code>FranchisereferalincomeRequestCompound</code>.
      * A Franchisereferalincome Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/FranchisereferalincomeRequestCompound
-     * @implements module:eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/FranchisereferalincomeRequest
-     * @param objAddress {module:eZmaxAPI/model/AddressRequest} 
-     * @param a_objContact {Array.<module:eZmaxAPI/model/ContactRequestCompound>} 
+     * @implements module:eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf
      * @param fkiFranchisebrokerID {Number} The unique ID of the Franchisebroker
      * @param fkiFranchisereferalincomeprogramID {Number} The unique ID of the Franchisereferalincomeprogram
      * @param fkiPeriodID {Number} The unique ID of the Period
@@ -42,10 +40,12 @@ class FranchisereferalincomeRequestCompound {
      * @param tFranchisereferalincomeComment {String} Comment about the transaction
      * @param fkiFranchiseofficeID {Number} The unique ID of the Franchisereoffice
      * @param sFranchisereferalincomeRemoteid {String} 
+     * @param objAddress {module:eZmaxAPI/model/AddressRequest} 
+     * @param a_objContact {Array.<module:eZmaxAPI/model/ContactRequestCompound>} 
      */
-    constructor(objAddress, a_objContact, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid) { 
-        FranchisereferalincomeRequestCompoundAllOf.initialize(this, a_objContact);FranchisereferalincomeRequest.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);
-        FranchisereferalincomeRequestCompound.initialize(this, objAddress, a_objContact, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);
+    constructor(fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact) { 
+        FranchisereferalincomeRequest.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);FranchisereferalincomeRequestCompoundAllOf.initialize(this, a_objContact);
+        FranchisereferalincomeRequestCompound.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact);
     }
 
     /**
@@ -53,9 +53,7 @@ class FranchisereferalincomeRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objAddress, a_objContact, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid) { 
-        obj['objAddress'] = objAddress;
-        obj['a_objContact'] = a_objContact;
+    static initialize(obj, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact) { 
         obj['fkiFranchisebrokerID'] = fkiFranchisebrokerID;
         obj['fkiFranchisereferalincomeprogramID'] = fkiFranchisereferalincomeprogramID;
         obj['fkiPeriodID'] = fkiPeriodID;
@@ -67,6 +65,8 @@ class FranchisereferalincomeRequestCompound {
         obj['tFranchisereferalincomeComment'] = tFranchisereferalincomeComment;
         obj['fkiFranchiseofficeID'] = fkiFranchiseofficeID;
         obj['sFranchisereferalincomeRemoteid'] = sFranchisereferalincomeRemoteid;
+        obj['objAddress'] = objAddress;
+        obj['a_objContact'] = a_objContact;
     }
 
     /**
@@ -79,15 +79,9 @@ class FranchisereferalincomeRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new FranchisereferalincomeRequestCompound();
-            FranchisereferalincomeRequestCompoundAllOf.constructFromObject(data, obj);
             FranchisereferalincomeRequest.constructFromObject(data, obj);
+            FranchisereferalincomeRequestCompoundAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objAddress')) {
-                obj['objAddress'] = AddressRequest.constructFromObject(data['objAddress']);
-            }
-            if (data.hasOwnProperty('a_objContact')) {
-                obj['a_objContact'] = ApiClient.convertToType(data['a_objContact'], [ContactRequestCompound]);
-            }
             if (data.hasOwnProperty('pkiFranchisereferalincomeID')) {
                 obj['pkiFranchisereferalincomeID'] = ApiClient.convertToType(data['pkiFranchisereferalincomeID'], 'Number');
             }
@@ -124,38 +118,16 @@ class FranchisereferalincomeRequestCompound {
             if (data.hasOwnProperty('sFranchisereferalincomeRemoteid')) {
                 obj['sFranchisereferalincomeRemoteid'] = ApiClient.convertToType(data['sFranchisereferalincomeRemoteid'], 'String');
             }
+            if (data.hasOwnProperty('objAddress')) {
+                obj['objAddress'] = AddressRequest.constructFromObject(data['objAddress']);
+            }
+            if (data.hasOwnProperty('a_objContact')) {
+                obj['a_objContact'] = ApiClient.convertToType(data['a_objContact'], [ContactRequestCompound]);
+            }
         }
         return obj;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/AddressRequest}
-     */
-    getObjAddress() {
-        return this.objAddress;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/AddressRequest} objAddress
-     */
-    setObjAddress(objAddress) {
-        this['objAddress'] = objAddress;
-    }
-/**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/ContactRequestCompound>}
-     */
-    getAObjContact() {
-        return this.a_objContact;
-    }
-
-    /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact 
-     */
-    setAObjContact(a_objContact) {
-        this['a_objContact'] = a_objContact;
-    }
 /**
      * Returns The unique ID of the Franchisereferalincome
      * @return {Number}
@@ -336,19 +308,34 @@ class FranchisereferalincomeRequestCompound {
     setSFranchisereferalincomeRemoteid(sFranchisereferalincomeRemoteid) {
         this['sFranchisereferalincomeRemoteid'] = sFranchisereferalincomeRemoteid;
     }
+/**
+     * @return {module:eZmaxAPI/model/AddressRequest}
+     */
+    getObjAddress() {
+        return this.objAddress;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/AddressRequest} objAddress
+     */
+    setObjAddress(objAddress) {
+        this['objAddress'] = objAddress;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/ContactRequestCompound>}
+     */
+    getAObjContact() {
+        return this.a_objContact;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
+     */
+    setAObjContact(a_objContact) {
+        this['a_objContact'] = a_objContact;
+    }
 
 }
-
-/**
- * @member {module:eZmaxAPI/model/AddressRequest} objAddress
- */
-FranchisereferalincomeRequestCompound.prototype['objAddress'] = undefined;
-
-/**
- * 
- * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
- */
-FranchisereferalincomeRequestCompound.prototype['a_objContact'] = undefined;
 
 /**
  * The unique ID of the Franchisereferalincome
@@ -422,17 +409,17 @@ FranchisereferalincomeRequestCompound.prototype['fkiFranchiseofficeID'] = undefi
  */
 FranchisereferalincomeRequestCompound.prototype['sFranchisereferalincomeRemoteid'] = undefined;
 
-
-// Implement FranchisereferalincomeRequestCompoundAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/AddressRequest} objAddress
  */
-FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
+FranchisereferalincomeRequestCompound.prototype['objAddress'] = undefined;
+
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
  */
-FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;
+FranchisereferalincomeRequestCompound.prototype['a_objContact'] = undefined;
+
+
 // Implement FranchisereferalincomeRequest interface:
 /**
  * The unique ID of the Franchisereferalincome
@@ -494,6 +481,15 @@ FranchisereferalincomeRequest.prototype['fkiFranchiseofficeID'] = undefined;
  * @member {String} sFranchisereferalincomeRemoteid
  */
 FranchisereferalincomeRequest.prototype['sFranchisereferalincomeRemoteid'] = undefined;
+// Implement FranchisereferalincomeRequestCompoundAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/AddressRequest} objAddress
+ */
+FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
+/**
+ * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
+ */
+FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;
 
 
 

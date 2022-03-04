@@ -48,6 +48,16 @@
   }
 
   describe('ObjectEzsignbulksendApi', function() {
+    describe('ezsignbulksendGetEzsignbulksendtransmissionsV1', function() {
+      it('should call ezsignbulksendGetEzsignbulksendtransmissionsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignbulksendGetEzsignbulksendtransmissionsV1
+        //instance.ezsignbulksendGetEzsignbulksendtransmissionsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignbulksendGetListV1', function() {
       it('should call ezsignbulksendGetListV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignbulksendGetListV1

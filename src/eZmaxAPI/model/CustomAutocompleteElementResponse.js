@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class CustomAutocompleteElementResponse {
     /**
      * Constructs a new <code>CustomAutocompleteElementResponse</code>.
-     * Generic Autocomplete Response
+     * Generic AutocompleteElement Response
      * @alias module:eZmaxAPI/model/CustomAutocompleteElementResponse
      * @param sCategory {String} The Category for the dropdown or an empty string if not categorized
      * @param sLabel {String} The Description of the element

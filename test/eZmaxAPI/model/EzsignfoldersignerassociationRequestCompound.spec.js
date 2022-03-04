@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound);
     });
 
-    it('should have the property objEzsignsigner (base name: "objEzsignsigner")', function() {
-      // uncomment below and update the code to test the property objEzsignsigner
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pkiEzsignfoldersignerassociationID (base name: "pkiEzsignfoldersignerassociationID")', function() {
       // uncomment below and update the code to test the property pkiEzsignfoldersignerassociationID
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();
@@ -80,6 +74,12 @@
 
     it('should have the property bEzsignfoldersignerassociationReceivecopy (base name: "bEzsignfoldersignerassociationReceivecopy")', function() {
       // uncomment below and update the code to test the property bEzsignfoldersignerassociationReceivecopy
+      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEzsignsigner (base name: "objEzsignsigner")', function() {
+      // uncomment below and update the code to test the property objEzsignsigner
       //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationRequestCompound();
       //expect(instance).to.be();
     });

@@ -58,7 +58,6 @@ class EzsignfolderGetListV1ResponseMPayloadAllOf {
     }
 
 /**
-     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignfolderListElement>}
      */
     getAObjEzsignfolder() {
@@ -66,8 +65,7 @@ class EzsignfolderGetListV1ResponseMPayloadAllOf {
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder 
+     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
      */
     setAObjEzsignfolder(a_objEzsignfolder) {
         this['a_objEzsignfolder'] = a_objEzsignfolder;
@@ -76,7 +74,6 @@ class EzsignfolderGetListV1ResponseMPayloadAllOf {
 }
 
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
 EzsignfolderGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfolder'] = undefined;

@@ -98,6 +98,16 @@
         done();
       });
     });
+    describe('ezsigndocumentEditEzsignformfieldgroupsV1', function() {
+      it('should call ezsigndocumentEditEzsignformfieldgroupsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentEditEzsignformfieldgroupsV1
+        //instance.ezsigndocumentEditEzsignformfieldgroupsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentEditEzsignsignaturesV1', function() {
       it('should call ezsigndocumentEditEzsignsignaturesV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentEditEzsignsignaturesV1
@@ -128,10 +138,30 @@
         done();
       });
     });
+    describe('ezsigndocumentGetEzsignformfieldgroupsV1', function() {
+      it('should call ezsigndocumentGetEzsignformfieldgroupsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetEzsignformfieldgroupsV1
+        //instance.ezsigndocumentGetEzsignformfieldgroupsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetEzsignpagesV1', function() {
       it('should call ezsigndocumentGetEzsignpagesV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetEzsignpagesV1
         //instance.ezsigndocumentGetEzsignpagesV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigndocumentGetEzsignsignaturesV1', function() {
+      it('should call ezsigndocumentGetEzsignsignaturesV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetEzsignsignaturesV1
+        //instance.ezsigndocumentGetEzsignsignaturesV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

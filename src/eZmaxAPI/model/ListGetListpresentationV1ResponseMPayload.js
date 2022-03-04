@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ListpresentationRequest from './ListpresentationRequest';
+import ListpresentationResponseCompound from './ListpresentationResponseCompound';
 
 /**
  * The ListGetListpresentationV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class ListGetListpresentationV1ResponseMPayload {
      * Constructs a new <code>ListGetListpresentationV1ResponseMPayload</code>.
      * Payload for the GET /1/module/list/listpresentation/{sListName} API Request
      * @alias module:eZmaxAPI/model/ListGetListpresentationV1ResponseMPayload
-     * @param a_objListpresentation {Array.<module:eZmaxAPI/model/ListpresentationRequest>} 
+     * @param a_objListpresentation {Array.<module:eZmaxAPI/model/ListpresentationResponseCompound>} 
      */
     constructor(a_objListpresentation) { 
         
@@ -52,23 +52,21 @@ class ListGetListpresentationV1ResponseMPayload {
             obj = obj || new ListGetListpresentationV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objListpresentation')) {
-                obj['a_objListpresentation'] = ApiClient.convertToType(data['a_objListpresentation'], [ListpresentationRequest]);
+                obj['a_objListpresentation'] = ApiClient.convertToType(data['a_objListpresentation'], [ListpresentationResponseCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/ListpresentationRequest>}
+     * @return {Array.<module:eZmaxAPI/model/ListpresentationResponseCompound>}
      */
     getAObjListpresentation() {
         return this.a_objListpresentation;
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation 
+     * @param {Array.<module:eZmaxAPI/model/ListpresentationResponseCompound>} a_objListpresentation
      */
     setAObjListpresentation(a_objListpresentation) {
         this['a_objListpresentation'] = a_objListpresentation;
@@ -77,8 +75,7 @@ class ListGetListpresentationV1ResponseMPayload {
 }
 
 /**
- * 
- * @member {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation
+ * @member {Array.<module:eZmaxAPI/model/ListpresentationResponseCompound>} a_objListpresentation
  */
 ListGetListpresentationV1ResponseMPayload.prototype['a_objListpresentation'] = undefined;
 

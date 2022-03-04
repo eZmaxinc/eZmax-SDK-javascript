@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AttemptResponse from './AttemptResponse';
+import AttemptResponseCompound from './AttemptResponseCompound';
 import CommonWebhook from './CommonWebhook';
 import EzsigndocumentResponse from './EzsigndocumentResponse';
 import WebhookEzsignDocumentCompletedAllOf from './WebhookEzsignDocumentCompletedAllOf';
@@ -32,7 +32,7 @@ class WebhookEzsignDocumentCompleted {
      * @implements module:eZmaxAPI/model/CommonWebhook
      * @param objEzsigndocument {module:eZmaxAPI/model/EzsigndocumentResponse} 
      * @param objWebhook {module:eZmaxAPI/model/WebhookResponse} 
-     * @param a_objAttempt {Array.<module:eZmaxAPI/model/AttemptResponse>} An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param a_objAttempt {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
      */
     constructor(objEzsigndocument, objWebhook, a_objAttempt) { 
         WebhookEzsignDocumentCompletedAllOf.initialize(this, objEzsigndocument);CommonWebhook.initialize(this, objWebhook, a_objAttempt);
@@ -70,7 +70,7 @@ class WebhookEzsignDocumentCompleted {
                 obj['objWebhook'] = WebhookResponse.constructFromObject(data['objWebhook']);
             }
             if (data.hasOwnProperty('a_objAttempt')) {
-                obj['a_objAttempt'] = ApiClient.convertToType(data['a_objAttempt'], [AttemptResponse]);
+                obj['a_objAttempt'] = ApiClient.convertToType(data['a_objAttempt'], [AttemptResponseCompound]);
             }
         }
         return obj;
@@ -104,7 +104,7 @@ class WebhookEzsignDocumentCompleted {
     }
 /**
      * Returns An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
-     * @return {Array.<module:eZmaxAPI/model/AttemptResponse>}
+     * @return {Array.<module:eZmaxAPI/model/AttemptResponseCompound>}
      */
     getAObjAttempt() {
         return this.a_objAttempt;
@@ -112,7 +112,7 @@ class WebhookEzsignDocumentCompleted {
 
     /**
      * Sets An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
-     * @param {Array.<module:eZmaxAPI/model/AttemptResponse>} a_objAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} a_objAttempt An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
      */
     setAObjAttempt(a_objAttempt) {
         this['a_objAttempt'] = a_objAttempt;
@@ -132,7 +132,7 @@ WebhookEzsignDocumentCompleted.prototype['objWebhook'] = undefined;
 
 /**
  * An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
- * @member {Array.<module:eZmaxAPI/model/AttemptResponse>} a_objAttempt
+ * @member {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} a_objAttempt
  */
 WebhookEzsignDocumentCompleted.prototype['a_objAttempt'] = undefined;
 
@@ -149,7 +149,7 @@ WebhookEzsignDocumentCompletedAllOf.prototype['objEzsigndocument'] = undefined;
 CommonWebhook.prototype['objWebhook'] = undefined;
 /**
  * An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
- * @member {Array.<module:eZmaxAPI/model/AttemptResponse>} a_objAttempt
+ * @member {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} a_objAttempt
  */
 CommonWebhook.prototype['a_objAttempt'] = undefined;
 

@@ -60,6 +60,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property a_objDropdownElement (base name: "a_objDropdownElement")', function() {
+      // uncomment below and update the code to test the property a_objDropdownElement
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignformfieldgroupsigner (base name: "a_objEzsignformfieldgroupsigner")', function() {
+      // uncomment below and update the code to test the property a_objEzsignformfieldgroupsigner
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -54,18 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignatureRequestCompound);
     });
 
-    it('should have the property bEzsignsignatureCustomdate (base name: "bEzsignsignatureCustomdate")', function() {
-      // uncomment below and update the code to test the property bEzsignsignatureCustomdate
-      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objEzsignsignaturecustomdate (base name: "a_objEzsignsignaturecustomdate")', function() {
-      // uncomment below and update the code to test the property a_objEzsignsignaturecustomdate
-      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pkiEzsignsignatureID (base name: "pkiEzsignsignatureID")', function() {
       // uncomment below and update the code to test the property pkiEzsignsignatureID
       //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
@@ -110,6 +98,18 @@
 
     it('should have the property fkiEzsigndocumentID (base name: "fkiEzsigndocumentID")', function() {
       // uncomment below and update the code to test the property fkiEzsigndocumentID
+      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignsignatureCustomdate (base name: "bEzsignsignatureCustomdate")', function() {
+      // uncomment below and update the code to test the property bEzsignsignatureCustomdate
+      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignsignaturecustomdate (base name: "a_objEzsignsignaturecustomdate")', function() {
+      // uncomment below and update the code to test the property a_objEzsignsignaturecustomdate
       //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompound();
       //expect(instance).to.be();
     });

@@ -75,7 +75,6 @@ class EzsignfolderGetListV1ResponseMPayload {
     }
 
 /**
-     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsignfolderListElement>}
      */
     getAObjEzsignfolder() {
@@ -83,8 +82,7 @@ class EzsignfolderGetListV1ResponseMPayload {
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder 
+     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
      */
     setAObjEzsignfolder(a_objEzsignfolder) {
         this['a_objEzsignfolder'] = a_objEzsignfolder;
@@ -123,7 +121,6 @@ class EzsignfolderGetListV1ResponseMPayload {
 }
 
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
 EzsignfolderGetListV1ResponseMPayload.prototype['a_objEzsignfolder'] = undefined;
@@ -143,7 +140,6 @@ EzsignfolderGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
 // Implement EzsignfolderGetListV1ResponseMPayloadAllOf interface:
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
 EzsignfolderGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfolder'] = undefined;

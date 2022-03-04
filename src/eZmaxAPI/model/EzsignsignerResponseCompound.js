@@ -26,17 +26,17 @@ class EzsignsignerResponseCompound {
      * Constructs a new <code>EzsignsignerResponseCompound</code>.
      * An Ezsignsigner Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignerResponseCompound
-     * @implements module:eZmaxAPI/model/EzsignsignerResponseCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignsignerResponse
-     * @param objContact {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} 
+     * @implements module:eZmaxAPI/model/EzsignsignerResponseCompoundAllOf
      * @param pkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
      * @param fkiTaxassignmentID {Number} The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
-     * @param fkiUserlogintypeID {Number} The unique ID of the Userlogintype
+     * @param fkiUserlogintypeID {Number} The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
      * @param sUserlogintypeDescriptionX {String} The description of the Userlogintype in the language of the requester
+     * @param objContact {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} 
      */
-    constructor(objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX) { 
-        EzsignsignerResponseCompoundAllOf.initialize(this, objContact);EzsignsignerResponse.initialize(this, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX);
-        EzsignsignerResponseCompound.initialize(this, objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX);
+    constructor(pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX, objContact) { 
+        EzsignsignerResponse.initialize(this, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX);EzsignsignerResponseCompoundAllOf.initialize(this, objContact);
+        EzsignsignerResponseCompound.initialize(this, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX, objContact);
     }
 
     /**
@@ -44,12 +44,12 @@ class EzsignsignerResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objContact, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX) { 
-        obj['objContact'] = objContact;
+    static initialize(obj, pkiEzsignsignerID, fkiTaxassignmentID, fkiUserlogintypeID, sUserlogintypeDescriptionX, objContact) { 
         obj['pkiEzsignsignerID'] = pkiEzsignsignerID;
         obj['fkiTaxassignmentID'] = fkiTaxassignmentID;
         obj['fkiUserlogintypeID'] = fkiUserlogintypeID;
         obj['sUserlogintypeDescriptionX'] = sUserlogintypeDescriptionX;
+        obj['objContact'] = objContact;
     }
 
     /**
@@ -62,12 +62,9 @@ class EzsignsignerResponseCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignsignerResponseCompound();
-            EzsignsignerResponseCompoundAllOf.constructFromObject(data, obj);
             EzsignsignerResponse.constructFromObject(data, obj);
+            EzsignsignerResponseCompoundAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objContact')) {
-                obj['objContact'] = EzsignsignerResponseCompoundContact.constructFromObject(data['objContact']);
-            }
             if (data.hasOwnProperty('pkiEzsignsignerID')) {
                 obj['pkiEzsignsignerID'] = ApiClient.convertToType(data['pkiEzsignsignerID'], 'Number');
             }
@@ -83,23 +80,13 @@ class EzsignsignerResponseCompound {
             if (data.hasOwnProperty('sUserlogintypeDescriptionX')) {
                 obj['sUserlogintypeDescriptionX'] = ApiClient.convertToType(data['sUserlogintypeDescriptionX'], 'String');
             }
+            if (data.hasOwnProperty('objContact')) {
+                obj['objContact'] = EzsignsignerResponseCompoundContact.constructFromObject(data['objContact']);
+            }
         }
         return obj;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact}
-     */
-    getObjContact() {
-        return this.objContact;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
-     */
-    setObjContact(objContact) {
-        this['objContact'] = objContact;
-    }
 /**
      * Returns The unique ID of the Ezsignsigner
      * @return {Number}
@@ -148,7 +135,7 @@ class EzsignsignerResponseCompound {
         this['fkiSecretquestionID'] = fkiSecretquestionID;
     }
 /**
-     * Returns The unique ID of the Userlogintype
+     * Returns The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
      * @return {Number}
      */
     getFkiUserlogintypeID() {
@@ -156,8 +143,8 @@ class EzsignsignerResponseCompound {
     }
 
     /**
-     * Sets The unique ID of the Userlogintype
-     * @param {Number} fkiUserlogintypeID The unique ID of the Userlogintype
+     * Sets The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
+     * @param {Number} fkiUserlogintypeID The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
      */
     setFkiUserlogintypeID(fkiUserlogintypeID) {
         this['fkiUserlogintypeID'] = fkiUserlogintypeID;
@@ -177,13 +164,21 @@ class EzsignsignerResponseCompound {
     setSUserlogintypeDescriptionX(sUserlogintypeDescriptionX) {
         this['sUserlogintypeDescriptionX'] = sUserlogintypeDescriptionX;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact}
+     */
+    getObjContact() {
+        return this.objContact;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
+     */
+    setObjContact(objContact) {
+        this['objContact'] = objContact;
+    }
 
 }
-
-/**
- * @member {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
- */
-EzsignsignerResponseCompound.prototype['objContact'] = undefined;
 
 /**
  * The unique ID of the Ezsignsigner
@@ -204,7 +199,7 @@ EzsignsignerResponseCompound.prototype['fkiTaxassignmentID'] = undefined;
 EzsignsignerResponseCompound.prototype['fkiSecretquestionID'] = undefined;
 
 /**
- * The unique ID of the Userlogintype
+ * The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
  * @member {Number} fkiUserlogintypeID
  */
 EzsignsignerResponseCompound.prototype['fkiUserlogintypeID'] = undefined;
@@ -215,12 +210,12 @@ EzsignsignerResponseCompound.prototype['fkiUserlogintypeID'] = undefined;
  */
 EzsignsignerResponseCompound.prototype['sUserlogintypeDescriptionX'] = undefined;
 
-
-// Implement EzsignsignerResponseCompoundAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
  */
-EzsignsignerResponseCompoundAllOf.prototype['objContact'] = undefined;
+EzsignsignerResponseCompound.prototype['objContact'] = undefined;
+
+
 // Implement EzsignsignerResponse interface:
 /**
  * The unique ID of the Ezsignsigner
@@ -238,7 +233,7 @@ EzsignsignerResponse.prototype['fkiTaxassignmentID'] = undefined;
  */
 EzsignsignerResponse.prototype['fkiSecretquestionID'] = undefined;
 /**
- * The unique ID of the Userlogintype
+ * The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won't be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|
  * @member {Number} fkiUserlogintypeID
  */
 EzsignsignerResponse.prototype['fkiUserlogintypeID'] = undefined;
@@ -247,6 +242,11 @@ EzsignsignerResponse.prototype['fkiUserlogintypeID'] = undefined;
  * @member {String} sUserlogintypeDescriptionX
  */
 EzsignsignerResponse.prototype['sUserlogintypeDescriptionX'] = undefined;
+// Implement EzsignsignerResponseCompoundAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerResponseCompoundContact} objContact
+ */
+EzsignsignerResponseCompoundAllOf.prototype['objContact'] = undefined;
 
 
 

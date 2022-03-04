@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import EzsignsignatureGetObjectV1ResponseMPayload from './EzsignsignatureGetObjectV1ResponseMPayload';
 
 /**
  * The EzsignsignatureGetObjectV1ResponseAllOf model module.
@@ -22,7 +23,7 @@ class EzsignsignatureGetObjectV1ResponseAllOf {
     /**
      * Constructs a new <code>EzsignsignatureGetObjectV1ResponseAllOf</code>.
      * @alias module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseAllOf
-     * @param mPayload {Object} Payload for the /1/object/ezsignsignature/getObject API Request
+     * @param mPayload {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} 
      */
     constructor(mPayload) { 
         
@@ -50,23 +51,21 @@ class EzsignsignatureGetObjectV1ResponseAllOf {
             obj = obj || new EzsignsignatureGetObjectV1ResponseAllOf();
 
             if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], Object);
+                obj['mPayload'] = EzsignsignatureGetObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
     }
 
 /**
-     * Returns Payload for the /1/object/ezsignsignature/getObject API Request
-     * @return {Object}
+     * @return {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload}
      */
     getMPayload() {
         return this.mPayload;
     }
 
     /**
-     * Sets Payload for the /1/object/ezsignsignature/getObject API Request
-     * @param {Object} mPayload Payload for the /1/object/ezsignsignature/getObject API Request
+     * @param {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} mPayload
      */
     setMPayload(mPayload) {
         this['mPayload'] = mPayload;
@@ -75,8 +74,7 @@ class EzsignsignatureGetObjectV1ResponseAllOf {
 }
 
 /**
- * Payload for the /1/object/ezsignsignature/getObject API Request
- * @member {Object} mPayload
+ * @member {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload} mPayload
  */
 EzsignsignatureGetObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
 

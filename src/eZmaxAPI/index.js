@@ -22,6 +22,7 @@ import ActivesessionResponseCompoundAllOf from './model/ActivesessionResponseCom
 import ActivesessionResponseCompoundApikey from './model/ActivesessionResponseCompoundApikey';
 import ActivesessionResponseCompoundUser from './model/ActivesessionResponseCompoundUser';
 import AddressRequest from './model/AddressRequest';
+import AddressRequestCompound from './model/AddressRequestCompound';
 import ApikeyCreateObjectV1Request from './model/ApikeyCreateObjectV1Request';
 import ApikeyCreateObjectV1Response from './model/ApikeyCreateObjectV1Response';
 import ApikeyCreateObjectV1ResponseAllOf from './model/ApikeyCreateObjectV1ResponseAllOf';
@@ -33,12 +34,15 @@ import ApikeyCreateObjectV2ResponseMPayload from './model/ApikeyCreateObjectV2Re
 import ApikeyRequest from './model/ApikeyRequest';
 import ApikeyRequestCompound from './model/ApikeyRequestCompound';
 import ApikeyResponse from './model/ApikeyResponse';
+import ApikeyResponseCompound from './model/ApikeyResponseCompound';
 import AttemptResponse from './model/AttemptResponse';
+import AttemptResponseCompound from './model/AttemptResponseCompound';
 import AuthenticateAuthenticateV2Request from './model/AuthenticateAuthenticateV2Request';
 import AuthenticateAuthenticateV2Response from './model/AuthenticateAuthenticateV2Response';
 import AuthenticateAuthenticateV2ResponseAllOf from './model/AuthenticateAuthenticateV2ResponseAllOf';
 import AuthenticateAuthenticateV2ResponseMPayload from './model/AuthenticateAuthenticateV2ResponseMPayload';
 import CommonAudit from './model/CommonAudit';
+import CommonAuditdetail from './model/CommonAuditdetail';
 import CommonGetAutocompleteV1Response from './model/CommonGetAutocompleteV1Response';
 import CommonGetAutocompleteV1ResponseAllOf from './model/CommonGetAutocompleteV1ResponseAllOf';
 import CommonGetListV1ResponseMPayload from './model/CommonGetListV1ResponseMPayload';
@@ -61,14 +65,24 @@ import ContactinformationsRequest from './model/ContactinformationsRequest';
 import ContactinformationsRequestCompound from './model/ContactinformationsRequestCompound';
 import ContactinformationsRequestCompoundAllOf from './model/ContactinformationsRequestCompoundAllOf';
 import CustomAutocompleteElementResponse from './model/CustomAutocompleteElementResponse';
+import CustomDropdownElementRequest from './model/CustomDropdownElementRequest';
+import CustomDropdownElementRequestCompound from './model/CustomDropdownElementRequestCompound';
+import CustomDropdownElementResponse from './model/CustomDropdownElementResponse';
+import CustomDropdownElementResponseCompound from './model/CustomDropdownElementResponseCompound';
 import CustomEzsignfoldersignerassociationstatusResponse from './model/CustomEzsignfoldersignerassociationstatusResponse';
 import CustomEzsignsignaturestatusResponse from './model/CustomEzsignsignaturestatusResponse';
 import CustomFormDataDocumentResponse from './model/CustomFormDataDocumentResponse';
+import CustomFormDataEzsignformfieldResponse from './model/CustomFormDataEzsignformfieldResponse';
+import CustomFormDataEzsignformfieldgroupResponse from './model/CustomFormDataEzsignformfieldgroupResponse';
 import CustomFormDataSignerResponse from './model/CustomFormDataSignerResponse';
 import CustomFormsDataFolderResponse from './model/CustomFormsDataFolderResponse';
 import CustomWordPositionOccurenceResponse from './model/CustomWordPositionOccurenceResponse';
 import CustomWordPositionWordResponse from './model/CustomWordPositionWordResponse';
 import EmailRequest from './model/EmailRequest';
+import EmailRequestCompound from './model/EmailRequestCompound';
+import EzsignbulksendGetEzsignbulksendtransmissionsV1Response from './model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response';
+import EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf from './model/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf';
+import EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload from './model/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload';
 import EzsignbulksendGetListV1Response from './model/EzsignbulksendGetListV1Response';
 import EzsignbulksendGetListV1ResponseAllOf from './model/EzsignbulksendGetListV1ResponseAllOf';
 import EzsignbulksendGetListV1ResponseMPayload from './model/EzsignbulksendGetListV1ResponseMPayload';
@@ -79,6 +93,11 @@ import EzsignbulksendGetObjectV1ResponseMPayload from './model/EzsignbulksendGet
 import EzsignbulksendListElement from './model/EzsignbulksendListElement';
 import EzsignbulksendResponse from './model/EzsignbulksendResponse';
 import EzsignbulksendResponseCompound from './model/EzsignbulksendResponseCompound';
+import EzsignbulksendtransmissionGetObjectV1Response from './model/EzsignbulksendtransmissionGetObjectV1Response';
+import EzsignbulksendtransmissionGetObjectV1ResponseAllOf from './model/EzsignbulksendtransmissionGetObjectV1ResponseAllOf';
+import EzsignbulksendtransmissionGetObjectV1ResponseMPayload from './model/EzsignbulksendtransmissionGetObjectV1ResponseMPayload';
+import EzsignbulksendtransmissionResponse from './model/EzsignbulksendtransmissionResponse';
+import EzsignbulksendtransmissionResponseCompound from './model/EzsignbulksendtransmissionResponseCompound';
 import EzsigndocumentApplyEzsigntemplateV1Request from './model/EzsigndocumentApplyEzsigntemplateV1Request';
 import EzsigndocumentApplyEzsigntemplateV1Response from './model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from './model/EzsigndocumentApplyEzsigntemplateV2Request';
@@ -92,15 +111,23 @@ import EzsigndocumentCreateObjectV2Response from './model/EzsigndocumentCreateOb
 import EzsigndocumentCreateObjectV2ResponseAllOf from './model/EzsigndocumentCreateObjectV2ResponseAllOf';
 import EzsigndocumentCreateObjectV2ResponseMPayload from './model/EzsigndocumentCreateObjectV2ResponseMPayload';
 import EzsigndocumentDeleteObjectV1Response from './model/EzsigndocumentDeleteObjectV1Response';
+import EzsigndocumentEditEzsignformfieldgroupsV1Request from './model/EzsigndocumentEditEzsignformfieldgroupsV1Request';
+import EzsigndocumentEditEzsignformfieldgroupsV1Response from './model/EzsigndocumentEditEzsignformfieldgroupsV1Response';
 import EzsigndocumentEditEzsignsignaturesV1Request from './model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from './model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentEndPrematurelyV1Response from './model/EzsigndocumentEndPrematurelyV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from './model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetDownloadUrlV1ResponseAllOf from './model/EzsigndocumentGetDownloadUrlV1ResponseAllOf';
 import EzsigndocumentGetDownloadUrlV1ResponseMPayload from './model/EzsigndocumentGetDownloadUrlV1ResponseMPayload';
+import EzsigndocumentGetEzsignformfieldgroupsV1Response from './model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
+import EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf from './model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf';
+import EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload from './model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload';
 import EzsigndocumentGetEzsignpagesV1Response from './model/EzsigndocumentGetEzsignpagesV1Response';
 import EzsigndocumentGetEzsignpagesV1ResponseAllOf from './model/EzsigndocumentGetEzsignpagesV1ResponseAllOf';
 import EzsigndocumentGetEzsignpagesV1ResponseMPayload from './model/EzsigndocumentGetEzsignpagesV1ResponseMPayload';
+import EzsigndocumentGetEzsignsignaturesV1Response from './model/EzsigndocumentGetEzsignsignaturesV1Response';
+import EzsigndocumentGetEzsignsignaturesV1ResponseAllOf from './model/EzsigndocumentGetEzsignsignaturesV1ResponseAllOf';
+import EzsigndocumentGetEzsignsignaturesV1ResponseMPayload from './model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload';
 import EzsigndocumentGetFormDataV1Response from './model/EzsigndocumentGetFormDataV1Response';
 import EzsigndocumentGetFormDataV1ResponseAllOf from './model/EzsigndocumentGetFormDataV1ResponseAllOf';
 import EzsigndocumentGetFormDataV1ResponseMPayload from './model/EzsigndocumentGetFormDataV1ResponseMPayload';
@@ -122,6 +149,7 @@ import EzsigndocumentResponse from './model/EzsigndocumentResponse';
 import EzsigndocumentResponseCompound from './model/EzsigndocumentResponseCompound';
 import EzsigndocumentResponseCompoundAllOf from './model/EzsigndocumentResponseCompoundAllOf';
 import EzsigndocumentlogResponse from './model/EzsigndocumentlogResponse';
+import EzsigndocumentlogResponseCompound from './model/EzsigndocumentlogResponseCompound';
 import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV1Request';
 import EzsignfolderCreateObjectV1Response from './model/EzsignfolderCreateObjectV1Response';
 import EzsignfolderCreateObjectV1ResponseAllOf from './model/EzsignfolderCreateObjectV1ResponseAllOf';
@@ -184,12 +212,32 @@ import EzsignfoldertypeGetListV1ResponseAllOf from './model/EzsignfoldertypeGetL
 import EzsignfoldertypeGetListV1ResponseMPayload from './model/EzsignfoldertypeGetListV1ResponseMPayload';
 import EzsignfoldertypeGetListV1ResponseMPayloadAllOf from './model/EzsignfoldertypeGetListV1ResponseMPayloadAllOf';
 import EzsignfoldertypeListElement from './model/EzsignfoldertypeListElement';
+import EzsignformfieldRequest from './model/EzsignformfieldRequest';
+import EzsignformfieldRequestCompound from './model/EzsignformfieldRequestCompound';
 import EzsignformfieldResponse from './model/EzsignformfieldResponse';
 import EzsignformfieldResponseCompound from './model/EzsignformfieldResponseCompound';
+import EzsignformfieldgroupCreateObjectV1Request from './model/EzsignformfieldgroupCreateObjectV1Request';
+import EzsignformfieldgroupCreateObjectV1Response from './model/EzsignformfieldgroupCreateObjectV1Response';
+import EzsignformfieldgroupCreateObjectV1ResponseAllOf from './model/EzsignformfieldgroupCreateObjectV1ResponseAllOf';
+import EzsignformfieldgroupCreateObjectV1ResponseMPayload from './model/EzsignformfieldgroupCreateObjectV1ResponseMPayload';
+import EzsignformfieldgroupDeleteObjectV1Response from './model/EzsignformfieldgroupDeleteObjectV1Response';
+import EzsignformfieldgroupEditObjectV1Request from './model/EzsignformfieldgroupEditObjectV1Request';
+import EzsignformfieldgroupEditObjectV1Response from './model/EzsignformfieldgroupEditObjectV1Response';
+import EzsignformfieldgroupGetObjectV1Response from './model/EzsignformfieldgroupGetObjectV1Response';
+import EzsignformfieldgroupGetObjectV1ResponseAllOf from './model/EzsignformfieldgroupGetObjectV1ResponseAllOf';
+import EzsignformfieldgroupGetObjectV1ResponseMPayload from './model/EzsignformfieldgroupGetObjectV1ResponseMPayload';
+import EzsignformfieldgroupRequest from './model/EzsignformfieldgroupRequest';
+import EzsignformfieldgroupRequestCompound from './model/EzsignformfieldgroupRequestCompound';
+import EzsignformfieldgroupRequestCompoundAllOf from './model/EzsignformfieldgroupRequestCompoundAllOf';
 import EzsignformfieldgroupResponse from './model/EzsignformfieldgroupResponse';
 import EzsignformfieldgroupResponseCompound from './model/EzsignformfieldgroupResponseCompound';
 import EzsignformfieldgroupResponseCompoundAllOf from './model/EzsignformfieldgroupResponseCompoundAllOf';
+import EzsignformfieldgroupsignerRequest from './model/EzsignformfieldgroupsignerRequest';
+import EzsignformfieldgroupsignerRequestCompound from './model/EzsignformfieldgroupsignerRequestCompound';
+import EzsignformfieldgroupsignerResponse from './model/EzsignformfieldgroupsignerResponse';
+import EzsignformfieldgroupsignerResponseCompound from './model/EzsignformfieldgroupsignerResponseCompound';
 import EzsignpageResponse from './model/EzsignpageResponse';
+import EzsignpageResponseCompound from './model/EzsignpageResponseCompound';
 import EzsignsignatureCreateObjectV1Request from './model/EzsignsignatureCreateObjectV1Request';
 import EzsignsignatureCreateObjectV1Response from './model/EzsignsignatureCreateObjectV1Response';
 import EzsignsignatureCreateObjectV1ResponseAllOf from './model/EzsignsignatureCreateObjectV1ResponseAllOf';
@@ -203,10 +251,17 @@ import EzsignsignatureEditObjectV1Request from './model/EzsignsignatureEditObjec
 import EzsignsignatureEditObjectV1Response from './model/EzsignsignatureEditObjectV1Response';
 import EzsignsignatureGetObjectV1Response from './model/EzsignsignatureGetObjectV1Response';
 import EzsignsignatureGetObjectV1ResponseAllOf from './model/EzsignsignatureGetObjectV1ResponseAllOf';
+import EzsignsignatureGetObjectV1ResponseMPayload from './model/EzsignsignatureGetObjectV1ResponseMPayload';
 import EzsignsignatureRequest from './model/EzsignsignatureRequest';
 import EzsignsignatureRequestCompound from './model/EzsignsignatureRequestCompound';
 import EzsignsignatureRequestCompoundAllOf from './model/EzsignsignatureRequestCompoundAllOf';
+import EzsignsignatureResponse from './model/EzsignsignatureResponse';
+import EzsignsignatureResponseCompound from './model/EzsignsignatureResponseCompound';
+import EzsignsignatureResponseCompoundAllOf from './model/EzsignsignatureResponseCompoundAllOf';
 import EzsignsignaturecustomdateRequest from './model/EzsignsignaturecustomdateRequest';
+import EzsignsignaturecustomdateRequestCompound from './model/EzsignsignaturecustomdateRequestCompound';
+import EzsignsignaturecustomdateResponse from './model/EzsignsignaturecustomdateResponse';
+import EzsignsignaturecustomdateResponseCompound from './model/EzsignsignaturecustomdateResponseCompound';
 import EzsignsignerRequest from './model/EzsignsignerRequest';
 import EzsignsignerRequestCompound from './model/EzsignsignerRequestCompound';
 import EzsignsignerRequestCompoundAllOf from './model/EzsignsignerRequestCompoundAllOf';
@@ -227,6 +282,9 @@ import FieldEEzsigndocumentlogType from './model/FieldEEzsigndocumentlogType';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
 import FieldEEzsignfoldertypePrivacylevel from './model/FieldEEzsignfoldertypePrivacylevel';
+import FieldEEzsignformfieldgroupSignerrequirement from './model/FieldEEzsignformfieldgroupSignerrequirement';
+import FieldEEzsignformfieldgroupTooltipposition from './model/FieldEEzsignformfieldgroupTooltipposition';
+import FieldEEzsignformfieldgroupType from './model/FieldEEzsignformfieldgroupType';
 import FieldEEzsignsignatureType from './model/FieldEEzsignsignatureType';
 import FieldEEzsigntemplatepackageType from './model/FieldEEzsigntemplatepackageType';
 import FieldEPhoneType from './model/FieldEPhoneType';
@@ -251,8 +309,11 @@ import ListGetListpresentationV1ResponseMPayload from './model/ListGetListpresen
 import ListSaveListpresentationV1Request from './model/ListSaveListpresentationV1Request';
 import ListSaveListpresentationV1Response from './model/ListSaveListpresentationV1Response';
 import ListpresentationRequest from './model/ListpresentationRequest';
+import ListpresentationRequestCompound from './model/ListpresentationRequestCompound';
+import ListpresentationResponseCompound from './model/ListpresentationResponseCompound';
 import MultilingualApikeyDescription from './model/MultilingualApikeyDescription';
 import PhoneRequest from './model/PhoneRequest';
+import PhoneRequestCompound from './model/PhoneRequestCompound';
 import SsprResetPasswordRequestV1Request from './model/SsprResetPasswordRequestV1Request';
 import SsprResetPasswordV1Request from './model/SsprResetPasswordV1Request';
 import SsprSendUsernamesV1Request from './model/SsprSendUsernamesV1Request';
@@ -264,6 +325,7 @@ import UserCreateEzsignuserV1Response from './model/UserCreateEzsignuserV1Respon
 import UserCreateEzsignuserV1ResponseAllOf from './model/UserCreateEzsignuserV1ResponseAllOf';
 import UserCreateEzsignuserV1ResponseMPayload from './model/UserCreateEzsignuserV1ResponseMPayload';
 import UserResponse from './model/UserResponse';
+import UserResponseCompound from './model/UserResponseCompound';
 import WebhookEzsignDocumentCompleted from './model/WebhookEzsignDocumentCompleted';
 import WebhookEzsignDocumentCompletedAllOf from './model/WebhookEzsignDocumentCompletedAllOf';
 import WebhookEzsignFolderCompleted from './model/WebhookEzsignFolderCompleted';
@@ -272,6 +334,7 @@ import WebhookResponse from './model/WebhookResponse';
 import WebhookUserUserCreated from './model/WebhookUserUserCreated';
 import WebhookUserUserCreatedAllOf from './model/WebhookUserUserCreatedAllOf';
 import WebsiteRequest from './model/WebsiteRequest';
+import WebsiteRequestCompound from './model/WebsiteRequestCompound';
 import GlobalCustomerApi from './api/GlobalCustomerApi';
 import ModuleAuthenticateApi from './api/ModuleAuthenticateApi';
 import ModuleListApi from './api/ModuleListApi';
@@ -279,10 +342,12 @@ import ModuleUserApi from './api/ModuleUserApi';
 import ObjectActivesessionApi from './api/ObjectActivesessionApi';
 import ObjectApikeyApi from './api/ObjectApikeyApi';
 import ObjectEzsignbulksendApi from './api/ObjectEzsignbulksendApi';
+import ObjectEzsignbulksendtransmissionApi from './api/ObjectEzsignbulksendtransmissionApi';
 import ObjectEzsigndocumentApi from './api/ObjectEzsigndocumentApi';
 import ObjectEzsignfolderApi from './api/ObjectEzsignfolderApi';
 import ObjectEzsignfoldersignerassociationApi from './api/ObjectEzsignfoldersignerassociationApi';
 import ObjectEzsignfoldertypeApi from './api/ObjectEzsignfoldertypeApi';
+import ObjectEzsignformfieldgroupApi from './api/ObjectEzsignformfieldgroupApi';
 import ObjectEzsignsignatureApi from './api/ObjectEzsignsignatureApi';
 import ObjectEzsigntemplatepackageApi from './api/ObjectEzsigntemplatepackageApi';
 import ObjectFranchisebrokerApi from './api/ObjectFranchisebrokerApi';
@@ -384,6 +449,12 @@ export {
     AddressRequest,
 
     /**
+     * The AddressRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/AddressRequestCompound}
+     */
+    AddressRequestCompound,
+
+    /**
      * The ApikeyCreateObjectV1Request model constructor.
      * @property {module:eZmaxAPI/model/ApikeyCreateObjectV1Request}
      */
@@ -450,10 +521,22 @@ export {
     ApikeyResponse,
 
     /**
+     * The ApikeyResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/ApikeyResponseCompound}
+     */
+    ApikeyResponseCompound,
+
+    /**
      * The AttemptResponse model constructor.
      * @property {module:eZmaxAPI/model/AttemptResponse}
      */
     AttemptResponse,
+
+    /**
+     * The AttemptResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/AttemptResponseCompound}
+     */
+    AttemptResponseCompound,
 
     /**
      * The AuthenticateAuthenticateV2Request model constructor.
@@ -484,6 +567,12 @@ export {
      * @property {module:eZmaxAPI/model/CommonAudit}
      */
     CommonAudit,
+
+    /**
+     * The CommonAuditdetail model constructor.
+     * @property {module:eZmaxAPI/model/CommonAuditdetail}
+     */
+    CommonAuditdetail,
 
     /**
      * The CommonGetAutocompleteV1Response model constructor.
@@ -618,6 +707,30 @@ export {
     CustomAutocompleteElementResponse,
 
     /**
+     * The CustomDropdownElementRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomDropdownElementRequest}
+     */
+    CustomDropdownElementRequest,
+
+    /**
+     * The CustomDropdownElementRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CustomDropdownElementRequestCompound}
+     */
+    CustomDropdownElementRequestCompound,
+
+    /**
+     * The CustomDropdownElementResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomDropdownElementResponse}
+     */
+    CustomDropdownElementResponse,
+
+    /**
+     * The CustomDropdownElementResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/CustomDropdownElementResponseCompound}
+     */
+    CustomDropdownElementResponseCompound,
+
+    /**
      * The CustomEzsignfoldersignerassociationstatusResponse model constructor.
      * @property {module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse}
      */
@@ -634,6 +747,18 @@ export {
      * @property {module:eZmaxAPI/model/CustomFormDataDocumentResponse}
      */
     CustomFormDataDocumentResponse,
+
+    /**
+     * The CustomFormDataEzsignformfieldResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomFormDataEzsignformfieldResponse}
+     */
+    CustomFormDataEzsignformfieldResponse,
+
+    /**
+     * The CustomFormDataEzsignformfieldgroupResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomFormDataEzsignformfieldgroupResponse}
+     */
+    CustomFormDataEzsignformfieldgroupResponse,
 
     /**
      * The CustomFormDataSignerResponse model constructor.
@@ -664,6 +789,30 @@ export {
      * @property {module:eZmaxAPI/model/EmailRequest}
      */
     EmailRequest,
+
+    /**
+     * The EmailRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EmailRequestCompound}
+     */
+    EmailRequestCompound,
+
+    /**
+     * The EzsignbulksendGetEzsignbulksendtransmissionsV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response}
+     */
+    EzsignbulksendGetEzsignbulksendtransmissionsV1Response,
+
+    /**
+     * The EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf}
+     */
+    EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf,
+
+    /**
+     * The EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload}
+     */
+    EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload,
 
     /**
      * The EzsignbulksendGetListV1Response model constructor.
@@ -724,6 +873,36 @@ export {
      * @property {module:eZmaxAPI/model/EzsignbulksendResponseCompound}
      */
     EzsignbulksendResponseCompound,
+
+    /**
+     * The EzsignbulksendtransmissionGetObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendtransmissionGetObjectV1Response}
+     */
+    EzsignbulksendtransmissionGetObjectV1Response,
+
+    /**
+     * The EzsignbulksendtransmissionGetObjectV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendtransmissionGetObjectV1ResponseAllOf}
+     */
+    EzsignbulksendtransmissionGetObjectV1ResponseAllOf,
+
+    /**
+     * The EzsignbulksendtransmissionGetObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendtransmissionGetObjectV1ResponseMPayload}
+     */
+    EzsignbulksendtransmissionGetObjectV1ResponseMPayload,
+
+    /**
+     * The EzsignbulksendtransmissionResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendtransmissionResponse}
+     */
+    EzsignbulksendtransmissionResponse,
+
+    /**
+     * The EzsignbulksendtransmissionResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignbulksendtransmissionResponseCompound}
+     */
+    EzsignbulksendtransmissionResponseCompound,
 
     /**
      * The EzsigndocumentApplyEzsigntemplateV1Request model constructor.
@@ -804,6 +983,18 @@ export {
     EzsigndocumentDeleteObjectV1Response,
 
     /**
+     * The EzsigndocumentEditEzsignformfieldgroupsV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1Request}
+     */
+    EzsigndocumentEditEzsignformfieldgroupsV1Request,
+
+    /**
+     * The EzsigndocumentEditEzsignformfieldgroupsV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1Response}
+     */
+    EzsigndocumentEditEzsignformfieldgroupsV1Response,
+
+    /**
      * The EzsigndocumentEditEzsignsignaturesV1Request model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Request}
      */
@@ -840,6 +1031,24 @@ export {
     EzsigndocumentGetDownloadUrlV1ResponseMPayload,
 
     /**
+     * The EzsigndocumentGetEzsignformfieldgroupsV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1Response}
+     */
+    EzsigndocumentGetEzsignformfieldgroupsV1Response,
+
+    /**
+     * The EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf}
+     */
+    EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf,
+
+    /**
+     * The EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload}
+     */
+    EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload,
+
+    /**
      * The EzsigndocumentGetEzsignpagesV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1Response}
      */
@@ -856,6 +1065,24 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseMPayload}
      */
     EzsigndocumentGetEzsignpagesV1ResponseMPayload,
+
+    /**
+     * The EzsigndocumentGetEzsignsignaturesV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1Response}
+     */
+    EzsigndocumentGetEzsignsignaturesV1Response,
+
+    /**
+     * The EzsigndocumentGetEzsignsignaturesV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseAllOf}
+     */
+    EzsigndocumentGetEzsignsignaturesV1ResponseAllOf,
+
+    /**
+     * The EzsigndocumentGetEzsignsignaturesV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload}
+     */
+    EzsigndocumentGetEzsignsignaturesV1ResponseMPayload,
 
     /**
      * The EzsigndocumentGetFormDataV1Response model constructor.
@@ -982,6 +1209,12 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentlogResponse}
      */
     EzsigndocumentlogResponse,
+
+    /**
+     * The EzsigndocumentlogResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentlogResponseCompound}
+     */
+    EzsigndocumentlogResponseCompound,
 
     /**
      * The EzsignfolderCreateObjectV1Request model constructor.
@@ -1356,6 +1589,18 @@ export {
     EzsignfoldertypeListElement,
 
     /**
+     * The EzsignformfieldRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldRequest}
+     */
+    EzsignformfieldRequest,
+
+    /**
+     * The EzsignformfieldRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldRequestCompound}
+     */
+    EzsignformfieldRequestCompound,
+
+    /**
      * The EzsignformfieldResponse model constructor.
      * @property {module:eZmaxAPI/model/EzsignformfieldResponse}
      */
@@ -1366,6 +1611,84 @@ export {
      * @property {module:eZmaxAPI/model/EzsignformfieldResponseCompound}
      */
     EzsignformfieldResponseCompound,
+
+    /**
+     * The EzsignformfieldgroupCreateObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupCreateObjectV1Request}
+     */
+    EzsignformfieldgroupCreateObjectV1Request,
+
+    /**
+     * The EzsignformfieldgroupCreateObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupCreateObjectV1Response}
+     */
+    EzsignformfieldgroupCreateObjectV1Response,
+
+    /**
+     * The EzsignformfieldgroupCreateObjectV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupCreateObjectV1ResponseAllOf}
+     */
+    EzsignformfieldgroupCreateObjectV1ResponseAllOf,
+
+    /**
+     * The EzsignformfieldgroupCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupCreateObjectV1ResponseMPayload}
+     */
+    EzsignformfieldgroupCreateObjectV1ResponseMPayload,
+
+    /**
+     * The EzsignformfieldgroupDeleteObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupDeleteObjectV1Response}
+     */
+    EzsignformfieldgroupDeleteObjectV1Response,
+
+    /**
+     * The EzsignformfieldgroupEditObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupEditObjectV1Request}
+     */
+    EzsignformfieldgroupEditObjectV1Request,
+
+    /**
+     * The EzsignformfieldgroupEditObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupEditObjectV1Response}
+     */
+    EzsignformfieldgroupEditObjectV1Response,
+
+    /**
+     * The EzsignformfieldgroupGetObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1Response}
+     */
+    EzsignformfieldgroupGetObjectV1Response,
+
+    /**
+     * The EzsignformfieldgroupGetObjectV1ResponseAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1ResponseAllOf}
+     */
+    EzsignformfieldgroupGetObjectV1ResponseAllOf,
+
+    /**
+     * The EzsignformfieldgroupGetObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1ResponseMPayload}
+     */
+    EzsignformfieldgroupGetObjectV1ResponseMPayload,
+
+    /**
+     * The EzsignformfieldgroupRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupRequest}
+     */
+    EzsignformfieldgroupRequest,
+
+    /**
+     * The EzsignformfieldgroupRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupRequestCompound}
+     */
+    EzsignformfieldgroupRequestCompound,
+
+    /**
+     * The EzsignformfieldgroupRequestCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupRequestCompoundAllOf}
+     */
+    EzsignformfieldgroupRequestCompoundAllOf,
 
     /**
      * The EzsignformfieldgroupResponse model constructor.
@@ -1386,10 +1709,40 @@ export {
     EzsignformfieldgroupResponseCompoundAllOf,
 
     /**
+     * The EzsignformfieldgroupsignerRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupsignerRequest}
+     */
+    EzsignformfieldgroupsignerRequest,
+
+    /**
+     * The EzsignformfieldgroupsignerRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupsignerRequestCompound}
+     */
+    EzsignformfieldgroupsignerRequestCompound,
+
+    /**
+     * The EzsignformfieldgroupsignerResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponse}
+     */
+    EzsignformfieldgroupsignerResponse,
+
+    /**
+     * The EzsignformfieldgroupsignerResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound}
+     */
+    EzsignformfieldgroupsignerResponseCompound,
+
+    /**
      * The EzsignpageResponse model constructor.
      * @property {module:eZmaxAPI/model/EzsignpageResponse}
      */
     EzsignpageResponse,
+
+    /**
+     * The EzsignpageResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignpageResponseCompound}
+     */
+    EzsignpageResponseCompound,
 
     /**
      * The EzsignsignatureCreateObjectV1Request model constructor.
@@ -1470,6 +1823,12 @@ export {
     EzsignsignatureGetObjectV1ResponseAllOf,
 
     /**
+     * The EzsignsignatureGetObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureGetObjectV1ResponseMPayload}
+     */
+    EzsignsignatureGetObjectV1ResponseMPayload,
+
+    /**
      * The EzsignsignatureRequest model constructor.
      * @property {module:eZmaxAPI/model/EzsignsignatureRequest}
      */
@@ -1488,10 +1847,46 @@ export {
     EzsignsignatureRequestCompoundAllOf,
 
     /**
+     * The EzsignsignatureResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureResponse}
+     */
+    EzsignsignatureResponse,
+
+    /**
+     * The EzsignsignatureResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureResponseCompound}
+     */
+    EzsignsignatureResponseCompound,
+
+    /**
+     * The EzsignsignatureResponseCompoundAllOf model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignatureResponseCompoundAllOf}
+     */
+    EzsignsignatureResponseCompoundAllOf,
+
+    /**
      * The EzsignsignaturecustomdateRequest model constructor.
      * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateRequest}
      */
     EzsignsignaturecustomdateRequest,
+
+    /**
+     * The EzsignsignaturecustomdateRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound}
+     */
+    EzsignsignaturecustomdateRequestCompound,
+
+    /**
+     * The EzsignsignaturecustomdateResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateResponse}
+     */
+    EzsignsignaturecustomdateResponse,
+
+    /**
+     * The EzsignsignaturecustomdateResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignsignaturecustomdateResponseCompound}
+     */
+    EzsignsignaturecustomdateResponseCompound,
 
     /**
      * The EzsignsignerRequest model constructor.
@@ -1612,6 +2007,24 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel}
      */
     FieldEEzsignfoldertypePrivacylevel,
+
+    /**
+     * The FieldEEzsignformfieldgroupSignerrequirement model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignformfieldgroupSignerrequirement}
+     */
+    FieldEEzsignformfieldgroupSignerrequirement,
+
+    /**
+     * The FieldEEzsignformfieldgroupTooltipposition model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignformfieldgroupTooltipposition}
+     */
+    FieldEEzsignformfieldgroupTooltipposition,
+
+    /**
+     * The FieldEEzsignformfieldgroupType model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignformfieldgroupType}
+     */
+    FieldEEzsignformfieldgroupType,
 
     /**
      * The FieldEEzsignsignatureType model constructor.
@@ -1758,6 +2171,18 @@ export {
     ListpresentationRequest,
 
     /**
+     * The ListpresentationRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/ListpresentationRequestCompound}
+     */
+    ListpresentationRequestCompound,
+
+    /**
+     * The ListpresentationResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/ListpresentationResponseCompound}
+     */
+    ListpresentationResponseCompound,
+
+    /**
      * The MultilingualApikeyDescription model constructor.
      * @property {module:eZmaxAPI/model/MultilingualApikeyDescription}
      */
@@ -1768,6 +2193,12 @@ export {
      * @property {module:eZmaxAPI/model/PhoneRequest}
      */
     PhoneRequest,
+
+    /**
+     * The PhoneRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/PhoneRequestCompound}
+     */
+    PhoneRequestCompound,
 
     /**
      * The SsprResetPasswordRequestV1Request model constructor.
@@ -1836,6 +2267,12 @@ export {
     UserResponse,
 
     /**
+     * The UserResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/UserResponseCompound}
+     */
+    UserResponseCompound,
+
+    /**
      * The WebhookEzsignDocumentCompleted model constructor.
      * @property {module:eZmaxAPI/model/WebhookEzsignDocumentCompleted}
      */
@@ -1884,6 +2321,12 @@ export {
     WebsiteRequest,
 
     /**
+     * The WebsiteRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/WebsiteRequestCompound}
+     */
+    WebsiteRequestCompound,
+
+    /**
     * The GlobalCustomerApi service constructor.
     * @property {module:eZmaxAPI/api/GlobalCustomerApi}
     */
@@ -1926,6 +2369,12 @@ export {
     ObjectEzsignbulksendApi,
 
     /**
+    * The ObjectEzsignbulksendtransmissionApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsignbulksendtransmissionApi}
+    */
+    ObjectEzsignbulksendtransmissionApi,
+
+    /**
     * The ObjectEzsigndocumentApi service constructor.
     * @property {module:eZmaxAPI/api/ObjectEzsigndocumentApi}
     */
@@ -1948,6 +2397,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi}
     */
     ObjectEzsignfoldertypeApi,
+
+    /**
+    * The ObjectEzsignformfieldgroupApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsignformfieldgroupApi}
+    */
+    ObjectEzsignformfieldgroupApi,
 
     /**
     * The ObjectEzsignsignatureApi service constructor.

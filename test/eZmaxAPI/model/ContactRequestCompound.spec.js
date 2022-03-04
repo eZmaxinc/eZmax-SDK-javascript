@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.ContactRequestCompound);
     });
 
-    it('should have the property objContactinformations (base name: "objContactinformations")', function() {
-      // uncomment below and update the code to test the property objContactinformations
-      //var instance = new EZmaxApiDefinition.ContactRequestCompound();
-      //expect(instance).to.be();
-    });
-
     it('should have the property fkiContacttitleID (base name: "fkiContacttitleID")', function() {
       // uncomment below and update the code to test the property fkiContacttitleID
       //var instance = new EZmaxApiDefinition.ContactRequestCompound();
@@ -92,6 +86,12 @@
 
     it('should have the property dtContactBirthdate (base name: "dtContactBirthdate")', function() {
       // uncomment below and update the code to test the property dtContactBirthdate
+      //var instance = new EZmaxApiDefinition.ContactRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objContactinformations (base name: "objContactinformations")', function() {
+      // uncomment below and update the code to test the property objContactinformations
       //var instance = new EZmaxApiDefinition.ContactRequestCompound();
       //expect(instance).to.be();
     });

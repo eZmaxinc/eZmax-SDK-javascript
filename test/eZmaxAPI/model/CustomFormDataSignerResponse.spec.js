@@ -78,8 +78,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property a_objEzsignformfieldgroupCompound (base name: "a_objEzsignformfieldgroupCompound")', function() {
-      // uncomment below and update the code to test the property a_objEzsignformfieldgroupCompound
+    it('should have the property a_objEzsignformfieldgroup (base name: "a_objEzsignformfieldgroup")', function() {
+      // uncomment below and update the code to test the property a_objEzsignformfieldgroup
       //var instance = new EZmaxApiDefinition.CustomFormDataSignerResponse();
       //expect(instance).to.be();
     });

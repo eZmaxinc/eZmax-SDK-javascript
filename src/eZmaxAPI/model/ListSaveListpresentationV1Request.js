@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ListpresentationRequest from './ListpresentationRequest';
+import ListpresentationRequestCompound from './ListpresentationRequestCompound';
 
 /**
  * The ListSaveListpresentationV1Request model module.
@@ -24,7 +24,7 @@ class ListSaveListpresentationV1Request {
      * Constructs a new <code>ListSaveListpresentationV1Request</code>.
      * Request for the POST /1/module/list/listpresentation/{sListName} API Request
      * @alias module:eZmaxAPI/model/ListSaveListpresentationV1Request
-     * @param a_objListpresentation {Array.<module:eZmaxAPI/model/ListpresentationRequest>} 
+     * @param a_objListpresentation {Array.<module:eZmaxAPI/model/ListpresentationRequestCompound>} 
      */
     constructor(a_objListpresentation) { 
         
@@ -52,23 +52,21 @@ class ListSaveListpresentationV1Request {
             obj = obj || new ListSaveListpresentationV1Request();
 
             if (data.hasOwnProperty('a_objListpresentation')) {
-                obj['a_objListpresentation'] = ApiClient.convertToType(data['a_objListpresentation'], [ListpresentationRequest]);
+                obj['a_objListpresentation'] = ApiClient.convertToType(data['a_objListpresentation'], [ListpresentationRequestCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/ListpresentationRequest>}
+     * @return {Array.<module:eZmaxAPI/model/ListpresentationRequestCompound>}
      */
     getAObjListpresentation() {
         return this.a_objListpresentation;
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation 
+     * @param {Array.<module:eZmaxAPI/model/ListpresentationRequestCompound>} a_objListpresentation
      */
     setAObjListpresentation(a_objListpresentation) {
         this['a_objListpresentation'] = a_objListpresentation;
@@ -77,8 +75,7 @@ class ListSaveListpresentationV1Request {
 }
 
 /**
- * 
- * @member {Array.<module:eZmaxAPI/model/ListpresentationRequest>} a_objListpresentation
+ * @member {Array.<module:eZmaxAPI/model/ListpresentationRequestCompound>} a_objListpresentation
  */
 ListSaveListpresentationV1Request.prototype['a_objListpresentation'] = undefined;
 

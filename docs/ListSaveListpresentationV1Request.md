@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objListpresentation** | [**[ListpresentationRequest]**](ListpresentationRequest.md) |  | 
+**a_objListpresentation** | [**[ListpresentationRequestCompound]**](ListpresentationRequestCompound.md) |  | 
 
 

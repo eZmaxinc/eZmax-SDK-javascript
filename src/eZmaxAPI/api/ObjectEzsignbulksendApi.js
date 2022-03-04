@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import EzsignbulksendGetEzsignbulksendtransmissionsV1Response from '../model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response';
 import EzsignbulksendGetListV1Response from '../model/EzsignbulksendGetListV1Response';
 import EzsignbulksendGetObjectV1Response from '../model/EzsignbulksendGetObjectV1Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
@@ -36,6 +37,49 @@ export default class ObjectEzsignbulksendApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the ezsignbulksendGetEzsignbulksendtransmissionsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetEzsignbulksendtransmissionsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignbulksend's Ezsignbulksendtransmissions
+     * 
+     * @param {Number} pkiEzsignbulksendID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetEzsignbulksendtransmissionsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response}
+     */
+    ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignbulksendID' is set
+      if (pkiEzsignbulksendID === undefined || pkiEzsignbulksendID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignbulksendID' when calling ezsignbulksendGetEzsignbulksendtransmissionsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignbulksendID': pkiEzsignbulksendID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignbulksendGetEzsignbulksendtransmissionsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the ezsignbulksendGetListV1 operation.

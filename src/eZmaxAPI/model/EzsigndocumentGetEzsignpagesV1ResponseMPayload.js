@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsignpageResponse from './EzsignpageResponse';
+import EzsignpageResponseCompound from './EzsignpageResponseCompound';
 
 /**
  * The EzsigndocumentGetEzsignpagesV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
      * Constructs a new <code>EzsigndocumentGetEzsignpagesV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignpages API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignpagesV1ResponseMPayload
-     * @param a_objEzsignpage {Array.<module:eZmaxAPI/model/EzsignpageResponse>} 
+     * @param a_objEzsignpage {Array.<module:eZmaxAPI/model/EzsignpageResponseCompound>} 
      */
     constructor(a_objEzsignpage) { 
         
@@ -52,23 +52,21 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
             obj = obj || new EzsigndocumentGetEzsignpagesV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objEzsignpage')) {
-                obj['a_objEzsignpage'] = ApiClient.convertToType(data['a_objEzsignpage'], [EzsignpageResponse]);
+                obj['a_objEzsignpage'] = ApiClient.convertToType(data['a_objEzsignpage'], [EzsignpageResponseCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/EzsignpageResponse>}
+     * @return {Array.<module:eZmaxAPI/model/EzsignpageResponseCompound>}
      */
     getAObjEzsignpage() {
         return this.a_objEzsignpage;
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/EzsignpageResponse>} a_objEzsignpage 
+     * @param {Array.<module:eZmaxAPI/model/EzsignpageResponseCompound>} a_objEzsignpage
      */
     setAObjEzsignpage(a_objEzsignpage) {
         this['a_objEzsignpage'] = a_objEzsignpage;
@@ -77,8 +75,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
 }
 
 /**
- * 
- * @member {Array.<module:eZmaxAPI/model/EzsignpageResponse>} a_objEzsignpage
+ * @member {Array.<module:eZmaxAPI/model/EzsignpageResponseCompound>} a_objEzsignpage
  */
 EzsigndocumentGetEzsignpagesV1ResponseMPayload.prototype['a_objEzsignpage'] = undefined;
 

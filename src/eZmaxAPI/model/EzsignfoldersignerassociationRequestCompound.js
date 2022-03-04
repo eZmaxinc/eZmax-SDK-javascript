@@ -26,14 +26,13 @@ class EzsignfoldersignerassociationRequestCompound {
      * Constructs a new <code>EzsignfoldersignerassociationRequestCompound</code>.
      * An Ezsignfoldersignerassociation Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound
-     * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequest
-     * @param objEzsignsigner {module:eZmaxAPI/model/EzsignsignerRequestCompound} 
+     * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      */
-    constructor(objEzsignsigner, fkiEzsignfolderID) { 
-        EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this, objEzsignsigner);EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);
-        EzsignfoldersignerassociationRequestCompound.initialize(this, objEzsignsigner, fkiEzsignfolderID);
+    constructor(fkiEzsignfolderID) { 
+        EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this);
+        EzsignfoldersignerassociationRequestCompound.initialize(this, fkiEzsignfolderID);
     }
 
     /**
@@ -41,8 +40,7 @@ class EzsignfoldersignerassociationRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objEzsignsigner, fkiEzsignfolderID) { 
-        obj['objEzsignsigner'] = objEzsignsigner;
+    static initialize(obj, fkiEzsignfolderID) { 
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
     }
 
@@ -56,12 +54,9 @@ class EzsignfoldersignerassociationRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfoldersignerassociationRequestCompound();
-            EzsignfoldersignerassociationRequestCompoundAllOf.constructFromObject(data, obj);
             EzsignfoldersignerassociationRequest.constructFromObject(data, obj);
+            EzsignfoldersignerassociationRequestCompoundAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objEzsignsigner')) {
-                obj['objEzsignsigner'] = EzsignsignerRequestCompound.constructFromObject(data['objEzsignsigner']);
-            }
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
             }
@@ -74,23 +69,13 @@ class EzsignfoldersignerassociationRequestCompound {
             if (data.hasOwnProperty('bEzsignfoldersignerassociationReceivecopy')) {
                 obj['bEzsignfoldersignerassociationReceivecopy'] = ApiClient.convertToType(data['bEzsignfoldersignerassociationReceivecopy'], 'Boolean');
             }
+            if (data.hasOwnProperty('objEzsignsigner')) {
+                obj['objEzsignsigner'] = EzsignsignerRequestCompound.constructFromObject(data['objEzsignsigner']);
+            }
         }
         return obj;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignsignerRequestCompound}
-     */
-    getObjEzsignsigner() {
-        return this.objEzsignsigner;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
-     */
-    setObjEzsignsigner(objEzsignsigner) {
-        this['objEzsignsigner'] = objEzsignsigner;
-    }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
      * @return {Number}
@@ -151,13 +136,21 @@ class EzsignfoldersignerassociationRequestCompound {
     setBEzsignfoldersignerassociationReceivecopy(bEzsignfoldersignerassociationReceivecopy) {
         this['bEzsignfoldersignerassociationReceivecopy'] = bEzsignfoldersignerassociationReceivecopy;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignsignerRequestCompound}
+     */
+    getObjEzsignsigner() {
+        return this.objEzsignsigner;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
+     */
+    setObjEzsignsigner(objEzsignsigner) {
+        this['objEzsignsigner'] = objEzsignsigner;
+    }
 
 }
-
-/**
- * @member {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
- */
-EzsignfoldersignerassociationRequestCompound.prototype['objEzsignsigner'] = undefined;
 
 /**
  * The unique ID of the Ezsignfoldersignerassociation
@@ -183,12 +176,12 @@ EzsignfoldersignerassociationRequestCompound.prototype['fkiEzsignfolderID'] = un
  */
 EzsignfoldersignerassociationRequestCompound.prototype['bEzsignfoldersignerassociationReceivecopy'] = undefined;
 
-
-// Implement EzsignfoldersignerassociationRequestCompoundAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
  */
-EzsignfoldersignerassociationRequestCompoundAllOf.prototype['objEzsignsigner'] = undefined;
+EzsignfoldersignerassociationRequestCompound.prototype['objEzsignsigner'] = undefined;
+
+
 // Implement EzsignfoldersignerassociationRequest interface:
 /**
  * The unique ID of the Ezsignfoldersignerassociation
@@ -210,6 +203,11 @@ EzsignfoldersignerassociationRequest.prototype['fkiEzsignfolderID'] = undefined;
  * @member {Boolean} bEzsignfoldersignerassociationReceivecopy
  */
 EzsignfoldersignerassociationRequest.prototype['bEzsignfoldersignerassociationReceivecopy'] = undefined;
+// Implement EzsignfoldersignerassociationRequestCompoundAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
+ */
+EzsignfoldersignerassociationRequestCompoundAllOf.prototype['objEzsignsigner'] = undefined;
 
 
 

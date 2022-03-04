@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsigndocumentlogResponse from './EzsigndocumentlogResponse';
+import EzsigndocumentlogResponseCompound from './EzsigndocumentlogResponseCompound';
 
 /**
  * The EzsigndocumentGetTemporaryProofV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload {
      * Constructs a new <code>EzsigndocumentGetTemporaryProofV1ResponseMPayload</code>.
      * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
      * @alias module:eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseMPayload
-     * @param a_objEzsigndocumentlog {module:eZmaxAPI/model/EzsigndocumentlogResponse} 
+     * @param a_objEzsigndocumentlog {module:eZmaxAPI/model/EzsigndocumentlogResponseCompound} 
      */
     constructor(a_objEzsigndocumentlog) { 
         
@@ -52,21 +52,21 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload {
             obj = obj || new EzsigndocumentGetTemporaryProofV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objEzsigndocumentlog')) {
-                obj['a_objEzsigndocumentlog'] = EzsigndocumentlogResponse.constructFromObject(data['a_objEzsigndocumentlog']);
+                obj['a_objEzsigndocumentlog'] = EzsigndocumentlogResponseCompound.constructFromObject(data['a_objEzsigndocumentlog']);
             }
         }
         return obj;
     }
 
 /**
-     * @return {module:eZmaxAPI/model/EzsigndocumentlogResponse}
+     * @return {module:eZmaxAPI/model/EzsigndocumentlogResponseCompound}
      */
     getAObjEzsigndocumentlog() {
         return this.a_objEzsigndocumentlog;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/EzsigndocumentlogResponse} a_objEzsigndocumentlog
+     * @param {module:eZmaxAPI/model/EzsigndocumentlogResponseCompound} a_objEzsigndocumentlog
      */
     setAObjEzsigndocumentlog(a_objEzsigndocumentlog) {
         this['a_objEzsigndocumentlog'] = a_objEzsigndocumentlog;
@@ -75,7 +75,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload {
 }
 
 /**
- * @member {module:eZmaxAPI/model/EzsigndocumentlogResponse} a_objEzsigndocumentlog
+ * @member {module:eZmaxAPI/model/EzsigndocumentlogResponseCompound} a_objEzsigndocumentlog
  */
 EzsigndocumentGetTemporaryProofV1ResponseMPayload.prototype['a_objEzsigndocumentlog'] = undefined;
 

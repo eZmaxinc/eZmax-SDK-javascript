@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerRequest);
     });
 
+    it('should have the property fkiUserlogintypeID (base name: "fkiUserlogintypeID")', function() {
+      // uncomment below and update the code to test the property fkiUserlogintypeID
+      //var instance = new EZmaxApiDefinition.EzsignsignerRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiTaxassignmentID (base name: "fkiTaxassignmentID")', function() {
       // uncomment below and update the code to test the property fkiTaxassignmentID
       //var instance = new EZmaxApiDefinition.EzsignsignerRequest();

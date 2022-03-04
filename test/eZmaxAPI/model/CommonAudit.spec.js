@@ -54,38 +54,14 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.CommonAudit);
     });
 
-    it('should have the property fkiUserIDCreated (base name: "fkiUserIDCreated")', function() {
-      // uncomment below and update the code to test the property fkiUserIDCreated
+    it('should have the property objAuditdetailCreated (base name: "objAuditdetailCreated")', function() {
+      // uncomment below and update the code to test the property objAuditdetailCreated
       //var instance = new EZmaxApiDefinition.CommonAudit();
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiUserIDModified (base name: "fkiUserIDModified")', function() {
-      // uncomment below and update the code to test the property fkiUserIDModified
-      //var instance = new EZmaxApiDefinition.CommonAudit();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiApikeyIDCreated (base name: "fkiApikeyIDCreated")', function() {
-      // uncomment below and update the code to test the property fkiApikeyIDCreated
-      //var instance = new EZmaxApiDefinition.CommonAudit();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiApikeyIDModified (base name: "fkiApikeyIDModified")', function() {
-      // uncomment below and update the code to test the property fkiApikeyIDModified
-      //var instance = new EZmaxApiDefinition.CommonAudit();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property dtCreatedDate (base name: "dtCreatedDate")', function() {
-      // uncomment below and update the code to test the property dtCreatedDate
-      //var instance = new EZmaxApiDefinition.CommonAudit();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property dtModifiedDate (base name: "dtModifiedDate")', function() {
-      // uncomment below and update the code to test the property dtModifiedDate
+    it('should have the property objAuditdetailModified (base name: "objAuditdetailModified")', function() {
+      // uncomment below and update the code to test the property objAuditdetailModified
       //var instance = new EZmaxApiDefinition.CommonAudit();
       //expect(instance).to.be();
     });

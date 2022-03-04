@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApikeyResponse from './ApikeyResponse';
+import ApikeyResponseCompound from './ApikeyResponseCompound';
 
 /**
  * The ApikeyCreateObjectV1ResponseMPayload model module.
@@ -24,7 +24,7 @@ class ApikeyCreateObjectV1ResponseMPayload {
      * Constructs a new <code>ApikeyCreateObjectV1ResponseMPayload</code>.
      * Payload for the /1/object/apikey/createObject API Request
      * @alias module:eZmaxAPI/model/ApikeyCreateObjectV1ResponseMPayload
-     * @param a_objApikey {Array.<module:eZmaxAPI/model/ApikeyResponse>} 
+     * @param a_objApikey {Array.<module:eZmaxAPI/model/ApikeyResponseCompound>} 
      */
     constructor(a_objApikey) { 
         
@@ -52,23 +52,21 @@ class ApikeyCreateObjectV1ResponseMPayload {
             obj = obj || new ApikeyCreateObjectV1ResponseMPayload();
 
             if (data.hasOwnProperty('a_objApikey')) {
-                obj['a_objApikey'] = ApiClient.convertToType(data['a_objApikey'], [ApikeyResponse]);
+                obj['a_objApikey'] = ApiClient.convertToType(data['a_objApikey'], [ApikeyResponseCompound]);
             }
         }
         return obj;
     }
 
 /**
-     * Returns 
-     * @return {Array.<module:eZmaxAPI/model/ApikeyResponse>}
+     * @return {Array.<module:eZmaxAPI/model/ApikeyResponseCompound>}
      */
     getAObjApikey() {
         return this.a_objApikey;
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/ApikeyResponse>} a_objApikey 
+     * @param {Array.<module:eZmaxAPI/model/ApikeyResponseCompound>} a_objApikey
      */
     setAObjApikey(a_objApikey) {
         this['a_objApikey'] = a_objApikey;
@@ -77,8 +75,7 @@ class ApikeyCreateObjectV1ResponseMPayload {
 }
 
 /**
- * 
- * @member {Array.<module:eZmaxAPI/model/ApikeyResponse>} a_objApikey
+ * @member {Array.<module:eZmaxAPI/model/ApikeyResponseCompound>} a_objApikey
  */
 ApikeyCreateObjectV1ResponseMPayload.prototype['a_objApikey'] = undefined;
 

@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 import EzsignsignatureRequest from './EzsignsignatureRequest';
 import EzsignsignatureRequestCompoundAllOf from './EzsignsignatureRequestCompoundAllOf';
-import EzsignsignaturecustomdateRequest from './EzsignsignaturecustomdateRequest';
+import EzsignsignaturecustomdateRequestCompound from './EzsignsignaturecustomdateRequestCompound';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
 
 /**
@@ -27,18 +27,18 @@ class EzsignsignatureRequestCompound {
      * Constructs a new <code>EzsignsignatureRequestCompound</code>.
      * An Ezsignsignature Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignatureRequestCompound
-     * @implements module:eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf
      * @implements module:eZmaxAPI/model/EzsignsignatureRequest
+     * @implements module:eZmaxAPI/model/EzsignsignatureRequestCompoundAllOf
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
-     * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign or fill form fields
+     * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      */
     constructor(fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID) { 
-        EzsignsignatureRequestCompoundAllOf.initialize(this);EzsignsignatureRequest.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
+        EzsignsignatureRequest.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);EzsignsignatureRequestCompoundAllOf.initialize(this);
         EzsignsignatureRequestCompound.initialize(this, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
     }
 
@@ -67,15 +67,9 @@ class EzsignsignatureRequestCompound {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignsignatureRequestCompound();
-            EzsignsignatureRequestCompoundAllOf.constructFromObject(data, obj);
             EzsignsignatureRequest.constructFromObject(data, obj);
+            EzsignsignatureRequestCompoundAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
-                obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
-            }
-            if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
-                obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequest]);
-            }
             if (data.hasOwnProperty('pkiEzsignsignatureID')) {
                 obj['pkiEzsignsignatureID'] = ApiClient.convertToType(data['pkiEzsignsignatureID'], 'Number');
             }
@@ -100,40 +94,16 @@ class EzsignsignatureRequestCompound {
             if (data.hasOwnProperty('fkiEzsigndocumentID')) {
                 obj['fkiEzsigndocumentID'] = ApiClient.convertToType(data['fkiEzsigndocumentID'], 'Number');
             }
+            if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
+                obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
+            }
+            if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
+                obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateRequestCompound]);
+            }
         }
         return obj;
     }
 
-/**
-     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
-     * @return {Boolean}
-     */
-    getBEzsignsignatureCustomdate() {
-        return this.bEzsignsignatureCustomdate;
-    }
-
-    /**
-     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
-     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
-     */
-    setBEzsignsignatureCustomdate(bEzsignsignatureCustomdate) {
-        this['bEzsignsignatureCustomdate'] = bEzsignsignatureCustomdate;
-    }
-/**
-     * Returns An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
-     * @return {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>}
-     */
-    getAObjEzsignsignaturecustomdate() {
-        return this.a_objEzsignsignaturecustomdate;
-    }
-
-    /**
-     * Sets An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
-     * @param {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
-     */
-    setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
-        this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
-    }
 /**
      * Returns The unique ID of the Ezsignsignature
      * @return {Number}
@@ -180,7 +150,7 @@ class EzsignsignatureRequestCompound {
         this['iEzsignpagePagenumber'] = iEzsignpagePagenumber;
     }
 /**
-     * Returns The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * Returns The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @return {Number}
      */
     getIEzsignsignatureX() {
@@ -188,8 +158,8 @@ class EzsignsignatureRequestCompound {
     }
 
     /**
-     * Sets The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @param {Number} iEzsignsignatureX The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * Sets The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+     * @param {Number} iEzsignsignatureX The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      */
     setIEzsignsignatureX(iEzsignsignatureX) {
         this['iEzsignsignatureX'] = iEzsignsignatureX;
@@ -210,7 +180,7 @@ class EzsignsignatureRequestCompound {
         this['iEzsignsignatureY'] = iEzsignsignatureY;
     }
 /**
-     * Returns The step when the Ezsignsigner will be invited to sign or fill form fields
+     * Returns The step when the Ezsignsigner will be invited to sign
      * @return {Number}
      */
     getIEzsignsignatureStep() {
@@ -218,8 +188,8 @@ class EzsignsignatureRequestCompound {
     }
 
     /**
-     * Sets The step when the Ezsignsigner will be invited to sign or fill form fields
-     * @param {Number} iEzsignsignatureStep The step when the Ezsignsigner will be invited to sign or fill form fields
+     * Sets The step when the Ezsignsigner will be invited to sign
+     * @param {Number} iEzsignsignatureStep The step when the Ezsignsigner will be invited to sign
      */
     setIEzsignsignatureStep(iEzsignsignatureStep) {
         this['iEzsignsignatureStep'] = iEzsignsignatureStep;
@@ -252,20 +222,38 @@ class EzsignsignatureRequestCompound {
     setFkiEzsigndocumentID(fkiEzsigndocumentID) {
         this['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
     }
+/**
+     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @return {Boolean}
+     */
+    getBEzsignsignatureCustomdate() {
+        return this.bEzsignsignatureCustomdate;
+    }
+
+    /**
+     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     */
+    setBEzsignsignatureCustomdate(bEzsignsignatureCustomdate) {
+        this['bEzsignsignatureCustomdate'] = bEzsignsignatureCustomdate;
+    }
+/**
+     * Returns An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @return {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>}
+     */
+    getAObjEzsignsignaturecustomdate() {
+        return this.a_objEzsignsignaturecustomdate;
+    }
+
+    /**
+     * Sets An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     * @param {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>} a_objEzsignsignaturecustomdate An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+     */
+    setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
+        this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
+    }
 
 }
-
-/**
- * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
- * @member {Boolean} bEzsignsignatureCustomdate
- */
-EzsignsignatureRequestCompound.prototype['bEzsignsignatureCustomdate'] = undefined;
-
-/**
- * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
- * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate
- */
-EzsignsignatureRequestCompound.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 
 /**
  * The unique ID of the Ezsignsignature
@@ -286,7 +274,7 @@ EzsignsignatureRequestCompound.prototype['fkiEzsignfoldersignerassociationID'] =
 EzsignsignatureRequestCompound.prototype['iEzsignpagePagenumber'] = undefined;
 
 /**
- * The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+ * The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
  * @member {Number} iEzsignsignatureX
  */
 EzsignsignatureRequestCompound.prototype['iEzsignsignatureX'] = undefined;
@@ -298,7 +286,7 @@ EzsignsignatureRequestCompound.prototype['iEzsignsignatureX'] = undefined;
 EzsignsignatureRequestCompound.prototype['iEzsignsignatureY'] = undefined;
 
 /**
- * The step when the Ezsignsigner will be invited to sign or fill form fields
+ * The step when the Ezsignsigner will be invited to sign
  * @member {Number} iEzsignsignatureStep
  */
 EzsignsignatureRequestCompound.prototype['iEzsignsignatureStep'] = undefined;
@@ -314,18 +302,19 @@ EzsignsignatureRequestCompound.prototype['eEzsignsignatureType'] = undefined;
  */
 EzsignsignatureRequestCompound.prototype['fkiEzsigndocumentID'] = undefined;
 
-
-// Implement EzsignsignatureRequestCompoundAllOf interface:
 /**
  * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
  * @member {Boolean} bEzsignsignatureCustomdate
  */
-EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;
+EzsignsignatureRequestCompound.prototype['bEzsignsignatureCustomdate'] = undefined;
+
 /**
  * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
- * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequest>} a_objEzsignsignaturecustomdate
+ * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>} a_objEzsignsignaturecustomdate
  */
-EzsignsignatureRequestCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
+EzsignsignatureRequestCompound.prototype['a_objEzsignsignaturecustomdate'] = undefined;
+
+
 // Implement EzsignsignatureRequest interface:
 /**
  * The unique ID of the Ezsignsignature
@@ -343,7 +332,7 @@ EzsignsignatureRequest.prototype['fkiEzsignfoldersignerassociationID'] = undefin
  */
 EzsignsignatureRequest.prototype['iEzsignpagePagenumber'] = undefined;
 /**
- * The X coordinate (Horizontal) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
+ * The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
  * @member {Number} iEzsignsignatureX
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureX'] = undefined;
@@ -353,7 +342,7 @@ EzsignsignatureRequest.prototype['iEzsignsignatureX'] = undefined;
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureY'] = undefined;
 /**
- * The step when the Ezsignsigner will be invited to sign or fill form fields
+ * The step when the Ezsignsigner will be invited to sign
  * @member {Number} iEzsignsignatureStep
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureStep'] = undefined;
@@ -366,6 +355,17 @@ EzsignsignatureRequest.prototype['eEzsignsignatureType'] = undefined;
  * @member {Number} fkiEzsigndocumentID
  */
 EzsignsignatureRequest.prototype['fkiEzsigndocumentID'] = undefined;
+// Implement EzsignsignatureRequestCompoundAllOf interface:
+/**
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * @member {Boolean} bEzsignsignatureCustomdate
+ */
+EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;
+/**
+ * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
+ * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateRequestCompound>} a_objEzsignsignaturecustomdate
+ */
+EzsignsignatureRequestCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
 
 
 

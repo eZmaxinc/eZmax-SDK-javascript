@@ -83,7 +83,6 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
         this['fkiEzsigntemplateID'] = fkiEzsigntemplateID;
     }
 /**
-     * Returns 
      * @return {Array.<String>}
      */
     getASEzsigntemplatesigner() {
@@ -91,8 +90,7 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
     }
 
     /**
-     * Sets 
-     * @param {Array.<String>} a_sEzsigntemplatesigner 
+     * @param {Array.<String>} a_sEzsigntemplatesigner
      */
     setASEzsigntemplatesigner(a_sEzsigntemplatesigner) {
         this['a_sEzsigntemplatesigner'] = a_sEzsigntemplatesigner;
@@ -120,7 +118,6 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
 EzsigndocumentApplyEzsigntemplateV1Request.prototype['fkiEzsigntemplateID'] = undefined;
 
 /**
- * 
  * @member {Array.<String>} a_sEzsigntemplatesigner
  */
 EzsigndocumentApplyEzsigntemplateV1Request.prototype['a_sEzsigntemplatesigner'] = undefined;

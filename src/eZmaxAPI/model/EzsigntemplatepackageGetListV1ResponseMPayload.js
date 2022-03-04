@@ -75,7 +75,6 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
     }
 
 /**
-     * Returns 
      * @return {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>}
      */
     getAObjEzsigntemplatepackage() {
@@ -83,8 +82,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
     }
 
     /**
-     * Sets 
-     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage 
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
      */
     setAObjEzsigntemplatepackage(a_objEzsigntemplatepackage) {
         this['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
@@ -123,7 +121,6 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
 }
 
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
  */
 EzsigntemplatepackageGetListV1ResponseMPayload.prototype['a_objEzsigntemplatepackage'] = undefined;
@@ -143,7 +140,6 @@ EzsigntemplatepackageGetListV1ResponseMPayload.prototype['iRowFiltered'] = undef
 
 // Implement EzsigntemplatepackageGetListV1ResponseMPayloadAllOf interface:
 /**
- * 
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
  */
 EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.prototype['a_objEzsigntemplatepackage'] = undefined;

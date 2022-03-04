@@ -54,14 +54,110 @@
       //expect(instance).to.be.a(EZmaxApiDefinition.EzsignformfieldgroupResponseCompound);
     });
 
+    it('should have the property pkiEzsignformfieldgroupID (base name: "pkiEzsignformfieldgroupID")', function() {
+      // uncomment below and update the code to test the property pkiEzsignformfieldgroupID
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiEzsigndocumentID (base name: "fkiEzsigndocumentID")', function() {
+      // uncomment below and update the code to test the property fkiEzsigndocumentID
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsignformfieldgroupType (base name: "eEzsignformfieldgroupType")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldgroupType
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsignformfieldgroupSignerrequirement (base name: "eEzsignformfieldgroupSignerrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldgroupSignerrequirement
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignformfieldgroupLabel (base name: "sEzsignformfieldgroupLabel")', function() {
       // uncomment below and update the code to test the property sEzsignformfieldgroupLabel
       //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsignformfieldgroupStep (base name: "iEzsignformfieldgroupStep")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroupStep
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignformfieldgroupDefaultvalue (base name: "sEzsignformfieldgroupDefaultvalue")', function() {
+      // uncomment below and update the code to test the property sEzsignformfieldgroupDefaultvalue
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsignformfieldgroupFilledmin (base name: "iEzsignformfieldgroupFilledmin")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroupFilledmin
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsignformfieldgroupFilledmax (base name: "iEzsignformfieldgroupFilledmax")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroupFilledmax
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignformfieldgroupReadonly (base name: "bEzsignformfieldgroupReadonly")', function() {
+      // uncomment below and update the code to test the property bEzsignformfieldgroupReadonly
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsignformfieldgroupMaxlength (base name: "iEzsignformfieldgroupMaxlength")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroupMaxlength
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignformfieldgroupEncrypted (base name: "bEzsignformfieldgroupEncrypted")', function() {
+      // uncomment below and update the code to test the property bEzsignformfieldgroupEncrypted
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignformfieldgroupRegexp (base name: "sEzsignformfieldgroupRegexp")', function() {
+      // uncomment below and update the code to test the property sEzsignformfieldgroupRegexp
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property tEzsignformfieldgroupTooltip (base name: "tEzsignformfieldgroupTooltip")', function() {
+      // uncomment below and update the code to test the property tEzsignformfieldgroupTooltip
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsignformfieldgroupTooltipposition (base name: "eEzsignformfieldgroupTooltipposition")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldgroupTooltipposition
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property a_objEzsignformfield (base name: "a_objEzsignformfield")', function() {
       // uncomment below and update the code to test the property a_objEzsignformfield
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objDropdownElement (base name: "a_objDropdownElement")', function() {
+      // uncomment below and update the code to test the property a_objDropdownElement
+      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignformfieldgroupsigner (base name: "a_objEzsignformfieldgroupsigner")', function() {
+      // uncomment below and update the code to test the property a_objEzsignformfieldgroupsigner
       //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompound();
       //expect(instance).to.be();
     });

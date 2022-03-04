@@ -138,17 +138,22 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinition.ObjectActivesessionApi* | [**activesessionGetCurrentV1**](docs/ObjectActivesessionApi.md#activesessionGetCurrentV1) | **GET** /1/object/activesession/getCurrent | Get Current Activesession
 *EZmaxApiDefinition.ObjectApikeyApi* | [**apikeyCreateObjectV1**](docs/ObjectApikeyApi.md#apikeyCreateObjectV1) | **POST** /1/object/apikey | Create a new Apikey
 *EZmaxApiDefinition.ObjectApikeyApi* | [**apikeyCreateObjectV2**](docs/ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey
+*EZmaxApiDefinition.ObjectEzsignbulksendApi* | [**ezsignbulksendGetEzsignbulksendtransmissionsV1**](docs/ObjectEzsignbulksendApi.md#ezsignbulksendGetEzsignbulksendtransmissionsV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions | Retrieve an existing Ezsignbulksend&#39;s Ezsignbulksendtransmissions
 *EZmaxApiDefinition.ObjectEzsignbulksendApi* | [**ezsignbulksendGetListV1**](docs/ObjectEzsignbulksendApi.md#ezsignbulksendGetListV1) | **GET** /1/object/ezsignbulksend/getList | Retrieve Ezsignbulksend list
 *EZmaxApiDefinition.ObjectEzsignbulksendApi* | [**ezsignbulksendGetObjectV1**](docs/ObjectEzsignbulksendApi.md#ezsignbulksendGetObjectV1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Retrieve an existing Ezsignbulksend
+*EZmaxApiDefinition.ObjectEzsignbulksendtransmissionApi* | [**ezsignbulksendtransmissionGetObjectV1**](docs/ObjectEzsignbulksendtransmissionApi.md#ezsignbulksendtransmissionGetObjectV1) | **GET** /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID} | Retrieve an existing Ezsignbulksendtransmission
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentApplyEzsigntemplateV2**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentCreateObjectV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentCreateObjectV2**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentDeleteObjectV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
-*EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentEditEzsignsignaturesV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple ezsignsignatures
+*EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentEditEzsignformfieldgroupsV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups
+*EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentEditEzsignsignaturesV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentEndPrematurelyV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetDownloadUrlV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
+*EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetEzsignformfieldgroupsV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetEzsignpagesV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
+*EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetEzsignsignaturesV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignsignaturesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures | Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetFormDataV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetFormDataV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData | Retrieve an existing Ezsigndocument&#39;s Form Data
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetObjectV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetObjectV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Retrieve an existing Ezsigndocument
 *EZmaxApiDefinition.ObjectEzsigndocumentApi* | [**ezsigndocumentGetTemporaryProofV1**](docs/ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
@@ -172,6 +177,10 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinition.ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationGetObjectV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationGetObjectV1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation
 *EZmaxApiDefinition.ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetAutocompleteV1**](docs/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 *EZmaxApiDefinition.ObjectEzsignfoldertypeApi* | [**ezsignfoldertypeGetListV1**](docs/ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
+*EZmaxApiDefinition.ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupCreateObjectV1**](docs/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupCreateObjectV1) | **POST** /1/object/ezsignformfieldgroup | Create a new Ezsignformfieldgroup
+*EZmaxApiDefinition.ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupDeleteObjectV1**](docs/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupDeleteObjectV1) | **DELETE** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Delete an existing Ezsignformfieldgroup
+*EZmaxApiDefinition.ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupEditObjectV1**](docs/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupEditObjectV1) | **PUT** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Edit an existing Ezsignformfieldgroup
+*EZmaxApiDefinition.ObjectEzsignformfieldgroupApi* | [**ezsignformfieldgroupGetObjectV1**](docs/ObjectEzsignformfieldgroupApi.md#ezsignformfieldgroupGetObjectV1) | **GET** /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID} | Retrieve an existing Ezsignformfieldgroup
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureCreateObjectV1**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV1) | **POST** /1/object/ezsignsignature | Create a new Ezsignsignature
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureCreateObjectV2**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureCreateObjectV2) | **POST** /2/object/ezsignsignature | Create a new Ezsignsignature
 *EZmaxApiDefinition.ObjectEzsignsignatureApi* | [**ezsignsignatureDeleteObjectV1**](docs/ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
@@ -196,6 +205,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.ActivesessionResponseCompoundApikey](docs/ActivesessionResponseCompoundApikey.md)
  - [EZmaxApiDefinition.ActivesessionResponseCompoundUser](docs/ActivesessionResponseCompoundUser.md)
  - [EZmaxApiDefinition.AddressRequest](docs/AddressRequest.md)
+ - [EZmaxApiDefinition.AddressRequestCompound](docs/AddressRequestCompound.md)
  - [EZmaxApiDefinition.ApikeyCreateObjectV1Request](docs/ApikeyCreateObjectV1Request.md)
  - [EZmaxApiDefinition.ApikeyCreateObjectV1Response](docs/ApikeyCreateObjectV1Response.md)
  - [EZmaxApiDefinition.ApikeyCreateObjectV1ResponseAllOf](docs/ApikeyCreateObjectV1ResponseAllOf.md)
@@ -207,12 +217,15 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.ApikeyRequest](docs/ApikeyRequest.md)
  - [EZmaxApiDefinition.ApikeyRequestCompound](docs/ApikeyRequestCompound.md)
  - [EZmaxApiDefinition.ApikeyResponse](docs/ApikeyResponse.md)
+ - [EZmaxApiDefinition.ApikeyResponseCompound](docs/ApikeyResponseCompound.md)
  - [EZmaxApiDefinition.AttemptResponse](docs/AttemptResponse.md)
+ - [EZmaxApiDefinition.AttemptResponseCompound](docs/AttemptResponseCompound.md)
  - [EZmaxApiDefinition.AuthenticateAuthenticateV2Request](docs/AuthenticateAuthenticateV2Request.md)
  - [EZmaxApiDefinition.AuthenticateAuthenticateV2Response](docs/AuthenticateAuthenticateV2Response.md)
  - [EZmaxApiDefinition.AuthenticateAuthenticateV2ResponseAllOf](docs/AuthenticateAuthenticateV2ResponseAllOf.md)
  - [EZmaxApiDefinition.AuthenticateAuthenticateV2ResponseMPayload](docs/AuthenticateAuthenticateV2ResponseMPayload.md)
  - [EZmaxApiDefinition.CommonAudit](docs/CommonAudit.md)
+ - [EZmaxApiDefinition.CommonAuditdetail](docs/CommonAuditdetail.md)
  - [EZmaxApiDefinition.CommonGetAutocompleteV1Response](docs/CommonGetAutocompleteV1Response.md)
  - [EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf](docs/CommonGetAutocompleteV1ResponseAllOf.md)
  - [EZmaxApiDefinition.CommonGetListV1ResponseMPayload](docs/CommonGetListV1ResponseMPayload.md)
@@ -235,14 +248,24 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.ContactinformationsRequestCompound](docs/ContactinformationsRequestCompound.md)
  - [EZmaxApiDefinition.ContactinformationsRequestCompoundAllOf](docs/ContactinformationsRequestCompoundAllOf.md)
  - [EZmaxApiDefinition.CustomAutocompleteElementResponse](docs/CustomAutocompleteElementResponse.md)
+ - [EZmaxApiDefinition.CustomDropdownElementRequest](docs/CustomDropdownElementRequest.md)
+ - [EZmaxApiDefinition.CustomDropdownElementRequestCompound](docs/CustomDropdownElementRequestCompound.md)
+ - [EZmaxApiDefinition.CustomDropdownElementResponse](docs/CustomDropdownElementResponse.md)
+ - [EZmaxApiDefinition.CustomDropdownElementResponseCompound](docs/CustomDropdownElementResponseCompound.md)
  - [EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse](docs/CustomEzsignfoldersignerassociationstatusResponse.md)
  - [EZmaxApiDefinition.CustomEzsignsignaturestatusResponse](docs/CustomEzsignsignaturestatusResponse.md)
  - [EZmaxApiDefinition.CustomFormDataDocumentResponse](docs/CustomFormDataDocumentResponse.md)
+ - [EZmaxApiDefinition.CustomFormDataEzsignformfieldResponse](docs/CustomFormDataEzsignformfieldResponse.md)
+ - [EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse](docs/CustomFormDataEzsignformfieldgroupResponse.md)
  - [EZmaxApiDefinition.CustomFormDataSignerResponse](docs/CustomFormDataSignerResponse.md)
  - [EZmaxApiDefinition.CustomFormsDataFolderResponse](docs/CustomFormsDataFolderResponse.md)
  - [EZmaxApiDefinition.CustomWordPositionOccurenceResponse](docs/CustomWordPositionOccurenceResponse.md)
  - [EZmaxApiDefinition.CustomWordPositionWordResponse](docs/CustomWordPositionWordResponse.md)
  - [EZmaxApiDefinition.EmailRequest](docs/EmailRequest.md)
+ - [EZmaxApiDefinition.EmailRequestCompound](docs/EmailRequestCompound.md)
+ - [EZmaxApiDefinition.EzsignbulksendGetEzsignbulksendtransmissionsV1Response](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1Response.md)
+ - [EZmaxApiDefinition.EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload](docs/EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsignbulksendGetListV1Response](docs/EzsignbulksendGetListV1Response.md)
  - [EZmaxApiDefinition.EzsignbulksendGetListV1ResponseAllOf](docs/EzsignbulksendGetListV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload](docs/EzsignbulksendGetListV1ResponseMPayload.md)
@@ -253,6 +276,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignbulksendListElement](docs/EzsignbulksendListElement.md)
  - [EZmaxApiDefinition.EzsignbulksendResponse](docs/EzsignbulksendResponse.md)
  - [EZmaxApiDefinition.EzsignbulksendResponseCompound](docs/EzsignbulksendResponseCompound.md)
+ - [EZmaxApiDefinition.EzsignbulksendtransmissionGetObjectV1Response](docs/EzsignbulksendtransmissionGetObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsignbulksendtransmissionGetObjectV1ResponseAllOf](docs/EzsignbulksendtransmissionGetObjectV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignbulksendtransmissionGetObjectV1ResponseMPayload](docs/EzsignbulksendtransmissionGetObjectV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsignbulksendtransmissionResponse](docs/EzsignbulksendtransmissionResponse.md)
+ - [EZmaxApiDefinition.EzsignbulksendtransmissionResponseCompound](docs/EzsignbulksendtransmissionResponseCompound.md)
  - [EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV1Request](docs/EzsigndocumentApplyEzsigntemplateV1Request.md)
  - [EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV1Response](docs/EzsigndocumentApplyEzsigntemplateV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV2Request](docs/EzsigndocumentApplyEzsigntemplateV2Request.md)
@@ -266,15 +294,23 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseAllOf](docs/EzsigndocumentCreateObjectV2ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseMPayload](docs/EzsigndocumentCreateObjectV2ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsigndocumentDeleteObjectV1Response](docs/EzsigndocumentDeleteObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsigndocumentEditEzsignformfieldgroupsV1Request](docs/EzsigndocumentEditEzsignformfieldgroupsV1Request.md)
+ - [EZmaxApiDefinition.EzsigndocumentEditEzsignformfieldgroupsV1Response](docs/EzsigndocumentEditEzsignformfieldgroupsV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentEditEzsignsignaturesV1Request](docs/EzsigndocumentEditEzsignsignaturesV1Request.md)
  - [EZmaxApiDefinition.EzsigndocumentEditEzsignsignaturesV1Response](docs/EzsigndocumentEditEzsignsignaturesV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response](docs/EzsigndocumentEndPrematurelyV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentGetDownloadUrlV1Response](docs/EzsigndocumentGetDownloadUrlV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentGetDownloadUrlV1ResponseAllOf](docs/EzsigndocumentGetDownloadUrlV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsigndocumentGetDownloadUrlV1ResponseMPayload](docs/EzsigndocumentGetDownloadUrlV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1Response](docs/EzsigndocumentGetEzsignformfieldgroupsV1Response.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf](docs/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload](docs/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsigndocumentGetEzsignpagesV1Response](docs/EzsigndocumentGetEzsignpagesV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentGetEzsignpagesV1ResponseAllOf](docs/EzsigndocumentGetEzsignpagesV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsigndocumentGetEzsignpagesV1ResponseMPayload](docs/EzsigndocumentGetEzsignpagesV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1Response](docs/EzsigndocumentGetEzsignsignaturesV1Response.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseAllOf](docs/EzsigndocumentGetEzsignsignaturesV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload](docs/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsigndocumentGetFormDataV1Response](docs/EzsigndocumentGetFormDataV1Response.md)
  - [EZmaxApiDefinition.EzsigndocumentGetFormDataV1ResponseAllOf](docs/EzsigndocumentGetFormDataV1ResponseAllOf.md)
  - [EZmaxApiDefinition.EzsigndocumentGetFormDataV1ResponseMPayload](docs/EzsigndocumentGetFormDataV1ResponseMPayload.md)
@@ -296,6 +332,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsigndocumentResponseCompound](docs/EzsigndocumentResponseCompound.md)
  - [EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf](docs/EzsigndocumentResponseCompoundAllOf.md)
  - [EZmaxApiDefinition.EzsigndocumentlogResponse](docs/EzsigndocumentlogResponse.md)
+ - [EZmaxApiDefinition.EzsigndocumentlogResponseCompound](docs/EzsigndocumentlogResponseCompound.md)
  - [EZmaxApiDefinition.EzsignfolderCreateObjectV1Request](docs/EzsignfolderCreateObjectV1Request.md)
  - [EZmaxApiDefinition.EzsignfolderCreateObjectV1Response](docs/EzsignfolderCreateObjectV1Response.md)
  - [EZmaxApiDefinition.EzsignfolderCreateObjectV1ResponseAllOf](docs/EzsignfolderCreateObjectV1ResponseAllOf.md)
@@ -358,12 +395,32 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayload](docs/EzsignfoldertypeGetListV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf](docs/EzsignfoldertypeGetListV1ResponseMPayloadAllOf.md)
  - [EZmaxApiDefinition.EzsignfoldertypeListElement](docs/EzsignfoldertypeListElement.md)
+ - [EZmaxApiDefinition.EzsignformfieldRequest](docs/EzsignformfieldRequest.md)
+ - [EZmaxApiDefinition.EzsignformfieldRequestCompound](docs/EzsignformfieldRequestCompound.md)
  - [EZmaxApiDefinition.EzsignformfieldResponse](docs/EzsignformfieldResponse.md)
  - [EZmaxApiDefinition.EzsignformfieldResponseCompound](docs/EzsignformfieldResponseCompound.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1Request](docs/EzsignformfieldgroupCreateObjectV1Request.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1Response](docs/EzsignformfieldgroupCreateObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1ResponseAllOf](docs/EzsignformfieldgroupCreateObjectV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1ResponseMPayload](docs/EzsignformfieldgroupCreateObjectV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response](docs/EzsignformfieldgroupDeleteObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupEditObjectV1Request](docs/EzsignformfieldgroupEditObjectV1Request.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupEditObjectV1Response](docs/EzsignformfieldgroupEditObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupGetObjectV1Response](docs/EzsignformfieldgroupGetObjectV1Response.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupGetObjectV1ResponseAllOf](docs/EzsignformfieldgroupGetObjectV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupGetObjectV1ResponseMPayload](docs/EzsignformfieldgroupGetObjectV1ResponseMPayload.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupRequest](docs/EzsignformfieldgroupRequest.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupRequestCompound](docs/EzsignformfieldgroupRequestCompound.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupRequestCompoundAllOf](docs/EzsignformfieldgroupRequestCompoundAllOf.md)
  - [EZmaxApiDefinition.EzsignformfieldgroupResponse](docs/EzsignformfieldgroupResponse.md)
  - [EZmaxApiDefinition.EzsignformfieldgroupResponseCompound](docs/EzsignformfieldgroupResponseCompound.md)
  - [EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf](docs/EzsignformfieldgroupResponseCompoundAllOf.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupsignerRequest](docs/EzsignformfieldgroupsignerRequest.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupsignerRequestCompound](docs/EzsignformfieldgroupsignerRequestCompound.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupsignerResponse](docs/EzsignformfieldgroupsignerResponse.md)
+ - [EZmaxApiDefinition.EzsignformfieldgroupsignerResponseCompound](docs/EzsignformfieldgroupsignerResponseCompound.md)
  - [EZmaxApiDefinition.EzsignpageResponse](docs/EzsignpageResponse.md)
+ - [EZmaxApiDefinition.EzsignpageResponseCompound](docs/EzsignpageResponseCompound.md)
  - [EZmaxApiDefinition.EzsignsignatureCreateObjectV1Request](docs/EzsignsignatureCreateObjectV1Request.md)
  - [EZmaxApiDefinition.EzsignsignatureCreateObjectV1Response](docs/EzsignsignatureCreateObjectV1Response.md)
  - [EZmaxApiDefinition.EzsignsignatureCreateObjectV1ResponseAllOf](docs/EzsignsignatureCreateObjectV1ResponseAllOf.md)
@@ -377,10 +434,17 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.EzsignsignatureEditObjectV1Response](docs/EzsignsignatureEditObjectV1Response.md)
  - [EZmaxApiDefinition.EzsignsignatureGetObjectV1Response](docs/EzsignsignatureGetObjectV1Response.md)
  - [EZmaxApiDefinition.EzsignsignatureGetObjectV1ResponseAllOf](docs/EzsignsignatureGetObjectV1ResponseAllOf.md)
+ - [EZmaxApiDefinition.EzsignsignatureGetObjectV1ResponseMPayload](docs/EzsignsignatureGetObjectV1ResponseMPayload.md)
  - [EZmaxApiDefinition.EzsignsignatureRequest](docs/EzsignsignatureRequest.md)
  - [EZmaxApiDefinition.EzsignsignatureRequestCompound](docs/EzsignsignatureRequestCompound.md)
  - [EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf](docs/EzsignsignatureRequestCompoundAllOf.md)
+ - [EZmaxApiDefinition.EzsignsignatureResponse](docs/EzsignsignatureResponse.md)
+ - [EZmaxApiDefinition.EzsignsignatureResponseCompound](docs/EzsignsignatureResponseCompound.md)
+ - [EZmaxApiDefinition.EzsignsignatureResponseCompoundAllOf](docs/EzsignsignatureResponseCompoundAllOf.md)
  - [EZmaxApiDefinition.EzsignsignaturecustomdateRequest](docs/EzsignsignaturecustomdateRequest.md)
+ - [EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound](docs/EzsignsignaturecustomdateRequestCompound.md)
+ - [EZmaxApiDefinition.EzsignsignaturecustomdateResponse](docs/EzsignsignaturecustomdateResponse.md)
+ - [EZmaxApiDefinition.EzsignsignaturecustomdateResponseCompound](docs/EzsignsignaturecustomdateResponseCompound.md)
  - [EZmaxApiDefinition.EzsignsignerRequest](docs/EzsignsignerRequest.md)
  - [EZmaxApiDefinition.EzsignsignerRequestCompound](docs/EzsignsignerRequestCompound.md)
  - [EZmaxApiDefinition.EzsignsignerRequestCompoundAllOf](docs/EzsignsignerRequestCompoundAllOf.md)
@@ -401,6 +465,9 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.FieldEEzsignfolderSendreminderfrequency](docs/FieldEEzsignfolderSendreminderfrequency.md)
  - [EZmaxApiDefinition.FieldEEzsignfolderStep](docs/FieldEEzsignfolderStep.md)
  - [EZmaxApiDefinition.FieldEEzsignfoldertypePrivacylevel](docs/FieldEEzsignfoldertypePrivacylevel.md)
+ - [EZmaxApiDefinition.FieldEEzsignformfieldgroupSignerrequirement](docs/FieldEEzsignformfieldgroupSignerrequirement.md)
+ - [EZmaxApiDefinition.FieldEEzsignformfieldgroupTooltipposition](docs/FieldEEzsignformfieldgroupTooltipposition.md)
+ - [EZmaxApiDefinition.FieldEEzsignformfieldgroupType](docs/FieldEEzsignformfieldgroupType.md)
  - [EZmaxApiDefinition.FieldEEzsignsignatureType](docs/FieldEEzsignsignatureType.md)
  - [EZmaxApiDefinition.FieldEEzsigntemplatepackageType](docs/FieldEEzsigntemplatepackageType.md)
  - [EZmaxApiDefinition.FieldEPhoneType](docs/FieldEPhoneType.md)
@@ -425,8 +492,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.ListSaveListpresentationV1Request](docs/ListSaveListpresentationV1Request.md)
  - [EZmaxApiDefinition.ListSaveListpresentationV1Response](docs/ListSaveListpresentationV1Response.md)
  - [EZmaxApiDefinition.ListpresentationRequest](docs/ListpresentationRequest.md)
+ - [EZmaxApiDefinition.ListpresentationRequestCompound](docs/ListpresentationRequestCompound.md)
+ - [EZmaxApiDefinition.ListpresentationResponseCompound](docs/ListpresentationResponseCompound.md)
  - [EZmaxApiDefinition.MultilingualApikeyDescription](docs/MultilingualApikeyDescription.md)
  - [EZmaxApiDefinition.PhoneRequest](docs/PhoneRequest.md)
+ - [EZmaxApiDefinition.PhoneRequestCompound](docs/PhoneRequestCompound.md)
  - [EZmaxApiDefinition.SsprResetPasswordRequestV1Request](docs/SsprResetPasswordRequestV1Request.md)
  - [EZmaxApiDefinition.SsprResetPasswordV1Request](docs/SsprResetPasswordV1Request.md)
  - [EZmaxApiDefinition.SsprSendUsernamesV1Request](docs/SsprSendUsernamesV1Request.md)
@@ -438,6 +508,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.UserCreateEzsignuserV1ResponseAllOf](docs/UserCreateEzsignuserV1ResponseAllOf.md)
  - [EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload](docs/UserCreateEzsignuserV1ResponseMPayload.md)
  - [EZmaxApiDefinition.UserResponse](docs/UserResponse.md)
+ - [EZmaxApiDefinition.UserResponseCompound](docs/UserResponseCompound.md)
  - [EZmaxApiDefinition.WebhookEzsignDocumentCompleted](docs/WebhookEzsignDocumentCompleted.md)
  - [EZmaxApiDefinition.WebhookEzsignDocumentCompletedAllOf](docs/WebhookEzsignDocumentCompletedAllOf.md)
  - [EZmaxApiDefinition.WebhookEzsignFolderCompleted](docs/WebhookEzsignFolderCompleted.md)
@@ -446,6 +517,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinition.WebhookUserUserCreated](docs/WebhookUserUserCreated.md)
  - [EZmaxApiDefinition.WebhookUserUserCreatedAllOf](docs/WebhookUserUserCreatedAllOf.md)
  - [EZmaxApiDefinition.WebsiteRequest](docs/WebsiteRequest.md)
+ - [EZmaxApiDefinition.WebsiteRequestCompound](docs/WebsiteRequestCompound.md)
 
 
 ## Documentation for Authorization
