@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignformfieldgroupSignerrequirement
+# EZmaxApiDefinitionFull.FieldEEzsignformfieldgroupSignerrequirement
 
 ## Enum
 

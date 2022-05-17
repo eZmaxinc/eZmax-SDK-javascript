@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,6 +15,8 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import EzsigndocumentEditEzsignsignaturesV1ResponseAllOf from './EzsigndocumentEditEzsignsignaturesV1ResponseAllOf';
+import EzsigndocumentEditEzsignsignaturesV1ResponseMPayload from './EzsigndocumentEditEzsignsignaturesV1ResponseMPayload';
 
 /**
  * The EzsigndocumentEditEzsignsignaturesV1Response model module.
@@ -24,13 +26,15 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsigndocumentEditEzsignsignaturesV1Response {
     /**
      * Constructs a new <code>EzsigndocumentEditEzsignsignaturesV1Response</code>.
-     * Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures API Request
+     * Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
      * @alias module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1Response
+     * @implements module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param mPayload {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsigndocumentEditEzsignsignaturesV1Response.initialize(this);
+    constructor(mPayload) { 
+        EzsigndocumentEditEzsignsignaturesV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        EzsigndocumentEditEzsignsignaturesV1Response.initialize(this, mPayload);
     }
 
     /**
@@ -38,7 +42,8 @@ class EzsigndocumentEditEzsignsignaturesV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, mPayload) { 
+        obj['mPayload'] = mPayload;
     }
 
     /**
@@ -51,8 +56,12 @@ class EzsigndocumentEditEzsignsignaturesV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentEditEzsignsignaturesV1Response();
+            EzsigndocumentEditEzsignsignaturesV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigndocumentEditEzsignsignaturesV1ResponseMPayload.constructFromObject(data['mPayload']);
+            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
@@ -63,6 +72,19 @@ class EzsigndocumentEditEzsignsignaturesV1Response {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -93,6 +115,11 @@ class EzsigndocumentEditEzsignsignaturesV1Response {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload} mPayload
+ */
+EzsigndocumentEditEzsignsignaturesV1Response.prototype['mPayload'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
 EzsigndocumentEditEzsignsignaturesV1Response.prototype['objDebugPayload'] = undefined;
@@ -103,6 +130,11 @@ EzsigndocumentEditEzsignsignaturesV1Response.prototype['objDebugPayload'] = unde
 EzsigndocumentEditEzsignsignaturesV1Response.prototype['objDebug'] = undefined;
 
 
+// Implement EzsigndocumentEditEzsignsignaturesV1ResponseAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsigndocumentEditEzsignsignaturesV1ResponseMPayload} mPayload
+ */
+EzsigndocumentEditEzsignsignaturesV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

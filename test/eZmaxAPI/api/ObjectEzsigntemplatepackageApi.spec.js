@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsigntemplatepackageApi();
+    instance = new EZmaxApiDefinitionFull.ObjectEzsigntemplatepackageApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -48,10 +48,70 @@
   }
 
   describe('ObjectEzsigntemplatepackageApi', function() {
+    describe('ezsigntemplatepackageCreateObjectV1', function() {
+      it('should call ezsigntemplatepackageCreateObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageCreateObjectV1
+        //instance.ezsigntemplatepackageCreateObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplatepackageDeleteObjectV1', function() {
+      it('should call ezsigntemplatepackageDeleteObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageDeleteObjectV1
+        //instance.ezsigntemplatepackageDeleteObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplatepackageEditEzsigntemplatepackagesignersV1', function() {
+      it('should call ezsigntemplatepackageEditEzsigntemplatepackagesignersV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageEditEzsigntemplatepackagesignersV1
+        //instance.ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplatepackageEditObjectV1', function() {
+      it('should call ezsigntemplatepackageEditObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageEditObjectV1
+        //instance.ezsigntemplatepackageEditObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplatepackageGetAutocompleteV1', function() {
+      it('should call ezsigntemplatepackageGetAutocompleteV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageGetAutocompleteV1
+        //instance.ezsigntemplatepackageGetAutocompleteV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigntemplatepackageGetListV1', function() {
       it('should call ezsigntemplatepackageGetListV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatepackageGetListV1
         //instance.ezsigntemplatepackageGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplatepackageGetObjectV1', function() {
+      it('should call ezsigntemplatepackageGetObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatepackageGetObjectV1
+        //instance.ezsigntemplatepackageGetObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

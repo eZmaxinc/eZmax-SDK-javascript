@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignpageResponse
+# EZmaxApiDefinitionFull.EzsignpageResponse
 
 ## Properties
 

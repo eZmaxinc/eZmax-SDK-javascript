@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Request();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsigndocumentCreateObjectV2Request', function() {
     it('should create an instance of EzsigndocumentCreateObjectV2Request', function() {
       // uncomment below and update the code to test EzsigndocumentCreateObjectV2Request
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentCreateObjectV2Request);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Request);
     });
 
     it('should have the property a_objEzsigndocument (base name: "a_objEzsigndocument")', function() {
       // uncomment below and update the code to test the property a_objEzsigndocument
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Request();
       //expect(instance).to.be();
     });
 

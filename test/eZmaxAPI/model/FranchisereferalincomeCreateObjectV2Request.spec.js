@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2Request();
+    instance = new EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('FranchisereferalincomeCreateObjectV2Request', function() {
     it('should create an instance of FranchisereferalincomeCreateObjectV2Request', function() {
       // uncomment below and update the code to test FranchisereferalincomeCreateObjectV2Request
-      //var instance = new EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2Request);
+      //var instance = new EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2Request);
     });
 
     it('should have the property a_objFranchisereferalincome (base name: "a_objFranchisereferalincome")', function() {
       // uncomment below and update the code to test the property a_objFranchisereferalincome
-      //var instance = new EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2Request();
+      //var instance = new EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2Request();
       //expect(instance).to.be();
     });
 

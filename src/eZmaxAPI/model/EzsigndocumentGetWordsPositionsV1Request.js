@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class EzsigndocumentGetWordsPositionsV1Request {
     /**
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1Request</code>.
-     * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request
      * @param eGet {module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Request.EGetEnum} Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search for in *a_sWord*.
      * @param bWordCaseSensitive {Boolean} IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.

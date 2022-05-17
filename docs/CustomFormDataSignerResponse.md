@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CustomFormDataSignerResponse
+# EZmaxApiDefinitionFull.CustomFormDataSignerResponse
 
 ## Properties
 

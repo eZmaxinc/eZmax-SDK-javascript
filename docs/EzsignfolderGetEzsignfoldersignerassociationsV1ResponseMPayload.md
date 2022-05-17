@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
 
 ## Properties
 

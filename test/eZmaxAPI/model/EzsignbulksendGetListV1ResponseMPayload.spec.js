@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EzsignbulksendGetListV1ResponseMPayload', function() {
     it('should create an instance of EzsignbulksendGetListV1ResponseMPayload', function() {
       // uncomment below and update the code to test EzsignbulksendGetListV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload);
     });
 
     it('should have the property a_objEzsignbulksend (base name: "a_objEzsignbulksend")', function() {
       // uncomment below and update the code to test the property a_objEzsignbulksend
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property iRowReturned (base name: "iRowReturned")', function() {
       // uncomment below and update the code to test the property iRowReturned
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property iRowFiltered (base name: "iRowFiltered")', function() {
       // uncomment below and update the code to test the property iRowFiltered
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

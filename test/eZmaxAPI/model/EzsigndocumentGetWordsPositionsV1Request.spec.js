@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EzsigndocumentGetWordsPositionsV1Request', function() {
     it('should create an instance of EzsigndocumentGetWordsPositionsV1Request', function() {
       // uncomment below and update the code to test EzsigndocumentGetWordsPositionsV1Request
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request);
     });
 
     it('should have the property eGet (base name: "eGet")', function() {
       // uncomment below and update the code to test the property eGet
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request();
       //expect(instance).to.be();
     });
 
     it('should have the property bWordCaseSensitive (base name: "bWordCaseSensitive")', function() {
       // uncomment below and update the code to test the property bWordCaseSensitive
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request();
       //expect(instance).to.be();
     });
 
     it('should have the property a_sWord (base name: "a_sWord")', function() {
       // uncomment below and update the code to test the property a_sWord
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request();
       //expect(instance).to.be();
     });
 

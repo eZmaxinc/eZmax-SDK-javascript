@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsigndocumentStep
+# EZmaxApiDefinitionFull.FieldEEzsigndocumentStep
 
 ## Enum
 

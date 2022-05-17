@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -25,7 +25,7 @@ import FieldEEzsigndocumentStep from './FieldEEzsigndocumentStep';
 class EzsigndocumentGetObjectV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsigndocumentGetObjectV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsigndocument/getObject API Request
+     * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
      * @alias module:eZmaxAPI/model/EzsigndocumentGetObjectV1ResponseMPayload
      * @implements module:eZmaxAPI/model/EzsigndocumentResponseCompound
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
@@ -42,6 +42,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
      * @param sEzsigndocumentMD5initial {String} MD5 Hash of the initial PDF Document before signatures were applied to it.
      * @param sEzsigndocumentMD5signed {String} MD5 Hash of the final PDF Document after all signatures were applied to it.
+     * @param bEzsigndocumentEzsignform {Boolean} If the Ezsigndocument contains an Ezsignform or not
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      * @param iEzsigndocumentStepformtotal {Number} The total number of steps in the form filling phase
      * @param iEzsigndocumentStepformcurrent {Number} The current step in the form filling phase
@@ -49,9 +50,9 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param iEzsigndocumentStepsignatureCurrent {Number} The current step in the signature phase
      * @param a_objEzsignfoldersignerassociationstatus {Array.<module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse>} 
      */
-    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
-        EzsigndocumentResponseCompound.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
-        EzsigndocumentGetObjectV1ResponseMPayload.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
+    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+        EzsigndocumentResponseCompound.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
+        EzsigndocumentGetObjectV1ResponseMPayload.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
     }
 
     /**
@@ -59,7 +60,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -74,6 +75,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
         obj['sEzsigndocumentMD5initial'] = sEzsigndocumentMD5initial;
         obj['sEzsigndocumentMD5signed'] = sEzsigndocumentMD5signed;
+        obj['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
         obj['objAudit'] = objAudit;
         obj['iEzsigndocumentStepformtotal'] = iEzsigndocumentStepformtotal;
         obj['iEzsigndocumentStepformcurrent'] = iEzsigndocumentStepformcurrent;
@@ -135,6 +137,9 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
             }
             if (data.hasOwnProperty('sEzsigndocumentMD5signed')) {
                 obj['sEzsigndocumentMD5signed'] = ApiClient.convertToType(data['sEzsigndocumentMD5signed'], 'String');
+            }
+            if (data.hasOwnProperty('bEzsigndocumentEzsignform')) {
+                obj['bEzsigndocumentEzsignform'] = ApiClient.convertToType(data['bEzsigndocumentEzsignform'], 'Boolean');
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
@@ -369,6 +374,21 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
         this['sEzsigndocumentMD5signed'] = sEzsigndocumentMD5signed;
     }
 /**
+     * Returns If the Ezsigndocument contains an Ezsignform or not
+     * @return {Boolean}
+     */
+    getBEzsigndocumentEzsignform() {
+        return this.bEzsigndocumentEzsignform;
+    }
+
+    /**
+     * Sets If the Ezsigndocument contains an Ezsignform or not
+     * @param {Boolean} bEzsigndocumentEzsignform If the Ezsigndocument contains an Ezsignform or not
+     */
+    setBEzsigndocumentEzsignform(bEzsigndocumentEzsignform) {
+        this['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
+    }
+/**
      * @return {module:eZmaxAPI/model/CommonAudit}
      */
     getObjAudit() {
@@ -541,6 +561,12 @@ EzsigndocumentGetObjectV1ResponseMPayload.prototype['sEzsigndocumentMD5initial']
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['sEzsigndocumentMD5signed'] = undefined;
 
 /**
+ * If the Ezsigndocument contains an Ezsignform or not
+ * @member {Boolean} bEzsigndocumentEzsignform
+ */
+EzsigndocumentGetObjectV1ResponseMPayload.prototype['bEzsigndocumentEzsignform'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['objAudit'] = undefined;
@@ -645,6 +671,11 @@ EzsigndocumentResponseCompound.prototype['sEzsigndocumentMD5initial'] = undefine
  * @member {String} sEzsigndocumentMD5signed
  */
 EzsigndocumentResponseCompound.prototype['sEzsigndocumentMD5signed'] = undefined;
+/**
+ * If the Ezsigndocument contains an Ezsignform or not
+ * @member {Boolean} bEzsigndocumentEzsignform
+ */
+EzsigndocumentResponseCompound.prototype['bEzsigndocumentEzsignform'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */

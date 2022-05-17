@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsignfolderApi();
+    instance = new EZmaxApiDefinitionFull.ObjectEzsignfolderApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -48,6 +48,26 @@
   }
 
   describe('ObjectEzsignfolderApi', function() {
+    describe('ezsignfolderArchiveV1', function() {
+      it('should call ezsignfolderArchiveV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderArchiveV1
+        //instance.ezsignfolderArchiveV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderBatchDownloadV1', function() {
+      it('should call ezsignfolderBatchDownloadV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderBatchDownloadV1
+        //instance.ezsignfolderBatchDownloadV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderCreateObjectV1', function() {
       it('should call ezsignfolderCreateObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderCreateObjectV1
@@ -82,6 +102,16 @@
       it('should call ezsignfolderEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderEditObjectV1
         //instance.ezsignfolderEditObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderGetActionableElementsV1', function() {
+      it('should call ezsignfolderGetActionableElementsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetActionableElementsV1
+        //instance.ezsignfolderGetActionableElementsV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -132,6 +162,26 @@
       it('should call ezsignfolderGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetObjectV1
         //instance.ezsignfolderGetObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderImportEzsigntemplatepackageV1', function() {
+      it('should call ezsignfolderImportEzsigntemplatepackageV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderImportEzsigntemplatepackageV1
+        //instance.ezsignfolderImportEzsigntemplatepackageV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderReorderV1', function() {
+      it('should call ezsignfolderReorderV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderReorderV1
+        //instance.ezsignfolderReorderV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

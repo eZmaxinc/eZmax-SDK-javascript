@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.WebhookEzsignDocumentCompleted();
+    instance = new EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('WebhookEzsignDocumentCompleted', function() {
     it('should create an instance of WebhookEzsignDocumentCompleted', function() {
       // uncomment below and update the code to test WebhookEzsignDocumentCompleted
-      //var instance = new EZmaxApiDefinition.WebhookEzsignDocumentCompleted();
-      //expect(instance).to.be.a(EZmaxApiDefinition.WebhookEzsignDocumentCompleted);
+      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted);
     });
 
     it('should have the property objEzsigndocument (base name: "objEzsigndocument")', function() {
       // uncomment below and update the code to test the property objEzsigndocument
-      //var instance = new EZmaxApiDefinition.WebhookEzsignDocumentCompleted();
+      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted();
       //expect(instance).to.be();
     });
 
     it('should have the property objWebhook (base name: "objWebhook")', function() {
       // uncomment below and update the code to test the property objWebhook
-      //var instance = new EZmaxApiDefinition.WebhookEzsignDocumentCompleted();
+      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objAttempt (base name: "a_objAttempt")', function() {
       // uncomment below and update the code to test the property a_objAttempt
-      //var instance = new EZmaxApiDefinition.WebhookEzsignDocumentCompleted();
+      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignDocumentCompleted();
       //expect(instance).to.be();
     });
 

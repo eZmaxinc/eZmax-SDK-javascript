@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -24,7 +24,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsignsignatureDeleteObjectV1Response {
     /**
      * Constructs a new <code>EzsignsignatureDeleteObjectV1Response</code>.
-     * Response for the /1/object/ezsignsignature/deleteObject API Request
+     * Response for DELETE /1/object/ezsignsignature/{pkiEzsignsignatureID}
      * @alias module:eZmaxAPI/model/EzsignsignatureDeleteObjectV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      */

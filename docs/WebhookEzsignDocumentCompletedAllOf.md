@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.WebhookEzsignDocumentCompletedAllOf
+# EZmaxApiDefinitionFull.WebhookEzsignDocumentCompletedAllOf
 
 ## Properties
 

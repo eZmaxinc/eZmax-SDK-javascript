@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,12 +22,13 @@ import EzsignsignatureResponseCompound from './EzsignsignatureResponseCompound';
 class EzsigndocumentGetEzsignsignaturesV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsigndocumentGetEzsignsignaturesV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignsignatures API Request
+     * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignsignatures
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload
+     * @param a_objEzsignsignature {Array.<module:eZmaxAPI/model/EzsignsignatureResponseCompound>} 
      */
-    constructor() { 
+    constructor(a_objEzsignsignature) { 
         
-        EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.initialize(this);
+        EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.initialize(this, a_objEzsignsignature);
     }
 
     /**
@@ -35,7 +36,8 @@ class EzsigndocumentGetEzsignsignaturesV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objEzsignsignature) { 
+        obj['a_objEzsignsignature'] = a_objEzsignsignature;
     }
 
     /**

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EmailRequest
+# EZmaxApiDefinitionFull.EmailRequest
 
 ## Properties
 

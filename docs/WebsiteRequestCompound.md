@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.WebsiteRequestCompound
+# EZmaxApiDefinitionFull.WebsiteRequestCompound
 
 ## Properties
 

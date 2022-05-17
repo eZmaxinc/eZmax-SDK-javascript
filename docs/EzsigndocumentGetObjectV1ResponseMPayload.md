@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsigndocumentGetObjectV1ResponseMPayload
 
 ## Properties
 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **iEzsigndocumentSignaturetotal** | **Number** | The number of total signatures that were requested in the Ezsigndocument. | 
 **sEzsigndocumentMD5initial** | **String** | MD5 Hash of the initial PDF Document before signatures were applied to it. | 
 **sEzsigndocumentMD5signed** | **String** | MD5 Hash of the final PDF Document after all signatures were applied to it. | 
+**bEzsigndocumentEzsignform** | **Boolean** | If the Ezsigndocument contains an Ezsignform or not | 
 **objAudit** | [**CommonAudit**](CommonAudit.md) |  | 
 **iEzsigndocumentStepformtotal** | **Number** | The total number of steps in the form filling phase | 
 **iEzsigndocumentStepformcurrent** | **Number** | The current step in the form filling phase | 

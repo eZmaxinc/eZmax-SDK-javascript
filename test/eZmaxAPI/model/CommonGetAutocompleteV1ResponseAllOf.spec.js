@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf();
+    instance = new EZmaxApiDefinitionFull.CommonGetAutocompleteV1ResponseAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('CommonGetAutocompleteV1ResponseAllOf', function() {
     it('should create an instance of CommonGetAutocompleteV1ResponseAllOf', function() {
       // uncomment below and update the code to test CommonGetAutocompleteV1ResponseAllOf
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf);
+      //var instance = new EZmaxApiDefinitionFull.CommonGetAutocompleteV1ResponseAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonGetAutocompleteV1ResponseAllOf);
     });
 
     it('should have the property mPayload (base name: "mPayload")', function() {
       // uncomment below and update the code to test the property mPayload
-      //var instance = new EZmaxApiDefinition.CommonGetAutocompleteV1ResponseAllOf();
+      //var instance = new EZmaxApiDefinitionFull.CommonGetAutocompleteV1ResponseAllOf();
       //expect(instance).to.be();
     });
 

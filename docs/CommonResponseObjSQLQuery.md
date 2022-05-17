@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonResponseObjSQLQuery
+# EZmaxApiDefinitionFull.CommonResponseObjSQLQuery
 
 ## Properties
 

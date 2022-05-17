@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonResponseObjDebug
+# EZmaxApiDefinitionFull.CommonResponseObjDebug
 
 ## Properties
 

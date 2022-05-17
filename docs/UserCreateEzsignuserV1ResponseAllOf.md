@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.UserCreateEzsignuserV1ResponseAllOf
+# EZmaxApiDefinitionFull.UserCreateEzsignuserV1ResponseAllOf
 
 ## Properties
 

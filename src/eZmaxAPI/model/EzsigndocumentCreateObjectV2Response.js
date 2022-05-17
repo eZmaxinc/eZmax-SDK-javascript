@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsigndocumentCreateObjectV2ResponseMPayload from './EzsigndocumentCreate
 class EzsigndocumentCreateObjectV2Response {
     /**
      * Constructs a new <code>EzsigndocumentCreateObjectV2Response</code>.
-     * Response for the /2/object/ezsigndocument/createObject API Request
+     * Response for POST /2/object/ezsigndocument
      * @alias module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Response
      * @implements module:eZmaxAPI/model/EzsigndocumentCreateObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderGetListV1ResponseMPayloadAllOf
+# EZmaxApiDefinitionFull.EzsignfolderGetListV1ResponseMPayloadAllOf
 
 ## Properties
 

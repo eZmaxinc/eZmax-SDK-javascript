@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignpageResponse();
+    instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('EzsignpageResponse', function() {
     it('should create an instance of EzsignpageResponse', function() {
       // uncomment below and update the code to test EzsignpageResponse
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignpageResponse);
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignpageResponse);
     });
 
     it('should have the property pkiEzsignpageID (base name: "pkiEzsignpageID")', function() {
       // uncomment below and update the code to test the property pkiEzsignpageID
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignpageWidthimage (base name: "iEzsignpageWidthimage")', function() {
       // uncomment below and update the code to test the property iEzsignpageWidthimage
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignpageHeightimage (base name: "iEzsignpageHeightimage")', function() {
       // uncomment below and update the code to test the property iEzsignpageHeightimage
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignpageWidthpdf (base name: "iEzsignpageWidthpdf")', function() {
       // uncomment below and update the code to test the property iEzsignpageWidthpdf
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignpageHeightpdf (base name: "iEzsignpageHeightpdf")', function() {
       // uncomment below and update the code to test the property iEzsignpageHeightpdf
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignpagePagenumber (base name: "iEzsignpagePagenumber")', function() {
       // uncomment below and update the code to test the property iEzsignpagePagenumber
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property sImageUrl (base name: "sImageUrl")', function() {
       // uncomment below and update the code to test the property sImageUrl
-      //var instance = new EZmaxApiDefinition.EzsignpageResponse();
+      //var instance = new EZmaxApiDefinitionFull.EzsignpageResponse();
       //expect(instance).to.be();
     });
 

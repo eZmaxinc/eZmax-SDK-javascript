@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEActivesessionWeekdaystart
+# EZmaxApiDefinitionFull.FieldEActivesessionWeekdaystart
 
 ## Enum
 

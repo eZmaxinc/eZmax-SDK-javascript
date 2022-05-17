@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class ActivesessionGetCurrentV1Response {
     /**
      * Constructs a new <code>ActivesessionGetCurrentV1Response</code>.
-     * Response for the /1/object/activesession/getCurrent API Request
+     * Response for GET /1/object/activesession/getCurrent
      * @alias module:eZmaxAPI/model/ActivesessionGetCurrentV1Response
      * @implements module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

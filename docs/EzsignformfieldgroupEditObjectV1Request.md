@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupEditObjectV1Request
+# EZmaxApiDefinitionFull.EzsignformfieldgroupEditObjectV1Request
 
 ## Properties
 

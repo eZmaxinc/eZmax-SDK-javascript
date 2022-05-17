@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload from '
 class EzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
     /**
      * Constructs a new <code>EzsignfoldersignerassociationGetInPersonLoginUrlV1Response</code>.
-     * Response for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
+     * Response for GET /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

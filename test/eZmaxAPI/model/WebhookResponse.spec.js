@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.WebhookResponse();
+    instance = new EZmaxApiDefinitionFull.WebhookResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,61 @@
   describe('WebhookResponse', function() {
     it('should create an instance of WebhookResponse', function() {
       // uncomment below and update the code to test WebhookResponse
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.WebhookResponse);
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebhookResponse);
+    });
+
+    it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
+      // uncomment below and update the code to test the property pksCustomerCode
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be();
     });
 
     it('should have the property pkiWebhookID (base name: "pkiWebhookID")', function() {
       // uncomment below and update the code to test the property pkiWebhookID
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property eWebhookModule (base name: "eWebhookModule")', function() {
       // uncomment below and update the code to test the property eWebhookModule
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property eWebhookEzsignevent (base name: "eWebhookEzsignevent")', function() {
       // uncomment below and update the code to test the property eWebhookEzsignevent
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
-      // uncomment below and update the code to test the property pksCustomerCode
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sWebhookUrl (base name: "sWebhookUrl")', function() {
-      // uncomment below and update the code to test the property sWebhookUrl
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sWebhookEmailfailed (base name: "sWebhookEmailfailed")', function() {
-      // uncomment below and update the code to test the property sWebhookEmailfailed
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property eWebhookManagementevent (base name: "eWebhookManagementevent")', function() {
       // uncomment below and update the code to test the property eWebhookManagementevent
-      //var instance = new EZmaxApiDefinition.WebhookResponse();
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sWebhookUrl (base name: "sWebhookUrl")', function() {
+      // uncomment below and update the code to test the property sWebhookUrl
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bWebhookTest (base name: "bWebhookTest")', function() {
+      // uncomment below and update the code to test the property bWebhookTest
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bWebhookSkipsslvalidation (base name: "bWebhookSkipsslvalidation")', function() {
+      // uncomment below and update the code to test the property bWebhookSkipsslvalidation
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sWebhookEmailfailed (base name: "sWebhookEmailfailed")', function() {
+      // uncomment below and update the code to test the property sWebhookEmailfailed
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponse();
       //expect(instance).to.be();
     });
 

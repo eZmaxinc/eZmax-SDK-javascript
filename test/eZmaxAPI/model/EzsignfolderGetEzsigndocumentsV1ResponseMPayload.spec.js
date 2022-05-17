@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsignfolderGetEzsigndocumentsV1ResponseMPayload', function() {
     it('should create an instance of EzsignfolderGetEzsigndocumentsV1ResponseMPayload', function() {
       // uncomment below and update the code to test EzsignfolderGetEzsigndocumentsV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderGetEzsigndocumentsV1ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfolderGetEzsigndocumentsV1ResponseMPayload);
     });
 
     it('should have the property a_objEzsigndocument (base name: "a_objEzsigndocument")', function() {
       // uncomment below and update the code to test the property a_objEzsigndocument
-      //var instance = new EZmaxApiDefinition.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderGetEzsigndocumentsV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+    instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CustomFormDataDocumentResponse', function() {
     it('should create an instance of CustomFormDataDocumentResponse', function() {
       // uncomment below and update the code to test CustomFormDataDocumentResponse
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomFormDataDocumentResponse);
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomFormDataDocumentResponse);
     });
 
     it('should have the property pkiEzsigndocumentID (base name: "pkiEzsigndocumentID")', function() {
       // uncomment below and update the code to test the property pkiEzsigndocumentID
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignfolderID (base name: "fkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfolderID
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentName (base name: "sEzsigndocumentName")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentName
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property dtModifiedDate (base name: "dtModifiedDate")', function() {
       // uncomment below and update the code to test the property dtModifiedDate
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objFormDataSigner (base name: "a_objFormDataSigner")', function() {
       // uncomment below and update the code to test the property a_objFormDataSigner
-      //var instance = new EZmaxApiDefinition.CustomFormDataDocumentResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataDocumentResponse();
       //expect(instance).to.be();
     });
 

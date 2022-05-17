@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignbulksendGetListV1Response
+# EZmaxApiDefinitionFull.EzsignbulksendGetListV1Response
 
 ## Properties
 

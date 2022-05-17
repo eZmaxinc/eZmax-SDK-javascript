@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2ResponseAllOf
+# EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2ResponseAllOf
 
 ## Properties
 

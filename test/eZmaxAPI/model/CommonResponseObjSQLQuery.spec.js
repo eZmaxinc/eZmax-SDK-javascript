@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjSQLQuery();
+    instance = new EZmaxApiDefinitionFull.CommonResponseObjSQLQuery();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CommonResponseObjSQLQuery', function() {
     it('should create an instance of CommonResponseObjSQLQuery', function() {
       // uncomment below and update the code to test CommonResponseObjSQLQuery
-      //var instance = new EZmaxApiDefinition.CommonResponseObjSQLQuery();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjSQLQuery);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjSQLQuery();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseObjSQLQuery);
     });
 
     it('should have the property sQuery (base name: "sQuery")', function() {
       // uncomment below and update the code to test the property sQuery
-      //var instance = new EZmaxApiDefinition.CommonResponseObjSQLQuery();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjSQLQuery();
       //expect(instance).to.be();
     });
 
     it('should have the property fDuration (base name: "fDuration")', function() {
       // uncomment below and update the code to test the property fDuration
-      //var instance = new EZmaxApiDefinition.CommonResponseObjSQLQuery();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjSQLQuery();
       //expect(instance).to.be();
     });
 

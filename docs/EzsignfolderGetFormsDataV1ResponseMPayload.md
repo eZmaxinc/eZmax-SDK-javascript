@@ -1,11 +1,9 @@
-# EZmaxApiDefinition.EzsignfolderGetFormsDataV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsignfolderGetFormsDataV1ResponseMPayload
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pkiEzsignfolderID** | **Number** | The unique ID of the Ezsignfolder | 
-**sEzsignfolderDescription** | **String** | The description of the Ezsignfolder | 
-**a_objFormDataDocument** | [**[CustomFormDataDocumentResponse]**](CustomFormDataDocumentResponse.md) |  | 
+**objFormsDataFolder** | [**CustomFormsDataFolderResponse**](CustomFormsDataFolderResponse.md) |  | 
 
 

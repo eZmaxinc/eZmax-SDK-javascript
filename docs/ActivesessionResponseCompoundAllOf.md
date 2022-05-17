@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ActivesessionResponseCompoundAllOf
+# EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf
 
 ## Properties
 

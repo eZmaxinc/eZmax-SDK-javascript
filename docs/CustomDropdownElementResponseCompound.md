@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CustomDropdownElementResponseCompound
+# EZmaxApiDefinitionFull.CustomDropdownElementResponseCompound
 
 ## Properties
 

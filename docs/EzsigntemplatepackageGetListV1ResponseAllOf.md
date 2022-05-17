@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigntemplatepackageGetListV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsigntemplatepackageGetListV1ResponseAllOf
 
 ## Properties
 

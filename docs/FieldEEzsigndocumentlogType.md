@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsigndocumentlogType
+# EZmaxApiDefinitionFull.FieldEEzsigndocumentlogType
 
 ## Enum
 

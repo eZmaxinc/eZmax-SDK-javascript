@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ObjectApikeyApi
+# EZmaxApiDefinitionFull.ObjectApikeyApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -20,16 +20,16 @@ The endpoint allows to create one or many elements at once.  The array can conta
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectApikeyApi();
-let ApikeyCreateObjectV1Request = [new EZmaxApiDefinition.ApikeyCreateObjectV1Request()]; // [ApikeyCreateObjectV1Request] | 
+let apiInstance = new EZmaxApiDefinitionFull.ObjectApikeyApi();
+let ApikeyCreateObjectV1Request = [new EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request()]; // [ApikeyCreateObjectV1Request] | 
 apiInstance.apikeyCreateObjectV1(ApikeyCreateObjectV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -71,16 +71,16 @@ The endpoint allows to create one or many elements at once.
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectApikeyApi();
-let ApikeyCreateObjectV2Request = new EZmaxApiDefinition.ApikeyCreateObjectV2Request(); // ApikeyCreateObjectV2Request | 
+let apiInstance = new EZmaxApiDefinitionFull.ObjectApikeyApi();
+let ApikeyCreateObjectV2Request = new EZmaxApiDefinitionFull.ApikeyCreateObjectV2Request(); // ApikeyCreateObjectV2Request | 
 apiInstance.apikeyCreateObjectV2(ApikeyCreateObjectV2Request, (error, data, response) => {
   if (error) {
     console.error(error);

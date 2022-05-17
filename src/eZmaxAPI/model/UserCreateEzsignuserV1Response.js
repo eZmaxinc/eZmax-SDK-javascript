@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import UserCreateEzsignuserV1ResponseMPayload from './UserCreateEzsignuserV1Resp
 class UserCreateEzsignuserV1Response {
     /**
      * Constructs a new <code>UserCreateEzsignuserV1Response</code>.
-     * Response for the /1/module/user/createEzsignuser API Request
+     * Response for POST /1/module/user/createEzsignuser
      * @alias module:eZmaxAPI/model/UserCreateEzsignuserV1Response
      * @implements module:eZmaxAPI/model/UserCreateEzsignuserV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

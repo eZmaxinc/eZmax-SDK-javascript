@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,12 +22,13 @@ import EzsignformfieldgroupResponseCompound from './EzsignformfieldgroupResponse
 class EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups API Request
+     * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
+     * @param a_objEzsignformfieldgroup {Array.<module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound>} 
      */
-    constructor() { 
+    constructor(a_objEzsignformfieldgroup) { 
         
-        EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.initialize(this);
+        EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.initialize(this, a_objEzsignformfieldgroup);
     }
 
     /**
@@ -35,7 +36,8 @@ class EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objEzsignformfieldgroup) { 
+        obj['a_objEzsignformfieldgroup'] = a_objEzsignformfieldgroup;
     }
 
     /**

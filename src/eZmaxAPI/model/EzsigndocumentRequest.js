@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -23,16 +23,15 @@ class EzsigndocumentRequest {
      * Constructs a new <code>EzsigndocumentRequest</code>.
      * An Ezsigndocument Object
      * @alias module:eZmaxAPI/model/EzsigndocumentRequest
-     * @param eEzsigndocumentSource {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentSourceEnum} Indicates where to look for the document binary content.
-     * @param eEzsigndocumentFormat {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormatEnum} Indicates the format of the document.
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
-     * @param dtEzsigndocumentDuedate {String} The maximum date and time at which the Ezsigndocument can be signed.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @param eEzsigndocumentSource {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentSourceEnum} Indicates where to look for the document binary content.
+     * @param dtEzsigndocumentDuedate {String} The maximum date and time at which the Ezsigndocument can be signed.
      * @param sEzsigndocumentName {String} The name of the document that will be presented to Ezsignfoldersignerassociations
      */
-    constructor(eEzsigndocumentSource, eEzsigndocumentFormat, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName) { 
+    constructor(fkiEzsignfolderID, fkiLanguageID, eEzsigndocumentSource, dtEzsigndocumentDuedate, sEzsigndocumentName) { 
         
-        EzsigndocumentRequest.initialize(this, eEzsigndocumentSource, eEzsigndocumentFormat, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName);
+        EzsigndocumentRequest.initialize(this, fkiEzsignfolderID, fkiLanguageID, eEzsigndocumentSource, dtEzsigndocumentDuedate, sEzsigndocumentName);
     }
 
     /**
@@ -40,12 +39,11 @@ class EzsigndocumentRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eEzsigndocumentSource, eEzsigndocumentFormat, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName) { 
-        obj['eEzsigndocumentSource'] = eEzsigndocumentSource;
-        obj['eEzsigndocumentFormat'] = eEzsigndocumentFormat;
+    static initialize(obj, fkiEzsignfolderID, fkiLanguageID, eEzsigndocumentSource, dtEzsigndocumentDuedate, sEzsigndocumentName) { 
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
-        obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
         obj['fkiLanguageID'] = fkiLanguageID;
+        obj['eEzsigndocumentSource'] = eEzsigndocumentSource;
+        obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
         obj['sEzsigndocumentName'] = sEzsigndocumentName;
     }
 
@@ -62,6 +60,18 @@ class EzsigndocumentRequest {
 
             if (data.hasOwnProperty('pkiEzsigndocumentID')) {
                 obj['pkiEzsigndocumentID'] = ApiClient.convertToType(data['pkiEzsigndocumentID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiEzsignfolderID')) {
+                obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiEzsigntemplateID')) {
+                obj['fkiEzsigntemplateID'] = ApiClient.convertToType(data['fkiEzsigntemplateID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
+                obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiLanguageID')) {
+                obj['fkiLanguageID'] = ApiClient.convertToType(data['fkiLanguageID'], 'Number');
             }
             if (data.hasOwnProperty('eEzsigndocumentSource')) {
                 obj['eEzsigndocumentSource'] = ApiClient.convertToType(data['eEzsigndocumentSource'], 'String');
@@ -81,14 +91,11 @@ class EzsigndocumentRequest {
             if (data.hasOwnProperty('sEzsigndocumentPassword')) {
                 obj['sEzsigndocumentPassword'] = ApiClient.convertToType(data['sEzsigndocumentPassword'], 'String');
             }
-            if (data.hasOwnProperty('fkiEzsignfolderID')) {
-                obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
+            if (data.hasOwnProperty('eEzsigndocumentForm')) {
+                obj['eEzsigndocumentForm'] = ApiClient.convertToType(data['eEzsigndocumentForm'], 'String');
             }
             if (data.hasOwnProperty('dtEzsigndocumentDuedate')) {
                 obj['dtEzsigndocumentDuedate'] = ApiClient.convertToType(data['dtEzsigndocumentDuedate'], 'String');
-            }
-            if (data.hasOwnProperty('fkiLanguageID')) {
-                obj['fkiLanguageID'] = ApiClient.convertToType(data['fkiLanguageID'], 'Number');
             }
             if (data.hasOwnProperty('sEzsigndocumentName')) {
                 obj['sEzsigndocumentName'] = ApiClient.convertToType(data['sEzsigndocumentName'], 'String');
@@ -111,6 +118,68 @@ class EzsigndocumentRequest {
      */
     setPkiEzsigndocumentID(pkiEzsigndocumentID) {
         this['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
+    }
+/**
+     * Returns The unique ID of the Ezsignfolder
+     * @return {Number}
+     */
+    getFkiEzsignfolderID() {
+        return this.fkiEzsignfolderID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignfolder
+     * @param {Number} fkiEzsignfolderID The unique ID of the Ezsignfolder
+     */
+    setFkiEzsignfolderID(fkiEzsignfolderID) {
+        this['fkiEzsignfolderID'] = fkiEzsignfolderID;
+    }
+/**
+     * Returns The unique ID of the Ezsigntemplate
+     * @return {Number}
+     */
+    getFkiEzsigntemplateID() {
+        return this.fkiEzsigntemplateID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsigntemplate
+     * @param {Number} fkiEzsigntemplateID The unique ID of the Ezsigntemplate
+     */
+    setFkiEzsigntemplateID(fkiEzsigntemplateID) {
+        this['fkiEzsigntemplateID'] = fkiEzsigntemplateID;
+    }
+/**
+     * Returns The unique ID of the Ezsignfoldersignerassociation
+     * @return {Number}
+     */
+    getFkiEzsignfoldersignerassociationID() {
+        return this.fkiEzsignfoldersignerassociationID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignfoldersignerassociation
+     * @param {Number} fkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     */
+    setFkiEzsignfoldersignerassociationID(fkiEzsignfoldersignerassociationID) {
+        this['fkiEzsignfoldersignerassociationID'] = fkiEzsignfoldersignerassociationID;
+    }
+/**
+     * Returns The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * minimum: 1
+     * maximum: 2
+     * @return {Number}
+     */
+    getFkiLanguageID() {
+        return this.fkiLanguageID;
+    }
+
+    /**
+     * Sets The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @param {Number} fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     */
+    setFkiLanguageID(fkiLanguageID) {
+        this['fkiLanguageID'] = fkiLanguageID;
     }
 /**
      * Returns Indicates where to look for the document binary content.
@@ -203,19 +272,19 @@ class EzsigndocumentRequest {
         this['sEzsigndocumentPassword'] = sEzsigndocumentPassword;
     }
 /**
-     * Returns The unique ID of the Ezsignfolder
-     * @return {Number}
+     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * @return {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum}
      */
-    getFkiEzsignfolderID() {
-        return this.fkiEzsignfolderID;
+    getEEzsigndocumentForm() {
+        return this.eEzsigndocumentForm;
     }
 
     /**
-     * Sets The unique ID of the Ezsignfolder
-     * @param {Number} fkiEzsignfolderID The unique ID of the Ezsignfolder
+     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * @param {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
      */
-    setFkiEzsignfolderID(fkiEzsignfolderID) {
-        this['fkiEzsignfolderID'] = fkiEzsignfolderID;
+    setEEzsigndocumentForm(eEzsigndocumentForm) {
+        this['eEzsigndocumentForm'] = eEzsigndocumentForm;
     }
 /**
      * Returns The maximum date and time at which the Ezsigndocument can be signed.
@@ -231,23 +300,6 @@ class EzsigndocumentRequest {
      */
     setDtEzsigndocumentDuedate(dtEzsigndocumentDuedate) {
         this['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
-    }
-/**
-     * Returns The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * minimum: 1
-     * maximum: 2
-     * @return {Number}
-     */
-    getFkiLanguageID() {
-        return this.fkiLanguageID;
-    }
-
-    /**
-     * Sets The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @param {Number} fkiLanguageID The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     */
-    setFkiLanguageID(fkiLanguageID) {
-        this['fkiLanguageID'] = fkiLanguageID;
     }
 /**
      * Returns The name of the document that will be presented to Ezsignfoldersignerassociations
@@ -272,6 +324,30 @@ class EzsigndocumentRequest {
  * @member {Number} pkiEzsigndocumentID
  */
 EzsigndocumentRequest.prototype['pkiEzsigndocumentID'] = undefined;
+
+/**
+ * The unique ID of the Ezsignfolder
+ * @member {Number} fkiEzsignfolderID
+ */
+EzsigndocumentRequest.prototype['fkiEzsignfolderID'] = undefined;
+
+/**
+ * The unique ID of the Ezsigntemplate
+ * @member {Number} fkiEzsigntemplateID
+ */
+EzsigndocumentRequest.prototype['fkiEzsigntemplateID'] = undefined;
+
+/**
+ * The unique ID of the Ezsignfoldersignerassociation
+ * @member {Number} fkiEzsignfoldersignerassociationID
+ */
+EzsigndocumentRequest.prototype['fkiEzsignfoldersignerassociationID'] = undefined;
+
+/**
+ * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+ * @member {Number} fkiLanguageID
+ */
+EzsigndocumentRequest.prototype['fkiLanguageID'] = undefined;
 
 /**
  * Indicates where to look for the document binary content.
@@ -307,27 +383,20 @@ EzsigndocumentRequest.prototype['bEzsigndocumentForcerepair'] = true;
 /**
  * If the source document is password protected, the password to open/modify it.
  * @member {String} sEzsigndocumentPassword
- * @default ''
  */
-EzsigndocumentRequest.prototype['sEzsigndocumentPassword'] = '';
+EzsigndocumentRequest.prototype['sEzsigndocumentPassword'] = undefined;
 
 /**
- * The unique ID of the Ezsignfolder
- * @member {Number} fkiEzsignfolderID
+ * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+ * @member {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm
  */
-EzsigndocumentRequest.prototype['fkiEzsignfolderID'] = undefined;
+EzsigndocumentRequest.prototype['eEzsigndocumentForm'] = undefined;
 
 /**
  * The maximum date and time at which the Ezsigndocument can be signed.
  * @member {String} dtEzsigndocumentDuedate
  */
 EzsigndocumentRequest.prototype['dtEzsigndocumentDuedate'] = undefined;
-
-/**
- * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
- * @member {Number} fkiLanguageID
- */
-EzsigndocumentRequest.prototype['fkiLanguageID'] = undefined;
 
 /**
  * The name of the document that will be presented to Ezsignfoldersignerassociations
@@ -353,6 +422,12 @@ EzsigndocumentRequest['EEzsigndocumentSourceEnum'] = {
     "Base64": "Base64",
 
     /**
+     * value: "Ezsigntemplate"
+     * @const
+     */
+    "Ezsigntemplate": "Ezsigntemplate",
+
+    /**
      * value: "Url"
      * @const
      */
@@ -372,6 +447,27 @@ EzsigndocumentRequest['EEzsigndocumentFormatEnum'] = {
      * @const
      */
     "Pdf": "Pdf"
+};
+
+
+/**
+ * Allowed values for the <code>eEzsigndocumentForm</code> property.
+ * @enum {String}
+ * @readonly
+ */
+EzsigndocumentRequest['EEzsigndocumentFormEnum'] = {
+
+    /**
+     * value: "Keep"
+     * @const
+     */
+    "Keep": "Keep",
+
+    /**
+     * value: "Convert"
+     * @const
+     */
+    "Convert": "Convert"
 };
 
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.WebhookUserUserCreated();
+    instance = new EZmaxApiDefinitionFull.WebhookUserUserCreated();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('WebhookUserUserCreated', function() {
     it('should create an instance of WebhookUserUserCreated', function() {
       // uncomment below and update the code to test WebhookUserUserCreated
-      //var instance = new EZmaxApiDefinition.WebhookUserUserCreated();
-      //expect(instance).to.be.a(EZmaxApiDefinition.WebhookUserUserCreated);
+      //var instance = new EZmaxApiDefinitionFull.WebhookUserUserCreated();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebhookUserUserCreated);
     });
 
     it('should have the property objUser (base name: "objUser")', function() {
       // uncomment below and update the code to test the property objUser
-      //var instance = new EZmaxApiDefinition.WebhookUserUserCreated();
+      //var instance = new EZmaxApiDefinitionFull.WebhookUserUserCreated();
       //expect(instance).to.be();
     });
 
     it('should have the property objWebhook (base name: "objWebhook")', function() {
       // uncomment below and update the code to test the property objWebhook
-      //var instance = new EZmaxApiDefinition.WebhookUserUserCreated();
+      //var instance = new EZmaxApiDefinitionFull.WebhookUserUserCreated();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objAttempt (base name: "a_objAttempt")', function() {
       // uncomment below and update the code to test the property a_objAttempt
-      //var instance = new EZmaxApiDefinition.WebhookUserUserCreated();
+      //var instance = new EZmaxApiDefinitionFull.WebhookUserUserCreated();
       //expect(instance).to.be();
     });
 

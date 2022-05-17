@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV1Response
+# EZmaxApiDefinitionFull.EzsigndocumentApplyEzsigntemplateV1Response
 
 ## Properties
 

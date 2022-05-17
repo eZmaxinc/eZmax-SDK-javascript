@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupResponseCompound
+# EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompound
 
 ## Properties
 
@@ -21,6 +21,6 @@ Name | Type | Description | Notes
 **eEzsignformfieldgroupTooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] 
 **a_objEzsignformfield** | [**[EzsignformfieldResponseCompound]**](EzsignformfieldResponseCompound.md) |  | 
 **a_objDropdownElement** | [**[CustomDropdownElementResponseCompound]**](CustomDropdownElementResponseCompound.md) |  | [optional] 
-**a_objEzsignformfieldgroupsigner** | [**EzsignformfieldgroupsignerResponseCompound**](EzsignformfieldgroupsignerResponseCompound.md) |  | 
+**a_objEzsignformfieldgroupsigner** | [**[EzsignformfieldgroupsignerResponseCompound]**](EzsignformfieldgroupsignerResponseCompound.md) |  | 
 
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.MultilingualApikeyDescription();
+    instance = new EZmaxApiDefinitionFull.MultilingualApikeyDescription();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('MultilingualApikeyDescription', function() {
     it('should create an instance of MultilingualApikeyDescription', function() {
       // uncomment below and update the code to test MultilingualApikeyDescription
-      //var instance = new EZmaxApiDefinition.MultilingualApikeyDescription();
-      //expect(instance).to.be.a(EZmaxApiDefinition.MultilingualApikeyDescription);
+      //var instance = new EZmaxApiDefinitionFull.MultilingualApikeyDescription();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.MultilingualApikeyDescription);
     });
 
     it('should have the property sApikeyDescription1 (base name: "sApikeyDescription1")', function() {
       // uncomment below and update the code to test the property sApikeyDescription1
-      //var instance = new EZmaxApiDefinition.MultilingualApikeyDescription();
+      //var instance = new EZmaxApiDefinitionFull.MultilingualApikeyDescription();
       //expect(instance).to.be();
     });
 
     it('should have the property sApikeyDescription2 (base name: "sApikeyDescription2")', function() {
       // uncomment below and update the code to test the property sApikeyDescription2
-      //var instance = new EZmaxApiDefinition.MultilingualApikeyDescription();
+      //var instance = new EZmaxApiDefinitionFull.MultilingualApikeyDescription();
       //expect(instance).to.be();
     });
 

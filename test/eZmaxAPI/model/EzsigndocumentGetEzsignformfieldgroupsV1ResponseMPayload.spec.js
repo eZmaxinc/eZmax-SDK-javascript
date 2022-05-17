@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload', function() {
     it('should create an instance of EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload', function() {
       // uncomment below and update the code to test EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload);
     });
 
     it('should have the property a_objEzsignformfieldgroup (base name: "a_objEzsignformfieldgroup")', function() {
       // uncomment below and update the code to test the property a_objEzsignformfieldgroup
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ContactinformationsRequest();
+    instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ContactinformationsRequest', function() {
     it('should create an instance of ContactinformationsRequest', function() {
       // uncomment below and update the code to test ContactinformationsRequest
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ContactinformationsRequest);
+      //var instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ContactinformationsRequest);
     });
 
     it('should have the property iAddressDefault (base name: "iAddressDefault")', function() {
       // uncomment below and update the code to test the property iAddressDefault
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property iPhoneDefault (base name: "iPhoneDefault")', function() {
       // uncomment below and update the code to test the property iPhoneDefault
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property iEmailDefault (base name: "iEmailDefault")', function() {
       // uncomment below and update the code to test the property iEmailDefault
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property iWebsiteDefault (base name: "iWebsiteDefault")', function() {
       // uncomment below and update the code to test the property iWebsiteDefault
-      //var instance = new EZmaxApiDefinition.ContactinformationsRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactinformationsRequest();
       //expect(instance).to.be();
     });
 

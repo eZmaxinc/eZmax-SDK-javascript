@@ -1,17 +1,18 @@
-# EZmaxApiDefinition.ObjectEzsigndocumentApi
+# EZmaxApiDefinitionFull.ObjectEzsigndocumentApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsigndocumentApplyEzsigntemplateV1**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
-[**ezsigndocumentApplyEzsigntemplateV2**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsign Template to the Ezsigndocument.
+[**ezsigndocumentApplyEzsigntemplateV1**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument.
+[**ezsigndocumentApplyEzsigntemplateV2**](ObjectEzsigndocumentApi.md#ezsigndocumentApplyEzsigntemplateV2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument.
 [**ezsigndocumentCreateObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument
 [**ezsigndocumentCreateObjectV2**](ObjectEzsigndocumentApi.md#ezsigndocumentCreateObjectV2) | **POST** /2/object/ezsigndocument | Create a new Ezsigndocument
 [**ezsigndocumentDeleteObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentDeleteObjectV1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument
 [**ezsigndocumentEditEzsignformfieldgroupsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignformfieldgroupsV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups
 [**ezsigndocumentEditEzsignsignaturesV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEditEzsignsignaturesV1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures
 [**ezsigndocumentEndPrematurelyV1**](ObjectEzsigndocumentApi.md#ezsigndocumentEndPrematurelyV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely
+[**ezsigndocumentGetActionableElementsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetActionableElementsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument
 [**ezsigndocumentGetDownloadUrlV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetDownloadUrlV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType} | Retrieve a URL to download documents.
 [**ezsigndocumentGetEzsignformfieldgroupsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignformfieldgroupsV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups | Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups
 [**ezsigndocumentGetEzsignpagesV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetEzsignpagesV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages | Retrieve an existing Ezsigndocument&#39;s Ezsignpages
@@ -21,6 +22,7 @@ Method | HTTP request | Description
 [**ezsigndocumentGetTemporaryProofV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetTemporaryProofV1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof | Retrieve the temporary proof
 [**ezsigndocumentGetWordsPositionsV1**](ObjectEzsigndocumentApi.md#ezsigndocumentGetWordsPositionsV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigndocument
 [**ezsigndocumentPatchObjectV1**](ObjectEzsigndocumentApi.md#ezsigndocumentPatchObjectV1) | **PATCH** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Patch an existing Ezsigndocument
+[**ezsigndocumentUnsendV1**](ObjectEzsigndocumentApi.md#ezsigndocumentUnsendV1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend | Unsend the Ezsigndocument
 
 
 
@@ -28,24 +30,24 @@ Method | HTTP request | Description
 
 > EzsigndocumentApplyEzsigntemplateV1Response ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateV1Request)
 
-Apply an Ezsign Template to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument.
 
 This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \&quot;E\&quot; to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentApplyEzsigntemplateV1Request = new EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV1Request(); // EzsigndocumentApplyEzsigntemplateV1Request | 
+let EzsigndocumentApplyEzsigntemplateV1Request = new EZmaxApiDefinitionFull.EzsigndocumentApplyEzsigntemplateV1Request(); // EzsigndocumentApplyEzsigntemplateV1Request | 
 apiInstance.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -81,24 +83,24 @@ Name | Type | Description  | Notes
 
 > EzsigndocumentApplyEzsigntemplateV2Response ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateV2Request)
 
-Apply an Ezsign Template to the Ezsigndocument.
+Apply an Ezsigntemplate to the Ezsigndocument.
 
 This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
 
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentApplyEzsigntemplateV2Request = new EZmaxApiDefinition.EzsigndocumentApplyEzsigntemplateV2Request(); // EzsigndocumentApplyEzsigntemplateV2Request | 
+let EzsigndocumentApplyEzsigntemplateV2Request = new EZmaxApiDefinitionFull.EzsigndocumentApplyEzsigntemplateV2Request(); // EzsigndocumentApplyEzsigntemplateV2Request | 
 apiInstance.ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateV2Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -141,16 +143,16 @@ The endpoint allows to create one or many elements at once.  The array can conta
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let EzsigndocumentCreateObjectV1Request = [new EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request()]; // [EzsigndocumentCreateObjectV1Request] | 
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
+let EzsigndocumentCreateObjectV1Request = [new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request()]; // [EzsigndocumentCreateObjectV1Request] | 
 apiInstance.ezsigndocumentCreateObjectV1(EzsigndocumentCreateObjectV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -192,16 +194,16 @@ The endpoint allows to create one or many elements at once.
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
-let EzsigndocumentCreateObjectV2Request = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Request(); // EzsigndocumentCreateObjectV2Request | 
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
+let EzsigndocumentCreateObjectV2Request = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Request(); // EzsigndocumentCreateObjectV2Request | 
 apiInstance.ezsigndocumentCreateObjectV2(EzsigndocumentCreateObjectV2Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -243,15 +245,15 @@ Delete an existing Ezsigndocument
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -294,17 +296,17 @@ Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same tim
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentEditEzsignformfieldgroupsV1Request = new EZmaxApiDefinition.EzsigndocumentEditEzsignformfieldgroupsV1Request(); // EzsigndocumentEditEzsignformfieldgroupsV1Request | 
+let EzsigndocumentEditEzsignformfieldgroupsV1Request = new EZmaxApiDefinitionFull.EzsigndocumentEditEzsignformfieldgroupsV1Request(); // EzsigndocumentEditEzsignformfieldgroupsV1Request | 
 apiInstance.ezsigndocumentEditEzsignformfieldgroupsV1(pkiEzsigndocumentID, EzsigndocumentEditEzsignformfieldgroupsV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -347,17 +349,17 @@ Using this endpoint, you can edit multiple Ezsignsignatures at the same time.
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentEditEzsignsignaturesV1Request = new EZmaxApiDefinition.EzsigndocumentEditEzsignsignaturesV1Request(); // EzsigndocumentEditEzsignsignaturesV1Request | 
+let EzsigndocumentEditEzsignsignaturesV1Request = new EZmaxApiDefinitionFull.EzsigndocumentEditEzsignsignaturesV1Request(); // EzsigndocumentEditEzsignsignaturesV1Request | 
 apiInstance.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, EzsigndocumentEditEzsignsignaturesV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -400,15 +402,15 @@ End prematurely an Ezsigndocument when some signatures are still required
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 let body = {key: null}; // Object | 
 apiInstance.ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID, body, (error, data, response) => {
@@ -442,6 +444,57 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## ezsigndocumentGetActionableElementsV1
+
+> EzsigndocumentGetActionableElementsV1Response ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID)
+
+Retrieve actionable elements for the Ezsigndocument
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
+let pkiEzsigndocumentID = 56; // Number | 
+apiInstance.ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **Number**|  | 
+
+### Return type
+
+[**EzsigndocumentGetActionableElementsV1Response**](EzsigndocumentGetActionableElementsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## ezsigndocumentGetDownloadUrlV1
 
 > EzsigndocumentGetDownloadUrlV1Response ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType)
@@ -453,15 +506,15 @@ This endpoint returns URLs to different files that can be downloaded during the 
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 let eDocumentType = "eDocumentType_example"; // String | The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
 apiInstance.ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType, (error, data, response) => {
@@ -506,15 +559,15 @@ Retrieve an existing Ezsigndocument&#39;s Ezsignformfieldgroups
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetEzsignformfieldgroupsV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -557,15 +610,15 @@ Retrieve an existing Ezsigndocument&#39;s Ezsignpages
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -608,15 +661,15 @@ Retrieve an existing Ezsigndocument&#39;s Ezsignsignatures
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetEzsignsignaturesV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -659,15 +712,15 @@ Retrieve an existing Ezsigndocument&#39;s Form Data
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetFormDataV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -708,15 +761,15 @@ Retrieve an existing Ezsigndocument
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetObjectV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -759,15 +812,15 @@ Retrieve the temporary proof while the Ezsigndocument is being processed since t
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
 apiInstance.ezsigndocumentGetTemporaryProofV1(pkiEzsigndocumentID, (error, data, response) => {
   if (error) {
@@ -810,17 +863,17 @@ Retrieve positions X,Y of given words from a Ezsigndocument
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentGetWordsPositionsV1Request = new EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request(); // EzsigndocumentGetWordsPositionsV1Request | 
+let EzsigndocumentGetWordsPositionsV1Request = new EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request(); // EzsigndocumentGetWordsPositionsV1Request | 
 apiInstance.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, EzsigndocumentGetWordsPositionsV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -863,17 +916,17 @@ Patch an existing Ezsigndocument
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
 let pkiEzsigndocumentID = 56; // Number | 
-let EzsigndocumentPatchObjectV1Request = new EZmaxApiDefinition.EzsigndocumentPatchObjectV1Request(); // EzsigndocumentPatchObjectV1Request | 
+let EzsigndocumentPatchObjectV1Request = new EZmaxApiDefinitionFull.EzsigndocumentPatchObjectV1Request(); // EzsigndocumentPatchObjectV1Request | 
 apiInstance.ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, EzsigndocumentPatchObjectV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -894,6 +947,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigndocumentPatchObjectV1Response**](EzsigndocumentPatchObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## ezsigndocumentUnsendV1
+
+> EzsigndocumentUnsendV1Response ezsigndocumentUnsendV1(pkiEzsigndocumentID, body)
+
+Unsend the Ezsigndocument
+
+Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
+let pkiEzsigndocumentID = 56; // Number | 
+let body = {key: null}; // Object | 
+apiInstance.ezsigndocumentUnsendV1(pkiEzsigndocumentID, body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigndocumentID** | **Number**|  | 
+ **body** | **Object**|  | 
+
+### Return type
+
+[**EzsigndocumentUnsendV1Response**](EzsigndocumentUnsendV1Response.md)
 
 ### Authorization
 

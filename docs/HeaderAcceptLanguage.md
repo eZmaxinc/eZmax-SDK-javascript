@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.HeaderAcceptLanguage
+# EZmaxApiDefinitionFull.HeaderAcceptLanguage
 
 ## Enum
 

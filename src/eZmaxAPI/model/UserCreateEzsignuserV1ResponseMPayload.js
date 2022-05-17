@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class UserCreateEzsignuserV1ResponseMPayload {
     /**
      * Constructs a new <code>UserCreateEzsignuserV1ResponseMPayload</code>.
-     * Payload for the /1/module/user/createEzsignuser API Request
+     * Payload for POST /1/module/user/createEzsignuser
      * @alias module:eZmaxAPI/model/UserCreateEzsignuserV1ResponseMPayload
      * @param a_sEmailAddressSuccess {Array.<String>} An array of email addresses that succeeded.
      * @param a_sEmailAddressFailure {Array.<String>} An array of email addresses that failed.

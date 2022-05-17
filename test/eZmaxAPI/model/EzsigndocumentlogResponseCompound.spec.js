@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('EzsigndocumentlogResponseCompound', function() {
     it('should create an instance of EzsigndocumentlogResponseCompound', function() {
       // uncomment below and update the code to test EzsigndocumentlogResponseCompound
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentlogResponseCompound);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound);
     });
 
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignsignerID (base name: "fkiEzsignsignerID")', function() {
       // uncomment below and update the code to test the property fkiEzsignsignerID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property dtEzsigndocumentlogDatetime (base name: "dtEzsigndocumentlogDatetime")', function() {
       // uncomment below and update the code to test the property dtEzsigndocumentlogDatetime
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property eEzsigndocumentlogType (base name: "eEzsigndocumentlogType")', function() {
       // uncomment below and update the code to test the property eEzsigndocumentlogType
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentlogDetail (base name: "sEzsigndocumentlogDetail")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentlogDetail
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentlogLastname (base name: "sEzsigndocumentlogLastname")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentlogLastname
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentlogFirstname (base name: "sEzsigndocumentlogFirstname")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentlogFirstname
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentlogIP (base name: "sEzsigndocumentlogIP")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentlogIP
-      //var instance = new EZmaxApiDefinition.EzsigndocumentlogResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -19,6 +19,8 @@ import EzsignfoldersignerassociationCreateObjectV1Response from '../model/Ezsign
 import EzsignfoldersignerassociationCreateObjectV2Request from '../model/EzsignfoldersignerassociationCreateObjectV2Request';
 import EzsignfoldersignerassociationCreateObjectV2Response from '../model/EzsignfoldersignerassociationCreateObjectV2Response';
 import EzsignfoldersignerassociationDeleteObjectV1Response from '../model/EzsignfoldersignerassociationDeleteObjectV1Response';
+import EzsignfoldersignerassociationEditObjectV1Request from '../model/EzsignfoldersignerassociationEditObjectV1Request';
+import EzsignfoldersignerassociationEditObjectV1Response from '../model/EzsignfoldersignerassociationEditObjectV1Response';
 import EzsignfoldersignerassociationGetInPersonLoginUrlV1Response from '../model/EzsignfoldersignerassociationGetInPersonLoginUrlV1Response';
 import EzsignfoldersignerassociationGetObjectV1Response from '../model/EzsignfoldersignerassociationGetObjectV1Response';
 
@@ -163,6 +165,54 @@ export default class ObjectEzsignfoldersignerassociationApi {
       let returnType = EzsignfoldersignerassociationDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfoldersignerassociationEditObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationEditObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationEditObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit an existing Ezsignfoldersignerassociation
+     * 
+     * @param {Number} pkiEzsignfoldersignerassociationID 
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationEditObjectV1Request} EzsignfoldersignerassociationEditObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationEditObjectV1Response}
+     */
+    ezsignfoldersignerassociationEditObjectV1(pkiEzsignfoldersignerassociationID, EzsignfoldersignerassociationEditObjectV1Request, callback) {
+      let postBody = EzsignfoldersignerassociationEditObjectV1Request;
+      // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
+      if (pkiEzsignfoldersignerassociationID === undefined || pkiEzsignfoldersignerassociationID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfoldersignerassociationID' when calling ezsignfoldersignerassociationEditObjectV1");
+      }
+      // verify the required parameter 'EzsignfoldersignerassociationEditObjectV1Request' is set
+      if (EzsignfoldersignerassociationEditObjectV1Request === undefined || EzsignfoldersignerassociationEditObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfoldersignerassociationEditObjectV1Request' when calling ezsignfoldersignerassociationEditObjectV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfoldersignerassociationID': pkiEzsignfoldersignerassociationID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfoldersignerassociationEditObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

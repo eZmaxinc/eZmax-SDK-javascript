@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse
+# EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse
 
 ## Properties
 

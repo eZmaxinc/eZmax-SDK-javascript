@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import FranchisereferalincomeCreateObjectV1ResponseMPayload from './Franchiseref
 class FranchisereferalincomeCreateObjectV1Response {
     /**
      * Constructs a new <code>FranchisereferalincomeCreateObjectV1Response</code>.
-     * Response for the /1/object/franchisereferalincome/createObject API Request
+     * Response for POST /1/object/franchisereferalincome
      * @alias module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Response
      * @implements module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

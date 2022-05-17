@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsignfolderGetEzsigndocumentsV1ResponseMPayload from './EzsignfolderGetE
 class EzsignfolderGetEzsigndocumentsV1Response {
     /**
      * Constructs a new <code>EzsignfolderGetEzsigndocumentsV1Response</code>.
-     * Response for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments API Request
+     * Response for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments
      * @alias module:eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1Response
      * @implements module:eZmaxAPI/model/EzsignfolderGetEzsigndocumentsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

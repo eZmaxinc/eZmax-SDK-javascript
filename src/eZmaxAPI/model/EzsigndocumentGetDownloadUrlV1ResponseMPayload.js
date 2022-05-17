@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class EzsigndocumentGetDownloadUrlV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsigndocumentGetDownloadUrlV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl API Request
+     * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl
      * @alias module:eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1ResponseMPayload
      * @param sDownloadUrl {String} The Url to the requested document.  Url will expire after 5 minutes.
      */

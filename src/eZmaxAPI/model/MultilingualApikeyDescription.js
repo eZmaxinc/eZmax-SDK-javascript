@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -59,7 +59,7 @@ class MultilingualApikeyDescription {
     }
 
 /**
-     * Returns Value in French
+     * Returns The description of the Apikey in French
      * @return {String}
      */
     getSApikeyDescription1() {
@@ -67,14 +67,14 @@ class MultilingualApikeyDescription {
     }
 
     /**
-     * Sets Value in French
-     * @param {String} sApikeyDescription1 Value in French
+     * Sets The description of the Apikey in French
+     * @param {String} sApikeyDescription1 The description of the Apikey in French
      */
     setSApikeyDescription1(sApikeyDescription1) {
         this['sApikeyDescription1'] = sApikeyDescription1;
     }
 /**
-     * Returns Value in English
+     * Returns The description of the Apikey in English
      * @return {String}
      */
     getSApikeyDescription2() {
@@ -82,8 +82,8 @@ class MultilingualApikeyDescription {
     }
 
     /**
-     * Sets Value in English
-     * @param {String} sApikeyDescription2 Value in English
+     * Sets The description of the Apikey in English
+     * @param {String} sApikeyDescription2 The description of the Apikey in English
      */
     setSApikeyDescription2(sApikeyDescription2) {
         this['sApikeyDescription2'] = sApikeyDescription2;
@@ -92,13 +92,13 @@ class MultilingualApikeyDescription {
 }
 
 /**
- * Value in French
+ * The description of the Apikey in French
  * @member {String} sApikeyDescription1
  */
 MultilingualApikeyDescription.prototype['sApikeyDescription1'] = undefined;
 
 /**
- * Value in English
+ * The description of the Apikey in English
  * @member {String} sApikeyDescription2
  */
 MultilingualApikeyDescription.prototype['sApikeyDescription2'] = undefined;

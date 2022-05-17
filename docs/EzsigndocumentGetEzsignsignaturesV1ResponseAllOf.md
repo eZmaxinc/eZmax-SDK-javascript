@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsigndocumentGetEzsignsignaturesV1ResponseAllOf
 
 ## Properties
 

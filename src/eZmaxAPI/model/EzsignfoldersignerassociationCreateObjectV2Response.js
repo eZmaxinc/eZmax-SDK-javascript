@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsignfoldersignerassociationCreateObjectV2ResponseMPayload from './Ezsig
 class EzsignfoldersignerassociationCreateObjectV2Response {
     /**
      * Constructs a new <code>EzsignfoldersignerassociationCreateObjectV2Response</code>.
-     * Response for the /2/object/ezsignfoldersignerassociation/createObject API Request
+     * Response for POST /2/object/ezsignfoldersignerassociation
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2Response
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

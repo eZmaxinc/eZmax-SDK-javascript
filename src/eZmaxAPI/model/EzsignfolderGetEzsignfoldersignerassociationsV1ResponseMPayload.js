@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsignfoldersignerassociationResponseCompound from './Ezsignfoldersignera
 class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
+     * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations
      * @alias module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
      * @param a_objEzsignfoldersignerassociation {Array.<module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound>} 
      */

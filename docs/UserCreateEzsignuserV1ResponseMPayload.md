@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.UserCreateEzsignuserV1ResponseMPayload
+# EZmaxApiDefinitionFull.UserCreateEzsignuserV1ResponseMPayload
 
 ## Properties
 

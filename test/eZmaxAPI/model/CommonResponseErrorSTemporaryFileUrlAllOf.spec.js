@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrlAllOf();
+    instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrlAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('CommonResponseErrorSTemporaryFileUrlAllOf', function() {
     it('should create an instance of CommonResponseErrorSTemporaryFileUrlAllOf', function() {
       // uncomment below and update the code to test CommonResponseErrorSTemporaryFileUrlAllOf
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrlAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrlAllOf);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrlAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrlAllOf);
     });
 
     it('should have the property sTemporaryFileUrl (base name: "sTemporaryFileUrl")', function() {
       // uncomment below and update the code to test the property sTemporaryFileUrl
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrlAllOf();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrlAllOf();
       //expect(instance).to.be();
     });
 

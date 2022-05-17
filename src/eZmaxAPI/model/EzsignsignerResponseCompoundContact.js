@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -73,6 +73,9 @@ class EzsignsignerResponseCompoundContact {
             }
             if (data.hasOwnProperty('sPhoneE164')) {
                 obj['sPhoneE164'] = ApiClient.convertToType(data['sPhoneE164'], 'String');
+            }
+            if (data.hasOwnProperty('sPhoneExtension')) {
+                obj['sPhoneExtension'] = ApiClient.convertToType(data['sPhoneExtension'], 'String');
             }
             if (data.hasOwnProperty('sPhoneE164Cell')) {
                 obj['sPhoneE164Cell'] = ApiClient.convertToType(data['sPhoneE164Cell'], 'String');
@@ -174,6 +177,21 @@ class EzsignsignerResponseCompoundContact {
         this['sPhoneE164'] = sPhoneE164;
     }
 /**
+     * Returns The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     * @return {String}
+     */
+    getSPhoneExtension() {
+        return this.sPhoneExtension;
+    }
+
+    /**
+     * Sets The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     * @param {String} sPhoneExtension The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     */
+    setSPhoneExtension(sPhoneExtension) {
+        this['sPhoneExtension'] = sPhoneExtension;
+    }
+/**
      * Returns A phone number in E.164 Format
      * @return {String}
      */
@@ -226,6 +244,12 @@ EzsignsignerResponseCompoundContact.prototype['sEmailAddress'] = undefined;
  * @member {String} sPhoneE164
  */
 EzsignsignerResponseCompoundContact.prototype['sPhoneE164'] = undefined;
+
+/**
+ * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+ * @member {String} sPhoneExtension
+ */
+EzsignsignerResponseCompoundContact.prototype['sPhoneExtension'] = undefined;
 
 /**
  * A phone number in E.164 Format

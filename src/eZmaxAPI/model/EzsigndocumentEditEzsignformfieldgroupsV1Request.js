@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsignformfieldgroupRequestCompound from './EzsignformfieldgroupRequestCo
 class EzsigndocumentEditEzsignformfieldgroupsV1Request {
     /**
      * Constructs a new <code>EzsigndocumentEditEzsignformfieldgroupsV1Request</code>.
-     * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups API Request
+     * Request for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups
      * @alias module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1Request
      * @param a_objEzsignformfieldgroup {Array.<module:eZmaxAPI/model/EzsignformfieldgroupRequestCompound>} 
      */

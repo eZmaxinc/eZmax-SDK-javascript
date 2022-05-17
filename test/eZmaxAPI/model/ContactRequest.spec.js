@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ContactRequest();
+    instance = new EZmaxApiDefinitionFull.ContactRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('ContactRequest', function() {
     it('should create an instance of ContactRequest', function() {
       // uncomment below and update the code to test ContactRequest
-      //var instance = new EZmaxApiDefinition.ContactRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ContactRequest);
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ContactRequest);
     });
 
     it('should have the property fkiContacttitleID (base name: "fkiContacttitleID")', function() {
       // uncomment below and update the code to test the property fkiContacttitleID
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiLanguageID (base name: "fkiLanguageID")', function() {
       // uncomment below and update the code to test the property fkiLanguageID
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sContactFirstname (base name: "sContactFirstname")', function() {
       // uncomment below and update the code to test the property sContactFirstname
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sContactLastname (base name: "sContactLastname")', function() {
       // uncomment below and update the code to test the property sContactLastname
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sContactCompany (base name: "sContactCompany")', function() {
       // uncomment below and update the code to test the property sContactCompany
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property dtContactBirthdate (base name: "dtContactBirthdate")', function() {
       // uncomment below and update the code to test the property dtContactBirthdate
-      //var instance = new EZmaxApiDefinition.ContactRequest();
+      //var instance = new EZmaxApiDefinitionFull.ContactRequest();
       //expect(instance).to.be();
     });
 

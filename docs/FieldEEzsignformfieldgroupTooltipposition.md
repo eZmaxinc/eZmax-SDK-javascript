@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignformfieldgroupTooltipposition
+# EZmaxApiDefinitionFull.FieldEEzsignformfieldgroupTooltipposition
 
 ## Enum
 
@@ -10,8 +10,6 @@
 * `TopRight` (value: `"TopRight"`)
 
 * `MiddleLeft` (value: `"MiddleLeft"`)
-
-* `MiddleCenter` (value: `"MiddleCenter"`)
 
 * `MiddleRight` (value: `"MiddleRight"`)
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonAuditdetail();
+    instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('CommonAuditdetail', function() {
     it('should create an instance of CommonAuditdetail', function() {
       // uncomment below and update the code to test CommonAuditdetail
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonAuditdetail);
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonAuditdetail);
     });
 
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiApikeyID (base name: "fkiApikeyID")', function() {
       // uncomment below and update the code to test the property fkiApikeyID
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property sUserLoginname (base name: "sUserLoginname")', function() {
       // uncomment below and update the code to test the property sUserLoginname
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property sUserLastname (base name: "sUserLastname")', function() {
       // uncomment below and update the code to test the property sUserLastname
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property sUserFirstname (base name: "sUserFirstname")', function() {
       // uncomment below and update the code to test the property sUserFirstname
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property sApikeyDescriptionX (base name: "sApikeyDescriptionX")', function() {
       // uncomment below and update the code to test the property sApikeyDescriptionX
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 
     it('should have the property dtAuditdetailDate (base name: "dtAuditdetailDate")', function() {
       // uncomment below and update the code to test the property dtAuditdetailDate
-      //var instance = new EZmaxApiDefinition.CommonAuditdetail();
+      //var instance = new EZmaxApiDefinitionFull.CommonAuditdetail();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignfolderSendreminderfrequency
+# EZmaxApiDefinitionFull.FieldEEzsignfolderSendreminderfrequency
 
 ## Enum
 

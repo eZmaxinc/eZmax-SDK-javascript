@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,9 +21,9 @@ import ApiClient from '../ApiClient';
 class EzsigndocumentApplyEzsigntemplateV1Request {
     /**
      * Constructs a new <code>EzsigndocumentApplyEzsigntemplateV1Request</code>.
-     * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate API Request
+     * Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate
      * @alias module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request
-     * @param fkiEzsigntemplateID {Number} The unique ID of the Ezsigndocument
+     * @param fkiEzsigntemplateID {Number} The unique ID of the Ezsigntemplate
      * @param a_sEzsigntemplatesigner {Array.<String>} 
      * @param a_pkiEzsignfoldersignerassociationID {Array.<Number>} 
      */
@@ -68,7 +68,7 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
     }
 
 /**
-     * Returns The unique ID of the Ezsigndocument
+     * Returns The unique ID of the Ezsigntemplate
      * @return {Number}
      */
     getFkiEzsigntemplateID() {
@@ -76,8 +76,8 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
     }
 
     /**
-     * Sets The unique ID of the Ezsigndocument
-     * @param {Number} fkiEzsigntemplateID The unique ID of the Ezsigndocument
+     * Sets The unique ID of the Ezsigntemplate
+     * @param {Number} fkiEzsigntemplateID The unique ID of the Ezsigntemplate
      */
     setFkiEzsigntemplateID(fkiEzsigntemplateID) {
         this['fkiEzsigntemplateID'] = fkiEzsigntemplateID;
@@ -112,7 +112,7 @@ class EzsigndocumentApplyEzsigntemplateV1Request {
 }
 
 /**
- * The unique ID of the Ezsigndocument
+ * The unique ID of the Ezsigntemplate
  * @member {Number} fkiEzsigntemplateID
  */
 EzsigndocumentApplyEzsigntemplateV1Request.prototype['fkiEzsigntemplateID'] = undefined;

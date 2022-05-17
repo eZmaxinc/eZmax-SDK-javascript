@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV2Request
+# EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV2Request
 
 ## Properties
 

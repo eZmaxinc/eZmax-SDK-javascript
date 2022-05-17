@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsigndocumentGetEzsignsignaturesV1ResponseMPayload', function() {
     it('should create an instance of EzsigndocumentGetEzsignsignaturesV1ResponseMPayload', function() {
       // uncomment below and update the code to test EzsigndocumentGetEzsignsignaturesV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload);
     });
 
     it('should have the property a_objEzsignsignature (base name: "a_objEzsignsignature")', function() {
       // uncomment below and update the code to test the property a_objEzsignsignature
-      //var instance = new EZmaxApiDefinition.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentGetEzsignsignaturesV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

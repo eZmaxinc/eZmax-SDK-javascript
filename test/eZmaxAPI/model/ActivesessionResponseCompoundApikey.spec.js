@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ActivesessionResponseCompoundApikey();
+    instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ActivesessionResponseCompoundApikey', function() {
     it('should create an instance of ActivesessionResponseCompoundApikey', function() {
       // uncomment below and update the code to test ActivesessionResponseCompoundApikey
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundApikey();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ActivesessionResponseCompoundApikey);
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey);
     });
 
     it('should have the property pkiApikeyID (base name: "pkiApikeyID")', function() {
       // uncomment below and update the code to test the property pkiApikeyID
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundApikey();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey();
       //expect(instance).to.be();
     });
 
     it('should have the property sApikeyDescriptionX (base name: "sApikeyDescriptionX")', function() {
       // uncomment below and update the code to test the property sApikeyDescriptionX
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundApikey();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey();
       //expect(instance).to.be();
     });
 

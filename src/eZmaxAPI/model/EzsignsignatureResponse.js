@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
+import FieldEEzsignsignatureTooltipposition from './FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
 
 /**
@@ -25,17 +27,17 @@ class EzsignsignatureResponse {
      * An Ezsignsignature Object
      * @alias module:eZmaxAPI/model/EzsignsignatureResponse
      * @param pkiEzsignsignatureID {Number} The unique ID of the Ezsignsignature
+     * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
-     * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      */
-    constructor(pkiEzsignsignatureID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID) { 
+    constructor(pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType) { 
         
-        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID);
+        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType);
     }
 
     /**
@@ -43,15 +45,15 @@ class EzsignsignatureResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignsignatureID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, fkiEzsigndocumentID) { 
+    static initialize(obj, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType) { 
         obj['pkiEzsignsignatureID'] = pkiEzsignsignatureID;
+        obj['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
         obj['fkiEzsignfoldersignerassociationID'] = fkiEzsignfoldersignerassociationID;
         obj['iEzsignpagePagenumber'] = iEzsignpagePagenumber;
         obj['iEzsignsignatureX'] = iEzsignsignatureX;
         obj['iEzsignsignatureY'] = iEzsignsignatureY;
         obj['iEzsignsignatureStep'] = iEzsignsignatureStep;
         obj['eEzsignsignatureType'] = eEzsignsignatureType;
-        obj['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
     }
 
     /**
@@ -67,6 +69,9 @@ class EzsignsignatureResponse {
 
             if (data.hasOwnProperty('pkiEzsignsignatureID')) {
                 obj['pkiEzsignsignatureID'] = ApiClient.convertToType(data['pkiEzsignsignatureID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiEzsigndocumentID')) {
+                obj['fkiEzsigndocumentID'] = ApiClient.convertToType(data['fkiEzsigndocumentID'], 'Number');
             }
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
                 obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
@@ -86,8 +91,14 @@ class EzsignsignatureResponse {
             if (data.hasOwnProperty('eEzsignsignatureType')) {
                 obj['eEzsignsignatureType'] = FieldEEzsignsignatureType.constructFromObject(data['eEzsignsignatureType']);
             }
-            if (data.hasOwnProperty('fkiEzsigndocumentID')) {
-                obj['fkiEzsigndocumentID'] = ApiClient.convertToType(data['fkiEzsigndocumentID'], 'Number');
+            if (data.hasOwnProperty('tEzsignsignatureTooltip')) {
+                obj['tEzsignsignatureTooltip'] = ApiClient.convertToType(data['tEzsignsignatureTooltip'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsignsignatureTooltipposition')) {
+                obj['eEzsignsignatureTooltipposition'] = FieldEEzsignsignatureTooltipposition.constructFromObject(data['eEzsignsignatureTooltipposition']);
+            }
+            if (data.hasOwnProperty('eEzsignsignatureFont')) {
+                obj['eEzsignsignatureFont'] = FieldEEzsignsignatureFont.constructFromObject(data['eEzsignsignatureFont']);
             }
         }
         return obj;
@@ -107,6 +118,21 @@ class EzsignsignatureResponse {
      */
     setPkiEzsignsignatureID(pkiEzsignsignatureID) {
         this['pkiEzsignsignatureID'] = pkiEzsignsignatureID;
+    }
+/**
+     * Returns The unique ID of the Ezsigndocument
+     * @return {Number}
+     */
+    getFkiEzsigndocumentID() {
+        return this.fkiEzsigndocumentID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsigndocument
+     * @param {Number} fkiEzsigndocumentID The unique ID of the Ezsigndocument
+     */
+    setFkiEzsigndocumentID(fkiEzsigndocumentID) {
+        this['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
     }
 /**
      * Returns The unique ID of the Ezsignfoldersignerassociation
@@ -154,7 +180,7 @@ class EzsignsignatureResponse {
         this['iEzsignsignatureX'] = iEzsignsignatureX;
     }
 /**
-     * Returns The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * Returns The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @return {Number}
      */
     getIEzsignsignatureY() {
@@ -162,8 +188,8 @@ class EzsignsignatureResponse {
     }
 
     /**
-     * Sets The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     * @param {Number} iEzsignsignatureY The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * Sets The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param {Number} iEzsignsignatureY The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      */
     setIEzsignsignatureY(iEzsignsignatureY) {
         this['iEzsignsignatureY'] = iEzsignsignatureY;
@@ -197,19 +223,45 @@ class EzsignsignatureResponse {
         this['eEzsignsignatureType'] = eEzsignsignatureType;
     }
 /**
-     * Returns The unique ID of the Ezsigndocument
-     * @return {Number}
+     * Returns A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     * @return {String}
      */
-    getFkiEzsigndocumentID() {
-        return this.fkiEzsigndocumentID;
+    getTEzsignsignatureTooltip() {
+        return this.tEzsignsignatureTooltip;
     }
 
     /**
-     * Sets The unique ID of the Ezsigndocument
-     * @param {Number} fkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * Sets A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     * @param {String} tEzsignsignatureTooltip A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
      */
-    setFkiEzsigndocumentID(fkiEzsigndocumentID) {
-        this['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
+    setTEzsignsignatureTooltip(tEzsignsignatureTooltip) {
+        this['tEzsignsignatureTooltip'] = tEzsignsignatureTooltip;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition}
+     */
+    getEEzsignsignatureTooltipposition() {
+        return this.eEzsignsignatureTooltipposition;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition} eEzsignsignatureTooltipposition
+     */
+    setEEzsignsignatureTooltipposition(eEzsignsignatureTooltipposition) {
+        this['eEzsignsignatureTooltipposition'] = eEzsignsignatureTooltipposition;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureFont}
+     */
+    getEEzsignsignatureFont() {
+        return this.eEzsignsignatureFont;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureFont} eEzsignsignatureFont
+     */
+    setEEzsignsignatureFont(eEzsignsignatureFont) {
+        this['eEzsignsignatureFont'] = eEzsignsignatureFont;
     }
 
 }
@@ -219,6 +271,12 @@ class EzsignsignatureResponse {
  * @member {Number} pkiEzsignsignatureID
  */
 EzsignsignatureResponse.prototype['pkiEzsignsignatureID'] = undefined;
+
+/**
+ * The unique ID of the Ezsigndocument
+ * @member {Number} fkiEzsigndocumentID
+ */
+EzsignsignatureResponse.prototype['fkiEzsigndocumentID'] = undefined;
 
 /**
  * The unique ID of the Ezsignfoldersignerassociation
@@ -239,7 +297,7 @@ EzsignsignatureResponse.prototype['iEzsignpagePagenumber'] = undefined;
 EzsignsignatureResponse.prototype['iEzsignsignatureX'] = undefined;
 
 /**
- * The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+ * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
  * @member {Number} iEzsignsignatureY
  */
 EzsignsignatureResponse.prototype['iEzsignsignatureY'] = undefined;
@@ -256,10 +314,20 @@ EzsignsignatureResponse.prototype['iEzsignsignatureStep'] = undefined;
 EzsignsignatureResponse.prototype['eEzsignsignatureType'] = undefined;
 
 /**
- * The unique ID of the Ezsigndocument
- * @member {Number} fkiEzsigndocumentID
+ * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+ * @member {String} tEzsignsignatureTooltip
  */
-EzsignsignatureResponse.prototype['fkiEzsigndocumentID'] = undefined;
+EzsignsignatureResponse.prototype['tEzsignsignatureTooltip'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition} eEzsignsignatureTooltipposition
+ */
+EzsignsignatureResponse.prototype['eEzsignsignatureTooltipposition'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureFont} eEzsignsignatureFont
+ */
+EzsignsignatureResponse.prototype['eEzsignsignatureFont'] = undefined;
 
 
 

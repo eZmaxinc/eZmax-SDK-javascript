@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetFormDataV1Response
+# EZmaxApiDefinitionFull.EzsigndocumentGetFormDataV1Response
 
 ## Properties
 

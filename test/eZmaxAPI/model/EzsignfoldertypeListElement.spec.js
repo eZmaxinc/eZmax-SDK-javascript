@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+    instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('EzsignfoldertypeListElement', function() {
     it('should create an instance of EzsignfoldertypeListElement', function() {
       // uncomment below and update the code to test EzsignfoldertypeListElement
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldertypeListElement);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfoldertypeListElement);
     });
 
     it('should have the property pkiEzsignfoldertypeID (base name: "pkiEzsignfoldertypeID")', function() {
       // uncomment below and update the code to test the property pkiEzsignfoldertypeID
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property eEzsignfoldertypePrivacylevel (base name: "eEzsignfoldertypePrivacylevel")', function() {
       // uncomment below and update the code to test the property eEzsignfoldertypePrivacylevel
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
       // uncomment below and update the code to test the property sEzsignfoldertypeNameX
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property bEzsignfoldertypeIsactive (base name: "bEzsignfoldertypeIsactive")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeIsactive
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeListElement();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignsignatureRequestCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EzsignsignatureRequestCompoundAllOf', function() {
     it('should create an instance of EzsignsignatureRequestCompoundAllOf', function() {
       // uncomment below and update the code to test EzsignsignatureRequestCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureRequestCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignatureRequestCompoundAllOf);
     });
 
     it('should have the property bEzsignsignatureCustomdate (base name: "bEzsignsignatureCustomdate")', function() {
       // uncomment below and update the code to test the property bEzsignsignatureCustomdate
-      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureRequestCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objEzsignsignaturecustomdate (base name: "a_objEzsignsignaturecustomdate")', function() {
       // uncomment below and update the code to test the property a_objEzsignsignaturecustomdate
-      //var instance = new EZmaxApiDefinition.EzsignsignatureRequestCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureRequestCompoundAllOf();
       //expect(instance).to.be();
     });
 

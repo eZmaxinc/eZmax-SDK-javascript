@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderCreateObjectV2ResponseMPayload
+# EZmaxApiDefinitionFull.EzsignfolderCreateObjectV2ResponseMPayload
 
 ## Properties
 

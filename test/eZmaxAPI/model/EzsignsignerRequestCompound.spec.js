@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+    instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('EzsignsignerRequestCompound', function() {
     it('should create an instance of EzsignsignerRequestCompound', function() {
       // uncomment below and update the code to test EzsignsignerRequestCompound
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerRequestCompound);
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignerRequestCompound);
     });
 
     it('should have the property fkiUserlogintypeID (base name: "fkiUserlogintypeID")', function() {
       // uncomment below and update the code to test the property fkiUserlogintypeID
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiTaxassignmentID (base name: "fkiTaxassignmentID")', function() {
       // uncomment below and update the code to test the property fkiTaxassignmentID
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiSecretquestionID (base name: "fkiSecretquestionID")', function() {
       // uncomment below and update the code to test the property fkiSecretquestionID
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property eEzsignsignerLogintype (base name: "eEzsignsignerLogintype")', function() {
       // uncomment below and update the code to test the property eEzsignsignerLogintype
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignsignerSecretanswer (base name: "sEzsignsignerSecretanswer")', function() {
       // uncomment below and update the code to test the property sEzsignsignerSecretanswer
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property objContact (base name: "objContact")', function() {
       // uncomment below and update the code to test the property objContact
-      //var instance = new EZmaxApiDefinition.EzsignsignerRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerRequestCompound();
       //expect(instance).to.be();
     });
 

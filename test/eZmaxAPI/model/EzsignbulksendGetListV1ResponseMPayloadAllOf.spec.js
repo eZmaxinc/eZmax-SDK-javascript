@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayloadAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayloadAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsignbulksendGetListV1ResponseMPayloadAllOf', function() {
     it('should create an instance of EzsignbulksendGetListV1ResponseMPayloadAllOf', function() {
       // uncomment below and update the code to test EzsignbulksendGetListV1ResponseMPayloadAllOf
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayloadAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayloadAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayloadAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayloadAllOf);
     });
 
     it('should have the property a_objEzsignbulksend (base name: "a_objEzsignbulksend")', function() {
       // uncomment below and update the code to test the property a_objEzsignbulksend
-      //var instance = new EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayloadAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayloadAllOf();
       //expect(instance).to.be();
     });
 

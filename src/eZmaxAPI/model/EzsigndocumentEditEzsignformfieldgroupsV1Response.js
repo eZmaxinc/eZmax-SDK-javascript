@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,6 +15,8 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf from './EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf';
+import EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload from './EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload';
 
 /**
  * The EzsigndocumentEditEzsignformfieldgroupsV1Response model module.
@@ -24,13 +26,15 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsigndocumentEditEzsignformfieldgroupsV1Response {
     /**
      * Constructs a new <code>EzsigndocumentEditEzsignformfieldgroupsV1Response</code>.
-     * Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups API Request
+     * Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups
      * @alias module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1Response
+     * @implements module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param mPayload {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsigndocumentEditEzsignformfieldgroupsV1Response.initialize(this);
+    constructor(mPayload) { 
+        EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        EzsigndocumentEditEzsignformfieldgroupsV1Response.initialize(this, mPayload);
     }
 
     /**
@@ -38,7 +42,8 @@ class EzsigndocumentEditEzsignformfieldgroupsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, mPayload) { 
+        obj['mPayload'] = mPayload;
     }
 
     /**
@@ -51,8 +56,12 @@ class EzsigndocumentEditEzsignformfieldgroupsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentEditEzsignformfieldgroupsV1Response();
+            EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload.constructFromObject(data['mPayload']);
+            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
@@ -63,6 +72,19 @@ class EzsigndocumentEditEzsignformfieldgroupsV1Response {
         return obj;
     }
 
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -93,6 +115,11 @@ class EzsigndocumentEditEzsignformfieldgroupsV1Response {
 }
 
 /**
+ * @member {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload} mPayload
+ */
+EzsigndocumentEditEzsignformfieldgroupsV1Response.prototype['mPayload'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
 EzsigndocumentEditEzsignformfieldgroupsV1Response.prototype['objDebugPayload'] = undefined;
@@ -103,6 +130,11 @@ EzsigndocumentEditEzsignformfieldgroupsV1Response.prototype['objDebugPayload'] =
 EzsigndocumentEditEzsignformfieldgroupsV1Response.prototype['objDebug'] = undefined;
 
 
+// Implement EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf interface:
+/**
+ * @member {module:eZmaxAPI/model/EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload} mPayload
+ */
+EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf.prototype['mPayload'] = undefined;
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

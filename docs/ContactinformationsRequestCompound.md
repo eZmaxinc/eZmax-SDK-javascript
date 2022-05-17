@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ContactinformationsRequestCompound
+# EZmaxApiDefinitionFull.ContactinformationsRequestCompound
 
 ## Properties
 

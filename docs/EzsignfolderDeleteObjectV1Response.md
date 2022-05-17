@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderDeleteObjectV1Response
+# EZmaxApiDefinitionFull.EzsignfolderDeleteObjectV1Response
 
 ## Properties
 

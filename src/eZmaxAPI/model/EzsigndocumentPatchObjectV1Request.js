@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsigndocumentRequestPatch from './EzsigndocumentRequestPatch';
 class EzsigndocumentPatchObjectV1Request {
     /**
      * Constructs a new <code>EzsigndocumentPatchObjectV1Request</code>.
-     * Request for the /1/object/ezsigndocument/pathObject API Request
+     * Request for PATCH /1/object/ezsigndocument/{pkiEzsigndocumentID}
      * @alias module:eZmaxAPI/model/EzsigndocumentPatchObjectV1Request
      * @param objEzsigndocument {module:eZmaxAPI/model/EzsigndocumentRequestPatch} 
      */

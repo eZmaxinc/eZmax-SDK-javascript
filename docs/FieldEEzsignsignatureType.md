@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignsignatureType
+# EZmaxApiDefinitionFull.FieldEEzsignsignatureType
 
 ## Enum
 

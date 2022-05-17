@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignbulksendtransmissionGetObjectV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsignbulksendtransmissionGetObjectV1ResponseMPayload
 
 ## Properties
 
@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **sEzsignbulksendtransmissionDescription** | **String** | The description of the Ezsignbulksendtransmission | 
 **iEzsignbulksendtransmissionErrors** | **Number** | The number of errors during the Ezsignbulksendtransmission | 
 **objAudit** | [**CommonAudit**](CommonAudit.md) |  | 
+**a_objEzsignfoldertransmission** | [**[CustomEzsignfoldertransmissionResponse]**](CustomEzsignfoldertransmissionResponse.md) |  | 
 
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.GlobalCustomerGetEndpointV1Response
+# EZmaxApiDefinitionFull.GlobalCustomerGetEndpointV1Response
 
 ## Properties
 

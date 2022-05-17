@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import ApikeyRequestCompound from './ApikeyRequestCompound';
 class ApikeyCreateObjectV2Request {
     /**
      * Constructs a new <code>ApikeyCreateObjectV2Request</code>.
-     * Request for the /2/object/apikey/createObject API Request
+     * Request for POST /2/object/apikey
      * @alias module:eZmaxAPI/model/ApikeyCreateObjectV2Request
      * @param a_objApikey {Array.<module:eZmaxAPI/model/ApikeyRequestCompound>} 
      */

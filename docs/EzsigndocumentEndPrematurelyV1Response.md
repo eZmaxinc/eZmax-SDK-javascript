@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentEndPrematurelyV1Response
+# EZmaxApiDefinitionFull.EzsigndocumentEndPrematurelyV1Response
 
 ## Properties
 

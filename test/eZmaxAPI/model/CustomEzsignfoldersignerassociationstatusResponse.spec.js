@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
+    instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('CustomEzsignfoldersignerassociationstatusResponse', function() {
     it('should create an instance of CustomEzsignfoldersignerassociationstatusResponse', function() {
       // uncomment below and update the code to test CustomEzsignfoldersignerassociationstatusResponse
-      //var instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse);
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse);
     });
 
     it('should have the property fkiEzsignfoldersignerassociationID (base name: "fkiEzsignfoldersignerassociationID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldersignerassociationID
-      //var instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfoldersignerassociationstatusLastname (base name: "sEzsignfoldersignerassociationstatusLastname")', function() {
       // uncomment below and update the code to test the property sEzsignfoldersignerassociationstatusLastname
-      //var instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfoldersignerassociationstatusFirstname (base name: "sEzsignfoldersignerassociationstatusFirstname")', function() {
       // uncomment below and update the code to test the property sEzsignfoldersignerassociationstatusFirstname
-      //var instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objEzsignsignaturestatus (base name: "a_objEzsignsignaturestatus")', function() {
       // uncomment below and update the code to test the property a_objEzsignsignaturestatus
-      //var instance = new EZmaxApiDefinition.CustomEzsignfoldersignerassociationstatusResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
       //expect(instance).to.be();
     });
 

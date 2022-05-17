@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CustomFormsDataFolderResponse
+# EZmaxApiDefinitionFull.CustomFormsDataFolderResponse
 
 ## Properties
 

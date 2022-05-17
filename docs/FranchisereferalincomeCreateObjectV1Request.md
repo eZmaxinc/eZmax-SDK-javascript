@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FranchisereferalincomeCreateObjectV1Request
+# EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV1Request
 
 ## Properties
 

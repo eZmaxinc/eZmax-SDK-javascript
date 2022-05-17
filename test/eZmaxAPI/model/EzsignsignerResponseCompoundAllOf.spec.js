@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignsignerResponseCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsignsignerResponseCompoundAllOf', function() {
     it('should create an instance of EzsignsignerResponseCompoundAllOf', function() {
       // uncomment below and update the code to test EzsignsignerResponseCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignerResponseCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerResponseCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignerResponseCompoundAllOf);
     });
 
     it('should have the property objContact (base name: "objContact")', function() {
       // uncomment below and update the code to test the property objContact
-      //var instance = new EZmaxApiDefinition.EzsignsignerResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignerResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 

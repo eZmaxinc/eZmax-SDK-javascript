@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,73 +50,91 @@
   describe('EzsigndocumentRequest', function() {
     it('should create an instance of EzsigndocumentRequest', function() {
       // uncomment below and update the code to test EzsigndocumentRequest
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentRequest);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentRequest);
     });
 
     it('should have the property pkiEzsigndocumentID (base name: "pkiEzsigndocumentID")', function() {
       // uncomment below and update the code to test the property pkiEzsigndocumentID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eEzsigndocumentSource (base name: "eEzsigndocumentSource")', function() {
-      // uncomment below and update the code to test the property eEzsigndocumentSource
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eEzsigndocumentFormat (base name: "eEzsigndocumentFormat")', function() {
-      // uncomment below and update the code to test the property eEzsigndocumentFormat
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sEzsigndocumentBase64 (base name: "sEzsigndocumentBase64")', function() {
-      // uncomment below and update the code to test the property sEzsigndocumentBase64
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sEzsigndocumentUrl (base name: "sEzsigndocumentUrl")', function() {
-      // uncomment below and update the code to test the property sEzsigndocumentUrl
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bEzsigndocumentForcerepair (base name: "bEzsigndocumentForcerepair")', function() {
-      // uncomment below and update the code to test the property bEzsigndocumentForcerepair
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sEzsigndocumentPassword (base name: "sEzsigndocumentPassword")', function() {
-      // uncomment below and update the code to test the property sEzsigndocumentPassword
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignfolderID (base name: "fkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfolderID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property dtEzsigndocumentDuedate (base name: "dtEzsigndocumentDuedate")', function() {
-      // uncomment below and update the code to test the property dtEzsigndocumentDuedate
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+    it('should have the property fkiEzsigntemplateID (base name: "fkiEzsigntemplateID")', function() {
+      // uncomment below and update the code to test the property fkiEzsigntemplateID
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiEzsignfoldersignerassociationID (base name: "fkiEzsignfoldersignerassociationID")', function() {
+      // uncomment below and update the code to test the property fkiEzsignfoldersignerassociationID
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiLanguageID (base name: "fkiLanguageID")', function() {
       // uncomment below and update the code to test the property fkiLanguageID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigndocumentSource (base name: "eEzsigndocumentSource")', function() {
+      // uncomment below and update the code to test the property eEzsigndocumentSource
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigndocumentFormat (base name: "eEzsigndocumentFormat")', function() {
+      // uncomment below and update the code to test the property eEzsigndocumentFormat
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigndocumentBase64 (base name: "sEzsigndocumentBase64")', function() {
+      // uncomment below and update the code to test the property sEzsigndocumentBase64
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigndocumentUrl (base name: "sEzsigndocumentUrl")', function() {
+      // uncomment below and update the code to test the property sEzsigndocumentUrl
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsigndocumentForcerepair (base name: "bEzsigndocumentForcerepair")', function() {
+      // uncomment below and update the code to test the property bEzsigndocumentForcerepair
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigndocumentPassword (base name: "sEzsigndocumentPassword")', function() {
+      // uncomment below and update the code to test the property sEzsigndocumentPassword
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigndocumentForm (base name: "eEzsigndocumentForm")', function() {
+      // uncomment below and update the code to test the property eEzsigndocumentForm
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtEzsigndocumentDuedate (base name: "dtEzsigndocumentDuedate")', function() {
+      // uncomment below and update the code to test the property dtEzsigndocumentDuedate
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigndocumentName (base name: "sEzsigndocumentName")', function() {
       // uncomment below and update the code to test the property sEzsigndocumentName
-      //var instance = new EZmaxApiDefinition.EzsigndocumentRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequest();
       //expect(instance).to.be();
     });
 

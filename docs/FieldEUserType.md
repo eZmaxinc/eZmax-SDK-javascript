@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEUserType
+# EZmaxApiDefinitionFull.FieldEUserType
 
 ## Enum
 

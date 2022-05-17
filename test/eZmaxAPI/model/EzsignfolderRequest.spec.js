@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfolderRequest();
+    instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('EzsignfolderRequest', function() {
     it('should create an instance of EzsignfolderRequest', function() {
       // uncomment below and update the code to test EzsignfolderRequest
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfolderRequest);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfolderRequest);
     });
 
     it('should have the property pkiEzsignfolderID (base name: "pkiEzsignfolderID")', function() {
       // uncomment below and update the code to test the property pkiEzsignfolderID
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignfoldertypeID (base name: "fkiEzsignfoldertypeID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldertypeID
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsigntsarequirementID (base name: "fkiEzsigntsarequirementID")', function() {
       // uncomment below and update the code to test the property fkiEzsigntsarequirementID
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfolderDescription (base name: "sEzsignfolderDescription")', function() {
       // uncomment below and update the code to test the property sEzsignfolderDescription
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property tEzsignfolderNote (base name: "tEzsignfolderNote")', function() {
       // uncomment below and update the code to test the property tEzsignfolderNote
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property eEzsignfolderSendreminderfrequency (base name: "eEzsignfolderSendreminderfrequency")', function() {
       // uncomment below and update the code to test the property eEzsignfolderSendreminderfrequency
-      //var instance = new EZmaxApiDefinition.EzsignfolderRequest();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderRequest();
       //expect(instance).to.be();
     });
 

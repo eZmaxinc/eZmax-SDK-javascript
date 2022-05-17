@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldRequestCompound
+# EZmaxApiDefinitionFull.EzsignformfieldRequestCompound
 
 ## Properties
 

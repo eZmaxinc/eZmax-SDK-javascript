@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,8 +26,6 @@ class EzsigndocumentlogResponseCompound {
      * An Ezsigndocumentlog Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsigndocumentlogResponseCompound
      * @implements module:eZmaxAPI/model/EzsigndocumentlogResponse
-     * @param fkiUserID {Number} The unique ID of the User
-     * @param fkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
      * @param dtEzsigndocumentlogDatetime {String} The date and time at which the event was logged
      * @param eEzsigndocumentlogType {module:eZmaxAPI/model/FieldEEzsigndocumentlogType} 
      * @param sEzsigndocumentlogDetail {String} The detail of the Ezsigndocumentlog
@@ -35,9 +33,9 @@ class EzsigndocumentlogResponseCompound {
      * @param sEzsigndocumentlogFirstname {String} The first name of the User or Ezsignsigner
      * @param sEzsigndocumentlogIP {String} Represent an IP address.
      */
-    constructor(fkiUserID, fkiEzsignsignerID, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP) { 
-        EzsigndocumentlogResponse.initialize(this, fkiUserID, fkiEzsignsignerID, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP);
-        EzsigndocumentlogResponseCompound.initialize(this, fkiUserID, fkiEzsignsignerID, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP);
+    constructor(dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP) { 
+        EzsigndocumentlogResponse.initialize(this, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP);
+        EzsigndocumentlogResponseCompound.initialize(this, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP);
     }
 
     /**
@@ -45,9 +43,7 @@ class EzsigndocumentlogResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiUserID, fkiEzsignsignerID, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP) { 
-        obj['fkiUserID'] = fkiUserID;
-        obj['fkiEzsignsignerID'] = fkiEzsignsignerID;
+    static initialize(obj, dtEzsigndocumentlogDatetime, eEzsigndocumentlogType, sEzsigndocumentlogDetail, sEzsigndocumentlogLastname, sEzsigndocumentlogFirstname, sEzsigndocumentlogIP) { 
         obj['dtEzsigndocumentlogDatetime'] = dtEzsigndocumentlogDatetime;
         obj['eEzsigndocumentlogType'] = eEzsigndocumentlogType;
         obj['sEzsigndocumentlogDetail'] = sEzsigndocumentlogDetail;

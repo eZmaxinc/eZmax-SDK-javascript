@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class EzsignsignatureCreateObjectV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignsignatureCreateObjectV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignsignature/createObject API Request
+     * Payload for POST /1/object/ezsignsignature
      * @alias module:eZmaxAPI/model/EzsignsignatureCreateObjectV1ResponseMPayload
      * @param a_pkiEzsignsignatureID {Array.<Number>} An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
      */

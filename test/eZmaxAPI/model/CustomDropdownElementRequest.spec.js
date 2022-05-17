@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomDropdownElementRequest();
+    instance = new EZmaxApiDefinitionFull.CustomDropdownElementRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CustomDropdownElementRequest', function() {
     it('should create an instance of CustomDropdownElementRequest', function() {
       // uncomment below and update the code to test CustomDropdownElementRequest
-      //var instance = new EZmaxApiDefinition.CustomDropdownElementRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomDropdownElementRequest);
+      //var instance = new EZmaxApiDefinitionFull.CustomDropdownElementRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomDropdownElementRequest);
     });
 
     it('should have the property sLabel (base name: "sLabel")', function() {
       // uncomment below and update the code to test the property sLabel
-      //var instance = new EZmaxApiDefinition.CustomDropdownElementRequest();
+      //var instance = new EZmaxApiDefinitionFull.CustomDropdownElementRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sValue (base name: "sValue")', function() {
       // uncomment below and update the code to test the property sValue
-      //var instance = new EZmaxApiDefinition.CustomDropdownElementRequest();
+      //var instance = new EZmaxApiDefinitionFull.CustomDropdownElementRequest();
       //expect(instance).to.be();
     });
 

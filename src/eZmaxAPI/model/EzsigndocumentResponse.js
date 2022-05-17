@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -39,11 +39,12 @@ class EzsigndocumentResponse {
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
      * @param sEzsigndocumentMD5initial {String} MD5 Hash of the initial PDF Document before signatures were applied to it.
      * @param sEzsigndocumentMD5signed {String} MD5 Hash of the final PDF Document after all signatures were applied to it.
+     * @param bEzsigndocumentEzsignform {Boolean} If the Ezsigndocument contains an Ezsignform or not
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit) { 
+    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit) { 
         
-        EzsigndocumentResponse.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit);
+        EzsigndocumentResponse.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit);
     }
 
     /**
@@ -51,7 +52,7 @@ class EzsigndocumentResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, objAudit) { 
+    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, dtEzsigndocumentFirstsend, dtEzsigndocumentLastsend, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit) { 
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -66,6 +67,7 @@ class EzsigndocumentResponse {
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
         obj['sEzsigndocumentMD5initial'] = sEzsigndocumentMD5initial;
         obj['sEzsigndocumentMD5signed'] = sEzsigndocumentMD5signed;
+        obj['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
         obj['objAudit'] = objAudit;
     }
 
@@ -121,6 +123,9 @@ class EzsigndocumentResponse {
             }
             if (data.hasOwnProperty('sEzsigndocumentMD5signed')) {
                 obj['sEzsigndocumentMD5signed'] = ApiClient.convertToType(data['sEzsigndocumentMD5signed'], 'String');
+            }
+            if (data.hasOwnProperty('bEzsigndocumentEzsignform')) {
+                obj['bEzsigndocumentEzsignform'] = ApiClient.convertToType(data['bEzsigndocumentEzsignform'], 'Boolean');
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
@@ -340,6 +345,21 @@ class EzsigndocumentResponse {
         this['sEzsigndocumentMD5signed'] = sEzsigndocumentMD5signed;
     }
 /**
+     * Returns If the Ezsigndocument contains an Ezsignform or not
+     * @return {Boolean}
+     */
+    getBEzsigndocumentEzsignform() {
+        return this.bEzsigndocumentEzsignform;
+    }
+
+    /**
+     * Sets If the Ezsigndocument contains an Ezsignform or not
+     * @param {Boolean} bEzsigndocumentEzsignform If the Ezsigndocument contains an Ezsignform or not
+     */
+    setBEzsigndocumentEzsignform(bEzsigndocumentEzsignform) {
+        this['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
+    }
+/**
      * @return {module:eZmaxAPI/model/CommonAudit}
      */
     getObjAudit() {
@@ -437,6 +457,12 @@ EzsigndocumentResponse.prototype['sEzsigndocumentMD5initial'] = undefined;
  * @member {String} sEzsigndocumentMD5signed
  */
 EzsigndocumentResponse.prototype['sEzsigndocumentMD5signed'] = undefined;
+
+/**
+ * If the Ezsigndocument contains an Ezsignform or not
+ * @member {Boolean} bEzsigndocumentEzsignform
+ */
+EzsigndocumentResponse.prototype['bEzsigndocumentEzsignform'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.WebhookUserUserCreated
+# EZmaxApiDefinitionFull.WebhookUserUserCreated
 
 ## Properties
 

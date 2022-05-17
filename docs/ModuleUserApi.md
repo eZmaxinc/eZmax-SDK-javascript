@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ModuleUserApi
+# EZmaxApiDefinitionFull.ModuleUserApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -19,16 +19,16 @@ The endpoint allows to initiate the creation or a user of type Ezsignuser.  The 
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ModuleUserApi();
-let UserCreateEzsignuserV1Request = [new EZmaxApiDefinition.UserCreateEzsignuserV1Request()]; // [UserCreateEzsignuserV1Request] | 
+let apiInstance = new EZmaxApiDefinitionFull.ModuleUserApi();
+let UserCreateEzsignuserV1Request = [new EZmaxApiDefinitionFull.UserCreateEzsignuserV1Request()]; // [UserCreateEzsignuserV1Request] | 
 apiInstance.userCreateEzsignuserV1(UserCreateEzsignuserV1Request, (error, data, response) => {
   if (error) {
     console.error(error);

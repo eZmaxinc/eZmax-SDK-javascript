@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EzsigndocumentCreateObjectV1Request', function() {
     it('should create an instance of EzsigndocumentCreateObjectV1Request', function() {
       // uncomment below and update the code to test EzsigndocumentCreateObjectV1Request
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request);
     });
 
     it('should have the property objEzsigndocument (base name: "objEzsigndocument")', function() {
       // uncomment below and update the code to test the property objEzsigndocument
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request();
       //expect(instance).to.be();
     });
 
     it('should have the property objEzsigndocumentCompound (base name: "objEzsigndocumentCompound")', function() {
       // uncomment below and update the code to test the property objEzsigndocumentCompound
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV1Request();
       //expect(instance).to.be();
     });
 

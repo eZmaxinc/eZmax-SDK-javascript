@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.AttemptResponseCompound();
+    instance = new EZmaxApiDefinitionFull.AttemptResponseCompound();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('AttemptResponseCompound', function() {
     it('should create an instance of AttemptResponseCompound', function() {
       // uncomment below and update the code to test AttemptResponseCompound
-      //var instance = new EZmaxApiDefinition.AttemptResponseCompound();
-      //expect(instance).to.be.a(EZmaxApiDefinition.AttemptResponseCompound);
+      //var instance = new EZmaxApiDefinitionFull.AttemptResponseCompound();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.AttemptResponseCompound);
     });
 
     it('should have the property dtAttemptStart (base name: "dtAttemptStart")', function() {
       // uncomment below and update the code to test the property dtAttemptStart
-      //var instance = new EZmaxApiDefinition.AttemptResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.AttemptResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sAttemptResult (base name: "sAttemptResult")', function() {
       // uncomment below and update the code to test the property sAttemptResult
-      //var instance = new EZmaxApiDefinition.AttemptResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.AttemptResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property iAttemptDuration (base name: "iAttemptDuration")', function() {
       // uncomment below and update the code to test the property iAttemptDuration
-      //var instance = new EZmaxApiDefinition.AttemptResponseCompound();
+      //var instance = new EZmaxApiDefinitionFull.AttemptResponseCompound();
       //expect(instance).to.be();
     });
 

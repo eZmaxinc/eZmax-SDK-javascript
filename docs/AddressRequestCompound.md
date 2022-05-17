@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.AddressRequestCompound
+# EZmaxApiDefinitionFull.AddressRequestCompound
 
 ## Properties
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 import ActivesessionResponseCompound from './ActivesessionResponseCompound';
 import ActivesessionResponseCompoundApikey from './ActivesessionResponseCompoundApikey';
 import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUser';
-import FieldEActivesessionSessiontype from './FieldEActivesessionSessiontype';
+import FieldEActivesessionUsertype from './FieldEActivesessionUsertype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 
 /**
@@ -26,10 +26,10 @@ import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 class ActivesessionGetCurrentV1ResponseMPayload {
     /**
      * Constructs a new <code>ActivesessionGetCurrentV1ResponseMPayload</code>.
-     * Payload for the /1/object/activesession/getCurrent API Request
+     * Payload for GET /1/object/activesession/getCurrent
      * @alias module:eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload
      * @implements module:eZmaxAPI/model/ActivesessionResponseCompound
-     * @param eActivesessionSessiontype {module:eZmaxAPI/model/FieldEActivesessionSessiontype} 
+     * @param eActivesessionUsertype {module:eZmaxAPI/model/FieldEActivesessionUsertype} 
      * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sCompanyNameX {String} The Name of the Company in the language of the requester
@@ -40,9 +40,9 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
-    constructor(eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
-        ActivesessionResponseCompound.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
-        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+    constructor(eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
     /**
@@ -50,8 +50,8 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
-        obj['eActivesessionSessiontype'] = eActivesessionSessiontype;
+    static initialize(obj, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+        obj['eActivesessionUsertype'] = eActivesessionUsertype;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sCompanyNameX'] = sCompanyNameX;
@@ -75,8 +75,8 @@ class ActivesessionGetCurrentV1ResponseMPayload {
             obj = obj || new ActivesessionGetCurrentV1ResponseMPayload();
             ActivesessionResponseCompound.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('eActivesessionSessiontype')) {
-                obj['eActivesessionSessiontype'] = FieldEActivesessionSessiontype.constructFromObject(data['eActivesessionSessiontype']);
+            if (data.hasOwnProperty('eActivesessionUsertype')) {
+                obj['eActivesessionUsertype'] = FieldEActivesessionUsertype.constructFromObject(data['eActivesessionUsertype']);
             }
             if (data.hasOwnProperty('eActivesessionWeekdaystart')) {
                 obj['eActivesessionWeekdaystart'] = FieldEActivesessionWeekdaystart.constructFromObject(data['eActivesessionWeekdaystart']);
@@ -116,17 +116,17 @@ class ActivesessionGetCurrentV1ResponseMPayload {
     }
 
 /**
-     * @return {module:eZmaxAPI/model/FieldEActivesessionSessiontype}
+     * @return {module:eZmaxAPI/model/FieldEActivesessionUsertype}
      */
-    getEActivesessionSessiontype() {
-        return this.eActivesessionSessiontype;
+    getEActivesessionUsertype() {
+        return this.eActivesessionUsertype;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+     * @param {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
      */
-    setEActivesessionSessiontype(eActivesessionSessiontype) {
-        this['eActivesessionSessiontype'] = eActivesessionSessiontype;
+    setEActivesessionUsertype(eActivesessionUsertype) {
+        this['eActivesessionUsertype'] = eActivesessionUsertype;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
@@ -291,9 +291,9 @@ class ActivesessionGetCurrentV1ResponseMPayload {
 }
 
 /**
- * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+ * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
  */
-ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionSessiontype'] = undefined;
+ActivesessionGetCurrentV1ResponseMPayload.prototype['eActivesessionUsertype'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
@@ -360,9 +360,9 @@ ActivesessionGetCurrentV1ResponseMPayload.prototype['a_eModuleInternalname'] = u
 
 // Implement ActivesessionResponseCompound interface:
 /**
- * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+ * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
  */
-ActivesessionResponseCompound.prototype['eActivesessionSessiontype'] = undefined;
+ActivesessionResponseCompound.prototype['eActivesessionUsertype'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
  */

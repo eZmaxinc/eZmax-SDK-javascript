@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf
 
 ## Properties
 

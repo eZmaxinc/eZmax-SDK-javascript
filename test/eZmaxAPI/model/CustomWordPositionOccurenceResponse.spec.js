@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
+    instance = new EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CustomWordPositionOccurenceResponse', function() {
     it('should create an instance of CustomWordPositionOccurenceResponse', function() {
       // uncomment below and update the code to test CustomWordPositionOccurenceResponse
-      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomWordPositionOccurenceResponse);
+      //var instance = new EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse);
     });
 
     it('should have the property iPage (base name: "iPage")', function() {
       // uncomment below and update the code to test the property iPage
-      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iX (base name: "iX")', function() {
       // uncomment below and update the code to test the property iX
-      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property iY (base name: "iY")', function() {
       // uncomment below and update the code to test the property iY
-      //var instance = new EZmaxApiDefinition.CustomWordPositionOccurenceResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse();
       //expect(instance).to.be();
     });
 

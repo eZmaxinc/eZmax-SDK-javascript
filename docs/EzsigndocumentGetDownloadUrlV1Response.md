@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetDownloadUrlV1Response
+# EZmaxApiDefinitionFull.EzsigndocumentGetDownloadUrlV1Response
 
 ## Properties
 

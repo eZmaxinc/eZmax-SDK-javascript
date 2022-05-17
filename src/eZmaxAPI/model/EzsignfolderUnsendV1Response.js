@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -24,7 +24,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsignfolderUnsendV1Response {
     /**
      * Constructs a new <code>EzsignfolderUnsendV1Response</code>.
-     * Response for the /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend API Request
+     * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend
      * @alias module:eZmaxAPI/model/EzsignfolderUnsendV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      */

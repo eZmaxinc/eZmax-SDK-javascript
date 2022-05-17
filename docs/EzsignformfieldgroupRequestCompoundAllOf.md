@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupRequestCompoundAllOf
+# EZmaxApiDefinitionFull.EzsignformfieldgroupRequestCompoundAllOf
 
 ## Properties
 

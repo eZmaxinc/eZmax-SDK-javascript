@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,9 +20,9 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
@@ -49,8 +49,8 @@
   describe('FieldEEzsignfoldertypePrivacylevel', function() {
     it('should create an instance of FieldEEzsignfoldertypePrivacylevel', function() {
       // uncomment below and update the code to test FieldEEzsignfoldertypePrivacylevel
-      //var instance = new EZmaxApiDefinition.FieldEEzsignfoldertypePrivacylevel();
-      //expect(instance).to.be.a(EZmaxApiDefinition.FieldEEzsignfoldertypePrivacylevel);
+      //var instance = new EZmaxApiDefinitionFull.FieldEEzsignfoldertypePrivacylevel();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.FieldEEzsignfoldertypePrivacylevel);
     });
 
   });

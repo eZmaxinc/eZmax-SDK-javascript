@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsignbulksendtransmissionGetObjectV1ResponseMPayload from './Ezsignbulks
 class EzsignbulksendtransmissionGetObjectV1Response {
     /**
      * Constructs a new <code>EzsignbulksendtransmissionGetObjectV1Response</code>.
-     * Response for the /1/object/ezsignbulksendtransmission/getObject API Request
+     * Response for GET /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}
      * @alias module:eZmaxAPI/model/EzsignbulksendtransmissionGetObjectV1Response
      * @implements module:eZmaxAPI/model/EzsignbulksendtransmissionGetObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

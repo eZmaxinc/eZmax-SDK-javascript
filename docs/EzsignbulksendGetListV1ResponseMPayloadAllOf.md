@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignbulksendGetListV1ResponseMPayloadAllOf
+# EZmaxApiDefinitionFull.EzsignbulksendGetListV1ResponseMPayloadAllOf
 
 ## Properties
 

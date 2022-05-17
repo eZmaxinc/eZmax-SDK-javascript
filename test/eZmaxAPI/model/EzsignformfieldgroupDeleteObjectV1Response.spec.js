@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response();
+    instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EzsignformfieldgroupDeleteObjectV1Response', function() {
     it('should create an instance of EzsignformfieldgroupDeleteObjectV1Response', function() {
       // uncomment below and update the code to test EzsignformfieldgroupDeleteObjectV1Response
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response);
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response);
     });
 
     it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
       // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response();
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response();
       //expect(instance).to.be();
     });
 
     it('should have the property objDebug (base name: "objDebug")', function() {
       // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response();
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response();
       //expect(instance).to.be();
     });
 

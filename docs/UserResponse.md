@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.UserResponse
+# EZmaxApiDefinitionFull.UserResponse
 
 ## Properties
 

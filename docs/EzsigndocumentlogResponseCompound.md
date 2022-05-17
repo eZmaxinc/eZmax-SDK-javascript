@@ -1,11 +1,11 @@
-# EZmaxApiDefinition.EzsigndocumentlogResponseCompound
+# EZmaxApiDefinitionFull.EzsigndocumentlogResponseCompound
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fkiUserID** | **Number** | The unique ID of the User | 
-**fkiEzsignsignerID** | **Number** | The unique ID of the Ezsignsigner | 
+**fkiUserID** | **Number** | The unique ID of the User | [optional] 
+**fkiEzsignsignerID** | **Number** | The unique ID of the Ezsignsigner | [optional] 
 **dtEzsigndocumentlogDatetime** | **String** | The date and time at which the event was logged | 
 **eEzsigndocumentlogType** | [**FieldEEzsigndocumentlogType**](FieldEEzsigndocumentlogType.md) |  | 
 **sEzsigndocumentlogDetail** | **String** | The detail of the Ezsigndocumentlog | 

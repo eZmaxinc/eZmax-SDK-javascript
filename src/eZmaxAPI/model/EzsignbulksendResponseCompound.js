@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -14,6 +14,9 @@
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import EzsignbulksendResponse from './EzsignbulksendResponse';
+import EzsignbulksendResponseCompoundAllOf from './EzsignbulksendResponseCompoundAllOf';
+import EzsignbulksenddocumentmappingResponseCompound from './EzsignbulksenddocumentmappingResponseCompound';
+import EzsignbulksendsignermappingResponse from './EzsignbulksendsignermappingResponse';
 
 /**
  * The EzsignbulksendResponseCompound model module.
@@ -26,17 +29,23 @@ class EzsignbulksendResponseCompound {
      * An Ezsignbulksend Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignbulksendResponseCompound
      * @implements module:eZmaxAPI/model/EzsignbulksendResponse
+     * @implements module:eZmaxAPI/model/EzsignbulksendResponseCompoundAllOf
      * @param pkiEzsignbulksendID {Number} The unique ID of the Ezsignbulksend
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @param sLanguageNameX {String} The Name of the Language in the language of the requester
+     * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
      * @param sEzsignbulksendDescription {String} The description of the Ezsignbulksend
      * @param tEzsignbulksendNote {String} Note about the Ezsignbulksend
+     * @param bEzsignbulksendNeedvalidation {Boolean} Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @param bEzsignbulksendIsactive {Boolean} Whether the Ezsignbulksend is active or not
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
+     * @param a_objEzsignbulksenddocumentmapping {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>} 
+     * @param a_objEzsignbulksendsignermapping {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} 
      */
-    constructor(pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendIsactive, objAudit) { 
-        EzsignbulksendResponse.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendIsactive, objAudit);
-        EzsignbulksendResponseCompound.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendIsactive, objAudit);
+    constructor(pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping) { 
+        EzsignbulksendResponse.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit);EzsignbulksendResponseCompoundAllOf.initialize(this, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping);
+        EzsignbulksendResponseCompound.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping);
     }
 
     /**
@@ -44,14 +53,19 @@ class EzsignbulksendResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendIsactive, objAudit) { 
+    static initialize(obj, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping) { 
         obj['pkiEzsignbulksendID'] = pkiEzsignbulksendID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiLanguageID'] = fkiLanguageID;
+        obj['sLanguageNameX'] = sLanguageNameX;
+        obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
         obj['sEzsignbulksendDescription'] = sEzsignbulksendDescription;
         obj['tEzsignbulksendNote'] = tEzsignbulksendNote;
+        obj['bEzsignbulksendNeedvalidation'] = bEzsignbulksendNeedvalidation;
         obj['bEzsignbulksendIsactive'] = bEzsignbulksendIsactive;
         obj['objAudit'] = objAudit;
+        obj['a_objEzsignbulksenddocumentmapping'] = a_objEzsignbulksenddocumentmapping;
+        obj['a_objEzsignbulksendsignermapping'] = a_objEzsignbulksendsignermapping;
     }
 
     /**
@@ -65,6 +79,7 @@ class EzsignbulksendResponseCompound {
         if (data) {
             obj = obj || new EzsignbulksendResponseCompound();
             EzsignbulksendResponse.constructFromObject(data, obj);
+            EzsignbulksendResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignbulksendID')) {
                 obj['pkiEzsignbulksendID'] = ApiClient.convertToType(data['pkiEzsignbulksendID'], 'Number');
@@ -75,17 +90,32 @@ class EzsignbulksendResponseCompound {
             if (data.hasOwnProperty('fkiLanguageID')) {
                 obj['fkiLanguageID'] = ApiClient.convertToType(data['fkiLanguageID'], 'Number');
             }
+            if (data.hasOwnProperty('sLanguageNameX')) {
+                obj['sLanguageNameX'] = ApiClient.convertToType(data['sLanguageNameX'], 'String');
+            }
+            if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
+                obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
+            }
             if (data.hasOwnProperty('sEzsignbulksendDescription')) {
                 obj['sEzsignbulksendDescription'] = ApiClient.convertToType(data['sEzsignbulksendDescription'], 'String');
             }
             if (data.hasOwnProperty('tEzsignbulksendNote')) {
                 obj['tEzsignbulksendNote'] = ApiClient.convertToType(data['tEzsignbulksendNote'], 'String');
             }
+            if (data.hasOwnProperty('bEzsignbulksendNeedvalidation')) {
+                obj['bEzsignbulksendNeedvalidation'] = ApiClient.convertToType(data['bEzsignbulksendNeedvalidation'], 'Boolean');
+            }
             if (data.hasOwnProperty('bEzsignbulksendIsactive')) {
                 obj['bEzsignbulksendIsactive'] = ApiClient.convertToType(data['bEzsignbulksendIsactive'], 'Boolean');
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
+            if (data.hasOwnProperty('a_objEzsignbulksenddocumentmapping')) {
+                obj['a_objEzsignbulksenddocumentmapping'] = ApiClient.convertToType(data['a_objEzsignbulksenddocumentmapping'], [EzsignbulksenddocumentmappingResponseCompound]);
+            }
+            if (data.hasOwnProperty('a_objEzsignbulksendsignermapping')) {
+                obj['a_objEzsignbulksendsignermapping'] = ApiClient.convertToType(data['a_objEzsignbulksendsignermapping'], [EzsignbulksendsignermappingResponse]);
             }
         }
         return obj;
@@ -139,6 +169,36 @@ class EzsignbulksendResponseCompound {
         this['fkiLanguageID'] = fkiLanguageID;
     }
 /**
+     * Returns The Name of the Language in the language of the requester
+     * @return {String}
+     */
+    getSLanguageNameX() {
+        return this.sLanguageNameX;
+    }
+
+    /**
+     * Sets The Name of the Language in the language of the requester
+     * @param {String} sLanguageNameX The Name of the Language in the language of the requester
+     */
+    setSLanguageNameX(sLanguageNameX) {
+        this['sLanguageNameX'] = sLanguageNameX;
+    }
+/**
+     * Returns The name of the Ezsignfoldertype in the language of the requester
+     * @return {String}
+     */
+    getSEzsignfoldertypeNameX() {
+        return this.sEzsignfoldertypeNameX;
+    }
+
+    /**
+     * Sets The name of the Ezsignfoldertype in the language of the requester
+     * @param {String} sEzsignfoldertypeNameX The name of the Ezsignfoldertype in the language of the requester
+     */
+    setSEzsignfoldertypeNameX(sEzsignfoldertypeNameX) {
+        this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
+    }
+/**
      * Returns The description of the Ezsignbulksend
      * @return {String}
      */
@@ -169,6 +229,21 @@ class EzsignbulksendResponseCompound {
         this['tEzsignbulksendNote'] = tEzsignbulksendNote;
     }
 /**
+     * Returns Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     * @return {Boolean}
+     */
+    getBEzsignbulksendNeedvalidation() {
+        return this.bEzsignbulksendNeedvalidation;
+    }
+
+    /**
+     * Sets Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     * @param {Boolean} bEzsignbulksendNeedvalidation Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     */
+    setBEzsignbulksendNeedvalidation(bEzsignbulksendNeedvalidation) {
+        this['bEzsignbulksendNeedvalidation'] = bEzsignbulksendNeedvalidation;
+    }
+/**
      * Returns Whether the Ezsignbulksend is active or not
      * @return {Boolean}
      */
@@ -196,6 +271,32 @@ class EzsignbulksendResponseCompound {
     setObjAudit(objAudit) {
         this['objAudit'] = objAudit;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>}
+     */
+    getAObjEzsignbulksenddocumentmapping() {
+        return this.a_objEzsignbulksenddocumentmapping;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>} a_objEzsignbulksenddocumentmapping
+     */
+    setAObjEzsignbulksenddocumentmapping(a_objEzsignbulksenddocumentmapping) {
+        this['a_objEzsignbulksenddocumentmapping'] = a_objEzsignbulksenddocumentmapping;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>}
+     */
+    getAObjEzsignbulksendsignermapping() {
+        return this.a_objEzsignbulksendsignermapping;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} a_objEzsignbulksendsignermapping
+     */
+    setAObjEzsignbulksendsignermapping(a_objEzsignbulksendsignermapping) {
+        this['a_objEzsignbulksendsignermapping'] = a_objEzsignbulksendsignermapping;
+    }
 
 }
 
@@ -218,6 +319,18 @@ EzsignbulksendResponseCompound.prototype['fkiEzsignfoldertypeID'] = undefined;
 EzsignbulksendResponseCompound.prototype['fkiLanguageID'] = undefined;
 
 /**
+ * The Name of the Language in the language of the requester
+ * @member {String} sLanguageNameX
+ */
+EzsignbulksendResponseCompound.prototype['sLanguageNameX'] = undefined;
+
+/**
+ * The name of the Ezsignfoldertype in the language of the requester
+ * @member {String} sEzsignfoldertypeNameX
+ */
+EzsignbulksendResponseCompound.prototype['sEzsignfoldertypeNameX'] = undefined;
+
+/**
  * The description of the Ezsignbulksend
  * @member {String} sEzsignbulksendDescription
  */
@@ -230,6 +343,12 @@ EzsignbulksendResponseCompound.prototype['sEzsignbulksendDescription'] = undefin
 EzsignbulksendResponseCompound.prototype['tEzsignbulksendNote'] = undefined;
 
 /**
+ * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+ * @member {Boolean} bEzsignbulksendNeedvalidation
+ */
+EzsignbulksendResponseCompound.prototype['bEzsignbulksendNeedvalidation'] = undefined;
+
+/**
  * Whether the Ezsignbulksend is active or not
  * @member {Boolean} bEzsignbulksendIsactive
  */
@@ -239,6 +358,16 @@ EzsignbulksendResponseCompound.prototype['bEzsignbulksendIsactive'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsignbulksendResponseCompound.prototype['objAudit'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>} a_objEzsignbulksenddocumentmapping
+ */
+EzsignbulksendResponseCompound.prototype['a_objEzsignbulksenddocumentmapping'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} a_objEzsignbulksendsignermapping
+ */
+EzsignbulksendResponseCompound.prototype['a_objEzsignbulksendsignermapping'] = undefined;
 
 
 // Implement EzsignbulksendResponse interface:
@@ -258,6 +387,16 @@ EzsignbulksendResponse.prototype['fkiEzsignfoldertypeID'] = undefined;
  */
 EzsignbulksendResponse.prototype['fkiLanguageID'] = undefined;
 /**
+ * The Name of the Language in the language of the requester
+ * @member {String} sLanguageNameX
+ */
+EzsignbulksendResponse.prototype['sLanguageNameX'] = undefined;
+/**
+ * The name of the Ezsignfoldertype in the language of the requester
+ * @member {String} sEzsignfoldertypeNameX
+ */
+EzsignbulksendResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
+/**
  * The description of the Ezsignbulksend
  * @member {String} sEzsignbulksendDescription
  */
@@ -268,6 +407,11 @@ EzsignbulksendResponse.prototype['sEzsignbulksendDescription'] = undefined;
  */
 EzsignbulksendResponse.prototype['tEzsignbulksendNote'] = undefined;
 /**
+ * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+ * @member {Boolean} bEzsignbulksendNeedvalidation
+ */
+EzsignbulksendResponse.prototype['bEzsignbulksendNeedvalidation'] = undefined;
+/**
  * Whether the Ezsignbulksend is active or not
  * @member {Boolean} bEzsignbulksendIsactive
  */
@@ -276,6 +420,15 @@ EzsignbulksendResponse.prototype['bEzsignbulksendIsactive'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsignbulksendResponse.prototype['objAudit'] = undefined;
+// Implement EzsignbulksendResponseCompoundAllOf interface:
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>} a_objEzsignbulksenddocumentmapping
+ */
+EzsignbulksendResponseCompoundAllOf.prototype['a_objEzsignbulksenddocumentmapping'] = undefined;
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} a_objEzsignbulksendsignermapping
+ */
+EzsignbulksendResponseCompoundAllOf.prototype['a_objEzsignbulksendsignermapping'] = undefined;
 
 
 

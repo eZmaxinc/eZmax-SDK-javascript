@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class FranchisereferalincomeCreateObjectV1ResponseMPayload {
     /**
      * Constructs a new <code>FranchisereferalincomeCreateObjectV1ResponseMPayload</code>.
-     * Payload for the /1/object/franchisereferalincome/createObject API Request
+     * Payload for POST /1/object/franchisereferalincome
      * @alias module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV1ResponseMPayload
      * @param a_pkiFranchisereferalincomeID {Array.<Number>} An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
      */

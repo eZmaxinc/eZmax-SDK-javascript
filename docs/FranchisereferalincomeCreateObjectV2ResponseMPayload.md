@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FranchisereferalincomeCreateObjectV2ResponseMPayload
+# EZmaxApiDefinitionFull.FranchisereferalincomeCreateObjectV2ResponseMPayload
 
 ## Properties
 

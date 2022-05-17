@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EzsigndocumentCreateObjectV2Response', function() {
     it('should create an instance of EzsigndocumentCreateObjectV2Response', function() {
       // uncomment below and update the code to test EzsigndocumentCreateObjectV2Response
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response);
     });
 
     it('should have the property mPayload (base name: "mPayload")', function() {
       // uncomment below and update the code to test the property mPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response();
       //expect(instance).to.be();
     });
 
     it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
       // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response();
       //expect(instance).to.be();
     });
 
     it('should have the property objDebug (base name: "objDebug")', function() {
       // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2Response();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2Response();
       //expect(instance).to.be();
     });
 

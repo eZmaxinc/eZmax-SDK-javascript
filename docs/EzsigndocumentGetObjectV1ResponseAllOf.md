@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetObjectV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsigndocumentGetObjectV1ResponseAllOf
 
 ## Properties
 

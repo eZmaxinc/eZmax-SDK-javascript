@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetListAllOf();
+    instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetListAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CommonResponseObjDebugPayloadGetListAllOf', function() {
     it('should create an instance of CommonResponseObjDebugPayloadGetListAllOf', function() {
       // uncomment below and update the code to test CommonResponseObjDebugPayloadGetListAllOf
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetListAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayloadGetListAllOf);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetListAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetListAllOf);
     });
 
     it('should have the property a_Filter (base name: "a_Filter")', function() {
       // uncomment below and update the code to test the property a_Filter
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetListAllOf();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetListAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_OrderBy (base name: "a_OrderBy")', function() {
       // uncomment below and update the code to test the property a_OrderBy
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetListAllOf();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetListAllOf();
       //expect(instance).to.be();
     });
 

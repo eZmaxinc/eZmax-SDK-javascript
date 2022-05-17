@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ApikeyCreateObjectV1ResponseMPayload
+# EZmaxApiDefinitionFull.ApikeyCreateObjectV1ResponseMPayload
 
 ## Properties
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -59,7 +59,7 @@ class EzsignsignatureResponseCompoundAllOf {
     }
 
 /**
-     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
     getBEzsignsignatureCustomdate() {
@@ -67,8 +67,8 @@ class EzsignsignatureResponseCompoundAllOf {
     }
 
     /**
-     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
-     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
+     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      */
     setBEzsignsignatureCustomdate(bEzsignsignatureCustomdate) {
         this['bEzsignsignatureCustomdate'] = bEzsignsignatureCustomdate;
@@ -92,7 +92,7 @@ class EzsignsignatureResponseCompoundAllOf {
 }
 
 /**
- * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsignsignatureCustomdate
  */
 EzsignsignatureResponseCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;

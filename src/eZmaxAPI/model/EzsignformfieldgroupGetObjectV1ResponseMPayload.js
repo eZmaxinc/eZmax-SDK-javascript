@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -28,7 +28,7 @@ import FieldEEzsignformfieldgroupType from './FieldEEzsignformfieldgroupType';
 class EzsignformfieldgroupGetObjectV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignformfieldgroupGetObjectV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignformfieldgroup/getObject API Request
+     * Payload for GET /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}
      * @alias module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1ResponseMPayload
      * @implements module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound
      * @param pkiEzsignformfieldgroupID {Number} The unique ID of the Ezsignformfieldgroup
@@ -42,7 +42,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload {
      * @param iEzsignformfieldgroupFilledmax {Number} The maximum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup
      * @param bEzsignformfieldgroupReadonly {Boolean} Whether the Ezsignformfieldgroup is read only or not.
      * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>} 
-     * @param a_objEzsignformfieldgroupsigner {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} 
+     * @param a_objEzsignformfieldgroupsigner {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} 
      */
     constructor(pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfield, a_objEzsignformfieldgroupsigner) { 
         EzsignformfieldgroupResponseCompound.initialize(this, pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfield, a_objEzsignformfieldgroupsigner);
@@ -133,7 +133,7 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload {
                 obj['a_objDropdownElement'] = ApiClient.convertToType(data['a_objDropdownElement'], [CustomDropdownElementResponseCompound]);
             }
             if (data.hasOwnProperty('a_objEzsignformfieldgroupsigner')) {
-                obj['a_objEzsignformfieldgroupsigner'] = EzsignformfieldgroupsignerResponseCompound.constructFromObject(data['a_objEzsignformfieldgroupsigner']);
+                obj['a_objEzsignformfieldgroupsigner'] = ApiClient.convertToType(data['a_objEzsignformfieldgroupsigner'], [EzsignformfieldgroupsignerResponseCompound]);
             }
         }
         return obj;
@@ -385,14 +385,14 @@ class EzsignformfieldgroupGetObjectV1ResponseMPayload {
         this['a_objDropdownElement'] = a_objDropdownElement;
     }
 /**
-     * @return {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound}
+     * @return {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>}
      */
     getAObjEzsignformfieldgroupsigner() {
         return this.a_objEzsignformfieldgroupsigner;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} a_objEzsignformfieldgroupsigner
+     * @param {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} a_objEzsignformfieldgroupsigner
      */
     setAObjEzsignformfieldgroupsigner(a_objEzsignformfieldgroupsigner) {
         this['a_objEzsignformfieldgroupsigner'] = a_objEzsignformfieldgroupsigner;
@@ -498,7 +498,7 @@ EzsignformfieldgroupGetObjectV1ResponseMPayload.prototype['a_objEzsignformfield'
 EzsignformfieldgroupGetObjectV1ResponseMPayload.prototype['a_objDropdownElement'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} a_objEzsignformfieldgroupsigner
+ * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} a_objEzsignformfieldgroupsigner
  */
 EzsignformfieldgroupGetObjectV1ResponseMPayload.prototype['a_objEzsignformfieldgroupsigner'] = undefined;
 
@@ -585,7 +585,7 @@ EzsignformfieldgroupResponseCompound.prototype['a_objEzsignformfield'] = undefin
  */
 EzsignformfieldgroupResponseCompound.prototype['a_objDropdownElement'] = undefined;
 /**
- * @member {module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound} a_objEzsignformfieldgroupsigner
+ * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} a_objEzsignformfieldgroupsigner
  */
 EzsignformfieldgroupResponseCompound.prototype['a_objEzsignformfieldgroupsigner'] = undefined;
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+    instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CommonResponseObjDebugPayload', function() {
     it('should create an instance of CommonResponseObjDebugPayload', function() {
       // uncomment below and update the code to test CommonResponseObjDebugPayload
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayload);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseObjDebugPayload);
     });
 
     it('should have the property iVersionMin (base name: "iVersionMin")', function() {
       // uncomment below and update the code to test the property iVersionMin
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property iVersionMax (base name: "iVersionMax")', function() {
       // uncomment below and update the code to test the property iVersionMax
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property a_RequiredPermission (base name: "a_RequiredPermission")', function() {
       // uncomment below and update the code to test the property a_RequiredPermission
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayload();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
       //expect(instance).to.be();
     });
 

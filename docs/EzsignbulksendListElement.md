@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignbulksendListElement
+# EZmaxApiDefinitionFull.EzsignbulksendListElement
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **Number** | The unique ID of the Ezsignfoldertype. | 
 **sEzsignbulksendDescription** | **String** | The description of the Ezsignbulksend | 
 **sEzsignfoldertypeNameX** | **String** | The name of the Ezsignfoldertype in the language of the requester | 
-**eEzsignfoldertypePrivacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  | 
+**bEzsignbulksendNeedvalidation** | **Boolean** | Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation | 
 **bEzsignbulksendIsactive** | **Boolean** | Whether the Ezsignbulksend is active or not | 
 **iEzsignbulksendtransmission** | **Number** | The total number of Ezsignbulksendtransmissions in the Ezsignbulksend | 
 **iEzsignfolder** | **Number** | The total number of Ezsignfolders in the Ezsignbulksend | 

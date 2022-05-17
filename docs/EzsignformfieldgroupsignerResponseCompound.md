@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupsignerResponseCompound
+# EZmaxApiDefinitionFull.EzsignformfieldgroupsignerResponseCompound
 
 ## Properties
 

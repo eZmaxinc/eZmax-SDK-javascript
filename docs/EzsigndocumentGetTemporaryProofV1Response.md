@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1Response
+# EZmaxApiDefinitionFull.EzsigndocumentGetTemporaryProofV1Response
 
 ## Properties
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsignfolderRequestCompound from './EzsignfolderRequestCompound';
 class EzsignfolderCreateObjectV2Request {
     /**
      * Constructs a new <code>EzsignfolderCreateObjectV2Request</code>.
-     * Request for the /2/object/ezsignfolder/createObject API Request
+     * Request for POST /2/object/ezsignfolder
      * @alias module:eZmaxAPI/model/EzsignfolderCreateObjectV2Request
      * @param a_objEzsignfolder {Array.<module:eZmaxAPI/model/EzsignfolderRequestCompound>} 
      */

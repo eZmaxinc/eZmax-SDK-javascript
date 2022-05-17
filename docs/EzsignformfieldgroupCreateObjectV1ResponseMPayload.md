@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsignformfieldgroupCreateObjectV1ResponseMPayload
 
 ## Properties
 

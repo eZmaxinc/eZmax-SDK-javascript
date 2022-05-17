@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+    instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,55 @@
   describe('EzsigntemplatepackageListElement', function() {
     it('should create an instance of EzsigntemplatepackageListElement', function() {
       // uncomment below and update the code to test EzsigntemplatepackageListElement
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigntemplatepackageListElement);
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigntemplatepackageListElement);
     });
 
     it('should have the property pkiEzsigntemplatepackageID (base name: "pkiEzsigntemplatepackageID")', function() {
       // uncomment below and update the code to test the property pkiEzsigntemplatepackageID
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiDepartmentID (base name: "fkiDepartmentID")', function() {
-      // uncomment below and update the code to test the property fkiDepartmentID
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fkiTeamID (base name: "fkiTeamID")', function() {
-      // uncomment below and update the code to test the property fkiTeamID
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignfoldertypeID (base name: "fkiEzsignfoldertypeID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldertypeID
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiLanguageID (base name: "fkiLanguageID")', function() {
       // uncomment below and update the code to test the property fkiLanguageID
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eEzsigntemplatepackageType (base name: "eEzsigntemplatepackageType")', function() {
-      // uncomment below and update the code to test the property eEzsigntemplatepackageType
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsigntemplatepackageDescription (base name: "sEzsigntemplatepackageDescription")', function() {
       // uncomment below and update the code to test the property sEzsigntemplatepackageDescription
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property bEzsigntemplatepackageIsactive (base name: "bEzsigntemplatepackageIsactive")', function() {
       // uncomment below and update the code to test the property bEzsigntemplatepackageIsactive
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsigntemplatepackageNeedvalidation (base name: "bEzsigntemplatepackageNeedvalidation")', function() {
+      // uncomment below and update the code to test the property bEzsigntemplatepackageNeedvalidation
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsigntemplatepackagemembership (base name: "iEzsigntemplatepackagemembership")', function() {
       // uncomment below and update the code to test the property iEzsigntemplatepackagemembership
-      //var instance = new EZmaxApiDefinition.EzsigntemplatepackageListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
+      // uncomment below and update the code to test the property sEzsignfoldertypeNameX
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageListElement();
       //expect(instance).to.be();
     });
 

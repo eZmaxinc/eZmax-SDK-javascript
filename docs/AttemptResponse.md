@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.AttemptResponse
+# EZmaxApiDefinitionFull.AttemptResponse
 
 ## Properties
 

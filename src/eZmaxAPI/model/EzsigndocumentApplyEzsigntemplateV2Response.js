@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -24,7 +24,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsigndocumentApplyEzsigntemplateV2Response {
     /**
      * Constructs a new <code>EzsigndocumentApplyEzsigntemplateV2Response</code>.
-     * Response for the /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate API Request
+     * Response for POST /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate
      * @alias module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Response
      * @implements module:eZmaxAPI/model/CommonResponse
      */

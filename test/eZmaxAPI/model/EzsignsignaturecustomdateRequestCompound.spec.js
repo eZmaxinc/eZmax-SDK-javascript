@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
+    instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('EzsignsignaturecustomdateRequestCompound', function() {
     it('should create an instance of EzsignsignaturecustomdateRequestCompound', function() {
       // uncomment below and update the code to test EzsignsignaturecustomdateRequestCompound
-      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound);
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound);
     });
 
     it('should have the property pkiEzsignsignaturecustomdateID (base name: "pkiEzsignsignaturecustomdateID")', function() {
       // uncomment below and update the code to test the property pkiEzsignsignaturecustomdateID
-      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignsignaturecustomdateX (base name: "iEzsignsignaturecustomdateX")', function() {
       // uncomment below and update the code to test the property iEzsignsignaturecustomdateX
-      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignsignaturecustomdateY (base name: "iEzsignsignaturecustomdateY")', function() {
       // uncomment below and update the code to test the property iEzsignsignaturecustomdateY
-      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignsignaturecustomdateFormat (base name: "sEzsignsignaturecustomdateFormat")', function() {
       // uncomment below and update the code to test the property sEzsignsignaturecustomdateFormat
-      //var instance = new EZmaxApiDefinition.EzsignsignaturecustomdateRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
       //expect(instance).to.be();
     });
 

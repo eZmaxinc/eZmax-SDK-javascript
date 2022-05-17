@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ObjectEzsignfoldertypeApi
+# EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -20,19 +20,19 @@ Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete contr
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi();
 let sSelector = "sSelector_example"; // String | The type of Ezsignfoldertypes to return
 let opts = {
   'sQuery': "sQuery_example", // String | Allow to filter the returned results
-  'Accept_Language': new EZmaxApiDefinition.HeaderAcceptLanguage() // HeaderAcceptLanguage | 
+  'Accept_Language': new EZmaxApiDefinitionFull.HeaderAcceptLanguage() // HeaderAcceptLanguage | 
 };
 apiInstance.ezsignfoldertypeGetAutocompleteV1(sSelector, opts, (error, data, response) => {
   if (error) {
@@ -77,20 +77,20 @@ Enum values that can be filtered in query parameter *sFilter*:  | Variable | Val
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignfoldertypeApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi();
 let opts = {
   'eOrderBy': "eOrderBy_example", // String | Specify how you want the results to be sorted
   'iRowMax': 56, // Number | 
   'iRowOffset': 56, // Number | 
-  'Accept_Language': new EZmaxApiDefinition.HeaderAcceptLanguage(), // HeaderAcceptLanguage | 
+  'Accept_Language': new EZmaxApiDefinitionFull.HeaderAcceptLanguage(), // HeaderAcceptLanguage | 
   'sFilter': "sFilter_example" // String | 
 };
 apiInstance.ezsignfoldertypeGetListV1(opts, (error, data, response) => {

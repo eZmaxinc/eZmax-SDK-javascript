@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ActivesessionResponseCompoundApikey
+# EZmaxApiDefinitionFull.ActivesessionResponseCompoundApikey
 
 ## Properties
 

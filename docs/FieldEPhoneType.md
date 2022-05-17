@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEPhoneType
+# EZmaxApiDefinitionFull.FieldEPhoneType
 
 ## Enum
 

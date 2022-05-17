@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import FieldEActivesessionSessiontype from './FieldEActivesessionSessiontype';
+import FieldEActivesessionUsertype from './FieldEActivesessionUsertype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 
 /**
@@ -25,7 +25,7 @@ class ActivesessionResponse {
      * Constructs a new <code>ActivesessionResponse</code>.
      * An Activesession Object
      * @alias module:eZmaxAPI/model/ActivesessionResponse
-     * @param eActivesessionSessiontype {module:eZmaxAPI/model/FieldEActivesessionSessiontype} 
+     * @param eActivesessionUsertype {module:eZmaxAPI/model/FieldEActivesessionUsertype} 
      * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sCompanyNameX {String} The Name of the Company in the language of the requester
@@ -33,9 +33,9 @@ class ActivesessionResponse {
      * @param bActivesessionDebug {Boolean} Whether the active session is in debug or not
      * @param pksCustomerCode {String} The customer code assigned to your account
      */
-    constructor(eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
+    constructor(eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
         
-        ActivesessionResponse.initialize(this, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
+        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode);
     }
 
     /**
@@ -43,8 +43,8 @@ class ActivesessionResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionSessiontype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
-        obj['eActivesessionSessiontype'] = eActivesessionSessiontype;
+    static initialize(obj, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, pksCustomerCode) { 
+        obj['eActivesessionUsertype'] = eActivesessionUsertype;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sCompanyNameX'] = sCompanyNameX;
@@ -64,8 +64,8 @@ class ActivesessionResponse {
         if (data) {
             obj = obj || new ActivesessionResponse();
 
-            if (data.hasOwnProperty('eActivesessionSessiontype')) {
-                obj['eActivesessionSessiontype'] = FieldEActivesessionSessiontype.constructFromObject(data['eActivesessionSessiontype']);
+            if (data.hasOwnProperty('eActivesessionUsertype')) {
+                obj['eActivesessionUsertype'] = FieldEActivesessionUsertype.constructFromObject(data['eActivesessionUsertype']);
             }
             if (data.hasOwnProperty('eActivesessionWeekdaystart')) {
                 obj['eActivesessionWeekdaystart'] = FieldEActivesessionWeekdaystart.constructFromObject(data['eActivesessionWeekdaystart']);
@@ -90,17 +90,17 @@ class ActivesessionResponse {
     }
 
 /**
-     * @return {module:eZmaxAPI/model/FieldEActivesessionSessiontype}
+     * @return {module:eZmaxAPI/model/FieldEActivesessionUsertype}
      */
-    getEActivesessionSessiontype() {
-        return this.eActivesessionSessiontype;
+    getEActivesessionUsertype() {
+        return this.eActivesessionUsertype;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+     * @param {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
      */
-    setEActivesessionSessiontype(eActivesessionSessiontype) {
-        this['eActivesessionSessiontype'] = eActivesessionSessiontype;
+    setEActivesessionUsertype(eActivesessionUsertype) {
+        this['eActivesessionUsertype'] = eActivesessionUsertype;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
@@ -196,9 +196,9 @@ class ActivesessionResponse {
 }
 
 /**
- * @member {module:eZmaxAPI/model/FieldEActivesessionSessiontype} eActivesessionSessiontype
+ * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
  */
-ActivesessionResponse.prototype['eActivesessionSessiontype'] = undefined;
+ActivesessionResponse.prototype['eActivesessionUsertype'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart

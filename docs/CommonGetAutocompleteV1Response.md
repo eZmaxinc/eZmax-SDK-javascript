@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonGetAutocompleteV1Response
+# EZmaxApiDefinitionFull.CommonGetAutocompleteV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupDeleteObjectV1Response
+# EZmaxApiDefinitionFull.EzsignformfieldgroupDeleteObjectV1Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList
+# EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList
 
 ## Properties
 

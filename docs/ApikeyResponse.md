@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ApikeyResponse
+# EZmaxApiDefinitionFull.ApikeyResponse
 
 ## Properties
 

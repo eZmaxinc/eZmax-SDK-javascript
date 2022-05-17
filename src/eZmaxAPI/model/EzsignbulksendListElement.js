@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
 
 /**
  * The EzsignbulksendListElement model module.
@@ -28,7 +27,7 @@ class EzsignbulksendListElement {
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param sEzsignbulksendDescription {String} The description of the Ezsignbulksend
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
-     * @param eEzsignfoldertypePrivacylevel {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} 
+     * @param bEzsignbulksendNeedvalidation {Boolean} Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @param bEzsignbulksendIsactive {Boolean} Whether the Ezsignbulksend is active or not
      * @param iEzsignbulksendtransmission {Number} The total number of Ezsignbulksendtransmissions in the Ezsignbulksend
      * @param iEzsignfolder {Number} The total number of Ezsignfolders in the Ezsignbulksend
@@ -36,9 +35,9 @@ class EzsignbulksendListElement {
      * @param iEzsignsignature {Number} The total number of Ezsignsignature in the Ezsignbulksend
      * @param iEzsignsignatureSigned {Number} The total number of already signed Ezsignsignature blocks in the Ezsignbulksend
      */
-    constructor(pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, eEzsignfoldertypePrivacylevel, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned) { 
+    constructor(pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned) { 
         
-        EzsignbulksendListElement.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, eEzsignfoldertypePrivacylevel, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned);
+        EzsignbulksendListElement.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned);
     }
 
     /**
@@ -46,12 +45,12 @@ class EzsignbulksendListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, eEzsignfoldertypePrivacylevel, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned) { 
+    static initialize(obj, pkiEzsignbulksendID, fkiEzsignfoldertypeID, sEzsignbulksendDescription, sEzsignfoldertypeNameX, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, iEzsignbulksendtransmission, iEzsignfolder, iEzsigndocument, iEzsignsignature, iEzsignsignatureSigned) { 
         obj['pkiEzsignbulksendID'] = pkiEzsignbulksendID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['sEzsignbulksendDescription'] = sEzsignbulksendDescription;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
-        obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
+        obj['bEzsignbulksendNeedvalidation'] = bEzsignbulksendNeedvalidation;
         obj['bEzsignbulksendIsactive'] = bEzsignbulksendIsactive;
         obj['iEzsignbulksendtransmission'] = iEzsignbulksendtransmission;
         obj['iEzsignfolder'] = iEzsignfolder;
@@ -83,8 +82,8 @@ class EzsignbulksendListElement {
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
             }
-            if (data.hasOwnProperty('eEzsignfoldertypePrivacylevel')) {
-                obj['eEzsignfoldertypePrivacylevel'] = FieldEEzsignfoldertypePrivacylevel.constructFromObject(data['eEzsignfoldertypePrivacylevel']);
+            if (data.hasOwnProperty('bEzsignbulksendNeedvalidation')) {
+                obj['bEzsignbulksendNeedvalidation'] = ApiClient.convertToType(data['bEzsignbulksendNeedvalidation'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignbulksendIsactive')) {
                 obj['bEzsignbulksendIsactive'] = ApiClient.convertToType(data['bEzsignbulksendIsactive'], 'Boolean');
@@ -169,17 +168,19 @@ class EzsignbulksendListElement {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
 /**
-     * @return {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel}
+     * Returns Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     * @return {Boolean}
      */
-    getEEzsignfoldertypePrivacylevel() {
-        return this.eEzsignfoldertypePrivacylevel;
+    getBEzsignbulksendNeedvalidation() {
+        return this.bEzsignbulksendNeedvalidation;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} eEzsignfoldertypePrivacylevel
+     * Sets Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     * @param {Boolean} bEzsignbulksendNeedvalidation Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      */
-    setEEzsignfoldertypePrivacylevel(eEzsignfoldertypePrivacylevel) {
-        this['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
+    setBEzsignbulksendNeedvalidation(bEzsignbulksendNeedvalidation) {
+        this['bEzsignbulksendNeedvalidation'] = bEzsignbulksendNeedvalidation;
     }
 /**
      * Returns Whether the Ezsignbulksend is active or not
@@ -299,9 +300,10 @@ EzsignbulksendListElement.prototype['sEzsignbulksendDescription'] = undefined;
 EzsignbulksendListElement.prototype['sEzsignfoldertypeNameX'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} eEzsignfoldertypePrivacylevel
+ * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+ * @member {Boolean} bEzsignbulksendNeedvalidation
  */
-EzsignbulksendListElement.prototype['eEzsignfoldertypePrivacylevel'] = undefined;
+EzsignbulksendListElement.prototype['bEzsignbulksendNeedvalidation'] = undefined;
 
 /**
  * Whether the Ezsignbulksend is active or not

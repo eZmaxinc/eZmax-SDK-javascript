@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,6 +22,8 @@ import EzsignsignatureDeleteObjectV1Response from '../model/EzsignsignatureDelet
 import EzsignsignatureEditObjectV1Request from '../model/EzsignsignatureEditObjectV1Request';
 import EzsignsignatureEditObjectV1Response from '../model/EzsignsignatureEditObjectV1Response';
 import EzsignsignatureGetObjectV1Response from '../model/EzsignsignatureGetObjectV1Response';
+import EzsignsignatureSignV1Request from '../model/EzsignsignatureSignV1Request';
+import EzsignsignatureSignV1Response from '../model/EzsignsignatureSignV1Response';
 
 /**
 * ObjectEzsignsignature service.
@@ -255,6 +257,54 @@ export default class ObjectEzsignsignatureApi {
       let returnType = EzsignsignatureGetObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignsignature/{pkiEzsignsignatureID}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignsignatureSignV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureSignV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignsignatureSignV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Sign the Ezsignsignature
+     * 
+     * @param {Number} pkiEzsignsignatureID 
+     * @param {module:eZmaxAPI/model/EzsignsignatureSignV1Request} EzsignsignatureSignV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureSignV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureSignV1Response}
+     */
+    ezsignsignatureSignV1(pkiEzsignsignatureID, EzsignsignatureSignV1Request, callback) {
+      let postBody = EzsignsignatureSignV1Request;
+      // verify the required parameter 'pkiEzsignsignatureID' is set
+      if (pkiEzsignsignatureID === undefined || pkiEzsignsignatureID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignsignatureID' when calling ezsignsignatureSignV1");
+      }
+      // verify the required parameter 'EzsignsignatureSignV1Request' is set
+      if (EzsignsignatureSignV1Request === undefined || EzsignsignatureSignV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsignsignatureSignV1Request' when calling ezsignsignatureSignV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignsignatureID': pkiEzsignsignatureID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignsignatureSignV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignsignature/{pkiEzsignsignatureID}/sign', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

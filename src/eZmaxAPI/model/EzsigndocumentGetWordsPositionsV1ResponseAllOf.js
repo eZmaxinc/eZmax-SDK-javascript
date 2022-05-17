@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -23,7 +23,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     /**
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1ResponseAllOf</code>.
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf
-     * @param mPayload {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * @param mPayload {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      */
     constructor(mPayload) { 
         
@@ -58,7 +58,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     }
 
 /**
-     * Returns Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * Returns Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      * @return {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>}
      */
     getMPayload() {
@@ -66,8 +66,8 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     }
 
     /**
-     * Sets Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
-     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * Sets Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
+     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      */
     setMPayload(mPayload) {
         this['mPayload'] = mPayload;
@@ -76,7 +76,7 @@ class EzsigndocumentGetWordsPositionsV1ResponseAllOf {
 }
 
 /**
- * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+ * Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
  * @member {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload
  */
 EzsigndocumentGetWordsPositionsV1ResponseAllOf.prototype['mPayload'] = undefined;

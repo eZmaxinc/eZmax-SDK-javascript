@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ObjectEzsignformfieldgroupApi
+# EZmaxApiDefinitionFull.ObjectEzsignformfieldgroupApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
@@ -22,16 +22,16 @@ The endpoint allows to create one or many elements at once.
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignformfieldgroupApi();
-let EzsignformfieldgroupCreateObjectV1Request = new EZmaxApiDefinition.EzsignformfieldgroupCreateObjectV1Request(); // EzsignformfieldgroupCreateObjectV1Request | 
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignformfieldgroupApi();
+let EzsignformfieldgroupCreateObjectV1Request = new EZmaxApiDefinitionFull.EzsignformfieldgroupCreateObjectV1Request(); // EzsignformfieldgroupCreateObjectV1Request | 
 apiInstance.ezsignformfieldgroupCreateObjectV1(EzsignformfieldgroupCreateObjectV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -73,15 +73,15 @@ Delete an existing Ezsignformfieldgroup
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignformfieldgroupApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignformfieldgroupApi();
 let pkiEzsignformfieldgroupID = 56; // Number | 
 apiInstance.ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID, (error, data, response) => {
   if (error) {
@@ -124,17 +124,17 @@ Edit an existing Ezsignformfieldgroup
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignformfieldgroupApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignformfieldgroupApi();
 let pkiEzsignformfieldgroupID = 56; // Number | 
-let EzsignformfieldgroupEditObjectV1Request = new EZmaxApiDefinition.EzsignformfieldgroupEditObjectV1Request(); // EzsignformfieldgroupEditObjectV1Request | 
+let EzsignformfieldgroupEditObjectV1Request = new EZmaxApiDefinitionFull.EzsignformfieldgroupEditObjectV1Request(); // EzsignformfieldgroupEditObjectV1Request | 
 apiInstance.ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, EzsignformfieldgroupEditObjectV1Request, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -175,15 +175,15 @@ Retrieve an existing Ezsignformfieldgroup
 ### Example
 
 ```javascript
-import EZmaxApiDefinition from 'e_zmax_api_definition';
-let defaultClient = EZmaxApiDefinition.ApiClient.instance;
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
 // Configure API key authorization: Authorization
 let Authorization = defaultClient.authentications['Authorization'];
 Authorization.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Authorization.apiKeyPrefix = 'Token';
 
-let apiInstance = new EZmaxApiDefinition.ObjectEzsignformfieldgroupApi();
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignformfieldgroupApi();
 let pkiEzsignformfieldgroupID = 56; // Number | 
 apiInstance.ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID, (error, data, response) => {
   if (error) {

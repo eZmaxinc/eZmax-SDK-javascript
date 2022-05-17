@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,9 +21,9 @@ import ApiClient from '../ApiClient';
 class EzsignfolderSendV1Request {
     /**
      * Constructs a new <code>EzsignfolderSendV1Request</code>.
-     * Request for the /1/object/ezsignfolder/{pkiEzsignfolderID}/send API Request
+     * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
      * @alias module:eZmaxAPI/model/EzsignfolderSendV1Request
-     * @param tExtraMessage {String} A custom text message that will be added to the email sent to signatories inviting them to sign.  You can send an empty string and only the generic message will be sent.
+     * @param tExtraMessage {String} A custom text message that will be added to the email sent.
      */
     constructor(tExtraMessage) { 
         
@@ -58,7 +58,7 @@ class EzsignfolderSendV1Request {
     }
 
 /**
-     * Returns A custom text message that will be added to the email sent to signatories inviting them to sign.  You can send an empty string and only the generic message will be sent.
+     * Returns A custom text message that will be added to the email sent.
      * @return {String}
      */
     getTExtraMessage() {
@@ -66,8 +66,8 @@ class EzsignfolderSendV1Request {
     }
 
     /**
-     * Sets A custom text message that will be added to the email sent to signatories inviting them to sign.  You can send an empty string and only the generic message will be sent.
-     * @param {String} tExtraMessage A custom text message that will be added to the email sent to signatories inviting them to sign.  You can send an empty string and only the generic message will be sent.
+     * Sets A custom text message that will be added to the email sent.
+     * @param {String} tExtraMessage A custom text message that will be added to the email sent.
      */
     setTExtraMessage(tExtraMessage) {
         this['tExtraMessage'] = tExtraMessage;
@@ -76,7 +76,7 @@ class EzsignfolderSendV1Request {
 }
 
 /**
- * A custom text message that will be added to the email sent to signatories inviting them to sign.  You can send an empty string and only the generic message will be sent.
+ * A custom text message that will be added to the email sent.
  * @member {String} tExtraMessage
  */
 EzsignfolderSendV1Request.prototype['tExtraMessage'] = undefined;

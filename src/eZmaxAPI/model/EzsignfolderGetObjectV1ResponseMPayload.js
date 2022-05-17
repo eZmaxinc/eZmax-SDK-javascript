@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -25,7 +25,7 @@ import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
 class EzsignfolderGetObjectV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignfolderGetObjectV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignfolder/getObject API Request
+     * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}
      * @alias module:eZmaxAPI/model/EzsignfolderGetObjectV1ResponseMPayload
      * @implements module:eZmaxAPI/model/EzsignfolderResponseCompound
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
@@ -38,17 +38,15 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param tEzsignfolderNote {String} Note about the Ezsignfolder
      * @param eEzsignfolderSendreminderfrequency {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} 
-     * @param dtEzsignfolderDuedate {String} The maximum date and time at which the Ezsignfolder can be signed.
-     * @param dtEzsignfolderSentdate {String} The date and time at which the Ezsign folder was sent the last time.
      * @param dtEzsignfolderScheduledarchive {String} The scheduled date and time at which the Ezsignfolder should be archived.
      * @param dtEzsignfolderScheduleddestruction {String} The scheduled date and time at which the Ezsignfolder should be Destroyed.
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param dtEzsignfolderClose {String} The date and time at which the folder was closed. Either by applying the last signature or by completing it prematurely.
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit) { 
-        EzsignfolderResponseCompound.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
-        EzsignfolderGetObjectV1ResponseMPayload.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
+    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit) { 
+        EzsignfolderResponseCompound.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
+        EzsignfolderGetObjectV1ResponseMPayload.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit);
     }
 
     /**
@@ -56,7 +54,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderDuedate, dtEzsignfolderSentdate, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit) { 
+    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency, dtEzsignfolderScheduledarchive, dtEzsignfolderScheduleddestruction, eEzsignfolderStep, dtEzsignfolderClose, objAudit) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
@@ -67,8 +65,6 @@ class EzsignfolderGetObjectV1ResponseMPayload {
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
         obj['tEzsignfolderNote'] = tEzsignfolderNote;
         obj['eEzsignfolderSendreminderfrequency'] = eEzsignfolderSendreminderfrequency;
-        obj['dtEzsignfolderDuedate'] = dtEzsignfolderDuedate;
-        obj['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
         obj['dtEzsignfolderScheduledarchive'] = dtEzsignfolderScheduledarchive;
         obj['dtEzsignfolderScheduleddestruction'] = dtEzsignfolderScheduleddestruction;
         obj['eEzsignfolderStep'] = eEzsignfolderStep;

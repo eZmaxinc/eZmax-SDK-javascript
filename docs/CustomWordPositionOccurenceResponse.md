@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CustomWordPositionOccurenceResponse
+# EZmaxApiDefinitionFull.CustomWordPositionOccurenceResponse
 
 ## Properties
 

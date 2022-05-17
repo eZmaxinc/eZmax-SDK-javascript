@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignsignatureCreateObjectV2Request
+# EZmaxApiDefinitionFull.EzsignsignatureCreateObjectV2Request
 
 ## Properties
 

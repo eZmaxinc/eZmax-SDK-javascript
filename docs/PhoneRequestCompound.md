@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.PhoneRequestCompound
+# EZmaxApiDefinitionFull.PhoneRequestCompound
 
 ## Properties
 

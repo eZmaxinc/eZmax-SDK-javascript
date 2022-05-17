@@ -1,9 +1,9 @@
-# EZmaxApiDefinition.EzsigndocumentGetTemporaryProofV1ResponseMPayload
+# EZmaxApiDefinitionFull.EzsigndocumentGetTemporaryProofV1ResponseMPayload
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objEzsigndocumentlog** | [**EzsigndocumentlogResponseCompound**](EzsigndocumentlogResponseCompound.md) |  | 
+**a_objEzsigndocumentlog** | [**[EzsigndocumentlogResponseCompound]**](EzsigndocumentlogResponseCompound.md) |  | 
 
 

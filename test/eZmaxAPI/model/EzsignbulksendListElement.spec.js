@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+    instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,73 +50,73 @@
   describe('EzsignbulksendListElement', function() {
     it('should create an instance of EzsignbulksendListElement', function() {
       // uncomment below and update the code to test EzsignbulksendListElement
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignbulksendListElement);
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignbulksendListElement);
     });
 
     it('should have the property pkiEzsignbulksendID (base name: "pkiEzsignbulksendID")', function() {
       // uncomment below and update the code to test the property pkiEzsignbulksendID
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiEzsignfoldertypeID (base name: "fkiEzsignfoldertypeID")', function() {
       // uncomment below and update the code to test the property fkiEzsignfoldertypeID
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignbulksendDescription (base name: "sEzsignbulksendDescription")', function() {
       // uncomment below and update the code to test the property sEzsignbulksendDescription
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
       // uncomment below and update the code to test the property sEzsignfoldertypeNameX
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property eEzsignfoldertypePrivacylevel (base name: "eEzsignfoldertypePrivacylevel")', function() {
-      // uncomment below and update the code to test the property eEzsignfoldertypePrivacylevel
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+    it('should have the property bEzsignbulksendNeedvalidation (base name: "bEzsignbulksendNeedvalidation")', function() {
+      // uncomment below and update the code to test the property bEzsignbulksendNeedvalidation
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property bEzsignbulksendIsactive (base name: "bEzsignbulksendIsactive")', function() {
       // uncomment below and update the code to test the property bEzsignbulksendIsactive
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignbulksendtransmission (base name: "iEzsignbulksendtransmission")', function() {
       // uncomment below and update the code to test the property iEzsignbulksendtransmission
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignfolder (base name: "iEzsignfolder")', function() {
       // uncomment below and update the code to test the property iEzsignfolder
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsigndocument (base name: "iEzsigndocument")', function() {
       // uncomment below and update the code to test the property iEzsigndocument
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignsignature (base name: "iEzsignsignature")', function() {
       // uncomment below and update the code to test the property iEzsignsignature
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsignsignatureSigned (base name: "iEzsignsignatureSigned")', function() {
       // uncomment below and update the code to test the property iEzsignsignatureSigned
-      //var instance = new EZmaxApiDefinition.EzsignbulksendListElement();
+      //var instance = new EZmaxApiDefinitionFull.EzsignbulksendListElement();
       //expect(instance).to.be();
     });
 

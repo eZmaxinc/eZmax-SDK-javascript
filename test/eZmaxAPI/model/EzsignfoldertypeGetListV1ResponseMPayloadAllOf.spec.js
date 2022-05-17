@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsignfoldertypeGetListV1ResponseMPayloadAllOf', function() {
     it('should create an instance of EzsignfoldertypeGetListV1ResponseMPayloadAllOf', function() {
       // uncomment below and update the code to test EzsignfoldertypeGetListV1ResponseMPayloadAllOf
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfoldertypeGetListV1ResponseMPayloadAllOf);
     });
 
     it('should have the property a_objEzsignfoldertype (base name: "a_objEzsignfoldertype")', function() {
       // uncomment below and update the code to test the property a_objEzsignfoldertype
-      //var instance = new EZmaxApiDefinition.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeGetListV1ResponseMPayloadAllOf();
       //expect(instance).to.be();
     });
 

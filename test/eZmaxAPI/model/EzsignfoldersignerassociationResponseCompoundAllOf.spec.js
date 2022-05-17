@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EzsignfoldersignerassociationResponseCompoundAllOf', function() {
     it('should create an instance of EzsignfoldersignerassociationResponseCompoundAllOf', function() {
       // uncomment below and update the code to test EzsignfoldersignerassociationResponseCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundAllOf);
     });
 
     it('should have the property objUser (base name: "objUser")', function() {
       // uncomment below and update the code to test the property objUser
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property objEzsignsigner (base name: "objEzsignsigner")', function() {
       // uncomment below and update the code to test the property objEzsignsigner
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,79 +50,79 @@
   describe('ActivesessionGetCurrentV1ResponseMPayload', function() {
     it('should create an instance of ActivesessionGetCurrentV1ResponseMPayload', function() {
       // uncomment below and update the code to test ActivesessionGetCurrentV1ResponseMPayload
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload);
     });
 
-    it('should have the property eActivesessionSessiontype (base name: "eActivesessionSessiontype")', function() {
-      // uncomment below and update the code to test the property eActivesessionSessiontype
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+    it('should have the property eActivesessionUsertype (base name: "eActivesessionUsertype")', function() {
+      // uncomment below and update the code to test the property eActivesessionUsertype
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property eActivesessionWeekdaystart (base name: "eActivesessionWeekdaystart")', function() {
       // uncomment below and update the code to test the property eActivesessionWeekdaystart
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiLanguageID (base name: "fkiLanguageID")', function() {
       // uncomment below and update the code to test the property fkiLanguageID
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property sCompanyNameX (base name: "sCompanyNameX")', function() {
       // uncomment below and update the code to test the property sCompanyNameX
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property sDepartmentNameX (base name: "sDepartmentNameX")', function() {
       // uncomment below and update the code to test the property sDepartmentNameX
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property bActivesessionDebug (base name: "bActivesessionDebug")', function() {
       // uncomment below and update the code to test the property bActivesessionDebug
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
       // uncomment below and update the code to test the property pksCustomerCode
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property a_pkiPermissionID (base name: "a_pkiPermissionID")', function() {
       // uncomment below and update the code to test the property a_pkiPermissionID
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property objUserReal (base name: "objUserReal")', function() {
       // uncomment below and update the code to test the property objUserReal
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property objUserCloned (base name: "objUserCloned")', function() {
       // uncomment below and update the code to test the property objUserCloned
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property objApikey (base name: "objApikey")', function() {
       // uncomment below and update the code to test the property objApikey
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property a_eModuleInternalname (base name: "a_eModuleInternalname")', function() {
       // uncomment below and update the code to test the property a_eModuleInternalname
-      //var instance = new EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
       //expect(instance).to.be();
     });
 

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -23,15 +23,17 @@ class WebhookResponse {
      * Constructs a new <code>WebhookResponse</code>.
      * A webhook object
      * @alias module:eZmaxAPI/model/WebhookResponse
+     * @param pksCustomerCode {String} The customer code assigned to your account
      * @param pkiWebhookID {Number} The Webhook ID. This value is visible in the admin interface.
      * @param eWebhookModule {module:eZmaxAPI/model/WebhookResponse.EWebhookModuleEnum} The Module generating the Event.
-     * @param pksCustomerCode {String} The customer code assigned to your account
      * @param sWebhookUrl {String} The url being called
+     * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
+     * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended for production use.
      * @param sWebhookEmailfailed {String} The email that will receive the webhook in case all attempts fail.
      */
-    constructor(pkiWebhookID, eWebhookModule, pksCustomerCode, sWebhookUrl, sWebhookEmailfailed) { 
+    constructor(pksCustomerCode, pkiWebhookID, eWebhookModule, sWebhookUrl, bWebhookTest, bWebhookSkipsslvalidation, sWebhookEmailfailed) { 
         
-        WebhookResponse.initialize(this, pkiWebhookID, eWebhookModule, pksCustomerCode, sWebhookUrl, sWebhookEmailfailed);
+        WebhookResponse.initialize(this, pksCustomerCode, pkiWebhookID, eWebhookModule, sWebhookUrl, bWebhookTest, bWebhookSkipsslvalidation, sWebhookEmailfailed);
     }
 
     /**
@@ -39,11 +41,13 @@ class WebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, eWebhookModule, pksCustomerCode, sWebhookUrl, sWebhookEmailfailed) { 
+    static initialize(obj, pksCustomerCode, pkiWebhookID, eWebhookModule, sWebhookUrl, bWebhookTest, bWebhookSkipsslvalidation, sWebhookEmailfailed) { 
+        obj['pksCustomerCode'] = pksCustomerCode;
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['eWebhookModule'] = eWebhookModule;
-        obj['pksCustomerCode'] = pksCustomerCode;
         obj['sWebhookUrl'] = sWebhookUrl;
+        obj['bWebhookTest'] = bWebhookTest;
+        obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
     }
 
@@ -58,6 +62,9 @@ class WebhookResponse {
         if (data) {
             obj = obj || new WebhookResponse();
 
+            if (data.hasOwnProperty('pksCustomerCode')) {
+                obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
+            }
             if (data.hasOwnProperty('pkiWebhookID')) {
                 obj['pkiWebhookID'] = ApiClient.convertToType(data['pkiWebhookID'], 'Number');
             }
@@ -67,22 +74,40 @@ class WebhookResponse {
             if (data.hasOwnProperty('eWebhookEzsignevent')) {
                 obj['eWebhookEzsignevent'] = ApiClient.convertToType(data['eWebhookEzsignevent'], 'String');
             }
-            if (data.hasOwnProperty('pksCustomerCode')) {
-                obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
+            if (data.hasOwnProperty('eWebhookManagementevent')) {
+                obj['eWebhookManagementevent'] = ApiClient.convertToType(data['eWebhookManagementevent'], 'String');
             }
             if (data.hasOwnProperty('sWebhookUrl')) {
                 obj['sWebhookUrl'] = ApiClient.convertToType(data['sWebhookUrl'], 'String');
             }
+            if (data.hasOwnProperty('bWebhookTest')) {
+                obj['bWebhookTest'] = ApiClient.convertToType(data['bWebhookTest'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
+                obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
+            }
             if (data.hasOwnProperty('sWebhookEmailfailed')) {
                 obj['sWebhookEmailfailed'] = ApiClient.convertToType(data['sWebhookEmailfailed'], 'String');
-            }
-            if (data.hasOwnProperty('eWebhookManagementevent')) {
-                obj['eWebhookManagementevent'] = ApiClient.convertToType(data['eWebhookManagementevent'], 'String');
             }
         }
         return obj;
     }
 
+/**
+     * Returns The customer code assigned to your account
+     * @return {String}
+     */
+    getPksCustomerCode() {
+        return this.pksCustomerCode;
+    }
+
+    /**
+     * Sets The customer code assigned to your account
+     * @param {String} pksCustomerCode The customer code assigned to your account
+     */
+    setPksCustomerCode(pksCustomerCode) {
+        this['pksCustomerCode'] = pksCustomerCode;
+    }
 /**
      * Returns The Webhook ID. This value is visible in the admin interface.
      * @return {Number}
@@ -129,19 +154,19 @@ class WebhookResponse {
         this['eWebhookEzsignevent'] = eWebhookEzsignevent;
     }
 /**
-     * Returns The customer code assigned to your account
-     * @return {String}
+     * Returns This Management Event. This property will be set only if the Module is \"Management\".
+     * @return {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum}
      */
-    getPksCustomerCode() {
-        return this.pksCustomerCode;
+    getEWebhookManagementevent() {
+        return this.eWebhookManagementevent;
     }
 
     /**
-     * Sets The customer code assigned to your account
-     * @param {String} pksCustomerCode The customer code assigned to your account
+     * Sets This Management Event. This property will be set only if the Module is \"Management\".
+     * @param {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum} eWebhookManagementevent This Management Event. This property will be set only if the Module is \"Management\".
      */
-    setPksCustomerCode(pksCustomerCode) {
-        this['pksCustomerCode'] = pksCustomerCode;
+    setEWebhookManagementevent(eWebhookManagementevent) {
+        this['eWebhookManagementevent'] = eWebhookManagementevent;
     }
 /**
      * Returns The url being called
@@ -159,6 +184,36 @@ class WebhookResponse {
         this['sWebhookUrl'] = sWebhookUrl;
     }
 /**
+     * Returns Wheter the webhook received is a manual test or a real event
+     * @return {Boolean}
+     */
+    getBWebhookTest() {
+        return this.bWebhookTest;
+    }
+
+    /**
+     * Sets Wheter the webhook received is a manual test or a real event
+     * @param {Boolean} bWebhookTest Wheter the webhook received is a manual test or a real event
+     */
+    setBWebhookTest(bWebhookTest) {
+        this['bWebhookTest'] = bWebhookTest;
+    }
+/**
+     * Returns Wheter the server's SSL certificate should be validated or not. Not recommended for production use.
+     * @return {Boolean}
+     */
+    getBWebhookSkipsslvalidation() {
+        return this.bWebhookSkipsslvalidation;
+    }
+
+    /**
+     * Sets Wheter the server's SSL certificate should be validated or not. Not recommended for production use.
+     * @param {Boolean} bWebhookSkipsslvalidation Wheter the server's SSL certificate should be validated or not. Not recommended for production use.
+     */
+    setBWebhookSkipsslvalidation(bWebhookSkipsslvalidation) {
+        this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
+    }
+/**
      * Returns The email that will receive the webhook in case all attempts fail.
      * @return {String}
      */
@@ -173,23 +228,14 @@ class WebhookResponse {
     setSWebhookEmailfailed(sWebhookEmailfailed) {
         this['sWebhookEmailfailed'] = sWebhookEmailfailed;
     }
-/**
-     * Returns This Management Event. This property will be set only if the Module is \"Management\".
-     * @return {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum}
-     */
-    getEWebhookManagementevent() {
-        return this.eWebhookManagementevent;
-    }
-
-    /**
-     * Sets This Management Event. This property will be set only if the Module is \"Management\".
-     * @param {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum} eWebhookManagementevent This Management Event. This property will be set only if the Module is \"Management\".
-     */
-    setEWebhookManagementevent(eWebhookManagementevent) {
-        this['eWebhookManagementevent'] = eWebhookManagementevent;
-    }
 
 }
+
+/**
+ * The customer code assigned to your account
+ * @member {String} pksCustomerCode
+ */
+WebhookResponse.prototype['pksCustomerCode'] = undefined;
 
 /**
  * The Webhook ID. This value is visible in the admin interface.
@@ -210,10 +256,10 @@ WebhookResponse.prototype['eWebhookModule'] = undefined;
 WebhookResponse.prototype['eWebhookEzsignevent'] = undefined;
 
 /**
- * The customer code assigned to your account
- * @member {String} pksCustomerCode
+ * This Management Event. This property will be set only if the Module is \"Management\".
+ * @member {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum} eWebhookManagementevent
  */
-WebhookResponse.prototype['pksCustomerCode'] = undefined;
+WebhookResponse.prototype['eWebhookManagementevent'] = undefined;
 
 /**
  * The url being called
@@ -222,16 +268,22 @@ WebhookResponse.prototype['pksCustomerCode'] = undefined;
 WebhookResponse.prototype['sWebhookUrl'] = undefined;
 
 /**
+ * Wheter the webhook received is a manual test or a real event
+ * @member {Boolean} bWebhookTest
+ */
+WebhookResponse.prototype['bWebhookTest'] = undefined;
+
+/**
+ * Wheter the server's SSL certificate should be validated or not. Not recommended for production use.
+ * @member {Boolean} bWebhookSkipsslvalidation
+ */
+WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
+
+/**
  * The email that will receive the webhook in case all attempts fail.
  * @member {String} sWebhookEmailfailed
  */
 WebhookResponse.prototype['sWebhookEmailfailed'] = undefined;
-
-/**
- * This Management Event. This property will be set only if the Module is \"Management\".
- * @member {module:eZmaxAPI/model/WebhookResponse.EWebhookManagementeventEnum} eWebhookManagementevent
- */
-WebhookResponse.prototype['eWebhookManagementevent'] = undefined;
 
 
 

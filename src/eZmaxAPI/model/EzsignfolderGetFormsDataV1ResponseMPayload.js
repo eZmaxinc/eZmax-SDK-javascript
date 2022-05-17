@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomFormDataDocumentResponse from './CustomFormDataDocumentResponse';
 import CustomFormsDataFolderResponse from './CustomFormsDataFolderResponse';
 
 /**
@@ -23,16 +22,13 @@ import CustomFormsDataFolderResponse from './CustomFormsDataFolderResponse';
 class EzsignfolderGetFormsDataV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignfolderGetFormsDataV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
+     * Payload for GET /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData
      * @alias module:eZmaxAPI/model/EzsignfolderGetFormsDataV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/CustomFormsDataFolderResponse
-     * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
-     * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
-     * @param a_objFormDataDocument {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} 
+     * @param objFormsDataFolder {module:eZmaxAPI/model/CustomFormsDataFolderResponse} 
      */
-    constructor(pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument) { 
-        CustomFormsDataFolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
-        EzsignfolderGetFormsDataV1ResponseMPayload.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument);
+    constructor(objFormsDataFolder) { 
+        
+        EzsignfolderGetFormsDataV1ResponseMPayload.initialize(this, objFormsDataFolder);
     }
 
     /**
@@ -40,10 +36,8 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, sEzsignfolderDescription, a_objFormDataDocument) { 
-        obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
-        obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
-        obj['a_objFormDataDocument'] = a_objFormDataDocument;
+    static initialize(obj, objFormsDataFolder) { 
+        obj['objFormsDataFolder'] = objFormsDataFolder;
     }
 
     /**
@@ -56,100 +50,36 @@ class EzsignfolderGetFormsDataV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetFormsDataV1ResponseMPayload();
-            CustomFormsDataFolderResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('pkiEzsignfolderID')) {
-                obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
-            }
-            if (data.hasOwnProperty('sEzsignfolderDescription')) {
-                obj['sEzsignfolderDescription'] = ApiClient.convertToType(data['sEzsignfolderDescription'], 'String');
-            }
-            if (data.hasOwnProperty('a_objFormDataDocument')) {
-                obj['a_objFormDataDocument'] = ApiClient.convertToType(data['a_objFormDataDocument'], [CustomFormDataDocumentResponse]);
+            if (data.hasOwnProperty('objFormsDataFolder')) {
+                obj['objFormsDataFolder'] = CustomFormsDataFolderResponse.constructFromObject(data['objFormsDataFolder']);
             }
         }
         return obj;
     }
 
 /**
-     * Returns The unique ID of the Ezsignfolder
-     * @return {Number}
+     * @return {module:eZmaxAPI/model/CustomFormsDataFolderResponse}
      */
-    getPkiEzsignfolderID() {
-        return this.pkiEzsignfolderID;
+    getObjFormsDataFolder() {
+        return this.objFormsDataFolder;
     }
 
     /**
-     * Sets The unique ID of the Ezsignfolder
-     * @param {Number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {module:eZmaxAPI/model/CustomFormsDataFolderResponse} objFormsDataFolder
      */
-    setPkiEzsignfolderID(pkiEzsignfolderID) {
-        this['pkiEzsignfolderID'] = pkiEzsignfolderID;
-    }
-/**
-     * Returns The description of the Ezsignfolder
-     * @return {String}
-     */
-    getSEzsignfolderDescription() {
-        return this.sEzsignfolderDescription;
-    }
-
-    /**
-     * Sets The description of the Ezsignfolder
-     * @param {String} sEzsignfolderDescription The description of the Ezsignfolder
-     */
-    setSEzsignfolderDescription(sEzsignfolderDescription) {
-        this['sEzsignfolderDescription'] = sEzsignfolderDescription;
-    }
-/**
-     * @return {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>}
-     */
-    getAObjFormDataDocument() {
-        return this.a_objFormDataDocument;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
-     */
-    setAObjFormDataDocument(a_objFormDataDocument) {
-        this['a_objFormDataDocument'] = a_objFormDataDocument;
+    setObjFormsDataFolder(objFormsDataFolder) {
+        this['objFormsDataFolder'] = objFormsDataFolder;
     }
 
 }
 
 /**
- * The unique ID of the Ezsignfolder
- * @member {Number} pkiEzsignfolderID
+ * @member {module:eZmaxAPI/model/CustomFormsDataFolderResponse} objFormsDataFolder
  */
-EzsignfolderGetFormsDataV1ResponseMPayload.prototype['pkiEzsignfolderID'] = undefined;
-
-/**
- * The description of the Ezsignfolder
- * @member {String} sEzsignfolderDescription
- */
-EzsignfolderGetFormsDataV1ResponseMPayload.prototype['sEzsignfolderDescription'] = undefined;
-
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
- */
-EzsignfolderGetFormsDataV1ResponseMPayload.prototype['a_objFormDataDocument'] = undefined;
+EzsignfolderGetFormsDataV1ResponseMPayload.prototype['objFormsDataFolder'] = undefined;
 
 
-// Implement CustomFormsDataFolderResponse interface:
-/**
- * The unique ID of the Ezsignfolder
- * @member {Number} pkiEzsignfolderID
- */
-CustomFormsDataFolderResponse.prototype['pkiEzsignfolderID'] = undefined;
-/**
- * The description of the Ezsignfolder
- * @member {String} sEzsignfolderDescription
- */
-CustomFormsDataFolderResponse.prototype['sEzsignfolderDescription'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomFormDataDocumentResponse>} a_objFormDataDocument
- */
-CustomFormsDataFolderResponse.prototype['a_objFormDataDocument'] = undefined;
 
 
 

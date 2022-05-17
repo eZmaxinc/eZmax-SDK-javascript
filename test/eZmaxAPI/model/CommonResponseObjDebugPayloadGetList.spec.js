@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+    instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CommonResponseObjDebugPayloadGetList', function() {
     it('should create an instance of CommonResponseObjDebugPayloadGetList', function() {
       // uncomment below and update the code to test CommonResponseObjDebugPayloadGetList
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList);
     });
 
     it('should have the property iVersionMin (base name: "iVersionMin")', function() {
       // uncomment below and update the code to test the property iVersionMin
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property iVersionMax (base name: "iVersionMax")', function() {
       // uncomment below and update the code to test the property iVersionMax
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property a_RequiredPermission (base name: "a_RequiredPermission")', function() {
       // uncomment below and update the code to test the property a_RequiredPermission
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property a_Filter (base name: "a_Filter")', function() {
       // uncomment below and update the code to test the property a_Filter
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 
     it('should have the property a_OrderBy (base name: "a_OrderBy")', function() {
       // uncomment below and update the code to test the property a_OrderBy
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebugPayloadGetList();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayloadGetList();
       //expect(instance).to.be();
     });
 

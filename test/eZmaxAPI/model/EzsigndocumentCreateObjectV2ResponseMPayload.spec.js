@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseMPayload();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2ResponseMPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('EzsigndocumentCreateObjectV2ResponseMPayload', function() {
     it('should create an instance of EzsigndocumentCreateObjectV2ResponseMPayload', function() {
       // uncomment below and update the code to test EzsigndocumentCreateObjectV2ResponseMPayload
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseMPayload();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseMPayload);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2ResponseMPayload();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2ResponseMPayload);
     });
 
     it('should have the property a_pkiEzsigndocumentID (base name: "a_pkiEzsigndocumentID")', function() {
       // uncomment below and update the code to test the property a_pkiEzsigndocumentID
-      //var instance = new EZmaxApiDefinition.EzsigndocumentCreateObjectV2ResponseMPayload();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentCreateObjectV2ResponseMPayload();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentPatchObjectV1Request
+# EZmaxApiDefinitionFull.EzsigndocumentPatchObjectV1Request
 
 ## Properties
 

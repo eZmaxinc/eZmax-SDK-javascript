@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsigndocumentApi();
+    instance = new EZmaxApiDefinitionFull.ObjectEzsigndocumentApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -128,6 +128,16 @@
         done();
       });
     });
+    describe('ezsigndocumentGetActionableElementsV1', function() {
+      it('should call ezsigndocumentGetActionableElementsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetActionableElementsV1
+        //instance.ezsigndocumentGetActionableElementsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetDownloadUrlV1', function() {
       it('should call ezsigndocumentGetDownloadUrlV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetDownloadUrlV1
@@ -212,6 +222,16 @@
       it('should call ezsigndocumentPatchObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentPatchObjectV1
         //instance.ezsigndocumentPatchObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigndocumentUnsendV1', function() {
+      it('should call ezsigndocumentUnsendV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentUnsendV1
+        //instance.ezsigndocumentUnsendV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -29,6 +29,7 @@ import EzsigndocumentEditEzsignformfieldgroupsV1Response from '../model/Ezsigndo
 import EzsigndocumentEditEzsignsignaturesV1Request from '../model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentEndPrematurelyV1Response from '../model/EzsigndocumentEndPrematurelyV1Response';
+import EzsigndocumentGetActionableElementsV1Response from '../model/EzsigndocumentGetActionableElementsV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignformfieldgroupsV1Response from '../model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
@@ -40,6 +41,7 @@ import EzsigndocumentGetWordsPositionsV1Request from '../model/EzsigndocumentGet
 import EzsigndocumentGetWordsPositionsV1Response from '../model/EzsigndocumentGetWordsPositionsV1Response';
 import EzsigndocumentPatchObjectV1Request from '../model/EzsigndocumentPatchObjectV1Request';
 import EzsigndocumentPatchObjectV1Response from '../model/EzsigndocumentPatchObjectV1Response';
+import EzsigndocumentUnsendV1Response from '../model/EzsigndocumentUnsendV1Response';
 
 /**
 * ObjectEzsigndocument service.
@@ -69,7 +71,7 @@ export default class ObjectEzsigndocumentApi {
      */
 
     /**
-     * Apply an Ezsign Template to the Ezsigndocument.
+     * Apply an Ezsigntemplate to the Ezsigndocument.
      * This function is deprecated. Please use *applyEzsigntemplate* instead which is doing the same thing but with a capital \"E\" to normalize the nomenclature.  This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request} EzsigndocumentApplyEzsigntemplateV1Request 
@@ -117,7 +119,7 @@ export default class ObjectEzsigndocumentApi {
      */
 
     /**
-     * Apply an Ezsign Template to the Ezsigndocument.
+     * Apply an Ezsigntemplate to the Ezsigndocument.
      * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
      * @param {Number} pkiEzsigndocumentID 
      * @param {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Request} EzsigndocumentApplyEzsigntemplateV2Request 
@@ -422,6 +424,49 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentEndPrematurelyV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentGetActionableElementsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetActionableElementsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetActionableElementsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve actionable elements for the Ezsigndocument
+     * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetActionableElementsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetActionableElementsV1Response}
+     */
+    ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetActionableElementsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetActionableElementsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -824,6 +869,54 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentPatchObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentUnsendV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentUnsendV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentUnsendV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Unsend the Ezsigndocument
+     * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {Object.<String, Object>} body 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentUnsendV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentUnsendV1Response}
+     */
+    ezsigndocumentUnsendV1(pkiEzsigndocumentID, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentUnsendV1");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ezsigndocumentUnsendV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentUnsendV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

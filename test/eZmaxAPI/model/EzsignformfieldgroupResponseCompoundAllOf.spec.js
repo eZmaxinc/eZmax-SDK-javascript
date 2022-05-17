@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EzsignformfieldgroupResponseCompoundAllOf', function() {
     it('should create an instance of EzsignformfieldgroupResponseCompoundAllOf', function() {
       // uncomment below and update the code to test EzsignformfieldgroupResponseCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf);
     });
 
     it('should have the property a_objEzsignformfield (base name: "a_objEzsignformfield")', function() {
       // uncomment below and update the code to test the property a_objEzsignformfield
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objDropdownElement (base name: "a_objDropdownElement")', function() {
       // uncomment below and update the code to test the property a_objDropdownElement
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objEzsignformfieldgroupsigner (base name: "a_objEzsignformfieldgroupsigner")', function() {
       // uncomment below and update the code to test the property a_objEzsignformfieldgroupsigner
-      //var instance = new EZmaxApiDefinition.EzsignformfieldgroupResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 

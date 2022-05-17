@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignsignerResponse
+# EZmaxApiDefinitionFull.EzsignsignerResponse
 
 ## Properties
 

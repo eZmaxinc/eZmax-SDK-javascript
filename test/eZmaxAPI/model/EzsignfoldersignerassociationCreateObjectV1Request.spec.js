@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV1Request();
+    instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV1Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EzsignfoldersignerassociationCreateObjectV1Request', function() {
     it('should create an instance of EzsignfoldersignerassociationCreateObjectV1Request', function() {
       // uncomment below and update the code to test EzsignfoldersignerassociationCreateObjectV1Request
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV1Request);
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV1Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV1Request);
     });
 
     it('should have the property objEzsignfoldersignerassociation (base name: "objEzsignfoldersignerassociation")', function() {
       // uncomment below and update the code to test the property objEzsignfoldersignerassociation
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV1Request();
       //expect(instance).to.be();
     });
 
     it('should have the property objEzsignfoldersignerassociationCompound (base name: "objEzsignfoldersignerassociationCompound")', function() {
       // uncomment below and update the code to test the property objEzsignfoldersignerassociationCompound
-      //var instance = new EZmaxApiDefinition.EzsignfoldersignerassociationCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationCreateObjectV1Request();
       //expect(instance).to.be();
     });
 

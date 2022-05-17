@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+    instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('CommonResponseObjDebug', function() {
     it('should create an instance of CommonResponseObjDebug', function() {
       // uncomment below and update the code to test CommonResponseObjDebug
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseObjDebug);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseObjDebug);
     });
 
     it('should have the property sMemoryUsage (base name: "sMemoryUsage")', function() {
       // uncomment below and update the code to test the property sMemoryUsage
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
       //expect(instance).to.be();
     });
 
     it('should have the property sRunTime (base name: "sRunTime")', function() {
       // uncomment below and update the code to test the property sRunTime
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
       //expect(instance).to.be();
     });
 
     it('should have the property iSQLSelects (base name: "iSQLSelects")', function() {
       // uncomment below and update the code to test the property iSQLSelects
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
       //expect(instance).to.be();
     });
 
     it('should have the property iSQLQueries (base name: "iSQLQueries")', function() {
       // uncomment below and update the code to test the property iSQLQueries
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objSQLQuery (base name: "a_objSQLQuery")', function() {
       // uncomment below and update the code to test the property a_objSQLQuery
-      //var instance = new EZmaxApiDefinition.CommonResponseObjDebug();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebug();
       //expect(instance).to.be();
     });
 

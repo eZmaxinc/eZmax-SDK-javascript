@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignsignaturecustomdateResponse
+# EZmaxApiDefinitionFull.EzsignsignaturecustomdateResponse
 
 ## Properties
 

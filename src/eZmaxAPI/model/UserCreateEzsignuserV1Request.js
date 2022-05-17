@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class UserCreateEzsignuserV1Request {
     /**
      * Constructs a new <code>UserCreateEzsignuserV1Request</code>.
-     * Request for the /1/module/user/createEzsignuser API Request
+     * Request for POST /1/module/user/createEzsignuser
      * @alias module:eZmaxAPI/model/UserCreateEzsignuserV1Request
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sUserFirstname {String} The First name of the user

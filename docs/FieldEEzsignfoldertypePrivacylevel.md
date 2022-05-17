@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignfoldertypePrivacylevel
+# EZmaxApiDefinitionFull.FieldEEzsignfoldertypePrivacylevel
 
 ## Enum
 

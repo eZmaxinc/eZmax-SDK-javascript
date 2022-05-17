@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfoldersignerassociationResponseCompoundUser
+# EZmaxApiDefinitionFull.EzsignfoldersignerassociationResponseCompoundUser
 
 ## Properties
 

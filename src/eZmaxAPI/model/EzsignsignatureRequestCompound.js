@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,6 +15,8 @@ import ApiClient from '../ApiClient';
 import EzsignsignatureRequest from './EzsignsignatureRequest';
 import EzsignsignatureRequestCompoundAllOf from './EzsignsignatureRequestCompoundAllOf';
 import EzsignsignaturecustomdateRequestCompound from './EzsignsignaturecustomdateRequestCompound';
+import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
+import FieldEEzsignsignatureTooltipposition from './FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
 
 /**
@@ -32,7 +34,7 @@ class EzsignsignatureRequestCompound {
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      * @param iEzsignsignatureX {Number} The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
@@ -93,6 +95,15 @@ class EzsignsignatureRequestCompound {
             }
             if (data.hasOwnProperty('fkiEzsigndocumentID')) {
                 obj['fkiEzsigndocumentID'] = ApiClient.convertToType(data['fkiEzsigndocumentID'], 'Number');
+            }
+            if (data.hasOwnProperty('tEzsignsignatureTooltip')) {
+                obj['tEzsignsignatureTooltip'] = ApiClient.convertToType(data['tEzsignsignatureTooltip'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsignsignatureTooltipposition')) {
+                obj['eEzsignsignatureTooltipposition'] = FieldEEzsignsignatureTooltipposition.constructFromObject(data['eEzsignsignatureTooltipposition']);
+            }
+            if (data.hasOwnProperty('eEzsignsignatureFont')) {
+                obj['eEzsignsignatureFont'] = FieldEEzsignsignatureFont.constructFromObject(data['eEzsignsignatureFont']);
             }
             if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
                 obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
@@ -165,7 +176,7 @@ class EzsignsignatureRequestCompound {
         this['iEzsignsignatureX'] = iEzsignsignatureX;
     }
 /**
-     * Returns The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * Returns The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @return {Number}
      */
     getIEzsignsignatureY() {
@@ -173,8 +184,8 @@ class EzsignsignatureRequestCompound {
     }
 
     /**
-     * Sets The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     * @param {Number} iEzsignsignatureY The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * Sets The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * @param {Number} iEzsignsignatureY The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      */
     setIEzsignsignatureY(iEzsignsignatureY) {
         this['iEzsignsignatureY'] = iEzsignsignatureY;
@@ -223,7 +234,48 @@ class EzsignsignatureRequestCompound {
         this['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
     }
 /**
-     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * Returns A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     * @return {String}
+     */
+    getTEzsignsignatureTooltip() {
+        return this.tEzsignsignatureTooltip;
+    }
+
+    /**
+     * Sets A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     * @param {String} tEzsignsignatureTooltip A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     */
+    setTEzsignsignatureTooltip(tEzsignsignatureTooltip) {
+        this['tEzsignsignatureTooltip'] = tEzsignsignatureTooltip;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition}
+     */
+    getEEzsignsignatureTooltipposition() {
+        return this.eEzsignsignatureTooltipposition;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition} eEzsignsignatureTooltipposition
+     */
+    setEEzsignsignatureTooltipposition(eEzsignsignatureTooltipposition) {
+        this['eEzsignsignatureTooltipposition'] = eEzsignsignatureTooltipposition;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureFont}
+     */
+    getEEzsignsignatureFont() {
+        return this.eEzsignsignatureFont;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureFont} eEzsignsignatureFont
+     */
+    setEEzsignsignatureFont(eEzsignsignatureFont) {
+        this['eEzsignsignatureFont'] = eEzsignsignatureFont;
+    }
+/**
+     * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
     getBEzsignsignatureCustomdate() {
@@ -231,8 +283,8 @@ class EzsignsignatureRequestCompound {
     }
 
     /**
-     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
-     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+     * Sets Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
+     * @param {Boolean} bEzsignsignatureCustomdate Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      */
     setBEzsignsignatureCustomdate(bEzsignsignatureCustomdate) {
         this['bEzsignsignatureCustomdate'] = bEzsignsignatureCustomdate;
@@ -280,7 +332,7 @@ EzsignsignatureRequestCompound.prototype['iEzsignpagePagenumber'] = undefined;
 EzsignsignatureRequestCompound.prototype['iEzsignsignatureX'] = undefined;
 
 /**
- * The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+ * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
  * @member {Number} iEzsignsignatureY
  */
 EzsignsignatureRequestCompound.prototype['iEzsignsignatureY'] = undefined;
@@ -303,7 +355,23 @@ EzsignsignatureRequestCompound.prototype['eEzsignsignatureType'] = undefined;
 EzsignsignatureRequestCompound.prototype['fkiEzsigndocumentID'] = undefined;
 
 /**
- * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+ * @member {String} tEzsignsignatureTooltip
+ */
+EzsignsignatureRequestCompound.prototype['tEzsignsignatureTooltip'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition} eEzsignsignatureTooltipposition
+ */
+EzsignsignatureRequestCompound.prototype['eEzsignsignatureTooltipposition'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureFont} eEzsignsignatureFont
+ */
+EzsignsignatureRequestCompound.prototype['eEzsignsignatureFont'] = undefined;
+
+/**
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsignsignatureCustomdate
  */
 EzsignsignatureRequestCompound.prototype['bEzsignsignatureCustomdate'] = undefined;
@@ -337,7 +405,7 @@ EzsignsignatureRequest.prototype['iEzsignpagePagenumber'] = undefined;
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureX'] = undefined;
 /**
- * The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+ * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
  * @member {Number} iEzsignsignatureY
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureY'] = undefined;
@@ -355,9 +423,22 @@ EzsignsignatureRequest.prototype['eEzsignsignatureType'] = undefined;
  * @member {Number} fkiEzsigndocumentID
  */
 EzsignsignatureRequest.prototype['fkiEzsigndocumentID'] = undefined;
+/**
+ * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+ * @member {String} tEzsignsignatureTooltip
+ */
+EzsignsignatureRequest.prototype['tEzsignsignatureTooltip'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureTooltipposition} eEzsignsignatureTooltipposition
+ */
+EzsignsignatureRequest.prototype['eEzsignsignatureTooltipposition'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureFont} eEzsignsignatureFont
+ */
+EzsignsignatureRequest.prototype['eEzsignsignatureFont'] = undefined;
 // Implement EzsignsignatureRequestCompoundAllOf interface:
 /**
- * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is \"Name\" or \"Handwritten\")
+ * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsignsignatureCustomdate
  */
 EzsignsignatureRequestCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;

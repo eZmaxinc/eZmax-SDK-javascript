@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse();
+    instance = new EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CustomFormDataEzsignformfieldgroupResponse', function() {
     it('should create an instance of CustomFormDataEzsignformfieldgroupResponse', function() {
       // uncomment below and update the code to test CustomFormDataEzsignformfieldgroupResponse
-      //var instance = new EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse);
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse);
     });
 
     it('should have the property sEzsignformfieldgroupLabel (base name: "sEzsignformfieldgroupLabel")', function() {
       // uncomment below and update the code to test the property sEzsignformfieldgroupLabel
-      //var instance = new EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objEzsignformfield (base name: "a_objEzsignformfield")', function() {
       // uncomment below and update the code to test the property a_objEzsignformfield
-      //var instance = new EZmaxApiDefinition.CustomFormDataEzsignformfieldgroupResponse();
+      //var instance = new EZmaxApiDefinitionFull.CustomFormDataEzsignformfieldgroupResponse();
       //expect(instance).to.be();
     });
 

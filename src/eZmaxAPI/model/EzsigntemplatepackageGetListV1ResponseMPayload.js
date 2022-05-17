@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -24,7 +24,7 @@ import EzsigntemplatepackageListElement from './EzsigntemplatepackageListElement
 class EzsigntemplatepackageGetListV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsigntemplatepackageGetListV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsigntemplatepackage/getList API Request
+     * Payload for GET /1/object/ezsigntemplatepackage/getList
      * @alias module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload
      * @implements module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignsignatureDeleteObjectV1Response
+# EZmaxApiDefinitionFull.EzsignsignatureDeleteObjectV1Response
 
 ## Properties
 

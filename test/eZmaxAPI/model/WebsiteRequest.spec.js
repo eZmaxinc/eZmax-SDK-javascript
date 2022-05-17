@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.WebsiteRequest();
+    instance = new EZmaxApiDefinitionFull.WebsiteRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('WebsiteRequest', function() {
     it('should create an instance of WebsiteRequest', function() {
       // uncomment below and update the code to test WebsiteRequest
-      //var instance = new EZmaxApiDefinition.WebsiteRequest();
-      //expect(instance).to.be.a(EZmaxApiDefinition.WebsiteRequest);
+      //var instance = new EZmaxApiDefinitionFull.WebsiteRequest();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebsiteRequest);
     });
 
     it('should have the property fkiWebsitetypeID (base name: "fkiWebsitetypeID")', function() {
       // uncomment below and update the code to test the property fkiWebsitetypeID
-      //var instance = new EZmaxApiDefinition.WebsiteRequest();
+      //var instance = new EZmaxApiDefinitionFull.WebsiteRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property sWebsiteAddress (base name: "sWebsiteAddress")', function() {
       // uncomment below and update the code to test the property sWebsiteAddress
-      //var instance = new EZmaxApiDefinition.WebsiteRequest();
+      //var instance = new EZmaxApiDefinitionFull.WebsiteRequest();
       //expect(instance).to.be();
     });
 

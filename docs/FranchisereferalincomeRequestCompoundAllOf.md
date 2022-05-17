@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FranchisereferalincomeRequestCompoundAllOf
+# EZmaxApiDefinitionFull.FranchisereferalincomeRequestCompoundAllOf
 
 ## Properties
 

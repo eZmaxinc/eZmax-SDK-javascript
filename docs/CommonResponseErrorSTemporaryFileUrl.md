@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl
+# EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl
 
 ## Properties
 

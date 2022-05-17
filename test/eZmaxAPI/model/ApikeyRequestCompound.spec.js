@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ApikeyRequestCompound();
+    instance = new EZmaxApiDefinitionFull.ApikeyRequestCompound();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ApikeyRequestCompound', function() {
     it('should create an instance of ApikeyRequestCompound', function() {
       // uncomment below and update the code to test ApikeyRequestCompound
-      //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ApikeyRequestCompound);
+      //var instance = new EZmaxApiDefinitionFull.ApikeyRequestCompound();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ApikeyRequestCompound);
     });
 
     it('should have the property pkiApikeyID (base name: "pkiApikeyID")', function() {
       // uncomment below and update the code to test the property pkiApikeyID
-      //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.ApikeyRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
-      //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.ApikeyRequestCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property objApikeyDescription (base name: "objApikeyDescription")', function() {
       // uncomment below and update the code to test the property objApikeyDescription
-      //var instance = new EZmaxApiDefinition.ApikeyRequestCompound();
+      //var instance = new EZmaxApiDefinitionFull.ApikeyRequestCompound();
       //expect(instance).to.be();
     });
 

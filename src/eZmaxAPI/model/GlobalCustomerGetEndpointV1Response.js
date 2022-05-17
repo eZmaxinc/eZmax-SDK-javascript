@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class GlobalCustomerGetEndpointV1Response {
     /**
      * Constructs a new <code>GlobalCustomerGetEndpointV1Response</code>.
-     * Response for the /1/customer/{pksCustomerCode}/endpoint API Request
+     * Response for GET /1/customer/{pksCustomerCode}/endpoint
      * @alias module:eZmaxAPI/model/GlobalCustomerGetEndpointV1Response
      * @param sEndpointURL {String} The endpoint's URL
      */

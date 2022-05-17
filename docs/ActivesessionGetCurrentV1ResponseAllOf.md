@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ActivesessionGetCurrentV1ResponseAllOf
+# EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseAllOf
 
 ## Properties
 

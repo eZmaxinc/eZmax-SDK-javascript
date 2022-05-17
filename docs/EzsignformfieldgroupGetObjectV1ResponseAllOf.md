@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupGetObjectV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsignformfieldgroupGetObjectV1ResponseAllOf
 
 ## Properties
 

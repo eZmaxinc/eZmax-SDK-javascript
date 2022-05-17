@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderCreateObjectV2Request
+# EZmaxApiDefinitionFull.EzsignfolderCreateObjectV2Request
 
 ## Properties
 

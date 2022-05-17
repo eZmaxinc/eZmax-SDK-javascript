@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl();
+    instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CommonResponseErrorSTemporaryFileUrl', function() {
     it('should create an instance of CommonResponseErrorSTemporaryFileUrl', function() {
       // uncomment below and update the code to test CommonResponseErrorSTemporaryFileUrl
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl();
-      //expect(instance).to.be.a(EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl);
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl);
     });
 
     it('should have the property sTemporaryFileUrl (base name: "sTemporaryFileUrl")', function() {
       // uncomment below and update the code to test the property sTemporaryFileUrl
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
       //expect(instance).to.be();
     });
 
     it('should have the property sErrorMessage (base name: "sErrorMessage")', function() {
       // uncomment below and update the code to test the property sErrorMessage
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
       //expect(instance).to.be();
     });
 
     it('should have the property eErrorCode (base name: "eErrorCode")', function() {
       // uncomment below and update the code to test the property eErrorCode
-      //var instance = new EZmaxApiDefinition.CommonResponseErrorSTemporaryFileUrl();
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
       //expect(instance).to.be();
     });
 

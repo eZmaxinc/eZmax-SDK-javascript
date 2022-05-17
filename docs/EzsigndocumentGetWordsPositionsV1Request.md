@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentGetWordsPositionsV1Request
+# EZmaxApiDefinitionFull.EzsigndocumentGetWordsPositionsV1Request
 
 ## Properties
 

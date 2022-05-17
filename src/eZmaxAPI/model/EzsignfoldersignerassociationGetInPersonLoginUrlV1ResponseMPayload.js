@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload {
     /**
      * Constructs a new <code>EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload</code>.
-     * Payload for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
+     * Payload for GET /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
      * @param sLoginUrl {String} The Url to login to the signing application.    Url will expire after 30 minutes.  
      */

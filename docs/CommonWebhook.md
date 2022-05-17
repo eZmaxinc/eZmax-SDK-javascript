@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonWebhook
+# EZmaxApiDefinitionFull.CommonWebhook
 
 ## Properties
 

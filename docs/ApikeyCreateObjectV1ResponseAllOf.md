@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.ApikeyCreateObjectV1ResponseAllOf
+# EZmaxApiDefinitionFull.ApikeyCreateObjectV1ResponseAllOf
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.WebhookEzsignFolderCompletedAllOf
+# EZmaxApiDefinitionFull.WebhookEzsignFolderCompletedAllOf
 
 ## Properties
 

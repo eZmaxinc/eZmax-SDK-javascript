@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsignsignatureRequestCompound from './EzsignsignatureRequestCompound';
 class EzsignsignatureEditObjectV1Request {
     /**
      * Constructs a new <code>EzsignsignatureEditObjectV1Request</code>.
-     * Request for the /1/object/ezsignsignature/editObject API Request
+     * Request for PUT /1/object/ezsignsignature/{pkiEzsignsignatureID}
      * @alias module:eZmaxAPI/model/EzsignsignatureEditObjectV1Request
      * @param objEzsignsignature {module:eZmaxAPI/model/EzsignsignatureRequestCompound} 
      */

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignformfieldgroupsignerRequest
+# EZmaxApiDefinitionFull.EzsignformfieldgroupsignerRequest
 
 ## Properties
 

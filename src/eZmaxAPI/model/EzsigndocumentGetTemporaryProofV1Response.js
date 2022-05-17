@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsigndocumentGetTemporaryProofV1ResponseMPayload from './EzsigndocumentG
 class EzsigndocumentGetTemporaryProofV1Response {
     /**
      * Constructs a new <code>EzsigndocumentGetTemporaryProofV1Response</code>.
-     * Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
+     * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof
      * @alias module:eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1Response
      * @implements module:eZmaxAPI/model/EzsigndocumentGetTemporaryProofV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonResponseError
+# EZmaxApiDefinitionFull.CommonResponseError
 
 ## Properties
 

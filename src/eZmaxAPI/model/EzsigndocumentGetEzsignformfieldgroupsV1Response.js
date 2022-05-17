@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload from './Ezsigndo
 class EzsigndocumentGetEzsignformfieldgroupsV1Response {
     /**
      * Constructs a new <code>EzsigndocumentGetEzsignformfieldgroupsV1Response</code>.
-     * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups API Request
+     * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1Response
      * @implements module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

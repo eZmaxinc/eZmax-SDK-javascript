@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.FieldEEzsignfolderStep
+# EZmaxApiDefinitionFull.FieldEEzsignfolderStep
 
 ## Enum
 
@@ -14,5 +14,7 @@
 * `Completed` (value: `"Completed"`)
 
 * `Archived` (value: `"Archived"`)
+
+* `Disposed` (value: `"Disposed"`)
 
 

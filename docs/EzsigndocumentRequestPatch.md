@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsigndocumentRequestPatch
+# EZmaxApiDefinitionFull.EzsigndocumentRequestPatch
 
 ## Properties
 

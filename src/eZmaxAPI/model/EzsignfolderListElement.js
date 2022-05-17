@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -32,16 +32,14 @@ class EzsignfolderListElement {
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param dtCreatedDate {String} The date and time at which the object was created
-     * @param dtEzsignfolderSentdate {String} The date and time at which the Ezsign folder was sent the last time.
-     * @param dtDueDate {String} Represent a Date Time. The timezone is the one configured in the User's profile.
      * @param iEzsigndocument {Number} The total number of Ezsigndocument in the folder
      * @param iEzsigndocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
      * @param iEzsignsignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
      * @param iEzsignsignatureSigned {Number} The total number of already signed signature blocks in all Ezsigndocuments in the folder
      */
-    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
+    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
         
-        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned);
+        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned);
     }
 
     /**
@@ -49,7 +47,7 @@ class EzsignfolderListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, dtEzsignfolderSentdate, dtDueDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
+    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
@@ -57,8 +55,6 @@ class EzsignfolderListElement {
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
         obj['eEzsignfolderStep'] = eEzsignfolderStep;
         obj['dtCreatedDate'] = dtCreatedDate;
-        obj['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
-        obj['dtDueDate'] = dtDueDate;
         obj['iEzsigndocument'] = iEzsigndocument;
         obj['iEzsigndocumentEdm'] = iEzsigndocumentEdm;
         obj['iEzsignsignature'] = iEzsignsignature;
@@ -100,8 +96,8 @@ class EzsignfolderListElement {
             if (data.hasOwnProperty('dtEzsignfolderSentdate')) {
                 obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], 'String');
             }
-            if (data.hasOwnProperty('dtDueDate')) {
-                obj['dtDueDate'] = ApiClient.convertToType(data['dtDueDate'], 'String');
+            if (data.hasOwnProperty('dtEzsignfolderDuedate')) {
+                obj['dtEzsignfolderDuedate'] = ApiClient.convertToType(data['dtEzsignfolderDuedate'], 'String');
             }
             if (data.hasOwnProperty('iEzsigndocument')) {
                 obj['iEzsigndocument'] = ApiClient.convertToType(data['iEzsigndocument'], 'Number');
@@ -236,19 +232,19 @@ class EzsignfolderListElement {
         this['dtEzsignfolderSentdate'] = dtEzsignfolderSentdate;
     }
 /**
-     * Returns Represent a Date Time. The timezone is the one configured in the User's profile.
+     * Returns The maximum date and time at which the Ezsignfolder can be signed.
      * @return {String}
      */
-    getDtDueDate() {
-        return this.dtDueDate;
+    getDtEzsignfolderDuedate() {
+        return this.dtEzsignfolderDuedate;
     }
 
     /**
-     * Sets Represent a Date Time. The timezone is the one configured in the User's profile.
-     * @param {String} dtDueDate Represent a Date Time. The timezone is the one configured in the User's profile.
+     * Sets The maximum date and time at which the Ezsignfolder can be signed.
+     * @param {String} dtEzsignfolderDuedate The maximum date and time at which the Ezsignfolder can be signed.
      */
-    setDtDueDate(dtDueDate) {
-        this['dtDueDate'] = dtDueDate;
+    setDtEzsignfolderDuedate(dtEzsignfolderDuedate) {
+        this['dtEzsignfolderDuedate'] = dtEzsignfolderDuedate;
     }
 /**
      * Returns The total number of Ezsigndocument in the folder
@@ -360,10 +356,10 @@ EzsignfolderListElement.prototype['dtCreatedDate'] = undefined;
 EzsignfolderListElement.prototype['dtEzsignfolderSentdate'] = undefined;
 
 /**
- * Represent a Date Time. The timezone is the one configured in the User's profile.
- * @member {String} dtDueDate
+ * The maximum date and time at which the Ezsignfolder can be signed.
+ * @member {String} dtEzsignfolderDuedate
  */
-EzsignfolderListElement.prototype['dtDueDate'] = undefined;
+EzsignfolderListElement.prototype['dtEzsignfolderDuedate'] = undefined;
 
 /**
  * The total number of Ezsigndocument in the folder

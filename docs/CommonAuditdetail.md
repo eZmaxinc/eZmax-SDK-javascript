@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonAuditdetail
+# EZmaxApiDefinitionFull.CommonAuditdetail
 
 ## Properties
 

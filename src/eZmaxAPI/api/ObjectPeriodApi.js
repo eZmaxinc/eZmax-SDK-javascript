@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
+import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectPeriod service.
@@ -48,6 +49,7 @@ export default class ObjectPeriodApi {
      * @param {module:eZmaxAPI/model/String} sSelector The types of Periods to return
      * @param {Object} opts Optional parameters
      * @param {String} opts.sQuery Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
      * @param {module:eZmaxAPI/api/ObjectPeriodApi~periodGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
      */
@@ -66,6 +68,7 @@ export default class ObjectPeriodApi {
         'sQuery': opts['sQuery']
       };
       let headerParams = {
+        'Accept-Language': opts['Accept_Language']
       };
       let formParams = {
       };

@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,7 @@ import EzsigndocumentGetFormDataV1ResponseMPayload from './EzsigndocumentGetForm
 class EzsigndocumentGetFormDataV1Response {
     /**
      * Constructs a new <code>EzsigndocumentGetFormDataV1Response</code>.
-     * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData API Request
+     * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData
      * @alias module:eZmaxAPI/model/EzsigndocumentGetFormDataV1Response
      * @implements module:eZmaxAPI/model/EzsigndocumentGetFormDataV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

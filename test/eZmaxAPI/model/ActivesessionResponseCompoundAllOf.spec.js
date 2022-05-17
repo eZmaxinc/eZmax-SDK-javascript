@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('ActivesessionResponseCompoundAllOf', function() {
     it('should create an instance of ActivesessionResponseCompoundAllOf', function() {
       // uncomment below and update the code to test ActivesessionResponseCompoundAllOf
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ActivesessionResponseCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf);
     });
 
     it('should have the property a_pkiPermissionID (base name: "a_pkiPermissionID")', function() {
       // uncomment below and update the code to test the property a_pkiPermissionID
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property objUserReal (base name: "objUserReal")', function() {
       // uncomment below and update the code to test the property objUserReal
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property objUserCloned (base name: "objUserCloned")', function() {
       // uncomment below and update the code to test the property objUserCloned
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property objApikey (base name: "objApikey")', function() {
       // uncomment below and update the code to test the property objApikey
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_eModuleInternalname (base name: "a_eModuleInternalname")', function() {
       // uncomment below and update the code to test the property a_eModuleInternalname
-      //var instance = new EZmaxApiDefinition.ActivesessionResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 

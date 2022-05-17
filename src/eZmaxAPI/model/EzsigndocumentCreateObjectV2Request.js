@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import EzsigndocumentRequestCompound from './EzsigndocumentRequestCompound';
 class EzsigndocumentCreateObjectV2Request {
     /**
      * Constructs a new <code>EzsigndocumentCreateObjectV2Request</code>.
-     * Request for the /2/object/ezsigndocument/createObject API Request
+     * Request for POST /2/object/ezsigndocument
      * @alias module:eZmaxAPI/model/EzsigndocumentCreateObjectV2Request
      * @param a_objEzsigndocument {Array.<module:eZmaxAPI/model/EzsigndocumentRequestCompound>} 
      */

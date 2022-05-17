@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -25,11 +25,11 @@ class CustomAutocompleteElementResponse {
      * @alias module:eZmaxAPI/model/CustomAutocompleteElementResponse
      * @param sCategory {String} The Category for the dropdown or an empty string if not categorized
      * @param sLabel {String} The Description of the element
-     * @param mValue {String} The Unique ID of the element
+     * @param sValue {String} The Unique ID of the element
      */
-    constructor(sCategory, sLabel, mValue) { 
+    constructor(sCategory, sLabel, sValue) { 
         
-        CustomAutocompleteElementResponse.initialize(this, sCategory, sLabel, mValue);
+        CustomAutocompleteElementResponse.initialize(this, sCategory, sLabel, sValue);
     }
 
     /**
@@ -37,10 +37,10 @@ class CustomAutocompleteElementResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sCategory, sLabel, mValue) { 
+    static initialize(obj, sCategory, sLabel, sValue) { 
         obj['sCategory'] = sCategory;
         obj['sLabel'] = sLabel;
-        obj['mValue'] = mValue;
+        obj['sValue'] = sValue;
     }
 
     /**
@@ -59,6 +59,9 @@ class CustomAutocompleteElementResponse {
             }
             if (data.hasOwnProperty('sLabel')) {
                 obj['sLabel'] = ApiClient.convertToType(data['sLabel'], 'String');
+            }
+            if (data.hasOwnProperty('sValue')) {
+                obj['sValue'] = ApiClient.convertToType(data['sValue'], 'String');
             }
             if (data.hasOwnProperty('mValue')) {
                 obj['mValue'] = ApiClient.convertToType(data['mValue'], 'String');
@@ -101,6 +104,21 @@ class CustomAutocompleteElementResponse {
      * Returns The Unique ID of the element
      * @return {String}
      */
+    getSValue() {
+        return this.sValue;
+    }
+
+    /**
+     * Sets The Unique ID of the element
+     * @param {String} sValue The Unique ID of the element
+     */
+    setSValue(sValue) {
+        this['sValue'] = sValue;
+    }
+/**
+     * Returns The Unique ID of the element
+     * @return {String}
+     */
     getMValue() {
         return this.mValue;
     }
@@ -126,6 +144,12 @@ CustomAutocompleteElementResponse.prototype['sCategory'] = undefined;
  * @member {String} sLabel
  */
 CustomAutocompleteElementResponse.prototype['sLabel'] = undefined;
+
+/**
+ * The Unique ID of the element
+ * @member {String} sValue
+ */
+CustomAutocompleteElementResponse.prototype['sValue'] = undefined;
 
 /**
  * The Unique ID of the element

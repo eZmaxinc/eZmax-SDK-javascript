@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ObjectEzsignbulksendtransmissionApi();
+    instance = new EZmaxApiDefinitionFull.ObjectEzsignbulksendtransmissionApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -48,6 +48,26 @@
   }
 
   describe('ObjectEzsignbulksendtransmissionApi', function() {
+    describe('ezsignbulksendtransmissionGetCsvErrorsV1', function() {
+      it('should call ezsignbulksendtransmissionGetCsvErrorsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignbulksendtransmissionGetCsvErrorsV1
+        //instance.ezsignbulksendtransmissionGetCsvErrorsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignbulksendtransmissionGetFormsDataV1', function() {
+      it('should call ezsignbulksendtransmissionGetFormsDataV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignbulksendtransmissionGetFormsDataV1
+        //instance.ezsignbulksendtransmissionGetFormsDataV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignbulksendtransmissionGetObjectV1', function() {
       it('should call ezsignbulksendtransmissionGetObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignbulksendtransmissionGetObjectV1

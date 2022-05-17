@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+    instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('EzsigndocumentResponseCompoundAllOf', function() {
     it('should create an instance of EzsigndocumentResponseCompoundAllOf', function() {
       // uncomment below and update the code to test EzsigndocumentResponseCompoundAllOf
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
-      //expect(instance).to.be.a(EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf);
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf);
     });
 
     it('should have the property iEzsigndocumentStepformtotal (base name: "iEzsigndocumentStepformtotal")', function() {
       // uncomment below and update the code to test the property iEzsigndocumentStepformtotal
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsigndocumentStepformcurrent (base name: "iEzsigndocumentStepformcurrent")', function() {
       // uncomment below and update the code to test the property iEzsigndocumentStepformcurrent
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsigndocumentStepsignaturetotal (base name: "iEzsigndocumentStepsignaturetotal")', function() {
       // uncomment below and update the code to test the property iEzsigndocumentStepsignaturetotal
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property iEzsigndocumentStepsignatureCurrent (base name: "iEzsigndocumentStepsignatureCurrent")', function() {
       // uncomment below and update the code to test the property iEzsigndocumentStepsignatureCurrent
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property a_objEzsignfoldersignerassociationstatus (base name: "a_objEzsignfoldersignerassociationstatus")', function() {
       // uncomment below and update the code to test the property a_objEzsignfoldersignerassociationstatus
-      //var instance = new EZmaxApiDefinition.EzsigndocumentResponseCompoundAllOf();
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompoundAllOf();
       //expect(instance).to.be();
     });
 

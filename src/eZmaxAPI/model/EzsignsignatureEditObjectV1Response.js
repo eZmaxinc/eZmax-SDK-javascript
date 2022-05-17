@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -24,7 +24,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsignsignatureEditObjectV1Response {
     /**
      * Constructs a new <code>EzsignsignatureEditObjectV1Response</code>.
-     * Response for the /1/object/ezsignsignature/editObject API Request
+     * Response for PUT /1/object/ezsignsignature/{pkiEzsignsignatureID}
      * @alias module:eZmaxAPI/model/EzsignsignatureEditObjectV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      */

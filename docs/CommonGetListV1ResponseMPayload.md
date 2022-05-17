@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.CommonGetListV1ResponseMPayload
+# EZmaxApiDefinitionFull.CommonGetListV1ResponseMPayload
 
 ## Properties
 

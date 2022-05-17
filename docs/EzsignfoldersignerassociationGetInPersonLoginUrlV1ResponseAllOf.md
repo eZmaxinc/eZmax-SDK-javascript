@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
+# EZmaxApiDefinitionFull.EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
 
 ## Properties
 

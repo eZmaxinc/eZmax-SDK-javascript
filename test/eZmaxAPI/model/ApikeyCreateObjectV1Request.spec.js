@@ -1,5 +1,5 @@
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/eZmaxAPI/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.EZmaxApiDefinition);
+    factory(root.expect, root.EZmaxApiDefinitionFull);
   }
-}(this, function(expect, EZmaxApiDefinition) {
+}(this, function(expect, EZmaxApiDefinitionFull) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinition.ApikeyCreateObjectV1Request();
+    instance = new EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ApikeyCreateObjectV1Request', function() {
     it('should create an instance of ApikeyCreateObjectV1Request', function() {
       // uncomment below and update the code to test ApikeyCreateObjectV1Request
-      //var instance = new EZmaxApiDefinition.ApikeyCreateObjectV1Request();
-      //expect(instance).to.be.a(EZmaxApiDefinition.ApikeyCreateObjectV1Request);
+      //var instance = new EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request);
     });
 
     it('should have the property objApikey (base name: "objApikey")', function() {
       // uncomment below and update the code to test the property objApikey
-      //var instance = new EZmaxApiDefinition.ApikeyCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request();
       //expect(instance).to.be();
     });
 
     it('should have the property objApikeyCompound (base name: "objApikeyCompound")', function() {
       // uncomment below and update the code to test the property objApikeyCompound
-      //var instance = new EZmaxApiDefinition.ApikeyCreateObjectV1Request();
+      //var instance = new EZmaxApiDefinitionFull.ApikeyCreateObjectV1Request();
       //expect(instance).to.be();
     });
 

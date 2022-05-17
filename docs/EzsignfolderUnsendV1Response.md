@@ -1,4 +1,4 @@
-# EZmaxApiDefinition.EzsignfolderUnsendV1Response
+# EZmaxApiDefinitionFull.EzsignfolderUnsendV1Response
 
 ## Properties
 
