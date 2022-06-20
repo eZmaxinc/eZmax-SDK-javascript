@@ -45,6 +45,8 @@ docs/CommonResponseObjDebugPayload.md
 docs/CommonResponseObjDebugPayloadGetList.md
 docs/CommonResponseObjDebugPayloadGetListAllOf.md
 docs/CommonResponseObjSQLQuery.md
+docs/CommonResponseRedirectSSecretquestionTextX.md
+docs/CommonResponseWarning.md
 docs/CommonWebhook.md
 docs/ContactRequest.md
 docs/ContactRequestCompound.md
@@ -221,6 +223,9 @@ docs/EzsignfolderCreateObjectV2Response.md
 docs/EzsignfolderCreateObjectV2ResponseAllOf.md
 docs/EzsignfolderCreateObjectV2ResponseMPayload.md
 docs/EzsignfolderDeleteObjectV1Response.md
+docs/EzsignfolderDisposeEzsignfoldersV1Request.md
+docs/EzsignfolderDisposeEzsignfoldersV1Response.md
+docs/EzsignfolderDisposeV1Response.md
 docs/EzsignfolderEditObjectV1Request.md
 docs/EzsignfolderEditObjectV1Response.md
 docs/EzsignfolderGetActionableElementsV1Response.md
@@ -380,6 +385,7 @@ docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf.md
 docs/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.md
 docs/EzsigntemplatedocumentEditObjectV1Request.md
 docs/EzsigntemplatedocumentEditObjectV1Response.md
+docs/EzsigntemplatedocumentEditObjectV1ResponseAllOf.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.md
 docs/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.md
@@ -550,6 +556,7 @@ docs/FieldEEzsigntemplatesignatureTooltipposition.md
 docs/FieldEEzsigntemplatesignatureType.md
 docs/FieldENotificationpreferenceStatus.md
 docs/FieldEPhoneType.md
+docs/FieldEUserEzsignsendreminderfrequency.md
 docs/FieldEUserType.md
 docs/FranchisereferalincomeCreateObjectV1Request.md
 docs/FranchisereferalincomeCreateObjectV1Response.md
@@ -572,9 +579,14 @@ docs/NotificationsectionGetNotificationtestsV1Response.md
 docs/NotificationsectionGetNotificationtestsV1ResponseAllOf.md
 docs/NotificationsectionGetNotificationtestsV1ResponseMPayload.md
 docs/NotificationsubsectionResponse.md
+docs/NotificationtestGetElementsV1Response.md
+docs/NotificationtestGetElementsV1ResponseAllOf.md
+docs/NotificationtestGetElementsV1ResponseMPayload.md
 docs/NotificationtestResponse.md
 docs/ObjectActivesessionApi.md
 docs/ObjectApikeyApi.md
+docs/ObjectBillingentityinternalApi.md
+docs/ObjectBrandingApi.md
 docs/ObjectEzsignbulksendApi.md
 docs/ObjectEzsignbulksenddocumentmappingApi.md
 docs/ObjectEzsignbulksendsignermappingApi.md
@@ -599,8 +611,13 @@ docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
 docs/ObjectNotificationsectionApi.md
+docs/ObjectNotificationtestApi.md
 docs/ObjectPeriodApi.md
 docs/ObjectSecretquestionApi.md
+docs/ObjectTaxassignmentApi.md
+docs/ObjectTimezoneApi.md
+docs/ObjectUserApi.md
+docs/ObjectUsergroupApi.md
 docs/PhoneRequest.md
 docs/PhoneRequestCompound.md
 docs/UserCreateEzsignuserV1Request.md
@@ -627,6 +644,8 @@ src/eZmaxAPI/api/ModuleEzsignApi.js
 src/eZmaxAPI/api/ModuleUserApi.js
 src/eZmaxAPI/api/ObjectActivesessionApi.js
 src/eZmaxAPI/api/ObjectApikeyApi.js
+src/eZmaxAPI/api/ObjectBillingentityinternalApi.js
+src/eZmaxAPI/api/ObjectBrandingApi.js
 src/eZmaxAPI/api/ObjectEzsignbulksendApi.js
 src/eZmaxAPI/api/ObjectEzsignbulksenddocumentmappingApi.js
 src/eZmaxAPI/api/ObjectEzsignbulksendsignermappingApi.js
@@ -651,8 +670,13 @@ src/eZmaxAPI/api/ObjectFranchisebrokerApi.js
 src/eZmaxAPI/api/ObjectFranchiseofficeApi.js
 src/eZmaxAPI/api/ObjectFranchisereferalincomeApi.js
 src/eZmaxAPI/api/ObjectNotificationsectionApi.js
+src/eZmaxAPI/api/ObjectNotificationtestApi.js
 src/eZmaxAPI/api/ObjectPeriodApi.js
 src/eZmaxAPI/api/ObjectSecretquestionApi.js
+src/eZmaxAPI/api/ObjectTaxassignmentApi.js
+src/eZmaxAPI/api/ObjectTimezoneApi.js
+src/eZmaxAPI/api/ObjectUserApi.js
+src/eZmaxAPI/api/ObjectUsergroupApi.js
 src/eZmaxAPI/index.js
 src/eZmaxAPI/model/ActivesessionGetCurrentV1Response.js
 src/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseAllOf.js
@@ -696,6 +720,8 @@ src/eZmaxAPI/model/CommonResponseObjDebugPayload.js
 src/eZmaxAPI/model/CommonResponseObjDebugPayloadGetList.js
 src/eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf.js
 src/eZmaxAPI/model/CommonResponseObjSQLQuery.js
+src/eZmaxAPI/model/CommonResponseRedirectSSecretquestionTextX.js
+src/eZmaxAPI/model/CommonResponseWarning.js
 src/eZmaxAPI/model/CommonWebhook.js
 src/eZmaxAPI/model/ContactRequest.js
 src/eZmaxAPI/model/ContactRequestCompound.js
@@ -872,6 +898,9 @@ src/eZmaxAPI/model/EzsignfolderCreateObjectV2Response.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseMPayload.js
 src/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.js
+src/eZmaxAPI/model/EzsignfolderDisposeEzsignfoldersV1Request.js
+src/eZmaxAPI/model/EzsignfolderDisposeEzsignfoldersV1Response.js
+src/eZmaxAPI/model/EzsignfolderDisposeV1Response.js
 src/eZmaxAPI/model/EzsignfolderEditObjectV1Request.js
 src/eZmaxAPI/model/EzsignfolderEditObjectV1Response.js
 src/eZmaxAPI/model/EzsignfolderGetActionableElementsV1Response.js
@@ -1031,6 +1060,7 @@ src/eZmaxAPI/model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseA
 src/eZmaxAPI/model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1Request.js
 src/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1Response.js
+src/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.js
 src/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.js
 src/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.js
@@ -1201,6 +1231,7 @@ src/eZmaxAPI/model/FieldEEzsigntemplatesignatureTooltipposition.js
 src/eZmaxAPI/model/FieldEEzsigntemplatesignatureType.js
 src/eZmaxAPI/model/FieldENotificationpreferenceStatus.js
 src/eZmaxAPI/model/FieldEPhoneType.js
+src/eZmaxAPI/model/FieldEUserEzsignsendreminderfrequency.js
 src/eZmaxAPI/model/FieldEUserType.js
 src/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Request.js
 src/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Response.js
@@ -1220,6 +1251,9 @@ src/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1Response.js
 src/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1ResponseAllOf.js
 src/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1ResponseMPayload.js
 src/eZmaxAPI/model/NotificationsubsectionResponse.js
+src/eZmaxAPI/model/NotificationtestGetElementsV1Response.js
+src/eZmaxAPI/model/NotificationtestGetElementsV1ResponseAllOf.js
+src/eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload.js
 src/eZmaxAPI/model/NotificationtestResponse.js
 src/eZmaxAPI/model/PhoneRequest.js
 src/eZmaxAPI/model/PhoneRequestCompound.js
@@ -1243,6 +1277,8 @@ test/eZmaxAPI/api/ModuleEzsignApi.spec.js
 test/eZmaxAPI/api/ModuleUserApi.spec.js
 test/eZmaxAPI/api/ObjectActivesessionApi.spec.js
 test/eZmaxAPI/api/ObjectApikeyApi.spec.js
+test/eZmaxAPI/api/ObjectBillingentityinternalApi.spec.js
+test/eZmaxAPI/api/ObjectBrandingApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignbulksendApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignbulksenddocumentmappingApi.spec.js
 test/eZmaxAPI/api/ObjectEzsignbulksendsignermappingApi.spec.js
@@ -1267,8 +1303,13 @@ test/eZmaxAPI/api/ObjectFranchisebrokerApi.spec.js
 test/eZmaxAPI/api/ObjectFranchiseofficeApi.spec.js
 test/eZmaxAPI/api/ObjectFranchisereferalincomeApi.spec.js
 test/eZmaxAPI/api/ObjectNotificationsectionApi.spec.js
+test/eZmaxAPI/api/ObjectNotificationtestApi.spec.js
 test/eZmaxAPI/api/ObjectPeriodApi.spec.js
 test/eZmaxAPI/api/ObjectSecretquestionApi.spec.js
+test/eZmaxAPI/api/ObjectTaxassignmentApi.spec.js
+test/eZmaxAPI/api/ObjectTimezoneApi.spec.js
+test/eZmaxAPI/api/ObjectUserApi.spec.js
+test/eZmaxAPI/api/ObjectUsergroupApi.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1Response.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/ActivesessionGetCurrentV1ResponseMPayload.spec.js
@@ -1311,6 +1352,8 @@ test/eZmaxAPI/model/CommonResponseObjDebugPayload.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebugPayloadGetList.spec.js
 test/eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf.spec.js
 test/eZmaxAPI/model/CommonResponseObjSQLQuery.spec.js
+test/eZmaxAPI/model/CommonResponseRedirectSSecretquestionTextX.spec.js
+test/eZmaxAPI/model/CommonResponseWarning.spec.js
 test/eZmaxAPI/model/CommonWebhook.spec.js
 test/eZmaxAPI/model/ContactRequest.spec.js
 test/eZmaxAPI/model/ContactRequestCompound.spec.js
@@ -1487,6 +1530,9 @@ test/eZmaxAPI/model/EzsignfolderCreateObjectV2Response.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfolderCreateObjectV2ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsignfolderDeleteObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsignfolderDisposeEzsignfoldersV1Request.spec.js
+test/eZmaxAPI/model/EzsignfolderDisposeEzsignfoldersV1Response.spec.js
+test/eZmaxAPI/model/EzsignfolderDisposeV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderEditObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderEditObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderGetActionableElementsV1Response.spec.js
@@ -1646,6 +1692,7 @@ test/eZmaxAPI/model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
 test/eZmaxAPI/model/EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1Response.spec.js
+test/eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response.spec.js
 test/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload.spec.js
@@ -1816,6 +1863,7 @@ test/eZmaxAPI/model/FieldEEzsigntemplatesignatureTooltipposition.spec.js
 test/eZmaxAPI/model/FieldEEzsigntemplatesignatureType.spec.js
 test/eZmaxAPI/model/FieldENotificationpreferenceStatus.spec.js
 test/eZmaxAPI/model/FieldEPhoneType.spec.js
+test/eZmaxAPI/model/FieldEUserEzsignsendreminderfrequency.spec.js
 test/eZmaxAPI/model/FieldEUserType.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/FranchisereferalincomeCreateObjectV1Response.spec.js
@@ -1835,6 +1883,9 @@ test/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1Response.spec.js
 test/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/NotificationsectionGetNotificationtestsV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/NotificationsubsectionResponse.spec.js
+test/eZmaxAPI/model/NotificationtestGetElementsV1Response.spec.js
+test/eZmaxAPI/model/NotificationtestGetElementsV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/NotificationtestResponse.spec.js
 test/eZmaxAPI/model/PhoneRequest.spec.js
 test/eZmaxAPI/model/PhoneRequestCompound.spec.js
