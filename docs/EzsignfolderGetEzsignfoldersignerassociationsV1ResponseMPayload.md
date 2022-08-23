@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objEzsignfoldersignerassociation** | [**[EzsignfoldersignerassociationResponseCompound]**](EzsignfoldersignerassociationResponseCompound.md) |  | 
+**a_objEzsignfoldersignerassociation** | [**[CustomEzsignfoldersignerassociationActionableElementResponse]**](CustomEzsignfoldersignerassociationActionableElementResponse.md) |  | 
 
 

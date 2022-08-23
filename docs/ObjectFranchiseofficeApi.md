@@ -30,6 +30,7 @@ Authorization.apiKey = 'YOUR API KEY';
 let apiInstance = new EZmaxApiDefinitionFull.ObjectFranchiseofficeApi();
 let sSelector = "sSelector_example"; // String | The type of Franchiseoffices to return
 let opts = {
+  'eFilterActive': "'Active'", // String | Specify which results we want to display.
   'sQuery': "sQuery_example", // String | Allow to filter the returned results
   'Accept_Language': new EZmaxApiDefinitionFull.HeaderAcceptLanguage() // HeaderAcceptLanguage | 
 };
@@ -48,6 +49,7 @@ apiInstance.franchiseofficeGetAutocompleteV1(sSelector, opts, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sSelector** | **String**| The type of Franchiseoffices to return | 
+ **eFilterActive** | **String**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
  **sQuery** | **String**| Allow to filter the returned results | [optional] 
  **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
 
