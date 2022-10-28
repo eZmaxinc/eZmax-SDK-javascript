@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ezsignsignatureDeleteObjectV1**](ObjectEzsignsignatureApi.md#ezsignsignatureDeleteObjectV1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature
 [**ezsignsignatureEditObjectV1**](ObjectEzsignsignatureApi.md#ezsignsignatureEditObjectV1) | **PUT** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature
 [**ezsignsignatureGetObjectV1**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
+[**ezsignsignatureGetObjectV2**](ObjectEzsignsignatureApi.md#ezsignsignatureGetObjectV2) | **GET** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature
 [**ezsignsignatureSignV1**](ObjectEzsignsignatureApi.md#ezsignsignatureSignV1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature
 
 
@@ -259,6 +260,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignsignatureGetObjectV1Response**](EzsignsignatureGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignsignatureGetObjectV2
+
+> EzsignsignatureGetObjectV2Response ezsignsignatureGetObjectV2(pkiEzsignsignatureID)
+
+Retrieve an existing Ezsignsignature
+
+
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignsignatureApi();
+let pkiEzsignsignatureID = 56; // Number | 
+apiInstance.ezsignsignatureGetObjectV2(pkiEzsignsignatureID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsignsignatureID** | **Number**|  | 
+
+### Return type
+
+[**EzsignsignatureGetObjectV2Response**](EzsignsignatureGetObjectV2Response.md)
 
 ### Authorization
 

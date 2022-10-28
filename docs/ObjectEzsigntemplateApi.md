@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**ezsigntemplateGetAutocompleteV2**](ObjectEzsigntemplateApi.md#ezsigntemplateGetAutocompleteV2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs
 [**ezsigntemplateGetListV1**](ObjectEzsigntemplateApi.md#ezsigntemplateGetListV1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list
 [**ezsigntemplateGetObjectV1**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
+[**ezsigntemplateGetObjectV2**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV2) | **GET** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 
 
 
@@ -388,6 +389,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsigntemplateGetObjectV1Response**](EzsigntemplateGetObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsigntemplateGetObjectV2
+
+> EzsigntemplateGetObjectV2Response ezsigntemplateGetObjectV2(pkiEzsigntemplateID)
+
+Retrieve an existing Ezsigntemplate
+
+
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigntemplateApi();
+let pkiEzsigntemplateID = 56; // Number | 
+apiInstance.ezsigntemplateGetObjectV2(pkiEzsigntemplateID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigntemplateID** | **Number**|  | 
+
+### Return type
+
+[**EzsigntemplateGetObjectV2Response**](EzsigntemplateGetObjectV2Response.md)
 
 ### Authorization
 
