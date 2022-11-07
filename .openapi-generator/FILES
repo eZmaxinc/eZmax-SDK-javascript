@@ -374,6 +374,8 @@ docs/EzsignfolderSendV1Request.md
 docs/EzsignfolderSendV1Response.md
 docs/EzsignfolderSendV2Request.md
 docs/EzsignfolderSendV2Response.md
+docs/EzsignfolderSendV3Request.md
+docs/EzsignfolderSendV3Response.md
 docs/EzsignfolderUnsendV1Response.md
 docs/EzsignfoldersignerassociationCreateObjectV1Request.md
 docs/EzsignfoldersignerassociationCreateObjectV1Response.md
@@ -396,9 +398,12 @@ docs/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.md
 docs/EzsignfoldersignerassociationGetObjectV2Response.md
 docs/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.md
 docs/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.md
+docs/EzsignfoldersignerassociationPatchObjectV1Request.md
+docs/EzsignfoldersignerassociationPatchObjectV1Response.md
 docs/EzsignfoldersignerassociationRequest.md
 docs/EzsignfoldersignerassociationRequestCompound.md
 docs/EzsignfoldersignerassociationRequestCompoundAllOf.md
+docs/EzsignfoldersignerassociationRequestPatch.md
 docs/EzsignfoldersignerassociationResponse.md
 docs/EzsignfoldersignerassociationResponseCompound.md
 docs/EzsignfoldersignerassociationResponseCompoundAllOf.md
@@ -1325,6 +1330,8 @@ src/eZmaxAPI/model/EzsignfolderSendV1Request.js
 src/eZmaxAPI/model/EzsignfolderSendV1Response.js
 src/eZmaxAPI/model/EzsignfolderSendV2Request.js
 src/eZmaxAPI/model/EzsignfolderSendV2Response.js
+src/eZmaxAPI/model/EzsignfolderSendV3Request.js
+src/eZmaxAPI/model/EzsignfolderSendV3Response.js
 src/eZmaxAPI/model/EzsignfolderUnsendV1Response.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Response.js
@@ -1347,9 +1354,12 @@ src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2Response.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.js
+src/eZmaxAPI/model/EzsignfoldersignerassociationPatchObjectV1Request.js
+src/eZmaxAPI/model/EzsignfoldersignerassociationPatchObjectV1Response.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequest.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.js
+src/eZmaxAPI/model/EzsignfoldersignerassociationRequestPatch.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponse.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.js
 src/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf.js
@@ -2229,6 +2239,8 @@ test/eZmaxAPI/model/EzsignfolderSendV1Request.spec.js
 test/eZmaxAPI/model/EzsignfolderSendV1Response.spec.js
 test/eZmaxAPI/model/EzsignfolderSendV2Request.spec.js
 test/eZmaxAPI/model/EzsignfolderSendV2Response.spec.js
+test/eZmaxAPI/model/EzsignfolderSendV3Request.spec.js
+test/eZmaxAPI/model/EzsignfolderSendV3Response.spec.js
 test/eZmaxAPI/model/EzsignfolderUnsendV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationCreateObjectV1Response.spec.js
@@ -2251,9 +2263,12 @@ test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV1ResponseMPayload.spe
 test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2Response.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2ResponseAllOf.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationGetObjectV2ResponseMPayload.spec.js
+test/eZmaxAPI/model/EzsignfoldersignerassociationPatchObjectV1Request.spec.js
+test/eZmaxAPI/model/EzsignfoldersignerassociationPatchObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequest.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf.spec.js
+test/eZmaxAPI/model/EzsignfoldersignerassociationRequestPatch.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponse.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound.spec.js
 test/eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf.spec.js

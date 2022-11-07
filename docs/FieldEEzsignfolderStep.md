@@ -5,6 +5,8 @@
 
 * `Unsent` (value: `"Unsent"`)
 
+* `PendingSend` (value: `"PendingSend"`)
+
 * `Sent` (value: `"Sent"`)
 
 * `PartiallySigned` (value: `"PartiallySigned"`)
