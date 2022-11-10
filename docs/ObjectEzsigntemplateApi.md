@@ -4,6 +4,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ezsigntemplateCopyV1**](ObjectEzsigntemplateApi.md#ezsigntemplateCopyV1) | **POST** /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy | Copy the Ezsigntemplate
 [**ezsigntemplateCreateObjectV1**](ObjectEzsigntemplateApi.md#ezsigntemplateCreateObjectV1) | **POST** /1/object/ezsigntemplate | Create a new Ezsigntemplate
 [**ezsigntemplateDeleteObjectV1**](ObjectEzsigntemplateApi.md#ezsigntemplateDeleteObjectV1) | **DELETE** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Delete an existing Ezsigntemplate
 [**ezsigntemplateEditObjectV1**](ObjectEzsigntemplateApi.md#ezsigntemplateEditObjectV1) | **PUT** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Edit an existing Ezsigntemplate
@@ -13,6 +14,59 @@ Method | HTTP request | Description
 [**ezsigntemplateGetObjectV1**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV1) | **GET** /1/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 [**ezsigntemplateGetObjectV2**](ObjectEzsigntemplateApi.md#ezsigntemplateGetObjectV2) | **GET** /2/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
 
+
+
+## ezsigntemplateCopyV1
+
+> EzsigntemplateCopyV1Response ezsigntemplateCopyV1(pkiEzsigntemplateID, EzsigntemplateCopyV1Request)
+
+Copy the Ezsigntemplate
+
+
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsigntemplateApi();
+let pkiEzsigntemplateID = 56; // Number | 
+let EzsigntemplateCopyV1Request = new EZmaxApiDefinitionFull.EzsigntemplateCopyV1Request(); // EzsigntemplateCopyV1Request | 
+apiInstance.ezsigntemplateCopyV1(pkiEzsigntemplateID, EzsigntemplateCopyV1Request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsigntemplateID** | **Number**|  | 
+ **EzsigntemplateCopyV1Request** | [**EzsigntemplateCopyV1Request**](EzsigntemplateCopyV1Request.md)|  | 
+
+### Return type
+
+[**EzsigntemplateCopyV1Response**](EzsigntemplateCopyV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## ezsigntemplateCreateObjectV1

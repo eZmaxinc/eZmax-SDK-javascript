@@ -501,6 +501,10 @@ docs/EzsignsignerResponseCompound.md
 docs/EzsignsignerResponseCompoundAllOf.md
 docs/EzsignsignerResponseCompoundContact.md
 docs/EzsigntemplateAutocompleteElementResponse.md
+docs/EzsigntemplateCopyV1Request.md
+docs/EzsigntemplateCopyV1Response.md
+docs/EzsigntemplateCopyV1ResponseAllOf.md
+docs/EzsigntemplateCopyV1ResponseMPayload.md
 docs/EzsigntemplateCreateObjectV1Request.md
 docs/EzsigntemplateCreateObjectV1Response.md
 docs/EzsigntemplateCreateObjectV1ResponseAllOf.md
@@ -1457,6 +1461,10 @@ src/eZmaxAPI/model/EzsignsignerResponseCompound.js
 src/eZmaxAPI/model/EzsignsignerResponseCompoundAllOf.js
 src/eZmaxAPI/model/EzsignsignerResponseCompoundContact.js
 src/eZmaxAPI/model/EzsigntemplateAutocompleteElementResponse.js
+src/eZmaxAPI/model/EzsigntemplateCopyV1Request.js
+src/eZmaxAPI/model/EzsigntemplateCopyV1Response.js
+src/eZmaxAPI/model/EzsigntemplateCopyV1ResponseAllOf.js
+src/eZmaxAPI/model/EzsigntemplateCopyV1ResponseMPayload.js
 src/eZmaxAPI/model/EzsigntemplateCreateObjectV1Request.js
 src/eZmaxAPI/model/EzsigntemplateCreateObjectV1Response.js
 src/eZmaxAPI/model/EzsigntemplateCreateObjectV1ResponseAllOf.js
@@ -2366,6 +2374,10 @@ test/eZmaxAPI/model/EzsignsignerResponseCompound.spec.js
 test/eZmaxAPI/model/EzsignsignerResponseCompoundAllOf.spec.js
 test/eZmaxAPI/model/EzsignsignerResponseCompoundContact.spec.js
 test/eZmaxAPI/model/EzsigntemplateAutocompleteElementResponse.spec.js
+test/eZmaxAPI/model/EzsigntemplateCopyV1Request.spec.js
+test/eZmaxAPI/model/EzsigntemplateCopyV1Response.spec.js
+test/eZmaxAPI/model/EzsigntemplateCopyV1ResponseAllOf.spec.js
+test/eZmaxAPI/model/EzsigntemplateCopyV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/EzsigntemplateCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/EzsigntemplateCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/EzsigntemplateCreateObjectV1ResponseAllOf.spec.js
