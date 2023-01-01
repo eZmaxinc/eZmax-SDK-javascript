@@ -49,4 +49,6 @@
 
 * `DeclinedToSign` (value: `"DeclinedToSign"`)
 
+* `DelayedSendEmail` (value: `"DelayedSendEmail"`)
+
 
