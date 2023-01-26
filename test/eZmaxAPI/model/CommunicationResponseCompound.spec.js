@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property eCommunicationEmailimportance (base name: "eCommunicationEmailimportance")', function() {
-      // uncomment below and update the code to test the property eCommunicationEmailimportance
+    it('should have the property eCommunicationImportance (base name: "eCommunicationImportance")', function() {
+      // uncomment below and update the code to test the property eCommunicationImportance
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
       //expect(instance).to.be();
     });
@@ -78,14 +78,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property dtCommunicationSentdate (base name: "dtCommunicationSentdate")', function() {
-      // uncomment below and update the code to test the property dtCommunicationSentdate
+    it('should have the property eCommunicationDirection (base name: "eCommunicationDirection")', function() {
+      // uncomment below and update the code to test the property eCommunicationDirection
+      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iCommunicationrecipientCount (base name: "iCommunicationrecipientCount")', function() {
+      // uncomment below and update the code to test the property iCommunicationrecipientCount
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property objContactFrom (base name: "objContactFrom")', function() {
       // uncomment below and update the code to test the property objContactFrom
+      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objAudit (base name: "objAudit")', function() {
+      // uncomment below and update the code to test the property objAudit
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
       //expect(instance).to.be();
     });
@@ -104,18 +116,6 @@
 
     it('should have the property a_objCommunicationexternalrecipient (base name: "a_objCommunicationexternalrecipient")', function() {
       // uncomment below and update the code to test the property a_objCommunicationexternalrecipient
-      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objCommunicationimage (base name: "a_objCommunicationimage")', function() {
-      // uncomment below and update the code to test the property a_objCommunicationimage
-      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objCommunicationexternalimage (base name: "a_objCommunicationexternalimage")', function() {
-      // uncomment below and update the code to test the property a_objCommunicationexternalimage
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
       //expect(instance).to.be();
     });

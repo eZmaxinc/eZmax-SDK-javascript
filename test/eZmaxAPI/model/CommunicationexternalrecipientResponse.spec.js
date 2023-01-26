@@ -60,26 +60,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sEmailAddress (base name: "sEmailAddress")', function() {
-      // uncomment below and update the code to test the property sEmailAddress
-      //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property objPhoneSms (base name: "objPhoneSms")', function() {
-      // uncomment below and update the code to test the property objPhoneSms
-      //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property eCommunicationexternalrecipientType (base name: "eCommunicationexternalrecipientType")', function() {
       // uncomment below and update the code to test the property eCommunicationexternalrecipientType
       //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property sCommunicationexternalrecipientName (base name: "sCommunicationexternalrecipientName")', function() {
-      // uncomment below and update the code to test the property sCommunicationexternalrecipientName
+    it('should have the property objDescriptionstatic (base name: "objDescriptionstatic")', function() {
+      // uncomment below and update the code to test the property objDescriptionstatic
+      //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEmailstatic (base name: "objEmailstatic")', function() {
+      // uncomment below and update the code to test the property objEmailstatic
+      //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objPhonestatic (base name: "objPhonestatic")', function() {
+      // uncomment below and update the code to test the property objPhonestatic
       //var instance = new EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse();
       //expect(instance).to.be();
     });

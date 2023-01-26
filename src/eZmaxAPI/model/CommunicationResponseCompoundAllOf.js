@@ -13,9 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CommunicationattachmentResponseCompound from './CommunicationattachmentResponseCompound';
-import CommunicationexternalimageResponseCompound from './CommunicationexternalimageResponseCompound';
 import CommunicationexternalrecipientResponseCompound from './CommunicationexternalrecipientResponseCompound';
-import CommunicationimageResponseCompound from './CommunicationimageResponseCompound';
 import CommunicationrecipientResponseCompound from './CommunicationrecipientResponseCompound';
 
 /**
@@ -30,12 +28,10 @@ class CommunicationResponseCompoundAllOf {
      * @param a_objCommunicationattachment {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} 
      * @param a_objCommunicationrecipient {Array.<module:eZmaxAPI/model/CommunicationrecipientResponseCompound>} 
      * @param a_objCommunicationexternalrecipient {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} 
-     * @param a_objCommunicationimage {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} 
-     * @param a_objCommunicationexternalimage {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} 
      */
-    constructor(a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage) { 
+    constructor(a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient) { 
         
-        CommunicationResponseCompoundAllOf.initialize(this, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage);
+        CommunicationResponseCompoundAllOf.initialize(this, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient);
     }
 
     /**
@@ -43,12 +39,10 @@ class CommunicationResponseCompoundAllOf {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage) { 
+    static initialize(obj, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient) { 
         obj['a_objCommunicationattachment'] = a_objCommunicationattachment;
         obj['a_objCommunicationrecipient'] = a_objCommunicationrecipient;
         obj['a_objCommunicationexternalrecipient'] = a_objCommunicationexternalrecipient;
-        obj['a_objCommunicationimage'] = a_objCommunicationimage;
-        obj['a_objCommunicationexternalimage'] = a_objCommunicationexternalimage;
     }
 
     /**
@@ -70,12 +64,6 @@ class CommunicationResponseCompoundAllOf {
             }
             if (data.hasOwnProperty('a_objCommunicationexternalrecipient')) {
                 obj['a_objCommunicationexternalrecipient'] = ApiClient.convertToType(data['a_objCommunicationexternalrecipient'], [CommunicationexternalrecipientResponseCompound]);
-            }
-            if (data.hasOwnProperty('a_objCommunicationimage')) {
-                obj['a_objCommunicationimage'] = ApiClient.convertToType(data['a_objCommunicationimage'], [CommunicationimageResponseCompound]);
-            }
-            if (data.hasOwnProperty('a_objCommunicationexternalimage')) {
-                obj['a_objCommunicationexternalimage'] = ApiClient.convertToType(data['a_objCommunicationexternalimage'], [CommunicationexternalimageResponseCompound]);
             }
         }
         return obj;
@@ -123,26 +111,6 @@ class CommunicationResponseCompoundAllOf {
                 CommunicationexternalrecipientResponseCompound.validateJsonObject(item);
             };
         }
-        if (data['a_objCommunicationimage']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['a_objCommunicationimage'])) {
-                throw new Error("Expected the field `a_objCommunicationimage` to be an array in the JSON data but got " + data['a_objCommunicationimage']);
-            }
-            // validate the optional field `a_objCommunicationimage` (array)
-            for (const item of data['a_objCommunicationimage']) {
-                CommunicationimageResponseCompound.validateJsonObject(item);
-            };
-        }
-        if (data['a_objCommunicationexternalimage']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['a_objCommunicationexternalimage'])) {
-                throw new Error("Expected the field `a_objCommunicationexternalimage` to be an array in the JSON data but got " + data['a_objCommunicationexternalimage']);
-            }
-            // validate the optional field `a_objCommunicationexternalimage` (array)
-            for (const item of data['a_objCommunicationexternalimage']) {
-                CommunicationexternalimageResponseCompound.validateJsonObject(item);
-            };
-        }
 
         return true;
     }
@@ -186,36 +154,10 @@ class CommunicationResponseCompoundAllOf {
     setAObjCommunicationexternalrecipient(a_objCommunicationexternalrecipient) {
         this['a_objCommunicationexternalrecipient'] = a_objCommunicationexternalrecipient;
     }
-/**
-     * @return {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>}
-     */
-    getAObjCommunicationimage() {
-        return this.a_objCommunicationimage;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} a_objCommunicationimage
-     */
-    setAObjCommunicationimage(a_objCommunicationimage) {
-        this['a_objCommunicationimage'] = a_objCommunicationimage;
-    }
-/**
-     * @return {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>}
-     */
-    getAObjCommunicationexternalimage() {
-        return this.a_objCommunicationexternalimage;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} a_objCommunicationexternalimage
-     */
-    setAObjCommunicationexternalimage(a_objCommunicationexternalimage) {
-        this['a_objCommunicationexternalimage'] = a_objCommunicationexternalimage;
-    }
 
 }
 
-CommunicationResponseCompoundAllOf.RequiredProperties = ["a_objCommunicationattachment", "a_objCommunicationrecipient", "a_objCommunicationexternalrecipient", "a_objCommunicationimage", "a_objCommunicationexternalimage"];
+CommunicationResponseCompoundAllOf.RequiredProperties = ["a_objCommunicationattachment", "a_objCommunicationrecipient", "a_objCommunicationexternalrecipient"];
 
 /**
  * @member {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} a_objCommunicationattachment
@@ -231,16 +173,6 @@ CommunicationResponseCompoundAllOf.prototype['a_objCommunicationrecipient'] = un
  * @member {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} a_objCommunicationexternalrecipient
  */
 CommunicationResponseCompoundAllOf.prototype['a_objCommunicationexternalrecipient'] = undefined;
-
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} a_objCommunicationimage
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationimage'] = undefined;
-
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} a_objCommunicationexternalimage
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationexternalimage'] = undefined;
 
 
 

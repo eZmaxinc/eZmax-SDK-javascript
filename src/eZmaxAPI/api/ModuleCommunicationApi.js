@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
 import CommunicationGetCountV1Response from '../model/CommunicationGetCountV1Response';
-import CommunicationGetListV1Response from '../model/CommunicationGetListV1Response';
 
 /**
 * ModuleCommunication service.
@@ -45,26 +44,26 @@ export default class ModuleCommunicationApi {
      */
 
     /**
-     * Get the number of communication
-     * Get the number of communication in specified module
-     * @param {module:eZmaxAPI/model/String} eCommunicationModule Specify the requested module
+     * Retrieve Communication count
+     * 
+     * @param {module:eZmaxAPI/model/String} eCommunicationObjecttype The object type for the Communication
      * @param {Object} opts Optional parameters
      * @param {Number} opts.pkiEzsignfolderID The unique ID of the Ezsignfolder
      * @param {module:eZmaxAPI/api/ModuleCommunicationApi~communicationGetCommunicationCountV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommunicationGetCountV1Response}
      */
-    communicationGetCommunicationCountV1(eCommunicationModule, opts, callback) {
+    communicationGetCommunicationCountV1(eCommunicationObjecttype, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'eCommunicationModule' is set
-      if (eCommunicationModule === undefined || eCommunicationModule === null) {
-        throw new Error("Missing the required parameter 'eCommunicationModule' when calling communicationGetCommunicationCountV1");
+      // verify the required parameter 'eCommunicationObjecttype' is set
+      if (eCommunicationObjecttype === undefined || eCommunicationObjecttype === null) {
+        throw new Error("Missing the required parameter 'eCommunicationObjecttype' when calling communicationGetCommunicationCountV1");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'eCommunicationModule': eCommunicationModule,
+        'eCommunicationObjecttype': eCommunicationObjecttype,
         'pkiEzsignfolderID': opts['pkiEzsignfolderID']
       };
       let headerParams = {
@@ -77,54 +76,7 @@ export default class ModuleCommunicationApi {
       let accepts = ['application/json'];
       let returnType = CommunicationGetCountV1Response;
       return this.apiClient.callApi(
-        '/1/module/communication/getCommunicationCount', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the communicationGetCommunicationListV1 operation.
-     * @callback module:eZmaxAPI/api/ModuleCommunicationApi~communicationGetCommunicationListV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommunicationGetListV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve communication list
-     * Retrieve communication list
-     * @param {module:eZmaxAPI/model/String} eCommunicationModule Specify the requested module
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.pkiEzsignfolderID The unique ID of the Ezsignfolder
-     * @param {module:eZmaxAPI/api/ModuleCommunicationApi~communicationGetCommunicationListV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommunicationGetListV1Response}
-     */
-    communicationGetCommunicationListV1(eCommunicationModule, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'eCommunicationModule' is set
-      if (eCommunicationModule === undefined || eCommunicationModule === null) {
-        throw new Error("Missing the required parameter 'eCommunicationModule' when calling communicationGetCommunicationListV1");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'eCommunicationModule': eCommunicationModule,
-        'pkiEzsignfolderID': opts['pkiEzsignfolderID']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommunicationGetListV1Response;
-      return this.apiClient.callApi(
-        '/1/module/communication/getCommunicationList', 'GET',
+        '/1/module/communication/getCount', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

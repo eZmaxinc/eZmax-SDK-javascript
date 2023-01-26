@@ -23,7 +23,7 @@ class PeriodAutocompleteElementResponse {
      * Constructs a new <code>PeriodAutocompleteElementResponse</code>.
      * A Period AutocompleteElement Response
      * @alias module:eZmaxAPI/model/PeriodAutocompleteElementResponse
-     * @param sPeriodYYYYMM {String} The period YYYYMM
+     * @param sPeriodYYYYMM {String} The YYYYMM of the Period
      * @param pkiPeriodID {Number} The unique ID of the Period
      * @param bPeriodIsactive {Boolean} Whether the Period is active or not
      */
@@ -88,7 +88,7 @@ class PeriodAutocompleteElementResponse {
     }
 
 /**
-     * Returns The period YYYYMM
+     * Returns The YYYYMM of the Period
      * @return {String}
      */
     getSPeriodYYYYMM() {
@@ -96,8 +96,8 @@ class PeriodAutocompleteElementResponse {
     }
 
     /**
-     * Sets The period YYYYMM
-     * @param {String} sPeriodYYYYMM The period YYYYMM
+     * Sets The YYYYMM of the Period
+     * @param {String} sPeriodYYYYMM The YYYYMM of the Period
      */
     setSPeriodYYYYMM(sPeriodYYYYMM) {
         this['sPeriodYYYYMM'] = sPeriodYYYYMM;
@@ -139,7 +139,7 @@ class PeriodAutocompleteElementResponse {
 PeriodAutocompleteElementResponse.RequiredProperties = ["sPeriodYYYYMM", "pkiPeriodID", "bPeriodIsactive"];
 
 /**
- * The period YYYYMM
+ * The YYYYMM of the Period
  * @member {String} sPeriodYYYYMM
  */
 PeriodAutocompleteElementResponse.prototype['sPeriodYYYYMM'] = undefined;

@@ -21,9 +21,9 @@ import ApiClient from '../ApiClient';
 class CommunicationGetCountV1ResponseMPayload {
     /**
      * Constructs a new <code>CommunicationGetCountV1ResponseMPayload</code>.
-     * Payload for GET /1/module/communication/getCount
+     * Payload for GET /1/module/communication/getCommunicationCount
      * @alias module:eZmaxAPI/model/CommunicationGetCountV1ResponseMPayload
-     * @param iCommunicationCount {Number} The number of total signatures in the Ezsigntemplate.
+     * @param iCommunicationCount {Number} The count of Communication.
      */
     constructor(iCommunicationCount) { 
         
@@ -74,7 +74,7 @@ class CommunicationGetCountV1ResponseMPayload {
     }
 
 /**
-     * Returns The number of total signatures in the Ezsigntemplate.
+     * Returns The count of Communication.
      * @return {Number}
      */
     getICommunicationCount() {
@@ -82,8 +82,8 @@ class CommunicationGetCountV1ResponseMPayload {
     }
 
     /**
-     * Sets The number of total signatures in the Ezsigntemplate.
-     * @param {Number} iCommunicationCount The number of total signatures in the Ezsigntemplate.
+     * Sets The count of Communication.
+     * @param {Number} iCommunicationCount The count of Communication.
      */
     setICommunicationCount(iCommunicationCount) {
         this['iCommunicationCount'] = iCommunicationCount;
@@ -94,7 +94,7 @@ class CommunicationGetCountV1ResponseMPayload {
 CommunicationGetCountV1ResponseMPayload.RequiredProperties = ["iCommunicationCount"];
 
 /**
- * The number of total signatures in the Ezsigntemplate.
+ * The count of Communication.
  * @member {Number} iCommunicationCount
  */
 CommunicationGetCountV1ResponseMPayload.prototype['iCommunicationCount'] = undefined;

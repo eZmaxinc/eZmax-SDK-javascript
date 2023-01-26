@@ -12,15 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAudit from './CommonAudit';
 import CommunicationResponse from './CommunicationResponse';
 import CommunicationResponseCompoundAllOf from './CommunicationResponseCompoundAllOf';
 import CommunicationattachmentResponseCompound from './CommunicationattachmentResponseCompound';
-import CommunicationexternalimageResponseCompound from './CommunicationexternalimageResponseCompound';
 import CommunicationexternalrecipientResponseCompound from './CommunicationexternalrecipientResponseCompound';
-import CommunicationimageResponseCompound from './CommunicationimageResponseCompound';
 import CommunicationrecipientResponseCompound from './CommunicationrecipientResponseCompound';
+import ComputedECommunicationDirection from './ComputedECommunicationDirection';
 import CustomContactNameResponse from './CustomContactNameResponse';
-import FieldECommunicationEmailimportance from './FieldECommunicationEmailimportance';
+import FieldECommunicationImportance from './FieldECommunicationImportance';
 import FieldECommunicationType from './FieldECommunicationType';
 
 /**
@@ -36,19 +36,20 @@ class CommunicationResponseCompound {
      * @implements module:eZmaxAPI/model/CommunicationResponse
      * @implements module:eZmaxAPI/model/CommunicationResponseCompoundAllOf
      * @param pkiCommunicationID {Number} The unique ID of the Communication.
+     * @param eCommunicationImportance {module:eZmaxAPI/model/FieldECommunicationImportance} 
      * @param eCommunicationType {module:eZmaxAPI/model/FieldECommunicationType} 
-     * @param sCommunicationSubject {String} The Subject of the Communication
-     * @param dtCommunicationSentdate {String} The send date and time at which the Communication was sent.
+     * @param sCommunicationSubject {String} The subject of the Communication
+     * @param eCommunicationDirection {module:eZmaxAPI/model/ComputedECommunicationDirection} 
+     * @param iCommunicationrecipientCount {Number} The count of Communicationrecipient
      * @param objContactFrom {module:eZmaxAPI/model/CustomContactNameResponse} 
+     * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      * @param a_objCommunicationattachment {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} 
      * @param a_objCommunicationrecipient {Array.<module:eZmaxAPI/model/CommunicationrecipientResponseCompound>} 
      * @param a_objCommunicationexternalrecipient {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} 
-     * @param a_objCommunicationimage {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} 
-     * @param a_objCommunicationexternalimage {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} 
      */
-    constructor(pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage) { 
-        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom);CommunicationResponseCompoundAllOf.initialize(this, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage);
-        CommunicationResponseCompound.initialize(this, pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage);
+    constructor(pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient) { 
+        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit);CommunicationResponseCompoundAllOf.initialize(this, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient);
+        CommunicationResponseCompound.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient);
     }
 
     /**
@@ -56,17 +57,18 @@ class CommunicationResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient, a_objCommunicationimage, a_objCommunicationexternalimage) { 
+    static initialize(obj, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient) { 
         obj['pkiCommunicationID'] = pkiCommunicationID;
+        obj['eCommunicationImportance'] = eCommunicationImportance;
         obj['eCommunicationType'] = eCommunicationType;
         obj['sCommunicationSubject'] = sCommunicationSubject;
-        obj['dtCommunicationSentdate'] = dtCommunicationSentdate;
+        obj['eCommunicationDirection'] = eCommunicationDirection;
+        obj['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
         obj['objContactFrom'] = objContactFrom;
+        obj['objAudit'] = objAudit;
         obj['a_objCommunicationattachment'] = a_objCommunicationattachment;
         obj['a_objCommunicationrecipient'] = a_objCommunicationrecipient;
         obj['a_objCommunicationexternalrecipient'] = a_objCommunicationexternalrecipient;
-        obj['a_objCommunicationimage'] = a_objCommunicationimage;
-        obj['a_objCommunicationexternalimage'] = a_objCommunicationexternalimage;
     }
 
     /**
@@ -85,8 +87,8 @@ class CommunicationResponseCompound {
             if (data.hasOwnProperty('pkiCommunicationID')) {
                 obj['pkiCommunicationID'] = ApiClient.convertToType(data['pkiCommunicationID'], 'Number');
             }
-            if (data.hasOwnProperty('eCommunicationEmailimportance')) {
-                obj['eCommunicationEmailimportance'] = FieldECommunicationEmailimportance.constructFromObject(data['eCommunicationEmailimportance']);
+            if (data.hasOwnProperty('eCommunicationImportance')) {
+                obj['eCommunicationImportance'] = FieldECommunicationImportance.constructFromObject(data['eCommunicationImportance']);
             }
             if (data.hasOwnProperty('eCommunicationType')) {
                 obj['eCommunicationType'] = FieldECommunicationType.constructFromObject(data['eCommunicationType']);
@@ -94,11 +96,17 @@ class CommunicationResponseCompound {
             if (data.hasOwnProperty('sCommunicationSubject')) {
                 obj['sCommunicationSubject'] = ApiClient.convertToType(data['sCommunicationSubject'], 'String');
             }
-            if (data.hasOwnProperty('dtCommunicationSentdate')) {
-                obj['dtCommunicationSentdate'] = ApiClient.convertToType(data['dtCommunicationSentdate'], 'String');
+            if (data.hasOwnProperty('eCommunicationDirection')) {
+                obj['eCommunicationDirection'] = ComputedECommunicationDirection.constructFromObject(data['eCommunicationDirection']);
+            }
+            if (data.hasOwnProperty('iCommunicationrecipientCount')) {
+                obj['iCommunicationrecipientCount'] = ApiClient.convertToType(data['iCommunicationrecipientCount'], 'Number');
             }
             if (data.hasOwnProperty('objContactFrom')) {
                 obj['objContactFrom'] = CustomContactNameResponse.constructFromObject(data['objContactFrom']);
+            }
+            if (data.hasOwnProperty('objAudit')) {
+                obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
             }
             if (data.hasOwnProperty('a_objCommunicationattachment')) {
                 obj['a_objCommunicationattachment'] = ApiClient.convertToType(data['a_objCommunicationattachment'], [CommunicationattachmentResponseCompound]);
@@ -108,12 +116,6 @@ class CommunicationResponseCompound {
             }
             if (data.hasOwnProperty('a_objCommunicationexternalrecipient')) {
                 obj['a_objCommunicationexternalrecipient'] = ApiClient.convertToType(data['a_objCommunicationexternalrecipient'], [CommunicationexternalrecipientResponseCompound]);
-            }
-            if (data.hasOwnProperty('a_objCommunicationimage')) {
-                obj['a_objCommunicationimage'] = ApiClient.convertToType(data['a_objCommunicationimage'], [CommunicationimageResponseCompound]);
-            }
-            if (data.hasOwnProperty('a_objCommunicationexternalimage')) {
-                obj['a_objCommunicationexternalimage'] = ApiClient.convertToType(data['a_objCommunicationexternalimage'], [CommunicationexternalimageResponseCompound]);
             }
         }
         return obj;
@@ -135,13 +137,13 @@ class CommunicationResponseCompound {
         if (data['sCommunicationSubject'] && !(typeof data['sCommunicationSubject'] === 'string' || data['sCommunicationSubject'] instanceof String)) {
             throw new Error("Expected the field `sCommunicationSubject` to be a primitive type in the JSON string but got " + data['sCommunicationSubject']);
         }
-        // ensure the json data is a string
-        if (data['dtCommunicationSentdate'] && !(typeof data['dtCommunicationSentdate'] === 'string' || data['dtCommunicationSentdate'] instanceof String)) {
-            throw new Error("Expected the field `dtCommunicationSentdate` to be a primitive type in the JSON string but got " + data['dtCommunicationSentdate']);
-        }
         // validate the optional field `objContactFrom`
         if (data['objContactFrom']) { // data not null
           CustomContactNameResponse.validateJSON(data['objContactFrom']);
+        }
+        // validate the optional field `objAudit`
+        if (data['objAudit']) { // data not null
+          CommonAudit.validateJSON(data['objAudit']);
         }
         if (data['a_objCommunicationattachment']) { // data not null
             // ensure the json data is an array
@@ -173,26 +175,6 @@ class CommunicationResponseCompound {
                 CommunicationexternalrecipientResponseCompound.validateJsonObject(item);
             };
         }
-        if (data['a_objCommunicationimage']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['a_objCommunicationimage'])) {
-                throw new Error("Expected the field `a_objCommunicationimage` to be an array in the JSON data but got " + data['a_objCommunicationimage']);
-            }
-            // validate the optional field `a_objCommunicationimage` (array)
-            for (const item of data['a_objCommunicationimage']) {
-                CommunicationimageResponseCompound.validateJsonObject(item);
-            };
-        }
-        if (data['a_objCommunicationexternalimage']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['a_objCommunicationexternalimage'])) {
-                throw new Error("Expected the field `a_objCommunicationexternalimage` to be an array in the JSON data but got " + data['a_objCommunicationexternalimage']);
-            }
-            // validate the optional field `a_objCommunicationexternalimage` (array)
-            for (const item of data['a_objCommunicationexternalimage']) {
-                CommunicationexternalimageResponseCompound.validateJsonObject(item);
-            };
-        }
 
         return true;
     }
@@ -214,17 +196,17 @@ class CommunicationResponseCompound {
         this['pkiCommunicationID'] = pkiCommunicationID;
     }
 /**
-     * @return {module:eZmaxAPI/model/FieldECommunicationEmailimportance}
+     * @return {module:eZmaxAPI/model/FieldECommunicationImportance}
      */
-    getECommunicationEmailimportance() {
-        return this.eCommunicationEmailimportance;
+    getECommunicationImportance() {
+        return this.eCommunicationImportance;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/FieldECommunicationEmailimportance} eCommunicationEmailimportance
+     * @param {module:eZmaxAPI/model/FieldECommunicationImportance} eCommunicationImportance
      */
-    setECommunicationEmailimportance(eCommunicationEmailimportance) {
-        this['eCommunicationEmailimportance'] = eCommunicationEmailimportance;
+    setECommunicationImportance(eCommunicationImportance) {
+        this['eCommunicationImportance'] = eCommunicationImportance;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldECommunicationType}
@@ -240,7 +222,7 @@ class CommunicationResponseCompound {
         this['eCommunicationType'] = eCommunicationType;
     }
 /**
-     * Returns The Subject of the Communication
+     * Returns The subject of the Communication
      * @return {String}
      */
     getSCommunicationSubject() {
@@ -248,26 +230,39 @@ class CommunicationResponseCompound {
     }
 
     /**
-     * Sets The Subject of the Communication
-     * @param {String} sCommunicationSubject The Subject of the Communication
+     * Sets The subject of the Communication
+     * @param {String} sCommunicationSubject The subject of the Communication
      */
     setSCommunicationSubject(sCommunicationSubject) {
         this['sCommunicationSubject'] = sCommunicationSubject;
     }
 /**
-     * Returns The send date and time at which the Communication was sent.
-     * @return {String}
+     * @return {module:eZmaxAPI/model/ComputedECommunicationDirection}
      */
-    getDtCommunicationSentdate() {
-        return this.dtCommunicationSentdate;
+    getECommunicationDirection() {
+        return this.eCommunicationDirection;
     }
 
     /**
-     * Sets The send date and time at which the Communication was sent.
-     * @param {String} dtCommunicationSentdate The send date and time at which the Communication was sent.
+     * @param {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
      */
-    setDtCommunicationSentdate(dtCommunicationSentdate) {
-        this['dtCommunicationSentdate'] = dtCommunicationSentdate;
+    setECommunicationDirection(eCommunicationDirection) {
+        this['eCommunicationDirection'] = eCommunicationDirection;
+    }
+/**
+     * Returns The count of Communicationrecipient
+     * @return {Number}
+     */
+    getICommunicationrecipientCount() {
+        return this.iCommunicationrecipientCount;
+    }
+
+    /**
+     * Sets The count of Communicationrecipient
+     * @param {Number} iCommunicationrecipientCount The count of Communicationrecipient
+     */
+    setICommunicationrecipientCount(iCommunicationrecipientCount) {
+        this['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
     }
 /**
      * @return {module:eZmaxAPI/model/CustomContactNameResponse}
@@ -281,6 +276,19 @@ class CommunicationResponseCompound {
      */
     setObjContactFrom(objContactFrom) {
         this['objContactFrom'] = objContactFrom;
+    }
+/**
+     * @return {module:eZmaxAPI/model/CommonAudit}
+     */
+    getObjAudit() {
+        return this.objAudit;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CommonAudit} objAudit
+     */
+    setObjAudit(objAudit) {
+        this['objAudit'] = objAudit;
     }
 /**
      * @return {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>}
@@ -321,36 +329,10 @@ class CommunicationResponseCompound {
     setAObjCommunicationexternalrecipient(a_objCommunicationexternalrecipient) {
         this['a_objCommunicationexternalrecipient'] = a_objCommunicationexternalrecipient;
     }
-/**
-     * @return {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>}
-     */
-    getAObjCommunicationimage() {
-        return this.a_objCommunicationimage;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} a_objCommunicationimage
-     */
-    setAObjCommunicationimage(a_objCommunicationimage) {
-        this['a_objCommunicationimage'] = a_objCommunicationimage;
-    }
-/**
-     * @return {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>}
-     */
-    getAObjCommunicationexternalimage() {
-        return this.a_objCommunicationexternalimage;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} a_objCommunicationexternalimage
-     */
-    setAObjCommunicationexternalimage(a_objCommunicationexternalimage) {
-        this['a_objCommunicationexternalimage'] = a_objCommunicationexternalimage;
-    }
 
 }
 
-CommunicationResponseCompound.RequiredProperties = ["pkiCommunicationID", "eCommunicationType", "sCommunicationSubject", "dtCommunicationSentdate", "objContactFrom", "a_objCommunicationattachment", "a_objCommunicationrecipient", "a_objCommunicationexternalrecipient", "a_objCommunicationimage", "a_objCommunicationexternalimage"];
+CommunicationResponseCompound.RequiredProperties = ["pkiCommunicationID", "eCommunicationImportance", "eCommunicationType", "sCommunicationSubject", "eCommunicationDirection", "iCommunicationrecipientCount", "objContactFrom", "objAudit", "a_objCommunicationattachment", "a_objCommunicationrecipient", "a_objCommunicationexternalrecipient"];
 
 /**
  * The unique ID of the Communication.
@@ -359,9 +341,9 @@ CommunicationResponseCompound.RequiredProperties = ["pkiCommunicationID", "eComm
 CommunicationResponseCompound.prototype['pkiCommunicationID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/FieldECommunicationEmailimportance} eCommunicationEmailimportance
+ * @member {module:eZmaxAPI/model/FieldECommunicationImportance} eCommunicationImportance
  */
-CommunicationResponseCompound.prototype['eCommunicationEmailimportance'] = undefined;
+CommunicationResponseCompound.prototype['eCommunicationImportance'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldECommunicationType} eCommunicationType
@@ -369,21 +351,31 @@ CommunicationResponseCompound.prototype['eCommunicationEmailimportance'] = undef
 CommunicationResponseCompound.prototype['eCommunicationType'] = undefined;
 
 /**
- * The Subject of the Communication
+ * The subject of the Communication
  * @member {String} sCommunicationSubject
  */
 CommunicationResponseCompound.prototype['sCommunicationSubject'] = undefined;
 
 /**
- * The send date and time at which the Communication was sent.
- * @member {String} dtCommunicationSentdate
+ * @member {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
  */
-CommunicationResponseCompound.prototype['dtCommunicationSentdate'] = undefined;
+CommunicationResponseCompound.prototype['eCommunicationDirection'] = undefined;
+
+/**
+ * The count of Communicationrecipient
+ * @member {Number} iCommunicationrecipientCount
+ */
+CommunicationResponseCompound.prototype['iCommunicationrecipientCount'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
  */
 CommunicationResponseCompound.prototype['objContactFrom'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+CommunicationResponseCompound.prototype['objAudit'] = undefined;
 
 /**
  * @member {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} a_objCommunicationattachment
@@ -400,16 +392,6 @@ CommunicationResponseCompound.prototype['a_objCommunicationrecipient'] = undefin
  */
 CommunicationResponseCompound.prototype['a_objCommunicationexternalrecipient'] = undefined;
 
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} a_objCommunicationimage
- */
-CommunicationResponseCompound.prototype['a_objCommunicationimage'] = undefined;
-
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} a_objCommunicationexternalimage
- */
-CommunicationResponseCompound.prototype['a_objCommunicationexternalimage'] = undefined;
-
 
 // Implement CommunicationResponse interface:
 /**
@@ -418,27 +400,35 @@ CommunicationResponseCompound.prototype['a_objCommunicationexternalimage'] = und
  */
 CommunicationResponse.prototype['pkiCommunicationID'] = undefined;
 /**
- * @member {module:eZmaxAPI/model/FieldECommunicationEmailimportance} eCommunicationEmailimportance
+ * @member {module:eZmaxAPI/model/FieldECommunicationImportance} eCommunicationImportance
  */
-CommunicationResponse.prototype['eCommunicationEmailimportance'] = undefined;
+CommunicationResponse.prototype['eCommunicationImportance'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldECommunicationType} eCommunicationType
  */
 CommunicationResponse.prototype['eCommunicationType'] = undefined;
 /**
- * The Subject of the Communication
+ * The subject of the Communication
  * @member {String} sCommunicationSubject
  */
 CommunicationResponse.prototype['sCommunicationSubject'] = undefined;
 /**
- * The send date and time at which the Communication was sent.
- * @member {String} dtCommunicationSentdate
+ * @member {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
  */
-CommunicationResponse.prototype['dtCommunicationSentdate'] = undefined;
+CommunicationResponse.prototype['eCommunicationDirection'] = undefined;
+/**
+ * The count of Communicationrecipient
+ * @member {Number} iCommunicationrecipientCount
+ */
+CommunicationResponse.prototype['iCommunicationrecipientCount'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
  */
 CommunicationResponse.prototype['objContactFrom'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+CommunicationResponse.prototype['objAudit'] = undefined;
 // Implement CommunicationResponseCompoundAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} a_objCommunicationattachment
@@ -452,14 +442,6 @@ CommunicationResponseCompoundAllOf.prototype['a_objCommunicationrecipient'] = un
  * @member {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} a_objCommunicationexternalrecipient
  */
 CommunicationResponseCompoundAllOf.prototype['a_objCommunicationexternalrecipient'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationimageResponseCompound>} a_objCommunicationimage
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationimage'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationexternalimageResponseCompound>} a_objCommunicationexternalimage
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationexternalimage'] = undefined;
 
 
 

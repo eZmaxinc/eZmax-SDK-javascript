@@ -28,18 +28,19 @@ class EzmaxinvoicingsummaryglobalResponse {
      * @param dtEzmaxinvoicingsummaryglobalStart {String} The start date for the Ezmaxinvoicingsummaryglobal
      * @param dtEzmaxinvoicingsummaryglobalEnd {String} The end date for the Ezmaxinvoicingsummaryglobal
      * @param iEzmaxinvoicingsummaryglobalDays {Number} The number of days for the Ezmaxinvoicingsummaryglobal
-     * @param dEzmaxinvoicingsummaryglobalCountreal {String} The The count item calculated
-     * @param dEzmaxinvoicingsummaryglobalCountbilled {String} The The count item billed
+     * @param dEzmaxinvoicingsummaryglobalCountreal {String} The count item calculated
+     * @param dEzmaxinvoicingsummaryglobalCountbilled {String} The count item billed
      * @param dEzmaxinvoicingsummaryglobalSubtotal {String} The Ezmaxinvoicingsummaryglobal subtotal
      * @param dEzmaxinvoicingsummaryglobalRebateamount {String} The rebate amount for the Ezmaxinvoicingsummaryglobal
      * @param dEzmaxinvoicingsummaryglobalRebatepercent {String} The rebate percentage of the Ezmaxinvoicingsummaryglobal
      * @param dEzmaxinvoicingsummaryglobalRebatetotal {String} The rebate amount total for the Ezmaxinvoicingsummaryglobal
      * @param dEzmaxinvoicingsummaryglobalTotal {String} The Ezmaxinvoicingsummaryglobal total
      * @param bEzmaxinvoicingsummaryglobalAdjustment {Boolean} Whether it is adjustment for the Ezmaxinvoicingsummaryglobal
+     * @param tEzmaxproductHelpX {String} The help message of the Ezmaxproduct in the language of the requester
      */
-    constructor(fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment) { 
+    constructor(fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX) { 
         
-        EzmaxinvoicingsummaryglobalResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment);
+        EzmaxinvoicingsummaryglobalResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX);
     }
 
     /**
@@ -47,7 +48,7 @@ class EzmaxinvoicingsummaryglobalResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment) { 
+    static initialize(obj, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX) { 
         obj['fkiEzmaxproductID'] = fkiEzmaxproductID;
         obj['sEzmaxproductDescriptionX'] = sEzmaxproductDescriptionX;
         obj['dtEzmaxinvoicingsummaryglobalStart'] = dtEzmaxinvoicingsummaryglobalStart;
@@ -61,6 +62,7 @@ class EzmaxinvoicingsummaryglobalResponse {
         obj['dEzmaxinvoicingsummaryglobalRebatetotal'] = dEzmaxinvoicingsummaryglobalRebatetotal;
         obj['dEzmaxinvoicingsummaryglobalTotal'] = dEzmaxinvoicingsummaryglobalTotal;
         obj['bEzmaxinvoicingsummaryglobalAdjustment'] = bEzmaxinvoicingsummaryglobalAdjustment;
+        obj['tEzmaxproductHelpX'] = tEzmaxproductHelpX;
     }
 
     /**
@@ -127,6 +129,9 @@ class EzmaxinvoicingsummaryglobalResponse {
             }
             if (data.hasOwnProperty('bEzmaxinvoicingsummaryglobalAdjustment')) {
                 obj['bEzmaxinvoicingsummaryglobalAdjustment'] = ApiClient.convertToType(data['bEzmaxinvoicingsummaryglobalAdjustment'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tEzmaxproductHelpX')) {
+                obj['tEzmaxproductHelpX'] = ApiClient.convertToType(data['tEzmaxproductHelpX'], 'String');
             }
         }
         return obj;
@@ -195,6 +200,10 @@ class EzmaxinvoicingsummaryglobalResponse {
         // ensure the json data is a string
         if (data['dEzmaxinvoicingsummaryglobalNet'] && !(typeof data['dEzmaxinvoicingsummaryglobalNet'] === 'string' || data['dEzmaxinvoicingsummaryglobalNet'] instanceof String)) {
             throw new Error("Expected the field `dEzmaxinvoicingsummaryglobalNet` to be a primitive type in the JSON string but got " + data['dEzmaxinvoicingsummaryglobalNet']);
+        }
+        // ensure the json data is a string
+        if (data['tEzmaxproductHelpX'] && !(typeof data['tEzmaxproductHelpX'] === 'string' || data['tEzmaxproductHelpX'] instanceof String)) {
+            throw new Error("Expected the field `tEzmaxproductHelpX` to be a primitive type in the JSON string but got " + data['tEzmaxproductHelpX']);
         }
 
         return true;
@@ -310,7 +319,7 @@ class EzmaxinvoicingsummaryglobalResponse {
         this['iEzmaxinvoicingsummaryglobalDays'] = iEzmaxinvoicingsummaryglobalDays;
     }
 /**
-     * Returns The The count item calculated
+     * Returns The count item calculated
      * @return {String}
      */
     getDEzmaxinvoicingsummaryglobalCountreal() {
@@ -318,14 +327,14 @@ class EzmaxinvoicingsummaryglobalResponse {
     }
 
     /**
-     * Sets The The count item calculated
-     * @param {String} dEzmaxinvoicingsummaryglobalCountreal The The count item calculated
+     * Sets The count item calculated
+     * @param {String} dEzmaxinvoicingsummaryglobalCountreal The count item calculated
      */
     setDEzmaxinvoicingsummaryglobalCountreal(dEzmaxinvoicingsummaryglobalCountreal) {
         this['dEzmaxinvoicingsummaryglobalCountreal'] = dEzmaxinvoicingsummaryglobalCountreal;
     }
 /**
-     * Returns The The count item billed
+     * Returns The count item billed
      * @return {String}
      */
     getDEzmaxinvoicingsummaryglobalCountbilled() {
@@ -333,8 +342,8 @@ class EzmaxinvoicingsummaryglobalResponse {
     }
 
     /**
-     * Sets The The count item billed
-     * @param {String} dEzmaxinvoicingsummaryglobalCountbilled The The count item billed
+     * Sets The count item billed
+     * @param {String} dEzmaxinvoicingsummaryglobalCountbilled The count item billed
      */
     setDEzmaxinvoicingsummaryglobalCountbilled(dEzmaxinvoicingsummaryglobalCountbilled) {
         this['dEzmaxinvoicingsummaryglobalCountbilled'] = dEzmaxinvoicingsummaryglobalCountbilled;
@@ -474,10 +483,25 @@ class EzmaxinvoicingsummaryglobalResponse {
     setBEzmaxinvoicingsummaryglobalAdjustment(bEzmaxinvoicingsummaryglobalAdjustment) {
         this['bEzmaxinvoicingsummaryglobalAdjustment'] = bEzmaxinvoicingsummaryglobalAdjustment;
     }
+/**
+     * Returns The help message of the Ezmaxproduct in the language of the requester
+     * @return {String}
+     */
+    getTEzmaxproductHelpX() {
+        return this.tEzmaxproductHelpX;
+    }
+
+    /**
+     * Sets The help message of the Ezmaxproduct in the language of the requester
+     * @param {String} tEzmaxproductHelpX The help message of the Ezmaxproduct in the language of the requester
+     */
+    setTEzmaxproductHelpX(tEzmaxproductHelpX) {
+        this['tEzmaxproductHelpX'] = tEzmaxproductHelpX;
+    }
 
 }
 
-EzmaxinvoicingsummaryglobalResponse.RequiredProperties = ["fkiEzmaxproductID", "sEzmaxproductDescriptionX", "dtEzmaxinvoicingsummaryglobalStart", "dtEzmaxinvoicingsummaryglobalEnd", "iEzmaxinvoicingsummaryglobalDays", "dEzmaxinvoicingsummaryglobalCountreal", "dEzmaxinvoicingsummaryglobalCountbilled", "dEzmaxinvoicingsummaryglobalSubtotal", "dEzmaxinvoicingsummaryglobalRebateamount", "dEzmaxinvoicingsummaryglobalRebatepercent", "dEzmaxinvoicingsummaryglobalRebatetotal", "dEzmaxinvoicingsummaryglobalTotal", "bEzmaxinvoicingsummaryglobalAdjustment"];
+EzmaxinvoicingsummaryglobalResponse.RequiredProperties = ["fkiEzmaxproductID", "sEzmaxproductDescriptionX", "dtEzmaxinvoicingsummaryglobalStart", "dtEzmaxinvoicingsummaryglobalEnd", "iEzmaxinvoicingsummaryglobalDays", "dEzmaxinvoicingsummaryglobalCountreal", "dEzmaxinvoicingsummaryglobalCountbilled", "dEzmaxinvoicingsummaryglobalSubtotal", "dEzmaxinvoicingsummaryglobalRebateamount", "dEzmaxinvoicingsummaryglobalRebatepercent", "dEzmaxinvoicingsummaryglobalRebatetotal", "dEzmaxinvoicingsummaryglobalTotal", "bEzmaxinvoicingsummaryglobalAdjustment", "tEzmaxproductHelpX"];
 
 /**
  * The unique ID of the Ezmaxinvoicingsummaryglobal
@@ -522,13 +546,13 @@ EzmaxinvoicingsummaryglobalResponse.prototype['dtEzmaxinvoicingsummaryglobalEnd'
 EzmaxinvoicingsummaryglobalResponse.prototype['iEzmaxinvoicingsummaryglobalDays'] = undefined;
 
 /**
- * The The count item calculated
+ * The count item calculated
  * @member {String} dEzmaxinvoicingsummaryglobalCountreal
  */
 EzmaxinvoicingsummaryglobalResponse.prototype['dEzmaxinvoicingsummaryglobalCountreal'] = undefined;
 
 /**
- * The The count item billed
+ * The count item billed
  * @member {String} dEzmaxinvoicingsummaryglobalCountbilled
  */
 EzmaxinvoicingsummaryglobalResponse.prototype['dEzmaxinvoicingsummaryglobalCountbilled'] = undefined;
@@ -586,6 +610,12 @@ EzmaxinvoicingsummaryglobalResponse.prototype['dEzmaxinvoicingsummaryglobalNet']
  * @member {Boolean} bEzmaxinvoicingsummaryglobalAdjustment
  */
 EzmaxinvoicingsummaryglobalResponse.prototype['bEzmaxinvoicingsummaryglobalAdjustment'] = undefined;
+
+/**
+ * The help message of the Ezmaxproduct in the language of the requester
+ * @member {String} tEzmaxproductHelpX
+ */
+EzmaxinvoicingsummaryglobalResponse.prototype['tEzmaxproductHelpX'] = undefined;
 
 
 

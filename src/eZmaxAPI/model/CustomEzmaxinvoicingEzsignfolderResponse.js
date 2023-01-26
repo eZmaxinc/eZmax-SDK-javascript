@@ -30,7 +30,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
      * @param bEzsigntsarequirementBillable {Boolean} Whether the TSA requirement is billable or not
      * @param bEzsignfolderMfaused {Boolean} Whether the MFA was used or not for the Ezsignfolder
      * @param bEzsignfolderPaymentused {Boolean} Whether there was a signature is of type payment
-     * @param bEzsignfolderAllowed {Boolean} 
+     * @param bEzsignfolderAllowed {Boolean} Whether you have access to the Ezsignfolder or not
      */
     constructor(fkiEzsignfolderID, sEzsignfolderDescription, bEzsigntsarequirementBillable, bEzsignfolderMfaused, bEzsignfolderPaymentused, bEzsignfolderAllowed) { 
         CustomEzmaxinvoicingEzsignfolderResponseAllOf.initialize(this, fkiEzsignfolderID, sEzsignfolderDescription, bEzsigntsarequirementBillable, bEzsignfolderMfaused, bEzsignfolderPaymentused, bEzsignfolderAllowed);
@@ -182,6 +182,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
         this['bEzsignfolderPaymentused'] = bEzsignfolderPaymentused;
     }
 /**
+     * Returns Whether you have access to the Ezsignfolder or not
      * @return {Boolean}
      */
     getBEzsignfolderAllowed() {
@@ -189,7 +190,8 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
     }
 
     /**
-     * @param {Boolean} bEzsignfolderAllowed
+     * Sets Whether you have access to the Ezsignfolder or not
+     * @param {Boolean} bEzsignfolderAllowed Whether you have access to the Ezsignfolder or not
      */
     setBEzsignfolderAllowed(bEzsignfolderAllowed) {
         this['bEzsignfolderAllowed'] = bEzsignfolderAllowed;
@@ -230,6 +232,7 @@ CustomEzmaxinvoicingEzsignfolderResponse.prototype['bEzsignfolderMfaused'] = und
 CustomEzmaxinvoicingEzsignfolderResponse.prototype['bEzsignfolderPaymentused'] = undefined;
 
 /**
+ * Whether you have access to the Ezsignfolder or not
  * @member {Boolean} bEzsignfolderAllowed
  */
 CustomEzmaxinvoicingEzsignfolderResponse.prototype['bEzsignfolderAllowed'] = undefined;
@@ -262,6 +265,7 @@ CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderMfaused'] 
  */
 CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderPaymentused'] = undefined;
 /**
+ * Whether you have access to the Ezsignfolder or not
  * @member {Boolean} bEzsignfolderAllowed
  */
 CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderAllowed'] = undefined;

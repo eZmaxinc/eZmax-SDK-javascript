@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eCommunicationrecipientObjecttype (base name: "eCommunicationrecipientObjecttype")', function() {
+      // uncomment below and update the code to test the property eCommunicationrecipientObjecttype
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiAgentID (base name: "fkiAgentID")', function() {
       // uncomment below and update the code to test the property fkiAgentID
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
@@ -108,18 +114,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sEmailAddress (base name: "sEmailAddress")', function() {
-      // uncomment below and update the code to test the property sEmailAddress
-      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property eCommunicationrecipientType (base name: "eCommunicationrecipientType")', function() {
-      // uncomment below and update the code to test the property eCommunicationrecipientType
-      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property fkiAgentincorporationID (base name: "fkiAgentincorporationID")', function() {
       // uncomment below and update the code to test the property fkiAgentincorporationID
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
@@ -162,8 +156,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property objPhoneSms (base name: "objPhoneSms")', function() {
-      // uncomment below and update the code to test the property objPhoneSms
+    it('should have the property eCommunicationrecipientType (base name: "eCommunicationrecipientType")', function() {
+      // uncomment below and update the code to test the property eCommunicationrecipientType
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objDescriptionstatic (base name: "objDescriptionstatic")', function() {
+      // uncomment below and update the code to test the property objDescriptionstatic
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEmailstatic (base name: "objEmailstatic")', function() {
+      // uncomment below and update the code to test the property objEmailstatic
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objPhonestatic (base name: "objPhonestatic")', function() {
+      // uncomment below and update the code to test the property objPhonestatic
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientResponse();
       //expect(instance).to.be();
     });

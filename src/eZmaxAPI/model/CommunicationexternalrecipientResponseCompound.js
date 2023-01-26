@@ -13,8 +13,10 @@
 
 import ApiClient from '../ApiClient';
 import CommunicationexternalrecipientResponse from './CommunicationexternalrecipientResponse';
+import DescriptionstaticResponseCompound from './DescriptionstaticResponseCompound';
+import EmailstaticResponseCompound from './EmailstaticResponseCompound';
 import FieldECommunicationexternalrecipientType from './FieldECommunicationexternalrecipientType';
-import PhoneResponseCompound from './PhoneResponseCompound';
+import PhonestaticResponseCompound from './PhonestaticResponseCompound';
 
 /**
  * The CommunicationexternalrecipientResponseCompound model module.
@@ -29,11 +31,11 @@ class CommunicationexternalrecipientResponseCompound {
      * @implements module:eZmaxAPI/model/CommunicationexternalrecipientResponse
      * @param pkiCommunicationexternalrecipientID {Number} The unique ID of the Communicationexternalrecipient
      * @param eCommunicationexternalrecipientType {module:eZmaxAPI/model/FieldECommunicationexternalrecipientType} 
-     * @param sCommunicationexternalrecipientName {String} The Name of the Communicationexternalrecipient
+     * @param objDescriptionstatic {module:eZmaxAPI/model/DescriptionstaticResponseCompound} 
      */
-    constructor(pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, sCommunicationexternalrecipientName) { 
-        CommunicationexternalrecipientResponse.initialize(this, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, sCommunicationexternalrecipientName);
-        CommunicationexternalrecipientResponseCompound.initialize(this, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, sCommunicationexternalrecipientName);
+    constructor(pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, objDescriptionstatic) { 
+        CommunicationexternalrecipientResponse.initialize(this, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, objDescriptionstatic);
+        CommunicationexternalrecipientResponseCompound.initialize(this, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, objDescriptionstatic);
     }
 
     /**
@@ -41,10 +43,10 @@ class CommunicationexternalrecipientResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, sCommunicationexternalrecipientName) { 
+    static initialize(obj, pkiCommunicationexternalrecipientID, eCommunicationexternalrecipientType, objDescriptionstatic) { 
         obj['pkiCommunicationexternalrecipientID'] = pkiCommunicationexternalrecipientID;
         obj['eCommunicationexternalrecipientType'] = eCommunicationexternalrecipientType;
-        obj['sCommunicationexternalrecipientName'] = sCommunicationexternalrecipientName;
+        obj['objDescriptionstatic'] = objDescriptionstatic;
     }
 
     /**
@@ -62,17 +64,17 @@ class CommunicationexternalrecipientResponseCompound {
             if (data.hasOwnProperty('pkiCommunicationexternalrecipientID')) {
                 obj['pkiCommunicationexternalrecipientID'] = ApiClient.convertToType(data['pkiCommunicationexternalrecipientID'], 'Number');
             }
-            if (data.hasOwnProperty('sEmailAddress')) {
-                obj['sEmailAddress'] = ApiClient.convertToType(data['sEmailAddress'], 'String');
-            }
-            if (data.hasOwnProperty('objPhoneSms')) {
-                obj['objPhoneSms'] = PhoneResponseCompound.constructFromObject(data['objPhoneSms']);
-            }
             if (data.hasOwnProperty('eCommunicationexternalrecipientType')) {
                 obj['eCommunicationexternalrecipientType'] = FieldECommunicationexternalrecipientType.constructFromObject(data['eCommunicationexternalrecipientType']);
             }
-            if (data.hasOwnProperty('sCommunicationexternalrecipientName')) {
-                obj['sCommunicationexternalrecipientName'] = ApiClient.convertToType(data['sCommunicationexternalrecipientName'], 'String');
+            if (data.hasOwnProperty('objDescriptionstatic')) {
+                obj['objDescriptionstatic'] = DescriptionstaticResponseCompound.constructFromObject(data['objDescriptionstatic']);
+            }
+            if (data.hasOwnProperty('objEmailstatic')) {
+                obj['objEmailstatic'] = EmailstaticResponseCompound.constructFromObject(data['objEmailstatic']);
+            }
+            if (data.hasOwnProperty('objPhonestatic')) {
+                obj['objPhonestatic'] = PhonestaticResponseCompound.constructFromObject(data['objPhonestatic']);
             }
         }
         return obj;
@@ -90,17 +92,17 @@ class CommunicationexternalrecipientResponseCompound {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // ensure the json data is a string
-        if (data['sEmailAddress'] && !(typeof data['sEmailAddress'] === 'string' || data['sEmailAddress'] instanceof String)) {
-            throw new Error("Expected the field `sEmailAddress` to be a primitive type in the JSON string but got " + data['sEmailAddress']);
+        // validate the optional field `objDescriptionstatic`
+        if (data['objDescriptionstatic']) { // data not null
+          DescriptionstaticResponseCompound.validateJSON(data['objDescriptionstatic']);
         }
-        // validate the optional field `objPhoneSms`
-        if (data['objPhoneSms']) { // data not null
-          PhoneResponseCompound.validateJSON(data['objPhoneSms']);
+        // validate the optional field `objEmailstatic`
+        if (data['objEmailstatic']) { // data not null
+          EmailstaticResponseCompound.validateJSON(data['objEmailstatic']);
         }
-        // ensure the json data is a string
-        if (data['sCommunicationexternalrecipientName'] && !(typeof data['sCommunicationexternalrecipientName'] === 'string' || data['sCommunicationexternalrecipientName'] instanceof String)) {
-            throw new Error("Expected the field `sCommunicationexternalrecipientName` to be a primitive type in the JSON string but got " + data['sCommunicationexternalrecipientName']);
+        // validate the optional field `objPhonestatic`
+        if (data['objPhonestatic']) { // data not null
+          PhonestaticResponseCompound.validateJSON(data['objPhonestatic']);
         }
 
         return true;
@@ -122,34 +124,6 @@ class CommunicationexternalrecipientResponseCompound {
         this['pkiCommunicationexternalrecipientID'] = pkiCommunicationexternalrecipientID;
     }
 /**
-     * Returns The email address.
-     * @return {String}
-     */
-    getSEmailAddress() {
-        return this.sEmailAddress;
-    }
-
-    /**
-     * Sets The email address.
-     * @param {String} sEmailAddress The email address.
-     */
-    setSEmailAddress(sEmailAddress) {
-        this['sEmailAddress'] = sEmailAddress;
-    }
-/**
-     * @return {module:eZmaxAPI/model/PhoneResponseCompound}
-     */
-    getObjPhoneSms() {
-        return this.objPhoneSms;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSms
-     */
-    setObjPhoneSms(objPhoneSms) {
-        this['objPhoneSms'] = objPhoneSms;
-    }
-/**
      * @return {module:eZmaxAPI/model/FieldECommunicationexternalrecipientType}
      */
     getECommunicationexternalrecipientType() {
@@ -163,24 +137,48 @@ class CommunicationexternalrecipientResponseCompound {
         this['eCommunicationexternalrecipientType'] = eCommunicationexternalrecipientType;
     }
 /**
-     * Returns The Name of the Communicationexternalrecipient
-     * @return {String}
+     * @return {module:eZmaxAPI/model/DescriptionstaticResponseCompound}
      */
-    getSCommunicationexternalrecipientName() {
-        return this.sCommunicationexternalrecipientName;
+    getObjDescriptionstatic() {
+        return this.objDescriptionstatic;
     }
 
     /**
-     * Sets The Name of the Communicationexternalrecipient
-     * @param {String} sCommunicationexternalrecipientName The Name of the Communicationexternalrecipient
+     * @param {module:eZmaxAPI/model/DescriptionstaticResponseCompound} objDescriptionstatic
      */
-    setSCommunicationexternalrecipientName(sCommunicationexternalrecipientName) {
-        this['sCommunicationexternalrecipientName'] = sCommunicationexternalrecipientName;
+    setObjDescriptionstatic(objDescriptionstatic) {
+        this['objDescriptionstatic'] = objDescriptionstatic;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EmailstaticResponseCompound}
+     */
+    getObjEmailstatic() {
+        return this.objEmailstatic;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EmailstaticResponseCompound} objEmailstatic
+     */
+    setObjEmailstatic(objEmailstatic) {
+        this['objEmailstatic'] = objEmailstatic;
+    }
+/**
+     * @return {module:eZmaxAPI/model/PhonestaticResponseCompound}
+     */
+    getObjPhonestatic() {
+        return this.objPhonestatic;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/PhonestaticResponseCompound} objPhonestatic
+     */
+    setObjPhonestatic(objPhonestatic) {
+        this['objPhonestatic'] = objPhonestatic;
     }
 
 }
 
-CommunicationexternalrecipientResponseCompound.RequiredProperties = ["pkiCommunicationexternalrecipientID", "eCommunicationexternalrecipientType", "sCommunicationexternalrecipientName"];
+CommunicationexternalrecipientResponseCompound.RequiredProperties = ["pkiCommunicationexternalrecipientID", "eCommunicationexternalrecipientType", "objDescriptionstatic"];
 
 /**
  * The unique ID of the Communicationexternalrecipient
@@ -189,26 +187,24 @@ CommunicationexternalrecipientResponseCompound.RequiredProperties = ["pkiCommuni
 CommunicationexternalrecipientResponseCompound.prototype['pkiCommunicationexternalrecipientID'] = undefined;
 
 /**
- * The email address.
- * @member {String} sEmailAddress
- */
-CommunicationexternalrecipientResponseCompound.prototype['sEmailAddress'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSms
- */
-CommunicationexternalrecipientResponseCompound.prototype['objPhoneSms'] = undefined;
-
-/**
  * @member {module:eZmaxAPI/model/FieldECommunicationexternalrecipientType} eCommunicationexternalrecipientType
  */
 CommunicationexternalrecipientResponseCompound.prototype['eCommunicationexternalrecipientType'] = undefined;
 
 /**
- * The Name of the Communicationexternalrecipient
- * @member {String} sCommunicationexternalrecipientName
+ * @member {module:eZmaxAPI/model/DescriptionstaticResponseCompound} objDescriptionstatic
  */
-CommunicationexternalrecipientResponseCompound.prototype['sCommunicationexternalrecipientName'] = undefined;
+CommunicationexternalrecipientResponseCompound.prototype['objDescriptionstatic'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EmailstaticResponseCompound} objEmailstatic
+ */
+CommunicationexternalrecipientResponseCompound.prototype['objEmailstatic'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/PhonestaticResponseCompound} objPhonestatic
+ */
+CommunicationexternalrecipientResponseCompound.prototype['objPhonestatic'] = undefined;
 
 
 // Implement CommunicationexternalrecipientResponse interface:
@@ -218,23 +214,21 @@ CommunicationexternalrecipientResponseCompound.prototype['sCommunicationexternal
  */
 CommunicationexternalrecipientResponse.prototype['pkiCommunicationexternalrecipientID'] = undefined;
 /**
- * The email address.
- * @member {String} sEmailAddress
- */
-CommunicationexternalrecipientResponse.prototype['sEmailAddress'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSms
- */
-CommunicationexternalrecipientResponse.prototype['objPhoneSms'] = undefined;
-/**
  * @member {module:eZmaxAPI/model/FieldECommunicationexternalrecipientType} eCommunicationexternalrecipientType
  */
 CommunicationexternalrecipientResponse.prototype['eCommunicationexternalrecipientType'] = undefined;
 /**
- * The Name of the Communicationexternalrecipient
- * @member {String} sCommunicationexternalrecipientName
+ * @member {module:eZmaxAPI/model/DescriptionstaticResponseCompound} objDescriptionstatic
  */
-CommunicationexternalrecipientResponse.prototype['sCommunicationexternalrecipientName'] = undefined;
+CommunicationexternalrecipientResponse.prototype['objDescriptionstatic'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/EmailstaticResponseCompound} objEmailstatic
+ */
+CommunicationexternalrecipientResponse.prototype['objEmailstatic'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/PhonestaticResponseCompound} objPhonestatic
+ */
+CommunicationexternalrecipientResponse.prototype['objPhonestatic'] = undefined;
 
 
 

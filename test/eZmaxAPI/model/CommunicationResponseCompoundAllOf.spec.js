@@ -72,18 +72,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property a_objCommunicationimage (base name: "a_objCommunicationimage")', function() {
-      // uncomment below and update the code to test the property a_objCommunicationimage
-      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompoundAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property a_objCommunicationexternalimage (base name: "a_objCommunicationexternalimage")', function() {
-      // uncomment below and update the code to test the property a_objCommunicationexternalimage
-      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompoundAllOf();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomContactNameResponse from './CustomContactNameResponse';
-import FieldECommunicationEmailimportance from './FieldECommunicationEmailimportance';
+import ComputedECommunicationDirection from './ComputedECommunicationDirection';
+import FieldECommunicationImportance from './FieldECommunicationImportance';
 import FieldECommunicationType from './FieldECommunicationType';
 
 /**
@@ -27,14 +27,18 @@ class CommunicationListElement {
      * A Communication List Element
      * @alias module:eZmaxAPI/model/CommunicationListElement
      * @param pkiCommunicationID {Number} The unique ID of the Communication.
+     * @param dtCreatedDate {String} The date and time at which the object was created
+     * @param eCommunicationDirection {module:eZmaxAPI/model/ComputedECommunicationDirection} 
+     * @param eCommunicationImportance {module:eZmaxAPI/model/FieldECommunicationImportance} 
      * @param eCommunicationType {module:eZmaxAPI/model/FieldECommunicationType} 
-     * @param sCommunicationSubject {String} The Subject of the Communication
-     * @param dtCommunicationSentdate {String} The send date and time at which the Communication was sent.
-     * @param objContactFrom {module:eZmaxAPI/model/CustomContactNameResponse} 
+     * @param iCommunicationrecipientCount {Number} The count of Communicationrecipient
+     * @param sCommunicationSubject {String} The subject of the Communication
+     * @param sCommunicationSender {String} The sender name of the Communication
+     * @param sCommunicationRecipient {String} The recipients' name of the Communication
      */
-    constructor(pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom) { 
+    constructor(pkiCommunicationID, dtCreatedDate, eCommunicationDirection, eCommunicationImportance, eCommunicationType, iCommunicationrecipientCount, sCommunicationSubject, sCommunicationSender, sCommunicationRecipient) { 
         
-        CommunicationListElement.initialize(this, pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom);
+        CommunicationListElement.initialize(this, pkiCommunicationID, dtCreatedDate, eCommunicationDirection, eCommunicationImportance, eCommunicationType, iCommunicationrecipientCount, sCommunicationSubject, sCommunicationSender, sCommunicationRecipient);
     }
 
     /**
@@ -42,12 +46,16 @@ class CommunicationListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiCommunicationID, eCommunicationType, sCommunicationSubject, dtCommunicationSentdate, objContactFrom) { 
+    static initialize(obj, pkiCommunicationID, dtCreatedDate, eCommunicationDirection, eCommunicationImportance, eCommunicationType, iCommunicationrecipientCount, sCommunicationSubject, sCommunicationSender, sCommunicationRecipient) { 
         obj['pkiCommunicationID'] = pkiCommunicationID;
+        obj['dtCreatedDate'] = dtCreatedDate;
+        obj['eCommunicationDirection'] = eCommunicationDirection;
+        obj['eCommunicationImportance'] = eCommunicationImportance;
         obj['eCommunicationType'] = eCommunicationType;
+        obj['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
         obj['sCommunicationSubject'] = sCommunicationSubject;
-        obj['dtCommunicationSentdate'] = dtCommunicationSentdate;
-        obj['objContactFrom'] = objContactFrom;
+        obj['sCommunicationSender'] = sCommunicationSender;
+        obj['sCommunicationRecipient'] = sCommunicationRecipient;
     }
 
     /**
@@ -64,20 +72,38 @@ class CommunicationListElement {
             if (data.hasOwnProperty('pkiCommunicationID')) {
                 obj['pkiCommunicationID'] = ApiClient.convertToType(data['pkiCommunicationID'], 'Number');
             }
-            if (data.hasOwnProperty('eCommunicationEmailimportance')) {
-                obj['eCommunicationEmailimportance'] = FieldECommunicationEmailimportance.constructFromObject(data['eCommunicationEmailimportance']);
+            if (data.hasOwnProperty('fkiEzsignfolderID')) {
+                obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiInscriptionID')) {
+                obj['fkiInscriptionID'] = ApiClient.convertToType(data['fkiInscriptionID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiInscriptionnotauthenticatedID')) {
+                obj['fkiInscriptionnotauthenticatedID'] = ApiClient.convertToType(data['fkiInscriptionnotauthenticatedID'], 'Number');
+            }
+            if (data.hasOwnProperty('dtCreatedDate')) {
+                obj['dtCreatedDate'] = ApiClient.convertToType(data['dtCreatedDate'], 'String');
+            }
+            if (data.hasOwnProperty('eCommunicationDirection')) {
+                obj['eCommunicationDirection'] = ComputedECommunicationDirection.constructFromObject(data['eCommunicationDirection']);
+            }
+            if (data.hasOwnProperty('eCommunicationImportance')) {
+                obj['eCommunicationImportance'] = FieldECommunicationImportance.constructFromObject(data['eCommunicationImportance']);
             }
             if (data.hasOwnProperty('eCommunicationType')) {
                 obj['eCommunicationType'] = FieldECommunicationType.constructFromObject(data['eCommunicationType']);
             }
+            if (data.hasOwnProperty('iCommunicationrecipientCount')) {
+                obj['iCommunicationrecipientCount'] = ApiClient.convertToType(data['iCommunicationrecipientCount'], 'Number');
+            }
             if (data.hasOwnProperty('sCommunicationSubject')) {
                 obj['sCommunicationSubject'] = ApiClient.convertToType(data['sCommunicationSubject'], 'String');
             }
-            if (data.hasOwnProperty('dtCommunicationSentdate')) {
-                obj['dtCommunicationSentdate'] = ApiClient.convertToType(data['dtCommunicationSentdate'], 'String');
+            if (data.hasOwnProperty('sCommunicationSender')) {
+                obj['sCommunicationSender'] = ApiClient.convertToType(data['sCommunicationSender'], 'String');
             }
-            if (data.hasOwnProperty('objContactFrom')) {
-                obj['objContactFrom'] = CustomContactNameResponse.constructFromObject(data['objContactFrom']);
+            if (data.hasOwnProperty('sCommunicationRecipient')) {
+                obj['sCommunicationRecipient'] = ApiClient.convertToType(data['sCommunicationRecipient'], 'String');
             }
         }
         return obj;
@@ -96,16 +122,20 @@ class CommunicationListElement {
             }
         }
         // ensure the json data is a string
+        if (data['dtCreatedDate'] && !(typeof data['dtCreatedDate'] === 'string' || data['dtCreatedDate'] instanceof String)) {
+            throw new Error("Expected the field `dtCreatedDate` to be a primitive type in the JSON string but got " + data['dtCreatedDate']);
+        }
+        // ensure the json data is a string
         if (data['sCommunicationSubject'] && !(typeof data['sCommunicationSubject'] === 'string' || data['sCommunicationSubject'] instanceof String)) {
             throw new Error("Expected the field `sCommunicationSubject` to be a primitive type in the JSON string but got " + data['sCommunicationSubject']);
         }
         // ensure the json data is a string
-        if (data['dtCommunicationSentdate'] && !(typeof data['dtCommunicationSentdate'] === 'string' || data['dtCommunicationSentdate'] instanceof String)) {
-            throw new Error("Expected the field `dtCommunicationSentdate` to be a primitive type in the JSON string but got " + data['dtCommunicationSentdate']);
+        if (data['sCommunicationSender'] && !(typeof data['sCommunicationSender'] === 'string' || data['sCommunicationSender'] instanceof String)) {
+            throw new Error("Expected the field `sCommunicationSender` to be a primitive type in the JSON string but got " + data['sCommunicationSender']);
         }
-        // validate the optional field `objContactFrom`
-        if (data['objContactFrom']) { // data not null
-          CustomContactNameResponse.validateJSON(data['objContactFrom']);
+        // ensure the json data is a string
+        if (data['sCommunicationRecipient'] && !(typeof data['sCommunicationRecipient'] === 'string' || data['sCommunicationRecipient'] instanceof String)) {
+            throw new Error("Expected the field `sCommunicationRecipient` to be a primitive type in the JSON string but got " + data['sCommunicationRecipient']);
         }
 
         return true;
@@ -128,17 +158,93 @@ class CommunicationListElement {
         this['pkiCommunicationID'] = pkiCommunicationID;
     }
 /**
-     * @return {module:eZmaxAPI/model/FieldECommunicationEmailimportance}
+     * Returns The unique ID of the Ezsignfolder
+     * minimum: 0
+     * @return {Number}
      */
-    getECommunicationEmailimportance() {
-        return this.eCommunicationEmailimportance;
+    getFkiEzsignfolderID() {
+        return this.fkiEzsignfolderID;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/FieldECommunicationEmailimportance} eCommunicationEmailimportance
+     * Sets The unique ID of the Ezsignfolder
+     * @param {Number} fkiEzsignfolderID The unique ID of the Ezsignfolder
      */
-    setECommunicationEmailimportance(eCommunicationEmailimportance) {
-        this['eCommunicationEmailimportance'] = eCommunicationEmailimportance;
+    setFkiEzsignfolderID(fkiEzsignfolderID) {
+        this['fkiEzsignfolderID'] = fkiEzsignfolderID;
+    }
+/**
+     * Returns The unique ID of the Inscription.
+     * minimum: 0
+     * @return {Number}
+     */
+    getFkiInscriptionID() {
+        return this.fkiInscriptionID;
+    }
+
+    /**
+     * Sets The unique ID of the Inscription.
+     * @param {Number} fkiInscriptionID The unique ID of the Inscription.
+     */
+    setFkiInscriptionID(fkiInscriptionID) {
+        this['fkiInscriptionID'] = fkiInscriptionID;
+    }
+/**
+     * Returns The unique ID of the Inscriptionnotauthenticated.
+     * minimum: 0
+     * @return {Number}
+     */
+    getFkiInscriptionnotauthenticatedID() {
+        return this.fkiInscriptionnotauthenticatedID;
+    }
+
+    /**
+     * Sets The unique ID of the Inscriptionnotauthenticated.
+     * @param {Number} fkiInscriptionnotauthenticatedID The unique ID of the Inscriptionnotauthenticated.
+     */
+    setFkiInscriptionnotauthenticatedID(fkiInscriptionnotauthenticatedID) {
+        this['fkiInscriptionnotauthenticatedID'] = fkiInscriptionnotauthenticatedID;
+    }
+/**
+     * Returns The date and time at which the object was created
+     * @return {String}
+     */
+    getDtCreatedDate() {
+        return this.dtCreatedDate;
+    }
+
+    /**
+     * Sets The date and time at which the object was created
+     * @param {String} dtCreatedDate The date and time at which the object was created
+     */
+    setDtCreatedDate(dtCreatedDate) {
+        this['dtCreatedDate'] = dtCreatedDate;
+    }
+/**
+     * @return {module:eZmaxAPI/model/ComputedECommunicationDirection}
+     */
+    getECommunicationDirection() {
+        return this.eCommunicationDirection;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
+     */
+    setECommunicationDirection(eCommunicationDirection) {
+        this['eCommunicationDirection'] = eCommunicationDirection;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldECommunicationImportance}
+     */
+    getECommunicationImportance() {
+        return this.eCommunicationImportance;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldECommunicationImportance} eCommunicationImportance
+     */
+    setECommunicationImportance(eCommunicationImportance) {
+        this['eCommunicationImportance'] = eCommunicationImportance;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldECommunicationType}
@@ -154,7 +260,22 @@ class CommunicationListElement {
         this['eCommunicationType'] = eCommunicationType;
     }
 /**
-     * Returns The Subject of the Communication
+     * Returns The count of Communicationrecipient
+     * @return {Number}
+     */
+    getICommunicationrecipientCount() {
+        return this.iCommunicationrecipientCount;
+    }
+
+    /**
+     * Sets The count of Communicationrecipient
+     * @param {Number} iCommunicationrecipientCount The count of Communicationrecipient
+     */
+    setICommunicationrecipientCount(iCommunicationrecipientCount) {
+        this['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
+    }
+/**
+     * Returns The subject of the Communication
      * @return {String}
      */
     getSCommunicationSubject() {
@@ -162,44 +283,46 @@ class CommunicationListElement {
     }
 
     /**
-     * Sets The Subject of the Communication
-     * @param {String} sCommunicationSubject The Subject of the Communication
+     * Sets The subject of the Communication
+     * @param {String} sCommunicationSubject The subject of the Communication
      */
     setSCommunicationSubject(sCommunicationSubject) {
         this['sCommunicationSubject'] = sCommunicationSubject;
     }
 /**
-     * Returns The send date and time at which the Communication was sent.
+     * Returns The sender name of the Communication
      * @return {String}
      */
-    getDtCommunicationSentdate() {
-        return this.dtCommunicationSentdate;
+    getSCommunicationSender() {
+        return this.sCommunicationSender;
     }
 
     /**
-     * Sets The send date and time at which the Communication was sent.
-     * @param {String} dtCommunicationSentdate The send date and time at which the Communication was sent.
+     * Sets The sender name of the Communication
+     * @param {String} sCommunicationSender The sender name of the Communication
      */
-    setDtCommunicationSentdate(dtCommunicationSentdate) {
-        this['dtCommunicationSentdate'] = dtCommunicationSentdate;
+    setSCommunicationSender(sCommunicationSender) {
+        this['sCommunicationSender'] = sCommunicationSender;
     }
 /**
-     * @return {module:eZmaxAPI/model/CustomContactNameResponse}
+     * Returns The recipients' name of the Communication
+     * @return {String}
      */
-    getObjContactFrom() {
-        return this.objContactFrom;
+    getSCommunicationRecipient() {
+        return this.sCommunicationRecipient;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
+     * Sets The recipients' name of the Communication
+     * @param {String} sCommunicationRecipient The recipients' name of the Communication
      */
-    setObjContactFrom(objContactFrom) {
-        this['objContactFrom'] = objContactFrom;
+    setSCommunicationRecipient(sCommunicationRecipient) {
+        this['sCommunicationRecipient'] = sCommunicationRecipient;
     }
 
 }
 
-CommunicationListElement.RequiredProperties = ["pkiCommunicationID", "eCommunicationType", "sCommunicationSubject", "dtCommunicationSentdate", "objContactFrom"];
+CommunicationListElement.RequiredProperties = ["pkiCommunicationID", "dtCreatedDate", "eCommunicationDirection", "eCommunicationImportance", "eCommunicationType", "iCommunicationrecipientCount", "sCommunicationSubject", "sCommunicationSender", "sCommunicationRecipient"];
 
 /**
  * The unique ID of the Communication.
@@ -208,9 +331,38 @@ CommunicationListElement.RequiredProperties = ["pkiCommunicationID", "eCommunica
 CommunicationListElement.prototype['pkiCommunicationID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/FieldECommunicationEmailimportance} eCommunicationEmailimportance
+ * The unique ID of the Ezsignfolder
+ * @member {Number} fkiEzsignfolderID
  */
-CommunicationListElement.prototype['eCommunicationEmailimportance'] = undefined;
+CommunicationListElement.prototype['fkiEzsignfolderID'] = undefined;
+
+/**
+ * The unique ID of the Inscription.
+ * @member {Number} fkiInscriptionID
+ */
+CommunicationListElement.prototype['fkiInscriptionID'] = undefined;
+
+/**
+ * The unique ID of the Inscriptionnotauthenticated.
+ * @member {Number} fkiInscriptionnotauthenticatedID
+ */
+CommunicationListElement.prototype['fkiInscriptionnotauthenticatedID'] = undefined;
+
+/**
+ * The date and time at which the object was created
+ * @member {String} dtCreatedDate
+ */
+CommunicationListElement.prototype['dtCreatedDate'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
+ */
+CommunicationListElement.prototype['eCommunicationDirection'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldECommunicationImportance} eCommunicationImportance
+ */
+CommunicationListElement.prototype['eCommunicationImportance'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldECommunicationType} eCommunicationType
@@ -218,21 +370,28 @@ CommunicationListElement.prototype['eCommunicationEmailimportance'] = undefined;
 CommunicationListElement.prototype['eCommunicationType'] = undefined;
 
 /**
- * The Subject of the Communication
+ * The count of Communicationrecipient
+ * @member {Number} iCommunicationrecipientCount
+ */
+CommunicationListElement.prototype['iCommunicationrecipientCount'] = undefined;
+
+/**
+ * The subject of the Communication
  * @member {String} sCommunicationSubject
  */
 CommunicationListElement.prototype['sCommunicationSubject'] = undefined;
 
 /**
- * The send date and time at which the Communication was sent.
- * @member {String} dtCommunicationSentdate
+ * The sender name of the Communication
+ * @member {String} sCommunicationSender
  */
-CommunicationListElement.prototype['dtCommunicationSentdate'] = undefined;
+CommunicationListElement.prototype['sCommunicationSender'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
+ * The recipients' name of the Communication
+ * @member {String} sCommunicationRecipient
  */
-CommunicationListElement.prototype['objContactFrom'] = undefined;
+CommunicationListElement.prototype['sCommunicationRecipient'] = undefined;
 
 
 

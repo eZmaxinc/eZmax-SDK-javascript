@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iCommunicationCount** | **Number** | The number of total signatures in the Ezsigntemplate. | 
+**iCommunicationCount** | **Number** | The count of Communication. | 
 
 

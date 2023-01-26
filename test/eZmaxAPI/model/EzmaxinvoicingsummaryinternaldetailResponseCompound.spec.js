@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tEzmaxproductHelpX (base name: "tEzmaxproductHelpX")', function() {
+      // uncomment below and update the code to test the property tEzmaxproductHelpX
+      //var instance = new EZmaxApiDefinitionFull.EzmaxinvoicingsummaryinternaldetailResponseCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

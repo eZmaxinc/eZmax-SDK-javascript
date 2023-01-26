@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiCommunicationexternalrecipientID** | **Number** | The unique ID of the Communicationexternalrecipient | 
-**sEmailAddress** | **String** | The email address. | [optional] 
-**objPhoneSms** | [**PhoneResponseCompound**](PhoneResponseCompound.md) |  | [optional] 
 **eCommunicationexternalrecipientType** | [**FieldECommunicationexternalrecipientType**](FieldECommunicationexternalrecipientType.md) |  | 
-**sCommunicationexternalrecipientName** | **String** | The Name of the Communicationexternalrecipient | 
+**objDescriptionstatic** | [**DescriptionstaticResponseCompound**](DescriptionstaticResponseCompound.md) |  | 
+**objEmailstatic** | [**EmailstaticResponseCompound**](EmailstaticResponseCompound.md) |  | [optional] 
+**objPhonestatic** | [**PhonestaticResponseCompound**](PhonestaticResponseCompound.md) |  | [optional] 
 
 

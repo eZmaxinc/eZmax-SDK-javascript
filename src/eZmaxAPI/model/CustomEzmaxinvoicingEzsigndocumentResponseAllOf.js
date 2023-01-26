@@ -26,7 +26,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponseAllOf {
      * @param sName {String} 
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param sEzsigndocumentName {String} The name of the document that will be presented to Ezsignfoldersignerassociations
-     * @param bEzsignfolderAllowed {Boolean} 
+     * @param bEzsignfolderAllowed {Boolean} Whether you have access to the Ezsignfolder or not
      */
     constructor(fkiEzsignfolderID, sName, sEzsignfolderDescription, sEzsigndocumentName, bEzsignfolderAllowed) { 
         
@@ -164,6 +164,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponseAllOf {
         this['sEzsigndocumentName'] = sEzsigndocumentName;
     }
 /**
+     * Returns Whether you have access to the Ezsignfolder or not
      * @return {Boolean}
      */
     getBEzsignfolderAllowed() {
@@ -171,7 +172,8 @@ class CustomEzmaxinvoicingEzsigndocumentResponseAllOf {
     }
 
     /**
-     * @param {Boolean} bEzsignfolderAllowed
+     * Sets Whether you have access to the Ezsignfolder or not
+     * @param {Boolean} bEzsignfolderAllowed Whether you have access to the Ezsignfolder or not
      */
     setBEzsignfolderAllowed(bEzsignfolderAllowed) {
         this['bEzsignfolderAllowed'] = bEzsignfolderAllowed;
@@ -205,6 +207,7 @@ CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['sEzsignfolderDescript
 CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['sEzsigndocumentName'] = undefined;
 
 /**
+ * Whether you have access to the Ezsignfolder or not
  * @member {Boolean} bEzsignfolderAllowed
  */
 CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['bEzsignfolderAllowed'] = undefined;

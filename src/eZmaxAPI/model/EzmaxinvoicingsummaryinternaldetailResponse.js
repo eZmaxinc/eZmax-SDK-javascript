@@ -32,10 +32,11 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
      * @param dEzmaxinvoicingsummaryinternaldetailRebate {String} The rebate for the product
      * @param dEzmaxinvoicingsummaryinternaldetailTotal {String} The total invoiced for the product
      * @param bEzmaxinvoicingsummaryinternaldetailAdjustment {Boolean} Whether if it's an adjustment
+     * @param tEzmaxproductHelpX {String} The help message of the Ezmaxproduct in the language of the requester
      */
-    constructor(fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment) { 
+    constructor(fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment, tEzmaxproductHelpX) { 
         
-        EzmaxinvoicingsummaryinternaldetailResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment);
+        EzmaxinvoicingsummaryinternaldetailResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment, tEzmaxproductHelpX);
     }
 
     /**
@@ -43,7 +44,7 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment) { 
+    static initialize(obj, fkiEzmaxproductID, sEzmaxproductDescriptionX, fkiBillingentityexternalID, sBillingentityexternalDescription, dEzmaxinvoicingsummaryinternaldetailCountreal, dEzmaxinvoicingsummaryinternaldetailSubtotal, dEzmaxinvoicingsummaryinternaldetailRebate, dEzmaxinvoicingsummaryinternaldetailTotal, bEzmaxinvoicingsummaryinternaldetailAdjustment, tEzmaxproductHelpX) { 
         obj['fkiEzmaxproductID'] = fkiEzmaxproductID;
         obj['sEzmaxproductDescriptionX'] = sEzmaxproductDescriptionX;
         obj['fkiBillingentityexternalID'] = fkiBillingentityexternalID;
@@ -53,6 +54,7 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
         obj['dEzmaxinvoicingsummaryinternaldetailRebate'] = dEzmaxinvoicingsummaryinternaldetailRebate;
         obj['dEzmaxinvoicingsummaryinternaldetailTotal'] = dEzmaxinvoicingsummaryinternaldetailTotal;
         obj['bEzmaxinvoicingsummaryinternaldetailAdjustment'] = bEzmaxinvoicingsummaryinternaldetailAdjustment;
+        obj['tEzmaxproductHelpX'] = tEzmaxproductHelpX;
     }
 
     /**
@@ -99,6 +101,9 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
             if (data.hasOwnProperty('bEzmaxinvoicingsummaryinternaldetailAdjustment')) {
                 obj['bEzmaxinvoicingsummaryinternaldetailAdjustment'] = ApiClient.convertToType(data['bEzmaxinvoicingsummaryinternaldetailAdjustment'], 'Boolean');
             }
+            if (data.hasOwnProperty('tEzmaxproductHelpX')) {
+                obj['tEzmaxproductHelpX'] = ApiClient.convertToType(data['tEzmaxproductHelpX'], 'String');
+            }
         }
         return obj;
     }
@@ -138,6 +143,10 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
         // ensure the json data is a string
         if (data['dEzmaxinvoicingsummaryinternaldetailTotal'] && !(typeof data['dEzmaxinvoicingsummaryinternaldetailTotal'] === 'string' || data['dEzmaxinvoicingsummaryinternaldetailTotal'] instanceof String)) {
             throw new Error("Expected the field `dEzmaxinvoicingsummaryinternaldetailTotal` to be a primitive type in the JSON string but got " + data['dEzmaxinvoicingsummaryinternaldetailTotal']);
+        }
+        // ensure the json data is a string
+        if (data['tEzmaxproductHelpX'] && !(typeof data['tEzmaxproductHelpX'] === 'string' || data['tEzmaxproductHelpX'] instanceof String)) {
+            throw new Error("Expected the field `tEzmaxproductHelpX` to be a primitive type in the JSON string but got " + data['tEzmaxproductHelpX']);
         }
 
         return true;
@@ -312,10 +321,25 @@ class EzmaxinvoicingsummaryinternaldetailResponse {
     setBEzmaxinvoicingsummaryinternaldetailAdjustment(bEzmaxinvoicingsummaryinternaldetailAdjustment) {
         this['bEzmaxinvoicingsummaryinternaldetailAdjustment'] = bEzmaxinvoicingsummaryinternaldetailAdjustment;
     }
+/**
+     * Returns The help message of the Ezmaxproduct in the language of the requester
+     * @return {String}
+     */
+    getTEzmaxproductHelpX() {
+        return this.tEzmaxproductHelpX;
+    }
+
+    /**
+     * Sets The help message of the Ezmaxproduct in the language of the requester
+     * @param {String} tEzmaxproductHelpX The help message of the Ezmaxproduct in the language of the requester
+     */
+    setTEzmaxproductHelpX(tEzmaxproductHelpX) {
+        this['tEzmaxproductHelpX'] = tEzmaxproductHelpX;
+    }
 
 }
 
-EzmaxinvoicingsummaryinternaldetailResponse.RequiredProperties = ["fkiEzmaxproductID", "sEzmaxproductDescriptionX", "fkiBillingentityexternalID", "sBillingentityexternalDescription", "dEzmaxinvoicingsummaryinternaldetailCountreal", "dEzmaxinvoicingsummaryinternaldetailSubtotal", "dEzmaxinvoicingsummaryinternaldetailRebate", "dEzmaxinvoicingsummaryinternaldetailTotal", "bEzmaxinvoicingsummaryinternaldetailAdjustment"];
+EzmaxinvoicingsummaryinternaldetailResponse.RequiredProperties = ["fkiEzmaxproductID", "sEzmaxproductDescriptionX", "fkiBillingentityexternalID", "sBillingentityexternalDescription", "dEzmaxinvoicingsummaryinternaldetailCountreal", "dEzmaxinvoicingsummaryinternaldetailSubtotal", "dEzmaxinvoicingsummaryinternaldetailRebate", "dEzmaxinvoicingsummaryinternaldetailTotal", "bEzmaxinvoicingsummaryinternaldetailAdjustment", "tEzmaxproductHelpX"];
 
 /**
  * The unique ID of the Ezmaxinvoicingsummaryinternaldetail
@@ -382,6 +406,12 @@ EzmaxinvoicingsummaryinternaldetailResponse.prototype['dEzmaxinvoicingsummaryint
  * @member {Boolean} bEzmaxinvoicingsummaryinternaldetailAdjustment
  */
 EzmaxinvoicingsummaryinternaldetailResponse.prototype['bEzmaxinvoicingsummaryinternaldetailAdjustment'] = undefined;
+
+/**
+ * The help message of the Ezmaxproduct in the language of the requester
+ * @member {String} tEzmaxproductHelpX
+ */
+EzmaxinvoicingsummaryinternaldetailResponse.prototype['tEzmaxproductHelpX'] = undefined;
 
 
 

@@ -60,6 +60,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iRowReturned (base name: "iRowReturned")', function() {
+      // uncomment below and update the code to test the property iRowReturned
+      //var instance = new EZmaxApiDefinitionFull.CommunicationGetListV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iRowFiltered (base name: "iRowFiltered")', function() {
+      // uncomment below and update the code to test the property iRowFiltered
+      //var instance = new EZmaxApiDefinitionFull.CommunicationGetListV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

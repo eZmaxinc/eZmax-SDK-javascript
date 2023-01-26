@@ -12,8 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
+import DescriptionstaticResponseCompound from './DescriptionstaticResponseCompound';
+import EmailstaticResponseCompound from './EmailstaticResponseCompound';
+import FieldECommunicationrecipientObjecttype from './FieldECommunicationrecipientObjecttype';
 import FieldECommunicationrecipientType from './FieldECommunicationrecipientType';
-import PhoneResponseCompound from './PhoneResponseCompound';
+import PhonestaticResponseCompound from './PhonestaticResponseCompound';
 
 /**
  * The CommunicationrecipientResponse model module.
@@ -26,10 +29,12 @@ class CommunicationrecipientResponse {
      * A Communicationrecipient Object
      * @alias module:eZmaxAPI/model/CommunicationrecipientResponse
      * @param pkiCommunicationrecipientID {Number} The unique ID of the Communicationrecipient.
+     * @param eCommunicationrecipientType {module:eZmaxAPI/model/FieldECommunicationrecipientType} 
+     * @param objDescriptionstatic {module:eZmaxAPI/model/DescriptionstaticResponseCompound} 
      */
-    constructor(pkiCommunicationrecipientID) { 
+    constructor(pkiCommunicationrecipientID, eCommunicationrecipientType, objDescriptionstatic) { 
         
-        CommunicationrecipientResponse.initialize(this, pkiCommunicationrecipientID);
+        CommunicationrecipientResponse.initialize(this, pkiCommunicationrecipientID, eCommunicationrecipientType, objDescriptionstatic);
     }
 
     /**
@@ -37,8 +42,10 @@ class CommunicationrecipientResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiCommunicationrecipientID) { 
+    static initialize(obj, pkiCommunicationrecipientID, eCommunicationrecipientType, objDescriptionstatic) { 
         obj['pkiCommunicationrecipientID'] = pkiCommunicationrecipientID;
+        obj['eCommunicationrecipientType'] = eCommunicationrecipientType;
+        obj['objDescriptionstatic'] = objDescriptionstatic;
     }
 
     /**
@@ -54,6 +61,9 @@ class CommunicationrecipientResponse {
 
             if (data.hasOwnProperty('pkiCommunicationrecipientID')) {
                 obj['pkiCommunicationrecipientID'] = ApiClient.convertToType(data['pkiCommunicationrecipientID'], 'Number');
+            }
+            if (data.hasOwnProperty('eCommunicationrecipientObjecttype')) {
+                obj['eCommunicationrecipientObjecttype'] = FieldECommunicationrecipientObjecttype.constructFromObject(data['eCommunicationrecipientObjecttype']);
             }
             if (data.hasOwnProperty('fkiAgentID')) {
                 obj['fkiAgentID'] = ApiClient.convertToType(data['fkiAgentID'], 'Number');
@@ -79,12 +89,6 @@ class CommunicationrecipientResponse {
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
-            if (data.hasOwnProperty('sEmailAddress')) {
-                obj['sEmailAddress'] = ApiClient.convertToType(data['sEmailAddress'], 'String');
-            }
-            if (data.hasOwnProperty('eCommunicationrecipientType')) {
-                obj['eCommunicationrecipientType'] = FieldECommunicationrecipientType.constructFromObject(data['eCommunicationrecipientType']);
-            }
             if (data.hasOwnProperty('fkiAgentincorporationID')) {
                 obj['fkiAgentincorporationID'] = ApiClient.convertToType(data['fkiAgentincorporationID'], 'Number');
             }
@@ -106,8 +110,17 @@ class CommunicationrecipientResponse {
             if (data.hasOwnProperty('fkiSupplierID')) {
                 obj['fkiSupplierID'] = ApiClient.convertToType(data['fkiSupplierID'], 'Number');
             }
-            if (data.hasOwnProperty('objPhoneSms')) {
-                obj['objPhoneSms'] = PhoneResponseCompound.constructFromObject(data['objPhoneSms']);
+            if (data.hasOwnProperty('eCommunicationrecipientType')) {
+                obj['eCommunicationrecipientType'] = FieldECommunicationrecipientType.constructFromObject(data['eCommunicationrecipientType']);
+            }
+            if (data.hasOwnProperty('objDescriptionstatic')) {
+                obj['objDescriptionstatic'] = DescriptionstaticResponseCompound.constructFromObject(data['objDescriptionstatic']);
+            }
+            if (data.hasOwnProperty('objEmailstatic')) {
+                obj['objEmailstatic'] = EmailstaticResponseCompound.constructFromObject(data['objEmailstatic']);
+            }
+            if (data.hasOwnProperty('objPhonestatic')) {
+                obj['objPhonestatic'] = PhonestaticResponseCompound.constructFromObject(data['objPhonestatic']);
             }
         }
         return obj;
@@ -125,13 +138,17 @@ class CommunicationrecipientResponse {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // ensure the json data is a string
-        if (data['sEmailAddress'] && !(typeof data['sEmailAddress'] === 'string' || data['sEmailAddress'] instanceof String)) {
-            throw new Error("Expected the field `sEmailAddress` to be a primitive type in the JSON string but got " + data['sEmailAddress']);
+        // validate the optional field `objDescriptionstatic`
+        if (data['objDescriptionstatic']) { // data not null
+          DescriptionstaticResponseCompound.validateJSON(data['objDescriptionstatic']);
         }
-        // validate the optional field `objPhoneSms`
-        if (data['objPhoneSms']) { // data not null
-          PhoneResponseCompound.validateJSON(data['objPhoneSms']);
+        // validate the optional field `objEmailstatic`
+        if (data['objEmailstatic']) { // data not null
+          EmailstaticResponseCompound.validateJSON(data['objEmailstatic']);
+        }
+        // validate the optional field `objPhonestatic`
+        if (data['objPhonestatic']) { // data not null
+          PhonestaticResponseCompound.validateJSON(data['objPhonestatic']);
         }
 
         return true;
@@ -152,6 +169,19 @@ class CommunicationrecipientResponse {
      */
     setPkiCommunicationrecipientID(pkiCommunicationrecipientID) {
         this['pkiCommunicationrecipientID'] = pkiCommunicationrecipientID;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldECommunicationrecipientObjecttype}
+     */
+    getECommunicationrecipientObjecttype() {
+        return this.eCommunicationrecipientObjecttype;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldECommunicationrecipientObjecttype} eCommunicationrecipientObjecttype
+     */
+    setECommunicationrecipientObjecttype(eCommunicationrecipientObjecttype) {
+        this['eCommunicationrecipientObjecttype'] = eCommunicationrecipientObjecttype;
     }
 /**
      * Returns The unique ID of the Agent.
@@ -282,34 +312,6 @@ class CommunicationrecipientResponse {
         this['fkiUserID'] = fkiUserID;
     }
 /**
-     * Returns The email address.
-     * @return {String}
-     */
-    getSEmailAddress() {
-        return this.sEmailAddress;
-    }
-
-    /**
-     * Sets The email address.
-     * @param {String} sEmailAddress The email address.
-     */
-    setSEmailAddress(sEmailAddress) {
-        this['sEmailAddress'] = sEmailAddress;
-    }
-/**
-     * @return {module:eZmaxAPI/model/FieldECommunicationrecipientType}
-     */
-    getECommunicationrecipientType() {
-        return this.eCommunicationrecipientType;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/FieldECommunicationrecipientType} eCommunicationrecipientType
-     */
-    setECommunicationrecipientType(eCommunicationrecipientType) {
-        this['eCommunicationrecipientType'] = eCommunicationrecipientType;
-    }
-/**
      * Returns The unique ID of the Agentincorporation.
      * minimum: 0
      * @return {Number}
@@ -422,28 +424,72 @@ class CommunicationrecipientResponse {
         this['fkiSupplierID'] = fkiSupplierID;
     }
 /**
-     * @return {module:eZmaxAPI/model/PhoneResponseCompound}
+     * @return {module:eZmaxAPI/model/FieldECommunicationrecipientType}
      */
-    getObjPhoneSms() {
-        return this.objPhoneSms;
+    getECommunicationrecipientType() {
+        return this.eCommunicationrecipientType;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSms
+     * @param {module:eZmaxAPI/model/FieldECommunicationrecipientType} eCommunicationrecipientType
      */
-    setObjPhoneSms(objPhoneSms) {
-        this['objPhoneSms'] = objPhoneSms;
+    setECommunicationrecipientType(eCommunicationrecipientType) {
+        this['eCommunicationrecipientType'] = eCommunicationrecipientType;
+    }
+/**
+     * @return {module:eZmaxAPI/model/DescriptionstaticResponseCompound}
+     */
+    getObjDescriptionstatic() {
+        return this.objDescriptionstatic;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/DescriptionstaticResponseCompound} objDescriptionstatic
+     */
+    setObjDescriptionstatic(objDescriptionstatic) {
+        this['objDescriptionstatic'] = objDescriptionstatic;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EmailstaticResponseCompound}
+     */
+    getObjEmailstatic() {
+        return this.objEmailstatic;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EmailstaticResponseCompound} objEmailstatic
+     */
+    setObjEmailstatic(objEmailstatic) {
+        this['objEmailstatic'] = objEmailstatic;
+    }
+/**
+     * @return {module:eZmaxAPI/model/PhonestaticResponseCompound}
+     */
+    getObjPhonestatic() {
+        return this.objPhonestatic;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/PhonestaticResponseCompound} objPhonestatic
+     */
+    setObjPhonestatic(objPhonestatic) {
+        this['objPhonestatic'] = objPhonestatic;
     }
 
 }
 
-CommunicationrecipientResponse.RequiredProperties = ["pkiCommunicationrecipientID"];
+CommunicationrecipientResponse.RequiredProperties = ["pkiCommunicationrecipientID", "eCommunicationrecipientType", "objDescriptionstatic"];
 
 /**
  * The unique ID of the Communicationrecipient.
  * @member {Number} pkiCommunicationrecipientID
  */
 CommunicationrecipientResponse.prototype['pkiCommunicationrecipientID'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldECommunicationrecipientObjecttype} eCommunicationrecipientObjecttype
+ */
+CommunicationrecipientResponse.prototype['eCommunicationrecipientObjecttype'] = undefined;
 
 /**
  * The unique ID of the Agent.
@@ -494,17 +540,6 @@ CommunicationrecipientResponse.prototype['fkiFranchiseofficeID'] = undefined;
 CommunicationrecipientResponse.prototype['fkiUserID'] = undefined;
 
 /**
- * The email address.
- * @member {String} sEmailAddress
- */
-CommunicationrecipientResponse.prototype['sEmailAddress'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/FieldECommunicationrecipientType} eCommunicationrecipientType
- */
-CommunicationrecipientResponse.prototype['eCommunicationrecipientType'] = undefined;
-
-/**
  * The unique ID of the Agentincorporation.
  * @member {Number} fkiAgentincorporationID
  */
@@ -547,9 +582,24 @@ CommunicationrecipientResponse.prototype['fkiRewardmemberID'] = undefined;
 CommunicationrecipientResponse.prototype['fkiSupplierID'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSms
+ * @member {module:eZmaxAPI/model/FieldECommunicationrecipientType} eCommunicationrecipientType
  */
-CommunicationrecipientResponse.prototype['objPhoneSms'] = undefined;
+CommunicationrecipientResponse.prototype['eCommunicationrecipientType'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/DescriptionstaticResponseCompound} objDescriptionstatic
+ */
+CommunicationrecipientResponse.prototype['objDescriptionstatic'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EmailstaticResponseCompound} objEmailstatic
+ */
+CommunicationrecipientResponse.prototype['objEmailstatic'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/PhonestaticResponseCompound} objPhonestatic
+ */
+CommunicationrecipientResponse.prototype['objPhonestatic'] = undefined;
 
 
 

@@ -131,8 +131,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EZmaxApiDefinitionFull.GlobalCustomerApi* | [**globalCustomerGetEndpointV1**](docs/GlobalCustomerApi.md#globalCustomerGetEndpointV1) | **GET** /1/customer/{pksCustomerCode}/endpoint | Get customer endpoint
-*EZmaxApiDefinitionFull.ModuleCommunicationApi* | [**communicationGetCommunicationCountV1**](docs/ModuleCommunicationApi.md#communicationGetCommunicationCountV1) | **GET** /1/module/communication/getCommunicationCount | Get the number of communication
-*EZmaxApiDefinitionFull.ModuleCommunicationApi* | [**communicationGetCommunicationListV1**](docs/ModuleCommunicationApi.md#communicationGetCommunicationListV1) | **GET** /1/module/communication/getCommunicationList | Retrieve communication list
+*EZmaxApiDefinitionFull.ModuleCommunicationApi* | [**communicationGetCommunicationCountV1**](docs/ModuleCommunicationApi.md#communicationGetCommunicationCountV1) | **GET** /1/module/communication/getCount | Retrieve Communication count
 *EZmaxApiDefinitionFull.ModuleEzsignApi* | [**ezsignSuggestSignersV1**](docs/ModuleEzsignApi.md#ezsignSuggestSignersV1) | **GET** /1/module/ezsign/suggestSigners | Suggest signers
 *EZmaxApiDefinitionFull.ModuleEzsignApi* | [**ezsignSuggestTemplatesV1**](docs/ModuleEzsignApi.md#ezsignSuggestTemplatesV1) | **GET** /1/module/ezsign/suggestTemplates | Suggest templates
 *EZmaxApiDefinitionFull.ModuleUserApi* | [**userCreateEzsignuserV1**](docs/ModuleUserApi.md#userCreateEzsignuserV1) | **POST** /1/module/user/createezsignuser | Create a new User of type Ezsignuser
@@ -148,6 +147,7 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectBrandingApi* | [**brandingGetListV1**](docs/ObjectBrandingApi.md#brandingGetListV1) | **GET** /1/object/branding/getList | Retrieve Branding list
 *EZmaxApiDefinitionFull.ObjectBrandingApi* | [**brandingGetObjectV1**](docs/ObjectBrandingApi.md#brandingGetObjectV1) | **GET** /1/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 *EZmaxApiDefinitionFull.ObjectBrandingApi* | [**brandingGetObjectV2**](docs/ObjectBrandingApi.md#brandingGetObjectV2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
+*EZmaxApiDefinitionFull.ObjectCommunicationApi* | [**communicationGetListV1**](docs/ObjectCommunicationApi.md#communicationGetListV1) | **GET** /1/object/communication/getList | Retrieve Communication list
 *EZmaxApiDefinitionFull.ObjectCommunicationApi* | [**communicationGetObjectV2**](docs/ObjectCommunicationApi.md#communicationGetObjectV2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
 *EZmaxApiDefinitionFull.ObjectDepartmentApi* | [**departmentGetAutocompleteV1**](docs/ObjectDepartmentApi.md#departmentGetAutocompleteV1) | **GET** /1/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
 *EZmaxApiDefinitionFull.ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/ObjectDepartmentApi.md#departmentGetAutocompleteV2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
@@ -317,6 +317,12 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV2**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
 *EZmaxApiDefinitionFull.ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/ObjectNotificationsectionApi.md#notificationsectionGetNotificationtestsV1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *EZmaxApiDefinitionFull.ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/ObjectNotificationtestApi.md#notificationtestGetElementsV1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermCreateObjectV1) | **POST** /1/object/paymentterm | Create a new Paymentterm
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermDeleteObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermDeleteObjectV1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermEditObjectV1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermGetAutocompleteV2**](docs/ObjectPaymenttermApi.md#paymenttermGetAutocompleteV2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermGetListV1**](docs/ObjectPaymenttermApi.md#paymenttermGetListV1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
+*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermGetObjectV2**](docs/ObjectPaymenttermApi.md#paymenttermGetObjectV2) | **GET** /2/object/paymentterm/{pkiPaymenttermID} | Retrieve an existing Paymentterm
 *EZmaxApiDefinitionFull.ObjectPeriodApi* | [**periodGetAutocompleteV1**](docs/ObjectPeriodApi.md#periodGetAutocompleteV1) | **GET** /1/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 *EZmaxApiDefinitionFull.ObjectPeriodApi* | [**periodGetAutocompleteV2**](docs/ObjectPeriodApi.md#periodGetAutocompleteV2) | **GET** /2/object/period/getAutocomplete/{sSelector} | Retrieve Periods and IDs
 *EZmaxApiDefinitionFull.ObjectSecretquestionApi* | [**secretquestionGetAutocompleteV1**](docs/ObjectSecretquestionApi.md#secretquestionGetAutocompleteV1) | **GET** /1/object/secretquestion/getAutocomplete/{sSelector} | Retrieve Secretquestions and IDs
@@ -424,6 +430,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.CommunicationGetListV1Response](docs/CommunicationGetListV1Response.md)
  - [EZmaxApiDefinitionFull.CommunicationGetListV1ResponseAllOf](docs/CommunicationGetListV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.CommunicationGetListV1ResponseMPayload](docs/CommunicationGetListV1ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.CommunicationGetListV1ResponseMPayloadAllOf](docs/CommunicationGetListV1ResponseMPayloadAllOf.md)
  - [EZmaxApiDefinitionFull.CommunicationGetObjectV2Response](docs/CommunicationGetObjectV2Response.md)
  - [EZmaxApiDefinitionFull.CommunicationGetObjectV2ResponseAllOf](docs/CommunicationGetObjectV2ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.CommunicationGetObjectV2ResponseMPayload](docs/CommunicationGetObjectV2ResponseMPayload.md)
@@ -433,14 +440,11 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.CommunicationResponseCompoundAllOf](docs/CommunicationResponseCompoundAllOf.md)
  - [EZmaxApiDefinitionFull.CommunicationattachmentResponse](docs/CommunicationattachmentResponse.md)
  - [EZmaxApiDefinitionFull.CommunicationattachmentResponseCompound](docs/CommunicationattachmentResponseCompound.md)
- - [EZmaxApiDefinitionFull.CommunicationexternalimageResponse](docs/CommunicationexternalimageResponse.md)
- - [EZmaxApiDefinitionFull.CommunicationexternalimageResponseCompound](docs/CommunicationexternalimageResponseCompound.md)
  - [EZmaxApiDefinitionFull.CommunicationexternalrecipientResponse](docs/CommunicationexternalrecipientResponse.md)
  - [EZmaxApiDefinitionFull.CommunicationexternalrecipientResponseCompound](docs/CommunicationexternalrecipientResponseCompound.md)
- - [EZmaxApiDefinitionFull.CommunicationimageResponse](docs/CommunicationimageResponse.md)
- - [EZmaxApiDefinitionFull.CommunicationimageResponseCompound](docs/CommunicationimageResponseCompound.md)
  - [EZmaxApiDefinitionFull.CommunicationrecipientResponse](docs/CommunicationrecipientResponse.md)
  - [EZmaxApiDefinitionFull.CommunicationrecipientResponseCompound](docs/CommunicationrecipientResponseCompound.md)
+ - [EZmaxApiDefinitionFull.ComputedECommunicationDirection](docs/ComputedECommunicationDirection.md)
  - [EZmaxApiDefinitionFull.ContactRequest](docs/ContactRequest.md)
  - [EZmaxApiDefinitionFull.ContactRequestCompound](docs/ContactRequestCompound.md)
  - [EZmaxApiDefinitionFull.ContactRequestCompoundAllOf](docs/ContactRequestCompoundAllOf.md)
@@ -491,8 +495,12 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.DepartmentGetMembersV1Response](docs/DepartmentGetMembersV1Response.md)
  - [EZmaxApiDefinitionFull.DepartmentGetMembersV1ResponseAllOf](docs/DepartmentGetMembersV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.DepartmentGetMembersV1ResponseMPayload](docs/DepartmentGetMembersV1ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.DescriptionstaticResponse](docs/DescriptionstaticResponse.md)
+ - [EZmaxApiDefinitionFull.DescriptionstaticResponseCompound](docs/DescriptionstaticResponseCompound.md)
  - [EZmaxApiDefinitionFull.EmailRequest](docs/EmailRequest.md)
  - [EZmaxApiDefinitionFull.EmailRequestCompound](docs/EmailRequestCompound.md)
+ - [EZmaxApiDefinitionFull.EmailstaticResponse](docs/EmailstaticResponse.md)
+ - [EZmaxApiDefinitionFull.EmailstaticResponseCompound](docs/EmailstaticResponseCompound.md)
  - [EZmaxApiDefinitionFull.EzmaxinvoicingAutocompleteElementResponse](docs/EzmaxinvoicingAutocompleteElementResponse.md)
  - [EZmaxApiDefinitionFull.EzmaxinvoicingGetAutocompleteV2Response](docs/EzmaxinvoicingGetAutocompleteV2Response.md)
  - [EZmaxApiDefinitionFull.EzmaxinvoicingGetAutocompleteV2ResponseAllOf](docs/EzmaxinvoicingGetAutocompleteV2ResponseAllOf.md)
@@ -1092,9 +1100,10 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.FieldEActivesessionUsertype](docs/FieldEActivesessionUsertype.md)
  - [EZmaxApiDefinitionFull.FieldEActivesessionWeekdaystart](docs/FieldEActivesessionWeekdaystart.md)
  - [EZmaxApiDefinitionFull.FieldEBrandingLogo](docs/FieldEBrandingLogo.md)
- - [EZmaxApiDefinitionFull.FieldECommunicationEmailimportance](docs/FieldECommunicationEmailimportance.md)
+ - [EZmaxApiDefinitionFull.FieldECommunicationImportance](docs/FieldECommunicationImportance.md)
  - [EZmaxApiDefinitionFull.FieldECommunicationType](docs/FieldECommunicationType.md)
  - [EZmaxApiDefinitionFull.FieldECommunicationexternalrecipientType](docs/FieldECommunicationexternalrecipientType.md)
+ - [EZmaxApiDefinitionFull.FieldECommunicationrecipientObjecttype](docs/FieldECommunicationrecipientObjecttype.md)
  - [EZmaxApiDefinitionFull.FieldECommunicationrecipientType](docs/FieldECommunicationrecipientType.md)
  - [EZmaxApiDefinitionFull.FieldEEzmaxinvoicingPaymenttype](docs/FieldEEzmaxinvoicingPaymenttype.md)
  - [EZmaxApiDefinitionFull.FieldEEzmaxinvoicingagentVariationezmax](docs/FieldEEzmaxinvoicingagentVariationezmax.md)
@@ -1158,6 +1167,7 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.MultilingualEzsignfoldertypeName](docs/MultilingualEzsignfoldertypeName.md)
  - [EZmaxApiDefinitionFull.MultilingualNotificationsubsectionName](docs/MultilingualNotificationsubsectionName.md)
  - [EZmaxApiDefinitionFull.MultilingualNotificationtestName](docs/MultilingualNotificationtestName.md)
+ - [EZmaxApiDefinitionFull.MultilingualPaymenttermDescription](docs/MultilingualPaymenttermDescription.md)
  - [EZmaxApiDefinitionFull.MultilingualVersionhistoryDetail](docs/MultilingualVersionhistoryDetail.md)
  - [EZmaxApiDefinitionFull.NotificationsectionGetNotificationtestsV1Response](docs/NotificationsectionGetNotificationtestsV1Response.md)
  - [EZmaxApiDefinitionFull.NotificationsectionGetNotificationtestsV1ResponseAllOf](docs/NotificationsectionGetNotificationtestsV1ResponseAllOf.md)
@@ -1167,14 +1177,37 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.NotificationtestGetElementsV1ResponseAllOf](docs/NotificationtestGetElementsV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.NotificationtestGetElementsV1ResponseMPayload](docs/NotificationtestGetElementsV1ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.NotificationtestResponse](docs/NotificationtestResponse.md)
+ - [EZmaxApiDefinitionFull.PaymenttermAutocompleteElementResponse](docs/PaymenttermAutocompleteElementResponse.md)
+ - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1Request](docs/PaymenttermCreateObjectV1Request.md)
+ - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1Response](docs/PaymenttermCreateObjectV1Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1ResponseAllOf](docs/PaymenttermCreateObjectV1ResponseAllOf.md)
+ - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1ResponseMPayload](docs/PaymenttermCreateObjectV1ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.PaymenttermDeleteObjectV1Response](docs/PaymenttermDeleteObjectV1Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermEditObjectV1Request](docs/PaymenttermEditObjectV1Request.md)
+ - [EZmaxApiDefinitionFull.PaymenttermEditObjectV1Response](docs/PaymenttermEditObjectV1Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetAutocompleteV2Response](docs/PaymenttermGetAutocompleteV2Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetAutocompleteV2ResponseAllOf](docs/PaymenttermGetAutocompleteV2ResponseAllOf.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetAutocompleteV2ResponseMPayload](docs/PaymenttermGetAutocompleteV2ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetListV1Response](docs/PaymenttermGetListV1Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseAllOf](docs/PaymenttermGetListV1ResponseAllOf.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload](docs/PaymenttermGetListV1ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayloadAllOf](docs/PaymenttermGetListV1ResponseMPayloadAllOf.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetObjectV2Response](docs/PaymenttermGetObjectV2Response.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetObjectV2ResponseAllOf](docs/PaymenttermGetObjectV2ResponseAllOf.md)
+ - [EZmaxApiDefinitionFull.PaymenttermGetObjectV2ResponseMPayload](docs/PaymenttermGetObjectV2ResponseMPayload.md)
+ - [EZmaxApiDefinitionFull.PaymenttermListElement](docs/PaymenttermListElement.md)
+ - [EZmaxApiDefinitionFull.PaymenttermRequest](docs/PaymenttermRequest.md)
+ - [EZmaxApiDefinitionFull.PaymenttermRequestCompound](docs/PaymenttermRequestCompound.md)
+ - [EZmaxApiDefinitionFull.PaymenttermResponse](docs/PaymenttermResponse.md)
+ - [EZmaxApiDefinitionFull.PaymenttermResponseCompound](docs/PaymenttermResponseCompound.md)
  - [EZmaxApiDefinitionFull.PeriodAutocompleteElementResponse](docs/PeriodAutocompleteElementResponse.md)
  - [EZmaxApiDefinitionFull.PeriodGetAutocompleteV2Response](docs/PeriodGetAutocompleteV2Response.md)
  - [EZmaxApiDefinitionFull.PeriodGetAutocompleteV2ResponseAllOf](docs/PeriodGetAutocompleteV2ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.PeriodGetAutocompleteV2ResponseMPayload](docs/PeriodGetAutocompleteV2ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.PhoneRequest](docs/PhoneRequest.md)
  - [EZmaxApiDefinitionFull.PhoneRequestCompound](docs/PhoneRequestCompound.md)
- - [EZmaxApiDefinitionFull.PhoneResponse](docs/PhoneResponse.md)
- - [EZmaxApiDefinitionFull.PhoneResponseCompound](docs/PhoneResponseCompound.md)
+ - [EZmaxApiDefinitionFull.PhonestaticResponse](docs/PhonestaticResponse.md)
+ - [EZmaxApiDefinitionFull.PhonestaticResponseCompound](docs/PhonestaticResponseCompound.md)
  - [EZmaxApiDefinitionFull.SecretquestionAutocompleteElementResponse](docs/SecretquestionAutocompleteElementResponse.md)
  - [EZmaxApiDefinitionFull.SecretquestionGetAutocompleteV2Response](docs/SecretquestionGetAutocompleteV2Response.md)
  - [EZmaxApiDefinitionFull.SecretquestionGetAutocompleteV2ResponseAllOf](docs/SecretquestionGetAutocompleteV2ResponseAllOf.md)

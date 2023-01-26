@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import CommonResponse from './CommonResponse';
+import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
-import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import CommonResponseObjDebugPayloadGetList from './CommonResponseObjDebugPayloadGetList';
 import CommunicationGetListV1ResponseAllOf from './CommunicationGetListV1ResponseAllOf';
 import CommunicationGetListV1ResponseMPayload from './CommunicationGetListV1ResponseMPayload';
 
@@ -26,14 +26,14 @@ import CommunicationGetListV1ResponseMPayload from './CommunicationGetListV1Resp
 class CommunicationGetListV1Response {
     /**
      * Constructs a new <code>CommunicationGetListV1Response</code>.
-     * Response for GET /1/module/communication/getList
+     * Response for GET /1/object/communication/getList
      * @alias module:eZmaxAPI/model/CommunicationGetListV1Response
      * @implements module:eZmaxAPI/model/CommunicationGetListV1ResponseAllOf
-     * @implements module:eZmaxAPI/model/CommonResponse
+     * @implements module:eZmaxAPI/model/CommonResponseGetList
      * @param mPayload {module:eZmaxAPI/model/CommunicationGetListV1ResponseMPayload} 
      */
     constructor(mPayload) { 
-        CommunicationGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
+        CommunicationGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
         CommunicationGetListV1Response.initialize(this, mPayload);
     }
 
@@ -57,13 +57,13 @@ class CommunicationGetListV1Response {
         if (data) {
             obj = obj || new CommunicationGetListV1Response();
             CommunicationGetListV1ResponseAllOf.constructFromObject(data, obj);
-            CommonResponse.constructFromObject(data, obj);
+            CommonResponseGetList.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('mPayload')) {
                 obj['mPayload'] = CommunicationGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
             if (data.hasOwnProperty('objDebugPayload')) {
-                obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
+                obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
@@ -90,7 +90,7 @@ class CommunicationGetListV1Response {
         }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
-          CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
+          CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
         }
         // validate the optional field `objDebug`
         if (data['objDebug']) { // data not null
@@ -114,14 +114,14 @@ class CommunicationGetListV1Response {
         this['mPayload'] = mPayload;
     }
 /**
-     * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
+     * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
     getObjDebugPayload() {
         return this.objDebugPayload;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+     * @param {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
      */
     setObjDebugPayload(objDebugPayload) {
         this['objDebugPayload'] = objDebugPayload;
@@ -150,7 +150,7 @@ CommunicationGetListV1Response.RequiredProperties = ["mPayload"];
 CommunicationGetListV1Response.prototype['mPayload'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+ * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
  */
 CommunicationGetListV1Response.prototype['objDebugPayload'] = undefined;
 
@@ -165,15 +165,15 @@ CommunicationGetListV1Response.prototype['objDebug'] = undefined;
  * @member {module:eZmaxAPI/model/CommunicationGetListV1ResponseMPayload} mPayload
  */
 CommunicationGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
-// Implement CommonResponse interface:
+// Implement CommonResponseGetList interface:
 /**
- * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
+ * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
  */
-CommonResponse.prototype['objDebugPayload'] = undefined;
+CommonResponseGetList.prototype['objDebugPayload'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-CommonResponse.prototype['objDebug'] = undefined;
+CommonResponseGetList.prototype['objDebug'] = undefined;
 
 
 

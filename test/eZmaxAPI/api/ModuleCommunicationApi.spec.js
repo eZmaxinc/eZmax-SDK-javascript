@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('communicationGetCommunicationListV1', function() {
-      it('should call communicationGetCommunicationListV1 successfully', function(done) {
-        //uncomment below and update the code to test communicationGetCommunicationListV1
-        //instance.communicationGetCommunicationListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
   });
 
 }));

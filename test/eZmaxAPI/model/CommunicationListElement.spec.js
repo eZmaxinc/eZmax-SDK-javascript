@@ -60,8 +60,38 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property eCommunicationEmailimportance (base name: "eCommunicationEmailimportance")', function() {
-      // uncomment below and update the code to test the property eCommunicationEmailimportance
+    it('should have the property fkiEzsignfolderID (base name: "fkiEzsignfolderID")', function() {
+      // uncomment below and update the code to test the property fkiEzsignfolderID
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiInscriptionID (base name: "fkiInscriptionID")', function() {
+      // uncomment below and update the code to test the property fkiInscriptionID
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiInscriptionnotauthenticatedID (base name: "fkiInscriptionnotauthenticatedID")', function() {
+      // uncomment below and update the code to test the property fkiInscriptionnotauthenticatedID
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtCreatedDate (base name: "dtCreatedDate")', function() {
+      // uncomment below and update the code to test the property dtCreatedDate
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eCommunicationDirection (base name: "eCommunicationDirection")', function() {
+      // uncomment below and update the code to test the property eCommunicationDirection
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eCommunicationImportance (base name: "eCommunicationImportance")', function() {
+      // uncomment below and update the code to test the property eCommunicationImportance
       //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
       //expect(instance).to.be();
     });
@@ -72,20 +102,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iCommunicationrecipientCount (base name: "iCommunicationrecipientCount")', function() {
+      // uncomment below and update the code to test the property iCommunicationrecipientCount
+      //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sCommunicationSubject (base name: "sCommunicationSubject")', function() {
       // uncomment below and update the code to test the property sCommunicationSubject
       //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property dtCommunicationSentdate (base name: "dtCommunicationSentdate")', function() {
-      // uncomment below and update the code to test the property dtCommunicationSentdate
+    it('should have the property sCommunicationSender (base name: "sCommunicationSender")', function() {
+      // uncomment below and update the code to test the property sCommunicationSender
       //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
       //expect(instance).to.be();
     });
 
-    it('should have the property objContactFrom (base name: "objContactFrom")', function() {
-      // uncomment below and update the code to test the property objContactFrom
+    it('should have the property sCommunicationRecipient (base name: "sCommunicationRecipient")', function() {
+      // uncomment below and update the code to test the property sCommunicationRecipient
       //var instance = new EZmaxApiDefinitionFull.CommunicationListElement();
       //expect(instance).to.be();
     });

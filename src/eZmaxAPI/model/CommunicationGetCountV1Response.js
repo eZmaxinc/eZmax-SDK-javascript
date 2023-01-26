@@ -26,7 +26,7 @@ import CommunicationGetCountV1ResponseMPayload from './CommunicationGetCountV1Re
 class CommunicationGetCountV1Response {
     /**
      * Constructs a new <code>CommunicationGetCountV1Response</code>.
-     * Response for GET /1/module/communication/getCount
+     * Response for GET /1/module/communication/getCommunicationCount
      * @alias module:eZmaxAPI/model/CommunicationGetCountV1Response
      * @implements module:eZmaxAPI/model/CommunicationGetCountV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse

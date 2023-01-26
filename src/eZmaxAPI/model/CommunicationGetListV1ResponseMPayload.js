@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
+import CommunicationGetListV1ResponseMPayloadAllOf from './CommunicationGetListV1ResponseMPayloadAllOf';
 import CommunicationListElement from './CommunicationListElement';
 
 /**
@@ -22,13 +24,17 @@ import CommunicationListElement from './CommunicationListElement';
 class CommunicationGetListV1ResponseMPayload {
     /**
      * Constructs a new <code>CommunicationGetListV1ResponseMPayload</code>.
-     * Payload for GET /1/module/communication/getList
+     * Payload for GET /1/object/communication/getList
      * @alias module:eZmaxAPI/model/CommunicationGetListV1ResponseMPayload
+     * @implements module:eZmaxAPI/model/CommunicationGetListV1ResponseMPayloadAllOf
+     * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
      * @param a_objCommunication {Array.<module:eZmaxAPI/model/CommunicationListElement>} 
+     * @param iRowReturned {Number} The number of rows returned
+     * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
      */
-    constructor(a_objCommunication) { 
-        
-        CommunicationGetListV1ResponseMPayload.initialize(this, a_objCommunication);
+    constructor(a_objCommunication, iRowReturned, iRowFiltered) { 
+        CommunicationGetListV1ResponseMPayloadAllOf.initialize(this, a_objCommunication);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        CommunicationGetListV1ResponseMPayload.initialize(this, a_objCommunication, iRowReturned, iRowFiltered);
     }
 
     /**
@@ -36,8 +42,10 @@ class CommunicationGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objCommunication) { 
+    static initialize(obj, a_objCommunication, iRowReturned, iRowFiltered) { 
         obj['a_objCommunication'] = a_objCommunication;
+        obj['iRowReturned'] = iRowReturned;
+        obj['iRowFiltered'] = iRowFiltered;
     }
 
     /**
@@ -50,9 +58,17 @@ class CommunicationGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CommunicationGetListV1ResponseMPayload();
+            CommunicationGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
+            CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('a_objCommunication')) {
                 obj['a_objCommunication'] = ApiClient.convertToType(data['a_objCommunication'], [CommunicationListElement]);
+            }
+            if (data.hasOwnProperty('iRowReturned')) {
+                obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
+            }
+            if (data.hasOwnProperty('iRowFiltered')) {
+                obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
             }
         }
         return obj;
@@ -97,17 +113,75 @@ class CommunicationGetListV1ResponseMPayload {
     setAObjCommunication(a_objCommunication) {
         this['a_objCommunication'] = a_objCommunication;
     }
+/**
+     * Returns The number of rows returned
+     * @return {Number}
+     */
+    getIRowReturned() {
+        return this.iRowReturned;
+    }
+
+    /**
+     * Sets The number of rows returned
+     * @param {Number} iRowReturned The number of rows returned
+     */
+    setIRowReturned(iRowReturned) {
+        this['iRowReturned'] = iRowReturned;
+    }
+/**
+     * Returns The number of rows matching your filters (if any) or the total number of rows
+     * @return {Number}
+     */
+    getIRowFiltered() {
+        return this.iRowFiltered;
+    }
+
+    /**
+     * Sets The number of rows matching your filters (if any) or the total number of rows
+     * @param {Number} iRowFiltered The number of rows matching your filters (if any) or the total number of rows
+     */
+    setIRowFiltered(iRowFiltered) {
+        this['iRowFiltered'] = iRowFiltered;
+    }
 
 }
 
-CommunicationGetListV1ResponseMPayload.RequiredProperties = ["a_objCommunication"];
+CommunicationGetListV1ResponseMPayload.RequiredProperties = ["a_objCommunication", "iRowReturned", "iRowFiltered"];
 
 /**
  * @member {Array.<module:eZmaxAPI/model/CommunicationListElement>} a_objCommunication
  */
 CommunicationGetListV1ResponseMPayload.prototype['a_objCommunication'] = undefined;
 
+/**
+ * The number of rows returned
+ * @member {Number} iRowReturned
+ */
+CommunicationGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
 
+/**
+ * The number of rows matching your filters (if any) or the total number of rows
+ * @member {Number} iRowFiltered
+ */
+CommunicationGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
+
+
+// Implement CommunicationGetListV1ResponseMPayloadAllOf interface:
+/**
+ * @member {Array.<module:eZmaxAPI/model/CommunicationListElement>} a_objCommunication
+ */
+CommunicationGetListV1ResponseMPayloadAllOf.prototype['a_objCommunication'] = undefined;
+// Implement CommonGetListV1ResponseMPayload interface:
+/**
+ * The number of rows returned
+ * @member {Number} iRowReturned
+ */
+CommonGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
+/**
+ * The number of rows matching your filters (if any) or the total number of rows
+ * @member {Number} iRowFiltered
+ */
+CommonGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
 
 
