@@ -91,7 +91,7 @@ class EzsignfolderImportEzsigntemplatepackageV1Request {
             }
             // validate the optional field `a_objImportEzsigntemplatepackageRelation` (array)
             for (const item of data['a_objImportEzsigntemplatepackageRelation']) {
-                CustomImportEzsigntemplatepackageRelationRequest.validateJsonObject(item);
+                CustomImportEzsigntemplatepackageRelationRequest.validateJSON(item);
             };
         }
 

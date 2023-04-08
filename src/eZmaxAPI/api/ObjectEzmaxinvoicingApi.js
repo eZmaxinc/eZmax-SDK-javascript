@@ -16,7 +16,6 @@ import ApiClient from "../ApiClient";
 import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import CommonResponseError from '../model/CommonResponseError';
 import EzmaxinvoicingGetAutocompleteV2Response from '../model/EzmaxinvoicingGetAutocompleteV2Response';
-import EzmaxinvoicingGetObjectV1Response from '../model/EzmaxinvoicingGetObjectV1Response';
 import EzmaxinvoicingGetObjectV2Response from '../model/EzmaxinvoicingGetObjectV2Response';
 import EzmaxinvoicingGetProvisionalV1Response from '../model/EzmaxinvoicingGetProvisionalV1Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
@@ -53,9 +52,9 @@ export default class ObjectEzmaxinvoicingApi {
      * Get the list of Ezmaxinvoicing to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezmaxinvoicings to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. Active is the default value.
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive] Specify which results we want to display. Active is the default value.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
      */
@@ -104,9 +103,9 @@ export default class ObjectEzmaxinvoicingApi {
      * Get the list of Ezmaxinvoicing to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezmaxinvoicings to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzmaxinvoicingGetAutocompleteV2Response}
      */
@@ -137,49 +136,6 @@ export default class ObjectEzmaxinvoicingApi {
       let returnType = EzmaxinvoicingGetAutocompleteV2Response;
       return this.apiClient.callApi(
         '/2/object/ezmaxinvoicing/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezmaxinvoicingGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzmaxinvoicingGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezmaxinvoicing
-     * 
-     * @param {Number} pkiEzmaxinvoicingID 
-     * @param {module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzmaxinvoicingGetObjectV1Response}
-     */
-    ezmaxinvoicingGetObjectV1(pkiEzmaxinvoicingID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzmaxinvoicingID' is set
-      if (pkiEzmaxinvoicingID === undefined || pkiEzmaxinvoicingID === null) {
-        throw new Error("Missing the required parameter 'pkiEzmaxinvoicingID' when calling ezmaxinvoicingGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzmaxinvoicingID': pkiEzmaxinvoicingID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzmaxinvoicingGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

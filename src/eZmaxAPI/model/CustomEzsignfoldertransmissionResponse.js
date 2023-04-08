@@ -26,14 +26,15 @@ class CustomEzsignfoldertransmissionResponse {
      * An Ezsignfolder Object in the context of an Ezsignbulksendtransmission
      * @alias module:eZmaxAPI/model/CustomEzsignfoldertransmissionResponse
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
+     * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param iEzsignfolderSignaturetotal {Number} The number of total signatures that were requested in the Ezsignfolder
      * @param iEzsignfolderSignaturesigned {Number} The number of signatures that were signed in the Ezsignfolder.
      * @param a_objEzsignfoldertransmissionSigner {Array.<module:eZmaxAPI/model/CustomEzsignfoldertransmissionSignerResponse>} 
      */
-    constructor(pkiEzsignfolderID, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner) { 
+    constructor(pkiEzsignfolderID, sEzsignfolderDescription, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner) { 
         
-        CustomEzsignfoldertransmissionResponse.initialize(this, pkiEzsignfolderID, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner);
+        CustomEzsignfoldertransmissionResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner);
     }
 
     /**
@@ -41,8 +42,9 @@ class CustomEzsignfoldertransmissionResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner) { 
+    static initialize(obj, pkiEzsignfolderID, sEzsignfolderDescription, eEzsignfolderStep, iEzsignfolderSignaturetotal, iEzsignfolderSignaturesigned, a_objEzsignfoldertransmissionSigner) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
+        obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
         obj['eEzsignfolderStep'] = eEzsignfolderStep;
         obj['iEzsignfolderSignaturetotal'] = iEzsignfolderSignaturetotal;
         obj['iEzsignfolderSignaturesigned'] = iEzsignfolderSignaturesigned;
@@ -62,6 +64,9 @@ class CustomEzsignfoldertransmissionResponse {
 
             if (data.hasOwnProperty('pkiEzsignfolderID')) {
                 obj['pkiEzsignfolderID'] = ApiClient.convertToType(data['pkiEzsignfolderID'], 'Number');
+            }
+            if (data.hasOwnProperty('sEzsignfolderDescription')) {
+                obj['sEzsignfolderDescription'] = ApiClient.convertToType(data['sEzsignfolderDescription'], 'String');
             }
             if (data.hasOwnProperty('eEzsignfolderStep')) {
                 obj['eEzsignfolderStep'] = FieldEEzsignfolderStep.constructFromObject(data['eEzsignfolderStep']);
@@ -91,6 +96,10 @@ class CustomEzsignfoldertransmissionResponse {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
+        // ensure the json data is a string
+        if (data['sEzsignfolderDescription'] && !(typeof data['sEzsignfolderDescription'] === 'string' || data['sEzsignfolderDescription'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignfolderDescription` to be a primitive type in the JSON string but got " + data['sEzsignfolderDescription']);
+        }
         if (data['a_objEzsignfoldertransmissionSigner']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['a_objEzsignfoldertransmissionSigner'])) {
@@ -98,7 +107,7 @@ class CustomEzsignfoldertransmissionResponse {
             }
             // validate the optional field `a_objEzsignfoldertransmissionSigner` (array)
             for (const item of data['a_objEzsignfoldertransmissionSigner']) {
-                CustomEzsignfoldertransmissionSignerResponse.validateJsonObject(item);
+                CustomEzsignfoldertransmissionSignerResponse.validateJSON(item);
             };
         }
 
@@ -120,6 +129,21 @@ class CustomEzsignfoldertransmissionResponse {
      */
     setPkiEzsignfolderID(pkiEzsignfolderID) {
         this['pkiEzsignfolderID'] = pkiEzsignfolderID;
+    }
+/**
+     * Returns The description of the Ezsignfolder
+     * @return {String}
+     */
+    getSEzsignfolderDescription() {
+        return this.sEzsignfolderDescription;
+    }
+
+    /**
+     * Sets The description of the Ezsignfolder
+     * @param {String} sEzsignfolderDescription The description of the Ezsignfolder
+     */
+    setSEzsignfolderDescription(sEzsignfolderDescription) {
+        this['sEzsignfolderDescription'] = sEzsignfolderDescription;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldEEzsignfolderStep}
@@ -180,13 +204,19 @@ class CustomEzsignfoldertransmissionResponse {
 
 }
 
-CustomEzsignfoldertransmissionResponse.RequiredProperties = ["pkiEzsignfolderID", "eEzsignfolderStep", "iEzsignfolderSignaturetotal", "iEzsignfolderSignaturesigned", "a_objEzsignfoldertransmissionSigner"];
+CustomEzsignfoldertransmissionResponse.RequiredProperties = ["pkiEzsignfolderID", "sEzsignfolderDescription", "eEzsignfolderStep", "iEzsignfolderSignaturetotal", "iEzsignfolderSignaturesigned", "a_objEzsignfoldertransmissionSigner"];
 
 /**
  * The unique ID of the Ezsignfolder
  * @member {Number} pkiEzsignfolderID
  */
 CustomEzsignfoldertransmissionResponse.prototype['pkiEzsignfolderID'] = undefined;
+
+/**
+ * The description of the Ezsignfolder
+ * @member {String} sEzsignfolderDescription
+ */
+CustomEzsignfoldertransmissionResponse.prototype['sEzsignfolderDescription'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEEzsignfolderStep} eEzsignfolderStep

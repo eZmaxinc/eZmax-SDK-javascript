@@ -112,7 +112,7 @@ class EzmaxinvoicingsummaryexternalResponseCompound {
             }
             // validate the optional field `a_objEzmaxinvoicingsummaryexternaldetail` (array)
             for (const item of data['a_objEzmaxinvoicingsummaryexternaldetail']) {
-                EzmaxinvoicingsummaryexternaldetailResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingsummaryexternaldetailResponseCompound.validateJSON(item);
             };
         }
 

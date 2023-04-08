@@ -174,6 +174,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsignfolderExternalid (base name: "sEzsignfolderExternalid")', function() {
+      // uncomment below and update the code to test the property sEzsignfolderExternalid
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -13,9 +13,17 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
+import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
+import UsergroupCreateObjectV1Request from '../model/UsergroupCreateObjectV1Request';
+import UsergroupCreateObjectV1Response from '../model/UsergroupCreateObjectV1Response';
+import UsergroupDeleteObjectV1Response from '../model/UsergroupDeleteObjectV1Response';
+import UsergroupEditObjectV1Request from '../model/UsergroupEditObjectV1Request';
+import UsergroupEditObjectV1Response from '../model/UsergroupEditObjectV1Response';
 import UsergroupGetAutocompleteV2Response from '../model/UsergroupGetAutocompleteV2Response';
+import UsergroupGetListV1Response from '../model/UsergroupGetListV1Response';
+import UsergroupGetMembersV1Response from '../model/UsergroupGetMembersV1Response';
+import UsergroupGetObjectV2Response from '../model/UsergroupGetObjectV2Response';
 
 /**
 * ObjectUsergroup service.
@@ -37,41 +45,75 @@ export default class ObjectUsergroupApi {
 
 
     /**
-     * Callback function to receive the result of the usergroupGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetAutocompleteV1Callback
+     * Callback function to receive the result of the usergroupCreateObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupCreateObjectV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/UsergroupCreateObjectV1Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieve Usergroups and IDs
-     * Get the list of Usergroup to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Usergroups to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
+     * Create a new Usergroup
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/UsergroupCreateObjectV1Request} UsergroupCreateObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupCreateObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupCreateObjectV1Response}
      */
-    usergroupGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling usergroupGetAutocompleteV1");
+    usergroupCreateObjectV1(UsergroupCreateObjectV1Request, callback) {
+      let postBody = UsergroupCreateObjectV1Request;
+      // verify the required parameter 'UsergroupCreateObjectV1Request' is set
+      if (UsergroupCreateObjectV1Request === undefined || UsergroupCreateObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'UsergroupCreateObjectV1Request' when calling usergroupCreateObjectV1");
       }
 
       let pathParams = {
-        'sSelector': sSelector
       };
       let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
       };
       let headerParams = {
-        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UsergroupCreateObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupDeleteObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupDeleteObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupDeleteObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete an existing Usergroup
+     * 
+     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupDeleteObjectV1Response}
+     */
+    usergroupDeleteObjectV1(pkiUsergroupID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupDeleteObjectV1");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
       };
       let formParams = {
       };
@@ -79,9 +121,57 @@ export default class ObjectUsergroupApi {
       let authNames = ['Authorization'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
+      let returnType = UsergroupDeleteObjectV1Response;
       return this.apiClient.callApi(
-        '/1/object/usergroup/getAutocomplete/{sSelector}', 'GET',
+        '/1/object/usergroup/{pkiUsergroupID}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupEditObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupEditObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupEditObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit an existing Usergroup
+     * 
+     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
+     * @param {module:eZmaxAPI/model/UsergroupEditObjectV1Request} UsergroupEditObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupEditObjectV1Response}
+     */
+    usergroupEditObjectV1(pkiUsergroupID, UsergroupEditObjectV1Request, callback) {
+      let postBody = UsergroupEditObjectV1Request;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupEditObjectV1");
+      }
+      // verify the required parameter 'UsergroupEditObjectV1Request' is set
+      if (UsergroupEditObjectV1Request === undefined || UsergroupEditObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'UsergroupEditObjectV1Request' when calling usergroupEditObjectV1");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UsergroupEditObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup/{pkiUsergroupID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -100,9 +190,9 @@ export default class ObjectUsergroupApi {
      * Get the list of Usergroup to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Usergroups to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/UsergroupGetAutocompleteV2Response}
      */
@@ -133,6 +223,140 @@ export default class ObjectUsergroupApi {
       let returnType = UsergroupGetAutocompleteV2Response;
       return this.apiClient.callApi(
         '/2/object/usergroup/getAutocomplete/{sSelector}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupGetListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupGetListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Usergroup list
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupGetListV1Response}
+     */
+    usergroupGetListV1(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
+      };
+      let headerParams = {
+        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+      let returnType = UsergroupGetListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup/getList', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupGetMembersV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetMembersV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupGetMembersV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Usergroup's members
+     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetMembersV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupGetMembersV1Response}
+     */
+    usergroupGetMembersV1(pkiUsergroupID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupGetMembersV1");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsergroupGetMembersV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup/{pkiUsergroupID}/getMembers', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupGetObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupGetObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Usergroup
+     * 
+     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupGetObjectV2Response}
+     */
+    usergroupGetObjectV2(pkiUsergroupID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupGetObjectV2");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsergroupGetObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/usergroup/{pkiUsergroupID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

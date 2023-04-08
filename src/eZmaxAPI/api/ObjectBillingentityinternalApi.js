@@ -13,8 +13,15 @@
 
 
 import ApiClient from "../ApiClient";
+import BillingentityinternalCreateObjectV1Request from '../model/BillingentityinternalCreateObjectV1Request';
+import BillingentityinternalCreateObjectV1Response from '../model/BillingentityinternalCreateObjectV1Response';
+import BillingentityinternalDeleteObjectV1Response from '../model/BillingentityinternalDeleteObjectV1Response';
+import BillingentityinternalEditObjectV1Request from '../model/BillingentityinternalEditObjectV1Request';
+import BillingentityinternalEditObjectV1Response from '../model/BillingentityinternalEditObjectV1Response';
 import BillingentityinternalGetAutocompleteV2Response from '../model/BillingentityinternalGetAutocompleteV2Response';
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
+import BillingentityinternalGetListV1Response from '../model/BillingentityinternalGetListV1Response';
+import BillingentityinternalGetObjectV2Response from '../model/BillingentityinternalGetObjectV2Response';
+import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
@@ -37,41 +44,75 @@ export default class ObjectBillingentityinternalApi {
 
 
     /**
-     * Callback function to receive the result of the billingentityinternalGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetAutocompleteV1Callback
+     * Callback function to receive the result of the billingentityinternalCreateObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalCreateObjectV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieve Billingentityinternals and IDs
-     * Get the list of Billingentityinternal to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Billingentityinternals to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
+     * Create a new Billingentityinternal
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1Request} BillingentityinternalCreateObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalCreateObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalCreateObjectV1Response}
      */
-    billingentityinternalGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling billingentityinternalGetAutocompleteV1");
+    billingentityinternalCreateObjectV1(BillingentityinternalCreateObjectV1Request, callback) {
+      let postBody = BillingentityinternalCreateObjectV1Request;
+      // verify the required parameter 'BillingentityinternalCreateObjectV1Request' is set
+      if (BillingentityinternalCreateObjectV1Request === undefined || BillingentityinternalCreateObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'BillingentityinternalCreateObjectV1Request' when calling billingentityinternalCreateObjectV1");
       }
 
       let pathParams = {
-        'sSelector': sSelector
       };
       let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
       };
       let headerParams = {
-        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = BillingentityinternalCreateObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/billingentityinternal', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the billingentityinternalDeleteObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalDeleteObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete an existing Billingentityinternal
+     * 
+     * @param {Number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
+     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response}
+     */
+    billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiBillingentityinternalID' is set
+      if (pkiBillingentityinternalID === undefined || pkiBillingentityinternalID === null) {
+        throw new Error("Missing the required parameter 'pkiBillingentityinternalID' when calling billingentityinternalDeleteObjectV1");
+      }
+
+      let pathParams = {
+        'pkiBillingentityinternalID': pkiBillingentityinternalID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
       };
       let formParams = {
       };
@@ -79,9 +120,57 @@ export default class ObjectBillingentityinternalApi {
       let authNames = ['Authorization'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
+      let returnType = BillingentityinternalDeleteObjectV1Response;
       return this.apiClient.callApi(
-        '/1/object/billingentityinternal/getAutocomplete/{sSelector}', 'GET',
+        '/1/object/billingentityinternal/{pkiBillingentityinternalID}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the billingentityinternalEditObjectV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalEditObjectV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/BillingentityinternalEditObjectV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit an existing Billingentityinternal
+     * 
+     * @param {Number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
+     * @param {module:eZmaxAPI/model/BillingentityinternalEditObjectV1Request} BillingentityinternalEditObjectV1Request 
+     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalEditObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalEditObjectV1Response}
+     */
+    billingentityinternalEditObjectV1(pkiBillingentityinternalID, BillingentityinternalEditObjectV1Request, callback) {
+      let postBody = BillingentityinternalEditObjectV1Request;
+      // verify the required parameter 'pkiBillingentityinternalID' is set
+      if (pkiBillingentityinternalID === undefined || pkiBillingentityinternalID === null) {
+        throw new Error("Missing the required parameter 'pkiBillingentityinternalID' when calling billingentityinternalEditObjectV1");
+      }
+      // verify the required parameter 'BillingentityinternalEditObjectV1Request' is set
+      if (BillingentityinternalEditObjectV1Request === undefined || BillingentityinternalEditObjectV1Request === null) {
+        throw new Error("Missing the required parameter 'BillingentityinternalEditObjectV1Request' when calling billingentityinternalEditObjectV1");
+      }
+
+      let pathParams = {
+        'pkiBillingentityinternalID': pkiBillingentityinternalID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = BillingentityinternalEditObjectV1Response;
+      return this.apiClient.callApi(
+        '/1/object/billingentityinternal/{pkiBillingentityinternalID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -100,9 +189,9 @@ export default class ObjectBillingentityinternalApi {
      * Get the list of Billingentityinternal to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Billingentityinternals to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalGetAutocompleteV2Response}
      */
@@ -133,6 +222,98 @@ export default class ObjectBillingentityinternalApi {
       let returnType = BillingentityinternalGetAutocompleteV2Response;
       return this.apiClient.callApi(
         '/2/object/billingentityinternal/getAutocomplete/{sSelector}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the billingentityinternalGetListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/BillingentityinternalGetListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Billingentityinternal list
+     * 
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
+     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalGetListV1Response}
+     */
+    billingentityinternalGetListV1(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
+      };
+      let headerParams = {
+        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+      let returnType = BillingentityinternalGetListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/billingentityinternal/getList', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the billingentityinternalGetObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/BillingentityinternalGetObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Billingentityinternal
+     * 
+     * @param {Number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
+     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalGetObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalGetObjectV2Response}
+     */
+    billingentityinternalGetObjectV2(pkiBillingentityinternalID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiBillingentityinternalID' is set
+      if (pkiBillingentityinternalID === undefined || pkiBillingentityinternalID === null) {
+        throw new Error("Missing the required parameter 'pkiBillingentityinternalID' when calling billingentityinternalGetObjectV2");
+      }
+
+      let pathParams = {
+        'pkiBillingentityinternalID': pkiBillingentityinternalID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = BillingentityinternalGetObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/billingentityinternal/{pkiBillingentityinternalID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

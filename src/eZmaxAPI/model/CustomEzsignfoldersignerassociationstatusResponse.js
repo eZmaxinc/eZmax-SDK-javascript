@@ -100,7 +100,7 @@ class CustomEzsignfoldersignerassociationstatusResponse {
             }
             // validate the optional field `a_objEzsignsignaturestatus` (array)
             for (const item of data['a_objEzsignsignaturestatus']) {
-                CustomEzsignsignaturestatusResponse.validateJsonObject(item);
+                CustomEzsignsignaturestatusResponse.validateJSON(item);
             };
         }
 

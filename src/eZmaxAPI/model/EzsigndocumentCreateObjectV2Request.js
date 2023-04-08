@@ -77,7 +77,7 @@ class EzsigndocumentCreateObjectV2Request {
             }
             // validate the optional field `a_objEzsigndocument` (array)
             for (const item of data['a_objEzsigndocument']) {
-                EzsigndocumentRequestCompound.validateJsonObject(item);
+                EzsigndocumentRequestCompound.validateJSON(item);
             };
         }
 

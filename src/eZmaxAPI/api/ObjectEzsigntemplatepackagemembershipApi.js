@@ -17,7 +17,6 @@ import CommonResponseError from '../model/CommonResponseError';
 import EzsigntemplatepackagemembershipCreateObjectV1Request from '../model/EzsigntemplatepackagemembershipCreateObjectV1Request';
 import EzsigntemplatepackagemembershipCreateObjectV1Response from '../model/EzsigntemplatepackagemembershipCreateObjectV1Response';
 import EzsigntemplatepackagemembershipDeleteObjectV1Response from '../model/EzsigntemplatepackagemembershipDeleteObjectV1Response';
-import EzsigntemplatepackagemembershipGetObjectV1Response from '../model/EzsigntemplatepackagemembershipGetObjectV1Response';
 import EzsigntemplatepackagemembershipGetObjectV2Response from '../model/EzsigntemplatepackagemembershipGetObjectV2Response';
 
 /**
@@ -119,49 +118,6 @@ export default class ObjectEzsigntemplatepackagemembershipApi {
       let returnType = EzsigntemplatepackagemembershipDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsigntemplatepackagemembershipGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsigntemplatepackagemembershipApi~ezsigntemplatepackagemembershipGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsigntemplatepackagemembershipGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsigntemplatepackagemembership
-     * 
-     * @param {Number} pkiEzsigntemplatepackagemembershipID 
-     * @param {module:eZmaxAPI/api/ObjectEzsigntemplatepackagemembershipApi~ezsigntemplatepackagemembershipGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplatepackagemembershipGetObjectV1Response}
-     */
-    ezsigntemplatepackagemembershipGetObjectV1(pkiEzsigntemplatepackagemembershipID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsigntemplatepackagemembershipID' is set
-      if (pkiEzsigntemplatepackagemembershipID === undefined || pkiEzsigntemplatepackagemembershipID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsigntemplatepackagemembershipID' when calling ezsigntemplatepackagemembershipGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsigntemplatepackagemembershipID': pkiEzsigntemplatepackagemembershipID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsigntemplatepackagemembershipGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

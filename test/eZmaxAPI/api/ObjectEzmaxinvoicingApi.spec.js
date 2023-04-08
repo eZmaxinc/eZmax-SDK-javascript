@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('ezmaxinvoicingGetObjectV1', function() {
-      it('should call ezmaxinvoicingGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezmaxinvoicingGetObjectV1
-        //instance.ezmaxinvoicingGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezmaxinvoicingGetObjectV2', function() {
       it('should call ezmaxinvoicingGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezmaxinvoicingGetObjectV2

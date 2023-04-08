@@ -78,16 +78,6 @@
         done();
       });
     });
-    describe('ezsigntemplatepackagesignerGetObjectV1', function() {
-      it('should call ezsigntemplatepackagesignerGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatepackagesignerGetObjectV1
-        //instance.ezsigntemplatepackagesignerGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplatepackagesignerGetObjectV2', function() {
       it('should call ezsigntemplatepackagesignerGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatepackagesignerGetObjectV2

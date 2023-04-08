@@ -77,7 +77,7 @@ class DepartmentGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objDepartment` (array)
             for (const item of data['a_objDepartment']) {
-                DepartmentAutocompleteElementResponse.validateJsonObject(item);
+                DepartmentAutocompleteElementResponse.validateJSON(item);
             };
         }
 

@@ -108,6 +108,16 @@
         done();
       });
     });
+    describe('ezsignbulksendGetEzsignsignaturesAutomaticV1', function() {
+      it('should call ezsignbulksendGetEzsignsignaturesAutomaticV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignbulksendGetEzsignsignaturesAutomaticV1
+        //instance.ezsignbulksendGetEzsignsignaturesAutomaticV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignbulksendGetFormsDataV1', function() {
       it('should call ezsignbulksendGetFormsDataV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignbulksendGetFormsDataV1
@@ -122,16 +132,6 @@
       it('should call ezsignbulksendGetListV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignbulksendGetListV1
         //instance.ezsignbulksendGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('ezsignbulksendGetObjectV1', function() {
-      it('should call ezsignbulksendGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignbulksendGetObjectV1
-        //instance.ezsignbulksendGetObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

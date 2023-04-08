@@ -175,7 +175,7 @@ class EzsignformfieldgroupRequestCompound {
             }
             // validate the optional field `a_objEzsignformfieldgroupsigner` (array)
             for (const item of data['a_objEzsignformfieldgroupsigner']) {
-                EzsignformfieldgroupsignerRequestCompound.validateJsonObject(item);
+                EzsignformfieldgroupsignerRequestCompound.validateJSON(item);
             };
         }
         if (data['a_objDropdownElement']) { // data not null
@@ -185,7 +185,7 @@ class EzsignformfieldgroupRequestCompound {
             }
             // validate the optional field `a_objDropdownElement` (array)
             for (const item of data['a_objDropdownElement']) {
-                CustomDropdownElementRequestCompound.validateJsonObject(item);
+                CustomDropdownElementRequestCompound.validateJSON(item);
             };
         }
         if (data['a_objEzsignformfield']) { // data not null
@@ -195,7 +195,7 @@ class EzsignformfieldgroupRequestCompound {
             }
             // validate the optional field `a_objEzsignformfield` (array)
             for (const item of data['a_objEzsignformfield']) {
-                EzsignformfieldRequestCompound.validateJsonObject(item);
+                EzsignformfieldRequestCompound.validateJSON(item);
             };
         }
 

@@ -14,9 +14,11 @@
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import ComputedECommunicationDirection from './ComputedECommunicationDirection';
-import CustomContactNameResponse from './CustomContactNameResponse';
+import DescriptionstaticResponse from './DescriptionstaticResponse';
+import EmailstaticResponse from './EmailstaticResponse';
 import FieldECommunicationImportance from './FieldECommunicationImportance';
 import FieldECommunicationType from './FieldECommunicationType';
+import PhonestaticResponse from './PhonestaticResponse';
 
 /**
  * The CommunicationResponse model module.
@@ -34,12 +36,11 @@ class CommunicationResponse {
      * @param sCommunicationSubject {String} The subject of the Communication
      * @param eCommunicationDirection {module:eZmaxAPI/model/ComputedECommunicationDirection} 
      * @param iCommunicationrecipientCount {Number} The count of Communicationrecipient
-     * @param objContactFrom {module:eZmaxAPI/model/CustomContactNameResponse} 
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit) { 
+    constructor(pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objAudit) { 
         
-        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit);
+        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objAudit);
     }
 
     /**
@@ -47,14 +48,13 @@ class CommunicationResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objContactFrom, objAudit) { 
+    static initialize(obj, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, objAudit) { 
         obj['pkiCommunicationID'] = pkiCommunicationID;
         obj['eCommunicationImportance'] = eCommunicationImportance;
         obj['eCommunicationType'] = eCommunicationType;
         obj['sCommunicationSubject'] = sCommunicationSubject;
         obj['eCommunicationDirection'] = eCommunicationDirection;
         obj['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
-        obj['objContactFrom'] = objContactFrom;
         obj['objAudit'] = objAudit;
     }
 
@@ -81,14 +81,23 @@ class CommunicationResponse {
             if (data.hasOwnProperty('sCommunicationSubject')) {
                 obj['sCommunicationSubject'] = ApiClient.convertToType(data['sCommunicationSubject'], 'String');
             }
+            if (data.hasOwnProperty('sCommunicationBodyurl')) {
+                obj['sCommunicationBodyurl'] = ApiClient.convertToType(data['sCommunicationBodyurl'], 'String');
+            }
             if (data.hasOwnProperty('eCommunicationDirection')) {
                 obj['eCommunicationDirection'] = ComputedECommunicationDirection.constructFromObject(data['eCommunicationDirection']);
             }
             if (data.hasOwnProperty('iCommunicationrecipientCount')) {
                 obj['iCommunicationrecipientCount'] = ApiClient.convertToType(data['iCommunicationrecipientCount'], 'Number');
             }
-            if (data.hasOwnProperty('objContactFrom')) {
-                obj['objContactFrom'] = CustomContactNameResponse.constructFromObject(data['objContactFrom']);
+            if (data.hasOwnProperty('objDescriptionstaticSender')) {
+                obj['objDescriptionstaticSender'] = DescriptionstaticResponse.constructFromObject(data['objDescriptionstaticSender']);
+            }
+            if (data.hasOwnProperty('objEmailstaticSender')) {
+                obj['objEmailstaticSender'] = EmailstaticResponse.constructFromObject(data['objEmailstaticSender']);
+            }
+            if (data.hasOwnProperty('objPhonestaticSender')) {
+                obj['objPhonestaticSender'] = PhonestaticResponse.constructFromObject(data['objPhonestaticSender']);
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
@@ -113,9 +122,21 @@ class CommunicationResponse {
         if (data['sCommunicationSubject'] && !(typeof data['sCommunicationSubject'] === 'string' || data['sCommunicationSubject'] instanceof String)) {
             throw new Error("Expected the field `sCommunicationSubject` to be a primitive type in the JSON string but got " + data['sCommunicationSubject']);
         }
-        // validate the optional field `objContactFrom`
-        if (data['objContactFrom']) { // data not null
-          CustomContactNameResponse.validateJSON(data['objContactFrom']);
+        // ensure the json data is a string
+        if (data['sCommunicationBodyurl'] && !(typeof data['sCommunicationBodyurl'] === 'string' || data['sCommunicationBodyurl'] instanceof String)) {
+            throw new Error("Expected the field `sCommunicationBodyurl` to be a primitive type in the JSON string but got " + data['sCommunicationBodyurl']);
+        }
+        // validate the optional field `objDescriptionstaticSender`
+        if (data['objDescriptionstaticSender']) { // data not null
+          DescriptionstaticResponse.validateJSON(data['objDescriptionstaticSender']);
+        }
+        // validate the optional field `objEmailstaticSender`
+        if (data['objEmailstaticSender']) { // data not null
+          EmailstaticResponse.validateJSON(data['objEmailstaticSender']);
+        }
+        // validate the optional field `objPhonestaticSender`
+        if (data['objPhonestaticSender']) { // data not null
+          PhonestaticResponse.validateJSON(data['objPhonestaticSender']);
         }
         // validate the optional field `objAudit`
         if (data['objAudit']) { // data not null
@@ -183,6 +204,21 @@ class CommunicationResponse {
         this['sCommunicationSubject'] = sCommunicationSubject;
     }
 /**
+     * Returns The url of the body used as body in the Communication
+     * @return {String}
+     */
+    getSCommunicationBodyurl() {
+        return this.sCommunicationBodyurl;
+    }
+
+    /**
+     * Sets The url of the body used as body in the Communication
+     * @param {String} sCommunicationBodyurl The url of the body used as body in the Communication
+     */
+    setSCommunicationBodyurl(sCommunicationBodyurl) {
+        this['sCommunicationBodyurl'] = sCommunicationBodyurl;
+    }
+/**
      * @return {module:eZmaxAPI/model/ComputedECommunicationDirection}
      */
     getECommunicationDirection() {
@@ -211,17 +247,43 @@ class CommunicationResponse {
         this['iCommunicationrecipientCount'] = iCommunicationrecipientCount;
     }
 /**
-     * @return {module:eZmaxAPI/model/CustomContactNameResponse}
+     * @return {module:eZmaxAPI/model/DescriptionstaticResponse}
      */
-    getObjContactFrom() {
-        return this.objContactFrom;
+    getObjDescriptionstaticSender() {
+        return this.objDescriptionstaticSender;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
+     * @param {module:eZmaxAPI/model/DescriptionstaticResponse} objDescriptionstaticSender
      */
-    setObjContactFrom(objContactFrom) {
-        this['objContactFrom'] = objContactFrom;
+    setObjDescriptionstaticSender(objDescriptionstaticSender) {
+        this['objDescriptionstaticSender'] = objDescriptionstaticSender;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EmailstaticResponse}
+     */
+    getObjEmailstaticSender() {
+        return this.objEmailstaticSender;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EmailstaticResponse} objEmailstaticSender
+     */
+    setObjEmailstaticSender(objEmailstaticSender) {
+        this['objEmailstaticSender'] = objEmailstaticSender;
+    }
+/**
+     * @return {module:eZmaxAPI/model/PhonestaticResponse}
+     */
+    getObjPhonestaticSender() {
+        return this.objPhonestaticSender;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/PhonestaticResponse} objPhonestaticSender
+     */
+    setObjPhonestaticSender(objPhonestaticSender) {
+        this['objPhonestaticSender'] = objPhonestaticSender;
     }
 /**
      * @return {module:eZmaxAPI/model/CommonAudit}
@@ -239,7 +301,7 @@ class CommunicationResponse {
 
 }
 
-CommunicationResponse.RequiredProperties = ["pkiCommunicationID", "eCommunicationImportance", "eCommunicationType", "sCommunicationSubject", "eCommunicationDirection", "iCommunicationrecipientCount", "objContactFrom", "objAudit"];
+CommunicationResponse.RequiredProperties = ["pkiCommunicationID", "eCommunicationImportance", "eCommunicationType", "sCommunicationSubject", "eCommunicationDirection", "iCommunicationrecipientCount", "objAudit"];
 
 /**
  * The unique ID of the Communication.
@@ -264,6 +326,12 @@ CommunicationResponse.prototype['eCommunicationType'] = undefined;
 CommunicationResponse.prototype['sCommunicationSubject'] = undefined;
 
 /**
+ * The url of the body used as body in the Communication
+ * @member {String} sCommunicationBodyurl
+ */
+CommunicationResponse.prototype['sCommunicationBodyurl'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/ComputedECommunicationDirection} eCommunicationDirection
  */
 CommunicationResponse.prototype['eCommunicationDirection'] = undefined;
@@ -275,9 +343,19 @@ CommunicationResponse.prototype['eCommunicationDirection'] = undefined;
 CommunicationResponse.prototype['iCommunicationrecipientCount'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactFrom
+ * @member {module:eZmaxAPI/model/DescriptionstaticResponse} objDescriptionstaticSender
  */
-CommunicationResponse.prototype['objContactFrom'] = undefined;
+CommunicationResponse.prototype['objDescriptionstaticSender'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EmailstaticResponse} objEmailstaticSender
+ */
+CommunicationResponse.prototype['objEmailstaticSender'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/PhonestaticResponse} objPhonestaticSender
+ */
+CommunicationResponse.prototype['objPhonestaticSender'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit

@@ -93,7 +93,7 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplatepackage` (array)
             for (const item of data['a_objEzsigntemplatepackage']) {
-                EzsigntemplatepackageListElement.validateJsonObject(item);
+                EzsigntemplatepackageListElement.validateJSON(item);
             };
         }
 

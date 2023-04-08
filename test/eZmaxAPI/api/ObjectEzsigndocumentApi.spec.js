@@ -128,6 +128,16 @@
         done();
       });
     });
+    describe('ezsigndocumentFlattenV1', function() {
+      it('should call ezsigndocumentFlattenV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentFlattenV1
+        //instance.ezsigndocumentFlattenV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetActionableElementsV1', function() {
       it('should call ezsigndocumentGetActionableElementsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetActionableElementsV1
@@ -148,6 +158,16 @@
         done();
       });
     });
+    describe('ezsigndocumentGetEzsignannotationsV1', function() {
+      it('should call ezsigndocumentGetEzsignannotationsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetEzsignannotationsV1
+        //instance.ezsigndocumentGetEzsignannotationsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetEzsignformfieldgroupsV1', function() {
       it('should call ezsigndocumentGetEzsignformfieldgroupsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetEzsignformfieldgroupsV1
@@ -162,6 +182,16 @@
       it('should call ezsigndocumentGetEzsignpagesV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetEzsignpagesV1
         //instance.ezsigndocumentGetEzsignpagesV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigndocumentGetEzsignsignaturesAutomaticV1', function() {
+      it('should call ezsigndocumentGetEzsignsignaturesAutomaticV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetEzsignsignaturesAutomaticV1
+        //instance.ezsigndocumentGetEzsignsignaturesAutomaticV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

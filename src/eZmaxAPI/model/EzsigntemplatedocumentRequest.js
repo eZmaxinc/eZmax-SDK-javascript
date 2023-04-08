@@ -438,7 +438,43 @@ EzsigntemplatedocumentRequest['EEzsigntemplatedocumentFormatEnum'] = {
      * value: "Pdf"
      * @const
      */
-    "Pdf": "Pdf"
+    "Pdf": "Pdf",
+
+    /**
+     * value: "Doc"
+     * @const
+     */
+    "Doc": "Doc",
+
+    /**
+     * value: "Docx"
+     * @const
+     */
+    "Docx": "Docx",
+
+    /**
+     * value: "Xls"
+     * @const
+     */
+    "Xls": "Xls",
+
+    /**
+     * value: "Xlsx"
+     * @const
+     */
+    "Xlsx": "Xlsx",
+
+    /**
+     * value: "Ppt"
+     * @const
+     */
+    "Ppt": "Ppt",
+
+    /**
+     * value: "Pptx"
+     * @const
+     */
+    "Pptx": "Pptx"
 };
 
 

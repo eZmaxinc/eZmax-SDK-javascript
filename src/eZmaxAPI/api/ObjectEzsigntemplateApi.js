@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import CommonResponseError from '../model/CommonResponseError';
 import EzsigntemplateCopyV1Request from '../model/EzsigntemplateCopyV1Request';
 import EzsigntemplateCopyV1Response from '../model/EzsigntemplateCopyV1Response';
@@ -229,57 +228,6 @@ export default class ObjectEzsigntemplateApi {
     }
 
     /**
-     * Callback function to receive the result of the ezsigntemplateGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetAutocompleteV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve Ezsigntemplate and IDs
-     * Get the list of Ezsigntemplate to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsigntemplate to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
-     */
-    ezsigntemplateGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling ezsigntemplateGetAutocompleteV1");
-      }
-
-      let pathParams = {
-        'sSelector': sSelector
-      };
-      let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
-      };
-      let headerParams = {
-        'Accept-Language': opts['Accept_Language']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsigntemplate/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the ezsigntemplateGetAutocompleteV2 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetAutocompleteV2Callback
      * @param {String} error Error message, if any.
@@ -292,9 +240,9 @@ export default class ObjectEzsigntemplateApi {
      * Get the list of Ezsigntemplate to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsigntemplates to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2Response}
      */
@@ -342,11 +290,11 @@ export default class ObjectEzsigntemplateApi {
      * Retrieve Ezsigntemplate list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplateType | Company<br>Team<br>User<br>Usergroup | 
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigntemplateGetListV1Response}
      */

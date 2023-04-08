@@ -76,7 +76,7 @@ class EzsigntemplateGetListV1ResponseMPayloadAllOf {
             }
             // validate the optional field `a_objEzsigntemplate` (array)
             for (const item of data['a_objEzsigntemplate']) {
-                EzsigntemplateListElement.validateJsonObject(item);
+                EzsigntemplateListElement.validateJSON(item);
             };
         }
 

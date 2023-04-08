@@ -77,7 +77,7 @@ class TaxassignmentGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objTaxassignment` (array)
             for (const item of data['a_objTaxassignment']) {
-                TaxassignmentAutocompleteElementResponse.validateJsonObject(item);
+                TaxassignmentAutocompleteElementResponse.validateJSON(item);
             };
         }
 

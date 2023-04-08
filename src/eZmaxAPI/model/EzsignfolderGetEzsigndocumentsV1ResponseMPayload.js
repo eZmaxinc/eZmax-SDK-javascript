@@ -77,7 +77,7 @@ class EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigndocument` (array)
             for (const item of data['a_objEzsigndocument']) {
-                EzsigndocumentResponseCompound.validateJsonObject(item);
+                EzsigndocumentResponseCompound.validateJSON(item);
             };
         }
 

@@ -22,9 +22,9 @@ import EzsignbulksendDeleteObjectV1Response from '../model/EzsignbulksendDeleteO
 import EzsignbulksendEditObjectV1Request from '../model/EzsignbulksendEditObjectV1Request';
 import EzsignbulksendEditObjectV1Response from '../model/EzsignbulksendEditObjectV1Response';
 import EzsignbulksendGetEzsignbulksendtransmissionsV1Response from '../model/EzsignbulksendGetEzsignbulksendtransmissionsV1Response';
+import EzsignbulksendGetEzsignsignaturesAutomaticV1Response from '../model/EzsignbulksendGetEzsignsignaturesAutomaticV1Response';
 import EzsignbulksendGetFormsDataV1Response from '../model/EzsignbulksendGetFormsDataV1Response';
 import EzsignbulksendGetListV1Response from '../model/EzsignbulksendGetListV1Response';
-import EzsignbulksendGetObjectV1Response from '../model/EzsignbulksendGetObjectV1Response';
 import EzsignbulksendGetObjectV2Response from '../model/EzsignbulksendGetObjectV2Response';
 import EzsignbulksendReorderV1Request from '../model/EzsignbulksendReorderV1Request';
 import EzsignbulksendReorderV1Response from '../model/EzsignbulksendReorderV1Response';
@@ -322,6 +322,49 @@ export default class ObjectEzsignbulksendApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsignbulksendGetEzsignsignaturesAutomaticV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetEzsignsignaturesAutomaticV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignbulksendGetEzsignsignaturesAutomaticV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignbulksend's automatic Ezsignsignatures
+     * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+     * @param {Number} pkiEzsignbulksendID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetEzsignsignaturesAutomaticV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignbulksendGetEzsignsignaturesAutomaticV1Response}
+     */
+    ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignbulksendID' is set
+      if (pkiEzsignbulksendID === undefined || pkiEzsignbulksendID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignbulksendID' when calling ezsignbulksendGetEzsignsignaturesAutomaticV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignbulksendID': pkiEzsignbulksendID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignbulksendGetEzsignsignaturesAutomaticV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignsignaturesAutomatic', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsignbulksendGetFormsDataV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetFormsDataV1Callback
      * @param {String} error Error message, if any.
@@ -376,11 +419,11 @@ export default class ObjectEzsignbulksendApi {
      * Retrieve Ezsignbulksend list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignbulksendGetListV1Response}
      */
@@ -408,49 +451,6 @@ export default class ObjectEzsignbulksendApi {
       let returnType = EzsignbulksendGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignbulksend/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsignbulksendGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignbulksendGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsignbulksend
-     * 
-     * @param {Number} pkiEzsignbulksendID 
-     * @param {module:eZmaxAPI/api/ObjectEzsignbulksendApi~ezsignbulksendGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignbulksendGetObjectV1Response}
-     */
-    ezsignbulksendGetObjectV1(pkiEzsignbulksendID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsignbulksendID' is set
-      if (pkiEzsignbulksendID === undefined || pkiEzsignbulksendID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignbulksendID' when calling ezsignbulksendGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsignbulksendID': pkiEzsignbulksendID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsignbulksendGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsignbulksend/{pkiEzsignbulksendID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -189,9 +189,9 @@ export default class ObjectPaymenttermApi {
      * Get the list of Paymentterm to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Paymentterms to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectPaymenttermApi~paymenttermGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/PaymenttermGetAutocompleteV2Response}
      */
@@ -238,11 +238,11 @@ export default class ObjectPaymenttermApi {
     /**
      * Retrieve Paymentterm list
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectPaymenttermApi~paymenttermGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/PaymenttermGetListV1Response}
      */

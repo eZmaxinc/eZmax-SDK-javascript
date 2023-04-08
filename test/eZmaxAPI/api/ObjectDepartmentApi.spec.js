@@ -48,16 +48,6 @@
   }
 
   describe('ObjectDepartmentApi', function() {
-    describe('departmentGetAutocompleteV1', function() {
-      it('should call departmentGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test departmentGetAutocompleteV1
-        //instance.departmentGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('departmentGetAutocompleteV2', function() {
       it('should call departmentGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test departmentGetAutocompleteV2

@@ -76,7 +76,7 @@ class EzsignbulksendGetListV1ResponseMPayloadAllOf {
             }
             // validate the optional field `a_objEzsignbulksend` (array)
             for (const item of data['a_objEzsignbulksend']) {
-                EzsignbulksendListElement.validateJsonObject(item);
+                EzsignbulksendListElement.validateJSON(item);
             };
         }
 

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsignfolderDescription (base name: "sEzsignfolderDescription")', function() {
+      // uncomment below and update the code to test the property sEzsignfolderDescription
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertransmissionResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsignfolderStep (base name: "eEzsignfolderStep")', function() {
       // uncomment below and update the code to test the property eEzsignfolderStep
       //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertransmissionResponse();

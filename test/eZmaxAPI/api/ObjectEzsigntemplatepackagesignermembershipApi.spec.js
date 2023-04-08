@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('ezsigntemplatepackagesignermembershipGetObjectV1', function() {
-      it('should call ezsigntemplatepackagesignermembershipGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatepackagesignermembershipGetObjectV1
-        //instance.ezsigntemplatepackagesignermembershipGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplatepackagesignermembershipGetObjectV2', function() {
       it('should call ezsigntemplatepackagesignermembershipGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatepackagesignermembershipGetObjectV2

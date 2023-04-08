@@ -48,16 +48,6 @@
   }
 
   describe('ObjectApikeyApi', function() {
-    describe('apikeyCreateObjectV1', function() {
-      it('should call apikeyCreateObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test apikeyCreateObjectV1
-        //instance.apikeyCreateObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('apikeyCreateObjectV2', function() {
       it('should call apikeyCreateObjectV2 successfully', function(done) {
         //uncomment below and update the code to test apikeyCreateObjectV2

@@ -76,7 +76,7 @@ class EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf {
             }
             // validate the optional field `mPayload` (array)
             for (const item of data['mPayload']) {
-                CustomWordPositionWordResponse.validateJsonObject(item);
+                CustomWordPositionWordResponse.validateJSON(item);
             };
         }
 

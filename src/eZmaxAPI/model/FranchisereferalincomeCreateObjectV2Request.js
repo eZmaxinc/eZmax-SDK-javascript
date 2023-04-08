@@ -77,7 +77,7 @@ class FranchisereferalincomeCreateObjectV2Request {
             }
             // validate the optional field `a_objFranchisereferalincome` (array)
             for (const item of data['a_objFranchisereferalincome']) {
-                FranchisereferalincomeRequestCompound.validateJsonObject(item);
+                FranchisereferalincomeRequestCompound.validateJSON(item);
             };
         }
 

@@ -21,7 +21,6 @@ import EzsignfoldertypeEditObjectV1Request from '../model/EzsignfoldertypeEditOb
 import EzsignfoldertypeEditObjectV1Response from '../model/EzsignfoldertypeEditObjectV1Response';
 import EzsignfoldertypeGetAutocompleteV2Response from '../model/EzsignfoldertypeGetAutocompleteV2Response';
 import EzsignfoldertypeGetListV1Response from '../model/EzsignfoldertypeGetListV1Response';
-import EzsignfoldertypeGetObjectV1Response from '../model/EzsignfoldertypeGetObjectV1Response';
 import EzsignfoldertypeGetObjectV2Response from '../model/EzsignfoldertypeGetObjectV2Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
@@ -147,9 +146,9 @@ export default class ObjectEzsignfoldertypeApi {
      * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsignfoldertypes to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
      */
@@ -198,9 +197,9 @@ export default class ObjectEzsignfoldertypeApi {
      * Get the list of Ezsignfoldertype to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsignfoldertypes to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeGetAutocompleteV2Response}
      */
@@ -248,11 +247,11 @@ export default class ObjectEzsignfoldertypeApi {
      * Retrieve Ezsignfoldertype list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeGetListV1Response}
      */
@@ -280,49 +279,6 @@ export default class ObjectEzsignfoldertypeApi {
       let returnType = EzsignfoldertypeGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfoldertype/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsignfoldertypeGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignfoldertypeGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsignfoldertype
-     * 
-     * @param {Number} pkiEzsignfoldertypeID 
-     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeGetObjectV1Response}
-     */
-    ezsignfoldertypeGetObjectV1(pkiEzsignfoldertypeID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsignfoldertypeID' is set
-      if (pkiEzsignfoldertypeID === undefined || pkiEzsignfoldertypeID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignfoldertypeID' when calling ezsignfoldertypeGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsignfoldertypeID': pkiEzsignfoldertypeID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsignfoldertypeGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsignfoldertype/{pkiEzsignfoldertypeID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

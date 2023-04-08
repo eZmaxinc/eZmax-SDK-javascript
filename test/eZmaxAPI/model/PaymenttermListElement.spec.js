@@ -66,6 +66,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ePaymenttermType (base name: "ePaymenttermType")', function() {
+      // uncomment below and update the code to test the property ePaymenttermType
+      //var instance = new EZmaxApiDefinitionFull.PaymenttermListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iPaymenttermDay (base name: "iPaymenttermDay")', function() {
+      // uncomment below and update the code to test the property iPaymenttermDay
+      //var instance = new EZmaxApiDefinitionFull.PaymenttermListElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sPaymenttermDescriptionX (base name: "sPaymenttermDescriptionX")', function() {
       // uncomment below and update the code to test the property sPaymenttermDescriptionX
       //var instance = new EZmaxApiDefinitionFull.PaymenttermListElement();

@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('ezsignbulksendsignermappingGetObjectV1', function() {
-      it('should call ezsignbulksendsignermappingGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignbulksendsignermappingGetObjectV1
-        //instance.ezsignbulksendsignermappingGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsignbulksendsignermappingGetObjectV2', function() {
       it('should call ezsignbulksendsignermappingGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsignbulksendsignermappingGetObjectV2

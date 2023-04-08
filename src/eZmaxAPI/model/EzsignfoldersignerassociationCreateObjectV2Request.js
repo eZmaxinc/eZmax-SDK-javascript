@@ -77,7 +77,7 @@ class EzsignfoldersignerassociationCreateObjectV2Request {
             }
             // validate the optional field `a_objEzsignfoldersignerassociation` (array)
             for (const item of data['a_objEzsignfoldersignerassociation']) {
-                EzsignfoldersignerassociationRequestCompound.validateJsonObject(item);
+                EzsignfoldersignerassociationRequestCompound.validateJSON(item);
             };
         }
 

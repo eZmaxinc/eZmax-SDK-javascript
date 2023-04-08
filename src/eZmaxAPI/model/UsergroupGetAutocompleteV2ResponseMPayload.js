@@ -77,7 +77,7 @@ class UsergroupGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objUsergroup` (array)
             for (const item of data['a_objUsergroup']) {
-                UsergroupAutocompleteElementResponse.validateJsonObject(item);
+                UsergroupAutocompleteElementResponse.validateJSON(item);
             };
         }
 

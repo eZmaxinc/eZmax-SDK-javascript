@@ -48,16 +48,6 @@
   }
 
   describe('ObjectUserApi', function() {
-    describe('userGetAutocompleteV1', function() {
-      it('should call userGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test userGetAutocompleteV1
-        //instance.userGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('userGetAutocompleteV2', function() {
       it('should call userGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test userGetAutocompleteV2

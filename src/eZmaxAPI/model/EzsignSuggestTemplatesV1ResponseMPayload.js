@@ -83,7 +83,7 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplate` (array)
             for (const item of data['a_objEzsigntemplate']) {
-                EzsigntemplateResponseCompound.validateJsonObject(item);
+                EzsigntemplateResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzsigntemplatepackage']) { // data not null
@@ -93,7 +93,7 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplatepackage` (array)
             for (const item of data['a_objEzsigntemplatepackage']) {
-                EzsigntemplatepackageResponseCompound.validateJsonObject(item);
+                EzsigntemplatepackageResponseCompound.validateJSON(item);
             };
         }
 

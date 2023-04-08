@@ -30,10 +30,11 @@ class EzsigntemplatedocumentResponseCompound {
      * @param sEzsigntemplatedocumentName {String} The name of the Ezsigntemplatedocument.
      * @param iEzsigntemplatedocumentPagetotal {Number} The number of pages in the Ezsigntemplatedocument.
      * @param iEzsigntemplatedocumentSignaturetotal {Number} The number of total signatures in the Ezsigntemplate.
+     * @param bEzsigntemplatedocumentHassignedsignatures {Boolean} If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
      */
-    constructor(pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal) { 
-        EzsigntemplatedocumentResponse.initialize(this, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal);
-        EzsigntemplatedocumentResponseCompound.initialize(this, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal);
+    constructor(pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal, bEzsigntemplatedocumentHassignedsignatures) { 
+        EzsigntemplatedocumentResponse.initialize(this, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal, bEzsigntemplatedocumentHassignedsignatures);
+        EzsigntemplatedocumentResponseCompound.initialize(this, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal, bEzsigntemplatedocumentHassignedsignatures);
     }
 
     /**
@@ -41,12 +42,13 @@ class EzsigntemplatedocumentResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal) { 
+    static initialize(obj, pkiEzsigntemplatedocumentID, fkiEzsigntemplateID, sEzsigntemplatedocumentName, iEzsigntemplatedocumentPagetotal, iEzsigntemplatedocumentSignaturetotal, bEzsigntemplatedocumentHassignedsignatures) { 
         obj['pkiEzsigntemplatedocumentID'] = pkiEzsigntemplatedocumentID;
         obj['fkiEzsigntemplateID'] = fkiEzsigntemplateID;
         obj['sEzsigntemplatedocumentName'] = sEzsigntemplatedocumentName;
         obj['iEzsigntemplatedocumentPagetotal'] = iEzsigntemplatedocumentPagetotal;
         obj['iEzsigntemplatedocumentSignaturetotal'] = iEzsigntemplatedocumentSignaturetotal;
+        obj['bEzsigntemplatedocumentHassignedsignatures'] = bEzsigntemplatedocumentHassignedsignatures;
     }
 
     /**
@@ -75,6 +77,9 @@ class EzsigntemplatedocumentResponseCompound {
             }
             if (data.hasOwnProperty('iEzsigntemplatedocumentSignaturetotal')) {
                 obj['iEzsigntemplatedocumentSignaturetotal'] = ApiClient.convertToType(data['iEzsigntemplatedocumentSignaturetotal'], 'Number');
+            }
+            if (data.hasOwnProperty('bEzsigntemplatedocumentHassignedsignatures')) {
+                obj['bEzsigntemplatedocumentHassignedsignatures'] = ApiClient.convertToType(data['bEzsigntemplatedocumentHassignedsignatures'], 'Boolean');
             }
         }
         return obj;
@@ -178,10 +183,25 @@ class EzsigntemplatedocumentResponseCompound {
     setIEzsigntemplatedocumentSignaturetotal(iEzsigntemplatedocumentSignaturetotal) {
         this['iEzsigntemplatedocumentSignaturetotal'] = iEzsigntemplatedocumentSignaturetotal;
     }
+/**
+     * Returns If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+     * @return {Boolean}
+     */
+    getBEzsigntemplatedocumentHassignedsignatures() {
+        return this.bEzsigntemplatedocumentHassignedsignatures;
+    }
+
+    /**
+     * Sets If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+     * @param {Boolean} bEzsigntemplatedocumentHassignedsignatures If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+     */
+    setBEzsigntemplatedocumentHassignedsignatures(bEzsigntemplatedocumentHassignedsignatures) {
+        this['bEzsigntemplatedocumentHassignedsignatures'] = bEzsigntemplatedocumentHassignedsignatures;
+    }
 
 }
 
-EzsigntemplatedocumentResponseCompound.RequiredProperties = ["pkiEzsigntemplatedocumentID", "fkiEzsigntemplateID", "sEzsigntemplatedocumentName", "iEzsigntemplatedocumentPagetotal", "iEzsigntemplatedocumentSignaturetotal"];
+EzsigntemplatedocumentResponseCompound.RequiredProperties = ["pkiEzsigntemplatedocumentID", "fkiEzsigntemplateID", "sEzsigntemplatedocumentName", "iEzsigntemplatedocumentPagetotal", "iEzsigntemplatedocumentSignaturetotal", "bEzsigntemplatedocumentHassignedsignatures"];
 
 /**
  * The unique ID of the Ezsigntemplatedocument
@@ -213,6 +233,12 @@ EzsigntemplatedocumentResponseCompound.prototype['iEzsigntemplatedocumentPagetot
  */
 EzsigntemplatedocumentResponseCompound.prototype['iEzsigntemplatedocumentSignaturetotal'] = undefined;
 
+/**
+ * If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+ * @member {Boolean} bEzsigntemplatedocumentHassignedsignatures
+ */
+EzsigntemplatedocumentResponseCompound.prototype['bEzsigntemplatedocumentHassignedsignatures'] = undefined;
+
 
 // Implement EzsigntemplatedocumentResponse interface:
 /**
@@ -240,6 +266,11 @@ EzsigntemplatedocumentResponse.prototype['iEzsigntemplatedocumentPagetotal'] = u
  * @member {Number} iEzsigntemplatedocumentSignaturetotal
  */
 EzsigntemplatedocumentResponse.prototype['iEzsigntemplatedocumentSignaturetotal'] = undefined;
+/**
+ * If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+ * @member {Boolean} bEzsigntemplatedocumentHassignedsignatures
+ */
+EzsigntemplatedocumentResponse.prototype['bEzsigntemplatedocumentHassignedsignatures'] = undefined;
 
 
 

@@ -77,7 +77,7 @@ class UserGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objUser` (array)
             for (const item of data['a_objUser']) {
-                UserAutocompleteElementResponse.validateJsonObject(item);
+                UserAutocompleteElementResponse.validateJSON(item);
             };
         }
 

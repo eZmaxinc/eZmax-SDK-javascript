@@ -77,7 +77,7 @@ class EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request {
             }
             // validate the optional field `a_objEzsigntemplatepackagesigner` (array)
             for (const item of data['a_objEzsigntemplatepackagesigner']) {
-                EzsigntemplatepackagesignerRequestCompound.validateJsonObject(item);
+                EzsigntemplatepackagesignerRequestCompound.validateJSON(item);
             };
         }
 

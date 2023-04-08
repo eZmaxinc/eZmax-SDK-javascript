@@ -69,7 +69,7 @@ class FranchisebrokerGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objFranchisebroker` (array)
             for (const item of data['a_objFranchisebroker']) {
-                FranchisebrokerAutocompleteElementResponse.validateJsonObject(item);
+                FranchisebrokerAutocompleteElementResponse.validateJSON(item);
             };
         }
 

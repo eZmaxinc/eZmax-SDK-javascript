@@ -19,7 +19,6 @@ import EzsigntemplatesignatureCreateObjectV1Response from '../model/Ezsigntempla
 import EzsigntemplatesignatureDeleteObjectV1Response from '../model/EzsigntemplatesignatureDeleteObjectV1Response';
 import EzsigntemplatesignatureEditObjectV1Request from '../model/EzsigntemplatesignatureEditObjectV1Request';
 import EzsigntemplatesignatureEditObjectV1Response from '../model/EzsigntemplatesignatureEditObjectV1Response';
-import EzsigntemplatesignatureGetObjectV1Response from '../model/EzsigntemplatesignatureGetObjectV1Response';
 import EzsigntemplatesignatureGetObjectV2Response from '../model/EzsigntemplatesignatureGetObjectV2Response';
 
 /**
@@ -169,49 +168,6 @@ export default class ObjectEzsigntemplatesignatureApi {
       let returnType = EzsigntemplatesignatureEditObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsigntemplatesignatureGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsigntemplatesignatureApi~ezsigntemplatesignatureGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsigntemplatesignatureGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsigntemplatesignature
-     * 
-     * @param {Number} pkiEzsigntemplatesignatureID 
-     * @param {module:eZmaxAPI/api/ObjectEzsigntemplatesignatureApi~ezsigntemplatesignatureGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplatesignatureGetObjectV1Response}
-     */
-    ezsigntemplatesignatureGetObjectV1(pkiEzsigntemplatesignatureID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsigntemplatesignatureID' is set
-      if (pkiEzsigntemplatesignatureID === undefined || pkiEzsigntemplatesignatureID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsigntemplatesignatureID' when calling ezsigntemplatesignatureGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsigntemplatesignatureID': pkiEzsigntemplatesignatureID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsigntemplatesignatureGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

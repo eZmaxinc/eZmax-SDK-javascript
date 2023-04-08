@@ -88,6 +88,16 @@
         done();
       });
     });
+    describe('ezsigntemplatedocumentFlattenV1', function() {
+      it('should call ezsigntemplatedocumentFlattenV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplatedocumentFlattenV1
+        //instance.ezsigntemplatedocumentFlattenV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1', function() {
       it('should call ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1
@@ -112,16 +122,6 @@
       it('should call ezsigntemplatedocumentGetEzsigntemplatesignaturesV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatedocumentGetEzsigntemplatesignaturesV1
         //instance.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('ezsigntemplatedocumentGetObjectV1', function() {
-      it('should call ezsigntemplatedocumentGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatedocumentGetObjectV1
-        //instance.ezsigntemplatedocumentGetObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

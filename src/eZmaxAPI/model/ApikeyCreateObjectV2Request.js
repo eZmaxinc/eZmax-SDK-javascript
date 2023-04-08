@@ -77,7 +77,7 @@ class ApikeyCreateObjectV2Request {
             }
             // validate the optional field `a_objApikey` (array)
             for (const item of data['a_objApikey']) {
-                ApikeyRequestCompound.validateJsonObject(item);
+                ApikeyRequestCompound.validateJSON(item);
             };
         }
 

@@ -84,7 +84,7 @@ export default class ModuleEzsignApi {
      * Suggest templates
      * Retrieve Ezsigntemplates and Ezsigntemplatepackages that can be imported in a Ezsignfolder
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.fkiEzsignfoldertypeID 
+     * @param {Number} [fkiEzsignfoldertypeID] 
      * @param {module:eZmaxAPI/api/ModuleEzsignApi~ezsignSuggestTemplatesV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignSuggestTemplatesV1Response}
      */

@@ -91,7 +91,7 @@ class CommonGetAutocompleteV1Response {
             }
             // validate the optional field `mPayload` (array)
             for (const item of data['mPayload']) {
-                CustomAutocompleteElementResponse.validateJsonObject(item);
+                CustomAutocompleteElementResponse.validateJSON(item);
             };
         }
         // validate the optional field `objDebugPayload`

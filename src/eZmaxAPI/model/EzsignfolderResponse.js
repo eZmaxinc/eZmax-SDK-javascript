@@ -40,10 +40,11 @@ class EzsignfolderResponse {
      * @param eEzsignfolderStep {module:eZmaxAPI/model/FieldEEzsignfolderStep} 
      * @param tEzsignfolderMessage {String} A custom text message that will be added to the email sent.
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
+     * @param sEzsignfolderExternalid {String} This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
      */
-    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit) { 
+    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit, sEzsignfolderExternalid) { 
         
-        EzsignfolderResponse.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit);
+        EzsignfolderResponse.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit, sEzsignfolderExternalid);
     }
 
     /**
@@ -51,7 +52,7 @@ class EzsignfolderResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit) { 
+    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, sEzsignfoldertypeNameX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiEzsigntsarequirementID, sEzsigntsarequirementDescriptionX, sEzsignfolderDescription, tEzsignfolderNote, bEzsignfolderIsdisposable, eEzsignfolderSendreminderfrequency, eEzsignfolderStep, tEzsignfolderMessage, objAudit, sEzsignfolderExternalid) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
@@ -66,6 +67,7 @@ class EzsignfolderResponse {
         obj['eEzsignfolderStep'] = eEzsignfolderStep;
         obj['tEzsignfolderMessage'] = tEzsignfolderMessage;
         obj['objAudit'] = objAudit;
+        obj['sEzsignfolderExternalid'] = sEzsignfolderExternalid;
     }
 
     /**
@@ -139,6 +141,9 @@ class EzsignfolderResponse {
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
             }
+            if (data.hasOwnProperty('sEzsignfolderExternalid')) {
+                obj['sEzsignfolderExternalid'] = ApiClient.convertToType(data['sEzsignfolderExternalid'], 'String');
+            }
         }
         return obj;
     }
@@ -206,6 +211,10 @@ class EzsignfolderResponse {
         // validate the optional field `objAudit`
         if (data['objAudit']) { // data not null
           CommonAudit.validateJSON(data['objAudit']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsignfolderExternalid'] && !(typeof data['sEzsignfolderExternalid'] === 'string' || data['sEzsignfolderExternalid'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignfolderExternalid` to be a primitive type in the JSON string but got " + data['sEzsignfolderExternalid']);
         }
 
         return true;
@@ -510,10 +519,25 @@ class EzsignfolderResponse {
     setObjAudit(objAudit) {
         this['objAudit'] = objAudit;
     }
+/**
+     * Returns This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @return {String}
+     */
+    getSEzsignfolderExternalid() {
+        return this.sEzsignfolderExternalid;
+    }
+
+    /**
+     * Sets This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @param {String} sEzsignfolderExternalid This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     */
+    setSEzsignfolderExternalid(sEzsignfolderExternalid) {
+        this['sEzsignfolderExternalid'] = sEzsignfolderExternalid;
+    }
 
 }
 
-EzsignfolderResponse.RequiredProperties = ["pkiEzsignfolderID", "fkiEzsignfoldertypeID", "sEzsignfoldertypeNameX", "fkiBillingentityinternalID", "sBillingentityinternalDescriptionX", "fkiEzsigntsarequirementID", "sEzsigntsarequirementDescriptionX", "sEzsignfolderDescription", "tEzsignfolderNote", "bEzsignfolderIsdisposable", "eEzsignfolderSendreminderfrequency", "eEzsignfolderStep", "tEzsignfolderMessage", "objAudit"];
+EzsignfolderResponse.RequiredProperties = ["pkiEzsignfolderID", "fkiEzsignfoldertypeID", "sEzsignfoldertypeNameX", "fkiBillingentityinternalID", "sBillingentityinternalDescriptionX", "fkiEzsigntsarequirementID", "sEzsigntsarequirementDescriptionX", "sEzsignfolderDescription", "tEzsignfolderNote", "bEzsignfolderIsdisposable", "eEzsignfolderSendreminderfrequency", "eEzsignfolderStep", "tEzsignfolderMessage", "objAudit", "sEzsignfolderExternalid"];
 
 /**
  * The unique ID of the Ezsignfolder
@@ -631,6 +655,12 @@ EzsignfolderResponse.prototype['tEzsignfolderMessage'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsignfolderResponse.prototype['objAudit'] = undefined;
+
+/**
+ * This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+ * @member {String} sEzsignfolderExternalid
+ */
+EzsignfolderResponse.prototype['sEzsignfolderExternalid'] = undefined;
 
 
 

@@ -77,7 +77,7 @@ class NotificationsectionGetNotificationtestsV1ResponseMPayload {
             }
             // validate the optional field `a_objNotificationsubsection` (array)
             for (const item of data['a_objNotificationsubsection']) {
-                CustomNotificationsubsectiongetnotificationtestsResponse.validateJsonObject(item);
+                CustomNotificationsubsectiongetnotificationtestsResponse.validateJSON(item);
             };
         }
 

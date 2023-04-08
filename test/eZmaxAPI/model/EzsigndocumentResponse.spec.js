@@ -162,8 +162,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsigndocumentHassignedsignatures (base name: "bEzsigndocumentHassignedsignatures")', function() {
+      // uncomment below and update the code to test the property bEzsigndocumentHassignedsignatures
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property objAudit (base name: "objAudit")', function() {
       // uncomment below and update the code to test the property objAudit
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigndocumentExternalid (base name: "sEzsigndocumentExternalid")', function() {
+      // uncomment below and update the code to test the property sEzsigndocumentExternalid
       //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponse();
       //expect(instance).to.be();
     });

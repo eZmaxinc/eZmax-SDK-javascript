@@ -88,16 +88,6 @@
         done();
       });
     });
-    describe('ezsigntemplatepackageGetAutocompleteV1', function() {
-      it('should call ezsigntemplatepackageGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatepackageGetAutocompleteV1
-        //instance.ezsigntemplatepackageGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplatepackageGetAutocompleteV2', function() {
       it('should call ezsigntemplatepackageGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatepackageGetAutocompleteV2
@@ -112,16 +102,6 @@
       it('should call ezsigntemplatepackageGetListV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatepackageGetListV1
         //instance.ezsigntemplatepackageGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('ezsigntemplatepackageGetObjectV1', function() {
-      it('should call ezsigntemplatepackageGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatepackageGetObjectV1
-        //instance.ezsigntemplatepackageGetObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

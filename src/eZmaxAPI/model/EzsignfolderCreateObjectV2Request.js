@@ -77,7 +77,7 @@ class EzsignfolderCreateObjectV2Request {
             }
             // validate the optional field `a_objEzsignfolder` (array)
             for (const item of data['a_objEzsignfolder']) {
-                EzsignfolderRequestCompound.validateJsonObject(item);
+                EzsignfolderRequestCompound.validateJSON(item);
             };
         }
 

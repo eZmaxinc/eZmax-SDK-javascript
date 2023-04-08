@@ -98,16 +98,6 @@
         done();
       });
     });
-    describe('ezsignfoldertypeGetObjectV1', function() {
-      it('should call ezsignfoldertypeGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetObjectV1
-        //instance.ezsignfoldertypeGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsignfoldertypeGetObjectV2', function() {
       it('should call ezsignfoldertypeGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsignfoldertypeGetObjectV2

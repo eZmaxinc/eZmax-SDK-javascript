@@ -77,7 +77,7 @@ class EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsignbulksendtransmission` (array)
             for (const item of data['a_objEzsignbulksendtransmission']) {
-                EzsignbulksendtransmissionResponseCompound.validateJsonObject(item);
+                EzsignbulksendtransmissionResponseCompound.validateJSON(item);
             };
         }
 

@@ -77,7 +77,7 @@ class EzsigndocumentGetEzsignpagesV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsignpage` (array)
             for (const item of data['a_objEzsignpage']) {
-                EzsignpageResponseCompound.validateJsonObject(item);
+                EzsignpageResponseCompound.validateJSON(item);
             };
         }
 

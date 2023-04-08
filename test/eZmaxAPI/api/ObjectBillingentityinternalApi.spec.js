@@ -48,10 +48,30 @@
   }
 
   describe('ObjectBillingentityinternalApi', function() {
-    describe('billingentityinternalGetAutocompleteV1', function() {
-      it('should call billingentityinternalGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test billingentityinternalGetAutocompleteV1
-        //instance.billingentityinternalGetAutocompleteV1(function(error) {
+    describe('billingentityinternalCreateObjectV1', function() {
+      it('should call billingentityinternalCreateObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test billingentityinternalCreateObjectV1
+        //instance.billingentityinternalCreateObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('billingentityinternalDeleteObjectV1', function() {
+      it('should call billingentityinternalDeleteObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test billingentityinternalDeleteObjectV1
+        //instance.billingentityinternalDeleteObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('billingentityinternalEditObjectV1', function() {
+      it('should call billingentityinternalEditObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test billingentityinternalEditObjectV1
+        //instance.billingentityinternalEditObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -62,6 +82,26 @@
       it('should call billingentityinternalGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test billingentityinternalGetAutocompleteV2
         //instance.billingentityinternalGetAutocompleteV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('billingentityinternalGetListV1', function() {
+      it('should call billingentityinternalGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test billingentityinternalGetListV1
+        //instance.billingentityinternalGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('billingentityinternalGetObjectV2', function() {
+      it('should call billingentityinternalGetObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test billingentityinternalGetObjectV2
+        //instance.billingentityinternalGetObjectV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

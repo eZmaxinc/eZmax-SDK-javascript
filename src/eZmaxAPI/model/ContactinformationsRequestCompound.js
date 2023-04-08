@@ -121,7 +121,7 @@ class ContactinformationsRequestCompound {
             }
             // validate the optional field `a_objAddress` (array)
             for (const item of data['a_objAddress']) {
-                AddressRequestCompound.validateJsonObject(item);
+                AddressRequestCompound.validateJSON(item);
             };
         }
         if (data['a_objPhone']) { // data not null
@@ -131,7 +131,7 @@ class ContactinformationsRequestCompound {
             }
             // validate the optional field `a_objPhone` (array)
             for (const item of data['a_objPhone']) {
-                PhoneRequestCompound.validateJsonObject(item);
+                PhoneRequestCompound.validateJSON(item);
             };
         }
         if (data['a_objEmail']) { // data not null
@@ -141,7 +141,7 @@ class ContactinformationsRequestCompound {
             }
             // validate the optional field `a_objEmail` (array)
             for (const item of data['a_objEmail']) {
-                EmailRequestCompound.validateJsonObject(item);
+                EmailRequestCompound.validateJSON(item);
             };
         }
         if (data['a_objWebsite']) { // data not null
@@ -151,7 +151,7 @@ class ContactinformationsRequestCompound {
             }
             // validate the optional field `a_objWebsite` (array)
             for (const item of data['a_objWebsite']) {
-                WebsiteRequestCompound.validateJsonObject(item);
+                WebsiteRequestCompound.validateJSON(item);
             };
         }
 

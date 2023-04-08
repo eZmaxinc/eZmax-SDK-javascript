@@ -77,7 +77,7 @@ class BrandingCreateObjectV1Request {
             }
             // validate the optional field `a_objBranding` (array)
             for (const item of data['a_objBranding']) {
-                BrandingRequestCompound.validateJsonObject(item);
+                BrandingRequestCompound.validateJSON(item);
             };
         }
 

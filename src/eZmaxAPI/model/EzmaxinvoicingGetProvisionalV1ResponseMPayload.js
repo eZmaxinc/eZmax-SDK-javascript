@@ -219,7 +219,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingsummaryglobal` (array)
             for (const item of data['a_objEzmaxinvoicingsummaryglobal']) {
-                EzmaxinvoicingsummaryglobalResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingsummaryglobalResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicingsummaryexternal']) { // data not null
@@ -229,7 +229,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingsummaryexternal` (array)
             for (const item of data['a_objEzmaxinvoicingsummaryexternal']) {
-                EzmaxinvoicingsummaryexternalResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingsummaryexternalResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicingsummaryinternal']) { // data not null
@@ -239,7 +239,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingsummaryinternal` (array)
             for (const item of data['a_objEzmaxinvoicingsummaryinternal']) {
-                EzmaxinvoicingsummaryinternalResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingsummaryinternalResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicingagent']) { // data not null
@@ -249,7 +249,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingagent` (array)
             for (const item of data['a_objEzmaxinvoicingagent']) {
-                EzmaxinvoicingagentResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingagentResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicinguser']) { // data not null
@@ -259,7 +259,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicinguser` (array)
             for (const item of data['a_objEzmaxinvoicinguser']) {
-                EzmaxinvoicinguserResponseCompound.validateJsonObject(item);
+                EzmaxinvoicinguserResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicingezsignfolder']) { // data not null
@@ -269,7 +269,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingezsignfolder` (array)
             for (const item of data['a_objEzmaxinvoicingezsignfolder']) {
-                CustomEzmaxinvoicingEzsignfolderResponse.validateJsonObject(item);
+                CustomEzmaxinvoicingEzsignfolderResponse.validateJSON(item);
             };
         }
         if (data['a_objEzmaxinvoicingezsigndocument']) { // data not null
@@ -279,7 +279,7 @@ class EzmaxinvoicingGetProvisionalV1ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicingezsigndocument` (array)
             for (const item of data['a_objEzmaxinvoicingezsigndocument']) {
-                CustomEzmaxinvoicingEzsigndocumentResponse.validateJsonObject(item);
+                CustomEzmaxinvoicingEzsigndocumentResponse.validateJSON(item);
             };
         }
 

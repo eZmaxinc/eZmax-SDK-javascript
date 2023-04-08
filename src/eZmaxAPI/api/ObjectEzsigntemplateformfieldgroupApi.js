@@ -19,7 +19,6 @@ import EzsigntemplateformfieldgroupCreateObjectV1Response from '../model/Ezsignt
 import EzsigntemplateformfieldgroupDeleteObjectV1Response from '../model/EzsigntemplateformfieldgroupDeleteObjectV1Response';
 import EzsigntemplateformfieldgroupEditObjectV1Request from '../model/EzsigntemplateformfieldgroupEditObjectV1Request';
 import EzsigntemplateformfieldgroupEditObjectV1Response from '../model/EzsigntemplateformfieldgroupEditObjectV1Response';
-import EzsigntemplateformfieldgroupGetObjectV1Response from '../model/EzsigntemplateformfieldgroupGetObjectV1Response';
 import EzsigntemplateformfieldgroupGetObjectV2Response from '../model/EzsigntemplateformfieldgroupGetObjectV2Response';
 
 /**
@@ -169,49 +168,6 @@ export default class ObjectEzsigntemplateformfieldgroupApi {
       let returnType = EzsigntemplateformfieldgroupEditObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsigntemplateformfieldgroupGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsigntemplateformfieldgroupApi~ezsigntemplateformfieldgroupGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsigntemplateformfieldgroupGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsigntemplateformfieldgroup
-     * 
-     * @param {Number} pkiEzsigntemplateformfieldgroupID 
-     * @param {module:eZmaxAPI/api/ObjectEzsigntemplateformfieldgroupApi~ezsigntemplateformfieldgroupGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplateformfieldgroupGetObjectV1Response}
-     */
-    ezsigntemplateformfieldgroupGetObjectV1(pkiEzsigntemplateformfieldgroupID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsigntemplateformfieldgroupID' is set
-      if (pkiEzsigntemplateformfieldgroupID === undefined || pkiEzsigntemplateformfieldgroupID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsigntemplateformfieldgroupID' when calling ezsigntemplateformfieldgroupGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsigntemplateformfieldgroupID': pkiEzsigntemplateformfieldgroupID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsigntemplateformfieldgroupGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

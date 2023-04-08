@@ -105,7 +105,7 @@ class CustomFormDataDocumentResponse {
             }
             // validate the optional field `a_objFormDataSigner` (array)
             for (const item of data['a_objFormDataSigner']) {
-                CustomFormDataSignerResponse.validateJsonObject(item);
+                CustomFormDataSignerResponse.validateJSON(item);
             };
         }
 

@@ -113,7 +113,7 @@ class EzsigntemplatepackagemembershipResponseCompound {
             }
             // validate the optional field `a_objEzsigntemplatepackagesignermembership` (array)
             for (const item of data['a_objEzsigntemplatepackagesignermembership']) {
-                EzsigntemplatepackagesignermembershipResponseCompound.validateJsonObject(item);
+                EzsigntemplatepackagesignermembershipResponseCompound.validateJSON(item);
             };
         }
 

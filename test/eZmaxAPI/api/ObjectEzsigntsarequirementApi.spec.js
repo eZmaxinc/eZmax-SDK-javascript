@@ -48,16 +48,6 @@
   }
 
   describe('ObjectEzsigntsarequirementApi', function() {
-    describe('ezsigntsarequirementGetAutocompleteV1', function() {
-      it('should call ezsigntsarequirementGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntsarequirementGetAutocompleteV1
-        //instance.ezsigntsarequirementGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntsarequirementGetAutocompleteV2', function() {
       it('should call ezsigntsarequirementGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntsarequirementGetAutocompleteV2

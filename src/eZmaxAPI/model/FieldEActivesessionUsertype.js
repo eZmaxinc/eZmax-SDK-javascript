@@ -34,6 +34,13 @@ export default class FieldEActivesessionUsertype {
 
     
         /**
+         * value: "EzsignSigner"
+         * @const
+         */
+        "EzsignSigner" = "EzsignSigner";
+
+    
+        /**
          * value: "EzsignUser"
          * @const
          */

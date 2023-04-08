@@ -19,9 +19,7 @@ import BrandingEditObjectV1Request from '../model/BrandingEditObjectV1Request';
 import BrandingEditObjectV1Response from '../model/BrandingEditObjectV1Response';
 import BrandingGetAutocompleteV2Response from '../model/BrandingGetAutocompleteV2Response';
 import BrandingGetListV1Response from '../model/BrandingGetListV1Response';
-import BrandingGetObjectV1Response from '../model/BrandingGetObjectV1Response';
 import BrandingGetObjectV2Response from '../model/BrandingGetObjectV2Response';
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
@@ -135,57 +133,6 @@ export default class ObjectBrandingApi {
     }
 
     /**
-     * Callback function to receive the result of the brandingGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectBrandingApi~brandingGetAutocompleteV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve Brandings and IDs
-     * Get the list of Branding to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Brandings to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {module:eZmaxAPI/api/ObjectBrandingApi~brandingGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
-     */
-    brandingGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling brandingGetAutocompleteV1");
-      }
-
-      let pathParams = {
-        'sSelector': sSelector
-      };
-      let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
-      };
-      let headerParams = {
-        'Accept-Language': opts['Accept_Language']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
-      return this.apiClient.callApi(
-        '/1/object/branding/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the brandingGetAutocompleteV2 operation.
      * @callback module:eZmaxAPI/api/ObjectBrandingApi~brandingGetAutocompleteV2Callback
      * @param {String} error Error message, if any.
@@ -198,9 +145,9 @@ export default class ObjectBrandingApi {
      * Get the list of Branding to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Brandings to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectBrandingApi~brandingGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/BrandingGetAutocompleteV2Response}
      */
@@ -248,11 +195,11 @@ export default class ObjectBrandingApi {
      * Retrieve Branding list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG |
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectBrandingApi~brandingGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/BrandingGetListV1Response}
      */
@@ -280,49 +227,6 @@ export default class ObjectBrandingApi {
       let returnType = BrandingGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/branding/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the brandingGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectBrandingApi~brandingGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/BrandingGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Branding
-     * 
-     * @param {Number} pkiBrandingID 
-     * @param {module:eZmaxAPI/api/ObjectBrandingApi~brandingGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/BrandingGetObjectV1Response}
-     */
-    brandingGetObjectV1(pkiBrandingID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiBrandingID' is set
-      if (pkiBrandingID === undefined || pkiBrandingID === null) {
-        throw new Error("Missing the required parameter 'pkiBrandingID' when calling brandingGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiBrandingID': pkiBrandingID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = BrandingGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/branding/{pkiBrandingID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

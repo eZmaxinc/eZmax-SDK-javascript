@@ -91,7 +91,7 @@ class CustomFormsDataFolderResponse {
             }
             // validate the optional field `a_objFormDataDocument` (array)
             for (const item of data['a_objFormDataDocument']) {
-                CustomFormDataDocumentResponse.validateJsonObject(item);
+                CustomFormDataDocumentResponse.validateJSON(item);
             };
         }
 

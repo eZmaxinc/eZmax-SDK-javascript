@@ -48,16 +48,6 @@
   }
 
   describe('ObjectCommunicationApi', function() {
-    describe('communicationGetListV1', function() {
-      it('should call communicationGetListV1 successfully', function(done) {
-        //uncomment below and update the code to test communicationGetListV1
-        //instance.communicationGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('communicationGetObjectV2', function() {
       it('should call communicationGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test communicationGetObjectV2

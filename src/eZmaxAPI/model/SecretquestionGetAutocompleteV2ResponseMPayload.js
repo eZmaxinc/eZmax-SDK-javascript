@@ -77,7 +77,7 @@ class SecretquestionGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objSecretquestion` (array)
             for (const item of data['a_objSecretquestion']) {
-                SecretquestionAutocompleteElementResponse.validateJsonObject(item);
+                SecretquestionAutocompleteElementResponse.validateJSON(item);
             };
         }
 

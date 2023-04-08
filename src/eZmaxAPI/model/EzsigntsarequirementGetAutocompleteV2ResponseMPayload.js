@@ -77,7 +77,7 @@ class EzsigntsarequirementGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntsarequirement` (array)
             for (const item of data['a_objEzsigntsarequirement']) {
-                EzsigntsarequirementAutocompleteElementResponse.validateJsonObject(item);
+                EzsigntsarequirementAutocompleteElementResponse.validateJSON(item);
             };
         }
 

@@ -48,10 +48,30 @@
   }
 
   describe('ObjectUsergroupApi', function() {
-    describe('usergroupGetAutocompleteV1', function() {
-      it('should call usergroupGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test usergroupGetAutocompleteV1
-        //instance.usergroupGetAutocompleteV1(function(error) {
+    describe('usergroupCreateObjectV1', function() {
+      it('should call usergroupCreateObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupCreateObjectV1
+        //instance.usergroupCreateObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupDeleteObjectV1', function() {
+      it('should call usergroupDeleteObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupDeleteObjectV1
+        //instance.usergroupDeleteObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupEditObjectV1', function() {
+      it('should call usergroupEditObjectV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupEditObjectV1
+        //instance.usergroupEditObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -62,6 +82,36 @@
       it('should call usergroupGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test usergroupGetAutocompleteV2
         //instance.usergroupGetAutocompleteV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupGetListV1', function() {
+      it('should call usergroupGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupGetListV1
+        //instance.usergroupGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupGetMembersV1', function() {
+      it('should call usergroupGetMembersV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupGetMembersV1
+        //instance.usergroupGetMembersV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupGetObjectV2', function() {
+      it('should call usergroupGetObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test usergroupGetObjectV2
+        //instance.usergroupGetObjectV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

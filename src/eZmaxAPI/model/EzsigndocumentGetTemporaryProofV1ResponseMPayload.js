@@ -77,7 +77,7 @@ class EzsigndocumentGetTemporaryProofV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigndocumentlog` (array)
             for (const item of data['a_objEzsigndocumentlog']) {
-                EzsigndocumentlogResponseCompound.validateJsonObject(item);
+                EzsigndocumentlogResponseCompound.validateJSON(item);
             };
         }
 

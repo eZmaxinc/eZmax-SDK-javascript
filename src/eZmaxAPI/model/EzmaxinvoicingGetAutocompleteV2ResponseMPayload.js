@@ -77,7 +77,7 @@ class EzmaxinvoicingGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objEzmaxinvoicing` (array)
             for (const item of data['a_objEzmaxinvoicing']) {
-                EzmaxinvoicingAutocompleteElementResponse.validateJsonObject(item);
+                EzmaxinvoicingAutocompleteElementResponse.validateJSON(item);
             };
         }
 

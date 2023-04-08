@@ -77,7 +77,7 @@ class EzsigndocumentEditEzsignsignaturesV1Request {
             }
             // validate the optional field `a_objEzsignsignature` (array)
             for (const item of data['a_objEzsignsignature']) {
-                EzsignsignatureRequestCompound.validateJsonObject(item);
+                EzsignsignatureRequestCompound.validateJSON(item);
             };
         }
 

@@ -69,7 +69,7 @@ class PeriodGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objPeriod` (array)
             for (const item of data['a_objPeriod']) {
-                PeriodAutocompleteElementResponse.validateJsonObject(item);
+                PeriodAutocompleteElementResponse.validateJSON(item);
             };
         }
 

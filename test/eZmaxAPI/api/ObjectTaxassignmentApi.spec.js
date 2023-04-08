@@ -48,16 +48,6 @@
   }
 
   describe('ObjectTaxassignmentApi', function() {
-    describe('taxassignmentGetAutocompleteV1', function() {
-      it('should call taxassignmentGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test taxassignmentGetAutocompleteV1
-        //instance.taxassignmentGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('taxassignmentGetAutocompleteV2', function() {
       it('should call taxassignmentGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test taxassignmentGetAutocompleteV2

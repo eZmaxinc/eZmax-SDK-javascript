@@ -48,16 +48,6 @@
   }
 
   describe('ObjectSecretquestionApi', function() {
-    describe('secretquestionGetAutocompleteV1', function() {
-      it('should call secretquestionGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test secretquestionGetAutocompleteV1
-        //instance.secretquestionGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('secretquestionGetAutocompleteV2', function() {
       it('should call secretquestionGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test secretquestionGetAutocompleteV2

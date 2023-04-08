@@ -21,7 +21,7 @@ import EzsignsignatureCreateObjectV2Response from '../model/EzsignsignatureCreat
 import EzsignsignatureDeleteObjectV1Response from '../model/EzsignsignatureDeleteObjectV1Response';
 import EzsignsignatureEditObjectV1Request from '../model/EzsignsignatureEditObjectV1Request';
 import EzsignsignatureEditObjectV1Response from '../model/EzsignsignatureEditObjectV1Response';
-import EzsignsignatureGetObjectV1Response from '../model/EzsignsignatureGetObjectV1Response';
+import EzsignsignatureGetEzsignsignaturesAutomaticV1Response from '../model/EzsignsignatureGetEzsignsignaturesAutomaticV1Response';
 import EzsignsignatureGetObjectV2Response from '../model/EzsignsignatureGetObjectV2Response';
 import EzsignsignatureSignV1Request from '../model/EzsignsignatureSignV1Request';
 import EzsignsignatureSignV1Response from '../model/EzsignsignatureSignV1Response';
@@ -221,29 +221,23 @@ export default class ObjectEzsignsignatureApi {
     }
 
     /**
-     * Callback function to receive the result of the ezsignsignatureGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetObjectV1Callback
+     * Callback function to receive the result of the ezsignsignatureGetEzsignsignaturesAutomaticV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetEzsignsignaturesAutomaticV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignsignatureGetObjectV1Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/EzsignsignatureGetEzsignsignaturesAutomaticV1Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieve an existing Ezsignsignature
-     * 
-     * @param {Number} pkiEzsignsignatureID 
-     * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureGetObjectV1Response}
+     * Retrieve all automatic Ezsignsignatures
+     * Return all the Ezsignsignatures that can be signed by the current user
+     * @param {module:eZmaxAPI/api/ObjectEzsignsignatureApi~ezsignsignatureGetEzsignsignaturesAutomaticV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignsignatureGetEzsignsignaturesAutomaticV1Response}
      */
-    ezsignsignatureGetObjectV1(pkiEzsignsignatureID, callback) {
+    ezsignsignatureGetEzsignsignaturesAutomaticV1(callback) {
       let postBody = null;
-      // verify the required parameter 'pkiEzsignsignatureID' is set
-      if (pkiEzsignsignatureID === undefined || pkiEzsignsignatureID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignsignatureID' when calling ezsignsignatureGetObjectV1");
-      }
 
       let pathParams = {
-        'pkiEzsignsignatureID': pkiEzsignsignatureID
       };
       let queryParams = {
       };
@@ -255,9 +249,9 @@ export default class ObjectEzsignsignatureApi {
       let authNames = ['Authorization'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = EzsignsignatureGetObjectV1Response;
+      let returnType = EzsignsignatureGetEzsignsignaturesAutomaticV1Response;
       return this.apiClient.callApi(
-        '/1/object/ezsignsignature/{pkiEzsignsignatureID}', 'GET',
+        '/1/object/ezsignsignature/getEzsignsignaturesAutomatic', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsigntemplatedocumentHassignedsignatures (base name: "bEzsigntemplatedocumentHassignedsignatures")', function() {
+      // uncomment below and update the code to test the property bEzsigntemplatedocumentHassignedsignatures
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatedocumentResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

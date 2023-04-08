@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsigndocumentExternalid (base name: "sEzsigndocumentExternalid")', function() {
+      // uncomment below and update the code to test the property sEzsigndocumentExternalid
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentRequestCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

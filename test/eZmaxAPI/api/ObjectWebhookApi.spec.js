@@ -98,16 +98,6 @@
         done();
       });
     });
-    describe('webhookGetObjectV1', function() {
-      it('should call webhookGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test webhookGetObjectV1
-        //instance.webhookGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('webhookGetObjectV2', function() {
       it('should call webhookGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test webhookGetObjectV2

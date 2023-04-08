@@ -23,7 +23,6 @@ import WebhookEditObjectV1Request from '../model/WebhookEditObjectV1Request';
 import WebhookEditObjectV1Response from '../model/WebhookEditObjectV1Response';
 import WebhookGetHistoryV1Response from '../model/WebhookGetHistoryV1Response';
 import WebhookGetListV1Response from '../model/WebhookGetListV1Response';
-import WebhookGetObjectV1Response from '../model/WebhookGetObjectV1Response';
 import WebhookGetObjectV2Response from '../model/WebhookGetObjectV2Response';
 import WebhookTestV1Response from '../model/WebhookTestV1Response';
 
@@ -240,11 +239,11 @@ export default class ObjectWebhookApi {
      * Retrieve Webhook list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eWebhookModule | Ezsign<br>Management | | eWebhookEzsignevent | DocumentCompleted<br>FolderCompleted | | eWebhookManagementevent | UserCreated |
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectWebhookApi~webhookGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/WebhookGetListV1Response}
      */
@@ -272,49 +271,6 @@ export default class ObjectWebhookApi {
       let returnType = WebhookGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/webhook/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the webhookGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectWebhookApi~webhookGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/WebhookGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Webhook
-     * 
-     * @param {Number} pkiWebhookID 
-     * @param {module:eZmaxAPI/api/ObjectWebhookApi~webhookGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/WebhookGetObjectV1Response}
-     */
-    webhookGetObjectV1(pkiWebhookID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiWebhookID' is set
-      if (pkiWebhookID === undefined || pkiWebhookID === null) {
-        throw new Error("Missing the required parameter 'pkiWebhookID' when calling webhookGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiWebhookID': pkiWebhookID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = WebhookGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/webhook/{pkiWebhookID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

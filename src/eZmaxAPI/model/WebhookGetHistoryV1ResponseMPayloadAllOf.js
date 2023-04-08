@@ -76,7 +76,7 @@ class WebhookGetHistoryV1ResponseMPayloadAllOf {
             }
             // validate the optional field `a_objWebhooklog` (array)
             for (const item of data['a_objWebhooklog']) {
-                CustomWebhooklogResponse.validateJsonObject(item);
+                CustomWebhooklogResponse.validateJSON(item);
             };
         }
 

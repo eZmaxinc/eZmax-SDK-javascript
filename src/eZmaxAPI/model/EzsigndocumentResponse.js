@@ -38,11 +38,13 @@ class EzsigndocumentResponse {
      * @param sEzsigndocumentMD5initial {String} MD5 Hash of the initial PDF Document before signatures were applied to it.
      * @param sEzsigndocumentMD5signed {String} MD5 Hash of the final PDF Document after all signatures were applied to it.
      * @param bEzsigndocumentEzsignform {Boolean} If the Ezsigndocument contains an Ezsignform or not
+     * @param bEzsigndocumentHassignedsignatures {Boolean} If the Ezsigndocument contains signed signatures (From internal or external sources)
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
+     * @param sEzsigndocumentExternalid {String} This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
      */
-    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit) { 
+    constructor(fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, bEzsigndocumentHassignedsignatures, objAudit, sEzsigndocumentExternalid) { 
         
-        EzsigndocumentResponse.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit);
+        EzsigndocumentResponse.initialize(this, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, bEzsigndocumentHassignedsignatures, objAudit, sEzsigndocumentExternalid);
     }
 
     /**
@@ -50,7 +52,7 @@ class EzsigndocumentResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, objAudit) { 
+    static initialize(obj, fkiEzsignfolderID, dtEzsigndocumentDuedate, fkiLanguageID, sEzsigndocumentName, pkiEzsigndocumentID, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, sEzsigndocumentMD5initial, sEzsigndocumentMD5signed, bEzsigndocumentEzsignform, bEzsigndocumentHassignedsignatures, objAudit, sEzsigndocumentExternalid) { 
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -64,7 +66,9 @@ class EzsigndocumentResponse {
         obj['sEzsigndocumentMD5initial'] = sEzsigndocumentMD5initial;
         obj['sEzsigndocumentMD5signed'] = sEzsigndocumentMD5signed;
         obj['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
+        obj['bEzsigndocumentHassignedsignatures'] = bEzsigndocumentHassignedsignatures;
         obj['objAudit'] = objAudit;
+        obj['sEzsigndocumentExternalid'] = sEzsigndocumentExternalid;
     }
 
     /**
@@ -132,8 +136,14 @@ class EzsigndocumentResponse {
             if (data.hasOwnProperty('bEzsigndocumentEzsignform')) {
                 obj['bEzsigndocumentEzsignform'] = ApiClient.convertToType(data['bEzsigndocumentEzsignform'], 'Boolean');
             }
+            if (data.hasOwnProperty('bEzsigndocumentHassignedsignatures')) {
+                obj['bEzsigndocumentHassignedsignatures'] = ApiClient.convertToType(data['bEzsigndocumentHassignedsignatures'], 'Boolean');
+            }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
+            if (data.hasOwnProperty('sEzsigndocumentExternalid')) {
+                obj['sEzsigndocumentExternalid'] = ApiClient.convertToType(data['sEzsigndocumentExternalid'], 'String');
             }
         }
         return obj;
@@ -186,6 +196,10 @@ class EzsigndocumentResponse {
         // validate the optional field `objAudit`
         if (data['objAudit']) { // data not null
           CommonAudit.validateJSON(data['objAudit']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigndocumentExternalid'] && !(typeof data['sEzsigndocumentExternalid'] === 'string' || data['sEzsigndocumentExternalid'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigndocumentExternalid` to be a primitive type in the JSON string but got " + data['sEzsigndocumentExternalid']);
         }
 
         return true;
@@ -469,6 +483,21 @@ class EzsigndocumentResponse {
         this['bEzsigndocumentEzsignform'] = bEzsigndocumentEzsignform;
     }
 /**
+     * Returns If the Ezsigndocument contains signed signatures (From internal or external sources)
+     * @return {Boolean}
+     */
+    getBEzsigndocumentHassignedsignatures() {
+        return this.bEzsigndocumentHassignedsignatures;
+    }
+
+    /**
+     * Sets If the Ezsigndocument contains signed signatures (From internal or external sources)
+     * @param {Boolean} bEzsigndocumentHassignedsignatures If the Ezsigndocument contains signed signatures (From internal or external sources)
+     */
+    setBEzsigndocumentHassignedsignatures(bEzsigndocumentHassignedsignatures) {
+        this['bEzsigndocumentHassignedsignatures'] = bEzsigndocumentHassignedsignatures;
+    }
+/**
      * @return {module:eZmaxAPI/model/CommonAudit}
      */
     getObjAudit() {
@@ -481,10 +510,25 @@ class EzsigndocumentResponse {
     setObjAudit(objAudit) {
         this['objAudit'] = objAudit;
     }
+/**
+     * Returns This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @return {String}
+     */
+    getSEzsigndocumentExternalid() {
+        return this.sEzsigndocumentExternalid;
+    }
+
+    /**
+     * Sets This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @param {String} sEzsigndocumentExternalid This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     */
+    setSEzsigndocumentExternalid(sEzsigndocumentExternalid) {
+        this['sEzsigndocumentExternalid'] = sEzsigndocumentExternalid;
+    }
 
 }
 
-EzsigndocumentResponse.RequiredProperties = ["fkiEzsignfolderID", "dtEzsigndocumentDuedate", "fkiLanguageID", "sEzsigndocumentName", "pkiEzsigndocumentID", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "sEzsigndocumentMD5initial", "sEzsigndocumentMD5signed", "bEzsigndocumentEzsignform", "objAudit"];
+EzsigndocumentResponse.RequiredProperties = ["fkiEzsignfolderID", "dtEzsigndocumentDuedate", "fkiLanguageID", "sEzsigndocumentName", "pkiEzsigndocumentID", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "sEzsigndocumentMD5initial", "sEzsigndocumentMD5signed", "bEzsigndocumentEzsignform", "bEzsigndocumentHassignedsignatures", "objAudit", "sEzsigndocumentExternalid"];
 
 /**
  * The unique ID of the Ezsignfolder
@@ -594,9 +638,21 @@ EzsigndocumentResponse.prototype['sEzsigndocumentMD5signed'] = undefined;
 EzsigndocumentResponse.prototype['bEzsigndocumentEzsignform'] = undefined;
 
 /**
+ * If the Ezsigndocument contains signed signatures (From internal or external sources)
+ * @member {Boolean} bEzsigndocumentHassignedsignatures
+ */
+EzsigndocumentResponse.prototype['bEzsigndocumentHassignedsignatures'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsigndocumentResponse.prototype['objAudit'] = undefined;
+
+/**
+ * This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+ * @member {String} sEzsigndocumentExternalid
+ */
+EzsigndocumentResponse.prototype['sEzsigndocumentExternalid'] = undefined;
 
 
 

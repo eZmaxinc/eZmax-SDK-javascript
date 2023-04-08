@@ -76,7 +76,7 @@ class CustomNotificationsubsectiongetnotificationtestsResponseAllOf {
             }
             // validate the optional field `a_objNotificationtest` (array)
             for (const item of data['a_objNotificationtest']) {
-                CustomNotificationtestgetnotificationtestsResponse.validateJsonObject(item);
+                CustomNotificationtestgetnotificationtestsResponse.validateJSON(item);
             };
         }
 

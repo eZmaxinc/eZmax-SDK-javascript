@@ -76,7 +76,7 @@ class EzsignfolderGetListV1ResponseMPayloadAllOf {
             }
             // validate the optional field `a_objEzsignfolder` (array)
             for (const item of data['a_objEzsignfolder']) {
-                EzsignfolderListElement.validateJsonObject(item);
+                EzsignfolderListElement.validateJSON(item);
             };
         }
 

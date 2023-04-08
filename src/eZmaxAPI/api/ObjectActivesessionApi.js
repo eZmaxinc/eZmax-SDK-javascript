@@ -14,7 +14,10 @@
 
 import ApiClient from "../ApiClient";
 import ActivesessionGetCurrentV1Response from '../model/ActivesessionGetCurrentV1Response';
+import ActivesessionGetListV1Response from '../model/ActivesessionGetListV1Response';
+import CommonResponseError from '../model/CommonResponseError';
 import CommonResponseRedirectSSecretquestionTextX from '../model/CommonResponseRedirectSSecretquestionTextX';
+import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectActivesession service.
@@ -67,6 +70,54 @@ export default class ObjectActivesessionApi {
       let returnType = ActivesessionGetCurrentV1Response;
       return this.apiClient.callApi(
         '/1/object/activesession/getCurrent', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the activesessionGetListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectActivesessionApi~activesessionGetListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/ActivesessionGetListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Activesession list
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
+     * @param {module:eZmaxAPI/api/ObjectActivesessionApi~activesessionGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/ActivesessionGetListV1Response}
+     */
+    activesessionGetListV1(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
+      };
+      let headerParams = {
+        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+      let returnType = ActivesessionGetListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/activesession/getList', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

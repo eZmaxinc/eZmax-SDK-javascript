@@ -86,7 +86,7 @@ class CustomWordPositionWordResponse {
             }
             // validate the optional field `a_objWordPositionOccurence` (array)
             for (const item of data['a_objWordPositionOccurence']) {
-                CustomWordPositionOccurenceResponse.validateJsonObject(item);
+                CustomWordPositionOccurenceResponse.validateJSON(item);
             };
         }
 

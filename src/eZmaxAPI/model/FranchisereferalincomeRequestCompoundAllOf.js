@@ -84,7 +84,7 @@ class FranchisereferalincomeRequestCompoundAllOf {
             }
             // validate the optional field `a_objContact` (array)
             for (const item of data['a_objContact']) {
-                ContactRequestCompound.validateJsonObject(item);
+                ContactRequestCompound.validateJSON(item);
             };
         }
 

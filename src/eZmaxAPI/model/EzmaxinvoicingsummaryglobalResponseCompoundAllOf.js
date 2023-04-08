@@ -68,7 +68,7 @@ class EzmaxinvoicingsummaryglobalResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzmaxinvoicingcommission` (array)
             for (const item of data['a_objEzmaxinvoicingcommission']) {
-                EzmaxinvoicingcommissionResponseCompound.validateJsonObject(item);
+                EzmaxinvoicingcommissionResponseCompound.validateJSON(item);
             };
         }
 

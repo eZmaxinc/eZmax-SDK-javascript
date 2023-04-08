@@ -93,7 +93,7 @@ class BrandingGetListV1ResponseMPayload {
             }
             // validate the optional field `a_objBranding` (array)
             for (const item of data['a_objBranding']) {
-                BrandingListElement.validateJsonObject(item);
+                BrandingListElement.validateJSON(item);
             };
         }
 

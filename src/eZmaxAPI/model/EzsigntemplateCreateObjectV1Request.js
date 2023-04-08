@@ -77,7 +77,7 @@ class EzsigntemplateCreateObjectV1Request {
             }
             // validate the optional field `a_objEzsigntemplate` (array)
             for (const item of data['a_objEzsigntemplate']) {
-                EzsigntemplateRequestCompound.validateJsonObject(item);
+                EzsigntemplateRequestCompound.validateJSON(item);
             };
         }
 

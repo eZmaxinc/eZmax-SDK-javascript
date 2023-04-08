@@ -29,10 +29,13 @@ import EzsigndocumentEditEzsignformfieldgroupsV1Response from '../model/Ezsigndo
 import EzsigndocumentEditEzsignsignaturesV1Request from '../model/EzsigndocumentEditEzsignsignaturesV1Request';
 import EzsigndocumentEditEzsignsignaturesV1Response from '../model/EzsigndocumentEditEzsignsignaturesV1Response';
 import EzsigndocumentEndPrematurelyV1Response from '../model/EzsigndocumentEndPrematurelyV1Response';
+import EzsigndocumentFlattenV1Response from '../model/EzsigndocumentFlattenV1Response';
 import EzsigndocumentGetActionableElementsV1Response from '../model/EzsigndocumentGetActionableElementsV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
+import EzsigndocumentGetEzsignannotationsV1Response from '../model/EzsigndocumentGetEzsignannotationsV1Response';
 import EzsigndocumentGetEzsignformfieldgroupsV1Response from '../model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
+import EzsigndocumentGetEzsignsignaturesAutomaticV1Response from '../model/EzsigndocumentGetEzsignsignaturesAutomaticV1Response';
 import EzsigndocumentGetEzsignsignaturesV1Response from '../model/EzsigndocumentGetEzsignsignaturesV1Response';
 import EzsigndocumentGetFormDataV1Response from '../model/EzsigndocumentGetFormDataV1Response';
 import EzsigndocumentGetObjectV1Response from '../model/EzsigndocumentGetObjectV1Response';
@@ -431,6 +434,54 @@ export default class ObjectEzsigndocumentApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsigndocumentFlattenV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentFlattenV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentFlattenV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Flatten
+     * Flatten an Ezsigndocument signatures, forms and annotations. This process finalizes the PDF so that the forms and annotations become part of the document content and cannot be edited.
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {Object.<String, Object>} body 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentFlattenV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentFlattenV1Response}
+     */
+    ezsigndocumentFlattenV1(pkiEzsigndocumentID, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentFlattenV1");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ezsigndocumentFlattenV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentFlattenV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsigndocumentGetActionableElementsV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetActionableElementsV1Callback
      * @param {String} error Error message, if any.
@@ -523,6 +574,49 @@ export default class ObjectEzsigndocumentApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsigndocumentGetEzsignannotationsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignannotationsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignannotationsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsigndocument's Ezsignannotations
+     * 
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignannotationsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetEzsignannotationsV1Response}
+     */
+    ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetEzsignannotationsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetEzsignannotationsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsigndocumentGetEzsignformfieldgroupsV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignformfieldgroupsV1Callback
      * @param {String} error Error message, if any.
@@ -603,6 +697,49 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentGetEzsignpagesV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentGetEzsignsignaturesAutomaticV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignsignaturesAutomaticV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsigndocument's automatic Ezsignsignatures
+     * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsignsignaturesAutomaticV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1Response}
+     */
+    ezsigndocumentGetEzsignsignaturesAutomaticV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetEzsignsignaturesAutomaticV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetEzsignsignaturesAutomaticV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignaturesAutomatic', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -96,7 +96,7 @@ class EzsigndocumentResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsignfoldersignerassociationstatus` (array)
             for (const item of data['a_objEzsignfoldersignerassociationstatus']) {
-                CustomEzsignfoldersignerassociationstatusResponse.validateJsonObject(item);
+                CustomEzsignfoldersignerassociationstatusResponse.validateJSON(item);
             };
         }
 

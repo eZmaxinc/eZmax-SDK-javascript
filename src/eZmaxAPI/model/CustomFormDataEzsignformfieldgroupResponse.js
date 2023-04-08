@@ -86,7 +86,7 @@ class CustomFormDataEzsignformfieldgroupResponse {
             }
             // validate the optional field `a_objEzsignformfield` (array)
             for (const item of data['a_objEzsignformfield']) {
-                CustomFormDataEzsignformfieldResponse.validateJsonObject(item);
+                CustomFormDataEzsignformfieldResponse.validateJSON(item);
             };
         }
 

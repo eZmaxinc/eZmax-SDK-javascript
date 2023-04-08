@@ -77,7 +77,7 @@ class WebhookCreateObjectV1Request {
             }
             // validate the optional field `a_objWebhook` (array)
             for (const item of data['a_objWebhook']) {
-                WebhookRequestCompound.validateJsonObject(item);
+                WebhookRequestCompound.validateJSON(item);
             };
         }
 

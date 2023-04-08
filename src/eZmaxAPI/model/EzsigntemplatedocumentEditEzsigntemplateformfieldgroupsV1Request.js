@@ -77,7 +77,7 @@ class EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request {
             }
             // validate the optional field `a_objEzsigntemplateformfieldgroup` (array)
             for (const item of data['a_objEzsigntemplateformfieldgroup']) {
-                EzsigntemplateformfieldgroupRequestCompound.validateJsonObject(item);
+                EzsigntemplateformfieldgroupRequestCompound.validateJSON(item);
             };
         }
 

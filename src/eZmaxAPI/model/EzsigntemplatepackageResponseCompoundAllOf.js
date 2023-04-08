@@ -82,7 +82,7 @@ class EzsigntemplatepackageResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsigntemplatepackagesigner` (array)
             for (const item of data['a_objEzsigntemplatepackagesigner']) {
-                EzsigntemplatepackagesignerResponseCompound.validateJsonObject(item);
+                EzsigntemplatepackagesignerResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzsigntemplatepackagemembership']) { // data not null
@@ -92,7 +92,7 @@ class EzsigntemplatepackageResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsigntemplatepackagemembership` (array)
             for (const item of data['a_objEzsigntemplatepackagemembership']) {
-                EzsigntemplatepackagemembershipResponseCompound.validateJsonObject(item);
+                EzsigntemplatepackagemembershipResponseCompound.validateJSON(item);
             };
         }
 

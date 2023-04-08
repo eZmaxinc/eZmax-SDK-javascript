@@ -84,7 +84,7 @@ class EzsigntemplateResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsigntemplatesigner` (array)
             for (const item of data['a_objEzsigntemplatesigner']) {
-                EzsigntemplatesignerResponseCompound.validateJsonObject(item);
+                EzsigntemplatesignerResponseCompound.validateJSON(item);
             };
         }
 

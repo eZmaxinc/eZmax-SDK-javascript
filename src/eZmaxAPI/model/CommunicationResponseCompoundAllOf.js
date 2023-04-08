@@ -88,7 +88,7 @@ class CommunicationResponseCompoundAllOf {
             }
             // validate the optional field `a_objCommunicationattachment` (array)
             for (const item of data['a_objCommunicationattachment']) {
-                CommunicationattachmentResponseCompound.validateJsonObject(item);
+                CommunicationattachmentResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objCommunicationrecipient']) { // data not null
@@ -98,7 +98,7 @@ class CommunicationResponseCompoundAllOf {
             }
             // validate the optional field `a_objCommunicationrecipient` (array)
             for (const item of data['a_objCommunicationrecipient']) {
-                CommunicationrecipientResponseCompound.validateJsonObject(item);
+                CommunicationrecipientResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objCommunicationexternalrecipient']) { // data not null
@@ -108,7 +108,7 @@ class CommunicationResponseCompoundAllOf {
             }
             // validate the optional field `a_objCommunicationexternalrecipient` (array)
             for (const item of data['a_objCommunicationexternalrecipient']) {
-                CommunicationexternalrecipientResponseCompound.validateJsonObject(item);
+                CommunicationexternalrecipientResponseCompound.validateJSON(item);
             };
         }
 

@@ -14,9 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
-import CommunicationGetListV1Response from '../model/CommunicationGetListV1Response';
 import CommunicationGetObjectV2Response from '../model/CommunicationGetObjectV2Response';
-import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectCommunication service.
@@ -36,55 +34,6 @@ export default class ObjectCommunicationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the communicationGetListV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectCommunicationApi~communicationGetListV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommunicationGetListV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve Communication list
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eCommunicationImportance | High<br>Normal<br>Low | | eCommunicationType | Email<br>Fax<br>Sms | | eCommunicationDirection | Inbound<br>Outbound |
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
-     * @param {module:eZmaxAPI/api/ObjectCommunicationApi~communicationGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommunicationGetListV1Response}
-     */
-    communicationGetListV1(opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-        'eOrderBy': opts['eOrderBy'],
-        'iRowMax': opts['iRowMax'],
-        'iRowOffset': opts['iRowOffset'],
-        'sFilter': opts['sFilter']
-      };
-      let headerParams = {
-        'Accept-Language': opts['Accept_Language']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-      let returnType = CommunicationGetListV1Response;
-      return this.apiClient.callApi(
-        '/1/object/communication/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the communicationGetObjectV2 operation.

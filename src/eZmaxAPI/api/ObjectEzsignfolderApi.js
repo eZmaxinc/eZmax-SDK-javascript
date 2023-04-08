@@ -27,8 +27,11 @@ import EzsignfolderDisposeV1Response from '../model/EzsignfolderDisposeV1Respons
 import EzsignfolderEditObjectV1Request from '../model/EzsignfolderEditObjectV1Request';
 import EzsignfolderEditObjectV1Response from '../model/EzsignfolderEditObjectV1Response';
 import EzsignfolderGetActionableElementsV1Response from '../model/EzsignfolderGetActionableElementsV1Response';
+import EzsignfolderGetCommunicationCountV1Response from '../model/EzsignfolderGetCommunicationCountV1Response';
+import EzsignfolderGetCommunicationListV1Response from '../model/EzsignfolderGetCommunicationListV1Response';
 import EzsignfolderGetEzsigndocumentsV1Response from '../model/EzsignfolderGetEzsigndocumentsV1Response';
 import EzsignfolderGetEzsignfoldersignerassociationsV1Response from '../model/EzsignfolderGetEzsignfoldersignerassociationsV1Response';
+import EzsignfolderGetEzsignsignaturesAutomaticV1Response from '../model/EzsignfolderGetEzsignsignaturesAutomaticV1Response';
 import EzsignfolderGetFormsDataV1Response from '../model/EzsignfolderGetFormsDataV1Response';
 import EzsignfolderGetListV1Response from '../model/EzsignfolderGetListV1Response';
 import EzsignfolderGetObjectV1Response from '../model/EzsignfolderGetObjectV1Response';
@@ -470,6 +473,92 @@ export default class ObjectEzsignfolderApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsignfolderGetCommunicationCountV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetCommunicationCountV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetCommunicationCountV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Communication count
+     * 
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetCommunicationCountV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetCommunicationCountV1Response}
+     */
+    ezsignfolderGetCommunicationCountV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetCommunicationCountV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetCommunicationCountV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderGetCommunicationListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetCommunicationListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetCommunicationListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Communication list
+     * 
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetCommunicationListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetCommunicationListV1Response}
+     */
+    ezsignfolderGetCommunicationListV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetCommunicationListV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetCommunicationListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsignfolderGetEzsigndocumentsV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsigndocumentsV1Callback
      * @param {String} error Error message, if any.
@@ -556,6 +645,49 @@ export default class ObjectEzsignfolderApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsignfolderGetEzsignsignaturesAutomaticV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsignsignaturesAutomaticV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetEzsignsignaturesAutomaticV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignfolder's automatic Ezsignsignatures
+     * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetEzsignsignaturesAutomaticV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetEzsignsignaturesAutomaticV1Response}
+     */
+    ezsignfolderGetEzsignsignaturesAutomaticV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetEzsignsignaturesAutomaticV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetEzsignsignaturesAutomaticV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsignfolderGetFormsDataV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetFormsDataV1Callback
      * @param {String} error Error message, if any.
@@ -610,11 +742,11 @@ export default class ObjectEzsignfolderApi {
      * Retrieve Ezsignfolder list
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eOrderBy Specify how you want the results to be sorted
-     * @param {Number} opts.iRowMax 
-     * @param {Number} opts.iRowOffset 
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {String} opts.sFilter 
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax] 
+     * @param {Number} [iRowOffset] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetListV1Response}
      */

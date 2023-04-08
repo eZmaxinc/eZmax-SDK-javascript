@@ -17,7 +17,6 @@ import CommonResponseError from '../model/CommonResponseError';
 import EzsigntemplatepackagesignermembershipCreateObjectV1Request from '../model/EzsigntemplatepackagesignermembershipCreateObjectV1Request';
 import EzsigntemplatepackagesignermembershipCreateObjectV1Response from '../model/EzsigntemplatepackagesignermembershipCreateObjectV1Response';
 import EzsigntemplatepackagesignermembershipDeleteObjectV1Response from '../model/EzsigntemplatepackagesignermembershipDeleteObjectV1Response';
-import EzsigntemplatepackagesignermembershipGetObjectV1Response from '../model/EzsigntemplatepackagesignermembershipGetObjectV1Response';
 import EzsigntemplatepackagesignermembershipGetObjectV2Response from '../model/EzsigntemplatepackagesignermembershipGetObjectV2Response';
 
 /**
@@ -119,49 +118,6 @@ export default class ObjectEzsigntemplatepackagesignermembershipApi {
       let returnType = EzsigntemplatepackagesignermembershipDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsigntemplatepackagesignermembershipGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsigntemplatepackagesignermembershipApi~ezsigntemplatepackagesignermembershipGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsigntemplatepackagesignermembership
-     * 
-     * @param {Number} pkiEzsigntemplatepackagesignermembershipID 
-     * @param {module:eZmaxAPI/api/ObjectEzsigntemplatepackagesignermembershipApi~ezsigntemplatepackagesignermembershipGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipGetObjectV1Response}
-     */
-    ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsigntemplatepackagesignermembershipID' is set
-      if (pkiEzsigntemplatepackagesignermembershipID === undefined || pkiEzsigntemplatepackagesignermembershipID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsigntemplatepackagesignermembershipID' when calling ezsigntemplatepackagesignermembershipGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsigntemplatepackagesignermembershipID': pkiEzsigntemplatepackagesignermembershipID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsigntemplatepackagesignermembershipGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

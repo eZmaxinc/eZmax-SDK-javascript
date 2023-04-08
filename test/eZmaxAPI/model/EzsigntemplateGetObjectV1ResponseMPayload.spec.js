@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property objAudit (base name: "objAudit")', function() {
+      // uncomment below and update the code to test the property objAudit
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetObjectV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property objEzsigntemplatedocument (base name: "objEzsigntemplatedocument")', function() {
       // uncomment below and update the code to test the property objEzsigntemplatedocument
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetObjectV1ResponseMPayload();

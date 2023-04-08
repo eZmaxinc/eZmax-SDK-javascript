@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sCommunicationBodyurl (base name: "sCommunicationBodyurl")', function() {
+      // uncomment below and update the code to test the property sCommunicationBodyurl
+      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eCommunicationDirection (base name: "eCommunicationDirection")', function() {
       // uncomment below and update the code to test the property eCommunicationDirection
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
@@ -90,8 +96,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property objContactFrom (base name: "objContactFrom")', function() {
-      // uncomment below and update the code to test the property objContactFrom
+    it('should have the property objDescriptionstaticSender (base name: "objDescriptionstaticSender")', function() {
+      // uncomment below and update the code to test the property objDescriptionstaticSender
+      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEmailstaticSender (base name: "objEmailstaticSender")', function() {
+      // uncomment below and update the code to test the property objEmailstaticSender
+      //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objPhonestaticSender (base name: "objPhonestaticSender")', function() {
+      // uncomment below and update the code to test the property objPhonestaticSender
       //var instance = new EZmaxApiDefinitionFull.CommunicationResponseCompound();
       //expect(instance).to.be();
     });

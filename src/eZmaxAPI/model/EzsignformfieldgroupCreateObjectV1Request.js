@@ -77,7 +77,7 @@ class EzsignformfieldgroupCreateObjectV1Request {
             }
             // validate the optional field `a_objEzsignformfieldgroup` (array)
             for (const item of data['a_objEzsignformfieldgroup']) {
-                EzsignformfieldgroupRequestCompound.validateJsonObject(item);
+                EzsignformfieldgroupRequestCompound.validateJSON(item);
             };
         }
 

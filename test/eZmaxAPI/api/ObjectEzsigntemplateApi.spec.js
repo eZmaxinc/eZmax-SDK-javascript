@@ -88,16 +88,6 @@
         done();
       });
     });
-    describe('ezsigntemplateGetAutocompleteV1', function() {
-      it('should call ezsigntemplateGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplateGetAutocompleteV1
-        //instance.ezsigntemplateGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplateGetAutocompleteV2', function() {
       it('should call ezsigntemplateGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplateGetAutocompleteV2

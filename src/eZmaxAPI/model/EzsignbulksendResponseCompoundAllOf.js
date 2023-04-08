@@ -82,7 +82,7 @@ class EzsignbulksendResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsignbulksenddocumentmapping` (array)
             for (const item of data['a_objEzsignbulksenddocumentmapping']) {
-                EzsignbulksenddocumentmappingResponseCompound.validateJsonObject(item);
+                EzsignbulksenddocumentmappingResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objEzsignbulksendsignermapping']) { // data not null
@@ -92,7 +92,7 @@ class EzsignbulksendResponseCompoundAllOf {
             }
             // validate the optional field `a_objEzsignbulksendsignermapping` (array)
             for (const item of data['a_objEzsignbulksendsignermapping']) {
-                EzsignbulksendsignermappingResponse.validateJsonObject(item);
+                EzsignbulksendsignermappingResponse.validateJSON(item);
             };
         }
 

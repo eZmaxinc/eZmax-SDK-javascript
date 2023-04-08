@@ -77,7 +77,7 @@ class EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsignfoldersignerassociation` (array)
             for (const item of data['a_objEzsignfoldersignerassociation']) {
-                CustomEzsignfoldersignerassociationActionableElementResponse.validateJsonObject(item);
+                CustomEzsignfoldersignerassociationActionableElementResponse.validateJSON(item);
             };
         }
 

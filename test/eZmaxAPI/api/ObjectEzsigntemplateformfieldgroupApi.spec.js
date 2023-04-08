@@ -78,16 +78,6 @@
         done();
       });
     });
-    describe('ezsigntemplateformfieldgroupGetObjectV1', function() {
-      it('should call ezsigntemplateformfieldgroupGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplateformfieldgroupGetObjectV1
-        //instance.ezsigntemplateformfieldgroupGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplateformfieldgroupGetObjectV2', function() {
       it('should call ezsigntemplateformfieldgroupGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplateformfieldgroupGetObjectV2

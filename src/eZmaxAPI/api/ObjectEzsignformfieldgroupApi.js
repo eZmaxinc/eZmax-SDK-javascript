@@ -19,7 +19,6 @@ import EzsignformfieldgroupCreateObjectV1Response from '../model/Ezsignformfield
 import EzsignformfieldgroupDeleteObjectV1Response from '../model/EzsignformfieldgroupDeleteObjectV1Response';
 import EzsignformfieldgroupEditObjectV1Request from '../model/EzsignformfieldgroupEditObjectV1Request';
 import EzsignformfieldgroupEditObjectV1Response from '../model/EzsignformfieldgroupEditObjectV1Response';
-import EzsignformfieldgroupGetObjectV1Response from '../model/EzsignformfieldgroupGetObjectV1Response';
 import EzsignformfieldgroupGetObjectV2Response from '../model/EzsignformfieldgroupGetObjectV2Response';
 
 /**
@@ -169,48 +168,6 @@ export default class ObjectEzsignformfieldgroupApi {
       let returnType = EzsignformfieldgroupEditObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsignformfieldgroupGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignformfieldgroupApi~ezsignformfieldgroupGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsignformfieldgroup
-     * @param {Number} pkiEzsignformfieldgroupID 
-     * @param {module:eZmaxAPI/api/ObjectEzsignformfieldgroupApi~ezsignformfieldgroupGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignformfieldgroupGetObjectV1Response}
-     */
-    ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsignformfieldgroupID' is set
-      if (pkiEzsignformfieldgroupID === undefined || pkiEzsignformfieldgroupID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignformfieldgroupID' when calling ezsignformfieldgroupGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsignformfieldgroupID': pkiEzsignformfieldgroupID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsignformfieldgroupGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import FranchiseofficeGetAutocompleteV2Response from '../model/FranchiseofficeGetAutocompleteV2Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
@@ -37,57 +36,6 @@ export default class ObjectFranchiseofficeApi {
 
 
     /**
-     * Callback function to receive the result of the franchiseofficeGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectFranchiseofficeApi~franchiseofficeGetAutocompleteV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve Franchiseoffices and IDs
-     * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Franchiseoffices to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
-     * @param {module:eZmaxAPI/api/ObjectFranchiseofficeApi~franchiseofficeGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
-     */
-    franchiseofficeGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling franchiseofficeGetAutocompleteV1");
-      }
-
-      let pathParams = {
-        'sSelector': sSelector
-      };
-      let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
-      };
-      let headerParams = {
-        'Accept-Language': opts['Accept_Language']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
-      return this.apiClient.callApi(
-        '/1/object/franchiseoffice/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the franchiseofficeGetAutocompleteV2 operation.
      * @callback module:eZmaxAPI/api/ObjectFranchiseofficeApi~franchiseofficeGetAutocompleteV2Callback
      * @param {String} error Error message, if any.
@@ -100,9 +48,9 @@ export default class ObjectFranchiseofficeApi {
      * Get the list of Franchiseoffice to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Franchiseoffices to return
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.eFilterActive Specify which results we want to display. (default to 'Active')
-     * @param {String} opts.sQuery Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} opts.Accept_Language 
+     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
+     * @param {String} [sQuery] Allow to filter the returned results
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {module:eZmaxAPI/api/ObjectFranchiseofficeApi~franchiseofficeGetAutocompleteV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/FranchiseofficeGetAutocompleteV2Response}
      */

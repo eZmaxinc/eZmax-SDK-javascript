@@ -69,7 +69,7 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objFranchiseoffice` (array)
             for (const item of data['a_objFranchiseoffice']) {
-                FranchiseofficeAutocompleteElementResponse.validateJsonObject(item);
+                FranchiseofficeAutocompleteElementResponse.validateJSON(item);
             };
         }
 

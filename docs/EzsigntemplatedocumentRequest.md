@@ -37,6 +37,18 @@ Name | Type | Description | Notes
 
 * `Pdf` (value: `"Pdf"`)
 
+* `Doc` (value: `"Doc"`)
+
+* `Docx` (value: `"Docx"`)
+
+* `Xls` (value: `"Xls"`)
+
+* `Xlsx` (value: `"Xlsx"`)
+
+* `Ppt` (value: `"Ppt"`)
+
+* `Pptx` (value: `"Pptx"`)
+
 
 
 

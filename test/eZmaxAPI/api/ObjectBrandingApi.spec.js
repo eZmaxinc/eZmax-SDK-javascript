@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('brandingGetAutocompleteV1', function() {
-      it('should call brandingGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test brandingGetAutocompleteV1
-        //instance.brandingGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('brandingGetAutocompleteV2', function() {
       it('should call brandingGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test brandingGetAutocompleteV2
@@ -92,16 +82,6 @@
       it('should call brandingGetListV1 successfully', function(done) {
         //uncomment below and update the code to test brandingGetListV1
         //instance.brandingGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('brandingGetObjectV1', function() {
-      it('should call brandingGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test brandingGetObjectV1
-        //instance.brandingGetObjectV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

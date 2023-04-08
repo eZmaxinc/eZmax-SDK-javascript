@@ -77,7 +77,7 @@ class EzsignfoldertypeGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objEzsignfoldertype` (array)
             for (const item of data['a_objEzsignfoldertype']) {
-                EzsignfoldertypeAutocompleteElementResponse.validateJsonObject(item);
+                EzsignfoldertypeAutocompleteElementResponse.validateJSON(item);
             };
         }
 

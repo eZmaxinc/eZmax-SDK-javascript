@@ -69,7 +69,7 @@ class PaymenttermGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objPaymentterm` (array)
             for (const item of data['a_objPaymentterm']) {
-                PaymenttermAutocompleteElementResponse.validateJsonObject(item);
+                PaymenttermAutocompleteElementResponse.validateJSON(item);
             };
         }
 

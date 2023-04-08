@@ -76,7 +76,7 @@ class PaymenttermGetListV1ResponseMPayloadAllOf {
             }
             // validate the optional field `a_objPaymentterm` (array)
             for (const item of data['a_objPaymentterm']) {
-                PaymenttermListElement.validateJsonObject(item);
+                PaymenttermListElement.validateJSON(item);
             };
         }
 

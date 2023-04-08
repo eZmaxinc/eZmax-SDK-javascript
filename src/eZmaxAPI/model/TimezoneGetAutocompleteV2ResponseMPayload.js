@@ -77,7 +77,7 @@ class TimezoneGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objTimezone` (array)
             for (const item of data['a_objTimezone']) {
-                TimezoneAutocompleteElementResponse.validateJsonObject(item);
+                TimezoneAutocompleteElementResponse.validateJSON(item);
             };
         }
 

@@ -71,7 +71,7 @@ class EzsignsignatureRequestCompoundAllOf {
             }
             // validate the optional field `a_objEzsignsignaturecustomdate` (array)
             for (const item of data['a_objEzsignsignaturecustomdate']) {
-                EzsignsignaturecustomdateRequestCompound.validateJsonObject(item);
+                EzsignsignaturecustomdateRequestCompound.validateJSON(item);
             };
         }
 

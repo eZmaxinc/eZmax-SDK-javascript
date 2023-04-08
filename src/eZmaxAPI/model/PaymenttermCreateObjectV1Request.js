@@ -77,7 +77,7 @@ class PaymenttermCreateObjectV1Request {
             }
             // validate the optional field `a_objPaymentterm` (array)
             for (const item of data['a_objPaymentterm']) {
-                PaymenttermRequestCompound.validateJsonObject(item);
+                PaymenttermRequestCompound.validateJSON(item);
             };
         }
 

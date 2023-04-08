@@ -77,7 +77,7 @@ class ApikeyCreateObjectV2ResponseMPayload {
             }
             // validate the optional field `a_objApikey` (array)
             for (const item of data['a_objApikey']) {
-                ApikeyResponseCompound.validateJsonObject(item);
+                ApikeyResponseCompound.validateJSON(item);
             };
         }
 

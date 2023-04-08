@@ -138,6 +138,26 @@
         done();
       });
     });
+    describe('ezsignfolderGetCommunicationCountV1', function() {
+      it('should call ezsignfolderGetCommunicationCountV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetCommunicationCountV1
+        //instance.ezsignfolderGetCommunicationCountV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderGetCommunicationListV1', function() {
+      it('should call ezsignfolderGetCommunicationListV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetCommunicationListV1
+        //instance.ezsignfolderGetCommunicationListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetEzsigndocumentsV1', function() {
       it('should call ezsignfolderGetEzsigndocumentsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetEzsigndocumentsV1
@@ -152,6 +172,16 @@
       it('should call ezsignfolderGetEzsignfoldersignerassociationsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetEzsignfoldersignerassociationsV1
         //instance.ezsignfolderGetEzsignfoldersignerassociationsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderGetEzsignsignaturesAutomaticV1', function() {
+      it('should call ezsignfolderGetEzsignsignaturesAutomaticV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetEzsignsignaturesAutomaticV1
+        //instance.ezsignfolderGetEzsignsignaturesAutomaticV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

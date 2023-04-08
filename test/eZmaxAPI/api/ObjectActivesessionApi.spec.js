@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('activesessionGetListV1', function() {
+      it('should call activesessionGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test activesessionGetListV1
+        //instance.activesessionGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

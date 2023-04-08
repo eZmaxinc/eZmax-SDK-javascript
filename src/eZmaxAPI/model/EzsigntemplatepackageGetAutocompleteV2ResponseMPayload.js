@@ -77,7 +77,7 @@ class EzsigntemplatepackageGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplatepackage` (array)
             for (const item of data['a_objEzsigntemplatepackage']) {
-                EzsigntemplatepackageAutocompleteElementResponse.validateJsonObject(item);
+                EzsigntemplatepackageAutocompleteElementResponse.validateJSON(item);
             };
         }
 

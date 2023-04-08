@@ -103,6 +103,9 @@ class EzsigndocumentRequestCompound {
             if (data.hasOwnProperty('sEzsigndocumentName')) {
                 obj['sEzsigndocumentName'] = ApiClient.convertToType(data['sEzsigndocumentName'], 'String');
             }
+            if (data.hasOwnProperty('sEzsigndocumentExternalid')) {
+                obj['sEzsigndocumentExternalid'] = ApiClient.convertToType(data['sEzsigndocumentExternalid'], 'String');
+            }
         }
         return obj;
     }
@@ -146,6 +149,10 @@ class EzsigndocumentRequestCompound {
         // ensure the json data is a string
         if (data['sEzsigndocumentName'] && !(typeof data['sEzsigndocumentName'] === 'string' || data['sEzsigndocumentName'] instanceof String)) {
             throw new Error("Expected the field `sEzsigndocumentName` to be a primitive type in the JSON string but got " + data['sEzsigndocumentName']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigndocumentExternalid'] && !(typeof data['sEzsigndocumentExternalid'] === 'string' || data['sEzsigndocumentExternalid'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigndocumentExternalid` to be a primitive type in the JSON string but got " + data['sEzsigndocumentExternalid']);
         }
 
         return true;
@@ -367,6 +374,21 @@ class EzsigndocumentRequestCompound {
     setSEzsigndocumentName(sEzsigndocumentName) {
         this['sEzsigndocumentName'] = sEzsigndocumentName;
     }
+/**
+     * Returns This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @return {String}
+     */
+    getSEzsigndocumentExternalid() {
+        return this.sEzsigndocumentExternalid;
+    }
+
+    /**
+     * Sets This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @param {String} sEzsigndocumentExternalid This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     */
+    setSEzsigndocumentExternalid(sEzsigndocumentExternalid) {
+        this['sEzsigndocumentExternalid'] = sEzsigndocumentExternalid;
+    }
 
 }
 
@@ -457,6 +479,12 @@ EzsigndocumentRequestCompound.prototype['dtEzsigndocumentDuedate'] = undefined;
  */
 EzsigndocumentRequestCompound.prototype['sEzsigndocumentName'] = undefined;
 
+/**
+ * This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+ * @member {String} sEzsigndocumentExternalid
+ */
+EzsigndocumentRequestCompound.prototype['sEzsigndocumentExternalid'] = undefined;
+
 
 // Implement EzsigndocumentRequest interface:
 /**
@@ -530,6 +558,11 @@ EzsigndocumentRequest.prototype['dtEzsigndocumentDuedate'] = undefined;
  * @member {String} sEzsigndocumentName
  */
 EzsigndocumentRequest.prototype['sEzsigndocumentName'] = undefined;
+/**
+ * This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+ * @member {String} sEzsigndocumentExternalid
+ */
+EzsigndocumentRequest.prototype['sEzsigndocumentExternalid'] = undefined;
 
 
 
@@ -571,7 +604,43 @@ EzsigndocumentRequestCompound['EEzsigndocumentFormatEnum'] = {
      * value: "Pdf"
      * @const
      */
-    "Pdf": "Pdf"
+    "Pdf": "Pdf",
+
+    /**
+     * value: "Doc"
+     * @const
+     */
+    "Doc": "Doc",
+
+    /**
+     * value: "Docx"
+     * @const
+     */
+    "Docx": "Docx",
+
+    /**
+     * value: "Xls"
+     * @const
+     */
+    "Xls": "Xls",
+
+    /**
+     * value: "Xlsx"
+     * @const
+     */
+    "Xlsx": "Xlsx",
+
+    /**
+     * value: "Ppt"
+     * @const
+     */
+    "Ppt": "Ppt",
+
+    /**
+     * value: "Pptx"
+     * @const
+     */
+    "Pptx": "Pptx"
 };
 
 

@@ -48,7 +48,7 @@ export default class GlobalCustomerApi {
      * Retrieve the customer's specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer's data is stored.
      * @param {String} pksCustomerCode 
      * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} opts.sInfrastructureproductCode The infrastructure product Code  If undefined, \"appcluster01\" is assumed
+     * @param {module:eZmaxAPI/model/String} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \"appcluster01\" is assumed
      * @param {module:eZmaxAPI/api/GlobalCustomerApi~globalCustomerGetEndpointV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/GlobalCustomerGetEndpointV1Response}
      */

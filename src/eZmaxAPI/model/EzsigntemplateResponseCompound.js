@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAudit from './CommonAudit';
 import EzsigntemplateResponse from './EzsigntemplateResponse';
 import EzsigntemplateResponseCompoundAllOf from './EzsigntemplateResponseCompoundAllOf';
 import EzsigntemplatedocumentResponse from './EzsigntemplatedocumentResponse';
@@ -36,11 +37,12 @@ class EzsigntemplateResponseCompound {
      * @param sEzsigntemplateDescription {String} The description of the Ezsigntemplate
      * @param bEzsigntemplateAdminonly {Boolean} Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
+     * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      * @param a_objEzsigntemplatesigner {Array.<module:eZmaxAPI/model/EzsigntemplatesignerResponseCompound>} 
      */
-    constructor(pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, a_objEzsigntemplatesigner) { 
-        EzsigntemplateResponse.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX);EzsigntemplateResponseCompoundAllOf.initialize(this, a_objEzsigntemplatesigner);
-        EzsigntemplateResponseCompound.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, a_objEzsigntemplatesigner);
+    constructor(pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit, a_objEzsigntemplatesigner) { 
+        EzsigntemplateResponse.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit);EzsigntemplateResponseCompoundAllOf.initialize(this, a_objEzsigntemplatesigner);
+        EzsigntemplateResponseCompound.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit, a_objEzsigntemplatesigner);
     }
 
     /**
@@ -48,7 +50,7 @@ class EzsigntemplateResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, a_objEzsigntemplatesigner) { 
+    static initialize(obj, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit, a_objEzsigntemplatesigner) { 
         obj['pkiEzsigntemplateID'] = pkiEzsigntemplateID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -56,6 +58,7 @@ class EzsigntemplateResponseCompound {
         obj['sEzsigntemplateDescription'] = sEzsigntemplateDescription;
         obj['bEzsigntemplateAdminonly'] = bEzsigntemplateAdminonly;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
+        obj['objAudit'] = objAudit;
         obj['a_objEzsigntemplatesigner'] = a_objEzsigntemplatesigner;
     }
 
@@ -96,6 +99,9 @@ class EzsigntemplateResponseCompound {
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
             }
+            if (data.hasOwnProperty('objAudit')) {
+                obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
             if (data.hasOwnProperty('objEzsigntemplatedocument')) {
                 obj['objEzsigntemplatedocument'] = EzsigntemplatedocumentResponse.constructFromObject(data['objEzsigntemplatedocument']);
             }
@@ -130,6 +136,10 @@ class EzsigntemplateResponseCompound {
         if (data['sEzsignfoldertypeNameX'] && !(typeof data['sEzsignfoldertypeNameX'] === 'string' || data['sEzsignfoldertypeNameX'] instanceof String)) {
             throw new Error("Expected the field `sEzsignfoldertypeNameX` to be a primitive type in the JSON string but got " + data['sEzsignfoldertypeNameX']);
         }
+        // validate the optional field `objAudit`
+        if (data['objAudit']) { // data not null
+          CommonAudit.validateJSON(data['objAudit']);
+        }
         // validate the optional field `objEzsigntemplatedocument`
         if (data['objEzsigntemplatedocument']) { // data not null
           EzsigntemplatedocumentResponse.validateJSON(data['objEzsigntemplatedocument']);
@@ -141,7 +151,7 @@ class EzsigntemplateResponseCompound {
             }
             // validate the optional field `a_objEzsigntemplatesigner` (array)
             for (const item of data['a_objEzsigntemplatesigner']) {
-                EzsigntemplatesignerResponseCompound.validateJsonObject(item);
+                EzsigntemplatesignerResponseCompound.validateJSON(item);
             };
         }
 
@@ -274,6 +284,19 @@ class EzsigntemplateResponseCompound {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
 /**
+     * @return {module:eZmaxAPI/model/CommonAudit}
+     */
+    getObjAudit() {
+        return this.objAudit;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CommonAudit} objAudit
+     */
+    setObjAudit(objAudit) {
+        this['objAudit'] = objAudit;
+    }
+/**
      * @return {module:eZmaxAPI/model/EzsigntemplatedocumentResponse}
      */
     getObjEzsigntemplatedocument() {
@@ -302,7 +325,7 @@ class EzsigntemplateResponseCompound {
 
 }
 
-EzsigntemplateResponseCompound.RequiredProperties = ["pkiEzsigntemplateID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplateDescription", "bEzsigntemplateAdminonly", "sEzsignfoldertypeNameX", "a_objEzsigntemplatesigner"];
+EzsigntemplateResponseCompound.RequiredProperties = ["pkiEzsigntemplateID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplateDescription", "bEzsigntemplateAdminonly", "sEzsignfoldertypeNameX", "objAudit", "a_objEzsigntemplatesigner"];
 
 /**
  * The unique ID of the Ezsigntemplate
@@ -351,6 +374,11 @@ EzsigntemplateResponseCompound.prototype['bEzsigntemplateAdminonly'] = undefined
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsigntemplateResponseCompound.prototype['sEzsignfoldertypeNameX'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+EzsigntemplateResponseCompound.prototype['objAudit'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplatedocumentResponse} objEzsigntemplatedocument
@@ -404,6 +432,10 @@ EzsigntemplateResponse.prototype['bEzsigntemplateAdminonly'] = undefined;
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsigntemplateResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+EzsigntemplateResponse.prototype['objAudit'] = undefined;
 // Implement EzsigntemplateResponseCompoundAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplatedocumentResponse} objEzsigntemplatedocument

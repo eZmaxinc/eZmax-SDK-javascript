@@ -48,16 +48,6 @@
   }
 
   describe('ObjectTimezoneApi', function() {
-    describe('timezoneGetAutocompleteV1', function() {
-      it('should call timezoneGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test timezoneGetAutocompleteV1
-        //instance.timezoneGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('timezoneGetAutocompleteV2', function() {
       it('should call timezoneGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test timezoneGetAutocompleteV2

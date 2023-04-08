@@ -77,7 +77,7 @@ class EzsigntemplateGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplate` (array)
             for (const item of data['a_objEzsigntemplate']) {
-                EzsigntemplateAutocompleteElementResponse.validateJsonObject(item);
+                EzsigntemplateAutocompleteElementResponse.validateJSON(item);
             };
         }
 

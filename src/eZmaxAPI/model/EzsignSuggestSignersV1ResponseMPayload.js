@@ -88,7 +88,7 @@ class EzsignSuggestSignersV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsignfoldersignerassociation` (array)
             for (const item of data['a_objEzsignfoldersignerassociation']) {
-                EzsignfoldersignerassociationResponseCompound.validateJsonObject(item);
+                EzsignfoldersignerassociationResponseCompound.validateJSON(item);
             };
         }
         if (data['a_objUserTeam']) { // data not null
@@ -98,7 +98,7 @@ class EzsignSuggestSignersV1ResponseMPayload {
             }
             // validate the optional field `a_objUserTeam` (array)
             for (const item of data['a_objUserTeam']) {
-                CustomUserResponse.validateJsonObject(item);
+                CustomUserResponse.validateJSON(item);
             };
         }
         if (data['a_objUser']) { // data not null
@@ -108,7 +108,7 @@ class EzsignSuggestSignersV1ResponseMPayload {
             }
             // validate the optional field `a_objUser` (array)
             for (const item of data['a_objUser']) {
-                CustomUserResponse.validateJsonObject(item);
+                CustomUserResponse.validateJSON(item);
             };
         }
 

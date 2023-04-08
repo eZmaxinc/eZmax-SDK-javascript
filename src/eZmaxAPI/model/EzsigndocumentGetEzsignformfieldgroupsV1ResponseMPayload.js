@@ -77,7 +77,7 @@ class EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsignformfieldgroup` (array)
             for (const item of data['a_objEzsignformfieldgroup']) {
-                EzsignformfieldgroupResponseCompound.validateJsonObject(item);
+                EzsignformfieldgroupResponseCompound.validateJSON(item);
             };
         }
 

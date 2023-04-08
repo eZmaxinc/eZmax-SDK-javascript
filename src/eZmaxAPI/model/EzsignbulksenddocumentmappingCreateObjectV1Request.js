@@ -77,7 +77,7 @@ class EzsignbulksenddocumentmappingCreateObjectV1Request {
             }
             // validate the optional field `a_objEzsignbulksenddocumentmapping` (array)
             for (const item of data['a_objEzsignbulksenddocumentmapping']) {
-                EzsignbulksenddocumentmappingRequestCompound.validateJsonObject(item);
+                EzsignbulksenddocumentmappingRequestCompound.validateJSON(item);
             };
         }
 

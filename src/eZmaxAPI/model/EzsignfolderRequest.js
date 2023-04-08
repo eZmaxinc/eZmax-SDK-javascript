@@ -75,6 +75,9 @@ class EzsignfolderRequest {
             if (data.hasOwnProperty('eEzsignfolderSendreminderfrequency')) {
                 obj['eEzsignfolderSendreminderfrequency'] = FieldEEzsignfolderSendreminderfrequency.constructFromObject(data['eEzsignfolderSendreminderfrequency']);
             }
+            if (data.hasOwnProperty('sEzsignfolderExternalid')) {
+                obj['sEzsignfolderExternalid'] = ApiClient.convertToType(data['sEzsignfolderExternalid'], 'String');
+            }
         }
         return obj;
     }
@@ -98,6 +101,10 @@ class EzsignfolderRequest {
         // ensure the json data is a string
         if (data['tEzsignfolderNote'] && !(typeof data['tEzsignfolderNote'] === 'string' || data['tEzsignfolderNote'] instanceof String)) {
             throw new Error("Expected the field `tEzsignfolderNote` to be a primitive type in the JSON string but got " + data['tEzsignfolderNote']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsignfolderExternalid'] && !(typeof data['sEzsignfolderExternalid'] === 'string' || data['sEzsignfolderExternalid'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignfolderExternalid` to be a primitive type in the JSON string but got " + data['sEzsignfolderExternalid']);
         }
 
         return true;
@@ -195,6 +202,21 @@ class EzsignfolderRequest {
     setEEzsignfolderSendreminderfrequency(eEzsignfolderSendreminderfrequency) {
         this['eEzsignfolderSendreminderfrequency'] = eEzsignfolderSendreminderfrequency;
     }
+/**
+     * Returns This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @return {String}
+     */
+    getSEzsignfolderExternalid() {
+        return this.sEzsignfolderExternalid;
+    }
+
+    /**
+     * Sets This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @param {String} sEzsignfolderExternalid This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     */
+    setSEzsignfolderExternalid(sEzsignfolderExternalid) {
+        this['sEzsignfolderExternalid'] = sEzsignfolderExternalid;
+    }
 
 }
 
@@ -234,6 +256,12 @@ EzsignfolderRequest.prototype['tEzsignfolderNote'] = undefined;
  * @member {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} eEzsignfolderSendreminderfrequency
  */
 EzsignfolderRequest.prototype['eEzsignfolderSendreminderfrequency'] = undefined;
+
+/**
+ * This field can be used to store an External ID from the client's system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+ * @member {String} sEzsignfolderExternalid
+ */
+EzsignfolderRequest.prototype['sEzsignfolderExternalid'] = undefined;
 
 
 

@@ -117,7 +117,7 @@ class EzsignbulksendtransmissionResponseCompound {
             }
             // validate the optional field `a_objEzsignfoldertransmission` (array)
             for (const item of data['a_objEzsignfoldertransmission']) {
-                CustomEzsignfoldertransmissionResponse.validateJsonObject(item);
+                CustomEzsignfoldertransmissionResponse.validateJSON(item);
             };
         }
 

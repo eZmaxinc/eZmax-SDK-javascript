@@ -77,7 +77,7 @@ class EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload {
             }
             // validate the optional field `a_objEzsigntemplatedocumentpage` (array)
             for (const item of data['a_objEzsigntemplatedocumentpage']) {
-                EzsigntemplatedocumentpageResponseCompound.validateJsonObject(item);
+                EzsigntemplatedocumentpageResponseCompound.validateJSON(item);
             };
         }
 

@@ -77,7 +77,7 @@ class BillingentityinternalGetAutocompleteV2ResponseMPayload {
             }
             // validate the optional field `a_objBillingentityinternal` (array)
             for (const item of data['a_objBillingentityinternal']) {
-                BillingentityinternalAutocompleteElementResponse.validateJsonObject(item);
+                BillingentityinternalAutocompleteElementResponse.validateJSON(item);
             };
         }
 

@@ -17,7 +17,6 @@ import CommonResponseError from '../model/CommonResponseError';
 import EzsignbulksenddocumentmappingCreateObjectV1Request from '../model/EzsignbulksenddocumentmappingCreateObjectV1Request';
 import EzsignbulksenddocumentmappingCreateObjectV1Response from '../model/EzsignbulksenddocumentmappingCreateObjectV1Response';
 import EzsignbulksenddocumentmappingDeleteObjectV1Response from '../model/EzsignbulksenddocumentmappingDeleteObjectV1Response';
-import EzsignbulksenddocumentmappingGetObjectV1Response from '../model/EzsignbulksenddocumentmappingGetObjectV1Response';
 import EzsignbulksenddocumentmappingGetObjectV2Response from '../model/EzsignbulksenddocumentmappingGetObjectV2Response';
 
 /**
@@ -119,49 +118,6 @@ export default class ObjectEzsignbulksenddocumentmappingApi {
       let returnType = EzsignbulksenddocumentmappingDeleteObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsignbulksenddocumentmappingGetObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignbulksenddocumentmappingApi~ezsignbulksenddocumentmappingGetObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignbulksenddocumentmappingGetObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Ezsignbulksenddocumentmapping
-     * 
-     * @param {Number} pkiEzsignbulksenddocumentmappingID 
-     * @param {module:eZmaxAPI/api/ObjectEzsignbulksenddocumentmappingApi~ezsignbulksenddocumentmappingGetObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignbulksenddocumentmappingGetObjectV1Response}
-     */
-    ezsignbulksenddocumentmappingGetObjectV1(pkiEzsignbulksenddocumentmappingID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiEzsignbulksenddocumentmappingID' is set
-      if (pkiEzsignbulksenddocumentmappingID === undefined || pkiEzsignbulksenddocumentmappingID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignbulksenddocumentmappingID' when calling ezsignbulksenddocumentmappingGetObjectV1");
-      }
-
-      let pathParams = {
-        'pkiEzsignbulksenddocumentmappingID': pkiEzsignbulksenddocumentmappingID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = EzsignbulksenddocumentmappingGetObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

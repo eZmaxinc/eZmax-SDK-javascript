@@ -105,7 +105,7 @@ class CommonResponseObjDebug {
             }
             // validate the optional field `a_objSQLQuery` (array)
             for (const item of data['a_objSQLQuery']) {
-                CommonResponseObjSQLQuery.validateJsonObject(item);
+                CommonResponseObjSQLQuery.validateJSON(item);
             };
         }
 

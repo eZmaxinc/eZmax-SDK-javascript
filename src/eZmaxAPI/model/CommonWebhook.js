@@ -87,7 +87,7 @@ class CommonWebhook {
             }
             // validate the optional field `a_objAttempt` (array)
             for (const item of data['a_objAttempt']) {
-                AttemptResponseCompound.validateJsonObject(item);
+                AttemptResponseCompound.validateJSON(item);
             };
         }
 

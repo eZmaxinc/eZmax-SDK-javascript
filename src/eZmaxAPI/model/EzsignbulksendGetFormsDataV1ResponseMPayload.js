@@ -77,7 +77,7 @@ class EzsignbulksendGetFormsDataV1ResponseMPayload {
             }
             // validate the optional field `a_objFormsDataFolder` (array)
             for (const item of data['a_objFormsDataFolder']) {
-                CustomFormsDataFolderResponse.validateJsonObject(item);
+                CustomFormsDataFolderResponse.validateJSON(item);
             };
         }
 

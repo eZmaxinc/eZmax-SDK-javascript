@@ -91,7 +91,7 @@ class EzsigntemplatedocumentEditObjectV1Response {
             }
             // validate the optional field `a_objWarning` (array)
             for (const item of data['a_objWarning']) {
-                CommonResponseWarning.validateJsonObject(item);
+                CommonResponseWarning.validateJSON(item);
             };
         }
 

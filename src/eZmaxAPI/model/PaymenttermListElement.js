@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEPaymenttermType from './FieldEPaymenttermType';
 
 /**
  * The PaymenttermListElement model module.
@@ -25,12 +26,14 @@ class PaymenttermListElement {
      * @alias module:eZmaxAPI/model/PaymenttermListElement
      * @param pkiPaymenttermID {Number} The unique ID of the Paymentterm
      * @param sPaymenttermCode {String} The code of the Paymentterm
+     * @param ePaymenttermType {module:eZmaxAPI/model/FieldEPaymenttermType} 
+     * @param iPaymenttermDay {Number} The day of the Paymentterm
      * @param sPaymenttermDescriptionX {String} The description of the Paymentterm in the language of the requester
      * @param bPaymenttermIsactive {Boolean} Whether the Paymentterm is active or not
      */
-    constructor(pkiPaymenttermID, sPaymenttermCode, sPaymenttermDescriptionX, bPaymenttermIsactive) { 
+    constructor(pkiPaymenttermID, sPaymenttermCode, ePaymenttermType, iPaymenttermDay, sPaymenttermDescriptionX, bPaymenttermIsactive) { 
         
-        PaymenttermListElement.initialize(this, pkiPaymenttermID, sPaymenttermCode, sPaymenttermDescriptionX, bPaymenttermIsactive);
+        PaymenttermListElement.initialize(this, pkiPaymenttermID, sPaymenttermCode, ePaymenttermType, iPaymenttermDay, sPaymenttermDescriptionX, bPaymenttermIsactive);
     }
 
     /**
@@ -38,9 +41,11 @@ class PaymenttermListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiPaymenttermID, sPaymenttermCode, sPaymenttermDescriptionX, bPaymenttermIsactive) { 
+    static initialize(obj, pkiPaymenttermID, sPaymenttermCode, ePaymenttermType, iPaymenttermDay, sPaymenttermDescriptionX, bPaymenttermIsactive) { 
         obj['pkiPaymenttermID'] = pkiPaymenttermID;
         obj['sPaymenttermCode'] = sPaymenttermCode;
+        obj['ePaymenttermType'] = ePaymenttermType;
+        obj['iPaymenttermDay'] = iPaymenttermDay;
         obj['sPaymenttermDescriptionX'] = sPaymenttermDescriptionX;
         obj['bPaymenttermIsactive'] = bPaymenttermIsactive;
     }
@@ -61,6 +66,12 @@ class PaymenttermListElement {
             }
             if (data.hasOwnProperty('sPaymenttermCode')) {
                 obj['sPaymenttermCode'] = ApiClient.convertToType(data['sPaymenttermCode'], 'String');
+            }
+            if (data.hasOwnProperty('ePaymenttermType')) {
+                obj['ePaymenttermType'] = FieldEPaymenttermType.constructFromObject(data['ePaymenttermType']);
+            }
+            if (data.hasOwnProperty('iPaymenttermDay')) {
+                obj['iPaymenttermDay'] = ApiClient.convertToType(data['iPaymenttermDay'], 'Number');
             }
             if (data.hasOwnProperty('sPaymenttermDescriptionX')) {
                 obj['sPaymenttermDescriptionX'] = ApiClient.convertToType(data['sPaymenttermDescriptionX'], 'String');
@@ -127,6 +138,36 @@ class PaymenttermListElement {
         this['sPaymenttermCode'] = sPaymenttermCode;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEPaymenttermType}
+     */
+    getEPaymenttermType() {
+        return this.ePaymenttermType;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEPaymenttermType} ePaymenttermType
+     */
+    setEPaymenttermType(ePaymenttermType) {
+        this['ePaymenttermType'] = ePaymenttermType;
+    }
+/**
+     * Returns The day of the Paymentterm
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getIPaymenttermDay() {
+        return this.iPaymenttermDay;
+    }
+
+    /**
+     * Sets The day of the Paymentterm
+     * @param {Number} iPaymenttermDay The day of the Paymentterm
+     */
+    setIPaymenttermDay(iPaymenttermDay) {
+        this['iPaymenttermDay'] = iPaymenttermDay;
+    }
+/**
      * Returns The description of the Paymentterm in the language of the requester
      * @return {String}
      */
@@ -159,7 +200,7 @@ class PaymenttermListElement {
 
 }
 
-PaymenttermListElement.RequiredProperties = ["pkiPaymenttermID", "sPaymenttermCode", "sPaymenttermDescriptionX", "bPaymenttermIsactive"];
+PaymenttermListElement.RequiredProperties = ["pkiPaymenttermID", "sPaymenttermCode", "ePaymenttermType", "iPaymenttermDay", "sPaymenttermDescriptionX", "bPaymenttermIsactive"];
 
 /**
  * The unique ID of the Paymentterm
@@ -172,6 +213,17 @@ PaymenttermListElement.prototype['pkiPaymenttermID'] = undefined;
  * @member {String} sPaymenttermCode
  */
 PaymenttermListElement.prototype['sPaymenttermCode'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEPaymenttermType} ePaymenttermType
+ */
+PaymenttermListElement.prototype['ePaymenttermType'] = undefined;
+
+/**
+ * The day of the Paymentterm
+ * @member {Number} iPaymenttermDay
+ */
+PaymenttermListElement.prototype['iPaymenttermDay'] = undefined;
 
 /**
  * The description of the Paymentterm in the language of the requester

@@ -93,7 +93,7 @@ class WebhookGetListV1ResponseMPayload {
             }
             // validate the optional field `a_objWebhook` (array)
             for (const item of data['a_objWebhook']) {
-                WebhookListElement.validateJsonObject(item);
+                WebhookListElement.validateJSON(item);
             };
         }
 

@@ -77,7 +77,7 @@ class EzsignbulksendCreateObjectV1Request {
             }
             // validate the optional field `a_objEzsignbulksend` (array)
             for (const item of data['a_objEzsignbulksend']) {
-                EzsignbulksendRequestCompound.validateJsonObject(item);
+                EzsignbulksendRequestCompound.validateJSON(item);
             };
         }
 

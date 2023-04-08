@@ -78,16 +78,6 @@
         done();
       });
     });
-    describe('ezsigntemplatesignerGetObjectV1', function() {
-      it('should call ezsigntemplatesignerGetObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsigntemplatesignerGetObjectV1
-        //instance.ezsigntemplatesignerGetObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsigntemplatesignerGetObjectV2', function() {
       it('should call ezsigntemplatesignerGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplatesignerGetObjectV2
