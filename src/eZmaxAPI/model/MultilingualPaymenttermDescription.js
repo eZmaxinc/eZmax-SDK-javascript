@@ -77,7 +77,7 @@ class MultilingualPaymenttermDescription {
     }
 
 /**
-     * Returns The description of the Paymentterm in french
+     * Returns The description of the Paymentterm in French
      * @return {String}
      */
     getSPaymenttermDescription1() {
@@ -85,14 +85,14 @@ class MultilingualPaymenttermDescription {
     }
 
     /**
-     * Sets The description of the Paymentterm in french
-     * @param {String} sPaymenttermDescription1 The description of the Paymentterm in french
+     * Sets The description of the Paymentterm in French
+     * @param {String} sPaymenttermDescription1 The description of the Paymentterm in French
      */
     setSPaymenttermDescription1(sPaymenttermDescription1) {
         this['sPaymenttermDescription1'] = sPaymenttermDescription1;
     }
 /**
-     * Returns The description of the Paymentterm in english
+     * Returns The description of the Paymentterm in English
      * @return {String}
      */
     getSPaymenttermDescription2() {
@@ -100,8 +100,8 @@ class MultilingualPaymenttermDescription {
     }
 
     /**
-     * Sets The description of the Paymentterm in english
-     * @param {String} sPaymenttermDescription2 The description of the Paymentterm in english
+     * Sets The description of the Paymentterm in English
+     * @param {String} sPaymenttermDescription2 The description of the Paymentterm in English
      */
     setSPaymenttermDescription2(sPaymenttermDescription2) {
         this['sPaymenttermDescription2'] = sPaymenttermDescription2;
@@ -112,13 +112,13 @@ class MultilingualPaymenttermDescription {
 
 
 /**
- * The description of the Paymentterm in french
+ * The description of the Paymentterm in French
  * @member {String} sPaymenttermDescription1
  */
 MultilingualPaymenttermDescription.prototype['sPaymenttermDescription1'] = undefined;
 
 /**
- * The description of the Paymentterm in english
+ * The description of the Paymentterm in English
  * @member {String} sPaymenttermDescription2
  */
 MultilingualPaymenttermDescription.prototype['sPaymenttermDescription2'] = undefined;

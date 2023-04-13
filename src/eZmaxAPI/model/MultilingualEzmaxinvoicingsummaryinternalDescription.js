@@ -77,7 +77,7 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription {
     }
 
 /**
-     * Returns The Ezmaxinvoicingsummaryinternal description in french
+     * Returns The Ezmaxinvoicingsummaryinternal description in French
      * @return {String}
      */
     getSEzmaxinvoicingsummaryinternalDescription1() {
@@ -85,14 +85,14 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription {
     }
 
     /**
-     * Sets The Ezmaxinvoicingsummaryinternal description in french
-     * @param {String} sEzmaxinvoicingsummaryinternalDescription1 The Ezmaxinvoicingsummaryinternal description in french
+     * Sets The Ezmaxinvoicingsummaryinternal description in French
+     * @param {String} sEzmaxinvoicingsummaryinternalDescription1 The Ezmaxinvoicingsummaryinternal description in French
      */
     setSEzmaxinvoicingsummaryinternalDescription1(sEzmaxinvoicingsummaryinternalDescription1) {
         this['sEzmaxinvoicingsummaryinternalDescription1'] = sEzmaxinvoicingsummaryinternalDescription1;
     }
 /**
-     * Returns The Ezmaxinvoicingsummaryinternal description in english
+     * Returns The Ezmaxinvoicingsummaryinternal description in English
      * @return {String}
      */
     getSEzmaxinvoicingsummaryinternalDescription2() {
@@ -100,8 +100,8 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription {
     }
 
     /**
-     * Sets The Ezmaxinvoicingsummaryinternal description in english
-     * @param {String} sEzmaxinvoicingsummaryinternalDescription2 The Ezmaxinvoicingsummaryinternal description in english
+     * Sets The Ezmaxinvoicingsummaryinternal description in English
+     * @param {String} sEzmaxinvoicingsummaryinternalDescription2 The Ezmaxinvoicingsummaryinternal description in English
      */
     setSEzmaxinvoicingsummaryinternalDescription2(sEzmaxinvoicingsummaryinternalDescription2) {
         this['sEzmaxinvoicingsummaryinternalDescription2'] = sEzmaxinvoicingsummaryinternalDescription2;
@@ -112,13 +112,13 @@ class MultilingualEzmaxinvoicingsummaryinternalDescription {
 
 
 /**
- * The Ezmaxinvoicingsummaryinternal description in french
+ * The Ezmaxinvoicingsummaryinternal description in French
  * @member {String} sEzmaxinvoicingsummaryinternalDescription1
  */
 MultilingualEzmaxinvoicingsummaryinternalDescription.prototype['sEzmaxinvoicingsummaryinternalDescription1'] = undefined;
 
 /**
- * The Ezmaxinvoicingsummaryinternal description in english
+ * The Ezmaxinvoicingsummaryinternal description in English
  * @member {String} sEzmaxinvoicingsummaryinternalDescription2
  */
 MultilingualEzmaxinvoicingsummaryinternalDescription.prototype['sEzmaxinvoicingsummaryinternalDescription2'] = undefined;

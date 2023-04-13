@@ -84,7 +84,8 @@ class UsergroupListElement {
 
 /**
      * Returns The unique ID of the Usergroup
-     * minimum: 0
+     * minimum: 1
+     * maximum: 255
      * @return {Number}
      */
     getPkiUsergroupID() {

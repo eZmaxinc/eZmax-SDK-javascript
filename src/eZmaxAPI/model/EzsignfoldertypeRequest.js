@@ -266,7 +266,8 @@ class EzsignfoldertypeRequest {
     }
 /**
      * Returns The unique ID of the Usergroup
-     * minimum: 0
+     * minimum: 1
+     * maximum: 255
      * @return {Number}
      */
     getFkiUsergroupID() {
@@ -282,7 +283,8 @@ class EzsignfoldertypeRequest {
     }
 /**
      * Returns The unique ID of the Usergroup
-     * minimum: 0
+     * minimum: 1
+     * maximum: 255
      * @return {Number}
      */
     getFkiUsergroupIDRestricted() {
