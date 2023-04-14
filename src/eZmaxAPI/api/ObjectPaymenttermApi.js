@@ -17,7 +17,6 @@ import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 import PaymenttermCreateObjectV1Request from '../model/PaymenttermCreateObjectV1Request';
 import PaymenttermCreateObjectV1Response from '../model/PaymenttermCreateObjectV1Response';
-import PaymenttermDeleteObjectV1Response from '../model/PaymenttermDeleteObjectV1Response';
 import PaymenttermEditObjectV1Request from '../model/PaymenttermEditObjectV1Request';
 import PaymenttermEditObjectV1Response from '../model/PaymenttermEditObjectV1Response';
 import PaymenttermGetAutocompleteV2Response from '../model/PaymenttermGetAutocompleteV2Response';
@@ -80,49 +79,6 @@ export default class ObjectPaymenttermApi {
       let returnType = PaymenttermCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/paymentterm', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the paymenttermDeleteObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectPaymenttermApi~paymenttermDeleteObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/PaymenttermDeleteObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete an existing Paymentterm
-     * 
-     * @param {Number} pkiPaymenttermID 
-     * @param {module:eZmaxAPI/api/ObjectPaymenttermApi~paymenttermDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/PaymenttermDeleteObjectV1Response}
-     */
-    paymenttermDeleteObjectV1(pkiPaymenttermID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiPaymenttermID' is set
-      if (pkiPaymenttermID === undefined || pkiPaymenttermID === null) {
-        throw new Error("Missing the required parameter 'pkiPaymenttermID' when calling paymenttermDeleteObjectV1");
-      }
-
-      let pathParams = {
-        'pkiPaymenttermID': pkiPaymenttermID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = PaymenttermDeleteObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/paymentterm/{pkiPaymenttermID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

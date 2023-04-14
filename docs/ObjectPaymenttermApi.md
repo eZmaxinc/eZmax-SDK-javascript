@@ -5,7 +5,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**paymenttermCreateObjectV1**](ObjectPaymenttermApi.md#paymenttermCreateObjectV1) | **POST** /1/object/paymentterm | Create a new Paymentterm
-[**paymenttermDeleteObjectV1**](ObjectPaymenttermApi.md#paymenttermDeleteObjectV1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
 [**paymenttermEditObjectV1**](ObjectPaymenttermApi.md#paymenttermEditObjectV1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 [**paymenttermGetAutocompleteV2**](ObjectPaymenttermApi.md#paymenttermGetAutocompleteV2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
 [**paymenttermGetListV1**](ObjectPaymenttermApi.md#paymenttermGetListV1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
@@ -61,57 +60,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## paymenttermDeleteObjectV1
-
-> PaymenttermDeleteObjectV1Response paymenttermDeleteObjectV1(pkiPaymenttermID)
-
-Delete an existing Paymentterm
-
-
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectPaymenttermApi();
-let pkiPaymenttermID = 56; // Number | 
-apiInstance.paymenttermDeleteObjectV1(pkiPaymenttermID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiPaymenttermID** | **Number**|  | 
-
-### Return type
-
-[**PaymenttermDeleteObjectV1Response**](PaymenttermDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

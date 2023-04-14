@@ -5,7 +5,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**billingentityinternalCreateObjectV1**](ObjectBillingentityinternalApi.md#billingentityinternalCreateObjectV1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
-[**billingentityinternalDeleteObjectV1**](ObjectBillingentityinternalApi.md#billingentityinternalDeleteObjectV1) | **DELETE** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Delete an existing Billingentityinternal
 [**billingentityinternalEditObjectV1**](ObjectBillingentityinternalApi.md#billingentityinternalEditObjectV1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
 [**billingentityinternalGetAutocompleteV2**](ObjectBillingentityinternalApi.md#billingentityinternalGetAutocompleteV2) | **GET** /2/object/billingentityinternal/getAutocomplete/{sSelector} | Retrieve Billingentityinternals and IDs
 [**billingentityinternalGetListV1**](ObjectBillingentityinternalApi.md#billingentityinternalGetListV1) | **GET** /1/object/billingentityinternal/getList | Retrieve Billingentityinternal list
@@ -61,57 +60,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## billingentityinternalDeleteObjectV1
-
-> BillingentityinternalDeleteObjectV1Response billingentityinternalDeleteObjectV1(pkiBillingentityinternalID)
-
-Delete an existing Billingentityinternal
-
-
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectBillingentityinternalApi();
-let pkiBillingentityinternalID = 56; // Number | The unique ID of the Billingentityinternal
-apiInstance.billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiBillingentityinternalID** | **Number**| The unique ID of the Billingentityinternal | 
-
-### Return type
-
-[**BillingentityinternalDeleteObjectV1Response**](BillingentityinternalDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

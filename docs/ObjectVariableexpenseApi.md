@@ -5,7 +5,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**variableexpenseCreateObjectV1**](ObjectVariableexpenseApi.md#variableexpenseCreateObjectV1) | **POST** /1/object/variableexpense | Create a new Variableexpense
-[**variableexpenseDeleteObjectV1**](ObjectVariableexpenseApi.md#variableexpenseDeleteObjectV1) | **DELETE** /1/object/variableexpense/{pkiVariableexpenseID} | Delete an existing Variableexpense
 [**variableexpenseEditObjectV1**](ObjectVariableexpenseApi.md#variableexpenseEditObjectV1) | **PUT** /1/object/variableexpense/{pkiVariableexpenseID} | Edit an existing Variableexpense
 [**variableexpenseGetAutocompleteV2**](ObjectVariableexpenseApi.md#variableexpenseGetAutocompleteV2) | **GET** /2/object/variableexpense/getAutocomplete/{sSelector} | Retrieve Variableexpenses and IDs
 [**variableexpenseGetListV1**](ObjectVariableexpenseApi.md#variableexpenseGetListV1) | **GET** /1/object/variableexpense/getList | Retrieve Variableexpense list
@@ -61,57 +60,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## variableexpenseDeleteObjectV1
-
-> VariableexpenseDeleteObjectV1Response variableexpenseDeleteObjectV1(pkiVariableexpenseID)
-
-Delete an existing Variableexpense
-
-
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectVariableexpenseApi();
-let pkiVariableexpenseID = 56; // Number | The unique ID of the Variableexpense
-apiInstance.variableexpenseDeleteObjectV1(pkiVariableexpenseID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiVariableexpenseID** | **Number**| The unique ID of the Variableexpense | 
-
-### Return type
-
-[**VariableexpenseDeleteObjectV1Response**](VariableexpenseDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

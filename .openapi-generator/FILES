@@ -37,7 +37,6 @@ docs/BillingentityinternalCreateObjectV1Request.md
 docs/BillingentityinternalCreateObjectV1Response.md
 docs/BillingentityinternalCreateObjectV1ResponseAllOf.md
 docs/BillingentityinternalCreateObjectV1ResponseMPayload.md
-docs/BillingentityinternalDeleteObjectV1Response.md
 docs/BillingentityinternalEditObjectV1Request.md
 docs/BillingentityinternalEditObjectV1Response.md
 docs/BillingentityinternalGetAutocompleteV2Response.md
@@ -160,9 +159,6 @@ docs/DepartmentAutocompleteElementResponse.md
 docs/DepartmentGetAutocompleteV2Response.md
 docs/DepartmentGetAutocompleteV2ResponseAllOf.md
 docs/DepartmentGetAutocompleteV2ResponseMPayload.md
-docs/DepartmentGetMembersV1Response.md
-docs/DepartmentGetMembersV1ResponseAllOf.md
-docs/DepartmentGetMembersV1ResponseMPayload.md
 docs/DescriptionstaticResponse.md
 docs/DescriptionstaticResponseCompound.md
 docs/EmailRequest.md
@@ -899,7 +895,6 @@ docs/PaymenttermCreateObjectV1Request.md
 docs/PaymenttermCreateObjectV1Response.md
 docs/PaymenttermCreateObjectV1ResponseAllOf.md
 docs/PaymenttermCreateObjectV1ResponseMPayload.md
-docs/PaymenttermDeleteObjectV1Response.md
 docs/PaymenttermEditObjectV1Request.md
 docs/PaymenttermEditObjectV1Response.md
 docs/PaymenttermGetAutocompleteV2Response.md
@@ -954,7 +949,6 @@ docs/UsergroupCreateObjectV1Request.md
 docs/UsergroupCreateObjectV1Response.md
 docs/UsergroupCreateObjectV1ResponseAllOf.md
 docs/UsergroupCreateObjectV1ResponseMPayload.md
-docs/UsergroupDeleteObjectV1Response.md
 docs/UsergroupEditObjectV1Request.md
 docs/UsergroupEditObjectV1Response.md
 docs/UsergroupGetAutocompleteV2Response.md
@@ -964,9 +958,6 @@ docs/UsergroupGetListV1Response.md
 docs/UsergroupGetListV1ResponseAllOf.md
 docs/UsergroupGetListV1ResponseMPayload.md
 docs/UsergroupGetListV1ResponseMPayloadAllOf.md
-docs/UsergroupGetMembersV1Response.md
-docs/UsergroupGetMembersV1ResponseAllOf.md
-docs/UsergroupGetMembersV1ResponseMPayload.md
 docs/UsergroupGetObjectV2Response.md
 docs/UsergroupGetObjectV2ResponseAllOf.md
 docs/UsergroupGetObjectV2ResponseMPayload.md
@@ -980,7 +971,6 @@ docs/VariableexpenseCreateObjectV1Request.md
 docs/VariableexpenseCreateObjectV1Response.md
 docs/VariableexpenseCreateObjectV1ResponseAllOf.md
 docs/VariableexpenseCreateObjectV1ResponseMPayload.md
-docs/VariableexpenseDeleteObjectV1Response.md
 docs/VariableexpenseEditObjectV1Request.md
 docs/VariableexpenseEditObjectV1Response.md
 docs/VariableexpenseGetAutocompleteV2Response.md
@@ -1124,7 +1114,6 @@ src/eZmaxAPI/model/BillingentityinternalCreateObjectV1Request.js
 src/eZmaxAPI/model/BillingentityinternalCreateObjectV1Response.js
 src/eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload.js
-src/eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response.js
 src/eZmaxAPI/model/BillingentityinternalEditObjectV1Request.js
 src/eZmaxAPI/model/BillingentityinternalEditObjectV1Response.js
 src/eZmaxAPI/model/BillingentityinternalGetAutocompleteV2Response.js
@@ -1247,9 +1236,6 @@ src/eZmaxAPI/model/DepartmentAutocompleteElementResponse.js
 src/eZmaxAPI/model/DepartmentGetAutocompleteV2Response.js
 src/eZmaxAPI/model/DepartmentGetAutocompleteV2ResponseAllOf.js
 src/eZmaxAPI/model/DepartmentGetAutocompleteV2ResponseMPayload.js
-src/eZmaxAPI/model/DepartmentGetMembersV1Response.js
-src/eZmaxAPI/model/DepartmentGetMembersV1ResponseAllOf.js
-src/eZmaxAPI/model/DepartmentGetMembersV1ResponseMPayload.js
 src/eZmaxAPI/model/DescriptionstaticResponse.js
 src/eZmaxAPI/model/DescriptionstaticResponseCompound.js
 src/eZmaxAPI/model/EmailRequest.js
@@ -1937,7 +1923,6 @@ src/eZmaxAPI/model/PaymenttermCreateObjectV1Request.js
 src/eZmaxAPI/model/PaymenttermCreateObjectV1Response.js
 src/eZmaxAPI/model/PaymenttermCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/PaymenttermCreateObjectV1ResponseMPayload.js
-src/eZmaxAPI/model/PaymenttermDeleteObjectV1Response.js
 src/eZmaxAPI/model/PaymenttermEditObjectV1Request.js
 src/eZmaxAPI/model/PaymenttermEditObjectV1Response.js
 src/eZmaxAPI/model/PaymenttermGetAutocompleteV2Response.js
@@ -1992,7 +1977,6 @@ src/eZmaxAPI/model/UsergroupCreateObjectV1Request.js
 src/eZmaxAPI/model/UsergroupCreateObjectV1Response.js
 src/eZmaxAPI/model/UsergroupCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/UsergroupCreateObjectV1ResponseMPayload.js
-src/eZmaxAPI/model/UsergroupDeleteObjectV1Response.js
 src/eZmaxAPI/model/UsergroupEditObjectV1Request.js
 src/eZmaxAPI/model/UsergroupEditObjectV1Response.js
 src/eZmaxAPI/model/UsergroupGetAutocompleteV2Response.js
@@ -2002,9 +1986,6 @@ src/eZmaxAPI/model/UsergroupGetListV1Response.js
 src/eZmaxAPI/model/UsergroupGetListV1ResponseAllOf.js
 src/eZmaxAPI/model/UsergroupGetListV1ResponseMPayload.js
 src/eZmaxAPI/model/UsergroupGetListV1ResponseMPayloadAllOf.js
-src/eZmaxAPI/model/UsergroupGetMembersV1Response.js
-src/eZmaxAPI/model/UsergroupGetMembersV1ResponseAllOf.js
-src/eZmaxAPI/model/UsergroupGetMembersV1ResponseMPayload.js
 src/eZmaxAPI/model/UsergroupGetObjectV2Response.js
 src/eZmaxAPI/model/UsergroupGetObjectV2ResponseAllOf.js
 src/eZmaxAPI/model/UsergroupGetObjectV2ResponseMPayload.js
@@ -2018,7 +1999,6 @@ src/eZmaxAPI/model/VariableexpenseCreateObjectV1Request.js
 src/eZmaxAPI/model/VariableexpenseCreateObjectV1Response.js
 src/eZmaxAPI/model/VariableexpenseCreateObjectV1ResponseAllOf.js
 src/eZmaxAPI/model/VariableexpenseCreateObjectV1ResponseMPayload.js
-src/eZmaxAPI/model/VariableexpenseDeleteObjectV1Response.js
 src/eZmaxAPI/model/VariableexpenseEditObjectV1Request.js
 src/eZmaxAPI/model/VariableexpenseEditObjectV1Response.js
 src/eZmaxAPI/model/VariableexpenseGetAutocompleteV2Response.js
@@ -2157,7 +2137,6 @@ test/eZmaxAPI/model/BillingentityinternalCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/BillingentityinternalCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload.spec.js
-test/eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/BillingentityinternalEditObjectV1Request.spec.js
 test/eZmaxAPI/model/BillingentityinternalEditObjectV1Response.spec.js
 test/eZmaxAPI/model/BillingentityinternalGetAutocompleteV2Response.spec.js
@@ -2280,9 +2259,6 @@ test/eZmaxAPI/model/DepartmentAutocompleteElementResponse.spec.js
 test/eZmaxAPI/model/DepartmentGetAutocompleteV2Response.spec.js
 test/eZmaxAPI/model/DepartmentGetAutocompleteV2ResponseAllOf.spec.js
 test/eZmaxAPI/model/DepartmentGetAutocompleteV2ResponseMPayload.spec.js
-test/eZmaxAPI/model/DepartmentGetMembersV1Response.spec.js
-test/eZmaxAPI/model/DepartmentGetMembersV1ResponseAllOf.spec.js
-test/eZmaxAPI/model/DepartmentGetMembersV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/DescriptionstaticResponse.spec.js
 test/eZmaxAPI/model/DescriptionstaticResponseCompound.spec.js
 test/eZmaxAPI/model/EmailRequest.spec.js
@@ -2970,7 +2946,6 @@ test/eZmaxAPI/model/PaymenttermCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/PaymenttermCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/PaymenttermCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/PaymenttermCreateObjectV1ResponseMPayload.spec.js
-test/eZmaxAPI/model/PaymenttermDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/PaymenttermEditObjectV1Request.spec.js
 test/eZmaxAPI/model/PaymenttermEditObjectV1Response.spec.js
 test/eZmaxAPI/model/PaymenttermGetAutocompleteV2Response.spec.js
@@ -3025,7 +3000,6 @@ test/eZmaxAPI/model/UsergroupCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/UsergroupCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/UsergroupCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/UsergroupCreateObjectV1ResponseMPayload.spec.js
-test/eZmaxAPI/model/UsergroupDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/UsergroupEditObjectV1Request.spec.js
 test/eZmaxAPI/model/UsergroupEditObjectV1Response.spec.js
 test/eZmaxAPI/model/UsergroupGetAutocompleteV2Response.spec.js
@@ -3035,9 +3009,6 @@ test/eZmaxAPI/model/UsergroupGetListV1Response.spec.js
 test/eZmaxAPI/model/UsergroupGetListV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/UsergroupGetListV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/UsergroupGetListV1ResponseMPayloadAllOf.spec.js
-test/eZmaxAPI/model/UsergroupGetMembersV1Response.spec.js
-test/eZmaxAPI/model/UsergroupGetMembersV1ResponseAllOf.spec.js
-test/eZmaxAPI/model/UsergroupGetMembersV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/UsergroupGetObjectV2Response.spec.js
 test/eZmaxAPI/model/UsergroupGetObjectV2ResponseAllOf.spec.js
 test/eZmaxAPI/model/UsergroupGetObjectV2ResponseMPayload.spec.js
@@ -3051,7 +3022,6 @@ test/eZmaxAPI/model/VariableexpenseCreateObjectV1Request.spec.js
 test/eZmaxAPI/model/VariableexpenseCreateObjectV1Response.spec.js
 test/eZmaxAPI/model/VariableexpenseCreateObjectV1ResponseAllOf.spec.js
 test/eZmaxAPI/model/VariableexpenseCreateObjectV1ResponseMPayload.spec.js
-test/eZmaxAPI/model/VariableexpenseDeleteObjectV1Response.spec.js
 test/eZmaxAPI/model/VariableexpenseEditObjectV1Request.spec.js
 test/eZmaxAPI/model/VariableexpenseEditObjectV1Response.spec.js
 test/eZmaxAPI/model/VariableexpenseGetAutocompleteV2Response.spec.js

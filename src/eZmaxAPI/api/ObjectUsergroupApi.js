@@ -17,12 +17,10 @@ import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 import UsergroupCreateObjectV1Request from '../model/UsergroupCreateObjectV1Request';
 import UsergroupCreateObjectV1Response from '../model/UsergroupCreateObjectV1Response';
-import UsergroupDeleteObjectV1Response from '../model/UsergroupDeleteObjectV1Response';
 import UsergroupEditObjectV1Request from '../model/UsergroupEditObjectV1Request';
 import UsergroupEditObjectV1Response from '../model/UsergroupEditObjectV1Response';
 import UsergroupGetAutocompleteV2Response from '../model/UsergroupGetAutocompleteV2Response';
 import UsergroupGetListV1Response from '../model/UsergroupGetListV1Response';
-import UsergroupGetMembersV1Response from '../model/UsergroupGetMembersV1Response';
 import UsergroupGetObjectV2Response from '../model/UsergroupGetObjectV2Response';
 
 /**
@@ -81,49 +79,6 @@ export default class ObjectUsergroupApi {
       let returnType = UsergroupCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/usergroup', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the usergroupDeleteObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupDeleteObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/UsergroupDeleteObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete an existing Usergroup
-     * 
-     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
-     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/UsergroupDeleteObjectV1Response}
-     */
-    usergroupDeleteObjectV1(pkiUsergroupID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiUsergroupID' is set
-      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
-        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupDeleteObjectV1");
-      }
-
-      let pathParams = {
-        'pkiUsergroupID': pkiUsergroupID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = UsergroupDeleteObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/usergroup/{pkiUsergroupID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -272,48 +227,6 @@ export default class ObjectUsergroupApi {
       let returnType = UsergroupGetListV1Response;
       return this.apiClient.callApi(
         '/1/object/usergroup/getList', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the usergroupGetMembersV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetMembersV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/UsergroupGetMembersV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Usergroup's members
-     * @param {Number} pkiUsergroupID The unique ID of the Usergroup
-     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetMembersV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/UsergroupGetMembersV1Response}
-     */
-    usergroupGetMembersV1(pkiUsergroupID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiUsergroupID' is set
-      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
-        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupGetMembersV1");
-      }
-
-      let pathParams = {
-        'pkiUsergroupID': pkiUsergroupID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = UsergroupGetMembersV1Response;
-      return this.apiClient.callApi(
-        '/1/object/usergroup/{pkiUsergroupID}/getMembers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

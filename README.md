@@ -140,7 +140,6 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectApikeyApi* | [**apikeyCreateObjectV2**](docs/ObjectApikeyApi.md#apikeyCreateObjectV2) | **POST** /2/object/apikey | Create a new Apikey
 *EZmaxApiDefinitionFull.ObjectBillingentityexternalApi* | [**billingentityexternalGetAutocompleteV2**](docs/ObjectBillingentityexternalApi.md#billingentityexternalGetAutocompleteV2) | **GET** /2/object/billingentityexternal/getAutocomplete/{sSelector} | Retrieve Billingentityexternals and IDs
 *EZmaxApiDefinitionFull.ObjectBillingentityinternalApi* | [**billingentityinternalCreateObjectV1**](docs/ObjectBillingentityinternalApi.md#billingentityinternalCreateObjectV1) | **POST** /1/object/billingentityinternal | Create a new Billingentityinternal
-*EZmaxApiDefinitionFull.ObjectBillingentityinternalApi* | [**billingentityinternalDeleteObjectV1**](docs/ObjectBillingentityinternalApi.md#billingentityinternalDeleteObjectV1) | **DELETE** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Delete an existing Billingentityinternal
 *EZmaxApiDefinitionFull.ObjectBillingentityinternalApi* | [**billingentityinternalEditObjectV1**](docs/ObjectBillingentityinternalApi.md#billingentityinternalEditObjectV1) | **PUT** /1/object/billingentityinternal/{pkiBillingentityinternalID} | Edit an existing Billingentityinternal
 *EZmaxApiDefinitionFull.ObjectBillingentityinternalApi* | [**billingentityinternalGetAutocompleteV2**](docs/ObjectBillingentityinternalApi.md#billingentityinternalGetAutocompleteV2) | **GET** /2/object/billingentityinternal/getAutocomplete/{sSelector} | Retrieve Billingentityinternals and IDs
 *EZmaxApiDefinitionFull.ObjectBillingentityinternalApi* | [**billingentityinternalGetListV1**](docs/ObjectBillingentityinternalApi.md#billingentityinternalGetListV1) | **GET** /1/object/billingentityinternal/getList | Retrieve Billingentityinternal list
@@ -152,7 +151,6 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectBrandingApi* | [**brandingGetObjectV2**](docs/ObjectBrandingApi.md#brandingGetObjectV2) | **GET** /2/object/branding/{pkiBrandingID} | Retrieve an existing Branding
 *EZmaxApiDefinitionFull.ObjectCommunicationApi* | [**communicationGetObjectV2**](docs/ObjectCommunicationApi.md#communicationGetObjectV2) | **GET** /2/object/communication/{pkiCommunicationID} | Retrieve an existing Communication
 *EZmaxApiDefinitionFull.ObjectDepartmentApi* | [**departmentGetAutocompleteV2**](docs/ObjectDepartmentApi.md#departmentGetAutocompleteV2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
-*EZmaxApiDefinitionFull.ObjectDepartmentApi* | [**departmentGetMembersV1**](docs/ObjectDepartmentApi.md#departmentGetMembersV1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members
 *EZmaxApiDefinitionFull.ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetAutocompleteV1**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicingGetAutocompleteV1) | **GET** /1/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *EZmaxApiDefinitionFull.ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetAutocompleteV2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicingGetAutocompleteV2) | **GET** /2/object/ezmaxinvoicing/getAutocomplete/{sSelector} | Retrieve Ezmaxinvoicings and IDs
 *EZmaxApiDefinitionFull.ObjectEzmaxinvoicingApi* | [**ezmaxinvoicingGetObjectV2**](docs/ObjectEzmaxinvoicingApi.md#ezmaxinvoicingGetObjectV2) | **GET** /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID} | Retrieve an existing Ezmaxinvoicing
@@ -311,7 +309,6 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/ObjectNotificationsectionApi.md#notificationsectionGetNotificationtestsV1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *EZmaxApiDefinitionFull.ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/ObjectNotificationtestApi.md#notificationtestGetElementsV1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
 *EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermCreateObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermCreateObjectV1) | **POST** /1/object/paymentterm | Create a new Paymentterm
-*EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermDeleteObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermDeleteObjectV1) | **DELETE** /1/object/paymentterm/{pkiPaymenttermID} | Delete an existing Paymentterm
 *EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermEditObjectV1**](docs/ObjectPaymenttermApi.md#paymenttermEditObjectV1) | **PUT** /1/object/paymentterm/{pkiPaymenttermID} | Edit an existing Paymentterm
 *EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermGetAutocompleteV2**](docs/ObjectPaymenttermApi.md#paymenttermGetAutocompleteV2) | **GET** /2/object/paymentterm/getAutocomplete/{sSelector} | Retrieve Paymentterms and IDs
 *EZmaxApiDefinitionFull.ObjectPaymenttermApi* | [**paymenttermGetListV1**](docs/ObjectPaymenttermApi.md#paymenttermGetListV1) | **GET** /1/object/paymentterm/getList | Retrieve Paymentterm list
@@ -323,14 +320,11 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectTimezoneApi* | [**timezoneGetAutocompleteV2**](docs/ObjectTimezoneApi.md#timezoneGetAutocompleteV2) | **GET** /2/object/timezone/getAutocomplete/{sSelector} | Retrieve Timezones and IDs
 *EZmaxApiDefinitionFull.ObjectUserApi* | [**userGetAutocompleteV2**](docs/ObjectUserApi.md#userGetAutocompleteV2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs
 *EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupCreateObjectV1**](docs/ObjectUsergroupApi.md#usergroupCreateObjectV1) | **POST** /1/object/usergroup | Create a new Usergroup
-*EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupDeleteObjectV1**](docs/ObjectUsergroupApi.md#usergroupDeleteObjectV1) | **DELETE** /1/object/usergroup/{pkiUsergroupID} | Delete an existing Usergroup
 *EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupEditObjectV1**](docs/ObjectUsergroupApi.md#usergroupEditObjectV1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 *EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupGetAutocompleteV2**](docs/ObjectUsergroupApi.md#usergroupGetAutocompleteV2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 *EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupGetListV1**](docs/ObjectUsergroupApi.md#usergroupGetListV1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
-*EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupGetMembersV1**](docs/ObjectUsergroupApi.md#usergroupGetMembersV1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getMembers | Retrieve an existing Usergroup&#39;s members
 *EZmaxApiDefinitionFull.ObjectUsergroupApi* | [**usergroupGetObjectV2**](docs/ObjectUsergroupApi.md#usergroupGetObjectV2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 *EZmaxApiDefinitionFull.ObjectVariableexpenseApi* | [**variableexpenseCreateObjectV1**](docs/ObjectVariableexpenseApi.md#variableexpenseCreateObjectV1) | **POST** /1/object/variableexpense | Create a new Variableexpense
-*EZmaxApiDefinitionFull.ObjectVariableexpenseApi* | [**variableexpenseDeleteObjectV1**](docs/ObjectVariableexpenseApi.md#variableexpenseDeleteObjectV1) | **DELETE** /1/object/variableexpense/{pkiVariableexpenseID} | Delete an existing Variableexpense
 *EZmaxApiDefinitionFull.ObjectVariableexpenseApi* | [**variableexpenseEditObjectV1**](docs/ObjectVariableexpenseApi.md#variableexpenseEditObjectV1) | **PUT** /1/object/variableexpense/{pkiVariableexpenseID} | Edit an existing Variableexpense
 *EZmaxApiDefinitionFull.ObjectVariableexpenseApi* | [**variableexpenseGetAutocompleteV2**](docs/ObjectVariableexpenseApi.md#variableexpenseGetAutocompleteV2) | **GET** /2/object/variableexpense/getAutocomplete/{sSelector} | Retrieve Variableexpenses and IDs
 *EZmaxApiDefinitionFull.ObjectVariableexpenseApi* | [**variableexpenseGetListV1**](docs/ObjectVariableexpenseApi.md#variableexpenseGetListV1) | **GET** /1/object/variableexpense/getList | Retrieve Variableexpense list
@@ -381,7 +375,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.BillingentityinternalCreateObjectV1Response](docs/BillingentityinternalCreateObjectV1Response.md)
  - [EZmaxApiDefinitionFull.BillingentityinternalCreateObjectV1ResponseAllOf](docs/BillingentityinternalCreateObjectV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.BillingentityinternalCreateObjectV1ResponseMPayload](docs/BillingentityinternalCreateObjectV1ResponseMPayload.md)
- - [EZmaxApiDefinitionFull.BillingentityinternalDeleteObjectV1Response](docs/BillingentityinternalDeleteObjectV1Response.md)
  - [EZmaxApiDefinitionFull.BillingentityinternalEditObjectV1Request](docs/BillingentityinternalEditObjectV1Request.md)
  - [EZmaxApiDefinitionFull.BillingentityinternalEditObjectV1Response](docs/BillingentityinternalEditObjectV1Response.md)
  - [EZmaxApiDefinitionFull.BillingentityinternalGetAutocompleteV2Response](docs/BillingentityinternalGetAutocompleteV2Response.md)
@@ -504,9 +497,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.DepartmentGetAutocompleteV2Response](docs/DepartmentGetAutocompleteV2Response.md)
  - [EZmaxApiDefinitionFull.DepartmentGetAutocompleteV2ResponseAllOf](docs/DepartmentGetAutocompleteV2ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.DepartmentGetAutocompleteV2ResponseMPayload](docs/DepartmentGetAutocompleteV2ResponseMPayload.md)
- - [EZmaxApiDefinitionFull.DepartmentGetMembersV1Response](docs/DepartmentGetMembersV1Response.md)
- - [EZmaxApiDefinitionFull.DepartmentGetMembersV1ResponseAllOf](docs/DepartmentGetMembersV1ResponseAllOf.md)
- - [EZmaxApiDefinitionFull.DepartmentGetMembersV1ResponseMPayload](docs/DepartmentGetMembersV1ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.DescriptionstaticResponse](docs/DescriptionstaticResponse.md)
  - [EZmaxApiDefinitionFull.DescriptionstaticResponseCompound](docs/DescriptionstaticResponseCompound.md)
  - [EZmaxApiDefinitionFull.EmailRequest](docs/EmailRequest.md)
@@ -1194,7 +1184,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1Response](docs/PaymenttermCreateObjectV1Response.md)
  - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1ResponseAllOf](docs/PaymenttermCreateObjectV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.PaymenttermCreateObjectV1ResponseMPayload](docs/PaymenttermCreateObjectV1ResponseMPayload.md)
- - [EZmaxApiDefinitionFull.PaymenttermDeleteObjectV1Response](docs/PaymenttermDeleteObjectV1Response.md)
  - [EZmaxApiDefinitionFull.PaymenttermEditObjectV1Request](docs/PaymenttermEditObjectV1Request.md)
  - [EZmaxApiDefinitionFull.PaymenttermEditObjectV1Response](docs/PaymenttermEditObjectV1Response.md)
  - [EZmaxApiDefinitionFull.PaymenttermGetAutocompleteV2Response](docs/PaymenttermGetAutocompleteV2Response.md)
@@ -1249,7 +1238,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.UsergroupCreateObjectV1Response](docs/UsergroupCreateObjectV1Response.md)
  - [EZmaxApiDefinitionFull.UsergroupCreateObjectV1ResponseAllOf](docs/UsergroupCreateObjectV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.UsergroupCreateObjectV1ResponseMPayload](docs/UsergroupCreateObjectV1ResponseMPayload.md)
- - [EZmaxApiDefinitionFull.UsergroupDeleteObjectV1Response](docs/UsergroupDeleteObjectV1Response.md)
  - [EZmaxApiDefinitionFull.UsergroupEditObjectV1Request](docs/UsergroupEditObjectV1Request.md)
  - [EZmaxApiDefinitionFull.UsergroupEditObjectV1Response](docs/UsergroupEditObjectV1Response.md)
  - [EZmaxApiDefinitionFull.UsergroupGetAutocompleteV2Response](docs/UsergroupGetAutocompleteV2Response.md)
@@ -1259,9 +1247,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.UsergroupGetListV1ResponseAllOf](docs/UsergroupGetListV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.UsergroupGetListV1ResponseMPayload](docs/UsergroupGetListV1ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.UsergroupGetListV1ResponseMPayloadAllOf](docs/UsergroupGetListV1ResponseMPayloadAllOf.md)
- - [EZmaxApiDefinitionFull.UsergroupGetMembersV1Response](docs/UsergroupGetMembersV1Response.md)
- - [EZmaxApiDefinitionFull.UsergroupGetMembersV1ResponseAllOf](docs/UsergroupGetMembersV1ResponseAllOf.md)
- - [EZmaxApiDefinitionFull.UsergroupGetMembersV1ResponseMPayload](docs/UsergroupGetMembersV1ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.UsergroupGetObjectV2Response](docs/UsergroupGetObjectV2Response.md)
  - [EZmaxApiDefinitionFull.UsergroupGetObjectV2ResponseAllOf](docs/UsergroupGetObjectV2ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.UsergroupGetObjectV2ResponseMPayload](docs/UsergroupGetObjectV2ResponseMPayload.md)
@@ -1275,7 +1260,6 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.VariableexpenseCreateObjectV1Response](docs/VariableexpenseCreateObjectV1Response.md)
  - [EZmaxApiDefinitionFull.VariableexpenseCreateObjectV1ResponseAllOf](docs/VariableexpenseCreateObjectV1ResponseAllOf.md)
  - [EZmaxApiDefinitionFull.VariableexpenseCreateObjectV1ResponseMPayload](docs/VariableexpenseCreateObjectV1ResponseMPayload.md)
- - [EZmaxApiDefinitionFull.VariableexpenseDeleteObjectV1Response](docs/VariableexpenseDeleteObjectV1Response.md)
  - [EZmaxApiDefinitionFull.VariableexpenseEditObjectV1Request](docs/VariableexpenseEditObjectV1Request.md)
  - [EZmaxApiDefinitionFull.VariableexpenseEditObjectV1Response](docs/VariableexpenseEditObjectV1Response.md)
  - [EZmaxApiDefinitionFull.VariableexpenseGetAutocompleteV2Response](docs/VariableexpenseGetAutocompleteV2Response.md)

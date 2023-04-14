@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('billingentityinternalDeleteObjectV1', function() {
-      it('should call billingentityinternalDeleteObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test billingentityinternalDeleteObjectV1
-        //instance.billingentityinternalDeleteObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('billingentityinternalEditObjectV1', function() {
       it('should call billingentityinternalEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test billingentityinternalEditObjectV1

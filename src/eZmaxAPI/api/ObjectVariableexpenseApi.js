@@ -17,7 +17,6 @@ import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 import VariableexpenseCreateObjectV1Request from '../model/VariableexpenseCreateObjectV1Request';
 import VariableexpenseCreateObjectV1Response from '../model/VariableexpenseCreateObjectV1Response';
-import VariableexpenseDeleteObjectV1Response from '../model/VariableexpenseDeleteObjectV1Response';
 import VariableexpenseEditObjectV1Request from '../model/VariableexpenseEditObjectV1Request';
 import VariableexpenseEditObjectV1Response from '../model/VariableexpenseEditObjectV1Response';
 import VariableexpenseGetAutocompleteV2Response from '../model/VariableexpenseGetAutocompleteV2Response';
@@ -80,49 +79,6 @@ export default class ObjectVariableexpenseApi {
       let returnType = VariableexpenseCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/variableexpense', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the variableexpenseDeleteObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectVariableexpenseApi~variableexpenseDeleteObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/VariableexpenseDeleteObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete an existing Variableexpense
-     * 
-     * @param {Number} pkiVariableexpenseID The unique ID of the Variableexpense
-     * @param {module:eZmaxAPI/api/ObjectVariableexpenseApi~variableexpenseDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/VariableexpenseDeleteObjectV1Response}
-     */
-    variableexpenseDeleteObjectV1(pkiVariableexpenseID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiVariableexpenseID' is set
-      if (pkiVariableexpenseID === undefined || pkiVariableexpenseID === null) {
-        throw new Error("Missing the required parameter 'pkiVariableexpenseID' when calling variableexpenseDeleteObjectV1");
-      }
-
-      let pathParams = {
-        'pkiVariableexpenseID': pkiVariableexpenseID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = VariableexpenseDeleteObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/variableexpense/{pkiVariableexpenseID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

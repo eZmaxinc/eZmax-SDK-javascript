@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('departmentGetMembersV1', function() {
-      it('should call departmentGetMembersV1 successfully', function(done) {
-        //uncomment below and update the code to test departmentGetMembersV1
-        //instance.departmentGetMembersV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
   });
 
 }));

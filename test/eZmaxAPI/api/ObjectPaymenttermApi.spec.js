@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('paymenttermDeleteObjectV1', function() {
-      it('should call paymenttermDeleteObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test paymenttermDeleteObjectV1
-        //instance.paymenttermDeleteObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('paymenttermEditObjectV1', function() {
       it('should call paymenttermEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test paymenttermEditObjectV1

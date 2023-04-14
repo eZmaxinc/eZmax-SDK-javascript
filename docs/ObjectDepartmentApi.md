@@ -5,7 +5,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**departmentGetAutocompleteV2**](ObjectDepartmentApi.md#departmentGetAutocompleteV2) | **GET** /2/object/department/getAutocomplete/{sSelector} | Retrieve Departments and IDs
-[**departmentGetMembersV1**](ObjectDepartmentApi.md#departmentGetMembersV1) | **GET** /1/object/department/{pkiDepartmentID}/getMembers | Retrieve an existing Department&#39;s members
 
 
 
@@ -57,57 +56,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DepartmentGetAutocompleteV2Response**](DepartmentGetAutocompleteV2Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## departmentGetMembersV1
-
-> DepartmentGetMembersV1Response departmentGetMembersV1(pkiDepartmentID)
-
-Retrieve an existing Department&#39;s members
-
-
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectDepartmentApi();
-let pkiDepartmentID = 56; // Number | 
-apiInstance.departmentGetMembersV1(pkiDepartmentID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiDepartmentID** | **Number**|  | 
-
-### Return type
-
-[**DepartmentGetMembersV1Response**](DepartmentGetMembersV1Response.md)
 
 ### Authorization
 

@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('variableexpenseDeleteObjectV1', function() {
-      it('should call variableexpenseDeleteObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test variableexpenseDeleteObjectV1
-        //instance.variableexpenseDeleteObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('variableexpenseEditObjectV1', function() {
       it('should call variableexpenseEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test variableexpenseEditObjectV1

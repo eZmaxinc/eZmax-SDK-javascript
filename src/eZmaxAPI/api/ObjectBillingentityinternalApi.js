@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import BillingentityinternalCreateObjectV1Request from '../model/BillingentityinternalCreateObjectV1Request';
 import BillingentityinternalCreateObjectV1Response from '../model/BillingentityinternalCreateObjectV1Response';
-import BillingentityinternalDeleteObjectV1Response from '../model/BillingentityinternalDeleteObjectV1Response';
 import BillingentityinternalEditObjectV1Request from '../model/BillingentityinternalEditObjectV1Request';
 import BillingentityinternalEditObjectV1Response from '../model/BillingentityinternalEditObjectV1Response';
 import BillingentityinternalGetAutocompleteV2Response from '../model/BillingentityinternalGetAutocompleteV2Response';
@@ -80,49 +79,6 @@ export default class ObjectBillingentityinternalApi {
       let returnType = BillingentityinternalCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/billingentityinternal', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the billingentityinternalDeleteObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalDeleteObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete an existing Billingentityinternal
-     * 
-     * @param {Number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
-     * @param {module:eZmaxAPI/api/ObjectBillingentityinternalApi~billingentityinternalDeleteObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/BillingentityinternalDeleteObjectV1Response}
-     */
-    billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiBillingentityinternalID' is set
-      if (pkiBillingentityinternalID === undefined || pkiBillingentityinternalID === null) {
-        throw new Error("Missing the required parameter 'pkiBillingentityinternalID' when calling billingentityinternalDeleteObjectV1");
-      }
-
-      let pathParams = {
-        'pkiBillingentityinternalID': pkiBillingentityinternalID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = BillingentityinternalDeleteObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/billingentityinternal/{pkiBillingentityinternalID}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

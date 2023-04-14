@@ -5,11 +5,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usergroupCreateObjectV1**](ObjectUsergroupApi.md#usergroupCreateObjectV1) | **POST** /1/object/usergroup | Create a new Usergroup
-[**usergroupDeleteObjectV1**](ObjectUsergroupApi.md#usergroupDeleteObjectV1) | **DELETE** /1/object/usergroup/{pkiUsergroupID} | Delete an existing Usergroup
 [**usergroupEditObjectV1**](ObjectUsergroupApi.md#usergroupEditObjectV1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
 [**usergroupGetAutocompleteV2**](ObjectUsergroupApi.md#usergroupGetAutocompleteV2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 [**usergroupGetListV1**](ObjectUsergroupApi.md#usergroupGetListV1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
-[**usergroupGetMembersV1**](ObjectUsergroupApi.md#usergroupGetMembersV1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getMembers | Retrieve an existing Usergroup&#39;s members
 [**usergroupGetObjectV2**](ObjectUsergroupApi.md#usergroupGetObjectV2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
 
 
@@ -62,57 +60,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## usergroupDeleteObjectV1
-
-> UsergroupDeleteObjectV1Response usergroupDeleteObjectV1(pkiUsergroupID)
-
-Delete an existing Usergroup
-
-
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
-let pkiUsergroupID = 56; // Number | The unique ID of the Usergroup
-apiInstance.usergroupDeleteObjectV1(pkiUsergroupID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiUsergroupID** | **Number**| The unique ID of the Usergroup | 
-
-### Return type
-
-[**UsergroupDeleteObjectV1Response**](UsergroupDeleteObjectV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -287,55 +234,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-
-## usergroupGetMembersV1
-
-> UsergroupGetMembersV1Response usergroupGetMembersV1(pkiUsergroupID)
-
-Retrieve an existing Usergroup&#39;s members
-
-### Example
-
-```javascript
-import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
-let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
-// Configure API key authorization: Authorization
-let Authorization = defaultClient.authentications['Authorization'];
-Authorization.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.apiKeyPrefix = 'Token';
-
-let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
-let pkiUsergroupID = 56; // Number | The unique ID of the Usergroup
-apiInstance.usergroupGetMembersV1(pkiUsergroupID, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **pkiUsergroupID** | **Number**| The unique ID of the Usergroup | 
-
-### Return type
-
-[**UsergroupGetMembersV1Response**](UsergroupGetMembersV1Response.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 
 ## usergroupGetObjectV2

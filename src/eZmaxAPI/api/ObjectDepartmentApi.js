@@ -13,9 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonResponseError from '../model/CommonResponseError';
 import DepartmentGetAutocompleteV2Response from '../model/DepartmentGetAutocompleteV2Response';
-import DepartmentGetMembersV1Response from '../model/DepartmentGetMembersV1Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
@@ -83,49 +81,6 @@ export default class ObjectDepartmentApi {
       let returnType = DepartmentGetAutocompleteV2Response;
       return this.apiClient.callApi(
         '/2/object/department/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the departmentGetMembersV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectDepartmentApi~departmentGetMembersV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/DepartmentGetMembersV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve an existing Department's members
-     * 
-     * @param {Number} pkiDepartmentID 
-     * @param {module:eZmaxAPI/api/ObjectDepartmentApi~departmentGetMembersV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/DepartmentGetMembersV1Response}
-     */
-    departmentGetMembersV1(pkiDepartmentID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiDepartmentID' is set
-      if (pkiDepartmentID === undefined || pkiDepartmentID === null) {
-        throw new Error("Missing the required parameter 'pkiDepartmentID' when calling departmentGetMembersV1");
-      }
-
-      let pathParams = {
-        'pkiDepartmentID': pkiDepartmentID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = DepartmentGetMembersV1Response;
-      return this.apiClient.callApi(
-        '/1/object/department/{pkiDepartmentID}/getMembers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

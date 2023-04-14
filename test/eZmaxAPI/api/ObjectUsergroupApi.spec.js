@@ -58,16 +58,6 @@
         done();
       });
     });
-    describe('usergroupDeleteObjectV1', function() {
-      it('should call usergroupDeleteObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test usergroupDeleteObjectV1
-        //instance.usergroupDeleteObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('usergroupEditObjectV1', function() {
       it('should call usergroupEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test usergroupEditObjectV1
@@ -92,16 +82,6 @@
       it('should call usergroupGetListV1 successfully', function(done) {
         //uncomment below and update the code to test usergroupGetListV1
         //instance.usergroupGetListV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('usergroupGetMembersV1', function() {
-      it('should call usergroupGetMembersV1 successfully', function(done) {
-        //uncomment below and update the code to test usergroupGetMembersV1
-        //instance.usergroupGetMembersV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
