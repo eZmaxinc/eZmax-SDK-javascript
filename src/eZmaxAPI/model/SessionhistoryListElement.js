@@ -138,7 +138,7 @@ class SessionhistoryListElement {
 /**
      * Returns The unique ID of the Sessionhistory
      * minimum: 1
-     * maximum: 4294967295
+     * maximum: 2147483647
      * @return {Number}
      */
     getPkiSessionhistoryID() {
