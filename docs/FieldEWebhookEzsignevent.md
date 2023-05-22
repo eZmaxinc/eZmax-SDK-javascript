@@ -5,6 +5,10 @@
 
 * `DocumentCompleted` (value: `"DocumentCompleted"`)
 
+* `EzsignsignerAcceptclause` (value: `"EzsignsignerAcceptclause"`)
+
+* `EzsignsignerConnect` (value: `"EzsignsignerConnect"`)
+
 * `FolderCompleted` (value: `"FolderCompleted"`)
 
 

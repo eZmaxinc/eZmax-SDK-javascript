@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomCreditcardtransactionResponse from './CustomCreditcardtransactionResponse';
 import EzsignsignaturecustomdateResponseCompound from './EzsignsignaturecustomdateResponseCompound';
 
 /**
@@ -54,6 +55,9 @@ class EzsignsignatureResponseCompoundAllOf {
             if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
                 obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateResponseCompound]);
             }
+            if (data.hasOwnProperty('objCreditcardtransaction')) {
+                obj['objCreditcardtransaction'] = CustomCreditcardtransactionResponse.constructFromObject(data['objCreditcardtransaction']);
+            }
         }
         return obj;
     }
@@ -73,6 +77,10 @@ class EzsignsignatureResponseCompoundAllOf {
             for (const item of data['a_objEzsignsignaturecustomdate']) {
                 EzsignsignaturecustomdateResponseCompound.validateJSON(item);
             };
+        }
+        // validate the optional field `objCreditcardtransaction`
+        if (data['objCreditcardtransaction']) { // data not null
+          CustomCreditcardtransactionResponse.validateJSON(data['objCreditcardtransaction']);
         }
 
         return true;
@@ -108,6 +116,19 @@ class EzsignsignatureResponseCompoundAllOf {
     setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
         this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
     }
+/**
+     * @return {module:eZmaxAPI/model/CustomCreditcardtransactionResponse}
+     */
+    getObjCreditcardtransaction() {
+        return this.objCreditcardtransaction;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
+     */
+    setObjCreditcardtransaction(objCreditcardtransaction) {
+        this['objCreditcardtransaction'] = objCreditcardtransaction;
+    }
 
 }
 
@@ -124,6 +145,11 @@ EzsignsignatureResponseCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = u
  * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateResponseCompound>} a_objEzsignsignaturecustomdate
  */
 EzsignsignatureResponseCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
+ */
+EzsignsignatureResponseCompoundAllOf.prototype['objCreditcardtransaction'] = undefined;
 
 
 

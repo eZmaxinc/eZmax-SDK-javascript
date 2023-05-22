@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property objCreditcardtransaction (base name: "objCreditcardtransaction")', function() {
+      // uncomment below and update the code to test the property objCreditcardtransaction
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompoundAllOf();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -743,8 +743,8 @@ export default class ObjectEzsignfolderApi {
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
      * @param {Object} opts Optional parameters
      * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
-     * @param {Number} [iRowMax] 
-     * @param {Number} [iRowOffset] 
+     * @param {Number} [iRowMax = 10000)] 
+     * @param {Number} [iRowOffset = 0)] 
      * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetListV1Callback} callback The callback function, accepting three arguments: error, data, response

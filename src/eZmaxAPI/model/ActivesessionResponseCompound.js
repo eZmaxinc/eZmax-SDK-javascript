@@ -16,6 +16,7 @@ import ActivesessionResponse from './ActivesessionResponse';
 import ActivesessionResponseCompoundAllOf from './ActivesessionResponseCompoundAllOf';
 import ActivesessionResponseCompoundApikey from './ActivesessionResponseCompoundApikey';
 import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUser';
+import FieldEActivesessionOrigin from './FieldEActivesessionOrigin';
 import FieldEActivesessionUsertype from './FieldEActivesessionUsertype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
 
@@ -32,6 +33,7 @@ class ActivesessionResponseCompound {
      * @implements module:eZmaxAPI/model/ActivesessionResponse
      * @implements module:eZmaxAPI/model/ActivesessionResponseCompoundAllOf
      * @param eActivesessionUsertype {module:eZmaxAPI/model/FieldEActivesessionUsertype} 
+     * @param eActivesessionOrigin {module:eZmaxAPI/model/FieldEActivesessionOrigin} 
      * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sCompanyNameX {String} The Name of the Company in the language of the requester
@@ -43,9 +45,9 @@ class ActivesessionResponseCompound {
      * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
-    constructor(eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
-        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode);ActivesessionResponseCompoundAllOf.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
-        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode);ActivesessionResponseCompoundAllOf.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
     /**
@@ -53,8 +55,9 @@ class ActivesessionResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionUsertype, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
         obj['eActivesessionUsertype'] = eActivesessionUsertype;
+        obj['eActivesessionOrigin'] = eActivesessionOrigin;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sCompanyNameX'] = sCompanyNameX;
@@ -82,6 +85,9 @@ class ActivesessionResponseCompound {
 
             if (data.hasOwnProperty('eActivesessionUsertype')) {
                 obj['eActivesessionUsertype'] = FieldEActivesessionUsertype.constructFromObject(data['eActivesessionUsertype']);
+            }
+            if (data.hasOwnProperty('eActivesessionOrigin')) {
+                obj['eActivesessionOrigin'] = FieldEActivesessionOrigin.constructFromObject(data['eActivesessionOrigin']);
             }
             if (data.hasOwnProperty('eActivesessionWeekdaystart')) {
                 obj['eActivesessionWeekdaystart'] = FieldEActivesessionWeekdaystart.constructFromObject(data['eActivesessionWeekdaystart']);
@@ -186,6 +192,19 @@ class ActivesessionResponseCompound {
      */
     setEActivesessionUsertype(eActivesessionUsertype) {
         this['eActivesessionUsertype'] = eActivesessionUsertype;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEActivesessionOrigin}
+     */
+    getEActivesessionOrigin() {
+        return this.eActivesessionOrigin;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEActivesessionOrigin} eActivesessionOrigin
+     */
+    setEActivesessionOrigin(eActivesessionOrigin) {
+        this['eActivesessionOrigin'] = eActivesessionOrigin;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart}
@@ -380,12 +399,17 @@ class ActivesessionResponseCompound {
 
 }
 
-ActivesessionResponseCompound.RequiredProperties = ["eActivesessionUsertype", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
+ActivesessionResponseCompound.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
  */
 ActivesessionResponseCompound.prototype['eActivesessionUsertype'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEActivesessionOrigin} eActivesessionOrigin
+ */
+ActivesessionResponseCompound.prototype['eActivesessionOrigin'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
@@ -467,6 +491,10 @@ ActivesessionResponseCompound.prototype['a_eModuleInternalname'] = undefined;
  * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
  */
 ActivesessionResponse.prototype['eActivesessionUsertype'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEActivesessionOrigin} eActivesessionOrigin
+ */
+ActivesessionResponse.prototype['eActivesessionOrigin'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} eActivesessionWeekdaystart
  */

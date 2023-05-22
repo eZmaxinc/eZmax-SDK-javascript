@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import CustomContactNameResponse from './CustomContactNameResponse';
+import CustomCreditcardtransactionResponse from './CustomCreditcardtransactionResponse';
 import EzsignsignatureResponse from './EzsignsignatureResponse';
 import EzsignsignatureResponseCompoundAllOf from './EzsignsignatureResponseCompoundAllOf';
 import EzsignsignaturecustomdateResponseCompound from './EzsignsignaturecustomdateResponseCompound';
@@ -40,10 +42,11 @@ class EzsignsignatureResponseCompound {
      * @param iEzsignsignatureY {Number} The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsignsignatureStep {Number} The step when the Ezsignsigner will be invited to sign
      * @param eEzsignsignatureType {module:eZmaxAPI/model/FieldEEzsignsignatureType} 
+     * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
-    constructor(pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType) { 
-        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType);EzsignsignatureResponseCompoundAllOf.initialize(this);
-        EzsignsignatureResponseCompound.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType);
+    constructor(pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName) { 
+        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName);EzsignsignatureResponseCompoundAllOf.initialize(this);
+        EzsignsignatureResponseCompound.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName);
     }
 
     /**
@@ -51,7 +54,7 @@ class EzsignsignatureResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType) { 
+    static initialize(obj, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName) { 
         obj['pkiEzsignsignatureID'] = pkiEzsignsignatureID;
         obj['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
         obj['fkiEzsignfoldersignerassociationID'] = fkiEzsignfoldersignerassociationID;
@@ -60,6 +63,7 @@ class EzsignsignatureResponseCompound {
         obj['iEzsignsignatureY'] = iEzsignsignatureY;
         obj['iEzsignsignatureStep'] = iEzsignsignatureStep;
         obj['eEzsignsignatureType'] = eEzsignsignatureType;
+        obj['objContactName'] = objContactName;
     }
 
     /**
@@ -123,11 +127,20 @@ class EzsignsignatureResponseCompound {
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationIDValidation')) {
                 obj['fkiEzsignfoldersignerassociationIDValidation'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationIDValidation'], 'Number');
             }
+            if (data.hasOwnProperty('dtEzsignsignatureDate')) {
+                obj['dtEzsignsignatureDate'] = ApiClient.convertToType(data['dtEzsignsignatureDate'], 'String');
+            }
+            if (data.hasOwnProperty('objContactName')) {
+                obj['objContactName'] = CustomContactNameResponse.constructFromObject(data['objContactName']);
+            }
             if (data.hasOwnProperty('bEzsignsignatureCustomdate')) {
                 obj['bEzsignsignatureCustomdate'] = ApiClient.convertToType(data['bEzsignsignatureCustomdate'], 'Boolean');
             }
             if (data.hasOwnProperty('a_objEzsignsignaturecustomdate')) {
                 obj['a_objEzsignsignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsignsignaturecustomdate'], [EzsignsignaturecustomdateResponseCompound]);
+            }
+            if (data.hasOwnProperty('objCreditcardtransaction')) {
+                obj['objCreditcardtransaction'] = CustomCreditcardtransactionResponse.constructFromObject(data['objCreditcardtransaction']);
             }
         }
         return obj;
@@ -153,6 +166,14 @@ class EzsignsignatureResponseCompound {
         if (data['sEzsignsignatureAttachmentdescription'] && !(typeof data['sEzsignsignatureAttachmentdescription'] === 'string' || data['sEzsignsignatureAttachmentdescription'] instanceof String)) {
             throw new Error("Expected the field `sEzsignsignatureAttachmentdescription` to be a primitive type in the JSON string but got " + data['sEzsignsignatureAttachmentdescription']);
         }
+        // ensure the json data is a string
+        if (data['dtEzsignsignatureDate'] && !(typeof data['dtEzsignsignatureDate'] === 'string' || data['dtEzsignsignatureDate'] instanceof String)) {
+            throw new Error("Expected the field `dtEzsignsignatureDate` to be a primitive type in the JSON string but got " + data['dtEzsignsignatureDate']);
+        }
+        // validate the optional field `objContactName`
+        if (data['objContactName']) { // data not null
+          CustomContactNameResponse.validateJSON(data['objContactName']);
+        }
         if (data['a_objEzsignsignaturecustomdate']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['a_objEzsignsignaturecustomdate'])) {
@@ -162,6 +183,10 @@ class EzsignsignatureResponseCompound {
             for (const item of data['a_objEzsignsignaturecustomdate']) {
                 EzsignsignaturecustomdateResponseCompound.validateJSON(item);
             };
+        }
+        // validate the optional field `objCreditcardtransaction`
+        if (data['objCreditcardtransaction']) { // data not null
+          CustomCreditcardtransactionResponse.validateJSON(data['objCreditcardtransaction']);
         }
 
         return true;
@@ -407,6 +432,34 @@ class EzsignsignatureResponseCompound {
         this['fkiEzsignfoldersignerassociationIDValidation'] = fkiEzsignfoldersignerassociationIDValidation;
     }
 /**
+     * Returns The date the Ezsignsignature was signed
+     * @return {String}
+     */
+    getDtEzsignsignatureDate() {
+        return this.dtEzsignsignatureDate;
+    }
+
+    /**
+     * Sets The date the Ezsignsignature was signed
+     * @param {String} dtEzsignsignatureDate The date the Ezsignsignature was signed
+     */
+    setDtEzsignsignatureDate(dtEzsignsignatureDate) {
+        this['dtEzsignsignatureDate'] = dtEzsignsignatureDate;
+    }
+/**
+     * @return {module:eZmaxAPI/model/CustomContactNameResponse}
+     */
+    getObjContactName() {
+        return this.objContactName;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
+     */
+    setObjContactName(objContactName) {
+        this['objContactName'] = objContactName;
+    }
+/**
      * Returns Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
@@ -436,10 +489,23 @@ class EzsignsignatureResponseCompound {
     setAObjEzsignsignaturecustomdate(a_objEzsignsignaturecustomdate) {
         this['a_objEzsignsignaturecustomdate'] = a_objEzsignsignaturecustomdate;
     }
+/**
+     * @return {module:eZmaxAPI/model/CustomCreditcardtransactionResponse}
+     */
+    getObjCreditcardtransaction() {
+        return this.objCreditcardtransaction;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
+     */
+    setObjCreditcardtransaction(objCreditcardtransaction) {
+        this['objCreditcardtransaction'] = objCreditcardtransaction;
+    }
 
 }
 
-EzsignsignatureResponseCompound.RequiredProperties = ["pkiEzsignsignatureID", "fkiEzsigndocumentID", "fkiEzsignfoldersignerassociationID", "iEzsignpagePagenumber", "iEzsignsignatureX", "iEzsignsignatureY", "iEzsignsignatureStep", "eEzsignsignatureType"];
+EzsignsignatureResponseCompound.RequiredProperties = ["pkiEzsignsignatureID", "fkiEzsigndocumentID", "fkiEzsignfoldersignerassociationID", "iEzsignpagePagenumber", "iEzsignsignatureX", "iEzsignsignatureY", "iEzsignsignatureStep", "eEzsignsignatureType", "objContactName"];
 
 /**
  * The unique ID of the Ezsignsignature
@@ -534,6 +600,17 @@ EzsignsignatureResponseCompound.prototype['bEzsignsignatureRequired'] = undefine
 EzsignsignatureResponseCompound.prototype['fkiEzsignfoldersignerassociationIDValidation'] = undefined;
 
 /**
+ * The date the Ezsignsignature was signed
+ * @member {String} dtEzsignsignatureDate
+ */
+EzsignsignatureResponseCompound.prototype['dtEzsignsignatureDate'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
+ */
+EzsignsignatureResponseCompound.prototype['objContactName'] = undefined;
+
+/**
  * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsignsignatureCustomdate
  */
@@ -544,6 +621,11 @@ EzsignsignatureResponseCompound.prototype['bEzsignsignatureCustomdate'] = undefi
  * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateResponseCompound>} a_objEzsignsignaturecustomdate
  */
 EzsignsignatureResponseCompound.prototype['a_objEzsignsignaturecustomdate'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
+ */
+EzsignsignatureResponseCompound.prototype['objCreditcardtransaction'] = undefined;
 
 
 // Implement EzsignsignatureResponse interface:
@@ -623,6 +705,15 @@ EzsignsignatureResponse.prototype['bEzsignsignatureRequired'] = undefined;
  * @member {Number} fkiEzsignfoldersignerassociationIDValidation
  */
 EzsignsignatureResponse.prototype['fkiEzsignfoldersignerassociationIDValidation'] = undefined;
+/**
+ * The date the Ezsignsignature was signed
+ * @member {String} dtEzsignsignatureDate
+ */
+EzsignsignatureResponse.prototype['dtEzsignsignatureDate'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
+ */
+EzsignsignatureResponse.prototype['objContactName'] = undefined;
 // Implement EzsignsignatureResponseCompoundAllOf interface:
 /**
  * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
@@ -634,6 +725,10 @@ EzsignsignatureResponseCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = u
  * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateResponseCompound>} a_objEzsignsignaturecustomdate
  */
 EzsignsignatureResponseCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
+ */
+EzsignsignatureResponseCompoundAllOf.prototype['objCreditcardtransaction'] = undefined;
 
 
 

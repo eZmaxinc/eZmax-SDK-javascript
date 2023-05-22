@@ -23,13 +23,13 @@ class BillingentityinternalAutocompleteElementResponse {
      * Constructs a new <code>BillingentityinternalAutocompleteElementResponse</code>.
      * A Billingentityinternal AutocompleteElement Response
      * @alias module:eZmaxAPI/model/BillingentityinternalAutocompleteElementResponse
-     * @param sBillingentityinternalDescriptionX {String} The description of the Billingentityinternal in the language of the requester
      * @param pkiBillingentityinternalID {Number} The unique ID of the Billingentityinternal.
+     * @param sBillingentityinternalDescriptionX {String} The description of the Billingentityinternal in the language of the requester
      * @param bBillingentityinternalIsactive {Boolean} Whether the Billingentityinternal is active or not
      */
-    constructor(sBillingentityinternalDescriptionX, pkiBillingentityinternalID, bBillingentityinternalIsactive) { 
+    constructor(pkiBillingentityinternalID, sBillingentityinternalDescriptionX, bBillingentityinternalIsactive) { 
         
-        BillingentityinternalAutocompleteElementResponse.initialize(this, sBillingentityinternalDescriptionX, pkiBillingentityinternalID, bBillingentityinternalIsactive);
+        BillingentityinternalAutocompleteElementResponse.initialize(this, pkiBillingentityinternalID, sBillingentityinternalDescriptionX, bBillingentityinternalIsactive);
     }
 
     /**
@@ -37,9 +37,9 @@ class BillingentityinternalAutocompleteElementResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sBillingentityinternalDescriptionX, pkiBillingentityinternalID, bBillingentityinternalIsactive) { 
-        obj['sBillingentityinternalDescriptionX'] = sBillingentityinternalDescriptionX;
+    static initialize(obj, pkiBillingentityinternalID, sBillingentityinternalDescriptionX, bBillingentityinternalIsactive) { 
         obj['pkiBillingentityinternalID'] = pkiBillingentityinternalID;
+        obj['sBillingentityinternalDescriptionX'] = sBillingentityinternalDescriptionX;
         obj['bBillingentityinternalIsactive'] = bBillingentityinternalIsactive;
     }
 
@@ -54,11 +54,11 @@ class BillingentityinternalAutocompleteElementResponse {
         if (data) {
             obj = obj || new BillingentityinternalAutocompleteElementResponse();
 
-            if (data.hasOwnProperty('sBillingentityinternalDescriptionX')) {
-                obj['sBillingentityinternalDescriptionX'] = ApiClient.convertToType(data['sBillingentityinternalDescriptionX'], 'String');
-            }
             if (data.hasOwnProperty('pkiBillingentityinternalID')) {
                 obj['pkiBillingentityinternalID'] = ApiClient.convertToType(data['pkiBillingentityinternalID'], 'Number');
+            }
+            if (data.hasOwnProperty('sBillingentityinternalDescriptionX')) {
+                obj['sBillingentityinternalDescriptionX'] = ApiClient.convertToType(data['sBillingentityinternalDescriptionX'], 'String');
             }
             if (data.hasOwnProperty('bBillingentityinternalIsactive')) {
                 obj['bBillingentityinternalIsactive'] = ApiClient.convertToType(data['bBillingentityinternalIsactive'], 'Boolean');
@@ -88,21 +88,6 @@ class BillingentityinternalAutocompleteElementResponse {
     }
 
 /**
-     * Returns The description of the Billingentityinternal in the language of the requester
-     * @return {String}
-     */
-    getSBillingentityinternalDescriptionX() {
-        return this.sBillingentityinternalDescriptionX;
-    }
-
-    /**
-     * Sets The description of the Billingentityinternal in the language of the requester
-     * @param {String} sBillingentityinternalDescriptionX The description of the Billingentityinternal in the language of the requester
-     */
-    setSBillingentityinternalDescriptionX(sBillingentityinternalDescriptionX) {
-        this['sBillingentityinternalDescriptionX'] = sBillingentityinternalDescriptionX;
-    }
-/**
      * Returns The unique ID of the Billingentityinternal.
      * minimum: 0
      * @return {Number}
@@ -117,6 +102,21 @@ class BillingentityinternalAutocompleteElementResponse {
      */
     setPkiBillingentityinternalID(pkiBillingentityinternalID) {
         this['pkiBillingentityinternalID'] = pkiBillingentityinternalID;
+    }
+/**
+     * Returns The description of the Billingentityinternal in the language of the requester
+     * @return {String}
+     */
+    getSBillingentityinternalDescriptionX() {
+        return this.sBillingentityinternalDescriptionX;
+    }
+
+    /**
+     * Sets The description of the Billingentityinternal in the language of the requester
+     * @param {String} sBillingentityinternalDescriptionX The description of the Billingentityinternal in the language of the requester
+     */
+    setSBillingentityinternalDescriptionX(sBillingentityinternalDescriptionX) {
+        this['sBillingentityinternalDescriptionX'] = sBillingentityinternalDescriptionX;
     }
 /**
      * Returns Whether the Billingentityinternal is active or not
@@ -136,19 +136,19 @@ class BillingentityinternalAutocompleteElementResponse {
 
 }
 
-BillingentityinternalAutocompleteElementResponse.RequiredProperties = ["sBillingentityinternalDescriptionX", "pkiBillingentityinternalID", "bBillingentityinternalIsactive"];
-
-/**
- * The description of the Billingentityinternal in the language of the requester
- * @member {String} sBillingentityinternalDescriptionX
- */
-BillingentityinternalAutocompleteElementResponse.prototype['sBillingentityinternalDescriptionX'] = undefined;
+BillingentityinternalAutocompleteElementResponse.RequiredProperties = ["pkiBillingentityinternalID", "sBillingentityinternalDescriptionX", "bBillingentityinternalIsactive"];
 
 /**
  * The unique ID of the Billingentityinternal.
  * @member {Number} pkiBillingentityinternalID
  */
 BillingentityinternalAutocompleteElementResponse.prototype['pkiBillingentityinternalID'] = undefined;
+
+/**
+ * The description of the Billingentityinternal in the language of the requester
+ * @member {String} sBillingentityinternalDescriptionX
+ */
+BillingentityinternalAutocompleteElementResponse.prototype['sBillingentityinternalDescriptionX'] = undefined;
 
 /**
  * Whether the Billingentityinternal is active or not

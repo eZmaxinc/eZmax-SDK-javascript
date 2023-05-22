@@ -27,6 +27,20 @@ export default class FieldEWebhookEzsignevent {
 
     
         /**
+         * value: "EzsignsignerAcceptclause"
+         * @const
+         */
+        "EzsignsignerAcceptclause" = "EzsignsignerAcceptclause";
+
+    
+        /**
+         * value: "EzsignsignerConnect"
+         * @const
+         */
+        "EzsignsignerConnect" = "EzsignsignerConnect";
+
+    
+        /**
          * value: "FolderCompleted"
          * @const
          */

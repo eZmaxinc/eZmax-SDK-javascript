@@ -25,10 +25,11 @@ class UsergroupListElement {
      * @alias module:eZmaxAPI/model/UsergroupListElement
      * @param pkiUsergroupID {Number} The unique ID of the Usergroup
      * @param sUsergroupNameX {String} The Name of the Usergroup in the language of the requester
+     * @param iCountUser {Number} Numer of user in group
      */
-    constructor(pkiUsergroupID, sUsergroupNameX) { 
+    constructor(pkiUsergroupID, sUsergroupNameX, iCountUser) { 
         
-        UsergroupListElement.initialize(this, pkiUsergroupID, sUsergroupNameX);
+        UsergroupListElement.initialize(this, pkiUsergroupID, sUsergroupNameX, iCountUser);
     }
 
     /**
@@ -36,9 +37,10 @@ class UsergroupListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiUsergroupID, sUsergroupNameX) { 
+    static initialize(obj, pkiUsergroupID, sUsergroupNameX, iCountUser) { 
         obj['pkiUsergroupID'] = pkiUsergroupID;
         obj['sUsergroupNameX'] = sUsergroupNameX;
+        obj['iCountUser'] = iCountUser;
     }
 
     /**
@@ -57,6 +59,9 @@ class UsergroupListElement {
             }
             if (data.hasOwnProperty('sUsergroupNameX')) {
                 obj['sUsergroupNameX'] = ApiClient.convertToType(data['sUsergroupNameX'], 'String');
+            }
+            if (data.hasOwnProperty('iCountUser')) {
+                obj['iCountUser'] = ApiClient.convertToType(data['iCountUser'], 'Number');
             }
         }
         return obj;
@@ -114,10 +119,27 @@ class UsergroupListElement {
     setSUsergroupNameX(sUsergroupNameX) {
         this['sUsergroupNameX'] = sUsergroupNameX;
     }
+/**
+     * Returns Numer of user in group
+     * minimum: 0
+     * maximum: 16777215
+     * @return {Number}
+     */
+    getICountUser() {
+        return this.iCountUser;
+    }
+
+    /**
+     * Sets Numer of user in group
+     * @param {Number} iCountUser Numer of user in group
+     */
+    setICountUser(iCountUser) {
+        this['iCountUser'] = iCountUser;
+    }
 
 }
 
-UsergroupListElement.RequiredProperties = ["pkiUsergroupID", "sUsergroupNameX"];
+UsergroupListElement.RequiredProperties = ["pkiUsergroupID", "sUsergroupNameX", "iCountUser"];
 
 /**
  * The unique ID of the Usergroup
@@ -130,6 +152,12 @@ UsergroupListElement.prototype['pkiUsergroupID'] = undefined;
  * @member {String} sUsergroupNameX
  */
 UsergroupListElement.prototype['sUsergroupNameX'] = undefined;
+
+/**
+ * Numer of user in group
+ * @member {Number} iCountUser
+ */
+UsergroupListElement.prototype['iCountUser'] = undefined;
 
 
 

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eActivesessionOrigin (base name: "eActivesessionOrigin")', function() {
+      // uncomment below and update the code to test the property eActivesessionOrigin
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eActivesessionWeekdaystart (base name: "eActivesessionWeekdaystart")', function() {
       // uncomment below and update the code to test the property eActivesessionWeekdaystart
       //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();

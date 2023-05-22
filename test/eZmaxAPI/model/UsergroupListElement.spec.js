@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iCountUser (base name: "iCountUser")', function() {
+      // uncomment below and update the code to test the property iCountUser
+      //var instance = new EZmaxApiDefinitionFull.UsergroupListElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

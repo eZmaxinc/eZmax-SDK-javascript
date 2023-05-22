@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.BillingentityinternalAutocompleteElementResponse);
     });
 
-    it('should have the property sBillingentityinternalDescriptionX (base name: "sBillingentityinternalDescriptionX")', function() {
-      // uncomment below and update the code to test the property sBillingentityinternalDescriptionX
+    it('should have the property pkiBillingentityinternalID (base name: "pkiBillingentityinternalID")', function() {
+      // uncomment below and update the code to test the property pkiBillingentityinternalID
       //var instance = new EZmaxApiDefinitionFull.BillingentityinternalAutocompleteElementResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property pkiBillingentityinternalID (base name: "pkiBillingentityinternalID")', function() {
-      // uncomment below and update the code to test the property pkiBillingentityinternalID
+    it('should have the property sBillingentityinternalDescriptionX (base name: "sBillingentityinternalDescriptionX")', function() {
+      // uncomment below and update the code to test the property sBillingentityinternalDescriptionX
       //var instance = new EZmaxApiDefinitionFull.BillingentityinternalAutocompleteElementResponse();
       //expect(instance).to.be();
     });

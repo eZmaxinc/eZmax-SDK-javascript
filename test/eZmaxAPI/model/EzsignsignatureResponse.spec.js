@@ -150,6 +150,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dtEzsignsignatureDate (base name: "dtEzsignsignatureDate")', function() {
+      // uncomment below and update the code to test the property dtEzsignsignatureDate
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objContactName (base name: "objContactName")', function() {
+      // uncomment below and update the code to test the property objContactName
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

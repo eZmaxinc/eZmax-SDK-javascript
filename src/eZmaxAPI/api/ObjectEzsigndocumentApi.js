@@ -31,6 +31,7 @@ import EzsigndocumentEditEzsignsignaturesV1Response from '../model/Ezsigndocumen
 import EzsigndocumentEndPrematurelyV1Response from '../model/EzsigndocumentEndPrematurelyV1Response';
 import EzsigndocumentFlattenV1Response from '../model/EzsigndocumentFlattenV1Response';
 import EzsigndocumentGetActionableElementsV1Response from '../model/EzsigndocumentGetActionableElementsV1Response';
+import EzsigndocumentGetCompletedElementsV1Response from '../model/EzsigndocumentGetCompletedElementsV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignannotationsV1Response from '../model/EzsigndocumentGetEzsignannotationsV1Response';
 import EzsigndocumentGetEzsignformfieldgroupsV1Response from '../model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
@@ -519,6 +520,49 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentGetActionableElementsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentGetCompletedElementsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetCompletedElementsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetCompletedElementsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve completed elements for the Ezsigndocument
+     * Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetCompletedElementsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetCompletedElementsV1Response}
+     */
+    ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetCompletedElementsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetCompletedElementsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

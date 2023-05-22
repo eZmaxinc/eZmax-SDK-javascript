@@ -291,8 +291,8 @@ export default class ObjectEzsigntemplateApi {
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplateType | Company<br>Team<br>User<br>Usergroup | 
      * @param {Object} opts Optional parameters
      * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
-     * @param {Number} [iRowMax] 
-     * @param {Number} [iRowOffset] 
+     * @param {Number} [iRowMax = 10000)] 
+     * @param {Number} [iRowOffset = 0)] 
      * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {String} [sFilter] 
      * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateGetListV1Callback} callback The callback function, accepting three arguments: error, data, response

@@ -148,6 +148,16 @@
         done();
       });
     });
+    describe('ezsigndocumentGetCompletedElementsV1', function() {
+      it('should call ezsigndocumentGetCompletedElementsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetCompletedElementsV1
+        //instance.ezsigndocumentGetCompletedElementsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentGetDownloadUrlV1', function() {
       it('should call ezsigndocumentGetDownloadUrlV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetDownloadUrlV1

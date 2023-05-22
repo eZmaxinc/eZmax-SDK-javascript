@@ -150,6 +150,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dtEzsignsignatureDate (base name: "dtEzsignsignatureDate")', function() {
+      // uncomment below and update the code to test the property dtEzsignsignatureDate
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objContactName (base name: "objContactName")', function() {
+      // uncomment below and update the code to test the property objContactName
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsignsignatureCustomdate (base name: "bEzsignsignatureCustomdate")', function() {
       // uncomment below and update the code to test the property bEzsignsignatureCustomdate
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
@@ -158,6 +170,12 @@
 
     it('should have the property a_objEzsignsignaturecustomdate (base name: "a_objEzsignsignaturecustomdate")', function() {
       // uncomment below and update the code to test the property a_objEzsignsignaturecustomdate
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objCreditcardtransaction (base name: "objCreditcardtransaction")', function() {
+      // uncomment below and update the code to test the property objCreditcardtransaction
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
       //expect(instance).to.be();
     });
