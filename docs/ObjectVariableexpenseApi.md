@@ -83,7 +83,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectVariableexpenseApi();
-let pkiVariableexpenseID = 56; // Number | The unique ID of the Variableexpense
+let pkiVariableexpenseID = 56; // Number | 
 let VariableexpenseEditObjectV1Request = new EZmaxApiDefinitionFull.VariableexpenseEditObjectV1Request(); // VariableexpenseEditObjectV1Request | 
 apiInstance.variableexpenseEditObjectV1(pkiVariableexpenseID, VariableexpenseEditObjectV1Request, (error, data, response) => {
   if (error) {
@@ -99,7 +99,7 @@ apiInstance.variableexpenseEditObjectV1(pkiVariableexpenseID, VariableexpenseEdi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiVariableexpenseID** | **Number**| The unique ID of the Variableexpense | 
+ **pkiVariableexpenseID** | **Number**|  | 
  **VariableexpenseEditObjectV1Request** | [**VariableexpenseEditObjectV1Request**](VariableexpenseEditObjectV1Request.md)|  | 
 
 ### Return type
@@ -256,7 +256,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectVariableexpenseApi();
-let pkiVariableexpenseID = 56; // Number | The unique ID of the Variableexpense
+let pkiVariableexpenseID = 56; // Number | 
 apiInstance.variableexpenseGetObjectV2(pkiVariableexpenseID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -271,7 +271,7 @@ apiInstance.variableexpenseGetObjectV2(pkiVariableexpenseID, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiVariableexpenseID** | **Number**| The unique ID of the Variableexpense | 
+ **pkiVariableexpenseID** | **Number**|  | 
 
 ### Return type
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sCommunicationBodyurl** | **String** | The url of the body used as body in the Communication | [optional] 
 **eCommunicationDirection** | [**ComputedECommunicationDirection**](ComputedECommunicationDirection.md) |  | 
 **iCommunicationrecipientCount** | **Number** | The count of Communicationrecipient | 
+**bCommunicationPrivate** | **Boolean** | Whether the Communication is private or not | 
 **objDescriptionstaticSender** | [**DescriptionstaticResponse**](DescriptionstaticResponse.md) |  | [optional] 
 **objEmailstaticSender** | [**EmailstaticResponse**](EmailstaticResponse.md) |  | [optional] 
 **objPhonestaticSender** | [**PhonestaticResponse**](PhonestaticResponse.md) |  | [optional] 

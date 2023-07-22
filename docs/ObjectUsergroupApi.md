@@ -6,9 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usergroupCreateObjectV1**](ObjectUsergroupApi.md#usergroupCreateObjectV1) | **POST** /1/object/usergroup | Create a new Usergroup
 [**usergroupEditObjectV1**](ObjectUsergroupApi.md#usergroupEditObjectV1) | **PUT** /1/object/usergroup/{pkiUsergroupID} | Edit an existing Usergroup
+[**usergroupEditPermissionsV1**](ObjectUsergroupApi.md#usergroupEditPermissionsV1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editPermissions | Edit multiple Permissions
+[**usergroupEditUsergroupmembershipsV1**](ObjectUsergroupApi.md#usergroupEditUsergroupmembershipsV1) | **PUT** /1/object/usergroup/{pkiUsergroupID}/editUsergroupmemberships | Edit multiple Usergroupmemberships
 [**usergroupGetAutocompleteV2**](ObjectUsergroupApi.md#usergroupGetAutocompleteV2) | **GET** /2/object/usergroup/getAutocomplete/{sSelector} | Retrieve Usergroups and IDs
 [**usergroupGetListV1**](ObjectUsergroupApi.md#usergroupGetListV1) | **GET** /1/object/usergroup/getList | Retrieve Usergroup list
 [**usergroupGetObjectV2**](ObjectUsergroupApi.md#usergroupGetObjectV2) | **GET** /2/object/usergroup/{pkiUsergroupID} | Retrieve an existing Usergroup
+[**usergroupGetPermissionsV1**](ObjectUsergroupApi.md#usergroupGetPermissionsV1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getPermissions | Retrieve an existing Usergroup&#39;s Permissions
+[**usergroupGetUsergroupmembershipsV1**](ObjectUsergroupApi.md#usergroupGetUsergroupmembershipsV1) | **GET** /1/object/usergroup/{pkiUsergroupID}/getUsergroupmemberships | Retrieve an existing Usergroup&#39;s Usergroupmemberships
 
 
 
@@ -83,7 +87,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
-let pkiUsergroupID = 56; // Number | The unique ID of the Usergroup
+let pkiUsergroupID = 56; // Number | 
 let UsergroupEditObjectV1Request = new EZmaxApiDefinitionFull.UsergroupEditObjectV1Request(); // UsergroupEditObjectV1Request | 
 apiInstance.usergroupEditObjectV1(pkiUsergroupID, UsergroupEditObjectV1Request, (error, data, response) => {
   if (error) {
@@ -99,12 +103,118 @@ apiInstance.usergroupEditObjectV1(pkiUsergroupID, UsergroupEditObjectV1Request, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiUsergroupID** | **Number**| The unique ID of the Usergroup | 
+ **pkiUsergroupID** | **Number**|  | 
  **UsergroupEditObjectV1Request** | [**UsergroupEditObjectV1Request**](UsergroupEditObjectV1Request.md)|  | 
 
 ### Return type
 
 [**UsergroupEditObjectV1Response**](UsergroupEditObjectV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## usergroupEditPermissionsV1
+
+> UsergroupEditPermissionsV1Response usergroupEditPermissionsV1(pkiUsergroupID, UsergroupEditPermissionsV1Request)
+
+Edit multiple Permissions
+
+Using this endpoint, you can edit multiple Permissions at the same time.
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
+let pkiUsergroupID = 56; // Number | 
+let UsergroupEditPermissionsV1Request = new EZmaxApiDefinitionFull.UsergroupEditPermissionsV1Request(); // UsergroupEditPermissionsV1Request | 
+apiInstance.usergroupEditPermissionsV1(pkiUsergroupID, UsergroupEditPermissionsV1Request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiUsergroupID** | **Number**|  | 
+ **UsergroupEditPermissionsV1Request** | [**UsergroupEditPermissionsV1Request**](UsergroupEditPermissionsV1Request.md)|  | 
+
+### Return type
+
+[**UsergroupEditPermissionsV1Response**](UsergroupEditPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## usergroupEditUsergroupmembershipsV1
+
+> UsergroupEditUsergroupmembershipsV1Response usergroupEditUsergroupmembershipsV1(pkiUsergroupID, UsergroupEditUsergroupmembershipsV1Request)
+
+Edit multiple Usergroupmemberships
+
+Using this endpoint, you can edit multiple Usergroupmemberships at the same time.
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
+let pkiUsergroupID = 56; // Number | 
+let UsergroupEditUsergroupmembershipsV1Request = new EZmaxApiDefinitionFull.UsergroupEditUsergroupmembershipsV1Request(); // UsergroupEditUsergroupmembershipsV1Request | 
+apiInstance.usergroupEditUsergroupmembershipsV1(pkiUsergroupID, UsergroupEditUsergroupmembershipsV1Request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiUsergroupID** | **Number**|  | 
+ **UsergroupEditUsergroupmembershipsV1Request** | [**UsergroupEditUsergroupmembershipsV1Request**](UsergroupEditUsergroupmembershipsV1Request.md)|  | 
+
+### Return type
+
+[**UsergroupEditUsergroupmembershipsV1Response**](UsergroupEditUsergroupmembershipsV1Response.md)
 
 ### Authorization
 
@@ -256,7 +366,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
-let pkiUsergroupID = 56; // Number | The unique ID of the Usergroup
+let pkiUsergroupID = 56; // Number | 
 apiInstance.usergroupGetObjectV2(pkiUsergroupID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -271,11 +381,109 @@ apiInstance.usergroupGetObjectV2(pkiUsergroupID, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiUsergroupID** | **Number**| The unique ID of the Usergroup | 
+ **pkiUsergroupID** | **Number**|  | 
 
 ### Return type
 
 [**UsergroupGetObjectV2Response**](UsergroupGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## usergroupGetPermissionsV1
+
+> UsergroupGetPermissionsV1Response usergroupGetPermissionsV1(pkiUsergroupID)
+
+Retrieve an existing Usergroup&#39;s Permissions
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
+let pkiUsergroupID = 56; // Number | 
+apiInstance.usergroupGetPermissionsV1(pkiUsergroupID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiUsergroupID** | **Number**|  | 
+
+### Return type
+
+[**UsergroupGetPermissionsV1Response**](UsergroupGetPermissionsV1Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## usergroupGetUsergroupmembershipsV1
+
+> UsergroupGetUsergroupmembershipsV1Response usergroupGetUsergroupmembershipsV1(pkiUsergroupID)
+
+Retrieve an existing Usergroup&#39;s Usergroupmemberships
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
+let pkiUsergroupID = 56; // Number | 
+apiInstance.usergroupGetUsergroupmembershipsV1(pkiUsergroupID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiUsergroupID** | **Number**|  | 
+
+### Return type
+
+[**UsergroupGetUsergroupmembershipsV1Response**](UsergroupGetUsergroupmembershipsV1Response.md)
 
 ### Authorization
 

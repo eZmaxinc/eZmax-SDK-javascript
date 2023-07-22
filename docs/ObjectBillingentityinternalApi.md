@@ -83,7 +83,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectBillingentityinternalApi();
-let pkiBillingentityinternalID = 56; // Number | The unique ID of the Billingentityinternal
+let pkiBillingentityinternalID = 56; // Number | 
 let BillingentityinternalEditObjectV1Request = new EZmaxApiDefinitionFull.BillingentityinternalEditObjectV1Request(); // BillingentityinternalEditObjectV1Request | 
 apiInstance.billingentityinternalEditObjectV1(pkiBillingentityinternalID, BillingentityinternalEditObjectV1Request, (error, data, response) => {
   if (error) {
@@ -99,7 +99,7 @@ apiInstance.billingentityinternalEditObjectV1(pkiBillingentityinternalID, Billin
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiBillingentityinternalID** | **Number**| The unique ID of the Billingentityinternal | 
+ **pkiBillingentityinternalID** | **Number**|  | 
  **BillingentityinternalEditObjectV1Request** | [**BillingentityinternalEditObjectV1Request**](BillingentityinternalEditObjectV1Request.md)|  | 
 
 ### Return type
@@ -256,7 +256,7 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectBillingentityinternalApi();
-let pkiBillingentityinternalID = 56; // Number | The unique ID of the Billingentityinternal
+let pkiBillingentityinternalID = 56; // Number | 
 apiInstance.billingentityinternalGetObjectV2(pkiBillingentityinternalID, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -271,7 +271,7 @@ apiInstance.billingentityinternalGetObjectV2(pkiBillingentityinternalID, (error,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pkiBillingentityinternalID** | **Number**| The unique ID of the Billingentityinternal | 
+ **pkiBillingentityinternalID** | **Number**|  | 
 
 ### Return type
 

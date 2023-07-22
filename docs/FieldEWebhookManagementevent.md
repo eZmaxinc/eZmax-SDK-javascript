@@ -5,4 +5,6 @@
 
 * `UserCreated` (value: `"UserCreated"`)
 
+* `UserstagedCreated` (value: `"UserstagedCreated"`)
+
 

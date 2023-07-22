@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **sEzsignformfieldgroupRegexp** | **String** | A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea** | [optional] 
 **tEzsignformfieldgroupTooltip** | **String** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] 
 **eEzsignformfieldgroupTooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] 
+**eEzsignformfieldgroupTextvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] 
 **a_objEzsignformfieldgroupsigner** | [**[EzsignformfieldgroupsignerRequestCompound]**](EzsignformfieldgroupsignerRequestCompound.md) |  | 
 **a_objDropdownElement** | [**[CustomDropdownElementRequestCompound]**](CustomDropdownElementRequestCompound.md) |  | [optional] 
 **a_objEzsignformfield** | [**[EzsignformfieldRequestCompound]**](EzsignformfieldRequestCompound.md) |  | 

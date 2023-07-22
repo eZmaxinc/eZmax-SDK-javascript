@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pkiApikeyID** | **Number** | The unique ID of the Apikey | 
+**fkiUserID** | **Number** | The unique ID of the User | 
 **objApikeyDescription** | [**MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  | 
 **sComputedToken** | **String** | The secret token for the API key.  This will be returned only on creation. | [optional] 
-**pkiApikeyID** | **Number** | The unique ID of the Apikey | 
+**bApikeyIsactive** | **Boolean** | Whether the apikey is active or not | 
 **objAudit** | [**CommonAudit**](CommonAudit.md) |  | 
 
 

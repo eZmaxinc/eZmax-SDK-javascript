@@ -15,4 +15,10 @@
 
 * `Attachments` (value: `"Attachments"`)
 
+* `AttachmentsConfirmation` (value: `"AttachmentsConfirmation"`)
+
+* `FieldText` (value: `"FieldText"`)
+
+* `FieldTextarea` (value: `"FieldTextarea"`)
+
 
