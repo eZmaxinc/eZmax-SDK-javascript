@@ -62,6 +62,9 @@ class CustomEzsignfoldersignerassociationstatusResponse {
             if (data.hasOwnProperty('sEzsignfoldersignerassociationstatusFirstname')) {
                 obj['sEzsignfoldersignerassociationstatusFirstname'] = ApiClient.convertToType(data['sEzsignfoldersignerassociationstatusFirstname'], 'String');
             }
+            if (data.hasOwnProperty('sEzsignfoldersignerassociationstatusDescriptionX')) {
+                obj['sEzsignfoldersignerassociationstatusDescriptionX'] = ApiClient.convertToType(data['sEzsignfoldersignerassociationstatusDescriptionX'], 'String');
+            }
             if (data.hasOwnProperty('a_objEzsignsignaturestatus')) {
                 obj['a_objEzsignsignaturestatus'] = ApiClient.convertToType(data['a_objEzsignsignaturestatus'], [CustomEzsignsignaturestatusResponse]);
             }
@@ -88,6 +91,10 @@ class CustomEzsignfoldersignerassociationstatusResponse {
         // ensure the json data is a string
         if (data['sEzsignfoldersignerassociationstatusFirstname'] && !(typeof data['sEzsignfoldersignerassociationstatusFirstname'] === 'string' || data['sEzsignfoldersignerassociationstatusFirstname'] instanceof String)) {
             throw new Error("Expected the field `sEzsignfoldersignerassociationstatusFirstname` to be a primitive type in the JSON string but got " + data['sEzsignfoldersignerassociationstatusFirstname']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsignfoldersignerassociationstatusDescriptionX'] && !(typeof data['sEzsignfoldersignerassociationstatusDescriptionX'] === 'string' || data['sEzsignfoldersignerassociationstatusDescriptionX'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignfoldersignerassociationstatusDescriptionX` to be a primitive type in the JSON string but got " + data['sEzsignfoldersignerassociationstatusDescriptionX']);
         }
         if (data['a_objEzsignsignaturestatus']) { // data not null
             // ensure the json data is an array
@@ -150,6 +157,21 @@ class CustomEzsignfoldersignerassociationstatusResponse {
         this['sEzsignfoldersignerassociationstatusFirstname'] = sEzsignfoldersignerassociationstatusFirstname;
     }
 /**
+     * Returns The description of the Ezsignsigner
+     * @return {String}
+     */
+    getSEzsignfoldersignerassociationstatusDescriptionX() {
+        return this.sEzsignfoldersignerassociationstatusDescriptionX;
+    }
+
+    /**
+     * Sets The description of the Ezsignsigner
+     * @param {String} sEzsignfoldersignerassociationstatusDescriptionX The description of the Ezsignsigner
+     */
+    setSEzsignfoldersignerassociationstatusDescriptionX(sEzsignfoldersignerassociationstatusDescriptionX) {
+        this['sEzsignfoldersignerassociationstatusDescriptionX'] = sEzsignfoldersignerassociationstatusDescriptionX;
+    }
+/**
      * @return {Array.<module:eZmaxAPI/model/CustomEzsignsignaturestatusResponse>}
      */
     getAObjEzsignsignaturestatus() {
@@ -184,6 +206,12 @@ CustomEzsignfoldersignerassociationstatusResponse.prototype['sEzsignfoldersigner
  * @member {String} sEzsignfoldersignerassociationstatusFirstname
  */
 CustomEzsignfoldersignerassociationstatusResponse.prototype['sEzsignfoldersignerassociationstatusFirstname'] = undefined;
+
+/**
+ * The description of the Ezsignsigner
+ * @member {String} sEzsignfoldersignerassociationstatusDescriptionX
+ */
+CustomEzsignfoldersignerassociationstatusResponse.prototype['sEzsignfoldersignerassociationstatusDescriptionX'] = undefined;
 
 /**
  * @member {Array.<module:eZmaxAPI/model/CustomEzsignsignaturestatusResponse>} a_objEzsignsignaturestatus

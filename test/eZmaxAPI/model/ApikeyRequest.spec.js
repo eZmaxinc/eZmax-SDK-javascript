@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bApikeyIssigned (base name: "bApikeyIssigned")', function() {
+      // uncomment below and update the code to test the property bApikeyIssigned
+      //var instance = new EZmaxApiDefinitionFull.ApikeyRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

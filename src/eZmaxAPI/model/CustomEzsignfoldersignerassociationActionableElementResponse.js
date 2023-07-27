@@ -17,7 +17,6 @@ import EzsignfoldersignerassociationResponseCompound from './Ezsignfoldersignera
 import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
 import EzsignsignergroupResponseCompound from './EzsignsignergroupResponseCompound';
-import UsergroupResponseCompound from './UsergroupResponseCompound';
 
 /**
  * The CustomEzsignfoldersignerassociationActionableElementResponse model module.
@@ -91,9 +90,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
             if (data.hasOwnProperty('objUser')) {
                 obj['objUser'] = EzsignfoldersignerassociationResponseCompoundUser.constructFromObject(data['objUser']);
             }
-            if (data.hasOwnProperty('objUsergroup')) {
-                obj['objUsergroup'] = UsergroupResponseCompound.constructFromObject(data['objUsergroup']);
-            }
             if (data.hasOwnProperty('objEzsignsigner')) {
                 obj['objEzsignsigner'] = EzsignsignerResponseCompound.constructFromObject(data['objEzsignsigner']);
             }
@@ -130,10 +126,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
         // validate the optional field `objUser`
         if (data['objUser']) { // data not null
           EzsignfoldersignerassociationResponseCompoundUser.validateJSON(data['objUser']);
-        }
-        // validate the optional field `objUsergroup`
-        if (data['objUsergroup']) { // data not null
-          UsergroupResponseCompound.validateJSON(data['objUsergroup']);
         }
         // validate the optional field `objEzsignsigner`
         if (data['objEzsignsigner']) { // data not null
@@ -247,19 +239,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
         this['objUser'] = objUser;
     }
 /**
-     * @return {module:eZmaxAPI/model/UsergroupResponseCompound}
-     */
-    getObjUsergroup() {
-        return this.objUsergroup;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/UsergroupResponseCompound} objUsergroup
-     */
-    setObjUsergroup(objUsergroup) {
-        this['objUsergroup'] = objUsergroup;
-    }
-/**
      * @return {module:eZmaxAPI/model/EzsignsignerResponseCompound}
      */
     getObjEzsignsigner() {
@@ -348,11 +327,6 @@ CustomEzsignfoldersignerassociationActionableElementResponse.prototype['objEzsig
 CustomEzsignfoldersignerassociationActionableElementResponse.prototype['objUser'] = undefined;
 
 /**
- * @member {module:eZmaxAPI/model/UsergroupResponseCompound} objUsergroup
- */
-CustomEzsignfoldersignerassociationActionableElementResponse.prototype['objUsergroup'] = undefined;
-
-/**
  * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
  */
 CustomEzsignfoldersignerassociationActionableElementResponse.prototype['objEzsignsigner'] = undefined;
@@ -404,10 +378,6 @@ EzsignfoldersignerassociationResponseCompound.prototype['objEzsignsignergroup'] 
  * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
  */
 EzsignfoldersignerassociationResponseCompound.prototype['objUser'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/UsergroupResponseCompound} objUsergroup
- */
-EzsignfoldersignerassociationResponseCompound.prototype['objUsergroup'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
  */

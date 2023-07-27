@@ -19,10 +19,15 @@ import ApikeyEditObjectV1Request from '../model/ApikeyEditObjectV1Request';
 import ApikeyEditObjectV1Response from '../model/ApikeyEditObjectV1Response';
 import ApikeyEditPermissionsV1Request from '../model/ApikeyEditPermissionsV1Request';
 import ApikeyEditPermissionsV1Response from '../model/ApikeyEditPermissionsV1Response';
+import ApikeyGetCorsV1Response from '../model/ApikeyGetCorsV1Response';
+import ApikeyGetListV1Response from '../model/ApikeyGetListV1Response';
 import ApikeyGetObjectV2Response from '../model/ApikeyGetObjectV2Response';
 import ApikeyGetPermissionsV1Response from '../model/ApikeyGetPermissionsV1Response';
 import ApikeyGetSubnetsV1Response from '../model/ApikeyGetSubnetsV1Response';
+import ApikeyRegenerateV1Request from '../model/ApikeyRegenerateV1Request';
+import ApikeyRegenerateV1Response from '../model/ApikeyRegenerateV1Response';
 import CommonResponseError from '../model/CommonResponseError';
+import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
 * ObjectApikey service.
@@ -182,6 +187,97 @@ export default class ObjectApikeyApi {
     }
 
     /**
+     * Callback function to receive the result of the apikeyGetCorsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectApikeyApi~apikeyGetCorsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/ApikeyGetCorsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Apikey's cors
+     * @param {Number} pkiApikeyID 
+     * @param {module:eZmaxAPI/api/ObjectApikeyApi~apikeyGetCorsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/ApikeyGetCorsV1Response}
+     */
+    apikeyGetCorsV1(pkiApikeyID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiApikeyID' is set
+      if (pkiApikeyID === undefined || pkiApikeyID === null) {
+        throw new Error("Missing the required parameter 'pkiApikeyID' when calling apikeyGetCorsV1");
+      }
+
+      let pathParams = {
+        'pkiApikeyID': pkiApikeyID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ApikeyGetCorsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/apikey/{pkiApikeyID}/getCors', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the apikeyGetListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectApikeyApi~apikeyGetListV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/ApikeyGetListV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Apikey list
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+     * @param {Object} opts Optional parameters
+     * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
+     * @param {Number} [iRowMax = 10000)] 
+     * @param {Number} [iRowOffset = 0)] 
+     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
+     * @param {String} [sFilter] 
+     * @param {module:eZmaxAPI/api/ObjectApikeyApi~apikeyGetListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/ApikeyGetListV1Response}
+     */
+    apikeyGetListV1(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'eOrderBy': opts['eOrderBy'],
+        'iRowMax': opts['iRowMax'],
+        'iRowOffset': opts['iRowOffset'],
+        'sFilter': opts['sFilter']
+      };
+      let headerParams = {
+        'Accept-Language': opts['Accept_Language']
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+      let returnType = ApikeyGetListV1Response;
+      return this.apiClient.callApi(
+        '/1/object/apikey/getList', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the apikeyGetObjectV2 operation.
      * @callback module:eZmaxAPI/api/ObjectApikeyApi~apikeyGetObjectV2Callback
      * @param {String} error Error message, if any.
@@ -303,6 +399,54 @@ export default class ObjectApikeyApi {
       let returnType = ApikeyGetSubnetsV1Response;
       return this.apiClient.callApi(
         '/1/object/apikey/{pkiApikeyID}/getSubnets', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the apikeyRegenerateV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectApikeyApi~apikeyRegenerateV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/ApikeyRegenerateV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Regenerate the Apikey
+     * 
+     * @param {Number} pkiApikeyID 
+     * @param {module:eZmaxAPI/model/ApikeyRegenerateV1Request} ApikeyRegenerateV1Request 
+     * @param {module:eZmaxAPI/api/ObjectApikeyApi~apikeyRegenerateV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/ApikeyRegenerateV1Response}
+     */
+    apikeyRegenerateV1(pkiApikeyID, ApikeyRegenerateV1Request, callback) {
+      let postBody = ApikeyRegenerateV1Request;
+      // verify the required parameter 'pkiApikeyID' is set
+      if (pkiApikeyID === undefined || pkiApikeyID === null) {
+        throw new Error("Missing the required parameter 'pkiApikeyID' when calling apikeyRegenerateV1");
+      }
+      // verify the required parameter 'ApikeyRegenerateV1Request' is set
+      if (ApikeyRegenerateV1Request === undefined || ApikeyRegenerateV1Request === null) {
+        throw new Error("Missing the required parameter 'ApikeyRegenerateV1Request' when calling apikeyRegenerateV1");
+      }
+
+      let pathParams = {
+        'pkiApikeyID': pkiApikeyID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ApikeyRegenerateV1Response;
+      return this.apiClient.callApi(
+        '/1/object/apikey/{pkiApikeyID}/regenerate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

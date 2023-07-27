@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
+import CustomContactNameResponse from './CustomContactNameResponse';
 import MultilingualApikeyDescription from './MultilingualApikeyDescription';
 
 /**
@@ -28,12 +29,13 @@ class ApikeyResponse {
      * @param pkiApikeyID {Number} The unique ID of the Apikey
      * @param fkiUserID {Number} The unique ID of the User
      * @param objApikeyDescription {module:eZmaxAPI/model/MultilingualApikeyDescription} 
+     * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      * @param bApikeyIsactive {Boolean} Whether the apikey is active or not
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(pkiApikeyID, fkiUserID, objApikeyDescription, bApikeyIsactive, objAudit) { 
+    constructor(pkiApikeyID, fkiUserID, objApikeyDescription, objContactName, bApikeyIsactive, objAudit) { 
         
-        ApikeyResponse.initialize(this, pkiApikeyID, fkiUserID, objApikeyDescription, bApikeyIsactive, objAudit);
+        ApikeyResponse.initialize(this, pkiApikeyID, fkiUserID, objApikeyDescription, objContactName, bApikeyIsactive, objAudit);
     }
 
     /**
@@ -41,10 +43,11 @@ class ApikeyResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiApikeyID, fkiUserID, objApikeyDescription, bApikeyIsactive, objAudit) { 
+    static initialize(obj, pkiApikeyID, fkiUserID, objApikeyDescription, objContactName, bApikeyIsactive, objAudit) { 
         obj['pkiApikeyID'] = pkiApikeyID;
         obj['fkiUserID'] = fkiUserID;
         obj['objApikeyDescription'] = objApikeyDescription;
+        obj['objContactName'] = objContactName;
         obj['bApikeyIsactive'] = bApikeyIsactive;
         obj['objAudit'] = objAudit;
     }
@@ -69,11 +72,20 @@ class ApikeyResponse {
             if (data.hasOwnProperty('objApikeyDescription')) {
                 obj['objApikeyDescription'] = MultilingualApikeyDescription.constructFromObject(data['objApikeyDescription']);
             }
-            if (data.hasOwnProperty('sComputedToken')) {
-                obj['sComputedToken'] = ApiClient.convertToType(data['sComputedToken'], 'String');
+            if (data.hasOwnProperty('objContactName')) {
+                obj['objContactName'] = CustomContactNameResponse.constructFromObject(data['objContactName']);
+            }
+            if (data.hasOwnProperty('sApikeyApikey')) {
+                obj['sApikeyApikey'] = ApiClient.convertToType(data['sApikeyApikey'], 'String');
+            }
+            if (data.hasOwnProperty('sApikeySecret')) {
+                obj['sApikeySecret'] = ApiClient.convertToType(data['sApikeySecret'], 'String');
             }
             if (data.hasOwnProperty('bApikeyIsactive')) {
                 obj['bApikeyIsactive'] = ApiClient.convertToType(data['bApikeyIsactive'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bApikeyIssigned')) {
+                obj['bApikeyIssigned'] = ApiClient.convertToType(data['bApikeyIssigned'], 'Boolean');
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
@@ -98,9 +110,17 @@ class ApikeyResponse {
         if (data['objApikeyDescription']) { // data not null
           MultilingualApikeyDescription.validateJSON(data['objApikeyDescription']);
         }
+        // validate the optional field `objContactName`
+        if (data['objContactName']) { // data not null
+          CustomContactNameResponse.validateJSON(data['objContactName']);
+        }
         // ensure the json data is a string
-        if (data['sComputedToken'] && !(typeof data['sComputedToken'] === 'string' || data['sComputedToken'] instanceof String)) {
-            throw new Error("Expected the field `sComputedToken` to be a primitive type in the JSON string but got " + data['sComputedToken']);
+        if (data['sApikeyApikey'] && !(typeof data['sApikeyApikey'] === 'string' || data['sApikeyApikey'] instanceof String)) {
+            throw new Error("Expected the field `sApikeyApikey` to be a primitive type in the JSON string but got " + data['sApikeyApikey']);
+        }
+        // ensure the json data is a string
+        if (data['sApikeySecret'] && !(typeof data['sApikeySecret'] === 'string' || data['sApikeySecret'] instanceof String)) {
+            throw new Error("Expected the field `sApikeySecret` to be a primitive type in the JSON string but got " + data['sApikeySecret']);
         }
         // validate the optional field `objAudit`
         if (data['objAudit']) { // data not null
@@ -156,19 +176,47 @@ class ApikeyResponse {
         this['objApikeyDescription'] = objApikeyDescription;
     }
 /**
-     * Returns The secret token for the API key.  This will be returned only on creation.
-     * @return {String}
+     * @return {module:eZmaxAPI/model/CustomContactNameResponse}
      */
-    getSComputedToken() {
-        return this.sComputedToken;
+    getObjContactName() {
+        return this.objContactName;
     }
 
     /**
-     * Sets The secret token for the API key.  This will be returned only on creation.
-     * @param {String} sComputedToken The secret token for the API key.  This will be returned only on creation.
+     * @param {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
      */
-    setSComputedToken(sComputedToken) {
-        this['sComputedToken'] = sComputedToken;
+    setObjContactName(objContactName) {
+        this['objContactName'] = objContactName;
+    }
+/**
+     * Returns The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @return {String}
+     */
+    getSApikeyApikey() {
+        return this.sApikeyApikey;
+    }
+
+    /**
+     * Sets The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @param {String} sApikeyApikey The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     */
+    setSApikeyApikey(sApikeyApikey) {
+        this['sApikeyApikey'] = sApikeyApikey;
+    }
+/**
+     * Returns The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @return {String}
+     */
+    getSApikeySecret() {
+        return this.sApikeySecret;
+    }
+
+    /**
+     * Sets The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @param {String} sApikeySecret The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     */
+    setSApikeySecret(sApikeySecret) {
+        this['sApikeySecret'] = sApikeySecret;
     }
 /**
      * Returns Whether the apikey is active or not
@@ -186,6 +234,21 @@ class ApikeyResponse {
         this['bApikeyIsactive'] = bApikeyIsactive;
     }
 /**
+     * Returns Whether the apikey is signed or not
+     * @return {Boolean}
+     */
+    getBApikeyIssigned() {
+        return this.bApikeyIssigned;
+    }
+
+    /**
+     * Sets Whether the apikey is signed or not
+     * @param {Boolean} bApikeyIssigned Whether the apikey is signed or not
+     */
+    setBApikeyIssigned(bApikeyIssigned) {
+        this['bApikeyIssigned'] = bApikeyIssigned;
+    }
+/**
      * @return {module:eZmaxAPI/model/CommonAudit}
      */
     getObjAudit() {
@@ -201,7 +264,7 @@ class ApikeyResponse {
 
 }
 
-ApikeyResponse.RequiredProperties = ["pkiApikeyID", "fkiUserID", "objApikeyDescription", "bApikeyIsactive", "objAudit"];
+ApikeyResponse.RequiredProperties = ["pkiApikeyID", "fkiUserID", "objApikeyDescription", "objContactName", "bApikeyIsactive", "objAudit"];
 
 /**
  * The unique ID of the Apikey
@@ -221,16 +284,33 @@ ApikeyResponse.prototype['fkiUserID'] = undefined;
 ApikeyResponse.prototype['objApikeyDescription'] = undefined;
 
 /**
- * The secret token for the API key.  This will be returned only on creation.
- * @member {String} sComputedToken
+ * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
  */
-ApikeyResponse.prototype['sComputedToken'] = undefined;
+ApikeyResponse.prototype['objContactName'] = undefined;
+
+/**
+ * The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+ * @member {String} sApikeyApikey
+ */
+ApikeyResponse.prototype['sApikeyApikey'] = undefined;
+
+/**
+ * The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+ * @member {String} sApikeySecret
+ */
+ApikeyResponse.prototype['sApikeySecret'] = undefined;
 
 /**
  * Whether the apikey is active or not
  * @member {Boolean} bApikeyIsactive
  */
 ApikeyResponse.prototype['bApikeyIsactive'] = undefined;
+
+/**
+ * Whether the apikey is signed or not
+ * @member {Boolean} bApikeyIssigned
+ */
+ApikeyResponse.prototype['bApikeyIssigned'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit

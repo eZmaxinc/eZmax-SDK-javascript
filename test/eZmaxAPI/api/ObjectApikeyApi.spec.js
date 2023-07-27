@@ -78,6 +78,26 @@
         done();
       });
     });
+    describe('apikeyGetCorsV1', function() {
+      it('should call apikeyGetCorsV1 successfully', function(done) {
+        //uncomment below and update the code to test apikeyGetCorsV1
+        //instance.apikeyGetCorsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('apikeyGetListV1', function() {
+      it('should call apikeyGetListV1 successfully', function(done) {
+        //uncomment below and update the code to test apikeyGetListV1
+        //instance.apikeyGetListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('apikeyGetObjectV2', function() {
       it('should call apikeyGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test apikeyGetObjectV2
@@ -102,6 +122,16 @@
       it('should call apikeyGetSubnetsV1 successfully', function(done) {
         //uncomment below and update the code to test apikeyGetSubnetsV1
         //instance.apikeyGetSubnetsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('apikeyRegenerateV1', function() {
+      it('should call apikeyRegenerateV1 successfully', function(done) {
+        //uncomment below and update the code to test apikeyRegenerateV1
+        //instance.apikeyRegenerateV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

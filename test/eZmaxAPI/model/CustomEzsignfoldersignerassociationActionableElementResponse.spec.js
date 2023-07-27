@@ -96,12 +96,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property objUsergroup (base name: "objUsergroup")', function() {
-      // uncomment below and update the code to test the property objUsergroup
-      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationActionableElementResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property objEzsignsigner (base name: "objEzsignsigner")', function() {
       // uncomment below and update the code to test the property objEzsignsigner
       //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationActionableElementResponse();

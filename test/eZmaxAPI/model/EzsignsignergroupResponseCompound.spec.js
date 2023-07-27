@@ -60,6 +60,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property objEzsignsignergroupDescription (base name: "objEzsignsignergroupDescription")', function() {
+      // uncomment below and update the code to test the property objEzsignsignergroupDescription
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignergroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignsignergroupDescriptionX (base name: "sEzsignsignergroupDescriptionX")', function() {
+      // uncomment below and update the code to test the property sEzsignsignergroupDescriptionX
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignergroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

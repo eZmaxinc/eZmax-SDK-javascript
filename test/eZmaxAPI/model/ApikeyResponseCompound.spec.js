@@ -72,14 +72,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sComputedToken (base name: "sComputedToken")', function() {
-      // uncomment below and update the code to test the property sComputedToken
+    it('should have the property objContactName (base name: "objContactName")', function() {
+      // uncomment below and update the code to test the property objContactName
+      //var instance = new EZmaxApiDefinitionFull.ApikeyResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sApikeyApikey (base name: "sApikeyApikey")', function() {
+      // uncomment below and update the code to test the property sApikeyApikey
+      //var instance = new EZmaxApiDefinitionFull.ApikeyResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sApikeySecret (base name: "sApikeySecret")', function() {
+      // uncomment below and update the code to test the property sApikeySecret
       //var instance = new EZmaxApiDefinitionFull.ApikeyResponseCompound();
       //expect(instance).to.be();
     });
 
     it('should have the property bApikeyIsactive (base name: "bApikeyIsactive")', function() {
       // uncomment below and update the code to test the property bApikeyIsactive
+      //var instance = new EZmaxApiDefinitionFull.ApikeyResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bApikeyIssigned (base name: "bApikeyIssigned")', function() {
+      // uncomment below and update the code to test the property bApikeyIssigned
       //var instance = new EZmaxApiDefinitionFull.ApikeyResponseCompound();
       //expect(instance).to.be();
     });

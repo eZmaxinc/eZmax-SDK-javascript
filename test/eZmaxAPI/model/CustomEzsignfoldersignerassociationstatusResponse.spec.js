@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsignfoldersignerassociationstatusDescriptionX (base name: "sEzsignfoldersignerassociationstatusDescriptionX")', function() {
+      // uncomment below and update the code to test the property sEzsignfoldersignerassociationstatusDescriptionX
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property a_objEzsignsignaturestatus (base name: "a_objEzsignsignaturestatus")', function() {
       // uncomment below and update the code to test the property a_objEzsignsignaturestatus
       //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldersignerassociationstatusResponse();

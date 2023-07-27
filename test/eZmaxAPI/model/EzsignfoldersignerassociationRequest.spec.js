@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiUsergroupID (base name: "fkiUsergroupID")', function() {
-      // uncomment below and update the code to test the property fkiUsergroupID
-      //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property fkiEzsignsignergroupID (base name: "fkiEzsignsignergroupID")', function() {
       // uncomment below and update the code to test the property fkiEzsignsignergroupID
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldersignerassociationRequest();

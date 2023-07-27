@@ -56,9 +56,6 @@ class EzsignfoldersignerassociationRequest {
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
-            if (data.hasOwnProperty('fkiUsergroupID')) {
-                obj['fkiUsergroupID'] = ApiClient.convertToType(data['fkiUsergroupID'], 'Number');
-            }
             if (data.hasOwnProperty('fkiEzsignsignergroupID')) {
                 obj['fkiEzsignsignergroupID'] = ApiClient.convertToType(data['fkiEzsignsignergroupID'], 'Number');
             }
@@ -126,23 +123,6 @@ class EzsignfoldersignerassociationRequest {
      */
     setFkiUserID(fkiUserID) {
         this['fkiUserID'] = fkiUserID;
-    }
-/**
-     * Returns The unique ID of the Usergroup
-     * minimum: 0
-     * maximum: 255
-     * @return {Number}
-     */
-    getFkiUsergroupID() {
-        return this.fkiUsergroupID;
-    }
-
-    /**
-     * Sets The unique ID of the Usergroup
-     * @param {Number} fkiUsergroupID The unique ID of the Usergroup
-     */
-    setFkiUsergroupID(fkiUsergroupID) {
-        this['fkiUsergroupID'] = fkiUsergroupID;
     }
 /**
      * Returns The unique ID of the Ezsignsignergroup
@@ -223,12 +203,6 @@ EzsignfoldersignerassociationRequest.prototype['pkiEzsignfoldersignerassociation
  * @member {Number} fkiUserID
  */
 EzsignfoldersignerassociationRequest.prototype['fkiUserID'] = undefined;
-
-/**
- * The unique ID of the Usergroup
- * @member {Number} fkiUsergroupID
- */
-EzsignfoldersignerassociationRequest.prototype['fkiUsergroupID'] = undefined;
 
 /**
  * The unique ID of the Ezsignsignergroup

@@ -68,6 +68,9 @@ class ApikeyRequestCompound {
             if (data.hasOwnProperty('bApikeyIsactive')) {
                 obj['bApikeyIsactive'] = ApiClient.convertToType(data['bApikeyIsactive'], 'Boolean');
             }
+            if (data.hasOwnProperty('bApikeyIssigned')) {
+                obj['bApikeyIssigned'] = ApiClient.convertToType(data['bApikeyIssigned'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -152,6 +155,21 @@ class ApikeyRequestCompound {
     setBApikeyIsactive(bApikeyIsactive) {
         this['bApikeyIsactive'] = bApikeyIsactive;
     }
+/**
+     * Returns Whether the apikey is signed or not
+     * @return {Boolean}
+     */
+    getBApikeyIssigned() {
+        return this.bApikeyIssigned;
+    }
+
+    /**
+     * Sets Whether the apikey is signed or not
+     * @param {Boolean} bApikeyIssigned Whether the apikey is signed or not
+     */
+    setBApikeyIssigned(bApikeyIssigned) {
+        this['bApikeyIssigned'] = bApikeyIssigned;
+    }
 
 }
 
@@ -180,6 +198,12 @@ ApikeyRequestCompound.prototype['objApikeyDescription'] = undefined;
  */
 ApikeyRequestCompound.prototype['bApikeyIsactive'] = undefined;
 
+/**
+ * Whether the apikey is signed or not
+ * @member {Boolean} bApikeyIssigned
+ */
+ApikeyRequestCompound.prototype['bApikeyIssigned'] = undefined;
+
 
 // Implement ApikeyRequest interface:
 /**
@@ -201,6 +225,11 @@ ApikeyRequest.prototype['objApikeyDescription'] = undefined;
  * @member {Boolean} bApikeyIsactive
  */
 ApikeyRequest.prototype['bApikeyIsactive'] = undefined;
+/**
+ * Whether the apikey is signed or not
+ * @member {Boolean} bApikeyIssigned
+ */
+ApikeyRequest.prototype['bApikeyIssigned'] = undefined;
 
 
 

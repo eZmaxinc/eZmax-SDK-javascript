@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import MultilingualEzsignsignergroupDescription from './MultilingualEzsignsignergroupDescription';
 
 /**
  * The EzsignsignergroupResponse model module.
@@ -24,10 +25,11 @@ class EzsignsignergroupResponse {
      * An Ezsignsignergroup Object
      * @alias module:eZmaxAPI/model/EzsignsignergroupResponse
      * @param pkiEzsignsignergroupID {Number} The unique ID of the Ezsignsignergroup
+     * @param objEzsignsignergroupDescription {module:eZmaxAPI/model/MultilingualEzsignsignergroupDescription} 
      */
-    constructor(pkiEzsignsignergroupID) { 
+    constructor(pkiEzsignsignergroupID, objEzsignsignergroupDescription) { 
         
-        EzsignsignergroupResponse.initialize(this, pkiEzsignsignergroupID);
+        EzsignsignergroupResponse.initialize(this, pkiEzsignsignergroupID, objEzsignsignergroupDescription);
     }
 
     /**
@@ -35,8 +37,9 @@ class EzsignsignergroupResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignsignergroupID) { 
+    static initialize(obj, pkiEzsignsignergroupID, objEzsignsignergroupDescription) { 
         obj['pkiEzsignsignergroupID'] = pkiEzsignsignergroupID;
+        obj['objEzsignsignergroupDescription'] = objEzsignsignergroupDescription;
     }
 
     /**
@@ -53,6 +56,12 @@ class EzsignsignergroupResponse {
             if (data.hasOwnProperty('pkiEzsignsignergroupID')) {
                 obj['pkiEzsignsignergroupID'] = ApiClient.convertToType(data['pkiEzsignsignergroupID'], 'Number');
             }
+            if (data.hasOwnProperty('objEzsignsignergroupDescription')) {
+                obj['objEzsignsignergroupDescription'] = MultilingualEzsignsignergroupDescription.constructFromObject(data['objEzsignsignergroupDescription']);
+            }
+            if (data.hasOwnProperty('sEzsignsignergroupDescriptionX')) {
+                obj['sEzsignsignergroupDescriptionX'] = ApiClient.convertToType(data['sEzsignsignergroupDescriptionX'], 'String');
+            }
         }
         return obj;
     }
@@ -68,6 +77,14 @@ class EzsignsignergroupResponse {
             if (!data[property]) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
+        }
+        // validate the optional field `objEzsignsignergroupDescription`
+        if (data['objEzsignsignergroupDescription']) { // data not null
+          MultilingualEzsignsignergroupDescription.validateJSON(data['objEzsignsignergroupDescription']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsignsignergroupDescriptionX'] && !(typeof data['sEzsignsignergroupDescriptionX'] === 'string' || data['sEzsignsignergroupDescriptionX'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignsignergroupDescriptionX` to be a primitive type in the JSON string but got " + data['sEzsignsignergroupDescriptionX']);
         }
 
         return true;
@@ -90,16 +107,55 @@ class EzsignsignergroupResponse {
     setPkiEzsignsignergroupID(pkiEzsignsignergroupID) {
         this['pkiEzsignsignergroupID'] = pkiEzsignsignergroupID;
     }
+/**
+     * @return {module:eZmaxAPI/model/MultilingualEzsignsignergroupDescription}
+     */
+    getObjEzsignsignergroupDescription() {
+        return this.objEzsignsignergroupDescription;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/MultilingualEzsignsignergroupDescription} objEzsignsignergroupDescription
+     */
+    setObjEzsignsignergroupDescription(objEzsignsignergroupDescription) {
+        this['objEzsignsignergroupDescription'] = objEzsignsignergroupDescription;
+    }
+/**
+     * Returns The Description of the Ezsignsignergroup in the language of the requester
+     * @return {String}
+     */
+    getSEzsignsignergroupDescriptionX() {
+        return this.sEzsignsignergroupDescriptionX;
+    }
+
+    /**
+     * Sets The Description of the Ezsignsignergroup in the language of the requester
+     * @param {String} sEzsignsignergroupDescriptionX The Description of the Ezsignsignergroup in the language of the requester
+     */
+    setSEzsignsignergroupDescriptionX(sEzsignsignergroupDescriptionX) {
+        this['sEzsignsignergroupDescriptionX'] = sEzsignsignergroupDescriptionX;
+    }
 
 }
 
-EzsignsignergroupResponse.RequiredProperties = ["pkiEzsignsignergroupID"];
+EzsignsignergroupResponse.RequiredProperties = ["pkiEzsignsignergroupID", "objEzsignsignergroupDescription"];
 
 /**
  * The unique ID of the Ezsignsignergroup
  * @member {Number} pkiEzsignsignergroupID
  */
 EzsignsignergroupResponse.prototype['pkiEzsignsignergroupID'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/MultilingualEzsignsignergroupDescription} objEzsignsignergroupDescription
+ */
+EzsignsignergroupResponse.prototype['objEzsignsignergroupDescription'] = undefined;
+
+/**
+ * The Description of the Ezsignsignergroup in the language of the requester
+ * @member {String} sEzsignsignergroupDescriptionX
+ */
+EzsignsignergroupResponse.prototype['sEzsignsignergroupDescriptionX'] = undefined;
 
 
 

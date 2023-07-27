@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **tEzsignfoldersignerassociationMessage** | **String** | A custom text message that will be added to the email sent. | 
 **objEzsignsignergroup** | [**EzsignsignergroupResponseCompound**](EzsignsignergroupResponseCompound.md) |  | [optional] 
 **objUser** | [**EzsignfoldersignerassociationResponseCompoundUser**](EzsignfoldersignerassociationResponseCompoundUser.md) |  | [optional] 
-**objUsergroup** | [**UsergroupResponseCompound**](UsergroupResponseCompound.md) |  | [optional] 
 **objEzsignsigner** | [**EzsignsignerResponseCompound**](EzsignsignerResponseCompound.md) |  | [optional] 
 
 
