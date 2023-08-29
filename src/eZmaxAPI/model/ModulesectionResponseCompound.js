@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ModulesectionResponse from './ModulesectionResponse';
-import ModulesectionResponseCompoundAllOf from './ModulesectionResponseCompoundAllOf';
 import PermissionResponseCompound from './PermissionResponseCompound';
 
 /**
@@ -27,7 +26,6 @@ class ModulesectionResponseCompound {
      * A Modulesection Object
      * @alias module:eZmaxAPI/model/ModulesectionResponseCompound
      * @implements module:eZmaxAPI/model/ModulesectionResponse
-     * @implements module:eZmaxAPI/model/ModulesectionResponseCompoundAllOf
      * @param pkiModulesectionID {Number} The unique ID of the Modulesection
      * @param fkiModuleID {Number} The unique ID of the Module
      * @param sModulesectionInternalname {String} The Internal name of the Module section.
@@ -35,7 +33,7 @@ class ModulesectionResponseCompound {
      * @param a_objPermission {Array.<module:eZmaxAPI/model/PermissionResponseCompound>} 
      */
     constructor(pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX, a_objPermission) { 
-        ModulesectionResponse.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX);ModulesectionResponseCompoundAllOf.initialize(this);
+        ModulesectionResponse.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX);
         ModulesectionResponseCompound.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX, a_objPermission);
     }
 
@@ -63,7 +61,6 @@ class ModulesectionResponseCompound {
         if (data) {
             obj = obj || new ModulesectionResponseCompound();
             ModulesectionResponse.constructFromObject(data, obj);
-            ModulesectionResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiModulesectionID')) {
                 obj['pkiModulesectionID'] = ApiClient.convertToType(data['pkiModulesectionID'], 'Number');
@@ -249,11 +246,6 @@ ModulesectionResponse.prototype['sModulesectionInternalname'] = undefined;
  * @member {String} sModulesectionNameX
  */
 ModulesectionResponse.prototype['sModulesectionNameX'] = undefined;
-// Implement ModulesectionResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/PermissionResponseCompound>} a_objPermission
- */
-ModulesectionResponseCompoundAllOf.prototype['a_objPermission'] = undefined;
 
 
 

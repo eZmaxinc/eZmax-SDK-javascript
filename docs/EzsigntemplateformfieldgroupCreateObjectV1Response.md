@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload**](EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload**](EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload.md) |  | 
 
 

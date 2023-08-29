@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CustomCommunicationListElementResponse from './CustomCommunicationListElementResponse';
-import EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf from './EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf';
 
 /**
  * The EzsignfolderGetCommunicationListV1ResponseMPayload model module.
@@ -25,11 +24,10 @@ class EzsignfolderGetCommunicationListV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetCommunicationListV1ResponseMPayload</code>.
      * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList
      * @alias module:eZmaxAPI/model/EzsignfolderGetCommunicationListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf
      * @param a_objCommunication {Array.<module:eZmaxAPI/model/CustomCommunicationListElementResponse>} 
      */
     constructor(a_objCommunication) { 
-        EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf.initialize(this, a_objCommunication);
+        
         EzsignfolderGetCommunicationListV1ResponseMPayload.initialize(this, a_objCommunication);
     }
 
@@ -52,7 +50,6 @@ class EzsignfolderGetCommunicationListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetCommunicationListV1ResponseMPayload();
-            EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('a_objCommunication')) {
                 obj['a_objCommunication'] = ApiClient.convertToType(data['a_objCommunication'], [CustomCommunicationListElementResponse]);
@@ -111,11 +108,6 @@ EzsignfolderGetCommunicationListV1ResponseMPayload.RequiredProperties = ["a_objC
 EzsignfolderGetCommunicationListV1ResponseMPayload.prototype['a_objCommunication'] = undefined;
 
 
-// Implement EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomCommunicationListElementResponse>} a_objCommunication
- */
-EzsignfolderGetCommunicationListV1ResponseMPayloadAllOf.prototype['a_objCommunication'] = undefined;
 
 
 

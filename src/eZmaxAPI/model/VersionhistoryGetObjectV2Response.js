@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import VersionhistoryGetObjectV2ResponseAllOf from './VersionhistoryGetObjectV2ResponseAllOf';
 import VersionhistoryGetObjectV2ResponseMPayload from './VersionhistoryGetObjectV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class VersionhistoryGetObjectV2Response {
      * Constructs a new <code>VersionhistoryGetObjectV2Response</code>.
      * Response for GET /2/object/versionhistory/{pkiVersionhistoryID}
      * @alias module:eZmaxAPI/model/VersionhistoryGetObjectV2Response
-     * @implements module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        VersionhistoryGetObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        VersionhistoryGetObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        VersionhistoryGetObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class VersionhistoryGetObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class VersionhistoryGetObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VersionhistoryGetObjectV2Response();
-            VersionhistoryGetObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = VersionhistoryGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = VersionhistoryGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class VersionhistoryGetObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          VersionhistoryGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class VersionhistoryGetObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          VersionhistoryGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class VersionhistoryGetObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-VersionhistoryGetObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload} mPayload
- */
-VersionhistoryGetObjectV2Response.prototype['mPayload'] = undefined;
+VersionhistoryGetObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ VersionhistoryGetObjectV2Response.prototype['objDebugPayload'] = undefined;
  */
 VersionhistoryGetObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement VersionhistoryGetObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/VersionhistoryGetObjectV2ResponseMPayload} mPayload
  */
-VersionhistoryGetObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+VersionhistoryGetObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

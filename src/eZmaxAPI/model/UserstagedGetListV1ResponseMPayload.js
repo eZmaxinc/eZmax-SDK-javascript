@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import UserstagedGetListV1ResponseMPayloadAllOf from './UserstagedGetListV1ResponseMPayloadAllOf';
 import UserstagedListElement from './UserstagedListElement';
 
 /**
@@ -26,15 +25,14 @@ class UserstagedGetListV1ResponseMPayload {
      * Constructs a new <code>UserstagedGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/userstaged/getList
      * @alias module:eZmaxAPI/model/UserstagedGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/UserstagedGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objUserstaged {Array.<module:eZmaxAPI/model/UserstagedListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objUserstaged {Array.<module:eZmaxAPI/model/UserstagedListElement>} 
      */
-    constructor(a_objUserstaged, iRowReturned, iRowFiltered) { 
-        UserstagedGetListV1ResponseMPayloadAllOf.initialize(this, a_objUserstaged);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        UserstagedGetListV1ResponseMPayload.initialize(this, a_objUserstaged, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objUserstaged) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        UserstagedGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objUserstaged);
     }
 
     /**
@@ -42,10 +40,10 @@ class UserstagedGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objUserstaged, iRowReturned, iRowFiltered) { 
-        obj['a_objUserstaged'] = a_objUserstaged;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objUserstaged) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objUserstaged'] = a_objUserstaged;
     }
 
     /**
@@ -58,17 +56,16 @@ class UserstagedGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserstagedGetListV1ResponseMPayload();
-            UserstagedGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objUserstaged')) {
-                obj['a_objUserstaged'] = ApiClient.convertToType(data['a_objUserstaged'], [UserstagedListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objUserstaged')) {
+                obj['a_objUserstaged'] = ApiClient.convertToType(data['a_objUserstaged'], [UserstagedListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class UserstagedGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/UserstagedListElement>}
-     */
-    getAObjUserstaged() {
-        return this.a_objUserstaged;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/UserstagedListElement>} a_objUserstaged
-     */
-    setAObjUserstaged(a_objUserstaged) {
-        this['a_objUserstaged'] = a_objUserstaged;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class UserstagedGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/UserstagedListElement>}
+     */
+    getAObjUserstaged() {
+        return this.a_objUserstaged;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/UserstagedListElement>} a_objUserstaged
+     */
+    setAObjUserstaged(a_objUserstaged) {
+        this['a_objUserstaged'] = a_objUserstaged;
+    }
 
 }
 
-UserstagedGetListV1ResponseMPayload.RequiredProperties = ["a_objUserstaged", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/UserstagedListElement>} a_objUserstaged
- */
-UserstagedGetListV1ResponseMPayload.prototype['a_objUserstaged'] = undefined;
+UserstagedGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objUserstaged"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ UserstagedGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 UserstagedGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement UserstagedGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/UserstagedListElement>} a_objUserstaged
  */
-UserstagedGetListV1ResponseMPayloadAllOf.prototype['a_objUserstaged'] = undefined;
+UserstagedGetListV1ResponseMPayload.prototype['a_objUserstaged'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

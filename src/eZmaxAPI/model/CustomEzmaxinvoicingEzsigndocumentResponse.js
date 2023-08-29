@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzmaxinvoicingEzsigndocumentResponseAllOf from './CustomEzmaxinvoicingEzsigndocumentResponseAllOf';
 
 /**
  * The CustomEzmaxinvoicingEzsigndocumentResponse model module.
@@ -24,7 +23,6 @@ class CustomEzmaxinvoicingEzsigndocumentResponse {
      * Constructs a new <code>CustomEzmaxinvoicingEzsigndocumentResponse</code>.
      * An EzmaxinvoicingEzsigndocument object containing information about the Ezmaxinvoicing for an Ezsigndocument
      * @alias module:eZmaxAPI/model/CustomEzmaxinvoicingEzsigndocumentResponse
-     * @implements module:eZmaxAPI/model/CustomEzmaxinvoicingEzsigndocumentResponseAllOf
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param sName {String} 
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
@@ -32,7 +30,7 @@ class CustomEzmaxinvoicingEzsigndocumentResponse {
      * @param bEzsignfolderAllowed {Boolean} Whether you have access to the Ezsignfolder or not
      */
     constructor(fkiEzsignfolderID, sName, sEzsignfolderDescription, sEzsigndocumentName, bEzsignfolderAllowed) { 
-        CustomEzmaxinvoicingEzsigndocumentResponseAllOf.initialize(this, fkiEzsignfolderID, sName, sEzsignfolderDescription, sEzsigndocumentName, bEzsignfolderAllowed);
+        
         CustomEzmaxinvoicingEzsigndocumentResponse.initialize(this, fkiEzsignfolderID, sName, sEzsignfolderDescription, sEzsigndocumentName, bEzsignfolderAllowed);
     }
 
@@ -59,7 +57,6 @@ class CustomEzmaxinvoicingEzsigndocumentResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzmaxinvoicingEzsigndocumentResponse();
-            CustomEzmaxinvoicingEzsigndocumentResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('fkiEzsignfolderID')) {
                 obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
@@ -217,31 +214,6 @@ CustomEzmaxinvoicingEzsigndocumentResponse.prototype['sEzsigndocumentName'] = un
 CustomEzmaxinvoicingEzsigndocumentResponse.prototype['bEzsignfolderAllowed'] = undefined;
 
 
-// Implement CustomEzmaxinvoicingEzsigndocumentResponseAllOf interface:
-/**
- * The unique ID of the Ezsignfolder
- * @member {Number} fkiEzsignfolderID
- */
-CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['fkiEzsignfolderID'] = undefined;
-/**
- * @member {String} sName
- */
-CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['sName'] = undefined;
-/**
- * The description of the Ezsignfolder
- * @member {String} sEzsignfolderDescription
- */
-CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['sEzsignfolderDescription'] = undefined;
-/**
- * The name of the document that will be presented to Ezsignfoldersignerassociations
- * @member {String} sEzsigndocumentName
- */
-CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['sEzsigndocumentName'] = undefined;
-/**
- * Whether you have access to the Ezsignfolder or not
- * @member {Boolean} bEzsignfolderAllowed
- */
-CustomEzmaxinvoicingEzsigndocumentResponseAllOf.prototype['bEzsignfolderAllowed'] = undefined;
 
 
 

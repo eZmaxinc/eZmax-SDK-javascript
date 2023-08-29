@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BrandingCreateObjectV1ResponseAllOf from './BrandingCreateObjectV1ResponseAllOf';
 import BrandingCreateObjectV1ResponseMPayload from './BrandingCreateObjectV1ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class BrandingCreateObjectV1Response {
      * Constructs a new <code>BrandingCreateObjectV1Response</code>.
      * Response for POST /1/object/branding
      * @alias module:eZmaxAPI/model/BrandingCreateObjectV1Response
-     * @implements module:eZmaxAPI/model/BrandingCreateObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        BrandingCreateObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        BrandingCreateObjectV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        BrandingCreateObjectV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class BrandingCreateObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class BrandingCreateObjectV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BrandingCreateObjectV1Response();
-            BrandingCreateObjectV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = BrandingCreateObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = BrandingCreateObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class BrandingCreateObjectV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          BrandingCreateObjectV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class BrandingCreateObjectV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          BrandingCreateObjectV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class BrandingCreateObjectV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-BrandingCreateObjectV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload} mPayload
- */
-BrandingCreateObjectV1Response.prototype['mPayload'] = undefined;
+BrandingCreateObjectV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ BrandingCreateObjectV1Response.prototype['objDebugPayload'] = undefined;
  */
 BrandingCreateObjectV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement BrandingCreateObjectV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/BrandingCreateObjectV1ResponseMPayload} mPayload
  */
-BrandingCreateObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
+BrandingCreateObjectV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

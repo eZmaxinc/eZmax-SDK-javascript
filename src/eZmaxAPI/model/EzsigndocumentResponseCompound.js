@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
+import ComputedEEzsigndocumentSteptype from './ComputedEEzsigndocumentSteptype';
 import CustomEzsignfoldersignerassociationstatusResponse from './CustomEzsignfoldersignerassociationstatusResponse';
 import EzsigndocumentResponse from './EzsigndocumentResponse';
-import EzsigndocumentResponseCompoundAllOf from './EzsigndocumentResponseCompoundAllOf';
 import FieldEEzsigndocumentStep from './FieldEEzsigndocumentStep';
 
 /**
@@ -29,7 +29,6 @@ class EzsigndocumentResponseCompound {
      * An Ezsigndocument Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsigndocumentResponseCompound
      * @implements module:eZmaxAPI/model/EzsigndocumentResponse
-     * @implements module:eZmaxAPI/model/EzsigndocumentResponseCompoundAllOf
      * @param pkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param dtEzsigndocumentDuedate {String} The maximum date and time at which the Ezsigndocument can be signed.
@@ -39,15 +38,16 @@ class EzsigndocumentResponseCompound {
      * @param iEzsigndocumentPagetotal {Number} The number of pages in the Ezsigndocument.
      * @param iEzsigndocumentSignaturesigned {Number} The number of signatures that were signed in the document.
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
+     * @param eEzsigndocumentSteptype {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} 
      * @param iEzsigndocumentStepformtotal {Number} The total number of steps in the form filling phase
      * @param iEzsigndocumentStepformcurrent {Number} The current step in the form filling phase
      * @param iEzsigndocumentStepsignaturetotal {Number} The total number of steps in the signature filling phase
      * @param iEzsigndocumentStepsignatureCurrent {Number} The current step in the signature phase
      * @param a_objEzsignfoldersignerassociationstatus {Array.<module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse>} 
      */
-    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
-        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal);EzsigndocumentResponseCompoundAllOf.initialize(this, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
-        EzsigndocumentResponseCompound.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
+    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal);
+        EzsigndocumentResponseCompound.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
     }
 
     /**
@@ -55,7 +55,7 @@ class EzsigndocumentResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
         obj['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
@@ -65,6 +65,7 @@ class EzsigndocumentResponseCompound {
         obj['iEzsigndocumentPagetotal'] = iEzsigndocumentPagetotal;
         obj['iEzsigndocumentSignaturesigned'] = iEzsigndocumentSignaturesigned;
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
+        obj['eEzsigndocumentSteptype'] = eEzsigndocumentSteptype;
         obj['iEzsigndocumentStepformtotal'] = iEzsigndocumentStepformtotal;
         obj['iEzsigndocumentStepformcurrent'] = iEzsigndocumentStepformcurrent;
         obj['iEzsigndocumentStepsignaturetotal'] = iEzsigndocumentStepsignaturetotal;
@@ -83,7 +84,6 @@ class EzsigndocumentResponseCompound {
         if (data) {
             obj = obj || new EzsigndocumentResponseCompound();
             EzsigndocumentResponse.constructFromObject(data, obj);
-            EzsigndocumentResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsigndocumentID')) {
                 obj['pkiEzsigndocumentID'] = ApiClient.convertToType(data['pkiEzsigndocumentID'], 'Number');
@@ -147,6 +147,9 @@ class EzsigndocumentResponseCompound {
             }
             if (data.hasOwnProperty('sEzsigndocumentExternalid')) {
                 obj['sEzsigndocumentExternalid'] = ApiClient.convertToType(data['sEzsigndocumentExternalid'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsigndocumentSteptype')) {
+                obj['eEzsigndocumentSteptype'] = ComputedEEzsigndocumentSteptype.constructFromObject(data['eEzsigndocumentSteptype']);
             }
             if (data.hasOwnProperty('iEzsigndocumentStepformtotal')) {
                 obj['iEzsigndocumentStepformtotal'] = ApiClient.convertToType(data['iEzsigndocumentStepformtotal'], 'Number');
@@ -554,6 +557,19 @@ class EzsigndocumentResponseCompound {
         this['sEzsigndocumentExternalid'] = sEzsigndocumentExternalid;
     }
 /**
+     * @return {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype}
+     */
+    getEEzsigndocumentSteptype() {
+        return this.eEzsigndocumentSteptype;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} eEzsigndocumentSteptype
+     */
+    setEEzsigndocumentSteptype(eEzsigndocumentSteptype) {
+        this['eEzsigndocumentSteptype'] = eEzsigndocumentSteptype;
+    }
+/**
      * Returns The total number of steps in the form filling phase
      * @return {Number}
      */
@@ -629,7 +645,7 @@ class EzsigndocumentResponseCompound {
 
 }
 
-EzsigndocumentResponseCompound.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentStepformtotal", "iEzsigndocumentStepformcurrent", "iEzsigndocumentStepsignaturetotal", "iEzsigndocumentStepsignatureCurrent", "a_objEzsignfoldersignerassociationstatus"];
+EzsigndocumentResponseCompound.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "eEzsigndocumentSteptype", "iEzsigndocumentStepformtotal", "iEzsigndocumentStepformcurrent", "iEzsigndocumentStepsignaturetotal", "iEzsigndocumentStepsignatureCurrent", "a_objEzsignfoldersignerassociationstatus"];
 
 /**
  * The unique ID of the Ezsigndocument
@@ -754,6 +770,11 @@ EzsigndocumentResponseCompound.prototype['objAudit'] = undefined;
  * @member {String} sEzsigndocumentExternalid
  */
 EzsigndocumentResponseCompound.prototype['sEzsigndocumentExternalid'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} eEzsigndocumentSteptype
+ */
+EzsigndocumentResponseCompound.prototype['eEzsigndocumentSteptype'] = undefined;
 
 /**
  * The total number of steps in the form filling phase
@@ -889,31 +910,6 @@ EzsigndocumentResponse.prototype['objAudit'] = undefined;
  * @member {String} sEzsigndocumentExternalid
  */
 EzsigndocumentResponse.prototype['sEzsigndocumentExternalid'] = undefined;
-// Implement EzsigndocumentResponseCompoundAllOf interface:
-/**
- * The total number of steps in the form filling phase
- * @member {Number} iEzsigndocumentStepformtotal
- */
-EzsigndocumentResponseCompoundAllOf.prototype['iEzsigndocumentStepformtotal'] = undefined;
-/**
- * The current step in the form filling phase
- * @member {Number} iEzsigndocumentStepformcurrent
- */
-EzsigndocumentResponseCompoundAllOf.prototype['iEzsigndocumentStepformcurrent'] = undefined;
-/**
- * The total number of steps in the signature filling phase
- * @member {Number} iEzsigndocumentStepsignaturetotal
- */
-EzsigndocumentResponseCompoundAllOf.prototype['iEzsigndocumentStepsignaturetotal'] = undefined;
-/**
- * The current step in the signature phase
- * @member {Number} iEzsigndocumentStepsignatureCurrent
- */
-EzsigndocumentResponseCompoundAllOf.prototype['iEzsigndocumentStepsignatureCurrent'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse>} a_objEzsignfoldersignerassociationstatus
- */
-EzsigndocumentResponseCompoundAllOf.prototype['a_objEzsignfoldersignerassociationstatus'] = undefined;
 
 
 

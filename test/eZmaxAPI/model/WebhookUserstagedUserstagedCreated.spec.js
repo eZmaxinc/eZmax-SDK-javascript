@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebhookUserstagedUserstagedCreated);
     });
 
-    it('should have the property objUserstaged (base name: "objUserstaged")', function() {
-      // uncomment below and update the code to test the property objUserstaged
-      //var instance = new EZmaxApiDefinitionFull.WebhookUserstagedUserstagedCreated();
-      //expect(instance).to.be();
-    });
-
     it('should have the property objWebhook (base name: "objWebhook")', function() {
       // uncomment below and update the code to test the property objWebhook
       //var instance = new EZmaxApiDefinitionFull.WebhookUserstagedUserstagedCreated();
@@ -68,6 +62,12 @@
 
     it('should have the property a_objAttempt (base name: "a_objAttempt")', function() {
       // uncomment below and update the code to test the property a_objAttempt
+      //var instance = new EZmaxApiDefinitionFull.WebhookUserstagedUserstagedCreated();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objUserstaged (base name: "objUserstaged")', function() {
+      // uncomment below and update the code to test the property objUserstaged
       //var instance = new EZmaxApiDefinitionFull.WebhookUserstagedUserstagedCreated();
       //expect(instance).to.be();
     });

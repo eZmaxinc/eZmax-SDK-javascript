@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.WebhookEzsignFolderCompleted);
     });
 
-    it('should have the property objEzsignfolder (base name: "objEzsignfolder")', function() {
-      // uncomment below and update the code to test the property objEzsignfolder
-      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignFolderCompleted();
-      //expect(instance).to.be();
-    });
-
     it('should have the property objWebhook (base name: "objWebhook")', function() {
       // uncomment below and update the code to test the property objWebhook
       //var instance = new EZmaxApiDefinitionFull.WebhookEzsignFolderCompleted();
@@ -68,6 +62,12 @@
 
     it('should have the property a_objAttempt (base name: "a_objAttempt")', function() {
       // uncomment below and update the code to test the property a_objAttempt
+      //var instance = new EZmaxApiDefinitionFull.WebhookEzsignFolderCompleted();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objEzsignfolder (base name: "objEzsignfolder")', function() {
+      // uncomment below and update the code to test the property objEzsignfolder
       //var instance = new EZmaxApiDefinitionFull.WebhookEzsignFolderCompleted();
       //expect(instance).to.be();
     });

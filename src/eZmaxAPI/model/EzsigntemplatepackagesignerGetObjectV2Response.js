@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigntemplatepackagesignerGetObjectV2ResponseAllOf from './EzsigntemplatepackagesignerGetObjectV2ResponseAllOf';
 import EzsigntemplatepackagesignerGetObjectV2ResponseMPayload from './EzsigntemplatepackagesignerGetObjectV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
      * Constructs a new <code>EzsigntemplatepackagesignerGetObjectV2Response</code>.
      * Response for GET /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID}
      * @alias module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2Response
-     * @implements module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigntemplatepackagesignerGetObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplatepackagesignerGetObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplatepackagesignerGetObjectV2Response();
-            EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigntemplatepackagesignerGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigntemplatepackagesignerGetObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigntemplatepackagesignerGetObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload} mPayload
- */
-EzsigntemplatepackagesignerGetObjectV2Response.prototype['mPayload'] = undefined;
+EzsigntemplatepackagesignerGetObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigntemplatepackagesignerGetObjectV2Response.prototype['objDebugPayload'] = un
  */
 EzsigntemplatepackagesignerGetObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigntemplatepackagesignerGetObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplatepackagesignerGetObjectV2ResponseMPayload} mPayload
  */
-EzsigntemplatepackagesignerGetObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigntemplatepackagesignerGetObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

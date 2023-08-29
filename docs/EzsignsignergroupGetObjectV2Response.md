@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**EzsignsignergroupGetObjectV2ResponseMPayload**](EzsignsignergroupGetObjectV2ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**EzsignsignergroupGetObjectV2ResponseMPayload**](EzsignsignergroupGetObjectV2ResponseMPayload.md) |  | 
 
 

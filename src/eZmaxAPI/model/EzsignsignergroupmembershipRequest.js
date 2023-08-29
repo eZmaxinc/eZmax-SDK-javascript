@@ -24,13 +24,10 @@ class EzsignsignergroupmembershipRequest {
      * A Ezsignsignergroupmembership Object
      * @alias module:eZmaxAPI/model/EzsignsignergroupmembershipRequest
      * @param fkiEzsignsignergroupID {Number} The unique ID of the Ezsignsignergroup
-     * @param fkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
-     * @param fkiUserID {Number} The unique ID of the User
-     * @param fkiUsergroupID {Number} The unique ID of the Usergroup
      */
-    constructor(fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID) { 
+    constructor(fkiEzsignsignergroupID) { 
         
-        EzsignsignergroupmembershipRequest.initialize(this, fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID);
+        EzsignsignergroupmembershipRequest.initialize(this, fkiEzsignsignergroupID);
     }
 
     /**
@@ -38,11 +35,8 @@ class EzsignsignergroupmembershipRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID) { 
+    static initialize(obj, fkiEzsignsignergroupID) { 
         obj['fkiEzsignsignergroupID'] = fkiEzsignsignergroupID;
-        obj['fkiEzsignsignerID'] = fkiEzsignsignerID;
-        obj['fkiUserID'] = fkiUserID;
-        obj['fkiUsergroupID'] = fkiUsergroupID;
     }
 
     /**
@@ -177,7 +171,7 @@ class EzsignsignergroupmembershipRequest {
 
 }
 
-EzsignsignergroupmembershipRequest.RequiredProperties = ["fkiEzsignsignergroupID", "fkiEzsignsignerID", "fkiUserID", "fkiUsergroupID"];
+EzsignsignergroupmembershipRequest.RequiredProperties = ["fkiEzsignsignergroupID"];
 
 /**
  * The unique ID of the Ezsignsignergroupmembership

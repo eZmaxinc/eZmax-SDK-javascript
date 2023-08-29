@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsigntemplateformfieldgroupSignerrequirement from './FieldEEzsigntemplateformfieldgroupSignerrequirement';
 import FieldEEzsigntemplateformfieldgroupTooltipposition from './FieldEEzsigntemplateformfieldgroupTooltipposition';
 import FieldEEzsigntemplateformfieldgroupType from './FieldEEzsigntemplateformfieldgroupType';
@@ -107,6 +108,9 @@ class EzsigntemplateformfieldgroupRequest {
             }
             if (data.hasOwnProperty('sEzsigntemplateformfieldgroupRegexp')) {
                 obj['sEzsigntemplateformfieldgroupRegexp'] = ApiClient.convertToType(data['sEzsigntemplateformfieldgroupRegexp'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldgroupTextvalidation')) {
+                obj['eEzsigntemplateformfieldgroupTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplateformfieldgroupTextvalidation']);
             }
             if (data.hasOwnProperty('tEzsigntemplateformfieldgroupTooltip')) {
                 obj['tEzsigntemplateformfieldgroupTooltip'] = ApiClient.convertToType(data['tEzsigntemplateformfieldgroupTooltip'], 'String');
@@ -304,6 +308,7 @@ class EzsigntemplateformfieldgroupRequest {
 /**
      * Returns The maximum length for the value in the Ezsigntemplateformfieldgroup  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsigntemplateformfieldgroupMaxlength() {
@@ -346,6 +351,19 @@ class EzsigntemplateformfieldgroupRequest {
      */
     setSEzsigntemplateformfieldgroupRegexp(sEzsigntemplateformfieldgroupRegexp) {
         this['sEzsigntemplateformfieldgroupRegexp'] = sEzsigntemplateformfieldgroupRegexp;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsigntemplateformfieldgroupTextvalidation() {
+        return this.eEzsigntemplateformfieldgroupTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplateformfieldgroupTextvalidation
+     */
+    setEEzsigntemplateformfieldgroupTextvalidation(eEzsigntemplateformfieldgroupTextvalidation) {
+        this['eEzsigntemplateformfieldgroupTextvalidation'] = eEzsigntemplateformfieldgroupTextvalidation;
     }
 /**
      * Returns A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
@@ -455,6 +473,11 @@ EzsigntemplateformfieldgroupRequest.prototype['bEzsigntemplateformfieldgroupEncr
  * @member {String} sEzsigntemplateformfieldgroupRegexp
  */
 EzsigntemplateformfieldgroupRequest.prototype['sEzsigntemplateformfieldgroupRegexp'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplateformfieldgroupTextvalidation
+ */
+EzsigntemplateformfieldgroupRequest.prototype['eEzsigntemplateformfieldgroupTextvalidation'] = undefined;
 
 /**
  * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup

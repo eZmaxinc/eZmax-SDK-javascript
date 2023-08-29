@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import EzmaxinvoicingcommissionResponseCompound from './EzmaxinvoicingcommissionResponseCompound';
 import EzmaxinvoicingsummaryglobalResponse from './EzmaxinvoicingsummaryglobalResponse';
-import EzmaxinvoicingsummaryglobalResponseCompoundAllOf from './EzmaxinvoicingsummaryglobalResponseCompoundAllOf';
 
 /**
  * The EzmaxinvoicingsummaryglobalResponseCompound model module.
@@ -27,7 +26,6 @@ class EzmaxinvoicingsummaryglobalResponseCompound {
      * A Ezmaxinvoicingsummaryglobal Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingsummaryglobalResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryglobalResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryglobalResponseCompoundAllOf
      * @param fkiEzmaxproductID {Number} The unique ID of the Ezmaxproduct
      * @param sEzmaxproductDescriptionX {String} The description of the Ezmaxproduct in the language of the requester
      * @param dtEzmaxinvoicingsummaryglobalStart {String} The start date for the Ezmaxinvoicingsummaryglobal
@@ -44,7 +42,7 @@ class EzmaxinvoicingsummaryglobalResponseCompound {
      * @param tEzmaxproductHelpX {String} The help message of the Ezmaxproduct in the language of the requester
      */
     constructor(fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX) { 
-        EzmaxinvoicingsummaryglobalResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX);EzmaxinvoicingsummaryglobalResponseCompoundAllOf.initialize(this);
+        EzmaxinvoicingsummaryglobalResponse.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX);
         EzmaxinvoicingsummaryglobalResponseCompound.initialize(this, fkiEzmaxproductID, sEzmaxproductDescriptionX, dtEzmaxinvoicingsummaryglobalStart, dtEzmaxinvoicingsummaryglobalEnd, iEzmaxinvoicingsummaryglobalDays, dEzmaxinvoicingsummaryglobalCountreal, dEzmaxinvoicingsummaryglobalCountbilled, dEzmaxinvoicingsummaryglobalSubtotal, dEzmaxinvoicingsummaryglobalRebateamount, dEzmaxinvoicingsummaryglobalRebatepercent, dEzmaxinvoicingsummaryglobalRebatetotal, dEzmaxinvoicingsummaryglobalTotal, bEzmaxinvoicingsummaryglobalAdjustment, tEzmaxproductHelpX);
     }
 
@@ -81,7 +79,6 @@ class EzmaxinvoicingsummaryglobalResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingsummaryglobalResponseCompound();
             EzmaxinvoicingsummaryglobalResponse.constructFromObject(data, obj);
-            EzmaxinvoicingsummaryglobalResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingsummaryglobalID')) {
                 obj['pkiEzmaxinvoicingsummaryglobalID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingsummaryglobalID'], 'Number');
@@ -752,11 +749,6 @@ EzmaxinvoicingsummaryglobalResponse.prototype['bEzmaxinvoicingsummaryglobalAdjus
  * @member {String} tEzmaxproductHelpX
  */
 EzmaxinvoicingsummaryglobalResponse.prototype['tEzmaxproductHelpX'] = undefined;
-// Implement EzmaxinvoicingsummaryglobalResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingcommissionResponseCompound>} a_objEzmaxinvoicingcommission
- */
-EzmaxinvoicingsummaryglobalResponseCompoundAllOf.prototype['a_objEzmaxinvoicingcommission'] = undefined;
 
 
 

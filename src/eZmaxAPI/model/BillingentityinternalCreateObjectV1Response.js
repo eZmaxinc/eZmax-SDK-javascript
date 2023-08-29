@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingentityinternalCreateObjectV1ResponseAllOf from './BillingentityinternalCreateObjectV1ResponseAllOf';
 import BillingentityinternalCreateObjectV1ResponseMPayload from './BillingentityinternalCreateObjectV1ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class BillingentityinternalCreateObjectV1Response {
      * Constructs a new <code>BillingentityinternalCreateObjectV1Response</code>.
      * Response for POST /1/object/billingentityinternal
      * @alias module:eZmaxAPI/model/BillingentityinternalCreateObjectV1Response
-     * @implements module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        BillingentityinternalCreateObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        BillingentityinternalCreateObjectV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        BillingentityinternalCreateObjectV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class BillingentityinternalCreateObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class BillingentityinternalCreateObjectV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingentityinternalCreateObjectV1Response();
-            BillingentityinternalCreateObjectV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = BillingentityinternalCreateObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = BillingentityinternalCreateObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class BillingentityinternalCreateObjectV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          BillingentityinternalCreateObjectV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class BillingentityinternalCreateObjectV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          BillingentityinternalCreateObjectV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class BillingentityinternalCreateObjectV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-BillingentityinternalCreateObjectV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload} mPayload
- */
-BillingentityinternalCreateObjectV1Response.prototype['mPayload'] = undefined;
+BillingentityinternalCreateObjectV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ BillingentityinternalCreateObjectV1Response.prototype['objDebugPayload'] = undef
  */
 BillingentityinternalCreateObjectV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement BillingentityinternalCreateObjectV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/BillingentityinternalCreateObjectV1ResponseMPayload} mPayload
  */
-BillingentityinternalCreateObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
+BillingentityinternalCreateObjectV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

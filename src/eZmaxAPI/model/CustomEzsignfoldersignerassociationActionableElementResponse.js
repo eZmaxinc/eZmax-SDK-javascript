@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzsignfoldersignerassociationActionableElementResponseAllOf from './CustomEzsignfoldersignerassociationActionableElementResponseAllOf';
 import EzsignfoldersignerassociationResponseCompound from './EzsignfoldersignerassociationResponseCompound';
 import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
@@ -29,7 +28,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
      * A Ezsignfoldersignerassociation Object with actionable elements
      * @alias module:eZmaxAPI/model/CustomEzsignfoldersignerassociationActionableElementResponse
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound
-     * @implements module:eZmaxAPI/model/CustomEzsignfoldersignerassociationActionableElementResponseAllOf
      * @param pkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param bEzsignfoldersignerassociationDelayedsend {Boolean} If this flag is true the signatory is part of a delayed send.
@@ -38,7 +36,7 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
      * @param bEzsignfoldersignerassociationHasactionableelementsCurrent {Boolean} Indicates if the Ezsignfoldersignerassociation has actionable elements in the current step
      */
     constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent) { 
-        EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);CustomEzsignfoldersignerassociationActionableElementResponseAllOf.initialize(this, bEzsignfoldersignerassociationHasactionableelementsCurrent);
+        EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);
         CustomEzsignfoldersignerassociationActionableElementResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent);
     }
 
@@ -67,7 +65,6 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
         if (data) {
             obj = obj || new CustomEzsignfoldersignerassociationActionableElementResponse();
             EzsignfoldersignerassociationResponseCompound.constructFromObject(data, obj);
-            CustomEzsignfoldersignerassociationActionableElementResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
@@ -382,17 +379,6 @@ EzsignfoldersignerassociationResponseCompound.prototype['objUser'] = undefined;
  * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
  */
 EzsignfoldersignerassociationResponseCompound.prototype['objEzsignsigner'] = undefined;
-// Implement CustomEzsignfoldersignerassociationActionableElementResponseAllOf interface:
-/**
- * Indicates if the Ezsignfoldersignerassociation has actionable elements in the current step
- * @member {Boolean} bEzsignfoldersignerassociationHasactionableelementsCurrent
- */
-CustomEzsignfoldersignerassociationActionableElementResponseAllOf.prototype['bEzsignfoldersignerassociationHasactionableelementsCurrent'] = undefined;
-/**
- * Indicates if the Ezsignfoldersignerassociation has actionable elements in a future step
- * @member {Boolean} bEzsignfoldersignerassociationHasactionableelementsFuture
- */
-CustomEzsignfoldersignerassociationActionableElementResponseAllOf.prototype['bEzsignfoldersignerassociationHasactionableelementsFuture'] = undefined;
 
 
 

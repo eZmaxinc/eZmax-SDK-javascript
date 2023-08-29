@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.TimezoneGetAutocompleteV2Response);
     });
 
-    it('should have the property mPayload (base name: "mPayload")', function() {
-      // uncomment below and update the code to test the property mPayload
-      //var instance = new EZmaxApiDefinitionFull.TimezoneGetAutocompleteV2Response();
-      //expect(instance).to.be();
-    });
-
     it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
       // uncomment below and update the code to test the property objDebugPayload
       //var instance = new EZmaxApiDefinitionFull.TimezoneGetAutocompleteV2Response();
@@ -68,6 +62,12 @@
 
     it('should have the property objDebug (base name: "objDebug")', function() {
       // uncomment below and update the code to test the property objDebug
+      //var instance = new EZmaxApiDefinitionFull.TimezoneGetAutocompleteV2Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
       //var instance = new EZmaxApiDefinitionFull.TimezoneGetAutocompleteV2Response();
       //expect(instance).to.be();
     });

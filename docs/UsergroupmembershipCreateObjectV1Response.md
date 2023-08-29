@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**UsergroupmembershipCreateObjectV1ResponseMPayload**](UsergroupmembershipCreateObjectV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**UsergroupmembershipCreateObjectV1ResponseMPayload**](UsergroupmembershipCreateObjectV1ResponseMPayload.md) |  | 
 
 

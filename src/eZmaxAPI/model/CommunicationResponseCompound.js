@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import CommunicationResponse from './CommunicationResponse';
-import CommunicationResponseCompoundAllOf from './CommunicationResponseCompoundAllOf';
 import CommunicationattachmentResponseCompound from './CommunicationattachmentResponseCompound';
 import CommunicationexternalrecipientResponseCompound from './CommunicationexternalrecipientResponseCompound';
 import CommunicationrecipientResponseCompound from './CommunicationrecipientResponseCompound';
@@ -36,7 +35,6 @@ class CommunicationResponseCompound {
      * A Communication Object
      * @alias module:eZmaxAPI/model/CommunicationResponseCompound
      * @implements module:eZmaxAPI/model/CommunicationResponse
-     * @implements module:eZmaxAPI/model/CommunicationResponseCompoundAllOf
      * @param pkiCommunicationID {Number} The unique ID of the Communication.
      * @param eCommunicationImportance {module:eZmaxAPI/model/FieldECommunicationImportance} 
      * @param eCommunicationType {module:eZmaxAPI/model/FieldECommunicationType} 
@@ -50,7 +48,7 @@ class CommunicationResponseCompound {
      * @param a_objCommunicationexternalrecipient {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} 
      */
     constructor(pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, bCommunicationPrivate, objAudit, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient) { 
-        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, bCommunicationPrivate, objAudit);CommunicationResponseCompoundAllOf.initialize(this, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient);
+        CommunicationResponse.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, bCommunicationPrivate, objAudit);
         CommunicationResponseCompound.initialize(this, pkiCommunicationID, eCommunicationImportance, eCommunicationType, sCommunicationSubject, eCommunicationDirection, iCommunicationrecipientCount, bCommunicationPrivate, objAudit, a_objCommunicationattachment, a_objCommunicationrecipient, a_objCommunicationexternalrecipient);
     }
 
@@ -84,7 +82,6 @@ class CommunicationResponseCompound {
         if (data) {
             obj = obj || new CommunicationResponseCompound();
             CommunicationResponse.constructFromObject(data, obj);
-            CommunicationResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiCommunicationID')) {
                 obj['pkiCommunicationID'] = ApiClient.convertToType(data['pkiCommunicationID'], 'Number');
@@ -551,19 +548,6 @@ CommunicationResponse.prototype['objPhonestaticSender'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 CommunicationResponse.prototype['objAudit'] = undefined;
-// Implement CommunicationResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationattachmentResponseCompound>} a_objCommunicationattachment
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationattachment'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationrecipientResponseCompound>} a_objCommunicationrecipient
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationrecipient'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound>} a_objCommunicationexternalrecipient
- */
-CommunicationResponseCompoundAllOf.prototype['a_objCommunicationexternalrecipient'] = undefined;
 
 
 

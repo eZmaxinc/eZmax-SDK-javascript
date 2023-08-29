@@ -16,7 +16,6 @@ import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
 import WebhookResponse from './WebhookResponse';
-import WebhookResponseCompoundAllOf from './WebhookResponseCompoundAllOf';
 
 /**
  * The WebhookResponseCompound model module.
@@ -29,7 +28,6 @@ class WebhookResponseCompound {
      * A Webhook Object
      * @alias module:eZmaxAPI/model/WebhookResponseCompound
      * @implements module:eZmaxAPI/model/WebhookResponse
-     * @implements module:eZmaxAPI/model/WebhookResponseCompoundAllOf
      * @param pkiWebhookID {Number} The unique ID of the Webhook
      * @param sWebhookDescription {String} The description of the Webhook
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
@@ -39,7 +37,7 @@ class WebhookResponseCompound {
      * @param sWebhookEvent {String} The concatenated string to describe the Webhook event
      */
     constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, sWebhookEvent) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);WebhookResponseCompoundAllOf.initialize(this);
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
         WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, sWebhookEvent);
     }
 
@@ -69,7 +67,6 @@ class WebhookResponseCompound {
         if (data) {
             obj = obj || new WebhookResponseCompound();
             WebhookResponse.constructFromObject(data, obj);
-            WebhookResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiWebhookID')) {
                 obj['pkiWebhookID'] = ApiClient.convertToType(data['pkiWebhookID'], 'Number');
@@ -450,12 +447,6 @@ WebhookResponse.prototype['bWebhookIsactive'] = undefined;
  * @member {Boolean} bWebhookSkipsslvalidation
  */
 WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
-// Implement WebhookResponseCompoundAllOf interface:
-/**
- * The concatenated string to describe the Webhook event
- * @member {String} sWebhookEvent
- */
-WebhookResponseCompoundAllOf.prototype['sWebhookEvent'] = undefined;
 
 
 

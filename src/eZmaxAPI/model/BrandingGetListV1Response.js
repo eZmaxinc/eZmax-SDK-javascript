@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BrandingGetListV1ResponseAllOf from './BrandingGetListV1ResponseAllOf';
 import BrandingGetListV1ResponseMPayload from './BrandingGetListV1ResponseMPayload';
 import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class BrandingGetListV1Response {
      * Constructs a new <code>BrandingGetListV1Response</code>.
      * Response for GET /1/object/branding/getList
      * @alias module:eZmaxAPI/model/BrandingGetListV1Response
-     * @implements module:eZmaxAPI/model/BrandingGetListV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      * @param mPayload {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        BrandingGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
-        BrandingGetListV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponseGetList.initialize(this, objDebugPayload);
+        BrandingGetListV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class BrandingGetListV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class BrandingGetListV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BrandingGetListV1Response();
-            BrandingGetListV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponseGetList.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = BrandingGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = BrandingGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class BrandingGetListV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          BrandingGetListV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class BrandingGetListV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          BrandingGetListV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
@@ -139,15 +125,23 @@ class BrandingGetListV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-BrandingGetListV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload} mPayload
- */
-BrandingGetListV1Response.prototype['mPayload'] = undefined;
+BrandingGetListV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
@@ -159,12 +153,12 @@ BrandingGetListV1Response.prototype['objDebugPayload'] = undefined;
  */
 BrandingGetListV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement BrandingGetListV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload} mPayload
  */
-BrandingGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
+BrandingGetListV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponseGetList interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

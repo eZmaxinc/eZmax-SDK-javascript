@@ -16,7 +16,6 @@ import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 import CustomWordPositionWordResponse from './CustomWordPositionWordResponse';
-import EzsigndocumentGetWordsPositionsV1ResponseAllOf from './EzsigndocumentGetWordsPositionsV1ResponseAllOf';
 
 /**
  * The EzsigndocumentGetWordsPositionsV1Response model module.
@@ -28,13 +27,13 @@ class EzsigndocumentGetWordsPositionsV1Response {
      * Constructs a new <code>EzsigndocumentGetWordsPositionsV1Response</code>.
      * Response for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      * @alias module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1Response
-     * @implements module:eZmaxAPI/model/EzsigndocumentGetWordsPositionsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      */
-    constructor(mPayload) { 
-        EzsigndocumentGetWordsPositionsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigndocumentGetWordsPositionsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigndocumentGetWordsPositionsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigndocumentGetWordsPositionsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigndocumentGetWordsPositionsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentGetWordsPositionsV1Response();
-            EzsigndocumentGetWordsPositionsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CustomWordPositionWordResponse]);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = ApiClient.convertToType(data['mPayload'], [CustomWordPositionWordResponse]);
             }
         }
         return obj;
@@ -84,6 +83,14 @@ class EzsigndocumentGetWordsPositionsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
+        // validate the optional field `objDebugPayload`
+        if (data['objDebugPayload']) { // data not null
+          CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
+        }
+        // validate the optional field `objDebug`
+        if (data['objDebug']) { // data not null
+          CommonResponseObjDebug.validateJSON(data['objDebug']);
+        }
         if (data['mPayload']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['mPayload'])) {
@@ -94,33 +101,10 @@ class EzsigndocumentGetWordsPositionsV1Response {
                 CustomWordPositionWordResponse.validateJSON(item);
             };
         }
-        // validate the optional field `objDebugPayload`
-        if (data['objDebugPayload']) { // data not null
-          CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
-        }
-        // validate the optional field `objDebug`
-        if (data['objDebug']) { // data not null
-          CommonResponseObjDebug.validateJSON(data['objDebug']);
-        }
 
         return true;
     }
 
-/**
-     * Returns Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
-     * @return {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * Sets Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
-     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -147,16 +131,25 @@ class EzsigndocumentGetWordsPositionsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * Returns Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
+     * @return {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * Sets Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
+     * @param {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigndocumentGetWordsPositionsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
- * @member {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload
- */
-EzsigndocumentGetWordsPositionsV1Response.prototype['mPayload'] = undefined;
+EzsigndocumentGetWordsPositionsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -168,13 +161,13 @@ EzsigndocumentGetWordsPositionsV1Response.prototype['objDebugPayload'] = undefin
  */
 EzsigndocumentGetWordsPositionsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigndocumentGetWordsPositionsV1ResponseAllOf interface:
 /**
  * Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
  * @member {Array.<module:eZmaxAPI/model/CustomWordPositionWordResponse>} mPayload
  */
-EzsigndocumentGetWordsPositionsV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigndocumentGetWordsPositionsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

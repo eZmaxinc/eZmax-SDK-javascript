@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('usergroupEditUsergroupdelegationsV1', function() {
+      it('should call usergroupEditUsergroupdelegationsV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupEditUsergroupdelegationsV1
+        //instance.usergroupEditUsergroupdelegationsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('usergroupEditUsergroupmembershipsV1', function() {
       it('should call usergroupEditUsergroupmembershipsV1 successfully', function(done) {
         //uncomment below and update the code to test usergroupEditUsergroupmembershipsV1
@@ -122,6 +132,16 @@
       it('should call usergroupGetPermissionsV1 successfully', function(done) {
         //uncomment below and update the code to test usergroupGetPermissionsV1
         //instance.usergroupGetPermissionsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usergroupGetUsergroupdelegationsV1', function() {
+      it('should call usergroupGetUsergroupdelegationsV1 successfully', function(done) {
+        //uncomment below and update the code to test usergroupGetUsergroupdelegationsV1
+        //instance.usergroupGetUsergroupdelegationsV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

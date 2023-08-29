@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApikeyGetObjectV2ResponseAllOf from './ApikeyGetObjectV2ResponseAllOf';
 import ApikeyGetObjectV2ResponseMPayload from './ApikeyGetObjectV2ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class ApikeyGetObjectV2Response {
      * Constructs a new <code>ApikeyGetObjectV2Response</code>.
      * Response for GET /2/object/apikey/{pkiApikeyID}
      * @alias module:eZmaxAPI/model/ApikeyGetObjectV2Response
-     * @implements module:eZmaxAPI/model/ApikeyGetObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        ApikeyGetObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        ApikeyGetObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        ApikeyGetObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class ApikeyGetObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class ApikeyGetObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ApikeyGetObjectV2Response();
-            ApikeyGetObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApikeyGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = ApikeyGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class ApikeyGetObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          ApikeyGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class ApikeyGetObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          ApikeyGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class ApikeyGetObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-ApikeyGetObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload} mPayload
- */
-ApikeyGetObjectV2Response.prototype['mPayload'] = undefined;
+ApikeyGetObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ ApikeyGetObjectV2Response.prototype['objDebugPayload'] = undefined;
  */
 ApikeyGetObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement ApikeyGetObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/ApikeyGetObjectV2ResponseMPayload} mPayload
  */
-ApikeyGetObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+ApikeyGetObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

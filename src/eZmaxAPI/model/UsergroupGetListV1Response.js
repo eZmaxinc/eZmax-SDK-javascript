@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayloadGetList from './CommonResponseObjDebugPayloadGetList';
-import UsergroupGetListV1ResponseAllOf from './UsergroupGetListV1ResponseAllOf';
 import UsergroupGetListV1ResponseMPayload from './UsergroupGetListV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class UsergroupGetListV1Response {
      * Constructs a new <code>UsergroupGetListV1Response</code>.
      * Response for GET /1/object/usergroup/getList
      * @alias module:eZmaxAPI/model/UsergroupGetListV1Response
-     * @implements module:eZmaxAPI/model/UsergroupGetListV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      * @param mPayload {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        UsergroupGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
-        UsergroupGetListV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponseGetList.initialize(this, objDebugPayload);
+        UsergroupGetListV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class UsergroupGetListV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class UsergroupGetListV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UsergroupGetListV1Response();
-            UsergroupGetListV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponseGetList.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = UsergroupGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = UsergroupGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class UsergroupGetListV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          UsergroupGetListV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class UsergroupGetListV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          UsergroupGetListV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
@@ -139,15 +125,23 @@ class UsergroupGetListV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-UsergroupGetListV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload} mPayload
- */
-UsergroupGetListV1Response.prototype['mPayload'] = undefined;
+UsergroupGetListV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
@@ -159,12 +153,12 @@ UsergroupGetListV1Response.prototype['objDebugPayload'] = undefined;
  */
 UsergroupGetListV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement UsergroupGetListV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload} mPayload
  */
-UsergroupGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
+UsergroupGetListV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponseGetList interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

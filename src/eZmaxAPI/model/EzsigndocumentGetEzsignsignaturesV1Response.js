@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigndocumentGetEzsignsignaturesV1ResponseAllOf from './EzsigndocumentGetEzsignsignaturesV1ResponseAllOf';
 import EzsigndocumentGetEzsignsignaturesV1ResponseMPayload from './EzsigndocumentGetEzsignsignaturesV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
      * Constructs a new <code>EzsigndocumentGetEzsignsignaturesV1Response</code>.
      * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignsignatures
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1Response
-     * @implements module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigndocumentGetEzsignsignaturesV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigndocumentGetEzsignsignaturesV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigndocumentGetEzsignsignaturesV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentGetEzsignsignaturesV1Response();
-            EzsigndocumentGetEzsignsignaturesV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigndocumentGetEzsignsignaturesV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigndocumentGetEzsignsignaturesV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigndocumentGetEzsignsignaturesV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload} mPayload
- */
-EzsigndocumentGetEzsignsignaturesV1Response.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignsignaturesV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigndocumentGetEzsignsignaturesV1Response.prototype['objDebugPayload'] = undef
  */
 EzsigndocumentGetEzsignsignaturesV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigndocumentGetEzsignsignaturesV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesV1ResponseMPayload} mPayload
  */
-EzsigndocumentGetEzsignsignaturesV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignsignaturesV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

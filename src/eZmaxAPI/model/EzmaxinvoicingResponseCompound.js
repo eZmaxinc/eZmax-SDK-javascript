@@ -17,7 +17,6 @@ import CustomEzmaxinvoicingEzsigndocumentResponse from './CustomEzmaxinvoicingEz
 import CustomEzmaxinvoicingEzsignfolderResponse from './CustomEzmaxinvoicingEzsignfolderResponse';
 import CustomEzmaxpricingResponse from './CustomEzmaxpricingResponse';
 import EzmaxinvoicingResponse from './EzmaxinvoicingResponse';
-import EzmaxinvoicingResponseCompoundAllOf from './EzmaxinvoicingResponseCompoundAllOf';
 import EzmaxinvoicingagentResponseCompound from './EzmaxinvoicingagentResponseCompound';
 import EzmaxinvoicingcontractResponseCompound from './EzmaxinvoicingcontractResponseCompound';
 import EzmaxinvoicingsummaryexternalResponseCompound from './EzmaxinvoicingsummaryexternalResponseCompound';
@@ -37,7 +36,6 @@ class EzmaxinvoicingResponseCompound {
      * A Ezmaxinvoicing Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingResponseCompoundAllOf
      * @param fkiEzmaxinvoicingcontractID {Number} The unique ID of the Ezmaxinvoicingcontract
      * @param fkiEzmaxpricingID {Number} The unique ID of the Ezmaxpricing
      * @param fkiSystemconfigurationtypeID {Number} The unique ID of the Systemconfigurationtype
@@ -60,7 +58,7 @@ class EzmaxinvoicingResponseCompound {
      * @param a_objEzmaxinvoicingezsigndocument {Array.<module:eZmaxAPI/model/CustomEzmaxinvoicingEzsigndocumentResponse>} 
      */
     constructor(fkiEzmaxinvoicingcontractID, fkiEzmaxpricingID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, yyyymmEzmaxinvoicing, iEzmaxinvoicingDays, eEzmaxinvoicingPaymenttype, dEzmaxinvoicingRebatepaymenttype, iEzmaxinvoicingContractlength, dEzmaxinvoicingRebatecontractlength, bEzmaxinvoicingRebateEzsignallagents, objEzmaxinvoicingcontract, objEzmaxpricing, a_objEzmaxinvoicingsummaryglobal, a_objEzmaxinvoicingsummaryexternal, a_objEzmaxinvoicingsummaryinternal, a_objEzmaxinvoicingagent, a_objEzmaxinvoicinguser, a_objEzmaxinvoicingezsignfolder, a_objEzmaxinvoicingezsigndocument) { 
-        EzmaxinvoicingResponse.initialize(this, fkiEzmaxinvoicingcontractID, fkiEzmaxpricingID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, yyyymmEzmaxinvoicing, iEzmaxinvoicingDays, eEzmaxinvoicingPaymenttype, dEzmaxinvoicingRebatepaymenttype, iEzmaxinvoicingContractlength, dEzmaxinvoicingRebatecontractlength, bEzmaxinvoicingRebateEzsignallagents);EzmaxinvoicingResponseCompoundAllOf.initialize(this, objEzmaxinvoicingcontract, objEzmaxpricing, a_objEzmaxinvoicingsummaryglobal, a_objEzmaxinvoicingsummaryexternal, a_objEzmaxinvoicingsummaryinternal, a_objEzmaxinvoicingagent, a_objEzmaxinvoicinguser, a_objEzmaxinvoicingezsignfolder, a_objEzmaxinvoicingezsigndocument);
+        EzmaxinvoicingResponse.initialize(this, fkiEzmaxinvoicingcontractID, fkiEzmaxpricingID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, yyyymmEzmaxinvoicing, iEzmaxinvoicingDays, eEzmaxinvoicingPaymenttype, dEzmaxinvoicingRebatepaymenttype, iEzmaxinvoicingContractlength, dEzmaxinvoicingRebatecontractlength, bEzmaxinvoicingRebateEzsignallagents);
         EzmaxinvoicingResponseCompound.initialize(this, fkiEzmaxinvoicingcontractID, fkiEzmaxpricingID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, yyyymmEzmaxinvoicing, iEzmaxinvoicingDays, eEzmaxinvoicingPaymenttype, dEzmaxinvoicingRebatepaymenttype, iEzmaxinvoicingContractlength, dEzmaxinvoicingRebatecontractlength, bEzmaxinvoicingRebateEzsignallagents, objEzmaxinvoicingcontract, objEzmaxpricing, a_objEzmaxinvoicingsummaryglobal, a_objEzmaxinvoicingsummaryexternal, a_objEzmaxinvoicingsummaryinternal, a_objEzmaxinvoicingagent, a_objEzmaxinvoicinguser, a_objEzmaxinvoicingezsignfolder, a_objEzmaxinvoicingezsigndocument);
     }
 
@@ -103,7 +101,6 @@ class EzmaxinvoicingResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingResponseCompound();
             EzmaxinvoicingResponse.constructFromObject(data, obj);
-            EzmaxinvoicingResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingID')) {
                 obj['pkiEzmaxinvoicingID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingID'], 'Number');
@@ -794,43 +791,6 @@ EzmaxinvoicingResponse.prototype['bEzmaxinvoicingRebateEzsignallagents'] = undef
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzmaxinvoicingResponse.prototype['objAudit'] = undefined;
-// Implement EzmaxinvoicingResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzmaxinvoicingcontractResponseCompound} objEzmaxinvoicingcontract
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['objEzmaxinvoicingcontract'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/CustomEzmaxpricingResponse} objEzmaxpricing
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['objEzmaxpricing'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryglobalResponseCompound>} a_objEzmaxinvoicingsummaryglobal
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingsummaryglobal'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryexternalResponseCompound>} a_objEzmaxinvoicingsummaryexternal
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingsummaryexternal'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryinternalResponseCompound>} a_objEzmaxinvoicingsummaryinternal
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingsummaryinternal'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingagentResponseCompound>} a_objEzmaxinvoicingagent
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingagent'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicinguserResponseCompound>} a_objEzmaxinvoicinguser
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicinguser'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomEzmaxinvoicingEzsignfolderResponse>} a_objEzmaxinvoicingezsignfolder
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingezsignfolder'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomEzmaxinvoicingEzsigndocumentResponse>} a_objEzmaxinvoicingezsigndocument
- */
-EzmaxinvoicingResponseCompoundAllOf.prototype['a_objEzmaxinvoicingezsigndocument'] = undefined;
 
 
 

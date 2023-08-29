@@ -110,6 +110,13 @@ export default class FieldESessionhistoryEndby {
         "BadIP" = "BadIP";
 
     
+        /**
+         * value: "ForcedLogoff"
+         * @const
+         */
+        "ForcedLogoff" = "ForcedLogoff";
+
+    
 
     /**
     * Returns a <code>FieldESessionhistoryEndby</code> enum value from a Javascript object name.

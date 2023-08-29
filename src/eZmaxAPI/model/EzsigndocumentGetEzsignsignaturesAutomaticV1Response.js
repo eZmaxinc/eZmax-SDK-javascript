@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf from './EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf';
 import EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload from './EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
      * Constructs a new <code>EzsigndocumentGetEzsignsignaturesAutomaticV1Response</code>.
      * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignaturesAutomatic
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1Response
-     * @implements module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigndocumentGetEzsignsignaturesAutomaticV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigndocumentGetEzsignsignaturesAutomaticV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentGetEzsignsignaturesAutomaticV1Response();
-            EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigndocumentGetEzsignsignaturesAutomaticV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigndocumentGetEzsignsignaturesAutomaticV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload} mPayload
- */
-EzsigndocumentGetEzsignsignaturesAutomaticV1Response.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignsignaturesAutomaticV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigndocumentGetEzsignsignaturesAutomaticV1Response.prototype['objDebugPayload'
  */
 EzsigndocumentGetEzsignsignaturesAutomaticV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseMPayload} mPayload
  */
-EzsigndocumentGetEzsignsignaturesAutomaticV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignsignaturesAutomaticV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

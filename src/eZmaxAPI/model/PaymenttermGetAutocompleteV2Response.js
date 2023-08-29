@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import PaymenttermGetAutocompleteV2ResponseAllOf from './PaymenttermGetAutocompleteV2ResponseAllOf';
 import PaymenttermGetAutocompleteV2ResponseMPayload from './PaymenttermGetAutocompleteV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class PaymenttermGetAutocompleteV2Response {
      * Constructs a new <code>PaymenttermGetAutocompleteV2Response</code>.
      * Response for GET /2/object/paymentterm/getAutocomplete
      * @alias module:eZmaxAPI/model/PaymenttermGetAutocompleteV2Response
-     * @implements module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        PaymenttermGetAutocompleteV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        PaymenttermGetAutocompleteV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        PaymenttermGetAutocompleteV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class PaymenttermGetAutocompleteV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class PaymenttermGetAutocompleteV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymenttermGetAutocompleteV2Response();
-            PaymenttermGetAutocompleteV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = PaymenttermGetAutocompleteV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = PaymenttermGetAutocompleteV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class PaymenttermGetAutocompleteV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          PaymenttermGetAutocompleteV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class PaymenttermGetAutocompleteV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          PaymenttermGetAutocompleteV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class PaymenttermGetAutocompleteV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-PaymenttermGetAutocompleteV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload} mPayload
- */
-PaymenttermGetAutocompleteV2Response.prototype['mPayload'] = undefined;
+PaymenttermGetAutocompleteV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ PaymenttermGetAutocompleteV2Response.prototype['objDebugPayload'] = undefined;
  */
 PaymenttermGetAutocompleteV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement PaymenttermGetAutocompleteV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/PaymenttermGetAutocompleteV2ResponseMPayload} mPayload
  */
-PaymenttermGetAutocompleteV2ResponseAllOf.prototype['mPayload'] = undefined;
+PaymenttermGetAutocompleteV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

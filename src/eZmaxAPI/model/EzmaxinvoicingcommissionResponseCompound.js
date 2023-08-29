@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
 import EzmaxinvoicingcommissionResponse from './EzmaxinvoicingcommissionResponse';
-import EzmaxinvoicingcommissionResponseCompoundAllOf from './EzmaxinvoicingcommissionResponseCompoundAllOf';
 
 /**
  * The EzmaxinvoicingcommissionResponseCompound model module.
@@ -27,7 +26,6 @@ class EzmaxinvoicingcommissionResponseCompound {
      * A Ezmaxinvoicingcommission Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingcommissionResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingcommissionResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingcommissionResponseCompoundAllOf
      * @param dtEzmaxinvoicingcommissionStart {String} The start date for the Ezmaxinvoicingcommission
      * @param dtEzmaxinvoicingcommissionEnd {String} The end date for the Ezmaxinvoicingcommission
      * @param iEzmaxinvoicingcommissionDays {Number} This is the number of days during the month on which the Ezmaxinvoigcommission applies
@@ -35,7 +33,7 @@ class EzmaxinvoicingcommissionResponseCompound {
      * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
     constructor(dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount, objContactName) { 
-        EzmaxinvoicingcommissionResponse.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount);EzmaxinvoicingcommissionResponseCompoundAllOf.initialize(this);
+        EzmaxinvoicingcommissionResponse.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount);
         EzmaxinvoicingcommissionResponseCompound.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount, objContactName);
     }
 
@@ -63,7 +61,6 @@ class EzmaxinvoicingcommissionResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingcommissionResponseCompound();
             EzmaxinvoicingcommissionResponse.constructFromObject(data, obj);
-            EzmaxinvoicingcommissionResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingcommissionID')) {
                 obj['pkiEzmaxinvoicingcommissionID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingcommissionID'], 'Number');
@@ -365,11 +362,6 @@ EzmaxinvoicingcommissionResponse.prototype['iEzmaxinvoicingcommissionDays'] = un
  * @member {String} dEzmaxinvoicingcommissionAmount
  */
 EzmaxinvoicingcommissionResponse.prototype['dEzmaxinvoicingcommissionAmount'] = undefined;
-// Implement EzmaxinvoicingcommissionResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
- */
-EzmaxinvoicingcommissionResponseCompoundAllOf.prototype['objContactName'] = undefined;
 
 
 

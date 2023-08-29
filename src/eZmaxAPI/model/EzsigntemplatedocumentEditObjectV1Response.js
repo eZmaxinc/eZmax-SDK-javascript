@@ -16,7 +16,6 @@ import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 import CommonResponseWarning from './CommonResponseWarning';
-import EzsigntemplatedocumentEditObjectV1ResponseAllOf from './EzsigntemplatedocumentEditObjectV1ResponseAllOf';
 
 /**
  * The EzsigntemplatedocumentEditObjectV1Response model module.
@@ -29,11 +28,11 @@ class EzsigntemplatedocumentEditObjectV1Response {
      * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
      * @alias module:eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
-     * @implements module:eZmaxAPI/model/EzsigntemplatedocumentEditObjectV1ResponseAllOf
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);EzsigntemplatedocumentEditObjectV1ResponseAllOf.initialize(this);
-        EzsigntemplatedocumentEditObjectV1Response.initialize(this);
+    constructor(objDebugPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplatedocumentEditObjectV1Response.initialize(this, objDebugPayload);
     }
 
     /**
@@ -41,7 +40,8 @@ class EzsigntemplatedocumentEditObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objDebugPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
     }
 
     /**
@@ -55,7 +55,6 @@ class EzsigntemplatedocumentEditObjectV1Response {
         if (data) {
             obj = obj || new EzsigntemplatedocumentEditObjectV1Response();
             CommonResponse.constructFromObject(data, obj);
-            EzsigntemplatedocumentEditObjectV1ResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
@@ -76,6 +75,12 @@ class EzsigntemplatedocumentEditObjectV1Response {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EzsigntemplatedocumentEditObjectV1Response</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EzsigntemplatedocumentEditObjectV1Response.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -140,7 +145,7 @@ class EzsigntemplatedocumentEditObjectV1Response {
 
 }
 
-
+EzsigntemplatedocumentEditObjectV1Response.RequiredProperties = ["objDebugPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -167,11 +172,6 @@ CommonResponse.prototype['objDebugPayload'] = undefined;
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
 CommonResponse.prototype['objDebug'] = undefined;
-// Implement EzsigntemplatedocumentEditObjectV1ResponseAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CommonResponseWarning>} a_objWarning
- */
-EzsigntemplatedocumentEditObjectV1ResponseAllOf.prototype['a_objWarning'] = undefined;
 
 
 

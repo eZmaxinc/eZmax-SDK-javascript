@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigntemplatepackageGetObjectV2ResponseAllOf from './EzsigntemplatepackageGetObjectV2ResponseAllOf';
 import EzsigntemplatepackageGetObjectV2ResponseMPayload from './EzsigntemplatepackageGetObjectV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigntemplatepackageGetObjectV2Response {
      * Constructs a new <code>EzsigntemplatepackageGetObjectV2Response</code>.
      * Response for GET /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}
      * @alias module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2Response
-     * @implements module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigntemplatepackageGetObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigntemplatepackageGetObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplatepackageGetObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigntemplatepackageGetObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigntemplatepackageGetObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplatepackageGetObjectV2Response();
-            EzsigntemplatepackageGetObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigntemplatepackageGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigntemplatepackageGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigntemplatepackageGetObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigntemplatepackageGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigntemplatepackageGetObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigntemplatepackageGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigntemplatepackageGetObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigntemplatepackageGetObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload} mPayload
- */
-EzsigntemplatepackageGetObjectV2Response.prototype['mPayload'] = undefined;
+EzsigntemplatepackageGetObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigntemplatepackageGetObjectV2Response.prototype['objDebugPayload'] = undefine
  */
 EzsigntemplatepackageGetObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigntemplatepackageGetObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplatepackageGetObjectV2ResponseMPayload} mPayload
  */
-EzsigntemplatepackageGetObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigntemplatepackageGetObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

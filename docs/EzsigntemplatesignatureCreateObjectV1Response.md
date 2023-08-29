@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**EzsigntemplatesignatureCreateObjectV1ResponseMPayload**](EzsigntemplatesignatureCreateObjectV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**EzsigntemplatesignatureCreateObjectV1ResponseMPayload**](EzsigntemplatesignatureCreateObjectV1ResponseMPayload.md) |  | 
 
 

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf from './EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf';
 import EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload from './EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
      * Constructs a new <code>EzsignfolderImportEzsigntemplatepackageV1Response</code>.
      * Response for POST/1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage
      * @alias module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1Response
-     * @implements module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsignfolderImportEzsigntemplatepackageV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsignfolderImportEzsigntemplatepackageV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderImportEzsigntemplatepackageV1Response();
-            EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsignfolderImportEzsigntemplatepackageV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsignfolderImportEzsigntemplatepackageV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload} mPayload
- */
-EzsignfolderImportEzsigntemplatepackageV1Response.prototype['mPayload'] = undefined;
+EzsignfolderImportEzsigntemplatepackageV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsignfolderImportEzsigntemplatepackageV1Response.prototype['objDebugPayload'] =
  */
 EzsignfolderImportEzsigntemplatepackageV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload} mPayload
  */
-EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsignfolderImportEzsigntemplatepackageV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

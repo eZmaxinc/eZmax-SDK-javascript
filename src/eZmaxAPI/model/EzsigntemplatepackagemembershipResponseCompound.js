@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import EzsigntemplateResponseCompound from './EzsigntemplateResponseCompound';
 import EzsigntemplatepackagemembershipResponse from './EzsigntemplatepackagemembershipResponse';
-import EzsigntemplatepackagemembershipResponseCompoundAllOf from './EzsigntemplatepackagemembershipResponseCompoundAllOf';
 import EzsigntemplatepackagesignermembershipResponseCompound from './EzsigntemplatepackagesignermembershipResponseCompound';
 
 /**
@@ -28,7 +27,6 @@ class EzsigntemplatepackagemembershipResponseCompound {
      * A Ezsigntemplatepackagemembership Object
      * @alias module:eZmaxAPI/model/EzsigntemplatepackagemembershipResponseCompound
      * @implements module:eZmaxAPI/model/EzsigntemplatepackagemembershipResponse
-     * @implements module:eZmaxAPI/model/EzsigntemplatepackagemembershipResponseCompoundAllOf
      * @param pkiEzsigntemplatepackagemembershipID {Number} The unique ID of the Ezsigntemplatepackagemembership
      * @param fkiEzsigntemplatepackageID {Number} The unique ID of the Ezsigntemplatepackage
      * @param fkiEzsigntemplateID {Number} The unique ID of the Ezsigntemplate
@@ -37,7 +35,7 @@ class EzsigntemplatepackagemembershipResponseCompound {
      * @param a_objEzsigntemplatepackagesignermembership {Array.<module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipResponseCompound>} 
      */
     constructor(pkiEzsigntemplatepackagemembershipID, fkiEzsigntemplatepackageID, fkiEzsigntemplateID, iEzsigntemplatepackagemembershipOrder, objEzsigntemplate, a_objEzsigntemplatepackagesignermembership) { 
-        EzsigntemplatepackagemembershipResponse.initialize(this, pkiEzsigntemplatepackagemembershipID, fkiEzsigntemplatepackageID, fkiEzsigntemplateID, iEzsigntemplatepackagemembershipOrder);EzsigntemplatepackagemembershipResponseCompoundAllOf.initialize(this, objEzsigntemplate, a_objEzsigntemplatepackagesignermembership);
+        EzsigntemplatepackagemembershipResponse.initialize(this, pkiEzsigntemplatepackagemembershipID, fkiEzsigntemplatepackageID, fkiEzsigntemplateID, iEzsigntemplatepackagemembershipOrder);
         EzsigntemplatepackagemembershipResponseCompound.initialize(this, pkiEzsigntemplatepackagemembershipID, fkiEzsigntemplatepackageID, fkiEzsigntemplateID, iEzsigntemplatepackagemembershipOrder, objEzsigntemplate, a_objEzsigntemplatepackagesignermembership);
     }
 
@@ -66,7 +64,6 @@ class EzsigntemplatepackagemembershipResponseCompound {
         if (data) {
             obj = obj || new EzsigntemplatepackagemembershipResponseCompound();
             EzsigntemplatepackagemembershipResponse.constructFromObject(data, obj);
-            EzsigntemplatepackagemembershipResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsigntemplatepackagemembershipID')) {
                 obj['pkiEzsigntemplatepackagemembershipID'] = ApiClient.convertToType(data['pkiEzsigntemplatepackagemembershipID'], 'Number');
@@ -271,15 +268,6 @@ EzsigntemplatepackagemembershipResponse.prototype['fkiEzsigntemplateID'] = undef
  * @member {Number} iEzsigntemplatepackagemembershipOrder
  */
 EzsigntemplatepackagemembershipResponse.prototype['iEzsigntemplatepackagemembershipOrder'] = undefined;
-// Implement EzsigntemplatepackagemembershipResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplateResponseCompound} objEzsigntemplate
- */
-EzsigntemplatepackagemembershipResponseCompoundAllOf.prototype['objEzsigntemplate'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipResponseCompound>} a_objEzsigntemplatepackagesignermembership
- */
-EzsigntemplatepackagemembershipResponseCompoundAllOf.prototype['a_objEzsigntemplatepackagesignermembership'] = undefined;
 
 
 

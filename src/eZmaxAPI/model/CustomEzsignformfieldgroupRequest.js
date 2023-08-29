@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CustomEzsignformfieldRequest from './CustomEzsignformfieldRequest';
-import CustomEzsignformfieldgroupRequestAllOf from './CustomEzsignformfieldgroupRequestAllOf';
 
 /**
  * The CustomEzsignformfieldgroupRequest model module.
@@ -25,11 +24,10 @@ class CustomEzsignformfieldgroupRequest {
      * Constructs a new <code>CustomEzsignformfieldgroupRequest</code>.
      * A Custom Ezsignformfieldgroup Object to fill an Ezsignform using submitForm
      * @alias module:eZmaxAPI/model/CustomEzsignformfieldgroupRequest
-     * @implements module:eZmaxAPI/model/CustomEzsignformfieldgroupRequestAllOf
      * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/CustomEzsignformfieldRequest>} An array containing all the values to fill the Ezsignform.
      */
     constructor(a_objEzsignformfield) { 
-        CustomEzsignformfieldgroupRequestAllOf.initialize(this, a_objEzsignformfield);
+        
         CustomEzsignformfieldgroupRequest.initialize(this, a_objEzsignformfield);
     }
 
@@ -52,7 +50,6 @@ class CustomEzsignformfieldgroupRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzsignformfieldgroupRequest();
-            CustomEzsignformfieldgroupRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignformfieldgroupID')) {
                 obj['pkiEzsignformfieldgroupID'] = ApiClient.convertToType(data['pkiEzsignformfieldgroupID'], 'Number');
@@ -167,22 +164,6 @@ CustomEzsignformfieldgroupRequest.prototype['sEzsignformfieldgroupLabel'] = unde
 CustomEzsignformfieldgroupRequest.prototype['a_objEzsignformfield'] = undefined;
 
 
-// Implement CustomEzsignformfieldgroupRequestAllOf interface:
-/**
- * The unique ID of the Ezsignformfieldgroup
- * @member {Number} pkiEzsignformfieldgroupID
- */
-CustomEzsignformfieldgroupRequestAllOf.prototype['pkiEzsignformfieldgroupID'] = undefined;
-/**
- * The Label for the Ezsignformfieldgroup
- * @member {String} sEzsignformfieldgroupLabel
- */
-CustomEzsignformfieldgroupRequestAllOf.prototype['sEzsignformfieldgroupLabel'] = undefined;
-/**
- * An array containing all the values to fill the Ezsignform.
- * @member {Array.<module:eZmaxAPI/model/CustomEzsignformfieldRequest>} a_objEzsignformfield
- */
-CustomEzsignformfieldgroupRequestAllOf.prototype['a_objEzsignformfield'] = undefined;
 
 
 

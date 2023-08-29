@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('userGetApikeysV1', function() {
+      it('should call userGetApikeysV1 successfully', function(done) {
+        //uncomment below and update the code to test userGetApikeysV1
+        //instance.userGetApikeysV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('userGetAutocompleteV2', function() {
       it('should call userGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test userGetAutocompleteV2
@@ -132,6 +142,16 @@
       it('should call userGetSubnetsV1 successfully', function(done) {
         //uncomment below and update the code to test userGetSubnetsV1
         //instance.userGetSubnetsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('userSendPasswordResetV1', function() {
+      it('should call userSendPasswordResetV1 successfully', function(done) {
+        //uncomment below and update the code to test userSendPasswordResetV1
+        //instance.userSendPasswordResetV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

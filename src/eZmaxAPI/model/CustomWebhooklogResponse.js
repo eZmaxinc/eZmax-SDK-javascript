@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomWebhooklogResponseAllOf from './CustomWebhooklogResponseAllOf';
 
 /**
  * The CustomWebhooklogResponse model module.
@@ -24,12 +23,11 @@ class CustomWebhooklogResponse {
      * Constructs a new <code>CustomWebhooklogResponse</code>.
      * A custom Webhooklog object
      * @alias module:eZmaxAPI/model/CustomWebhooklogResponse
-     * @implements module:eZmaxAPI/model/CustomWebhooklogResponseAllOf
      * @param dtWebhooklogDate {String} The date and time at which the Webhooklog happened.
      * @param tWebhooklogJson {String} The Json containing the Webhook call and return
      */
     constructor(dtWebhooklogDate, tWebhooklogJson) { 
-        CustomWebhooklogResponseAllOf.initialize(this, dtWebhooklogDate, tWebhooklogJson);
+        
         CustomWebhooklogResponse.initialize(this, dtWebhooklogDate, tWebhooklogJson);
     }
 
@@ -53,7 +51,6 @@ class CustomWebhooklogResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomWebhooklogResponse();
-            CustomWebhooklogResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('dtWebhooklogDate')) {
                 obj['dtWebhooklogDate'] = ApiClient.convertToType(data['dtWebhooklogDate'], 'String');
@@ -137,17 +134,6 @@ CustomWebhooklogResponse.prototype['dtWebhooklogDate'] = undefined;
 CustomWebhooklogResponse.prototype['tWebhooklogJson'] = undefined;
 
 
-// Implement CustomWebhooklogResponseAllOf interface:
-/**
- * The date and time at which the Webhooklog happened.
- * @member {String} dtWebhooklogDate
- */
-CustomWebhooklogResponseAllOf.prototype['dtWebhooklogDate'] = undefined;
-/**
- * The Json containing the Webhook call and return
- * @member {String} tWebhooklogJson
- */
-CustomWebhooklogResponseAllOf.prototype['tWebhooklogJson'] = undefined;
 
 
 

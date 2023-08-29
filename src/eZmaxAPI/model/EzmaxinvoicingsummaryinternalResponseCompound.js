@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzmaxinvoicingsummaryinternalResponse from './EzmaxinvoicingsummaryinternalResponse';
-import EzmaxinvoicingsummaryinternalResponseCompoundAllOf from './EzmaxinvoicingsummaryinternalResponseCompoundAllOf';
 import EzmaxinvoicingsummaryinternaldetailResponseCompound from './EzmaxinvoicingsummaryinternaldetailResponseCompound';
 import MultilingualEzmaxinvoicingsummaryinternalDescription from './MultilingualEzmaxinvoicingsummaryinternalDescription';
 
@@ -28,7 +27,6 @@ class EzmaxinvoicingsummaryinternalResponseCompound {
      * A Ezmaxinvoicingsummaryinternal Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingsummaryinternalResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryinternalResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryinternalResponseCompoundAllOf
      * @param objEzmaxinvoicingsummaryinternalDescription {module:eZmaxAPI/model/MultilingualEzmaxinvoicingsummaryinternalDescription} 
      * @param sEzmaxinvoicingsummaryinternalDescriptionX {String} The Ezmaxinvoicingsummaryinternal description in the language of the requester
      * @param fkiBillingentityinternalID {Number} The unique ID of the Billingentityinternal.
@@ -36,7 +34,7 @@ class EzmaxinvoicingsummaryinternalResponseCompound {
      * @param a_objEzmaxinvoicingsummaryinternaldetail {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryinternaldetailResponseCompound>} 
      */
     constructor(objEzmaxinvoicingsummaryinternalDescription, sEzmaxinvoicingsummaryinternalDescriptionX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, a_objEzmaxinvoicingsummaryinternaldetail) { 
-        EzmaxinvoicingsummaryinternalResponse.initialize(this, objEzmaxinvoicingsummaryinternalDescription, sEzmaxinvoicingsummaryinternalDescriptionX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX);EzmaxinvoicingsummaryinternalResponseCompoundAllOf.initialize(this, a_objEzmaxinvoicingsummaryinternaldetail);
+        EzmaxinvoicingsummaryinternalResponse.initialize(this, objEzmaxinvoicingsummaryinternalDescription, sEzmaxinvoicingsummaryinternalDescriptionX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX);
         EzmaxinvoicingsummaryinternalResponseCompound.initialize(this, objEzmaxinvoicingsummaryinternalDescription, sEzmaxinvoicingsummaryinternalDescriptionX, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, a_objEzmaxinvoicingsummaryinternaldetail);
     }
 
@@ -64,7 +62,6 @@ class EzmaxinvoicingsummaryinternalResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingsummaryinternalResponseCompound();
             EzmaxinvoicingsummaryinternalResponse.constructFromObject(data, obj);
-            EzmaxinvoicingsummaryinternalResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingsummaryinternalID')) {
                 obj['pkiEzmaxinvoicingsummaryinternalID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingsummaryinternalID'], 'Number');
@@ -312,12 +309,6 @@ EzmaxinvoicingsummaryinternalResponse.prototype['fkiBillingentityinternalID'] = 
  * @member {String} sBillingentityinternalDescriptionX
  */
 EzmaxinvoicingsummaryinternalResponse.prototype['sBillingentityinternalDescriptionX'] = undefined;
-// Implement EzmaxinvoicingsummaryinternalResponseCompoundAllOf interface:
-/**
- * 
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryinternaldetailResponseCompound>} a_objEzmaxinvoicingsummaryinternaldetail
- */
-EzmaxinvoicingsummaryinternalResponseCompoundAllOf.prototype['a_objEzmaxinvoicingsummaryinternaldetail'] = undefined;
 
 
 

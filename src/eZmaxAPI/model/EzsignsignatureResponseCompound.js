@@ -16,7 +16,6 @@ import CustomContactNameResponse from './CustomContactNameResponse';
 import CustomCreditcardtransactionResponse from './CustomCreditcardtransactionResponse';
 import EnumTextvalidation from './EnumTextvalidation';
 import EzsignsignatureResponse from './EzsignsignatureResponse';
-import EzsignsignatureResponseCompoundAllOf from './EzsignsignatureResponseCompoundAllOf';
 import EzsignsignaturecustomdateResponseCompound from './EzsignsignaturecustomdateResponseCompound';
 import FieldEEzsignsignatureAttachmentnamesource from './FieldEEzsignsignatureAttachmentnamesource';
 import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
@@ -35,7 +34,6 @@ class EzsignsignatureResponseCompound {
      * An Ezsignsignature Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignatureResponseCompound
      * @implements module:eZmaxAPI/model/EzsignsignatureResponse
-     * @implements module:eZmaxAPI/model/EzsignsignatureResponseCompoundAllOf
      * @param pkiEzsignsignatureID {Number} The unique ID of the Ezsignsignature
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param fkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
@@ -47,7 +45,7 @@ class EzsignsignatureResponseCompound {
      * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
     constructor(pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName) { 
-        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName);EzsignsignatureResponseCompoundAllOf.initialize(this);
+        EzsignsignatureResponse.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName);
         EzsignsignatureResponseCompound.initialize(this, pkiEzsignsignatureID, fkiEzsigndocumentID, fkiEzsignfoldersignerassociationID, iEzsignpagePagenumber, iEzsignsignatureX, iEzsignsignatureY, iEzsignsignatureStep, eEzsignsignatureType, objContactName);
     }
 
@@ -79,7 +77,6 @@ class EzsignsignatureResponseCompound {
         if (data) {
             obj = obj || new EzsignsignatureResponseCompound();
             EzsignsignatureResponse.constructFromObject(data, obj);
-            EzsignsignatureResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignsignatureID')) {
                 obj['pkiEzsignsignatureID'] = ApiClient.convertToType(data['pkiEzsignsignatureID'], 'Number');
@@ -143,6 +140,9 @@ class EzsignsignatureResponseCompound {
             }
             if (data.hasOwnProperty('sEzsignsignatureDescription')) {
                 obj['sEzsignsignatureDescription'] = ApiClient.convertToType(data['sEzsignsignatureDescription'], 'String');
+            }
+            if (data.hasOwnProperty('iEzsignsignatureMaxlength')) {
+                obj['iEzsignsignatureMaxlength'] = ApiClient.convertToType(data['iEzsignsignatureMaxlength'], 'Number');
             }
             if (data.hasOwnProperty('eEzsignsignatureTextvalidation')) {
                 obj['eEzsignsignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignsignatureTextvalidation']);
@@ -544,6 +544,23 @@ class EzsignsignatureResponseCompound {
         this['sEzsignsignatureDescription'] = sEzsignsignatureDescription;
     }
 /**
+     * Returns The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * minimum: 0
+     * maximum: 65535
+     * @return {Number}
+     */
+    getIEzsignsignatureMaxlength() {
+        return this.iEzsignsignatureMaxlength;
+    }
+
+    /**
+     * Sets The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * @param {Number} iEzsignsignatureMaxlength The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     */
+    setIEzsignsignatureMaxlength(iEzsignsignatureMaxlength) {
+        this['iEzsignsignatureMaxlength'] = iEzsignsignatureMaxlength;
+    }
+/**
      * @return {module:eZmaxAPI/model/EnumTextvalidation}
      */
     getEEzsignsignatureTextvalidation() {
@@ -768,6 +785,12 @@ EzsignsignatureResponseCompound.prototype['iEzsignsignatureattachmentCount'] = u
 EzsignsignatureResponseCompound.prototype['sEzsignsignatureDescription'] = undefined;
 
 /**
+ * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsignsignatureMaxlength
+ */
+EzsignsignatureResponseCompound.prototype['iEzsignsignatureMaxlength'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignsignatureTextvalidation
  */
 EzsignsignatureResponseCompound.prototype['eEzsignsignatureTextvalidation'] = undefined;
@@ -909,6 +932,11 @@ EzsignsignatureResponse.prototype['iEzsignsignatureattachmentCount'] = undefined
  */
 EzsignsignatureResponse.prototype['sEzsignsignatureDescription'] = undefined;
 /**
+ * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsignsignatureMaxlength
+ */
+EzsignsignatureResponse.prototype['iEzsignsignatureMaxlength'] = undefined;
+/**
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignsignatureTextvalidation
  */
 EzsignsignatureResponse.prototype['eEzsignsignatureTextvalidation'] = undefined;
@@ -925,21 +953,6 @@ EzsignsignatureResponse.prototype['objContactName'] = undefined;
  * @member {module:eZmaxAPI/model/SignatureResponseCompound} objSignature
  */
 EzsignsignatureResponse.prototype['objSignature'] = undefined;
-// Implement EzsignsignatureResponseCompoundAllOf interface:
-/**
- * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
- * @member {Boolean} bEzsignsignatureCustomdate
- */
-EzsignsignatureResponseCompoundAllOf.prototype['bEzsignsignatureCustomdate'] = undefined;
-/**
- * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsignsignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
- * @member {Array.<module:eZmaxAPI/model/EzsignsignaturecustomdateResponseCompound>} a_objEzsignsignaturecustomdate
- */
-EzsignsignatureResponseCompoundAllOf.prototype['a_objEzsignsignaturecustomdate'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
- */
-EzsignsignatureResponseCompoundAllOf.prototype['objCreditcardtransaction'] = undefined;
 
 
 

@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import PaymenttermGetListV1ResponseMPayloadAllOf from './PaymenttermGetListV1ResponseMPayloadAllOf';
 import PaymenttermListElement from './PaymenttermListElement';
 
 /**
@@ -26,15 +25,14 @@ class PaymenttermGetListV1ResponseMPayload {
      * Constructs a new <code>PaymenttermGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/paymentterm/getList
      * @alias module:eZmaxAPI/model/PaymenttermGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/PaymenttermGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objPaymentterm {Array.<module:eZmaxAPI/model/PaymenttermListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objPaymentterm {Array.<module:eZmaxAPI/model/PaymenttermListElement>} 
      */
-    constructor(a_objPaymentterm, iRowReturned, iRowFiltered) { 
-        PaymenttermGetListV1ResponseMPayloadAllOf.initialize(this, a_objPaymentterm);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        PaymenttermGetListV1ResponseMPayload.initialize(this, a_objPaymentterm, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objPaymentterm) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        PaymenttermGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objPaymentterm);
     }
 
     /**
@@ -42,10 +40,10 @@ class PaymenttermGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objPaymentterm, iRowReturned, iRowFiltered) { 
-        obj['a_objPaymentterm'] = a_objPaymentterm;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objPaymentterm) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objPaymentterm'] = a_objPaymentterm;
     }
 
     /**
@@ -58,17 +56,16 @@ class PaymenttermGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaymenttermGetListV1ResponseMPayload();
-            PaymenttermGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objPaymentterm')) {
-                obj['a_objPaymentterm'] = ApiClient.convertToType(data['a_objPaymentterm'], [PaymenttermListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objPaymentterm')) {
+                obj['a_objPaymentterm'] = ApiClient.convertToType(data['a_objPaymentterm'], [PaymenttermListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class PaymenttermGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/PaymenttermListElement>}
-     */
-    getAObjPaymentterm() {
-        return this.a_objPaymentterm;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/PaymenttermListElement>} a_objPaymentterm
-     */
-    setAObjPaymentterm(a_objPaymentterm) {
-        this['a_objPaymentterm'] = a_objPaymentterm;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class PaymenttermGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/PaymenttermListElement>}
+     */
+    getAObjPaymentterm() {
+        return this.a_objPaymentterm;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/PaymenttermListElement>} a_objPaymentterm
+     */
+    setAObjPaymentterm(a_objPaymentterm) {
+        this['a_objPaymentterm'] = a_objPaymentterm;
+    }
 
 }
 
-PaymenttermGetListV1ResponseMPayload.RequiredProperties = ["a_objPaymentterm", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/PaymenttermListElement>} a_objPaymentterm
- */
-PaymenttermGetListV1ResponseMPayload.prototype['a_objPaymentterm'] = undefined;
+PaymenttermGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objPaymentterm"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ PaymenttermGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 PaymenttermGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement PaymenttermGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/PaymenttermListElement>} a_objPaymentterm
  */
-PaymenttermGetListV1ResponseMPayloadAllOf.prototype['a_objPaymentterm'] = undefined;
+PaymenttermGetListV1ResponseMPayload.prototype['a_objPaymentterm'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

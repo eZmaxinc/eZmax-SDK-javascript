@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomNotificationsubsectiongetnotificationtestsResponseAllOf from './CustomNotificationsubsectiongetnotificationtestsResponseAllOf';
 import CustomNotificationtestgetnotificationtestsResponse from './CustomNotificationtestgetnotificationtestsResponse';
 import MultilingualNotificationsubsectionName from './MultilingualNotificationsubsectionName';
 import NotificationsubsectionResponse from './NotificationsubsectionResponse';
@@ -28,14 +27,13 @@ class CustomNotificationsubsectiongetnotificationtestsResponse {
      * A Notificationsubsection Object in the context of getNotificationtests
      * @alias module:eZmaxAPI/model/CustomNotificationsubsectiongetnotificationtestsResponse
      * @implements module:eZmaxAPI/model/NotificationsubsectionResponse
-     * @implements module:eZmaxAPI/model/CustomNotificationsubsectiongetnotificationtestsResponseAllOf
      * @param pkiNotificationsubsectionID {Number} The unique ID of the Notificationsubsection
      * @param fkiNotificationsectionID {Number} The unique ID of the Notificationsection
      * @param sNotificationsubsectionNameX {String} The name of the Notificationsubsection in the language of the requester
      * @param a_objNotificationtest {Array.<module:eZmaxAPI/model/CustomNotificationtestgetnotificationtestsResponse>} 
      */
     constructor(pkiNotificationsubsectionID, fkiNotificationsectionID, sNotificationsubsectionNameX, a_objNotificationtest) { 
-        NotificationsubsectionResponse.initialize(this, pkiNotificationsubsectionID, fkiNotificationsectionID, sNotificationsubsectionNameX);CustomNotificationsubsectiongetnotificationtestsResponseAllOf.initialize(this, a_objNotificationtest);
+        NotificationsubsectionResponse.initialize(this, pkiNotificationsubsectionID, fkiNotificationsectionID, sNotificationsubsectionNameX);
         CustomNotificationsubsectiongetnotificationtestsResponse.initialize(this, pkiNotificationsubsectionID, fkiNotificationsectionID, sNotificationsubsectionNameX, a_objNotificationtest);
     }
 
@@ -62,7 +60,6 @@ class CustomNotificationsubsectiongetnotificationtestsResponse {
         if (data) {
             obj = obj || new CustomNotificationsubsectiongetnotificationtestsResponse();
             NotificationsubsectionResponse.constructFromObject(data, obj);
-            CustomNotificationsubsectiongetnotificationtestsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiNotificationsubsectionID')) {
                 obj['pkiNotificationsubsectionID'] = ApiClient.convertToType(data['pkiNotificationsubsectionID'], 'Number');
@@ -277,11 +274,6 @@ NotificationsubsectionResponse.prototype['sNotificationsectionNameX'] = undefine
  * @member {String} sNotificationsubsectionNameX
  */
 NotificationsubsectionResponse.prototype['sNotificationsubsectionNameX'] = undefined;
-// Implement CustomNotificationsubsectiongetnotificationtestsResponseAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomNotificationtestgetnotificationtestsResponse>} a_objNotificationtest
- */
-CustomNotificationsubsectiongetnotificationtestsResponseAllOf.prototype['a_objNotificationtest'] = undefined;
 
 
 

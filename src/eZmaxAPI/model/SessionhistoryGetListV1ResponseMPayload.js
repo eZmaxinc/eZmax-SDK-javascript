@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import SessionhistoryGetListV1ResponseMPayloadAllOf from './SessionhistoryGetListV1ResponseMPayloadAllOf';
 import SessionhistoryListElement from './SessionhistoryListElement';
 
 /**
@@ -26,15 +25,14 @@ class SessionhistoryGetListV1ResponseMPayload {
      * Constructs a new <code>SessionhistoryGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/sessionhistory/getList
      * @alias module:eZmaxAPI/model/SessionhistoryGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/SessionhistoryGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objSessionhistory {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objSessionhistory {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} 
      */
-    constructor(a_objSessionhistory, iRowReturned, iRowFiltered) { 
-        SessionhistoryGetListV1ResponseMPayloadAllOf.initialize(this, a_objSessionhistory);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        SessionhistoryGetListV1ResponseMPayload.initialize(this, a_objSessionhistory, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objSessionhistory) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        SessionhistoryGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objSessionhistory);
     }
 
     /**
@@ -42,10 +40,10 @@ class SessionhistoryGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objSessionhistory, iRowReturned, iRowFiltered) { 
-        obj['a_objSessionhistory'] = a_objSessionhistory;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objSessionhistory) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objSessionhistory'] = a_objSessionhistory;
     }
 
     /**
@@ -58,17 +56,16 @@ class SessionhistoryGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SessionhistoryGetListV1ResponseMPayload();
-            SessionhistoryGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objSessionhistory')) {
-                obj['a_objSessionhistory'] = ApiClient.convertToType(data['a_objSessionhistory'], [SessionhistoryListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objSessionhistory')) {
+                obj['a_objSessionhistory'] = ApiClient.convertToType(data['a_objSessionhistory'], [SessionhistoryListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class SessionhistoryGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/SessionhistoryListElement>}
-     */
-    getAObjSessionhistory() {
-        return this.a_objSessionhistory;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} a_objSessionhistory
-     */
-    setAObjSessionhistory(a_objSessionhistory) {
-        this['a_objSessionhistory'] = a_objSessionhistory;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class SessionhistoryGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/SessionhistoryListElement>}
+     */
+    getAObjSessionhistory() {
+        return this.a_objSessionhistory;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} a_objSessionhistory
+     */
+    setAObjSessionhistory(a_objSessionhistory) {
+        this['a_objSessionhistory'] = a_objSessionhistory;
+    }
 
 }
 
-SessionhistoryGetListV1ResponseMPayload.RequiredProperties = ["a_objSessionhistory", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} a_objSessionhistory
- */
-SessionhistoryGetListV1ResponseMPayload.prototype['a_objSessionhistory'] = undefined;
+SessionhistoryGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objSessionhistory"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ SessionhistoryGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 SessionhistoryGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement SessionhistoryGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/SessionhistoryListElement>} a_objSessionhistory
  */
-SessionhistoryGetListV1ResponseMPayloadAllOf.prototype['a_objSessionhistory'] = undefined;
+SessionhistoryGetListV1ResponseMPayload.prototype['a_objSessionhistory'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

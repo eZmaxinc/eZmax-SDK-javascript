@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import EzsigntemplatepackageGetListV1ResponseMPayloadAllOf from './EzsigntemplatepackageGetListV1ResponseMPayloadAllOf';
 import EzsigntemplatepackageListElement from './EzsigntemplatepackageListElement';
 
 /**
@@ -26,15 +25,14 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
      * Constructs a new <code>EzsigntemplatepackageGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/ezsigntemplatepackage/getList
      * @alias module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsigntemplatepackageGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objEzsigntemplatepackage {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objEzsigntemplatepackage {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} 
      */
-    constructor(a_objEzsigntemplatepackage, iRowReturned, iRowFiltered) { 
-        EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.initialize(this, a_objEzsigntemplatepackage);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        EzsigntemplatepackageGetListV1ResponseMPayload.initialize(this, a_objEzsigntemplatepackage, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objEzsigntemplatepackage) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        EzsigntemplatepackageGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objEzsigntemplatepackage);
     }
 
     /**
@@ -42,10 +40,10 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objEzsigntemplatepackage, iRowReturned, iRowFiltered) { 
-        obj['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objEzsigntemplatepackage) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
     }
 
     /**
@@ -58,17 +56,16 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplatepackageGetListV1ResponseMPayload();
-            EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objEzsigntemplatepackage')) {
-                obj['a_objEzsigntemplatepackage'] = ApiClient.convertToType(data['a_objEzsigntemplatepackage'], [EzsigntemplatepackageListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objEzsigntemplatepackage')) {
+                obj['a_objEzsigntemplatepackage'] = ApiClient.convertToType(data['a_objEzsigntemplatepackage'], [EzsigntemplatepackageListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>}
-     */
-    getAObjEzsigntemplatepackage() {
-        return this.a_objEzsigntemplatepackage;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
-     */
-    setAObjEzsigntemplatepackage(a_objEzsigntemplatepackage) {
-        this['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class EzsigntemplatepackageGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>}
+     */
+    getAObjEzsigntemplatepackage() {
+        return this.a_objEzsigntemplatepackage;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
+     */
+    setAObjEzsigntemplatepackage(a_objEzsigntemplatepackage) {
+        this['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
+    }
 
 }
 
-EzsigntemplatepackageGetListV1ResponseMPayload.RequiredProperties = ["a_objEzsigntemplatepackage", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
- */
-EzsigntemplatepackageGetListV1ResponseMPayload.prototype['a_objEzsigntemplatepackage'] = undefined;
+EzsigntemplatepackageGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objEzsigntemplatepackage"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ EzsigntemplatepackageGetListV1ResponseMPayload.prototype['iRowReturned'] = undef
  */
 EzsigntemplatepackageGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement EzsigntemplatepackageGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageListElement>} a_objEzsigntemplatepackage
  */
-EzsigntemplatepackageGetListV1ResponseMPayloadAllOf.prototype['a_objEzsigntemplatepackage'] = undefined;
+EzsigntemplatepackageGetListV1ResponseMPayload.prototype['a_objEzsigntemplatepackage'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomNotificationtestgetnotificationtestsResponseAllOf from './CustomNotificationtestgetnotificationtestsResponseAllOf';
 import FieldENotificationpreferenceStatus from './FieldENotificationpreferenceStatus';
 import MultilingualNotificationtestName from './MultilingualNotificationtestName';
 import NotificationtestResponse from './NotificationtestResponse';
@@ -28,7 +27,6 @@ class CustomNotificationtestgetnotificationtestsResponse {
      * A Notificationtest Object in the context of getNotificationtests
      * @alias module:eZmaxAPI/model/CustomNotificationtestgetnotificationtestsResponse
      * @implements module:eZmaxAPI/model/NotificationtestResponse
-     * @implements module:eZmaxAPI/model/CustomNotificationtestgetnotificationtestsResponseAllOf
      * @param pkiNotificationtestID {Number} The unique ID of the Notificationtest
      * @param objNotificationtestName {module:eZmaxAPI/model/MultilingualNotificationtestName} 
      * @param fkiNotificationsubsectionID {Number} The unique ID of the Notificationsubsection
@@ -38,7 +36,7 @@ class CustomNotificationtestgetnotificationtestsResponse {
      * @param iNotificationtest {Number} The number of elements returned by the Notificationtest
      */
     constructor(pkiNotificationtestID, objNotificationtestName, fkiNotificationsubsectionID, sNotificationtestFunction, sNotificationtestNameX, eNotificationpreferenceStatus, iNotificationtest) { 
-        NotificationtestResponse.initialize(this, pkiNotificationtestID, objNotificationtestName, fkiNotificationsubsectionID, sNotificationtestFunction, sNotificationtestNameX);CustomNotificationtestgetnotificationtestsResponseAllOf.initialize(this, eNotificationpreferenceStatus, iNotificationtest);
+        NotificationtestResponse.initialize(this, pkiNotificationtestID, objNotificationtestName, fkiNotificationsubsectionID, sNotificationtestFunction, sNotificationtestNameX);
         CustomNotificationtestgetnotificationtestsResponse.initialize(this, pkiNotificationtestID, objNotificationtestName, fkiNotificationsubsectionID, sNotificationtestFunction, sNotificationtestNameX, eNotificationpreferenceStatus, iNotificationtest);
     }
 
@@ -68,7 +66,6 @@ class CustomNotificationtestgetnotificationtestsResponse {
         if (data) {
             obj = obj || new CustomNotificationtestgetnotificationtestsResponse();
             NotificationtestResponse.constructFromObject(data, obj);
-            CustomNotificationtestgetnotificationtestsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiNotificationtestID')) {
                 obj['pkiNotificationtestID'] = ApiClient.convertToType(data['pkiNotificationtestID'], 'Number');
@@ -297,16 +294,6 @@ NotificationtestResponse.prototype['sNotificationtestFunction'] = undefined;
  * @member {String} sNotificationtestNameX
  */
 NotificationtestResponse.prototype['sNotificationtestNameX'] = undefined;
-// Implement CustomNotificationtestgetnotificationtestsResponseAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/FieldENotificationpreferenceStatus} eNotificationpreferenceStatus
- */
-CustomNotificationtestgetnotificationtestsResponseAllOf.prototype['eNotificationpreferenceStatus'] = undefined;
-/**
- * The number of elements returned by the Notificationtest
- * @member {Number} iNotificationtest
- */
-CustomNotificationtestgetnotificationtestsResponseAllOf.prototype['iNotificationtest'] = undefined;
 
 
 

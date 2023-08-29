@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayloadGetList from './CommonResponseObjDebugPayloadGetList';
-import EzsigntemplateGetListV1ResponseAllOf from './EzsigntemplateGetListV1ResponseAllOf';
 import EzsigntemplateGetListV1ResponseMPayload from './EzsigntemplateGetListV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigntemplateGetListV1Response {
      * Constructs a new <code>EzsigntemplateGetListV1Response</code>.
      * Response for GET /1/object/ezsigntemplate/getList
      * @alias module:eZmaxAPI/model/EzsigntemplateGetListV1Response
-     * @implements module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      * @param mPayload {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigntemplateGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
-        EzsigntemplateGetListV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponseGetList.initialize(this, objDebugPayload);
+        EzsigntemplateGetListV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigntemplateGetListV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigntemplateGetListV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplateGetListV1Response();
-            EzsigntemplateGetListV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponseGetList.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigntemplateGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigntemplateGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigntemplateGetListV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigntemplateGetListV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigntemplateGetListV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigntemplateGetListV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
@@ -139,15 +125,23 @@ class EzsigntemplateGetListV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigntemplateGetListV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload} mPayload
- */
-EzsigntemplateGetListV1Response.prototype['mPayload'] = undefined;
+EzsigntemplateGetListV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
@@ -159,12 +153,12 @@ EzsigntemplateGetListV1Response.prototype['objDebugPayload'] = undefined;
  */
 EzsigntemplateGetListV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigntemplateGetListV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplateGetListV1ResponseMPayload} mPayload
  */
-EzsigntemplateGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigntemplateGetListV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponseGetList interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

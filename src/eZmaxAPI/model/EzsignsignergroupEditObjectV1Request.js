@@ -24,10 +24,11 @@ class EzsignsignergroupEditObjectV1Request {
      * Constructs a new <code>EzsignsignergroupEditObjectV1Request</code>.
      * Request for PUT /1/object/ezsignsignergroup/{pkiEzsignsignergroupID}
      * @alias module:eZmaxAPI/model/EzsignsignergroupEditObjectV1Request
+     * @param objEzsignsignergroup {module:eZmaxAPI/model/EzsignsignergroupRequestCompound} 
      */
-    constructor() { 
+    constructor(objEzsignsignergroup) { 
         
-        EzsignsignergroupEditObjectV1Request.initialize(this);
+        EzsignsignergroupEditObjectV1Request.initialize(this, objEzsignsignergroup);
     }
 
     /**
@@ -35,7 +36,8 @@ class EzsignsignergroupEditObjectV1Request {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objEzsignsignergroup) { 
+        obj['objEzsignsignergroup'] = objEzsignsignergroup;
     }
 
     /**
@@ -49,8 +51,8 @@ class EzsignsignergroupEditObjectV1Request {
         if (data) {
             obj = obj || new EzsignsignergroupEditObjectV1Request();
 
-            if (data.hasOwnProperty('objBranding')) {
-                obj['objBranding'] = EzsignsignergroupRequestCompound.constructFromObject(data['objBranding']);
+            if (data.hasOwnProperty('objEzsignsignergroup')) {
+                obj['objEzsignsignergroup'] = EzsignsignergroupRequestCompound.constructFromObject(data['objEzsignsignergroup']);
             }
         }
         return obj;
@@ -62,9 +64,15 @@ class EzsignsignergroupEditObjectV1Request {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EzsignsignergroupEditObjectV1Request</code>.
      */
     static validateJSON(data) {
-        // validate the optional field `objBranding`
-        if (data['objBranding']) { // data not null
-          EzsignsignergroupRequestCompound.validateJSON(data['objBranding']);
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EzsignsignergroupEditObjectV1Request.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // validate the optional field `objEzsignsignergroup`
+        if (data['objEzsignsignergroup']) { // data not null
+          EzsignsignergroupRequestCompound.validateJSON(data['objEzsignsignergroup']);
         }
 
         return true;
@@ -73,25 +81,25 @@ class EzsignsignergroupEditObjectV1Request {
 /**
      * @return {module:eZmaxAPI/model/EzsignsignergroupRequestCompound}
      */
-    getObjBranding() {
-        return this.objBranding;
+    getObjEzsignsignergroup() {
+        return this.objEzsignsignergroup;
     }
 
     /**
-     * @param {module:eZmaxAPI/model/EzsignsignergroupRequestCompound} objBranding
+     * @param {module:eZmaxAPI/model/EzsignsignergroupRequestCompound} objEzsignsignergroup
      */
-    setObjBranding(objBranding) {
-        this['objBranding'] = objBranding;
+    setObjEzsignsignergroup(objEzsignsignergroup) {
+        this['objEzsignsignergroup'] = objEzsignsignergroup;
     }
 
 }
 
-
+EzsignsignergroupEditObjectV1Request.RequiredProperties = ["objEzsignsignergroup"];
 
 /**
- * @member {module:eZmaxAPI/model/EzsignsignergroupRequestCompound} objBranding
+ * @member {module:eZmaxAPI/model/EzsignsignergroupRequestCompound} objEzsignsignergroup
  */
-EzsignsignergroupEditObjectV1Request.prototype['objBranding'] = undefined;
+EzsignsignergroupEditObjectV1Request.prototype['objEzsignsignergroup'] = undefined;
 
 
 

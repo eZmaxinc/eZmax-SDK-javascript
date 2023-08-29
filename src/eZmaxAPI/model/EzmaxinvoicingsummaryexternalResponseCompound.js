@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzmaxinvoicingsummaryexternalResponse from './EzmaxinvoicingsummaryexternalResponse';
-import EzmaxinvoicingsummaryexternalResponseCompoundAllOf from './EzmaxinvoicingsummaryexternalResponseCompoundAllOf';
 import EzmaxinvoicingsummaryexternaldetailResponseCompound from './EzmaxinvoicingsummaryexternaldetailResponseCompound';
 
 /**
@@ -27,14 +26,13 @@ class EzmaxinvoicingsummaryexternalResponseCompound {
      * A Ezmaxinvoicingsummaryexternal Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingsummaryexternalResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryexternalResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingsummaryexternalResponseCompoundAllOf
      * @param fkiBillingentityexternalID {Number} The unique ID of the Billingentityexternal
      * @param sBillingentityexternalDescription {String} The description of the Billingentityexternal
      * @param sEzmaxinvoicingsummaryexternalDescription {String} The description of the Ezmaxinvoicingsummaryexternal
      * @param a_objEzmaxinvoicingsummaryexternaldetail {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryexternaldetailResponseCompound>} 
      */
     constructor(fkiBillingentityexternalID, sBillingentityexternalDescription, sEzmaxinvoicingsummaryexternalDescription, a_objEzmaxinvoicingsummaryexternaldetail) { 
-        EzmaxinvoicingsummaryexternalResponse.initialize(this, fkiBillingentityexternalID, sBillingentityexternalDescription, sEzmaxinvoicingsummaryexternalDescription);EzmaxinvoicingsummaryexternalResponseCompoundAllOf.initialize(this, a_objEzmaxinvoicingsummaryexternaldetail);
+        EzmaxinvoicingsummaryexternalResponse.initialize(this, fkiBillingentityexternalID, sBillingentityexternalDescription, sEzmaxinvoicingsummaryexternalDescription);
         EzmaxinvoicingsummaryexternalResponseCompound.initialize(this, fkiBillingentityexternalID, sBillingentityexternalDescription, sEzmaxinvoicingsummaryexternalDescription, a_objEzmaxinvoicingsummaryexternaldetail);
     }
 
@@ -61,7 +59,6 @@ class EzmaxinvoicingsummaryexternalResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingsummaryexternalResponseCompound();
             EzmaxinvoicingsummaryexternalResponse.constructFromObject(data, obj);
-            EzmaxinvoicingsummaryexternalResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingsummaryexternalID')) {
                 obj['pkiEzmaxinvoicingsummaryexternalID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingsummaryexternalID'], 'Number');
@@ -277,11 +274,6 @@ EzmaxinvoicingsummaryexternalResponse.prototype['sBillingentityexternalDescripti
  * @member {String} sEzmaxinvoicingsummaryexternalDescription
  */
 EzmaxinvoicingsummaryexternalResponse.prototype['sEzmaxinvoicingsummaryexternalDescription'] = undefined;
-// Implement EzmaxinvoicingsummaryexternalResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzmaxinvoicingsummaryexternaldetailResponseCompound>} a_objEzmaxinvoicingsummaryexternaldetail
- */
-EzmaxinvoicingsummaryexternalResponseCompoundAllOf.prototype['a_objEzmaxinvoicingsummaryexternaldetail'] = undefined;
 
 
 

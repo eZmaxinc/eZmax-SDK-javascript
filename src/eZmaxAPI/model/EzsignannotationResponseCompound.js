@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import EnumHorizontalalignment from './EnumHorizontalalignment';
 import EnumVerticalalignment from './EnumVerticalalignment';
 import EzsignannotationResponse from './EzsignannotationResponse';
-import EzsignannotationResponseCompoundAllOf from './EzsignannotationResponseCompoundAllOf';
 import FieldEEzsignannotationType from './FieldEEzsignannotationType';
 import TextstylestaticResponseCompound from './TextstylestaticResponseCompound';
 
@@ -30,7 +29,6 @@ class EzsignannotationResponseCompound {
      * A Ezsignannotation Object
      * @alias module:eZmaxAPI/model/EzsignannotationResponseCompound
      * @implements module:eZmaxAPI/model/EzsignannotationResponse
-     * @implements module:eZmaxAPI/model/EzsignannotationResponseCompoundAllOf
      * @param pkiEzsignannotationID {Number} The unique ID of the Ezsignannotation
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param eEzsignannotationType {module:eZmaxAPI/model/FieldEEzsignannotationType} 
@@ -39,7 +37,7 @@ class EzsignannotationResponseCompound {
      * @param iEzsignpagePagenumber {Number} The page number in the Ezsigndocument
      */
     constructor(pkiEzsignannotationID, fkiEzsigndocumentID, eEzsignannotationType, iEzsignannotationX, iEzsignannotationY, iEzsignpagePagenumber) { 
-        EzsignannotationResponse.initialize(this, pkiEzsignannotationID, fkiEzsigndocumentID, eEzsignannotationType, iEzsignannotationX, iEzsignannotationY, iEzsignpagePagenumber);EzsignannotationResponseCompoundAllOf.initialize(this);
+        EzsignannotationResponse.initialize(this, pkiEzsignannotationID, fkiEzsigndocumentID, eEzsignannotationType, iEzsignannotationX, iEzsignannotationY, iEzsignpagePagenumber);
         EzsignannotationResponseCompound.initialize(this, pkiEzsignannotationID, fkiEzsigndocumentID, eEzsignannotationType, iEzsignannotationX, iEzsignannotationY, iEzsignpagePagenumber);
     }
 
@@ -68,7 +66,6 @@ class EzsignannotationResponseCompound {
         if (data) {
             obj = obj || new EzsignannotationResponseCompound();
             EzsignannotationResponse.constructFromObject(data, obj);
-            EzsignannotationResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignannotationID')) {
                 obj['pkiEzsignannotationID'] = ApiClient.convertToType(data['pkiEzsignannotationID'], 'Number');
@@ -439,11 +436,6 @@ EzsignannotationResponse.prototype['sEzsignannotationText'] = undefined;
  * @member {Number} iEzsignpagePagenumber
  */
 EzsignannotationResponse.prototype['iEzsignpagePagenumber'] = undefined;
-// Implement EzsignannotationResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/TextstylestaticResponseCompound} objTextstylestatic
- */
-EzsignannotationResponseCompoundAllOf.prototype['objTextstylestatic'] = undefined;
 
 
 

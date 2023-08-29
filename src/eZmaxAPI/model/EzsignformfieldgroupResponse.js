@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsignformfieldgroupSignerrequirement from './FieldEEzsignformfieldgroupSignerrequirement';
 import FieldEEzsignformfieldgroupTooltipposition from './FieldEEzsignformfieldgroupTooltipposition';
 import FieldEEzsignformfieldgroupType from './FieldEEzsignformfieldgroupType';
@@ -104,6 +105,9 @@ class EzsignformfieldgroupResponse {
             }
             if (data.hasOwnProperty('bEzsignformfieldgroupEncrypted')) {
                 obj['bEzsignformfieldgroupEncrypted'] = ApiClient.convertToType(data['bEzsignformfieldgroupEncrypted'], 'Boolean');
+            }
+            if (data.hasOwnProperty('eEzsignformfieldgroupTextvalidation')) {
+                obj['eEzsignformfieldgroupTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignformfieldgroupTextvalidation']);
             }
             if (data.hasOwnProperty('sEzsignformfieldgroupRegexp')) {
                 obj['sEzsignformfieldgroupRegexp'] = ApiClient.convertToType(data['sEzsignformfieldgroupRegexp'], 'String');
@@ -304,6 +308,7 @@ class EzsignformfieldgroupResponse {
 /**
      * Returns The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsignformfieldgroupMaxlength() {
@@ -331,6 +336,19 @@ class EzsignformfieldgroupResponse {
      */
     setBEzsignformfieldgroupEncrypted(bEzsignformfieldgroupEncrypted) {
         this['bEzsignformfieldgroupEncrypted'] = bEzsignformfieldgroupEncrypted;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsignformfieldgroupTextvalidation() {
+        return this.eEzsignformfieldgroupTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
+     */
+    setEEzsignformfieldgroupTextvalidation(eEzsignformfieldgroupTextvalidation) {
+        this['eEzsignformfieldgroupTextvalidation'] = eEzsignformfieldgroupTextvalidation;
     }
 /**
      * Returns A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
@@ -449,6 +467,11 @@ EzsignformfieldgroupResponse.prototype['iEzsignformfieldgroupMaxlength'] = undef
  * @member {Boolean} bEzsignformfieldgroupEncrypted
  */
 EzsignformfieldgroupResponse.prototype['bEzsignformfieldgroupEncrypted'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
+ */
+EzsignformfieldgroupResponse.prototype['eEzsignformfieldgroupTextvalidation'] = undefined;
 
 /**
  * A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**

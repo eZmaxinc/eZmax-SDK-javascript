@@ -27,10 +27,11 @@ class EzsignfolderSendV3Response {
      * Response for POST /3/object/ezsignfolder/{pkiEzsignfolderID}/send
      * @alias module:eZmaxAPI/model/EzsignfolderSendV3Response
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsignfolderSendV3Response.initialize(this);
+    constructor(objDebugPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsignfolderSendV3Response.initialize(this, objDebugPayload);
     }
 
     /**
@@ -38,7 +39,8 @@ class EzsignfolderSendV3Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objDebugPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
     }
 
     /**
@@ -69,6 +71,12 @@ class EzsignfolderSendV3Response {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EzsignfolderSendV3Response</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EzsignfolderSendV3Response.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -110,7 +118,7 @@ class EzsignfolderSendV3Response {
 
 }
 
-
+EzsignfolderSendV3Response.RequiredProperties = ["objDebugPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

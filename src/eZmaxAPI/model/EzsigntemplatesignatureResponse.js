@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './FieldEEzsigntemplatesignatureAttachmentnamesource';
 import FieldEEzsigntemplatesignatureFont from './FieldEEzsigntemplatesignatureFont';
 import FieldEEzsigntemplatesignatureTooltipposition from './FieldEEzsigntemplatesignatureTooltipposition';
@@ -89,6 +90,12 @@ class EzsigntemplatesignatureResponse {
             if (data.hasOwnProperty('iEzsigntemplatesignatureY')) {
                 obj['iEzsigntemplatesignatureY'] = ApiClient.convertToType(data['iEzsigntemplatesignatureY'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureWidth')) {
+                obj['iEzsigntemplatesignatureWidth'] = ApiClient.convertToType(data['iEzsigntemplatesignatureWidth'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureHeight')) {
+                obj['iEzsigntemplatesignatureHeight'] = ApiClient.convertToType(data['iEzsigntemplatesignatureHeight'], 'Number');
+            }
             if (data.hasOwnProperty('iEzsigntemplatesignatureStep')) {
                 obj['iEzsigntemplatesignatureStep'] = ApiClient.convertToType(data['iEzsigntemplatesignatureStep'], 'Number');
             }
@@ -116,6 +123,15 @@ class EzsigntemplatesignatureResponse {
             if (data.hasOwnProperty('bEzsigntemplatesignatureRequired')) {
                 obj['bEzsigntemplatesignatureRequired'] = ApiClient.convertToType(data['bEzsigntemplatesignatureRequired'], 'Boolean');
             }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureMaxlength')) {
+                obj['iEzsigntemplatesignatureMaxlength'] = ApiClient.convertToType(data['iEzsigntemplatesignatureMaxlength'], 'Number');
+            }
+            if (data.hasOwnProperty('sEzsigntemplatesignatureRegexp')) {
+                obj['sEzsigntemplatesignatureRegexp'] = ApiClient.convertToType(data['sEzsigntemplatesignatureRegexp'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsigntemplatesignatureTextvalidation')) {
+                obj['eEzsigntemplatesignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplatesignatureTextvalidation']);
+            }
         }
         return obj;
     }
@@ -139,6 +155,10 @@ class EzsigntemplatesignatureResponse {
         // ensure the json data is a string
         if (data['sEzsigntemplatesignatureAttachmentdescription'] && !(typeof data['sEzsigntemplatesignatureAttachmentdescription'] === 'string' || data['sEzsigntemplatesignatureAttachmentdescription'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplatesignatureAttachmentdescription` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignatureAttachmentdescription']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplatesignatureRegexp'] && !(typeof data['sEzsigntemplatesignatureRegexp'] === 'string' || data['sEzsigntemplatesignatureRegexp'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplatesignatureRegexp` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignatureRegexp']);
         }
 
         return true;
@@ -255,6 +275,38 @@ class EzsigntemplatesignatureResponse {
      */
     setIEzsigntemplatesignatureY(iEzsigntemplatesignatureY) {
         this['iEzsigntemplatesignatureY'] = iEzsigntemplatesignatureY;
+    }
+/**
+     * Returns The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     * minimum: 0
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureWidth() {
+        return this.iEzsigntemplatesignatureWidth;
+    }
+
+    /**
+     * Sets The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     * @param {Number} iEzsigntemplatesignatureWidth The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     */
+    setIEzsigntemplatesignatureWidth(iEzsigntemplatesignatureWidth) {
+        this['iEzsigntemplatesignatureWidth'] = iEzsigntemplatesignatureWidth;
+    }
+/**
+     * Returns The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     * minimum: 0
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureHeight() {
+        return this.iEzsigntemplatesignatureHeight;
+    }
+
+    /**
+     * Sets The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     * @param {Number} iEzsigntemplatesignatureHeight The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     */
+    setIEzsigntemplatesignatureHeight(iEzsigntemplatesignatureHeight) {
+        this['iEzsigntemplatesignatureHeight'] = iEzsigntemplatesignatureHeight;
     }
 /**
      * Returns The step when the Ezsigntemplatesigner will be invited to sign
@@ -384,6 +436,51 @@ class EzsigntemplatesignatureResponse {
     setBEzsigntemplatesignatureRequired(bEzsigntemplatesignatureRequired) {
         this['bEzsigntemplatesignatureRequired'] = bEzsigntemplatesignatureRequired;
     }
+/**
+     * Returns The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     * minimum: 0
+     * maximum: 65535
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureMaxlength() {
+        return this.iEzsigntemplatesignatureMaxlength;
+    }
+
+    /**
+     * Sets The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     * @param {Number} iEzsigntemplatesignatureMaxlength The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     */
+    setIEzsigntemplatesignatureMaxlength(iEzsigntemplatesignatureMaxlength) {
+        this['iEzsigntemplatesignatureMaxlength'] = iEzsigntemplatesignatureMaxlength;
+    }
+/**
+     * Returns A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     * @return {String}
+     */
+    getSEzsigntemplatesignatureRegexp() {
+        return this.sEzsigntemplatesignatureRegexp;
+    }
+
+    /**
+     * Sets A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     * @param {String} sEzsigntemplatesignatureRegexp A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     */
+    setSEzsigntemplatesignatureRegexp(sEzsigntemplatesignatureRegexp) {
+        this['sEzsigntemplatesignatureRegexp'] = sEzsigntemplatesignatureRegexp;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsigntemplatesignatureTextvalidation() {
+        return this.eEzsigntemplatesignatureTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
+     */
+    setEEzsigntemplatesignatureTextvalidation(eEzsigntemplatesignatureTextvalidation) {
+        this['eEzsigntemplatesignatureTextvalidation'] = eEzsigntemplatesignatureTextvalidation;
+    }
 
 }
 
@@ -430,6 +527,18 @@ EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureX'] = undefin
  * @member {Number} iEzsigntemplatesignatureY
  */
 EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureY'] = undefined;
+
+/**
+ * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+ * @member {Number} iEzsigntemplatesignatureWidth
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureWidth'] = undefined;
+
+/**
+ * The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+ * @member {Number} iEzsigntemplatesignatureHeight
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureHeight'] = undefined;
 
 /**
  * The step when the Ezsigntemplatesigner will be invited to sign
@@ -480,6 +589,23 @@ EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureAttachmentnam
  * @member {Boolean} bEzsigntemplatesignatureRequired
  */
 EzsigntemplatesignatureResponse.prototype['bEzsigntemplatesignatureRequired'] = undefined;
+
+/**
+ * The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsigntemplatesignatureMaxlength
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureMaxlength'] = undefined;
+
+/**
+ * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+ * @member {String} sEzsigntemplatesignatureRegexp
+ */
+EzsigntemplatesignatureResponse.prototype['sEzsigntemplatesignatureRegexp'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
+ */
+EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
 
 
 

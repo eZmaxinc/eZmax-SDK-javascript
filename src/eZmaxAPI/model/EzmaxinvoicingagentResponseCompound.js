@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
 import EzmaxinvoicingagentResponse from './EzmaxinvoicingagentResponse';
-import EzmaxinvoicingagentResponseCompoundAllOf from './EzmaxinvoicingagentResponseCompoundAllOf';
 import FieldEEzmaxinvoicingagentVariationezmax from './FieldEEzmaxinvoicingagentVariationezmax';
 import FieldEEzmaxinvoicingagentVariationezsign from './FieldEEzmaxinvoicingagentVariationezsign';
 
@@ -29,7 +28,6 @@ class EzmaxinvoicingagentResponseCompound {
      * A Ezmaxinvoicingagent Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicingagentResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicingagentResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingagentResponseCompoundAllOf
      * @param fkiBillingentityinternalID {Number} The unique ID of the Billingentityinternal.
      * @param sBillingentityinternalDescriptionX {String} The description of the Billingentityinternal in the language of the requester
      * @param iEzmaxinvoicingagentSession {Number} The number of sessions
@@ -49,7 +47,7 @@ class EzmaxinvoicingagentResponseCompound {
      * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
     constructor(fkiBillingentityinternalID, sBillingentityinternalDescriptionX, iEzmaxinvoicingagentSession, iEzmaxinvoicingagentCloned, iEzmaxinvoicingagentInvoice, iEzmaxinvoicingagentInscription, iEzmaxinvoicingagentInscriptionactive, iEzmaxinvoicingagentSale, iEzmaxinvoicingagentOtherincome, iEzmaxinvoicingagentCommissioncalculation, iEzmaxinvoicingagentEzsigndocument, bEzmaxinvoicingagentEzsignaccount, bEzmaxinvoicingagentBillableezmax, eEzmaxinvoicingagentVariationezmax, bEzmaxinvoicingagentBillableezsign, eEzmaxinvoicingagentVariationezsign, objContactName) { 
-        EzmaxinvoicingagentResponse.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, iEzmaxinvoicingagentSession, iEzmaxinvoicingagentCloned, iEzmaxinvoicingagentInvoice, iEzmaxinvoicingagentInscription, iEzmaxinvoicingagentInscriptionactive, iEzmaxinvoicingagentSale, iEzmaxinvoicingagentOtherincome, iEzmaxinvoicingagentCommissioncalculation, iEzmaxinvoicingagentEzsigndocument, bEzmaxinvoicingagentEzsignaccount, bEzmaxinvoicingagentBillableezmax, eEzmaxinvoicingagentVariationezmax, bEzmaxinvoicingagentBillableezsign, eEzmaxinvoicingagentVariationezsign);EzmaxinvoicingagentResponseCompoundAllOf.initialize(this, objContactName);
+        EzmaxinvoicingagentResponse.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, iEzmaxinvoicingagentSession, iEzmaxinvoicingagentCloned, iEzmaxinvoicingagentInvoice, iEzmaxinvoicingagentInscription, iEzmaxinvoicingagentInscriptionactive, iEzmaxinvoicingagentSale, iEzmaxinvoicingagentOtherincome, iEzmaxinvoicingagentCommissioncalculation, iEzmaxinvoicingagentEzsigndocument, bEzmaxinvoicingagentEzsignaccount, bEzmaxinvoicingagentBillableezmax, eEzmaxinvoicingagentVariationezmax, bEzmaxinvoicingagentBillableezsign, eEzmaxinvoicingagentVariationezsign);
         EzmaxinvoicingagentResponseCompound.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, iEzmaxinvoicingagentSession, iEzmaxinvoicingagentCloned, iEzmaxinvoicingagentInvoice, iEzmaxinvoicingagentInscription, iEzmaxinvoicingagentInscriptionactive, iEzmaxinvoicingagentSale, iEzmaxinvoicingagentOtherincome, iEzmaxinvoicingagentCommissioncalculation, iEzmaxinvoicingagentEzsigndocument, bEzmaxinvoicingagentEzsignaccount, bEzmaxinvoicingagentBillableezmax, eEzmaxinvoicingagentVariationezmax, bEzmaxinvoicingagentBillableezsign, eEzmaxinvoicingagentVariationezsign, objContactName);
     }
 
@@ -89,7 +87,6 @@ class EzmaxinvoicingagentResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicingagentResponseCompound();
             EzmaxinvoicingagentResponse.constructFromObject(data, obj);
-            EzmaxinvoicingagentResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicingagentID')) {
                 obj['pkiEzmaxinvoicingagentID'] = ApiClient.convertToType(data['pkiEzmaxinvoicingagentID'], 'Number');
@@ -733,11 +730,6 @@ EzmaxinvoicingagentResponse.prototype['bEzmaxinvoicingagentBillableezsign'] = un
  * @member {module:eZmaxAPI/model/FieldEEzmaxinvoicingagentVariationezsign} eEzmaxinvoicingagentVariationezsign
  */
 EzmaxinvoicingagentResponse.prototype['eEzmaxinvoicingagentVariationezsign'] = undefined;
-// Implement EzmaxinvoicingagentResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
- */
-EzmaxinvoicingagentResponseCompoundAllOf.prototype['objContactName'] = undefined;
 
 
 

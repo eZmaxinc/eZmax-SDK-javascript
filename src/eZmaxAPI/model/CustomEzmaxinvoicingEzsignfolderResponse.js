@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzmaxinvoicingEzsignfolderResponseAllOf from './CustomEzmaxinvoicingEzsignfolderResponseAllOf';
 
 /**
  * The CustomEzmaxinvoicingEzsignfolderResponse model module.
@@ -24,7 +23,6 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
      * Constructs a new <code>CustomEzmaxinvoicingEzsignfolderResponse</code>.
      * An EzmaxinvoicingEzsignfolder object containing information about the Ezmaxinvoicing for an Ezsignfolder
      * @alias module:eZmaxAPI/model/CustomEzmaxinvoicingEzsignfolderResponse
-     * @implements module:eZmaxAPI/model/CustomEzmaxinvoicingEzsignfolderResponseAllOf
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      * @param bEzsigntsarequirementBillable {Boolean} Whether the TSA requirement is billable or not
@@ -33,7 +31,7 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
      * @param bEzsignfolderAllowed {Boolean} Whether you have access to the Ezsignfolder or not
      */
     constructor(fkiEzsignfolderID, sEzsignfolderDescription, bEzsigntsarequirementBillable, bEzsignfolderMfaused, bEzsignfolderPaymentused, bEzsignfolderAllowed) { 
-        CustomEzmaxinvoicingEzsignfolderResponseAllOf.initialize(this, fkiEzsignfolderID, sEzsignfolderDescription, bEzsigntsarequirementBillable, bEzsignfolderMfaused, bEzsignfolderPaymentused, bEzsignfolderAllowed);
+        
         CustomEzmaxinvoicingEzsignfolderResponse.initialize(this, fkiEzsignfolderID, sEzsignfolderDescription, bEzsigntsarequirementBillable, bEzsignfolderMfaused, bEzsignfolderPaymentused, bEzsignfolderAllowed);
     }
 
@@ -61,7 +59,6 @@ class CustomEzmaxinvoicingEzsignfolderResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzmaxinvoicingEzsignfolderResponse();
-            CustomEzmaxinvoicingEzsignfolderResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('fkiEzsignfolderID')) {
                 obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
@@ -238,37 +235,6 @@ CustomEzmaxinvoicingEzsignfolderResponse.prototype['bEzsignfolderPaymentused'] =
 CustomEzmaxinvoicingEzsignfolderResponse.prototype['bEzsignfolderAllowed'] = undefined;
 
 
-// Implement CustomEzmaxinvoicingEzsignfolderResponseAllOf interface:
-/**
- * The unique ID of the Ezsignfolder
- * @member {Number} fkiEzsignfolderID
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['fkiEzsignfolderID'] = undefined;
-/**
- * The description of the Ezsignfolder
- * @member {String} sEzsignfolderDescription
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['sEzsignfolderDescription'] = undefined;
-/**
- * Whether the TSA requirement is billable or not
- * @member {Boolean} bEzsigntsarequirementBillable
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsigntsarequirementBillable'] = undefined;
-/**
- * Whether the MFA was used or not for the Ezsignfolder
- * @member {Boolean} bEzsignfolderMfaused
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderMfaused'] = undefined;
-/**
- * Whether there was a signature is of type payment
- * @member {Boolean} bEzsignfolderPaymentused
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderPaymentused'] = undefined;
-/**
- * Whether you have access to the Ezsignfolder or not
- * @member {Boolean} bEzsignfolderAllowed
- */
-CustomEzmaxinvoicingEzsignfolderResponseAllOf.prototype['bEzsignfolderAllowed'] = undefined;
 
 
 

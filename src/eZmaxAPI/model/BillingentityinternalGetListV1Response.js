@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingentityinternalGetListV1ResponseAllOf from './BillingentityinternalGetListV1ResponseAllOf';
 import BillingentityinternalGetListV1ResponseMPayload from './BillingentityinternalGetListV1ResponseMPayload';
 import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class BillingentityinternalGetListV1Response {
      * Constructs a new <code>BillingentityinternalGetListV1Response</code>.
      * Response for GET /1/object/billingentityinternal/getList
      * @alias module:eZmaxAPI/model/BillingentityinternalGetListV1Response
-     * @implements module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      * @param mPayload {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        BillingentityinternalGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
-        BillingentityinternalGetListV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponseGetList.initialize(this, objDebugPayload);
+        BillingentityinternalGetListV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class BillingentityinternalGetListV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class BillingentityinternalGetListV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingentityinternalGetListV1Response();
-            BillingentityinternalGetListV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponseGetList.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = BillingentityinternalGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = BillingentityinternalGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class BillingentityinternalGetListV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          BillingentityinternalGetListV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class BillingentityinternalGetListV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          BillingentityinternalGetListV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
@@ -139,15 +125,23 @@ class BillingentityinternalGetListV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-BillingentityinternalGetListV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload} mPayload
- */
-BillingentityinternalGetListV1Response.prototype['mPayload'] = undefined;
+BillingentityinternalGetListV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
@@ -159,12 +153,12 @@ BillingentityinternalGetListV1Response.prototype['objDebugPayload'] = undefined;
  */
 BillingentityinternalGetListV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement BillingentityinternalGetListV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload} mPayload
  */
-BillingentityinternalGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
+BillingentityinternalGetListV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponseGetList interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

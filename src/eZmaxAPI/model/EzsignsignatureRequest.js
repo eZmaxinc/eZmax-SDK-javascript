@@ -121,6 +121,9 @@ class EzsignsignatureRequest {
             if (data.hasOwnProperty('iEzsignsignatureValidationstep')) {
                 obj['iEzsignsignatureValidationstep'] = ApiClient.convertToType(data['iEzsignsignatureValidationstep'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsignsignatureMaxlength')) {
+                obj['iEzsignsignatureMaxlength'] = ApiClient.convertToType(data['iEzsignsignatureMaxlength'], 'Number');
+            }
             if (data.hasOwnProperty('eEzsignsignatureTextvalidation')) {
                 obj['eEzsignsignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignsignatureTextvalidation']);
             }
@@ -431,6 +434,23 @@ class EzsignsignatureRequest {
         this['iEzsignsignatureValidationstep'] = iEzsignsignatureValidationstep;
     }
 /**
+     * Returns The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * minimum: 0
+     * maximum: 65535
+     * @return {Number}
+     */
+    getIEzsignsignatureMaxlength() {
+        return this.iEzsignsignatureMaxlength;
+    }
+
+    /**
+     * Sets The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * @param {Number} iEzsignsignatureMaxlength The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     */
+    setIEzsignsignatureMaxlength(iEzsignsignatureMaxlength) {
+        this['iEzsignsignatureMaxlength'] = iEzsignsignatureMaxlength;
+    }
+/**
      * @return {module:eZmaxAPI/model/EnumTextvalidation}
      */
     getEEzsignsignatureTextvalidation() {
@@ -566,6 +586,12 @@ EzsignsignatureRequest.prototype['sEzsignsignatureAttachmentdescription'] = unde
  * @member {Number} iEzsignsignatureValidationstep
  */
 EzsignsignatureRequest.prototype['iEzsignsignatureValidationstep'] = undefined;
+
+/**
+ * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsignsignatureMaxlength
+ */
+EzsignsignatureRequest.prototype['iEzsignsignatureMaxlength'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignsignatureTextvalidation

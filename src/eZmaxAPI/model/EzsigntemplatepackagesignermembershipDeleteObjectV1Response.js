@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf from './EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf';
 import EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload from './EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
      * Constructs a new <code>EzsigntemplatepackagesignermembershipDeleteObjectV1Response</code>.
      * Response for DELETE /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}
      * @alias module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1Response
-     * @implements module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigntemplatepackagesignermembershipDeleteObjectV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplatepackagesignermembershipDeleteObjectV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplatepackagesignermembershipDeleteObjectV1Response();
-            EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigntemplatepackagesignermembershipDeleteObjectV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload} mPayload
- */
-EzsigntemplatepackagesignermembershipDeleteObjectV1Response.prototype['mPayload'] = undefined;
+EzsigntemplatepackagesignermembershipDeleteObjectV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigntemplatepackagesignermembershipDeleteObjectV1Response.prototype['objDebugP
  */
 EzsigntemplatepackagesignermembershipDeleteObjectV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload} mPayload
  */
-EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigntemplatepackagesignermembershipDeleteObjectV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

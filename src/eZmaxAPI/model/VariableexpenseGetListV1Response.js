@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponseGetList from './CommonResponseGetList';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayloadGetList from './CommonResponseObjDebugPayloadGetList';
-import VariableexpenseGetListV1ResponseAllOf from './VariableexpenseGetListV1ResponseAllOf';
 import VariableexpenseGetListV1ResponseMPayload from './VariableexpenseGetListV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class VariableexpenseGetListV1Response {
      * Constructs a new <code>VariableexpenseGetListV1Response</code>.
      * Response for GET /1/object/variableexpense/getList
      * @alias module:eZmaxAPI/model/VariableexpenseGetListV1Response
-     * @implements module:eZmaxAPI/model/VariableexpenseGetListV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      * @param mPayload {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        VariableexpenseGetListV1ResponseAllOf.initialize(this, mPayload);CommonResponseGetList.initialize(this);
-        VariableexpenseGetListV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponseGetList.initialize(this, objDebugPayload);
+        VariableexpenseGetListV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class VariableexpenseGetListV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class VariableexpenseGetListV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VariableexpenseGetListV1Response();
-            VariableexpenseGetListV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponseGetList.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = VariableexpenseGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayloadGetList.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = VariableexpenseGetListV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class VariableexpenseGetListV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          VariableexpenseGetListV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class VariableexpenseGetListV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          VariableexpenseGetListV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList}
      */
@@ -139,15 +125,23 @@ class VariableexpenseGetListV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-VariableexpenseGetListV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload} mPayload
- */
-VariableexpenseGetListV1Response.prototype['mPayload'] = undefined;
+VariableexpenseGetListV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload
@@ -159,12 +153,12 @@ VariableexpenseGetListV1Response.prototype['objDebugPayload'] = undefined;
  */
 VariableexpenseGetListV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement VariableexpenseGetListV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload} mPayload
  */
-VariableexpenseGetListV1ResponseAllOf.prototype['mPayload'] = undefined;
+VariableexpenseGetListV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponseGetList interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

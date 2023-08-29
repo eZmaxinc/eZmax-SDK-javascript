@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzsignformfielderrorResponseAllOf from './CustomEzsignformfielderrorResponseAllOf';
 import CustomEzsignformfielderrortestResponse from './CustomEzsignformfielderrortestResponse';
 
 /**
@@ -25,12 +24,11 @@ class CustomEzsignformfielderrorResponse {
      * Constructs a new <code>CustomEzsignformfielderrorResponse</code>.
      * A Custom Ezsignformfield Object to contain an error list
      * @alias module:eZmaxAPI/model/CustomEzsignformfielderrorResponse
-     * @implements module:eZmaxAPI/model/CustomEzsignformfielderrorResponseAllOf
      * @param sEzsignformfieldLabel {String} The Label for the Ezsignformfield
      * @param a_objEzsignformfielderrortest {Array.<module:eZmaxAPI/model/CustomEzsignformfielderrortestResponse>} 
      */
     constructor(sEzsignformfieldLabel, a_objEzsignformfielderrortest) { 
-        CustomEzsignformfielderrorResponseAllOf.initialize(this, sEzsignformfieldLabel, a_objEzsignformfielderrortest);
+        
         CustomEzsignformfielderrorResponse.initialize(this, sEzsignformfieldLabel, a_objEzsignformfielderrortest);
     }
 
@@ -54,7 +52,6 @@ class CustomEzsignformfielderrorResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzsignformfielderrorResponse();
-            CustomEzsignformfielderrorResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('sEzsignformfieldLabel')) {
                 obj['sEzsignformfieldLabel'] = ApiClient.convertToType(data['sEzsignformfieldLabel'], 'String');
@@ -144,17 +141,6 @@ CustomEzsignformfielderrorResponse.prototype['sEzsignformfieldLabel'] = undefine
 CustomEzsignformfielderrorResponse.prototype['a_objEzsignformfielderrortest'] = undefined;
 
 
-// Implement CustomEzsignformfielderrorResponseAllOf interface:
-/**
- * The Label for the Ezsignformfield
- * @member {String} sEzsignformfieldLabel
- */
-CustomEzsignformfielderrorResponseAllOf.prototype['sEzsignformfieldLabel'] = undefined;
-/**
- * 
- * @member {Array.<module:eZmaxAPI/model/CustomEzsignformfielderrortestResponse>} a_objEzsignformfielderrortest
- */
-CustomEzsignformfielderrorResponseAllOf.prototype['a_objEzsignformfielderrortest'] = undefined;
 
 
 

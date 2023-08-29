@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BrandingGetListV1ResponseMPayloadAllOf from './BrandingGetListV1ResponseMPayloadAllOf';
 import BrandingListElement from './BrandingListElement';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
 
@@ -26,15 +25,14 @@ class BrandingGetListV1ResponseMPayload {
      * Constructs a new <code>BrandingGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/branding/getList
      * @alias module:eZmaxAPI/model/BrandingGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/BrandingGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objBranding {Array.<module:eZmaxAPI/model/BrandingListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objBranding {Array.<module:eZmaxAPI/model/BrandingListElement>} 
      */
-    constructor(a_objBranding, iRowReturned, iRowFiltered) { 
-        BrandingGetListV1ResponseMPayloadAllOf.initialize(this, a_objBranding);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        BrandingGetListV1ResponseMPayload.initialize(this, a_objBranding, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objBranding) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        BrandingGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objBranding);
     }
 
     /**
@@ -42,10 +40,10 @@ class BrandingGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objBranding, iRowReturned, iRowFiltered) { 
-        obj['a_objBranding'] = a_objBranding;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objBranding) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objBranding'] = a_objBranding;
     }
 
     /**
@@ -58,17 +56,16 @@ class BrandingGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BrandingGetListV1ResponseMPayload();
-            BrandingGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objBranding')) {
-                obj['a_objBranding'] = ApiClient.convertToType(data['a_objBranding'], [BrandingListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objBranding')) {
+                obj['a_objBranding'] = ApiClient.convertToType(data['a_objBranding'], [BrandingListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class BrandingGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/BrandingListElement>}
-     */
-    getAObjBranding() {
-        return this.a_objBranding;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/BrandingListElement>} a_objBranding
-     */
-    setAObjBranding(a_objBranding) {
-        this['a_objBranding'] = a_objBranding;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class BrandingGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/BrandingListElement>}
+     */
+    getAObjBranding() {
+        return this.a_objBranding;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/BrandingListElement>} a_objBranding
+     */
+    setAObjBranding(a_objBranding) {
+        this['a_objBranding'] = a_objBranding;
+    }
 
 }
 
-BrandingGetListV1ResponseMPayload.RequiredProperties = ["a_objBranding", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/BrandingListElement>} a_objBranding
- */
-BrandingGetListV1ResponseMPayload.prototype['a_objBranding'] = undefined;
+BrandingGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objBranding"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ BrandingGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 BrandingGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement BrandingGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/BrandingListElement>} a_objBranding
  */
-BrandingGetListV1ResponseMPayloadAllOf.prototype['a_objBranding'] = undefined;
+BrandingGetListV1ResponseMPayload.prototype['a_objBranding'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

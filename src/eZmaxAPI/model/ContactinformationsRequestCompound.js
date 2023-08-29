@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import AddressRequestCompound from './AddressRequestCompound';
 import ContactinformationsRequest from './ContactinformationsRequest';
-import ContactinformationsRequestCompoundAllOf from './ContactinformationsRequestCompoundAllOf';
 import EmailRequestCompound from './EmailRequestCompound';
 import PhoneRequestCompound from './PhoneRequestCompound';
 import WebsiteRequestCompound from './WebsiteRequestCompound';
@@ -30,7 +29,6 @@ class ContactinformationsRequestCompound {
      * A Contactinformations Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/ContactinformationsRequestCompound
      * @implements module:eZmaxAPI/model/ContactinformationsRequest
-     * @implements module:eZmaxAPI/model/ContactinformationsRequestCompoundAllOf
      * @param iAddressDefault {Number} The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
      * @param iPhoneDefault {Number} The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
      * @param iEmailDefault {Number} The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
@@ -41,7 +39,7 @@ class ContactinformationsRequestCompound {
      * @param a_objWebsite {Array.<module:eZmaxAPI/model/WebsiteRequestCompound>} 
      */
     constructor(iAddressDefault, iPhoneDefault, iEmailDefault, iWebsiteDefault, a_objAddress, a_objPhone, a_objEmail, a_objWebsite) { 
-        ContactinformationsRequest.initialize(this, iAddressDefault, iPhoneDefault, iEmailDefault, iWebsiteDefault);ContactinformationsRequestCompoundAllOf.initialize(this, a_objAddress, a_objPhone, a_objEmail, a_objWebsite);
+        ContactinformationsRequest.initialize(this, iAddressDefault, iPhoneDefault, iEmailDefault, iWebsiteDefault);
         ContactinformationsRequestCompound.initialize(this, iAddressDefault, iPhoneDefault, iEmailDefault, iWebsiteDefault, a_objAddress, a_objPhone, a_objEmail, a_objWebsite);
     }
 
@@ -72,7 +70,6 @@ class ContactinformationsRequestCompound {
         if (data) {
             obj = obj || new ContactinformationsRequestCompound();
             ContactinformationsRequest.constructFromObject(data, obj);
-            ContactinformationsRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('iAddressDefault')) {
                 obj['iAddressDefault'] = ApiClient.convertToType(data['iAddressDefault'], 'Number');
@@ -341,23 +338,6 @@ ContactinformationsRequest.prototype['iEmailDefault'] = undefined;
  * @member {Number} iWebsiteDefault
  */
 ContactinformationsRequest.prototype['iWebsiteDefault'] = undefined;
-// Implement ContactinformationsRequestCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/AddressRequestCompound>} a_objAddress
- */
-ContactinformationsRequestCompoundAllOf.prototype['a_objAddress'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/PhoneRequestCompound>} a_objPhone
- */
-ContactinformationsRequestCompoundAllOf.prototype['a_objPhone'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EmailRequestCompound>} a_objEmail
- */
-ContactinformationsRequestCompoundAllOf.prototype['a_objEmail'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/WebsiteRequestCompound>} a_objWebsite
- */
-ContactinformationsRequestCompoundAllOf.prototype['a_objWebsite'] = undefined;
 
 
 

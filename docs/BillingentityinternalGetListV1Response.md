@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**BillingentityinternalGetListV1ResponseMPayload**](BillingentityinternalGetListV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**BillingentityinternalGetListV1ResponseMPayload**](BillingentityinternalGetListV1ResponseMPayload.md) |  | 
 
 

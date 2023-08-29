@@ -16,7 +16,6 @@ import AttemptResponseCompound from './AttemptResponseCompound';
 import CommonWebhook from './CommonWebhook';
 import CustomWebhookResponse from './CustomWebhookResponse';
 import EzsigndocumentResponse from './EzsigndocumentResponse';
-import WebhookEzsignDocumentCompletedAllOf from './WebhookEzsignDocumentCompletedAllOf';
 
 /**
  * The WebhookEzsignDocumentCompleted model module.
@@ -28,15 +27,14 @@ class WebhookEzsignDocumentCompleted {
      * Constructs a new <code>WebhookEzsignDocumentCompleted</code>.
      * This is the base Webhook object
      * @alias module:eZmaxAPI/model/WebhookEzsignDocumentCompleted
-     * @implements module:eZmaxAPI/model/WebhookEzsignDocumentCompletedAllOf
      * @implements module:eZmaxAPI/model/CommonWebhook
-     * @param objEzsigndocument {module:eZmaxAPI/model/EzsigndocumentResponse} 
      * @param objWebhook {module:eZmaxAPI/model/CustomWebhookResponse} 
      * @param a_objAttempt {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param objEzsigndocument {module:eZmaxAPI/model/EzsigndocumentResponse} 
      */
-    constructor(objEzsigndocument, objWebhook, a_objAttempt) { 
-        WebhookEzsignDocumentCompletedAllOf.initialize(this, objEzsigndocument);CommonWebhook.initialize(this, objWebhook, a_objAttempt);
-        WebhookEzsignDocumentCompleted.initialize(this, objEzsigndocument, objWebhook, a_objAttempt);
+    constructor(objWebhook, a_objAttempt, objEzsigndocument) { 
+        CommonWebhook.initialize(this, objWebhook, a_objAttempt);
+        WebhookEzsignDocumentCompleted.initialize(this, objWebhook, a_objAttempt, objEzsigndocument);
     }
 
     /**
@@ -44,10 +42,10 @@ class WebhookEzsignDocumentCompleted {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objEzsigndocument, objWebhook, a_objAttempt) { 
-        obj['objEzsigndocument'] = objEzsigndocument;
+    static initialize(obj, objWebhook, a_objAttempt, objEzsigndocument) { 
         obj['objWebhook'] = objWebhook;
         obj['a_objAttempt'] = a_objAttempt;
+        obj['objEzsigndocument'] = objEzsigndocument;
     }
 
     /**
@@ -60,17 +58,16 @@ class WebhookEzsignDocumentCompleted {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookEzsignDocumentCompleted();
-            WebhookEzsignDocumentCompletedAllOf.constructFromObject(data, obj);
             CommonWebhook.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objEzsigndocument')) {
-                obj['objEzsigndocument'] = EzsigndocumentResponse.constructFromObject(data['objEzsigndocument']);
-            }
             if (data.hasOwnProperty('objWebhook')) {
                 obj['objWebhook'] = CustomWebhookResponse.constructFromObject(data['objWebhook']);
             }
             if (data.hasOwnProperty('a_objAttempt')) {
                 obj['a_objAttempt'] = ApiClient.convertToType(data['a_objAttempt'], [AttemptResponseCompound]);
+            }
+            if (data.hasOwnProperty('objEzsigndocument')) {
+                obj['objEzsigndocument'] = EzsigndocumentResponse.constructFromObject(data['objEzsigndocument']);
             }
         }
         return obj;
@@ -88,10 +85,6 @@ class WebhookEzsignDocumentCompleted {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `objEzsigndocument`
-        if (data['objEzsigndocument']) { // data not null
-          EzsigndocumentResponse.validateJSON(data['objEzsigndocument']);
-        }
         // validate the optional field `objWebhook`
         if (data['objWebhook']) { // data not null
           CustomWebhookResponse.validateJSON(data['objWebhook']);
@@ -106,23 +99,14 @@ class WebhookEzsignDocumentCompleted {
                 AttemptResponseCompound.validateJSON(item);
             };
         }
+        // validate the optional field `objEzsigndocument`
+        if (data['objEzsigndocument']) { // data not null
+          EzsigndocumentResponse.validateJSON(data['objEzsigndocument']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigndocumentResponse}
-     */
-    getObjEzsigndocument() {
-        return this.objEzsigndocument;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigndocumentResponse} objEzsigndocument
-     */
-    setObjEzsigndocument(objEzsigndocument) {
-        this['objEzsigndocument'] = objEzsigndocument;
-    }
 /**
      * @return {module:eZmaxAPI/model/CustomWebhookResponse}
      */
@@ -151,15 +135,23 @@ class WebhookEzsignDocumentCompleted {
     setAObjAttempt(a_objAttempt) {
         this['a_objAttempt'] = a_objAttempt;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentResponse}
+     */
+    getObjEzsigndocument() {
+        return this.objEzsigndocument;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentResponse} objEzsigndocument
+     */
+    setObjEzsigndocument(objEzsigndocument) {
+        this['objEzsigndocument'] = objEzsigndocument;
+    }
 
 }
 
-WebhookEzsignDocumentCompleted.RequiredProperties = ["objEzsigndocument", "objWebhook", "a_objAttempt"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigndocumentResponse} objEzsigndocument
- */
-WebhookEzsignDocumentCompleted.prototype['objEzsigndocument'] = undefined;
+WebhookEzsignDocumentCompleted.RequiredProperties = ["objWebhook", "a_objAttempt", "objEzsigndocument"];
 
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook
@@ -172,12 +164,12 @@ WebhookEzsignDocumentCompleted.prototype['objWebhook'] = undefined;
  */
 WebhookEzsignDocumentCompleted.prototype['a_objAttempt'] = undefined;
 
-
-// Implement WebhookEzsignDocumentCompletedAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigndocumentResponse} objEzsigndocument
  */
-WebhookEzsignDocumentCompletedAllOf.prototype['objEzsigndocument'] = undefined;
+WebhookEzsignDocumentCompleted.prototype['objEzsigndocument'] = undefined;
+
+
 // Implement CommonWebhook interface:
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook

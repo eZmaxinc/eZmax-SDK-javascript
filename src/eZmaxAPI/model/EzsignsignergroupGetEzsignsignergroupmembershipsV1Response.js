@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf from './EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf';
 import EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload from './EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
      * Constructs a new <code>EzsignsignergroupGetEzsignsignergroupmembershipsV1Response</code>.
      * Response for GET /1/object/ezsignsignergroup/{pkiEzsignsignergroupID}/getEzsignsignergroupmemberships
      * @alias module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1Response
-     * @implements module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignsignergroupGetEzsignsignergroupmembershipsV1Response();
-            EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsignsignergroupGetEzsignsignergroupmembershipsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload} mPayload
- */
-EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.prototype['mPayload'] = undefined;
+EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.prototype['objDebugPa
  */
 EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseMPayload} mPayload
  */
-EzsignsignergroupGetEzsignsignergroupmembershipsV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsignsignergroupGetEzsignsignergroupmembershipsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

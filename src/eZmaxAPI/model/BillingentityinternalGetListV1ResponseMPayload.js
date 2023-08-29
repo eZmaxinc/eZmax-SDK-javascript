@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingentityinternalGetListV1ResponseMPayloadAllOf from './BillingentityinternalGetListV1ResponseMPayloadAllOf';
 import BillingentityinternalListElement from './BillingentityinternalListElement';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
 
@@ -26,15 +25,14 @@ class BillingentityinternalGetListV1ResponseMPayload {
      * Constructs a new <code>BillingentityinternalGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/billingentityinternal/getList
      * @alias module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/BillingentityinternalGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objBillingentityinternal {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objBillingentityinternal {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} 
      */
-    constructor(a_objBillingentityinternal, iRowReturned, iRowFiltered) { 
-        BillingentityinternalGetListV1ResponseMPayloadAllOf.initialize(this, a_objBillingentityinternal);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        BillingentityinternalGetListV1ResponseMPayload.initialize(this, a_objBillingentityinternal, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objBillingentityinternal) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        BillingentityinternalGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objBillingentityinternal);
     }
 
     /**
@@ -42,10 +40,10 @@ class BillingentityinternalGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objBillingentityinternal, iRowReturned, iRowFiltered) { 
-        obj['a_objBillingentityinternal'] = a_objBillingentityinternal;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objBillingentityinternal) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objBillingentityinternal'] = a_objBillingentityinternal;
     }
 
     /**
@@ -58,17 +56,16 @@ class BillingentityinternalGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingentityinternalGetListV1ResponseMPayload();
-            BillingentityinternalGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objBillingentityinternal')) {
-                obj['a_objBillingentityinternal'] = ApiClient.convertToType(data['a_objBillingentityinternal'], [BillingentityinternalListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objBillingentityinternal')) {
+                obj['a_objBillingentityinternal'] = ApiClient.convertToType(data['a_objBillingentityinternal'], [BillingentityinternalListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class BillingentityinternalGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>}
-     */
-    getAObjBillingentityinternal() {
-        return this.a_objBillingentityinternal;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} a_objBillingentityinternal
-     */
-    setAObjBillingentityinternal(a_objBillingentityinternal) {
-        this['a_objBillingentityinternal'] = a_objBillingentityinternal;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class BillingentityinternalGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>}
+     */
+    getAObjBillingentityinternal() {
+        return this.a_objBillingentityinternal;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} a_objBillingentityinternal
+     */
+    setAObjBillingentityinternal(a_objBillingentityinternal) {
+        this['a_objBillingentityinternal'] = a_objBillingentityinternal;
+    }
 
 }
 
-BillingentityinternalGetListV1ResponseMPayload.RequiredProperties = ["a_objBillingentityinternal", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} a_objBillingentityinternal
- */
-BillingentityinternalGetListV1ResponseMPayload.prototype['a_objBillingentityinternal'] = undefined;
+BillingentityinternalGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objBillingentityinternal"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ BillingentityinternalGetListV1ResponseMPayload.prototype['iRowReturned'] = undef
  */
 BillingentityinternalGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement BillingentityinternalGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/BillingentityinternalListElement>} a_objBillingentityinternal
  */
-BillingentityinternalGetListV1ResponseMPayloadAllOf.prototype['a_objBillingentityinternal'] = undefined;
+BillingentityinternalGetListV1ResponseMPayload.prototype['a_objBillingentityinternal'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

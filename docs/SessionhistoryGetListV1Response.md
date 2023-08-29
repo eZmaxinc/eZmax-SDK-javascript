@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**SessionhistoryGetListV1ResponseMPayload**](SessionhistoryGetListV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayloadGetList**](CommonResponseObjDebugPayloadGetList.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**SessionhistoryGetListV1ResponseMPayload**](SessionhistoryGetListV1ResponseMPayload.md) |  | 
 
 

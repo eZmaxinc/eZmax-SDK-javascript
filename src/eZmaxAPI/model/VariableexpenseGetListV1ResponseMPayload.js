@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import VariableexpenseGetListV1ResponseMPayloadAllOf from './VariableexpenseGetListV1ResponseMPayloadAllOf';
 import VariableexpenseListElement from './VariableexpenseListElement';
 
 /**
@@ -26,15 +25,14 @@ class VariableexpenseGetListV1ResponseMPayload {
      * Constructs a new <code>VariableexpenseGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/variableexpense/getList
      * @alias module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/VariableexpenseGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objVariableexpense {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objVariableexpense {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} 
      */
-    constructor(a_objVariableexpense, iRowReturned, iRowFiltered) { 
-        VariableexpenseGetListV1ResponseMPayloadAllOf.initialize(this, a_objVariableexpense);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        VariableexpenseGetListV1ResponseMPayload.initialize(this, a_objVariableexpense, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objVariableexpense) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        VariableexpenseGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objVariableexpense);
     }
 
     /**
@@ -42,10 +40,10 @@ class VariableexpenseGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objVariableexpense, iRowReturned, iRowFiltered) { 
-        obj['a_objVariableexpense'] = a_objVariableexpense;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objVariableexpense) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objVariableexpense'] = a_objVariableexpense;
     }
 
     /**
@@ -58,17 +56,16 @@ class VariableexpenseGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VariableexpenseGetListV1ResponseMPayload();
-            VariableexpenseGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objVariableexpense')) {
-                obj['a_objVariableexpense'] = ApiClient.convertToType(data['a_objVariableexpense'], [VariableexpenseListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objVariableexpense')) {
+                obj['a_objVariableexpense'] = ApiClient.convertToType(data['a_objVariableexpense'], [VariableexpenseListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class VariableexpenseGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/VariableexpenseListElement>}
-     */
-    getAObjVariableexpense() {
-        return this.a_objVariableexpense;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} a_objVariableexpense
-     */
-    setAObjVariableexpense(a_objVariableexpense) {
-        this['a_objVariableexpense'] = a_objVariableexpense;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class VariableexpenseGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/VariableexpenseListElement>}
+     */
+    getAObjVariableexpense() {
+        return this.a_objVariableexpense;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} a_objVariableexpense
+     */
+    setAObjVariableexpense(a_objVariableexpense) {
+        this['a_objVariableexpense'] = a_objVariableexpense;
+    }
 
 }
 
-VariableexpenseGetListV1ResponseMPayload.RequiredProperties = ["a_objVariableexpense", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} a_objVariableexpense
- */
-VariableexpenseGetListV1ResponseMPayload.prototype['a_objVariableexpense'] = undefined;
+VariableexpenseGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objVariableexpense"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ VariableexpenseGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 VariableexpenseGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement VariableexpenseGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/VariableexpenseListElement>} a_objVariableexpense
  */
-VariableexpenseGetListV1ResponseMPayloadAllOf.prototype['a_objVariableexpense'] = undefined;
+VariableexpenseGetListV1ResponseMPayload.prototype['a_objVariableexpense'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

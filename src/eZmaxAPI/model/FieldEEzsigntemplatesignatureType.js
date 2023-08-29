@@ -61,6 +61,20 @@ export default class FieldEEzsigntemplatesignatureType {
         "Attachments" = "Attachments";
 
     
+        /**
+         * value: "FieldText"
+         * @const
+         */
+        "FieldText" = "FieldText";
+
+    
+        /**
+         * value: "FieldTextarea"
+         * @const
+         */
+        "FieldTextarea" = "FieldTextarea";
+
+    
 
     /**
     * Returns a <code>FieldEEzsigntemplatesignatureType</code> enum value from a Javascript object name.

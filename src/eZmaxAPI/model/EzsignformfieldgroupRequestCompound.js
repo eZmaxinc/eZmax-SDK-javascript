@@ -16,7 +16,6 @@ import CustomDropdownElementRequestCompound from './CustomDropdownElementRequest
 import EnumTextvalidation from './EnumTextvalidation';
 import EzsignformfieldRequestCompound from './EzsignformfieldRequestCompound';
 import EzsignformfieldgroupRequest from './EzsignformfieldgroupRequest';
-import EzsignformfieldgroupRequestCompoundAllOf from './EzsignformfieldgroupRequestCompoundAllOf';
 import EzsignformfieldgroupsignerRequestCompound from './EzsignformfieldgroupsignerRequestCompound';
 import FieldEEzsignformfieldgroupSignerrequirement from './FieldEEzsignformfieldgroupSignerrequirement';
 import FieldEEzsignformfieldgroupTooltipposition from './FieldEEzsignformfieldgroupTooltipposition';
@@ -33,7 +32,6 @@ class EzsignformfieldgroupRequestCompound {
      * An Ezsignformfieldgroup Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignformfieldgroupRequestCompound
      * @implements module:eZmaxAPI/model/EzsignformfieldgroupRequest
-     * @implements module:eZmaxAPI/model/EzsignformfieldgroupRequestCompoundAllOf
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param eEzsignformfieldgroupType {module:eZmaxAPI/model/FieldEEzsignformfieldgroupType} 
      * @param eEzsignformfieldgroupSignerrequirement {module:eZmaxAPI/model/FieldEEzsignformfieldgroupSignerrequirement} 
@@ -47,7 +45,7 @@ class EzsignformfieldgroupRequestCompound {
      * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/EzsignformfieldRequestCompound>} 
      */
     constructor(fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield) { 
-        EzsignformfieldgroupRequest.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);EzsignformfieldgroupRequestCompoundAllOf.initialize(this, a_objEzsignformfieldgroupsigner, a_objEzsignformfield);
+        EzsignformfieldgroupRequest.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);
         EzsignformfieldgroupRequestCompound.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, sEzsignformfieldgroupDefaultvalue, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield);
     }
 
@@ -81,7 +79,6 @@ class EzsignformfieldgroupRequestCompound {
         if (data) {
             obj = obj || new EzsignformfieldgroupRequestCompound();
             EzsignformfieldgroupRequest.constructFromObject(data, obj);
-            EzsignformfieldgroupRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignformfieldgroupID')) {
                 obj['pkiEzsignformfieldgroupID'] = ApiClient.convertToType(data['pkiEzsignformfieldgroupID'], 'Number');
@@ -360,6 +357,7 @@ class EzsignformfieldgroupRequestCompound {
 /**
      * Returns The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsignformfieldgroupMaxlength() {
@@ -673,19 +671,6 @@ EzsignformfieldgroupRequest.prototype['eEzsignformfieldgroupTooltipposition'] = 
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
  */
 EzsignformfieldgroupRequest.prototype['eEzsignformfieldgroupTextvalidation'] = undefined;
-// Implement EzsignformfieldgroupRequestCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerRequestCompound>} a_objEzsignformfieldgroupsigner
- */
-EzsignformfieldgroupRequestCompoundAllOf.prototype['a_objEzsignformfieldgroupsigner'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomDropdownElementRequestCompound>} a_objDropdownElement
- */
-EzsignformfieldgroupRequestCompoundAllOf.prototype['a_objDropdownElement'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignformfieldRequestCompound>} a_objEzsignformfield
- */
-EzsignformfieldgroupRequestCompoundAllOf.prototype['a_objEzsignformfield'] = undefined;
 
 
 

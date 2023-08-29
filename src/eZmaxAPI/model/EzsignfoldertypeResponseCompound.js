@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import EzsignfoldertypeRequestCompoundAllOf from './EzsignfoldertypeRequestCompoundAllOf';
 import EzsignfoldertypeResponse from './EzsignfoldertypeResponse';
 import FieldEEzsignfoldertypeDisposal from './FieldEEzsignfoldertypeDisposal';
 import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
@@ -30,7 +29,6 @@ class EzsignfoldertypeResponseCompound {
      * A Ezsignfoldertype Object
      * @alias module:eZmaxAPI/model/EzsignfoldertypeResponseCompound
      * @implements module:eZmaxAPI/model/EzsignfoldertypeResponse
-     * @implements module:eZmaxAPI/model/EzsignfoldertypeRequestCompoundAllOf
      * @param pkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param objEzsignfoldertypeName {module:eZmaxAPI/model/MultilingualEzsignfoldertypeName} 
      * @param fkiBrandingID {Number} The unique ID of the Branding
@@ -51,7 +49,7 @@ class EzsignfoldertypeResponseCompound {
      * @param bEzsignfoldertypeIsactive {Boolean} Whether the Ezsignfoldertype is active or not
      */
     constructor(pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
-        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);EzsignfoldertypeRequestCompoundAllOf.initialize(this);
+        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
         EzsignfoldertypeResponseCompound.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
     }
 
@@ -92,7 +90,6 @@ class EzsignfoldertypeResponseCompound {
         if (data) {
             obj = obj || new EzsignfoldertypeResponseCompound();
             EzsignfoldertypeResponse.constructFromObject(data, obj);
-            EzsignfoldertypeRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfoldertypeID')) {
                 obj['pkiEzsignfoldertypeID'] = ApiClient.convertToType(data['pkiEzsignfoldertypeID'], 'Number');
@@ -1188,15 +1185,6 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofuser'] = undefi
  * @member {Boolean} bEzsignfoldertypeIsactive
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIsactive'] = undefined;
-// Implement EzsignfoldertypeRequestCompoundAllOf interface:
-/**
- * @member {Array.<Number>} a_fkiUserIDSigned
- */
-EzsignfoldertypeRequestCompoundAllOf.prototype['a_fkiUserIDSigned'] = undefined;
-/**
- * @member {Array.<Number>} a_fkiUserIDSummary
- */
-EzsignfoldertypeRequestCompoundAllOf.prototype['a_fkiUserIDSummary'] = undefined;
 
 
 

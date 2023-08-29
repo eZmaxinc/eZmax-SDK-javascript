@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ContactRequest from './ContactRequest';
-import ContactRequestCompoundAllOf from './ContactRequestCompoundAllOf';
 import ContactinformationsRequestCompound from './ContactinformationsRequestCompound';
 
 /**
@@ -27,7 +26,6 @@ class ContactRequestCompound {
      * A Contact Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/ContactRequestCompound
      * @implements module:eZmaxAPI/model/ContactRequest
-     * @implements module:eZmaxAPI/model/ContactRequestCompoundAllOf
      * @param fkiContacttitleID {Number} The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sContactFirstname {String} The First name of the contact
@@ -36,7 +34,7 @@ class ContactRequestCompound {
      * @param objContactinformations {module:eZmaxAPI/model/ContactinformationsRequestCompound} 
      */
     constructor(fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany, objContactinformations) { 
-        ContactRequest.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany);ContactRequestCompoundAllOf.initialize(this, objContactinformations);
+        ContactRequest.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany);
         ContactRequestCompound.initialize(this, fkiContacttitleID, fkiLanguageID, sContactFirstname, sContactLastname, sContactCompany, objContactinformations);
     }
 
@@ -65,7 +63,6 @@ class ContactRequestCompound {
         if (data) {
             obj = obj || new ContactRequestCompound();
             ContactRequest.constructFromObject(data, obj);
-            ContactRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('fkiContacttitleID')) {
                 obj['fkiContacttitleID'] = ApiClient.convertToType(data['fkiContacttitleID'], 'Number');
@@ -312,11 +309,6 @@ ContactRequest.prototype['sContactCompany'] = undefined;
  * @member {String} dtContactBirthdate
  */
 ContactRequest.prototype['dtContactBirthdate'] = undefined;
-// Implement ContactRequestCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/ContactinformationsRequestCompound} objContactinformations
- */
-ContactRequestCompoundAllOf.prototype['objContactinformations'] = undefined;
 
 
 

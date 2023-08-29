@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import ModuleResponseCompound from './ModuleResponseCompound';
 import ModulegroupResponse from './ModulegroupResponse';
-import ModulegroupResponseCompoundAllOf from './ModulegroupResponseCompoundAllOf';
 
 /**
  * The ModulegroupResponseCompound model module.
@@ -27,13 +26,12 @@ class ModulegroupResponseCompound {
      * A Modulegroup Object
      * @alias module:eZmaxAPI/model/ModulegroupResponseCompound
      * @implements module:eZmaxAPI/model/ModulegroupResponse
-     * @implements module:eZmaxAPI/model/ModulegroupResponseCompoundAllOf
      * @param pkiModulegroupID {Number} The unique ID of the Modulegroup
      * @param sModulegroupNameX {String} The name of the Modulegroup in the language of the requester
      * @param a_objModule {Array.<module:eZmaxAPI/model/ModuleResponseCompound>} 
      */
     constructor(pkiModulegroupID, sModulegroupNameX, a_objModule) { 
-        ModulegroupResponse.initialize(this, pkiModulegroupID, sModulegroupNameX);ModulegroupResponseCompoundAllOf.initialize(this);
+        ModulegroupResponse.initialize(this, pkiModulegroupID, sModulegroupNameX);
         ModulegroupResponseCompound.initialize(this, pkiModulegroupID, sModulegroupNameX, a_objModule);
     }
 
@@ -59,7 +57,6 @@ class ModulegroupResponseCompound {
         if (data) {
             obj = obj || new ModulegroupResponseCompound();
             ModulegroupResponse.constructFromObject(data, obj);
-            ModulegroupResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiModulegroupID')) {
                 obj['pkiModulegroupID'] = ApiClient.convertToType(data['pkiModulegroupID'], 'Number');
@@ -183,11 +180,6 @@ ModulegroupResponse.prototype['pkiModulegroupID'] = undefined;
  * @member {String} sModulegroupNameX
  */
 ModulegroupResponse.prototype['sModulegroupNameX'] = undefined;
-// Implement ModulegroupResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/ModuleResponseCompound>} a_objModule
- */
-ModulegroupResponseCompoundAllOf.prototype['a_objModule'] = undefined;
 
 
 

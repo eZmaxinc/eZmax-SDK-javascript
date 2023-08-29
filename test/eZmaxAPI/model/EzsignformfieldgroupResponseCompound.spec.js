@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignformfieldgroupTextvalidation (base name: "eEzsignformfieldgroupTextvalidation")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldgroupTextvalidation
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignformfieldgroupRegexp (base name: "sEzsignformfieldgroupRegexp")', function() {
       // uncomment below and update the code to test the property sEzsignformfieldgroupRegexp
       //var instance = new EZmaxApiDefinitionFull.EzsignformfieldgroupResponseCompound();

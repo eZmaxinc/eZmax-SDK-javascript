@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzsignformfieldRequestAllOf from './CustomEzsignformfieldRequestAllOf';
 
 /**
  * The CustomEzsignformfieldRequest model module.
@@ -24,10 +23,9 @@ class CustomEzsignformfieldRequest {
      * Constructs a new <code>CustomEzsignformfieldRequest</code>.
      * A Custom Ezsignformfield Object to fill an Ezsignform using submitForm
      * @alias module:eZmaxAPI/model/CustomEzsignformfieldRequest
-     * @implements module:eZmaxAPI/model/CustomEzsignformfieldRequestAllOf
      */
     constructor() { 
-        CustomEzsignformfieldRequestAllOf.initialize(this);
+        
         CustomEzsignformfieldRequest.initialize(this);
     }
 
@@ -49,7 +47,6 @@ class CustomEzsignformfieldRequest {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzsignformfieldRequest();
-            CustomEzsignformfieldRequestAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignformfieldID')) {
                 obj['pkiEzsignformfieldID'] = ApiClient.convertToType(data['pkiEzsignformfieldID'], 'Number');
@@ -176,27 +173,6 @@ CustomEzsignformfieldRequest.prototype['bEzsignformfieldSelected'] = undefined;
 CustomEzsignformfieldRequest.prototype['sEzsignformfieldEnteredvalue'] = undefined;
 
 
-// Implement CustomEzsignformfieldRequestAllOf interface:
-/**
- * The unique ID of the Ezsignformfield
- * @member {Number} pkiEzsignformfieldID
- */
-CustomEzsignformfieldRequestAllOf.prototype['pkiEzsignformfieldID'] = undefined;
-/**
- * The Label for the Ezsignformfield
- * @member {String} sEzsignformfieldLabel
- */
-CustomEzsignformfieldRequestAllOf.prototype['sEzsignformfieldLabel'] = undefined;
-/**
- * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
- * @member {Boolean} bEzsignformfieldSelected
- */
-CustomEzsignformfieldRequestAllOf.prototype['bEzsignformfieldSelected'] = undefined;
-/**
- * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
- * @member {String} sEzsignformfieldEnteredvalue
- */
-CustomEzsignformfieldRequestAllOf.prototype['sEzsignformfieldEnteredvalue'] = undefined;
 
 
 

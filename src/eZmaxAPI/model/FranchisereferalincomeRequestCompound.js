@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import AddressRequest from './AddressRequest';
 import ContactRequestCompound from './ContactRequestCompound';
 import FranchisereferalincomeRequest from './FranchisereferalincomeRequest';
-import FranchisereferalincomeRequestCompoundAllOf from './FranchisereferalincomeRequestCompoundAllOf';
 
 /**
  * The FranchisereferalincomeRequestCompound model module.
@@ -28,7 +27,6 @@ class FranchisereferalincomeRequestCompound {
      * A Franchisereferalincome Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/FranchisereferalincomeRequestCompound
      * @implements module:eZmaxAPI/model/FranchisereferalincomeRequest
-     * @implements module:eZmaxAPI/model/FranchisereferalincomeRequestCompoundAllOf
      * @param fkiFranchisebrokerID {Number} The unique ID of the Franchisebroker
      * @param fkiFranchisereferalincomeprogramID {Number} The unique ID of the Franchisereferalincomeprogram
      * @param fkiPeriodID {Number} The unique ID of the Period
@@ -44,7 +42,7 @@ class FranchisereferalincomeRequestCompound {
      * @param a_objContact {Array.<module:eZmaxAPI/model/ContactRequestCompound>} 
      */
     constructor(fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact) { 
-        FranchisereferalincomeRequest.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);FranchisereferalincomeRequestCompoundAllOf.initialize(this, a_objContact);
+        FranchisereferalincomeRequest.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);
         FranchisereferalincomeRequestCompound.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact);
     }
 
@@ -80,7 +78,6 @@ class FranchisereferalincomeRequestCompound {
         if (data) {
             obj = obj || new FranchisereferalincomeRequestCompound();
             FranchisereferalincomeRequest.constructFromObject(data, obj);
-            FranchisereferalincomeRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiFranchisereferalincomeID')) {
                 obj['pkiFranchisereferalincomeID'] = ApiClient.convertToType(data['pkiFranchisereferalincomeID'], 'Number');
@@ -546,15 +543,6 @@ FranchisereferalincomeRequest.prototype['fkiFranchiseofficeID'] = undefined;
  * @member {String} sFranchisereferalincomeRemoteid
  */
 FranchisereferalincomeRequest.prototype['sFranchisereferalincomeRemoteid'] = undefined;
-// Implement FranchisereferalincomeRequestCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/AddressRequest} objAddress
- */
-FranchisereferalincomeRequestCompoundAllOf.prototype['objAddress'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/ContactRequestCompound>} a_objContact
- */
-FranchisereferalincomeRequestCompoundAllOf.prototype['a_objContact'] = undefined;
 
 
 

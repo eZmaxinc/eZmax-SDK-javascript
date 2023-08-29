@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import EzsignbulksendResponse from './EzsignbulksendResponse';
-import EzsignbulksendResponseCompoundAllOf from './EzsignbulksendResponseCompoundAllOf';
 import EzsignbulksenddocumentmappingResponseCompound from './EzsignbulksenddocumentmappingResponseCompound';
 import EzsignbulksendsignermappingResponse from './EzsignbulksendsignermappingResponse';
 import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
@@ -30,7 +29,6 @@ class EzsignbulksendResponseCompound {
      * An Ezsignbulksend Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignbulksendResponseCompound
      * @implements module:eZmaxAPI/model/EzsignbulksendResponse
-     * @implements module:eZmaxAPI/model/EzsignbulksendResponseCompoundAllOf
      * @param pkiEzsignbulksendID {Number} The unique ID of the Ezsignbulksend
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
@@ -46,7 +44,7 @@ class EzsignbulksendResponseCompound {
      * @param a_objEzsignbulksendsignermapping {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} 
      */
     constructor(pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping) { 
-        EzsignbulksendResponse.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit);EzsignbulksendResponseCompoundAllOf.initialize(this, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping);
+        EzsignbulksendResponse.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit);
         EzsignbulksendResponseCompound.initialize(this, pkiEzsignbulksendID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignbulksendDescription, tEzsignbulksendNote, bEzsignbulksendNeedvalidation, bEzsignbulksendIsactive, objAudit, a_objEzsignbulksenddocumentmapping, a_objEzsignbulksendsignermapping);
     }
 
@@ -82,7 +80,6 @@ class EzsignbulksendResponseCompound {
         if (data) {
             obj = obj || new EzsignbulksendResponseCompound();
             EzsignbulksendResponse.constructFromObject(data, obj);
-            EzsignbulksendResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignbulksendID')) {
                 obj['pkiEzsignbulksendID'] = ApiClient.convertToType(data['pkiEzsignbulksendID'], 'Number');
@@ -508,15 +505,6 @@ EzsignbulksendResponse.prototype['bEzsignbulksendIsactive'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsignbulksendResponse.prototype['objAudit'] = undefined;
-// Implement EzsignbulksendResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound>} a_objEzsignbulksenddocumentmapping
- */
-EzsignbulksendResponseCompoundAllOf.prototype['a_objEzsignbulksenddocumentmapping'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignbulksendsignermappingResponse>} a_objEzsignbulksendsignermapping
- */
-EzsignbulksendResponseCompoundAllOf.prototype['a_objEzsignbulksendsignermapping'] = undefined;
 
 
 

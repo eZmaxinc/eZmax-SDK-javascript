@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf from './EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf';
 import EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload from './EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
      * Constructs a new <code>EzsigndocumentGetEzsignformfieldgroupsV1Response</code>.
      * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups
      * @alias module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1Response
-     * @implements module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigndocumentGetEzsignformfieldgroupsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigndocumentGetEzsignformfieldgroupsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigndocumentGetEzsignformfieldgroupsV1Response();
-            EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigndocumentGetEzsignformfieldgroupsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigndocumentGetEzsignformfieldgroupsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload} mPayload
- */
-EzsigndocumentGetEzsignformfieldgroupsV1Response.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignformfieldgroupsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigndocumentGetEzsignformfieldgroupsV1Response.prototype['objDebugPayload'] = 
  */
 EzsigndocumentGetEzsignformfieldgroupsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload} mPayload
  */
-EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigndocumentGetEzsignformfieldgroupsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
-import EzmaxinvoicingagentResponseCompoundAllOf from './EzmaxinvoicingagentResponseCompoundAllOf';
 import EzmaxinvoicinguserResponse from './EzmaxinvoicinguserResponse';
 import FieldEEzmaxinvoicinguserVariationezsign from './FieldEEzmaxinvoicinguserVariationezsign';
 
@@ -28,7 +27,6 @@ class EzmaxinvoicinguserResponseCompound {
      * A Ezmaxinvoicinguser Object
      * @alias module:eZmaxAPI/model/EzmaxinvoicinguserResponseCompound
      * @implements module:eZmaxAPI/model/EzmaxinvoicinguserResponse
-     * @implements module:eZmaxAPI/model/EzmaxinvoicingagentResponseCompoundAllOf
      * @param fkiBillingentityinternalID {Number} The unique ID of the Billingentityinternal.
      * @param sBillingentityinternalDescriptionX {String} The description of the Billingentityinternal in the language of the requester
      * @param fkiUserID {Number} The unique ID of the User
@@ -39,7 +37,7 @@ class EzmaxinvoicinguserResponseCompound {
      * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
     constructor(fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiUserID, iEzmaxinvoicinguserEzsigndocument, bEzmaxinvoicinguserEzsignaccount, bEzmaxinvoicinguserBillableezsign, eEzmaxinvoicinguserVariationezsign, objContactName) { 
-        EzmaxinvoicinguserResponse.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiUserID, iEzmaxinvoicinguserEzsigndocument, bEzmaxinvoicinguserEzsignaccount, bEzmaxinvoicinguserBillableezsign, eEzmaxinvoicinguserVariationezsign);EzmaxinvoicingagentResponseCompoundAllOf.initialize(this, objContactName);
+        EzmaxinvoicinguserResponse.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiUserID, iEzmaxinvoicinguserEzsigndocument, bEzmaxinvoicinguserEzsignaccount, bEzmaxinvoicinguserBillableezsign, eEzmaxinvoicinguserVariationezsign);
         EzmaxinvoicinguserResponseCompound.initialize(this, fkiBillingentityinternalID, sBillingentityinternalDescriptionX, fkiUserID, iEzmaxinvoicinguserEzsigndocument, bEzmaxinvoicinguserEzsignaccount, bEzmaxinvoicinguserBillableezsign, eEzmaxinvoicinguserVariationezsign, objContactName);
     }
 
@@ -70,7 +68,6 @@ class EzmaxinvoicinguserResponseCompound {
         if (data) {
             obj = obj || new EzmaxinvoicinguserResponseCompound();
             EzmaxinvoicinguserResponse.constructFromObject(data, obj);
-            EzmaxinvoicingagentResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzmaxinvoicinguserID')) {
                 obj['pkiEzmaxinvoicinguserID'] = ApiClient.convertToType(data['pkiEzmaxinvoicinguserID'], 'Number');
@@ -390,11 +387,6 @@ EzmaxinvoicinguserResponse.prototype['bEzmaxinvoicinguserBillableezsign'] = unde
  * @member {module:eZmaxAPI/model/FieldEEzmaxinvoicinguserVariationezsign} eEzmaxinvoicinguserVariationezsign
  */
 EzmaxinvoicinguserResponse.prototype['eEzmaxinvoicinguserVariationezsign'] = undefined;
-// Implement EzmaxinvoicingagentResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/CustomContactNameResponse} objContactName
- */
-EzmaxinvoicingagentResponseCompoundAllOf.prototype['objContactName'] = undefined;
 
 
 

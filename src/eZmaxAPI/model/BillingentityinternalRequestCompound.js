@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BillingentityinternalRequest from './BillingentityinternalRequest';
-import BillingentityinternalRequestCompoundAllOf from './BillingentityinternalRequestCompoundAllOf';
 import BillingentityinternalproductRequestCompound from './BillingentityinternalproductRequestCompound';
 import MultilingualBillingentityinternalDescription from './MultilingualBillingentityinternalDescription';
 
@@ -28,12 +27,11 @@ class BillingentityinternalRequestCompound {
      * A Billingentityinternal Object and children
      * @alias module:eZmaxAPI/model/BillingentityinternalRequestCompound
      * @implements module:eZmaxAPI/model/BillingentityinternalRequest
-     * @implements module:eZmaxAPI/model/BillingentityinternalRequestCompoundAllOf
      * @param objBillingentityinternalDescription {module:eZmaxAPI/model/MultilingualBillingentityinternalDescription} 
      * @param a_objBillingentityinternalproduct {Array.<module:eZmaxAPI/model/BillingentityinternalproductRequestCompound>} 
      */
     constructor(objBillingentityinternalDescription, a_objBillingentityinternalproduct) { 
-        BillingentityinternalRequest.initialize(this, objBillingentityinternalDescription);BillingentityinternalRequestCompoundAllOf.initialize(this, a_objBillingentityinternalproduct);
+        BillingentityinternalRequest.initialize(this, objBillingentityinternalDescription);
         BillingentityinternalRequestCompound.initialize(this, objBillingentityinternalDescription, a_objBillingentityinternalproduct);
     }
 
@@ -58,7 +56,6 @@ class BillingentityinternalRequestCompound {
         if (data) {
             obj = obj || new BillingentityinternalRequestCompound();
             BillingentityinternalRequest.constructFromObject(data, obj);
-            BillingentityinternalRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiBillingentityinternalID')) {
                 obj['pkiBillingentityinternalID'] = ApiClient.convertToType(data['pkiBillingentityinternalID'], 'Number');
@@ -177,11 +174,6 @@ BillingentityinternalRequest.prototype['pkiBillingentityinternalID'] = undefined
  * @member {module:eZmaxAPI/model/MultilingualBillingentityinternalDescription} objBillingentityinternalDescription
  */
 BillingentityinternalRequest.prototype['objBillingentityinternalDescription'] = undefined;
-// Implement BillingentityinternalRequestCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/BillingentityinternalproductRequestCompound>} a_objBillingentityinternalproduct
- */
-BillingentityinternalRequestCompoundAllOf.prototype['a_objBillingentityinternalproduct'] = undefined;
 
 
 

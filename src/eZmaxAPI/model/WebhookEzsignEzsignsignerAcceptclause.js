@@ -17,7 +17,6 @@ import CommonWebhook from './CommonWebhook';
 import CustomWebhookResponse from './CustomWebhookResponse';
 import EzsignfolderResponse from './EzsignfolderResponse';
 import EzsignfoldersignerassociationResponseCompound from './EzsignfoldersignerassociationResponseCompound';
-import WebhookEzsignEzsignsignerAcceptclauseAllOf from './WebhookEzsignEzsignsignerAcceptclauseAllOf';
 
 /**
  * The WebhookEzsignEzsignsignerAcceptclause model module.
@@ -29,15 +28,14 @@ class WebhookEzsignEzsignsignerAcceptclause {
      * Constructs a new <code>WebhookEzsignEzsignsignerAcceptclause</code>.
      * This is the base Webhook object
      * @alias module:eZmaxAPI/model/WebhookEzsignEzsignsignerAcceptclause
-     * @implements module:eZmaxAPI/model/WebhookEzsignEzsignsignerAcceptclauseAllOf
      * @implements module:eZmaxAPI/model/CommonWebhook
-     * @param objEzsignfoldersignerassociation {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} 
      * @param objWebhook {module:eZmaxAPI/model/CustomWebhookResponse} 
      * @param a_objAttempt {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param objEzsignfoldersignerassociation {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} 
      */
-    constructor(objEzsignfoldersignerassociation, objWebhook, a_objAttempt) { 
-        WebhookEzsignEzsignsignerAcceptclauseAllOf.initialize(this, objEzsignfoldersignerassociation);CommonWebhook.initialize(this, objWebhook, a_objAttempt);
-        WebhookEzsignEzsignsignerAcceptclause.initialize(this, objEzsignfoldersignerassociation, objWebhook, a_objAttempt);
+    constructor(objWebhook, a_objAttempt, objEzsignfoldersignerassociation) { 
+        CommonWebhook.initialize(this, objWebhook, a_objAttempt);
+        WebhookEzsignEzsignsignerAcceptclause.initialize(this, objWebhook, a_objAttempt, objEzsignfoldersignerassociation);
     }
 
     /**
@@ -45,10 +43,10 @@ class WebhookEzsignEzsignsignerAcceptclause {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objEzsignfoldersignerassociation, objWebhook, a_objAttempt) { 
-        obj['objEzsignfoldersignerassociation'] = objEzsignfoldersignerassociation;
+    static initialize(obj, objWebhook, a_objAttempt, objEzsignfoldersignerassociation) { 
         obj['objWebhook'] = objWebhook;
         obj['a_objAttempt'] = a_objAttempt;
+        obj['objEzsignfoldersignerassociation'] = objEzsignfoldersignerassociation;
     }
 
     /**
@@ -61,20 +59,19 @@ class WebhookEzsignEzsignsignerAcceptclause {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookEzsignEzsignsignerAcceptclause();
-            WebhookEzsignEzsignsignerAcceptclauseAllOf.constructFromObject(data, obj);
             CommonWebhook.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objEzsignfolder')) {
-                obj['objEzsignfolder'] = EzsignfolderResponse.constructFromObject(data['objEzsignfolder']);
-            }
-            if (data.hasOwnProperty('objEzsignfoldersignerassociation')) {
-                obj['objEzsignfoldersignerassociation'] = EzsignfoldersignerassociationResponseCompound.constructFromObject(data['objEzsignfoldersignerassociation']);
-            }
             if (data.hasOwnProperty('objWebhook')) {
                 obj['objWebhook'] = CustomWebhookResponse.constructFromObject(data['objWebhook']);
             }
             if (data.hasOwnProperty('a_objAttempt')) {
                 obj['a_objAttempt'] = ApiClient.convertToType(data['a_objAttempt'], [AttemptResponseCompound]);
+            }
+            if (data.hasOwnProperty('objEzsignfolder')) {
+                obj['objEzsignfolder'] = EzsignfolderResponse.constructFromObject(data['objEzsignfolder']);
+            }
+            if (data.hasOwnProperty('objEzsignfoldersignerassociation')) {
+                obj['objEzsignfoldersignerassociation'] = EzsignfoldersignerassociationResponseCompound.constructFromObject(data['objEzsignfoldersignerassociation']);
             }
         }
         return obj;
@@ -92,14 +89,6 @@ class WebhookEzsignEzsignsignerAcceptclause {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `objEzsignfolder`
-        if (data['objEzsignfolder']) { // data not null
-          EzsignfolderResponse.validateJSON(data['objEzsignfolder']);
-        }
-        // validate the optional field `objEzsignfoldersignerassociation`
-        if (data['objEzsignfoldersignerassociation']) { // data not null
-          EzsignfoldersignerassociationResponseCompound.validateJSON(data['objEzsignfoldersignerassociation']);
-        }
         // validate the optional field `objWebhook`
         if (data['objWebhook']) { // data not null
           CustomWebhookResponse.validateJSON(data['objWebhook']);
@@ -114,36 +103,18 @@ class WebhookEzsignEzsignsignerAcceptclause {
                 AttemptResponseCompound.validateJSON(item);
             };
         }
+        // validate the optional field `objEzsignfolder`
+        if (data['objEzsignfolder']) { // data not null
+          EzsignfolderResponse.validateJSON(data['objEzsignfolder']);
+        }
+        // validate the optional field `objEzsignfoldersignerassociation`
+        if (data['objEzsignfoldersignerassociation']) { // data not null
+          EzsignfoldersignerassociationResponseCompound.validateJSON(data['objEzsignfoldersignerassociation']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignfolderResponse}
-     */
-    getObjEzsignfolder() {
-        return this.objEzsignfolder;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignfolderResponse} objEzsignfolder
-     */
-    setObjEzsignfolder(objEzsignfolder) {
-        this['objEzsignfolder'] = objEzsignfolder;
-    }
-/**
-     * @return {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound}
-     */
-    getObjEzsignfoldersignerassociation() {
-        return this.objEzsignfoldersignerassociation;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} objEzsignfoldersignerassociation
-     */
-    setObjEzsignfoldersignerassociation(objEzsignfoldersignerassociation) {
-        this['objEzsignfoldersignerassociation'] = objEzsignfoldersignerassociation;
-    }
 /**
      * @return {module:eZmaxAPI/model/CustomWebhookResponse}
      */
@@ -172,20 +143,36 @@ class WebhookEzsignEzsignsignerAcceptclause {
     setAObjAttempt(a_objAttempt) {
         this['a_objAttempt'] = a_objAttempt;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignfolderResponse}
+     */
+    getObjEzsignfolder() {
+        return this.objEzsignfolder;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfolderResponse} objEzsignfolder
+     */
+    setObjEzsignfolder(objEzsignfolder) {
+        this['objEzsignfolder'] = objEzsignfolder;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound}
+     */
+    getObjEzsignfoldersignerassociation() {
+        return this.objEzsignfoldersignerassociation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} objEzsignfoldersignerassociation
+     */
+    setObjEzsignfoldersignerassociation(objEzsignfoldersignerassociation) {
+        this['objEzsignfoldersignerassociation'] = objEzsignfoldersignerassociation;
+    }
 
 }
 
-WebhookEzsignEzsignsignerAcceptclause.RequiredProperties = ["objEzsignfoldersignerassociation", "objWebhook", "a_objAttempt"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsignfolderResponse} objEzsignfolder
- */
-WebhookEzsignEzsignsignerAcceptclause.prototype['objEzsignfolder'] = undefined;
-
-/**
- * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} objEzsignfoldersignerassociation
- */
-WebhookEzsignEzsignsignerAcceptclause.prototype['objEzsignfoldersignerassociation'] = undefined;
+WebhookEzsignEzsignsignerAcceptclause.RequiredProperties = ["objWebhook", "a_objAttempt", "objEzsignfoldersignerassociation"];
 
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook
@@ -198,16 +185,17 @@ WebhookEzsignEzsignsignerAcceptclause.prototype['objWebhook'] = undefined;
  */
 WebhookEzsignEzsignsignerAcceptclause.prototype['a_objAttempt'] = undefined;
 
-
-// Implement WebhookEzsignEzsignsignerAcceptclauseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignfolderResponse} objEzsignfolder
  */
-WebhookEzsignEzsignsignerAcceptclauseAllOf.prototype['objEzsignfolder'] = undefined;
+WebhookEzsignEzsignsignerAcceptclause.prototype['objEzsignfolder'] = undefined;
+
 /**
  * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound} objEzsignfoldersignerassociation
  */
-WebhookEzsignEzsignsignerAcceptclauseAllOf.prototype['objEzsignfoldersignerassociation'] = undefined;
+WebhookEzsignEzsignsignerAcceptclause.prototype['objEzsignfoldersignerassociation'] = undefined;
+
+
 // Implement CommonWebhook interface:
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook

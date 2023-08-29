@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ModuleResponse from './ModuleResponse';
-import ModuleResponseCompoundAllOf from './ModuleResponseCompoundAllOf';
 import ModulesectionResponseCompound from './ModulesectionResponseCompound';
 
 /**
@@ -27,7 +26,6 @@ class ModuleResponseCompound {
      * A Module Object
      * @alias module:eZmaxAPI/model/ModuleResponseCompound
      * @implements module:eZmaxAPI/model/ModuleResponse
-     * @implements module:eZmaxAPI/model/ModuleResponseCompoundAllOf
      * @param pkiModuleID {Number} The unique ID of the Module
      * @param fkiModulegroupID {Number} The unique ID of the Modulegroup
      * @param eModuleInternalname {String} The Internal name of the Module.  This is theoretically an enum field but there are so many possibles values we decided not to list them all.
@@ -37,7 +35,7 @@ class ModuleResponseCompound {
      * @param a_objModulesection {Array.<module:eZmaxAPI/model/ModulesectionResponseCompound>} 
      */
     constructor(pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi, a_objModulesection) { 
-        ModuleResponse.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi);ModuleResponseCompoundAllOf.initialize(this);
+        ModuleResponse.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi);
         ModuleResponseCompound.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi, a_objModulesection);
     }
 
@@ -67,7 +65,6 @@ class ModuleResponseCompound {
         if (data) {
             obj = obj || new ModuleResponseCompound();
             ModuleResponse.constructFromObject(data, obj);
-            ModuleResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiModuleID')) {
                 obj['pkiModuleID'] = ApiClient.convertToType(data['pkiModuleID'], 'Number');
@@ -312,11 +309,6 @@ ModuleResponse.prototype['bModuleRegistered'] = undefined;
  * @member {Boolean} bModuleRegisteredapi
  */
 ModuleResponse.prototype['bModuleRegisteredapi'] = undefined;
-// Implement ModuleResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/ModulesectionResponseCompound>} a_objModulesection
- */
-ModuleResponseCompoundAllOf.prototype['a_objModulesection'] = undefined;
 
 
 

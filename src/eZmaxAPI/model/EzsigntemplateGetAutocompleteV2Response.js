@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsigntemplateGetAutocompleteV2ResponseAllOf from './EzsigntemplateGetAutocompleteV2ResponseAllOf';
 import EzsigntemplateGetAutocompleteV2ResponseMPayload from './EzsigntemplateGetAutocompleteV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsigntemplateGetAutocompleteV2Response {
      * Constructs a new <code>EzsigntemplateGetAutocompleteV2Response</code>.
      * Response for GET /2/object/ezsigntemplate/getAutocomplete
      * @alias module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2Response
-     * @implements module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsigntemplateGetAutocompleteV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsigntemplateGetAutocompleteV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplateGetAutocompleteV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsigntemplateGetAutocompleteV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsigntemplateGetAutocompleteV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsigntemplateGetAutocompleteV2Response();
-            EzsigntemplateGetAutocompleteV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsigntemplateGetAutocompleteV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsigntemplateGetAutocompleteV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsigntemplateGetAutocompleteV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsigntemplateGetAutocompleteV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsigntemplateGetAutocompleteV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsigntemplateGetAutocompleteV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsigntemplateGetAutocompleteV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsigntemplateGetAutocompleteV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload} mPayload
- */
-EzsigntemplateGetAutocompleteV2Response.prototype['mPayload'] = undefined;
+EzsigntemplateGetAutocompleteV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsigntemplateGetAutocompleteV2Response.prototype['objDebugPayload'] = undefined
  */
 EzsigntemplateGetAutocompleteV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsigntemplateGetAutocompleteV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsigntemplateGetAutocompleteV2ResponseMPayload} mPayload
  */
-EzsigntemplateGetAutocompleteV2ResponseAllOf.prototype['mPayload'] = undefined;
+EzsigntemplateGetAutocompleteV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfoldersignerassociationResponse from './EzsignfoldersignerassociationResponse';
-import EzsignfoldersignerassociationResponseCompoundAllOf from './EzsignfoldersignerassociationResponseCompoundAllOf';
 import EzsignfoldersignerassociationResponseCompoundUser from './EzsignfoldersignerassociationResponseCompoundUser';
 import EzsignsignerResponseCompound from './EzsignsignerResponseCompound';
 import EzsignsignergroupResponseCompound from './EzsignsignergroupResponseCompound';
@@ -29,7 +28,6 @@ class EzsignfoldersignerassociationResponseCompound {
      * An Ezsignfoldersignerassociation Object
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompound
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponse
-     * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundAllOf
      * @param pkiEzsignfoldersignerassociationID {Number} The unique ID of the Ezsignfoldersignerassociation
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      * @param bEzsignfoldersignerassociationDelayedsend {Boolean} If this flag is true the signatory is part of a delayed send.
@@ -37,7 +35,7 @@ class EzsignfoldersignerassociationResponseCompound {
      * @param tEzsignfoldersignerassociationMessage {String} A custom text message that will be added to the email sent.
      */
     constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage) { 
-        EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);EzsignfoldersignerassociationResponseCompoundAllOf.initialize(this);
+        EzsignfoldersignerassociationResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);
         EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);
     }
 
@@ -65,7 +63,6 @@ class EzsignfoldersignerassociationResponseCompound {
         if (data) {
             obj = obj || new EzsignfoldersignerassociationResponseCompound();
             EzsignfoldersignerassociationResponse.constructFromObject(data, obj);
-            EzsignfoldersignerassociationResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
@@ -320,19 +317,6 @@ EzsignfoldersignerassociationResponse.prototype['bEzsignfoldersignerassociationR
  * @member {String} tEzsignfoldersignerassociationMessage
  */
 EzsignfoldersignerassociationResponse.prototype['tEzsignfoldersignerassociationMessage'] = undefined;
-// Implement EzsignfoldersignerassociationResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzsignsignergroupResponseCompound} objEzsignsignergroup
- */
-EzsignfoldersignerassociationResponseCompoundAllOf.prototype['objEzsignsignergroup'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/EzsignfoldersignerassociationResponseCompoundUser} objUser
- */
-EzsignfoldersignerassociationResponseCompoundAllOf.prototype['objUser'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/EzsignsignerResponseCompound} objEzsignsigner
- */
-EzsignfoldersignerassociationResponseCompoundAllOf.prototype['objEzsignsigner'] = undefined;
 
 
 

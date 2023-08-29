@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApikeyEditPermissionsV1ResponseAllOf from './ApikeyEditPermissionsV1ResponseAllOf';
 import ApikeyEditPermissionsV1ResponseMPayload from './ApikeyEditPermissionsV1ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class ApikeyEditPermissionsV1Response {
      * Constructs a new <code>ApikeyEditPermissionsV1Response</code>.
      * Response for PUT /1/object/apikey/{pkiApikeyID}/editPermissions
      * @alias module:eZmaxAPI/model/ApikeyEditPermissionsV1Response
-     * @implements module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        ApikeyEditPermissionsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        ApikeyEditPermissionsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        ApikeyEditPermissionsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class ApikeyEditPermissionsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class ApikeyEditPermissionsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ApikeyEditPermissionsV1Response();
-            ApikeyEditPermissionsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApikeyEditPermissionsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = ApikeyEditPermissionsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class ApikeyEditPermissionsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          ApikeyEditPermissionsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class ApikeyEditPermissionsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          ApikeyEditPermissionsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class ApikeyEditPermissionsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-ApikeyEditPermissionsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload} mPayload
- */
-ApikeyEditPermissionsV1Response.prototype['mPayload'] = undefined;
+ApikeyEditPermissionsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ ApikeyEditPermissionsV1Response.prototype['objDebugPayload'] = undefined;
  */
 ApikeyEditPermissionsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement ApikeyEditPermissionsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/ApikeyEditPermissionsV1ResponseMPayload} mPayload
  */
-ApikeyEditPermissionsV1ResponseAllOf.prototype['mPayload'] = undefined;
+ApikeyEditPermissionsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

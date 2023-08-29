@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BrandingResponse from './BrandingResponse';
-import BrandingResponseCompoundAllOf from './BrandingResponseCompoundAllOf';
 import FieldEBrandingLogo from './FieldEBrandingLogo';
 import MultilingualBrandingDescription from './MultilingualBrandingDescription';
 
@@ -28,7 +27,6 @@ class BrandingResponseCompound {
      * A Branding Object
      * @alias module:eZmaxAPI/model/BrandingResponseCompound
      * @implements module:eZmaxAPI/model/BrandingResponse
-     * @implements module:eZmaxAPI/model/BrandingResponseCompoundAllOf
      * @param pkiBrandingID {Number} The unique ID of the Branding
      * @param objBrandingDescription {module:eZmaxAPI/model/MultilingualBrandingDescription} 
      * @param sBrandingDescriptionX {String} The Description of the Branding in the language of the requester
@@ -42,7 +40,7 @@ class BrandingResponseCompound {
      * @param bBrandingIsactive {Boolean} Whether the Branding is active or not
      */
     constructor(pkiBrandingID, objBrandingDescription, sBrandingDescriptionX, eBrandingLogo, iBrandingColortext, iBrandingColortextlinkbox, iBrandingColortextbutton, iBrandingColorbackground, iBrandingColorbackgroundbutton, iBrandingColorbackgroundsmallbox, bBrandingIsactive) { 
-        BrandingResponse.initialize(this, pkiBrandingID, objBrandingDescription, sBrandingDescriptionX, eBrandingLogo, iBrandingColortext, iBrandingColortextlinkbox, iBrandingColortextbutton, iBrandingColorbackground, iBrandingColorbackgroundbutton, iBrandingColorbackgroundsmallbox, bBrandingIsactive);BrandingResponseCompoundAllOf.initialize(this);
+        BrandingResponse.initialize(this, pkiBrandingID, objBrandingDescription, sBrandingDescriptionX, eBrandingLogo, iBrandingColortext, iBrandingColortextlinkbox, iBrandingColortextbutton, iBrandingColorbackground, iBrandingColorbackgroundbutton, iBrandingColorbackgroundsmallbox, bBrandingIsactive);
         BrandingResponseCompound.initialize(this, pkiBrandingID, objBrandingDescription, sBrandingDescriptionX, eBrandingLogo, iBrandingColortext, iBrandingColortextlinkbox, iBrandingColortextbutton, iBrandingColorbackground, iBrandingColorbackgroundbutton, iBrandingColorbackgroundsmallbox, bBrandingIsactive);
     }
 
@@ -76,7 +74,6 @@ class BrandingResponseCompound {
         if (data) {
             obj = obj || new BrandingResponseCompound();
             BrandingResponse.constructFromObject(data, obj);
-            BrandingResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiBrandingID')) {
                 obj['pkiBrandingID'] = ApiClient.convertToType(data['pkiBrandingID'], 'Number');
@@ -562,12 +559,6 @@ BrandingResponse.prototype['iBrandingColorbackgroundsmallbox'] = undefined;
  * @member {Boolean} bBrandingIsactive
  */
 BrandingResponse.prototype['bBrandingIsactive'] = undefined;
-// Implement BrandingResponseCompoundAllOf interface:
-/**
- * The url of the picture used as logo in the Branding
- * @member {String} sBrandingLogourl
- */
-BrandingResponseCompoundAllOf.prototype['sBrandingLogourl'] = undefined;
 
 
 

@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ClonehistoryGetListV1ResponseMPayloadAllOf from './ClonehistoryGetListV1ResponseMPayloadAllOf';
 import ClonehistoryListElement from './ClonehistoryListElement';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
 
@@ -26,15 +25,14 @@ class ClonehistoryGetListV1ResponseMPayload {
      * Constructs a new <code>ClonehistoryGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/clonehistory/getList
      * @alias module:eZmaxAPI/model/ClonehistoryGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/ClonehistoryGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objClonehistory {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objClonehistory {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} 
      */
-    constructor(a_objClonehistory, iRowReturned, iRowFiltered) { 
-        ClonehistoryGetListV1ResponseMPayloadAllOf.initialize(this, a_objClonehistory);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        ClonehistoryGetListV1ResponseMPayload.initialize(this, a_objClonehistory, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objClonehistory) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        ClonehistoryGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objClonehistory);
     }
 
     /**
@@ -42,10 +40,10 @@ class ClonehistoryGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objClonehistory, iRowReturned, iRowFiltered) { 
-        obj['a_objClonehistory'] = a_objClonehistory;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objClonehistory) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objClonehistory'] = a_objClonehistory;
     }
 
     /**
@@ -58,17 +56,16 @@ class ClonehistoryGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ClonehistoryGetListV1ResponseMPayload();
-            ClonehistoryGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objClonehistory')) {
-                obj['a_objClonehistory'] = ApiClient.convertToType(data['a_objClonehistory'], [ClonehistoryListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objClonehistory')) {
+                obj['a_objClonehistory'] = ApiClient.convertToType(data['a_objClonehistory'], [ClonehistoryListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class ClonehistoryGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/ClonehistoryListElement>}
-     */
-    getAObjClonehistory() {
-        return this.a_objClonehistory;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} a_objClonehistory
-     */
-    setAObjClonehistory(a_objClonehistory) {
-        this['a_objClonehistory'] = a_objClonehistory;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class ClonehistoryGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/ClonehistoryListElement>}
+     */
+    getAObjClonehistory() {
+        return this.a_objClonehistory;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} a_objClonehistory
+     */
+    setAObjClonehistory(a_objClonehistory) {
+        this['a_objClonehistory'] = a_objClonehistory;
+    }
 
 }
 
-ClonehistoryGetListV1ResponseMPayload.RequiredProperties = ["a_objClonehistory", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} a_objClonehistory
- */
-ClonehistoryGetListV1ResponseMPayload.prototype['a_objClonehistory'] = undefined;
+ClonehistoryGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objClonehistory"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ ClonehistoryGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 ClonehistoryGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement ClonehistoryGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/ClonehistoryListElement>} a_objClonehistory
  */
-ClonehistoryGetListV1ResponseMPayloadAllOf.prototype['a_objClonehistory'] = undefined;
+ClonehistoryGetListV1ResponseMPayload.prototype['a_objClonehistory'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

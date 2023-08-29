@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import CustomDropdownElementResponseCompound from './CustomDropdownElementResponseCompound';
+import EnumTextvalidation from './EnumTextvalidation';
 import EzsignformfieldResponseCompound from './EzsignformfieldResponseCompound';
 import EzsignformfieldgroupResponse from './EzsignformfieldgroupResponse';
-import EzsignformfieldgroupResponseCompoundAllOf from './EzsignformfieldgroupResponseCompoundAllOf';
 import EzsignformfieldgroupsignerResponseCompound from './EzsignformfieldgroupsignerResponseCompound';
 import FieldEEzsignformfieldgroupSignerrequirement from './FieldEEzsignformfieldgroupSignerrequirement';
 import FieldEEzsignformfieldgroupTooltipposition from './FieldEEzsignformfieldgroupTooltipposition';
@@ -32,7 +32,6 @@ class EzsignformfieldgroupResponseCompound {
      * An Ezsignformfieldgroup Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignformfieldgroupResponseCompound
      * @implements module:eZmaxAPI/model/EzsignformfieldgroupResponse
-     * @implements module:eZmaxAPI/model/EzsignformfieldgroupResponseCompoundAllOf
      * @param pkiEzsignformfieldgroupID {Number} The unique ID of the Ezsignformfieldgroup
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param eEzsignformfieldgroupType {module:eZmaxAPI/model/FieldEEzsignformfieldgroupType} 
@@ -46,7 +45,7 @@ class EzsignformfieldgroupResponseCompound {
      * @param a_objEzsignformfieldgroupsigner {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} 
      */
     constructor(pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfield, a_objEzsignformfieldgroupsigner) { 
-        EzsignformfieldgroupResponse.initialize(this, pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);EzsignformfieldgroupResponseCompoundAllOf.initialize(this, a_objEzsignformfield, a_objEzsignformfieldgroupsigner);
+        EzsignformfieldgroupResponse.initialize(this, pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);
         EzsignformfieldgroupResponseCompound.initialize(this, pkiEzsignformfieldgroupID, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfield, a_objEzsignformfieldgroupsigner);
     }
 
@@ -80,7 +79,6 @@ class EzsignformfieldgroupResponseCompound {
         if (data) {
             obj = obj || new EzsignformfieldgroupResponseCompound();
             EzsignformfieldgroupResponse.constructFromObject(data, obj);
-            EzsignformfieldgroupResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignformfieldgroupID')) {
                 obj['pkiEzsignformfieldgroupID'] = ApiClient.convertToType(data['pkiEzsignformfieldgroupID'], 'Number');
@@ -117,6 +115,9 @@ class EzsignformfieldgroupResponseCompound {
             }
             if (data.hasOwnProperty('bEzsignformfieldgroupEncrypted')) {
                 obj['bEzsignformfieldgroupEncrypted'] = ApiClient.convertToType(data['bEzsignformfieldgroupEncrypted'], 'Boolean');
+            }
+            if (data.hasOwnProperty('eEzsignformfieldgroupTextvalidation')) {
+                obj['eEzsignformfieldgroupTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignformfieldgroupTextvalidation']);
             }
             if (data.hasOwnProperty('sEzsignformfieldgroupRegexp')) {
                 obj['sEzsignformfieldgroupRegexp'] = ApiClient.convertToType(data['sEzsignformfieldgroupRegexp'], 'String');
@@ -356,6 +357,7 @@ class EzsignformfieldgroupResponseCompound {
 /**
      * Returns The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsignformfieldgroupMaxlength() {
@@ -383,6 +385,19 @@ class EzsignformfieldgroupResponseCompound {
      */
     setBEzsignformfieldgroupEncrypted(bEzsignformfieldgroupEncrypted) {
         this['bEzsignformfieldgroupEncrypted'] = bEzsignformfieldgroupEncrypted;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsignformfieldgroupTextvalidation() {
+        return this.eEzsignformfieldgroupTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
+     */
+    setEEzsignformfieldgroupTextvalidation(eEzsignformfieldgroupTextvalidation) {
+        this['eEzsignformfieldgroupTextvalidation'] = eEzsignformfieldgroupTextvalidation;
     }
 /**
      * Returns A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
@@ -542,6 +557,11 @@ EzsignformfieldgroupResponseCompound.prototype['iEzsignformfieldgroupMaxlength']
 EzsignformfieldgroupResponseCompound.prototype['bEzsignformfieldgroupEncrypted'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
+ */
+EzsignformfieldgroupResponseCompound.prototype['eEzsignformfieldgroupTextvalidation'] = undefined;
+
+/**
  * A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
  * @member {String} sEzsignformfieldgroupRegexp
  */
@@ -634,6 +654,10 @@ EzsignformfieldgroupResponse.prototype['iEzsignformfieldgroupMaxlength'] = undef
  */
 EzsignformfieldgroupResponse.prototype['bEzsignformfieldgroupEncrypted'] = undefined;
 /**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignformfieldgroupTextvalidation
+ */
+EzsignformfieldgroupResponse.prototype['eEzsignformfieldgroupTextvalidation'] = undefined;
+/**
  * A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
  * @member {String} sEzsignformfieldgroupRegexp
  */
@@ -647,19 +671,6 @@ EzsignformfieldgroupResponse.prototype['tEzsignformfieldgroupTooltip'] = undefin
  * @member {module:eZmaxAPI/model/FieldEEzsignformfieldgroupTooltipposition} eEzsignformfieldgroupTooltipposition
  */
 EzsignformfieldgroupResponse.prototype['eEzsignformfieldgroupTooltipposition'] = undefined;
-// Implement EzsignformfieldgroupResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignformfieldResponseCompound>} a_objEzsignformfield
- */
-EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfield'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomDropdownElementResponseCompound>} a_objDropdownElement
- */
-EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objDropdownElement'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerResponseCompound>} a_objEzsignformfieldgroupsigner
- */
-EzsignformfieldgroupResponseCompoundAllOf.prototype['a_objEzsignformfieldgroupsigner'] = undefined;
 
 
 

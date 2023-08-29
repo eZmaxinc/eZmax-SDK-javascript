@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApikeyGetCorsV1ResponseAllOf from './ApikeyGetCorsV1ResponseAllOf';
 import ApikeyGetCorsV1ResponseMPayload from './ApikeyGetCorsV1ResponseMPayload';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
@@ -28,13 +27,13 @@ class ApikeyGetCorsV1Response {
      * Constructs a new <code>ApikeyGetCorsV1Response</code>.
      * Response for GET /1/object/apikey/{pkiApikeyID}/getCors
      * @alias module:eZmaxAPI/model/ApikeyGetCorsV1Response
-     * @implements module:eZmaxAPI/model/ApikeyGetCorsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        ApikeyGetCorsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        ApikeyGetCorsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        ApikeyGetCorsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class ApikeyGetCorsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class ApikeyGetCorsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ApikeyGetCorsV1Response();
-            ApikeyGetCorsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = ApikeyGetCorsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = ApikeyGetCorsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class ApikeyGetCorsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          ApikeyGetCorsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class ApikeyGetCorsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          ApikeyGetCorsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class ApikeyGetCorsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-ApikeyGetCorsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload} mPayload
- */
-ApikeyGetCorsV1Response.prototype['mPayload'] = undefined;
+ApikeyGetCorsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ ApikeyGetCorsV1Response.prototype['objDebugPayload'] = undefined;
  */
 ApikeyGetCorsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement ApikeyGetCorsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/ApikeyGetCorsV1ResponseMPayload} mPayload
  */
-ApikeyGetCorsV1ResponseAllOf.prototype['mPayload'] = undefined;
+ApikeyGetCorsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

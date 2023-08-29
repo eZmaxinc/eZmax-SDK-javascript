@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload);
     });
 
-    it('should have the property a_objPaymentterm (base name: "a_objPaymentterm")', function() {
-      // uncomment below and update the code to test the property a_objPaymentterm
-      //var instance = new EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
     it('should have the property iRowReturned (base name: "iRowReturned")', function() {
       // uncomment below and update the code to test the property iRowReturned
       //var instance = new EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload();
@@ -68,6 +62,12 @@
 
     it('should have the property iRowFiltered (base name: "iRowFiltered")', function() {
       // uncomment below and update the code to test the property iRowFiltered
+      //var instance = new EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objPaymentterm (base name: "a_objPaymentterm")', function() {
+      // uncomment below and update the code to test the property a_objPaymentterm
       //var instance = new EZmaxApiDefinitionFull.PaymenttermGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });

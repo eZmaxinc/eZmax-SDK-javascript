@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import BillingentityinternalResponse from './BillingentityinternalResponse';
-import BillingentityinternalResponseCompoundAllOf from './BillingentityinternalResponseCompoundAllOf';
 import BillingentityinternalproductResponseCompound from './BillingentityinternalproductResponseCompound';
 import MultilingualBillingentityinternalDescription from './MultilingualBillingentityinternalDescription';
 
@@ -28,13 +27,12 @@ class BillingentityinternalResponseCompound {
      * A Billingentityinternal Object
      * @alias module:eZmaxAPI/model/BillingentityinternalResponseCompound
      * @implements module:eZmaxAPI/model/BillingentityinternalResponse
-     * @implements module:eZmaxAPI/model/BillingentityinternalResponseCompoundAllOf
      * @param pkiBillingentityinternalID {Number} The unique ID of the Billingentityinternal.
      * @param objBillingentityinternalDescription {module:eZmaxAPI/model/MultilingualBillingentityinternalDescription} 
      * @param a_objBillingentityinternalproduct {Array.<module:eZmaxAPI/model/BillingentityinternalproductResponseCompound>} 
      */
     constructor(pkiBillingentityinternalID, objBillingentityinternalDescription, a_objBillingentityinternalproduct) { 
-        BillingentityinternalResponse.initialize(this, pkiBillingentityinternalID, objBillingentityinternalDescription);BillingentityinternalResponseCompoundAllOf.initialize(this, a_objBillingentityinternalproduct);
+        BillingentityinternalResponse.initialize(this, pkiBillingentityinternalID, objBillingentityinternalDescription);
         BillingentityinternalResponseCompound.initialize(this, pkiBillingentityinternalID, objBillingentityinternalDescription, a_objBillingentityinternalproduct);
     }
 
@@ -60,7 +58,6 @@ class BillingentityinternalResponseCompound {
         if (data) {
             obj = obj || new BillingentityinternalResponseCompound();
             BillingentityinternalResponse.constructFromObject(data, obj);
-            BillingentityinternalResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiBillingentityinternalID')) {
                 obj['pkiBillingentityinternalID'] = ApiClient.convertToType(data['pkiBillingentityinternalID'], 'Number');
@@ -179,11 +176,6 @@ BillingentityinternalResponse.prototype['pkiBillingentityinternalID'] = undefine
  * @member {module:eZmaxAPI/model/MultilingualBillingentityinternalDescription} objBillingentityinternalDescription
  */
 BillingentityinternalResponse.prototype['objBillingentityinternalDescription'] = undefined;
-// Implement BillingentityinternalResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/BillingentityinternalproductResponseCompound>} a_objBillingentityinternalproduct
- */
-BillingentityinternalResponseCompoundAllOf.prototype['a_objBillingentityinternalproduct'] = undefined;
 
 
 

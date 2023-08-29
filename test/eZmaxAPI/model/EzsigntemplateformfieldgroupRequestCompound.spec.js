@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplateformfieldgroupTextvalidation (base name: "eEzsigntemplateformfieldgroupTextvalidation")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplateformfieldgroupTextvalidation
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldgroupRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tEzsigntemplateformfieldgroupTooltip (base name: "tEzsigntemplateformfieldgroupTooltip")', function() {
       // uncomment below and update the code to test the property tEzsigntemplateformfieldgroupTooltip
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldgroupRequestCompound();

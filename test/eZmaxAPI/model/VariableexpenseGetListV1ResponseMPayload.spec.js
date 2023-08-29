@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.VariableexpenseGetListV1ResponseMPayload);
     });
 
-    it('should have the property a_objVariableexpense (base name: "a_objVariableexpense")', function() {
-      // uncomment below and update the code to test the property a_objVariableexpense
-      //var instance = new EZmaxApiDefinitionFull.VariableexpenseGetListV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
     it('should have the property iRowReturned (base name: "iRowReturned")', function() {
       // uncomment below and update the code to test the property iRowReturned
       //var instance = new EZmaxApiDefinitionFull.VariableexpenseGetListV1ResponseMPayload();
@@ -68,6 +62,12 @@
 
     it('should have the property iRowFiltered (base name: "iRowFiltered")', function() {
       // uncomment below and update the code to test the property iRowFiltered
+      //var instance = new EZmaxApiDefinitionFull.VariableexpenseGetListV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objVariableexpense (base name: "a_objVariableexpense")', function() {
+      // uncomment below and update the code to test the property a_objVariableexpense
       //var instance = new EZmaxApiDefinitionFull.VariableexpenseGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });

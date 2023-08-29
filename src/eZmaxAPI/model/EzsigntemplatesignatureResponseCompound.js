@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import EnumTextvalidation from './EnumTextvalidation';
 import EzsigntemplatesignatureResponse from './EzsigntemplatesignatureResponse';
-import EzsigntemplatesignatureResponseCompoundAllOf from './EzsigntemplatesignatureResponseCompoundAllOf';
 import EzsigntemplatesignaturecustomdateResponseCompound from './EzsigntemplatesignaturecustomdateResponseCompound';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './FieldEEzsigntemplatesignatureAttachmentnamesource';
 import FieldEEzsigntemplatesignatureFont from './FieldEEzsigntemplatesignatureFont';
@@ -31,7 +31,6 @@ class EzsigntemplatesignatureResponseCompound {
      * A Ezsigntemplatesignature Object
      * @alias module:eZmaxAPI/model/EzsigntemplatesignatureResponseCompound
      * @implements module:eZmaxAPI/model/EzsigntemplatesignatureResponse
-     * @implements module:eZmaxAPI/model/EzsigntemplatesignatureResponseCompoundAllOf
      * @param pkiEzsigntemplatesignatureID {Number} The unique ID of the Ezsigntemplatesignature
      * @param fkiEzsigntemplatedocumentID {Number} The unique ID of the Ezsigntemplatedocument
      * @param fkiEzsigntemplatesignerID {Number} The unique ID of the Ezsigntemplatesigner
@@ -42,7 +41,7 @@ class EzsigntemplatesignatureResponseCompound {
      * @param eEzsigntemplatesignatureType {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureType} 
      */
     constructor(pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType) { 
-        EzsigntemplatesignatureResponse.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);EzsigntemplatesignatureResponseCompoundAllOf.initialize(this);
+        EzsigntemplatesignatureResponse.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
         EzsigntemplatesignatureResponseCompound.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
     }
 
@@ -73,7 +72,6 @@ class EzsigntemplatesignatureResponseCompound {
         if (data) {
             obj = obj || new EzsigntemplatesignatureResponseCompound();
             EzsigntemplatesignatureResponse.constructFromObject(data, obj);
-            EzsigntemplatesignatureResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsigntemplatesignatureID')) {
                 obj['pkiEzsigntemplatesignatureID'] = ApiClient.convertToType(data['pkiEzsigntemplatesignatureID'], 'Number');
@@ -95,6 +93,12 @@ class EzsigntemplatesignatureResponseCompound {
             }
             if (data.hasOwnProperty('iEzsigntemplatesignatureY')) {
                 obj['iEzsigntemplatesignatureY'] = ApiClient.convertToType(data['iEzsigntemplatesignatureY'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureWidth')) {
+                obj['iEzsigntemplatesignatureWidth'] = ApiClient.convertToType(data['iEzsigntemplatesignatureWidth'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureHeight')) {
+                obj['iEzsigntemplatesignatureHeight'] = ApiClient.convertToType(data['iEzsigntemplatesignatureHeight'], 'Number');
             }
             if (data.hasOwnProperty('iEzsigntemplatesignatureStep')) {
                 obj['iEzsigntemplatesignatureStep'] = ApiClient.convertToType(data['iEzsigntemplatesignatureStep'], 'Number');
@@ -122,6 +126,15 @@ class EzsigntemplatesignatureResponseCompound {
             }
             if (data.hasOwnProperty('bEzsigntemplatesignatureRequired')) {
                 obj['bEzsigntemplatesignatureRequired'] = ApiClient.convertToType(data['bEzsigntemplatesignatureRequired'], 'Boolean');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignatureMaxlength')) {
+                obj['iEzsigntemplatesignatureMaxlength'] = ApiClient.convertToType(data['iEzsigntemplatesignatureMaxlength'], 'Number');
+            }
+            if (data.hasOwnProperty('sEzsigntemplatesignatureRegexp')) {
+                obj['sEzsigntemplatesignatureRegexp'] = ApiClient.convertToType(data['sEzsigntemplatesignatureRegexp'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsigntemplatesignatureTextvalidation')) {
+                obj['eEzsigntemplatesignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplatesignatureTextvalidation']);
             }
             if (data.hasOwnProperty('bEzsigntemplatesignatureCustomdate')) {
                 obj['bEzsigntemplatesignatureCustomdate'] = ApiClient.convertToType(data['bEzsigntemplatesignatureCustomdate'], 'Boolean');
@@ -152,6 +165,10 @@ class EzsigntemplatesignatureResponseCompound {
         // ensure the json data is a string
         if (data['sEzsigntemplatesignatureAttachmentdescription'] && !(typeof data['sEzsigntemplatesignatureAttachmentdescription'] === 'string' || data['sEzsigntemplatesignatureAttachmentdescription'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplatesignatureAttachmentdescription` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignatureAttachmentdescription']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplatesignatureRegexp'] && !(typeof data['sEzsigntemplatesignatureRegexp'] === 'string' || data['sEzsigntemplatesignatureRegexp'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplatesignatureRegexp` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignatureRegexp']);
         }
         if (data['a_objEzsigntemplatesignaturecustomdate']) { // data not null
             // ensure the json data is an array
@@ -278,6 +295,38 @@ class EzsigntemplatesignatureResponseCompound {
      */
     setIEzsigntemplatesignatureY(iEzsigntemplatesignatureY) {
         this['iEzsigntemplatesignatureY'] = iEzsigntemplatesignatureY;
+    }
+/**
+     * Returns The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     * minimum: 0
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureWidth() {
+        return this.iEzsigntemplatesignatureWidth;
+    }
+
+    /**
+     * Sets The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     * @param {Number} iEzsigntemplatesignatureWidth The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     */
+    setIEzsigntemplatesignatureWidth(iEzsigntemplatesignatureWidth) {
+        this['iEzsigntemplatesignatureWidth'] = iEzsigntemplatesignatureWidth;
+    }
+/**
+     * Returns The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     * minimum: 0
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureHeight() {
+        return this.iEzsigntemplatesignatureHeight;
+    }
+
+    /**
+     * Sets The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     * @param {Number} iEzsigntemplatesignatureHeight The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     */
+    setIEzsigntemplatesignatureHeight(iEzsigntemplatesignatureHeight) {
+        this['iEzsigntemplatesignatureHeight'] = iEzsigntemplatesignatureHeight;
     }
 /**
      * Returns The step when the Ezsigntemplatesigner will be invited to sign
@@ -408,6 +457,51 @@ class EzsigntemplatesignatureResponseCompound {
         this['bEzsigntemplatesignatureRequired'] = bEzsigntemplatesignatureRequired;
     }
 /**
+     * Returns The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     * minimum: 0
+     * maximum: 65535
+     * @return {Number}
+     */
+    getIEzsigntemplatesignatureMaxlength() {
+        return this.iEzsigntemplatesignatureMaxlength;
+    }
+
+    /**
+     * Sets The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     * @param {Number} iEzsigntemplatesignatureMaxlength The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     */
+    setIEzsigntemplatesignatureMaxlength(iEzsigntemplatesignatureMaxlength) {
+        this['iEzsigntemplatesignatureMaxlength'] = iEzsigntemplatesignatureMaxlength;
+    }
+/**
+     * Returns A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     * @return {String}
+     */
+    getSEzsigntemplatesignatureRegexp() {
+        return this.sEzsigntemplatesignatureRegexp;
+    }
+
+    /**
+     * Sets A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     * @param {String} sEzsigntemplatesignatureRegexp A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     */
+    setSEzsigntemplatesignatureRegexp(sEzsigntemplatesignatureRegexp) {
+        this['sEzsigntemplatesignatureRegexp'] = sEzsigntemplatesignatureRegexp;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsigntemplatesignatureTextvalidation() {
+        return this.eEzsigntemplatesignatureTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
+     */
+    setEEzsigntemplatesignatureTextvalidation(eEzsigntemplatesignatureTextvalidation) {
+        this['eEzsigntemplatesignatureTextvalidation'] = eEzsigntemplatesignatureTextvalidation;
+    }
+/**
      * Returns Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
@@ -485,6 +579,18 @@ EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignatureX'] =
 EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignatureY'] = undefined;
 
 /**
+ * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+ * @member {Number} iEzsigntemplatesignatureWidth
+ */
+EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignatureWidth'] = undefined;
+
+/**
+ * The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+ * @member {Number} iEzsigntemplatesignatureHeight
+ */
+EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignatureHeight'] = undefined;
+
+/**
  * The step when the Ezsigntemplatesigner will be invited to sign
  * @member {Number} iEzsigntemplatesignatureStep
  */
@@ -533,6 +639,23 @@ EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignatureAttac
  * @member {Boolean} bEzsigntemplatesignatureRequired
  */
 EzsigntemplatesignatureResponseCompound.prototype['bEzsigntemplatesignatureRequired'] = undefined;
+
+/**
+ * The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsigntemplatesignatureMaxlength
+ */
+EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignatureMaxlength'] = undefined;
+
+/**
+ * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+ * @member {String} sEzsigntemplatesignatureRegexp
+ */
+EzsigntemplatesignatureResponseCompound.prototype['sEzsigntemplatesignatureRegexp'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
+ */
+EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
 
 /**
  * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
@@ -584,6 +707,16 @@ EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureX'] = undefin
  */
 EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureY'] = undefined;
 /**
+ * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+ * @member {Number} iEzsigntemplatesignatureWidth
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureWidth'] = undefined;
+/**
+ * The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+ * @member {Number} iEzsigntemplatesignatureHeight
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureHeight'] = undefined;
+/**
  * The step when the Ezsigntemplatesigner will be invited to sign
  * @member {Number} iEzsigntemplatesignatureStep
  */
@@ -624,17 +757,20 @@ EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureAttachmentnam
  * @member {Boolean} bEzsigntemplatesignatureRequired
  */
 EzsigntemplatesignatureResponse.prototype['bEzsigntemplatesignatureRequired'] = undefined;
-// Implement EzsigntemplatesignatureResponseCompoundAllOf interface:
 /**
- * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
- * @member {Boolean} bEzsigntemplatesignatureCustomdate
+ * The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+ * @member {Number} iEzsigntemplatesignatureMaxlength
  */
-EzsigntemplatesignatureResponseCompoundAllOf.prototype['bEzsigntemplatesignatureCustomdate'] = undefined;
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignatureMaxlength'] = undefined;
 /**
- * An array of custom date blocks that will be filled at the time of signature.  Can only be used if bEzsigntemplatesignatureCustomdate is true.  Use an empty array if you don't want to have a date at all.
- * @member {Array.<module:eZmaxAPI/model/EzsigntemplatesignaturecustomdateResponseCompound>} a_objEzsigntemplatesignaturecustomdate
+ * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+ * @member {String} sEzsigntemplatesignatureRegexp
  */
-EzsigntemplatesignatureResponseCompoundAllOf.prototype['a_objEzsigntemplatesignaturecustomdate'] = undefined;
+EzsigntemplatesignatureResponse.prototype['sEzsigntemplatesignatureRegexp'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
+ */
+EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
 
 
 

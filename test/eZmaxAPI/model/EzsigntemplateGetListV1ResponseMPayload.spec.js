@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsigntemplateGetListV1ResponseMPayload);
     });
 
-    it('should have the property a_objEzsigntemplate (base name: "a_objEzsigntemplate")', function() {
-      // uncomment below and update the code to test the property a_objEzsigntemplate
-      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetListV1ResponseMPayload();
-      //expect(instance).to.be();
-    });
-
     it('should have the property iRowReturned (base name: "iRowReturned")', function() {
       // uncomment below and update the code to test the property iRowReturned
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetListV1ResponseMPayload();
@@ -68,6 +62,12 @@
 
     it('should have the property iRowFiltered (base name: "iRowFiltered")', function() {
       // uncomment below and update the code to test the property iRowFiltered
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetListV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsigntemplate (base name: "a_objEzsigntemplate")', function() {
+      // uncomment below and update the code to test the property a_objEzsigntemplate
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateGetListV1ResponseMPayload();
       //expect(instance).to.be();
     });

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mPayload** | [**FranchisereferalincomeCreateObjectV1ResponseMPayload**](FranchisereferalincomeCreateObjectV1ResponseMPayload.md) |  | 
-**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [optional] 
+**objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | 
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] 
+**mPayload** | [**FranchisereferalincomeCreateObjectV1ResponseMPayload**](FranchisereferalincomeCreateObjectV1ResponseMPayload.md) |  | 
 
 

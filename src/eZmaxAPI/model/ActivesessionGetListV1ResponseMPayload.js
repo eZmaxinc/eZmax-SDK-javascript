@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ActivesessionGetListV1ResponseMPayloadAllOf from './ActivesessionGetListV1ResponseMPayloadAllOf';
 import ActivesessionListElement from './ActivesessionListElement';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
 
@@ -26,15 +25,14 @@ class ActivesessionGetListV1ResponseMPayload {
      * Constructs a new <code>ActivesessionGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/activesession/getList
      * @alias module:eZmaxAPI/model/ActivesessionGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/ActivesessionGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objActivesession {Array.<module:eZmaxAPI/model/ActivesessionListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objActivesession {Array.<module:eZmaxAPI/model/ActivesessionListElement>} 
      */
-    constructor(a_objActivesession, iRowReturned, iRowFiltered) { 
-        ActivesessionGetListV1ResponseMPayloadAllOf.initialize(this, a_objActivesession);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        ActivesessionGetListV1ResponseMPayload.initialize(this, a_objActivesession, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objActivesession) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        ActivesessionGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objActivesession);
     }
 
     /**
@@ -42,10 +40,10 @@ class ActivesessionGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objActivesession, iRowReturned, iRowFiltered) { 
-        obj['a_objActivesession'] = a_objActivesession;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objActivesession) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objActivesession'] = a_objActivesession;
     }
 
     /**
@@ -58,17 +56,16 @@ class ActivesessionGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ActivesessionGetListV1ResponseMPayload();
-            ActivesessionGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objActivesession')) {
-                obj['a_objActivesession'] = ApiClient.convertToType(data['a_objActivesession'], [ActivesessionListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objActivesession')) {
+                obj['a_objActivesession'] = ApiClient.convertToType(data['a_objActivesession'], [ActivesessionListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class ActivesessionGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/ActivesessionListElement>}
-     */
-    getAObjActivesession() {
-        return this.a_objActivesession;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/ActivesessionListElement>} a_objActivesession
-     */
-    setAObjActivesession(a_objActivesession) {
-        this['a_objActivesession'] = a_objActivesession;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class ActivesessionGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/ActivesessionListElement>}
+     */
+    getAObjActivesession() {
+        return this.a_objActivesession;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/ActivesessionListElement>} a_objActivesession
+     */
+    setAObjActivesession(a_objActivesession) {
+        this['a_objActivesession'] = a_objActivesession;
+    }
 
 }
 
-ActivesessionGetListV1ResponseMPayload.RequiredProperties = ["a_objActivesession", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/ActivesessionListElement>} a_objActivesession
- */
-ActivesessionGetListV1ResponseMPayload.prototype['a_objActivesession'] = undefined;
+ActivesessionGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objActivesession"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ ActivesessionGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 ActivesessionGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement ActivesessionGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/ActivesessionListElement>} a_objActivesession
  */
-ActivesessionGetListV1ResponseMPayloadAllOf.prototype['a_objActivesession'] = undefined;
+ActivesessionGetListV1ResponseMPayload.prototype['a_objActivesession'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

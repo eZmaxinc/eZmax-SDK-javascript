@@ -27,10 +27,11 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
      * Response for POST /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate
      * @alias module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Response
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsigndocumentApplyEzsigntemplateV2Response.initialize(this);
+    constructor(objDebugPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigndocumentApplyEzsigntemplateV2Response.initialize(this, objDebugPayload);
     }
 
     /**
@@ -38,7 +39,8 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objDebugPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
     }
 
     /**
@@ -69,6 +71,12 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EzsigndocumentApplyEzsigntemplateV2Response</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EzsigndocumentApplyEzsigntemplateV2Response.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -110,7 +118,7 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
 
 }
 
-
+EzsigndocumentApplyEzsigntemplateV2Response.RequiredProperties = ["objDebugPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

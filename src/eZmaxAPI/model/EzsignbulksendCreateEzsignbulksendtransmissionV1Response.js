@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf from './EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf';
 import EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload from './EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
      * Constructs a new <code>EzsignbulksendCreateEzsignbulksendtransmissionV1Response</code>.
      * Response for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission
      * @alias module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1Response
-     * @implements module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsignbulksendCreateEzsignbulksendtransmissionV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsignbulksendCreateEzsignbulksendtransmissionV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignbulksendCreateEzsignbulksendtransmissionV1Response();
-            EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsignbulksendCreateEzsignbulksendtransmissionV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload} mPayload
- */
-EzsignbulksendCreateEzsignbulksendtransmissionV1Response.prototype['mPayload'] = undefined;
+EzsignbulksendCreateEzsignbulksendtransmissionV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsignbulksendCreateEzsignbulksendtransmissionV1Response.prototype['objDebugPayl
  */
 EzsignbulksendCreateEzsignbulksendtransmissionV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload} mPayload
  */
-EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsignbulksendCreateEzsignbulksendtransmissionV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

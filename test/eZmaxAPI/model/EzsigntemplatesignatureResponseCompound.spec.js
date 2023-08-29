@@ -96,6 +96,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsigntemplatesignatureWidth (base name: "iEzsigntemplatesignatureWidth")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplatesignatureWidth
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplatesignatureHeight (base name: "iEzsigntemplatesignatureHeight")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplatesignatureHeight
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsigntemplatesignatureStep (base name: "iEzsigntemplatesignatureStep")', function() {
       // uncomment below and update the code to test the property iEzsigntemplatesignatureStep
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
@@ -146,6 +158,24 @@
 
     it('should have the property bEzsigntemplatesignatureRequired (base name: "bEzsigntemplatesignatureRequired")', function() {
       // uncomment below and update the code to test the property bEzsigntemplatesignatureRequired
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplatesignatureMaxlength (base name: "iEzsigntemplatesignatureMaxlength")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplatesignatureMaxlength
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigntemplatesignatureRegexp (base name: "sEzsigntemplatesignatureRegexp")', function() {
+      // uncomment below and update the code to test the property sEzsigntemplatesignatureRegexp
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigntemplatesignatureTextvalidation (base name: "eEzsigntemplatesignatureTextvalidation")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplatesignatureTextvalidation
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponseCompound();
       //expect(instance).to.be();
     });

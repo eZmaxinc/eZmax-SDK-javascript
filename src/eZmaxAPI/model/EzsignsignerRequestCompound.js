@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzsignsignerRequest from './EzsignsignerRequest';
-import EzsignsignerRequestCompoundAllOf from './EzsignsignerRequestCompoundAllOf';
 import EzsignsignerRequestCompoundContact from './EzsignsignerRequestCompoundContact';
 
 /**
@@ -27,12 +26,11 @@ class EzsignsignerRequestCompound {
      * An Ezsignsigner Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignsignerRequestCompound
      * @implements module:eZmaxAPI/model/EzsignsignerRequest
-     * @implements module:eZmaxAPI/model/EzsignsignerRequestCompoundAllOf
      * @param fkiTaxassignmentID {Number} The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
      * @param objContact {module:eZmaxAPI/model/EzsignsignerRequestCompoundContact} 
      */
     constructor(fkiTaxassignmentID, objContact) { 
-        EzsignsignerRequest.initialize(this, fkiTaxassignmentID);EzsignsignerRequestCompoundAllOf.initialize(this, objContact);
+        EzsignsignerRequest.initialize(this, fkiTaxassignmentID);
         EzsignsignerRequestCompound.initialize(this, fkiTaxassignmentID, objContact);
     }
 
@@ -57,7 +55,6 @@ class EzsignsignerRequestCompound {
         if (data) {
             obj = obj || new EzsignsignerRequestCompound();
             EzsignsignerRequest.constructFromObject(data, obj);
-            EzsignsignerRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('fkiUserlogintypeID')) {
                 obj['fkiUserlogintypeID'] = ApiClient.convertToType(data['fkiUserlogintypeID'], 'Number');
@@ -268,11 +265,6 @@ EzsignsignerRequest.prototype['eEzsignsignerLogintype'] = undefined;
  * @member {String} sEzsignsignerSecretanswer
  */
 EzsignsignerRequest.prototype['sEzsignsignerSecretanswer'] = undefined;
-// Implement EzsignsignerRequestCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzsignsignerRequestCompoundContact} objContact
- */
-EzsignsignerRequestCompoundAllOf.prototype['objContact'] = undefined;
 
 
 

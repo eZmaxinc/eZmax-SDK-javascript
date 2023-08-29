@@ -308,6 +308,7 @@ class EzsignformfieldgroupRequest {
 /**
      * Returns The maximum length for the value in the Ezsignformfieldgroup  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsignformfieldgroupMaxlength() {

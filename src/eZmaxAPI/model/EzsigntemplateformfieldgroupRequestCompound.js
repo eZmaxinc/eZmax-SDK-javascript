@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import CustomDropdownElementRequestCompound from './CustomDropdownElementRequestCompound';
+import EnumTextvalidation from './EnumTextvalidation';
 import EzsigntemplateformfieldRequestCompound from './EzsigntemplateformfieldRequestCompound';
 import EzsigntemplateformfieldgroupRequest from './EzsigntemplateformfieldgroupRequest';
-import EzsigntemplateformfieldgroupRequestCompoundAllOf from './EzsigntemplateformfieldgroupRequestCompoundAllOf';
 import EzsigntemplateformfieldgroupsignerRequestCompound from './EzsigntemplateformfieldgroupsignerRequestCompound';
 import FieldEEzsigntemplateformfieldgroupSignerrequirement from './FieldEEzsigntemplateformfieldgroupSignerrequirement';
 import FieldEEzsigntemplateformfieldgroupTooltipposition from './FieldEEzsigntemplateformfieldgroupTooltipposition';
@@ -32,7 +32,6 @@ class EzsigntemplateformfieldgroupRequestCompound {
      * A Ezsigntemplateformfieldgroup Object and children
      * @alias module:eZmaxAPI/model/EzsigntemplateformfieldgroupRequestCompound
      * @implements module:eZmaxAPI/model/EzsigntemplateformfieldgroupRequest
-     * @implements module:eZmaxAPI/model/EzsigntemplateformfieldgroupRequestCompoundAllOf
      * @param fkiEzsigntemplatedocumentID {Number} The unique ID of the Ezsigntemplatedocument
      * @param eEzsigntemplateformfieldgroupType {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldgroupType} 
      * @param eEzsigntemplateformfieldgroupSignerrequirement {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldgroupSignerrequirement} 
@@ -46,7 +45,7 @@ class EzsigntemplateformfieldgroupRequestCompound {
      * @param a_objEzsigntemplateformfield {Array.<module:eZmaxAPI/model/EzsigntemplateformfieldRequestCompound>} 
      */
     constructor(fkiEzsigntemplatedocumentID, eEzsigntemplateformfieldgroupType, eEzsigntemplateformfieldgroupSignerrequirement, sEzsigntemplateformfieldgroupLabel, iEzsigntemplateformfieldgroupStep, sEzsigntemplateformfieldgroupDefaultvalue, iEzsigntemplateformfieldgroupFilledmin, iEzsigntemplateformfieldgroupFilledmax, bEzsigntemplateformfieldgroupReadonly, a_objEzsigntemplateformfieldgroupsigner, a_objEzsigntemplateformfield) { 
-        EzsigntemplateformfieldgroupRequest.initialize(this, fkiEzsigntemplatedocumentID, eEzsigntemplateformfieldgroupType, eEzsigntemplateformfieldgroupSignerrequirement, sEzsigntemplateformfieldgroupLabel, iEzsigntemplateformfieldgroupStep, sEzsigntemplateformfieldgroupDefaultvalue, iEzsigntemplateformfieldgroupFilledmin, iEzsigntemplateformfieldgroupFilledmax, bEzsigntemplateformfieldgroupReadonly);EzsigntemplateformfieldgroupRequestCompoundAllOf.initialize(this, a_objEzsigntemplateformfieldgroupsigner, a_objEzsigntemplateformfield);
+        EzsigntemplateformfieldgroupRequest.initialize(this, fkiEzsigntemplatedocumentID, eEzsigntemplateformfieldgroupType, eEzsigntemplateformfieldgroupSignerrequirement, sEzsigntemplateformfieldgroupLabel, iEzsigntemplateformfieldgroupStep, sEzsigntemplateformfieldgroupDefaultvalue, iEzsigntemplateformfieldgroupFilledmin, iEzsigntemplateformfieldgroupFilledmax, bEzsigntemplateformfieldgroupReadonly);
         EzsigntemplateformfieldgroupRequestCompound.initialize(this, fkiEzsigntemplatedocumentID, eEzsigntemplateformfieldgroupType, eEzsigntemplateformfieldgroupSignerrequirement, sEzsigntemplateformfieldgroupLabel, iEzsigntemplateformfieldgroupStep, sEzsigntemplateformfieldgroupDefaultvalue, iEzsigntemplateformfieldgroupFilledmin, iEzsigntemplateformfieldgroupFilledmax, bEzsigntemplateformfieldgroupReadonly, a_objEzsigntemplateformfieldgroupsigner, a_objEzsigntemplateformfield);
     }
 
@@ -80,7 +79,6 @@ class EzsigntemplateformfieldgroupRequestCompound {
         if (data) {
             obj = obj || new EzsigntemplateformfieldgroupRequestCompound();
             EzsigntemplateformfieldgroupRequest.constructFromObject(data, obj);
-            EzsigntemplateformfieldgroupRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsigntemplateformfieldgroupID')) {
                 obj['pkiEzsigntemplateformfieldgroupID'] = ApiClient.convertToType(data['pkiEzsigntemplateformfieldgroupID'], 'Number');
@@ -120,6 +118,9 @@ class EzsigntemplateformfieldgroupRequestCompound {
             }
             if (data.hasOwnProperty('sEzsigntemplateformfieldgroupRegexp')) {
                 obj['sEzsigntemplateformfieldgroupRegexp'] = ApiClient.convertToType(data['sEzsigntemplateformfieldgroupRegexp'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldgroupTextvalidation')) {
+                obj['eEzsigntemplateformfieldgroupTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplateformfieldgroupTextvalidation']);
             }
             if (data.hasOwnProperty('tEzsigntemplateformfieldgroupTooltip')) {
                 obj['tEzsigntemplateformfieldgroupTooltip'] = ApiClient.convertToType(data['tEzsigntemplateformfieldgroupTooltip'], 'String');
@@ -356,6 +357,7 @@ class EzsigntemplateformfieldgroupRequestCompound {
 /**
      * Returns The maximum length for the value in the Ezsigntemplateformfieldgroup  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getIEzsigntemplateformfieldgroupMaxlength() {
@@ -398,6 +400,19 @@ class EzsigntemplateformfieldgroupRequestCompound {
      */
     setSEzsigntemplateformfieldgroupRegexp(sEzsigntemplateformfieldgroupRegexp) {
         this['sEzsigntemplateformfieldgroupRegexp'] = sEzsigntemplateformfieldgroupRegexp;
+    }
+/**
+     * @return {module:eZmaxAPI/model/EnumTextvalidation}
+     */
+    getEEzsigntemplateformfieldgroupTextvalidation() {
+        return this.eEzsigntemplateformfieldgroupTextvalidation;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplateformfieldgroupTextvalidation
+     */
+    setEEzsigntemplateformfieldgroupTextvalidation(eEzsigntemplateformfieldgroupTextvalidation) {
+        this['eEzsigntemplateformfieldgroupTextvalidation'] = eEzsigntemplateformfieldgroupTextvalidation;
     }
 /**
      * Returns A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
@@ -548,6 +563,11 @@ EzsigntemplateformfieldgroupRequestCompound.prototype['bEzsigntemplateformfieldg
 EzsigntemplateformfieldgroupRequestCompound.prototype['sEzsigntemplateformfieldgroupRegexp'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplateformfieldgroupTextvalidation
+ */
+EzsigntemplateformfieldgroupRequestCompound.prototype['eEzsigntemplateformfieldgroupTextvalidation'] = undefined;
+
+/**
  * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
  * @member {String} tEzsigntemplateformfieldgroupTooltip
  */
@@ -639,6 +659,10 @@ EzsigntemplateformfieldgroupRequest.prototype['bEzsigntemplateformfieldgroupEncr
  */
 EzsigntemplateformfieldgroupRequest.prototype['sEzsigntemplateformfieldgroupRegexp'] = undefined;
 /**
+ * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplateformfieldgroupTextvalidation
+ */
+EzsigntemplateformfieldgroupRequest.prototype['eEzsigntemplateformfieldgroupTextvalidation'] = undefined;
+/**
  * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
  * @member {String} tEzsigntemplateformfieldgroupTooltip
  */
@@ -647,19 +671,6 @@ EzsigntemplateformfieldgroupRequest.prototype['tEzsigntemplateformfieldgroupTool
  * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldgroupTooltipposition} eEzsigntemplateformfieldgroupTooltipposition
  */
 EzsigntemplateformfieldgroupRequest.prototype['eEzsigntemplateformfieldgroupTooltipposition'] = undefined;
-// Implement EzsigntemplateformfieldgroupRequestCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsigntemplateformfieldgroupsignerRequestCompound>} a_objEzsigntemplateformfieldgroupsigner
- */
-EzsigntemplateformfieldgroupRequestCompoundAllOf.prototype['a_objEzsigntemplateformfieldgroupsigner'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomDropdownElementRequestCompound>} a_objDropdownElement
- */
-EzsigntemplateformfieldgroupRequestCompoundAllOf.prototype['a_objDropdownElement'] = undefined;
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsigntemplateformfieldRequestCompound>} a_objEzsigntemplateformfield
- */
-EzsigntemplateformfieldgroupRequestCompoundAllOf.prototype['a_objEzsigntemplateformfield'] = undefined;
 
 
 

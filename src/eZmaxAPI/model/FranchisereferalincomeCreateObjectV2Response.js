@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import FranchisereferalincomeCreateObjectV2ResponseAllOf from './FranchisereferalincomeCreateObjectV2ResponseAllOf';
 import FranchisereferalincomeCreateObjectV2ResponseMPayload from './FranchisereferalincomeCreateObjectV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class FranchisereferalincomeCreateObjectV2Response {
      * Constructs a new <code>FranchisereferalincomeCreateObjectV2Response</code>.
      * Response for POST /2/object/franchisereferalincome
      * @alias module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2Response
-     * @implements module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        FranchisereferalincomeCreateObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        FranchisereferalincomeCreateObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        FranchisereferalincomeCreateObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class FranchisereferalincomeCreateObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class FranchisereferalincomeCreateObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new FranchisereferalincomeCreateObjectV2Response();
-            FranchisereferalincomeCreateObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = FranchisereferalincomeCreateObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = FranchisereferalincomeCreateObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class FranchisereferalincomeCreateObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          FranchisereferalincomeCreateObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class FranchisereferalincomeCreateObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          FranchisereferalincomeCreateObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class FranchisereferalincomeCreateObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-FranchisereferalincomeCreateObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload} mPayload
- */
-FranchisereferalincomeCreateObjectV2Response.prototype['mPayload'] = undefined;
+FranchisereferalincomeCreateObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ FranchisereferalincomeCreateObjectV2Response.prototype['objDebugPayload'] = unde
  */
 FranchisereferalincomeCreateObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement FranchisereferalincomeCreateObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/FranchisereferalincomeCreateObjectV2ResponseMPayload} mPayload
  */
-FranchisereferalincomeCreateObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+FranchisereferalincomeCreateObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

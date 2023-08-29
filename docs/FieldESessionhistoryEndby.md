@@ -29,4 +29,6 @@
 
 * `BadIP` (value: `"BadIP"`)
 
+* `ForcedLogoff` (value: `"ForcedLogoff"`)
+
 

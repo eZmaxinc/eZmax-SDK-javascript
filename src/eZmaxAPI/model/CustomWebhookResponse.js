@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomWebhookResponseAllOf from './CustomWebhookResponseAllOf';
 import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
@@ -28,20 +27,19 @@ class CustomWebhookResponse {
      * Constructs a new <code>CustomWebhookResponse</code>.
      * A custom Webhook object
      * @alias module:eZmaxAPI/model/CustomWebhookResponse
-     * @implements module:eZmaxAPI/model/CustomWebhookResponseAllOf
      * @implements module:eZmaxAPI/model/WebhookResponse
-     * @param pksCustomerCode {String} The customer code assigned to your account
-     * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
      * @param pkiWebhookID {Number} The unique ID of the Webhook
      * @param sWebhookDescription {String} The description of the Webhook
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
      * @param sWebhookUrl {String} The URL of the Webhook callback
      * @param sWebhookEmailfailed {String} The email that will receive the Webhook in case all attempts fail
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
+     * @param pksCustomerCode {String} The customer code assigned to your account
+     * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
      */
-    constructor(pksCustomerCode, bWebhookTest, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation) { 
-        CustomWebhookResponseAllOf.initialize(this, pksCustomerCode, bWebhookTest);WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
-        CustomWebhookResponse.initialize(this, pksCustomerCode, bWebhookTest, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
+        CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest);
     }
 
     /**
@@ -49,15 +47,15 @@ class CustomWebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pksCustomerCode, bWebhookTest, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation) { 
-        obj['pksCustomerCode'] = pksCustomerCode;
-        obj['bWebhookTest'] = bWebhookTest;
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
         obj['sWebhookUrl'] = sWebhookUrl;
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
+        obj['pksCustomerCode'] = pksCustomerCode;
+        obj['bWebhookTest'] = bWebhookTest;
     }
 
     /**
@@ -70,15 +68,8 @@ class CustomWebhookResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomWebhookResponse();
-            CustomWebhookResponseAllOf.constructFromObject(data, obj);
             WebhookResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('pksCustomerCode')) {
-                obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
-            }
-            if (data.hasOwnProperty('bWebhookTest')) {
-                obj['bWebhookTest'] = ApiClient.convertToType(data['bWebhookTest'], 'Boolean');
-            }
             if (data.hasOwnProperty('pkiWebhookID')) {
                 obj['pkiWebhookID'] = ApiClient.convertToType(data['pkiWebhookID'], 'Number');
             }
@@ -112,6 +103,12 @@ class CustomWebhookResponse {
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
+            if (data.hasOwnProperty('pksCustomerCode')) {
+                obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
+            }
+            if (data.hasOwnProperty('bWebhookTest')) {
+                obj['bWebhookTest'] = ApiClient.convertToType(data['bWebhookTest'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -129,10 +126,6 @@ class CustomWebhookResponse {
             }
         }
         // ensure the json data is a string
-        if (data['pksCustomerCode'] && !(typeof data['pksCustomerCode'] === 'string' || data['pksCustomerCode'] instanceof String)) {
-            throw new Error("Expected the field `pksCustomerCode` to be a primitive type in the JSON string but got " + data['pksCustomerCode']);
-        }
-        // ensure the json data is a string
         if (data['sWebhookDescription'] && !(typeof data['sWebhookDescription'] === 'string' || data['sWebhookDescription'] instanceof String)) {
             throw new Error("Expected the field `sWebhookDescription` to be a primitive type in the JSON string but got " + data['sWebhookDescription']);
         }
@@ -148,40 +141,14 @@ class CustomWebhookResponse {
         if (data['sWebhookEmailfailed'] && !(typeof data['sWebhookEmailfailed'] === 'string' || data['sWebhookEmailfailed'] instanceof String)) {
             throw new Error("Expected the field `sWebhookEmailfailed` to be a primitive type in the JSON string but got " + data['sWebhookEmailfailed']);
         }
+        // ensure the json data is a string
+        if (data['pksCustomerCode'] && !(typeof data['pksCustomerCode'] === 'string' || data['pksCustomerCode'] instanceof String)) {
+            throw new Error("Expected the field `pksCustomerCode` to be a primitive type in the JSON string but got " + data['pksCustomerCode']);
+        }
 
         return true;
     }
 
-/**
-     * Returns The customer code assigned to your account
-     * @return {String}
-     */
-    getPksCustomerCode() {
-        return this.pksCustomerCode;
-    }
-
-    /**
-     * Sets The customer code assigned to your account
-     * @param {String} pksCustomerCode The customer code assigned to your account
-     */
-    setPksCustomerCode(pksCustomerCode) {
-        this['pksCustomerCode'] = pksCustomerCode;
-    }
-/**
-     * Returns Wheter the webhook received is a manual test or a real event
-     * @return {Boolean}
-     */
-    getBWebhookTest() {
-        return this.bWebhookTest;
-    }
-
-    /**
-     * Sets Wheter the webhook received is a manual test or a real event
-     * @param {Boolean} bWebhookTest Wheter the webhook received is a manual test or a real event
-     */
-    setBWebhookTest(bWebhookTest) {
-        this['bWebhookTest'] = bWebhookTest;
-    }
 /**
      * Returns The unique ID of the Webhook
      * @return {Number}
@@ -342,22 +309,40 @@ class CustomWebhookResponse {
     setBWebhookSkipsslvalidation(bWebhookSkipsslvalidation) {
         this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
+/**
+     * Returns The customer code assigned to your account
+     * @return {String}
+     */
+    getPksCustomerCode() {
+        return this.pksCustomerCode;
+    }
+
+    /**
+     * Sets The customer code assigned to your account
+     * @param {String} pksCustomerCode The customer code assigned to your account
+     */
+    setPksCustomerCode(pksCustomerCode) {
+        this['pksCustomerCode'] = pksCustomerCode;
+    }
+/**
+     * Returns Wheter the webhook received is a manual test or a real event
+     * @return {Boolean}
+     */
+    getBWebhookTest() {
+        return this.bWebhookTest;
+    }
+
+    /**
+     * Sets Wheter the webhook received is a manual test or a real event
+     * @param {Boolean} bWebhookTest Wheter the webhook received is a manual test or a real event
+     */
+    setBWebhookTest(bWebhookTest) {
+        this['bWebhookTest'] = bWebhookTest;
+    }
 
 }
 
-CustomWebhookResponse.RequiredProperties = ["pksCustomerCode", "bWebhookTest", "pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookSkipsslvalidation"];
-
-/**
- * The customer code assigned to your account
- * @member {String} pksCustomerCode
- */
-CustomWebhookResponse.prototype['pksCustomerCode'] = undefined;
-
-/**
- * Wheter the webhook received is a manual test or a real event
- * @member {Boolean} bWebhookTest
- */
-CustomWebhookResponse.prototype['bWebhookTest'] = undefined;
+CustomWebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookSkipsslvalidation", "pksCustomerCode", "bWebhookTest"];
 
 /**
  * The unique ID of the Webhook
@@ -422,18 +407,19 @@ CustomWebhookResponse.prototype['bWebhookIsactive'] = undefined;
  */
 CustomWebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
 
-
-// Implement CustomWebhookResponseAllOf interface:
 /**
  * The customer code assigned to your account
  * @member {String} pksCustomerCode
  */
-CustomWebhookResponseAllOf.prototype['pksCustomerCode'] = undefined;
+CustomWebhookResponse.prototype['pksCustomerCode'] = undefined;
+
 /**
  * Wheter the webhook received is a manual test or a real event
  * @member {Boolean} bWebhookTest
  */
-CustomWebhookResponseAllOf.prototype['bWebhookTest'] = undefined;
+CustomWebhookResponse.prototype['bWebhookTest'] = undefined;
+
+
 // Implement WebhookResponse interface:
 /**
  * The unique ID of the Webhook

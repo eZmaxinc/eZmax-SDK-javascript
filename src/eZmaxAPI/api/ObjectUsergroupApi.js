@@ -21,12 +21,15 @@ import UsergroupEditObjectV1Request from '../model/UsergroupEditObjectV1Request'
 import UsergroupEditObjectV1Response from '../model/UsergroupEditObjectV1Response';
 import UsergroupEditPermissionsV1Request from '../model/UsergroupEditPermissionsV1Request';
 import UsergroupEditPermissionsV1Response from '../model/UsergroupEditPermissionsV1Response';
+import UsergroupEditUsergroupdelegationsV1Request from '../model/UsergroupEditUsergroupdelegationsV1Request';
+import UsergroupEditUsergroupdelegationsV1Response from '../model/UsergroupEditUsergroupdelegationsV1Response';
 import UsergroupEditUsergroupmembershipsV1Request from '../model/UsergroupEditUsergroupmembershipsV1Request';
 import UsergroupEditUsergroupmembershipsV1Response from '../model/UsergroupEditUsergroupmembershipsV1Response';
 import UsergroupGetAutocompleteV2Response from '../model/UsergroupGetAutocompleteV2Response';
 import UsergroupGetListV1Response from '../model/UsergroupGetListV1Response';
 import UsergroupGetObjectV2Response from '../model/UsergroupGetObjectV2Response';
 import UsergroupGetPermissionsV1Response from '../model/UsergroupGetPermissionsV1Response';
+import UsergroupGetUsergroupdelegationsV1Response from '../model/UsergroupGetUsergroupdelegationsV1Response';
 import UsergroupGetUsergroupmembershipsV1Response from '../model/UsergroupGetUsergroupmembershipsV1Response';
 
 /**
@@ -181,6 +184,54 @@ export default class ObjectUsergroupApi {
       let returnType = UsergroupEditPermissionsV1Response;
       return this.apiClient.callApi(
         '/1/object/usergroup/{pkiUsergroupID}/editPermissions', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupEditUsergroupdelegationsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupEditUsergroupdelegationsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupEditUsergroupdelegationsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit multiple Usergroupdelegations
+     * Edit multiple Usergroupdelegations
+     * @param {Number} pkiUsergroupID 
+     * @param {module:eZmaxAPI/model/UsergroupEditUsergroupdelegationsV1Request} UsergroupEditUsergroupdelegationsV1Request 
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupEditUsergroupdelegationsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupEditUsergroupdelegationsV1Response}
+     */
+    usergroupEditUsergroupdelegationsV1(pkiUsergroupID, UsergroupEditUsergroupdelegationsV1Request, callback) {
+      let postBody = UsergroupEditUsergroupdelegationsV1Request;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupEditUsergroupdelegationsV1");
+      }
+      // verify the required parameter 'UsergroupEditUsergroupdelegationsV1Request' is set
+      if (UsergroupEditUsergroupdelegationsV1Request === undefined || UsergroupEditUsergroupdelegationsV1Request === null) {
+        throw new Error("Missing the required parameter 'UsergroupEditUsergroupdelegationsV1Request' when calling usergroupEditUsergroupdelegationsV1");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UsergroupEditUsergroupdelegationsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -414,6 +465,48 @@ export default class ObjectUsergroupApi {
       let returnType = UsergroupGetPermissionsV1Response;
       return this.apiClient.callApi(
         '/1/object/usergroup/{pkiUsergroupID}/getPermissions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the usergroupGetUsergroupdelegationsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetUsergroupdelegationsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UsergroupGetUsergroupdelegationsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Usergroup's Usergroupdelegations
+     * @param {Number} pkiUsergroupID 
+     * @param {module:eZmaxAPI/api/ObjectUsergroupApi~usergroupGetUsergroupdelegationsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UsergroupGetUsergroupdelegationsV1Response}
+     */
+    usergroupGetUsergroupdelegationsV1(pkiUsergroupID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUsergroupID' is set
+      if (pkiUsergroupID === undefined || pkiUsergroupID === null) {
+        throw new Error("Missing the required parameter 'pkiUsergroupID' when calling usergroupGetUsergroupdelegationsV1");
+      }
+
+      let pathParams = {
+        'pkiUsergroupID': pkiUsergroupID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UsergroupGetUsergroupdelegationsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

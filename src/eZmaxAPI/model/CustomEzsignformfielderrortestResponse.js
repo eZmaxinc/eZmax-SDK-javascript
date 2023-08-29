@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomEzsignformfielderrortestResponseAllOf from './CustomEzsignformfielderrortestResponseAllOf';
 
 /**
  * The CustomEzsignformfielderrortestResponse model module.
@@ -24,12 +23,11 @@ class CustomEzsignformfielderrortestResponse {
      * Constructs a new <code>CustomEzsignformfielderrortestResponse</code>.
      * A Custom Ezsignformfielderrortest Object to contain the detail of the test error
      * @alias module:eZmaxAPI/model/CustomEzsignformfielderrortestResponse
-     * @implements module:eZmaxAPI/model/CustomEzsignformfielderrortestResponseAllOf
      * @param sEzsignformfielderrortestName {String} The name of the test
      * @param sEzsignformfielderrortestDetail {String} The detail why the test failed
      */
     constructor(sEzsignformfielderrortestName, sEzsignformfielderrortestDetail) { 
-        CustomEzsignformfielderrortestResponseAllOf.initialize(this, sEzsignformfielderrortestName, sEzsignformfielderrortestDetail);
+        
         CustomEzsignformfielderrortestResponse.initialize(this, sEzsignformfielderrortestName, sEzsignformfielderrortestDetail);
     }
 
@@ -53,7 +51,6 @@ class CustomEzsignformfielderrortestResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomEzsignformfielderrortestResponse();
-            CustomEzsignformfielderrortestResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('sEzsignformfielderrortestName')) {
                 obj['sEzsignformfielderrortestName'] = ApiClient.convertToType(data['sEzsignformfielderrortestName'], 'String');
@@ -137,17 +134,6 @@ CustomEzsignformfielderrortestResponse.prototype['sEzsignformfielderrortestName'
 CustomEzsignformfielderrortestResponse.prototype['sEzsignformfielderrortestDetail'] = undefined;
 
 
-// Implement CustomEzsignformfielderrortestResponseAllOf interface:
-/**
- * The name of the test
- * @member {String} sEzsignformfielderrortestName
- */
-CustomEzsignformfielderrortestResponseAllOf.prototype['sEzsignformfielderrortestName'] = undefined;
-/**
- * The detail why the test failed
- * @member {String} sEzsignformfielderrortestDetail
- */
-CustomEzsignformfielderrortestResponseAllOf.prototype['sEzsignformfielderrortestDetail'] = undefined;
 
 
 

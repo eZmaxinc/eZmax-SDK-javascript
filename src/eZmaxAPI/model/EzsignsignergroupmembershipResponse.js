@@ -25,13 +25,10 @@ class EzsignsignergroupmembershipResponse {
      * @alias module:eZmaxAPI/model/EzsignsignergroupmembershipResponse
      * @param pkiEzsignsignergroupmembershipID {Number} The unique ID of the Ezsignsignergroupmembership
      * @param fkiEzsignsignergroupID {Number} The unique ID of the Ezsignsignergroup
-     * @param fkiEzsignsignerID {Number} The unique ID of the Ezsignsigner
-     * @param fkiUserID {Number} The unique ID of the User
-     * @param fkiUsergroupID {Number} The unique ID of the Usergroup
      */
-    constructor(pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID) { 
+    constructor(pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID) { 
         
-        EzsignsignergroupmembershipResponse.initialize(this, pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID);
+        EzsignsignergroupmembershipResponse.initialize(this, pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID);
     }
 
     /**
@@ -39,12 +36,9 @@ class EzsignsignergroupmembershipResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID, fkiEzsignsignerID, fkiUserID, fkiUsergroupID) { 
+    static initialize(obj, pkiEzsignsignergroupmembershipID, fkiEzsignsignergroupID) { 
         obj['pkiEzsignsignergroupmembershipID'] = pkiEzsignsignergroupmembershipID;
         obj['fkiEzsignsignergroupID'] = fkiEzsignsignergroupID;
-        obj['fkiEzsignsignerID'] = fkiEzsignsignerID;
-        obj['fkiUserID'] = fkiUserID;
-        obj['fkiUsergroupID'] = fkiUsergroupID;
     }
 
     /**
@@ -179,7 +173,7 @@ class EzsignsignergroupmembershipResponse {
 
 }
 
-EzsignsignergroupmembershipResponse.RequiredProperties = ["pkiEzsignsignergroupmembershipID", "fkiEzsignsignergroupID", "fkiEzsignsignerID", "fkiUserID", "fkiUsergroupID"];
+EzsignsignergroupmembershipResponse.RequiredProperties = ["pkiEzsignsignergroupmembershipID", "fkiEzsignsignergroupID"];
 
 /**
  * The unique ID of the Ezsignsignergroupmembership

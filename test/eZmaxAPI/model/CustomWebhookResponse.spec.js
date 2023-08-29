@@ -54,18 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.CustomWebhookResponse);
     });
 
-    it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
-      // uncomment below and update the code to test the property pksCustomerCode
-      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bWebhookTest (base name: "bWebhookTest")', function() {
-      // uncomment below and update the code to test the property bWebhookTest
-      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pkiWebhookID (base name: "pkiWebhookID")', function() {
       // uncomment below and update the code to test the property pkiWebhookID
       //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
@@ -128,6 +116,18 @@
 
     it('should have the property bWebhookSkipsslvalidation (base name: "bWebhookSkipsslvalidation")', function() {
       // uncomment below and update the code to test the property bWebhookSkipsslvalidation
+      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
+      // uncomment below and update the code to test the property pksCustomerCode
+      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bWebhookTest (base name: "bWebhookTest")', function() {
+      // uncomment below and update the code to test the property bWebhookTest
       //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
       //expect(instance).to.be();
     });

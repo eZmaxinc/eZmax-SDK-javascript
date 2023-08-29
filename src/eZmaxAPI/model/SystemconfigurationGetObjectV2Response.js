@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import SystemconfigurationGetObjectV2ResponseAllOf from './SystemconfigurationGetObjectV2ResponseAllOf';
 import SystemconfigurationGetObjectV2ResponseMPayload from './SystemconfigurationGetObjectV2ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class SystemconfigurationGetObjectV2Response {
      * Constructs a new <code>SystemconfigurationGetObjectV2Response</code>.
      * Response for GET /2/object/systemconfiguration/{pkiSystemconfigurationID}
      * @alias module:eZmaxAPI/model/SystemconfigurationGetObjectV2Response
-     * @implements module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        SystemconfigurationGetObjectV2ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        SystemconfigurationGetObjectV2Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        SystemconfigurationGetObjectV2Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class SystemconfigurationGetObjectV2Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class SystemconfigurationGetObjectV2Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SystemconfigurationGetObjectV2Response();
-            SystemconfigurationGetObjectV2ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = SystemconfigurationGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = SystemconfigurationGetObjectV2ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class SystemconfigurationGetObjectV2Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          SystemconfigurationGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class SystemconfigurationGetObjectV2Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          SystemconfigurationGetObjectV2ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class SystemconfigurationGetObjectV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-SystemconfigurationGetObjectV2Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload} mPayload
- */
-SystemconfigurationGetObjectV2Response.prototype['mPayload'] = undefined;
+SystemconfigurationGetObjectV2Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ SystemconfigurationGetObjectV2Response.prototype['objDebugPayload'] = undefined;
  */
 SystemconfigurationGetObjectV2Response.prototype['objDebug'] = undefined;
 
-
-// Implement SystemconfigurationGetObjectV2ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/SystemconfigurationGetObjectV2ResponseMPayload} mPayload
  */
-SystemconfigurationGetObjectV2ResponseAllOf.prototype['mPayload'] = undefined;
+SystemconfigurationGetObjectV2Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ApikeyGetListV1ResponseMPayloadAllOf from './ApikeyGetListV1ResponseMPayloadAllOf';
 import ApikeyListElement from './ApikeyListElement';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
 
@@ -26,15 +25,14 @@ class ApikeyGetListV1ResponseMPayload {
      * Constructs a new <code>ApikeyGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/apikey/getList
      * @alias module:eZmaxAPI/model/ApikeyGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/ApikeyGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objApikey {Array.<module:eZmaxAPI/model/ApikeyListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objApikey {Array.<module:eZmaxAPI/model/ApikeyListElement>} 
      */
-    constructor(a_objApikey, iRowReturned, iRowFiltered) { 
-        ApikeyGetListV1ResponseMPayloadAllOf.initialize(this, a_objApikey);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        ApikeyGetListV1ResponseMPayload.initialize(this, a_objApikey, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objApikey) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        ApikeyGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objApikey);
     }
 
     /**
@@ -42,10 +40,10 @@ class ApikeyGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objApikey, iRowReturned, iRowFiltered) { 
-        obj['a_objApikey'] = a_objApikey;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objApikey) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objApikey'] = a_objApikey;
     }
 
     /**
@@ -58,17 +56,16 @@ class ApikeyGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ApikeyGetListV1ResponseMPayload();
-            ApikeyGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objApikey')) {
-                obj['a_objApikey'] = ApiClient.convertToType(data['a_objApikey'], [ApikeyListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objApikey')) {
+                obj['a_objApikey'] = ApiClient.convertToType(data['a_objApikey'], [ApikeyListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class ApikeyGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/ApikeyListElement>}
-     */
-    getAObjApikey() {
-        return this.a_objApikey;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/ApikeyListElement>} a_objApikey
-     */
-    setAObjApikey(a_objApikey) {
-        this['a_objApikey'] = a_objApikey;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class ApikeyGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/ApikeyListElement>}
+     */
+    getAObjApikey() {
+        return this.a_objApikey;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/ApikeyListElement>} a_objApikey
+     */
+    setAObjApikey(a_objApikey) {
+        this['a_objApikey'] = a_objApikey;
+    }
 
 }
 
-ApikeyGetListV1ResponseMPayload.RequiredProperties = ["a_objApikey", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/ApikeyListElement>} a_objApikey
- */
-ApikeyGetListV1ResponseMPayload.prototype['a_objApikey'] = undefined;
+ApikeyGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objApikey"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ ApikeyGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 ApikeyGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement ApikeyGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/ApikeyListElement>} a_objApikey
  */
-ApikeyGetListV1ResponseMPayloadAllOf.prototype['a_objApikey'] = undefined;
+ApikeyGetListV1ResponseMPayload.prototype['a_objApikey'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import EzsignfolderGetActionableElementsV1ResponseAllOf from './EzsignfolderGetActionableElementsV1ResponseAllOf';
 import EzsignfolderGetActionableElementsV1ResponseMPayload from './EzsignfolderGetActionableElementsV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class EzsignfolderGetActionableElementsV1Response {
      * Constructs a new <code>EzsignfolderGetActionableElementsV1Response</code>.
      * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements
      * @alias module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1Response
-     * @implements module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        EzsignfolderGetActionableElementsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        EzsignfolderGetActionableElementsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsignfolderGetActionableElementsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class EzsignfolderGetActionableElementsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class EzsignfolderGetActionableElementsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetActionableElementsV1Response();
-            EzsignfolderGetActionableElementsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = EzsignfolderGetActionableElementsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = EzsignfolderGetActionableElementsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class EzsignfolderGetActionableElementsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          EzsignfolderGetActionableElementsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class EzsignfolderGetActionableElementsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          EzsignfolderGetActionableElementsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class EzsignfolderGetActionableElementsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-EzsignfolderGetActionableElementsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload} mPayload
- */
-EzsignfolderGetActionableElementsV1Response.prototype['mPayload'] = undefined;
+EzsignfolderGetActionableElementsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ EzsignfolderGetActionableElementsV1Response.prototype['objDebugPayload'] = undef
  */
 EzsignfolderGetActionableElementsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement EzsignfolderGetActionableElementsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/EzsignfolderGetActionableElementsV1ResponseMPayload} mPayload
  */
-EzsignfolderGetActionableElementsV1ResponseAllOf.prototype['mPayload'] = undefined;
+EzsignfolderGetActionableElementsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

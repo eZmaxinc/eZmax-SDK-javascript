@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import ActivesessionResponse from './ActivesessionResponse';
-import ActivesessionResponseCompoundAllOf from './ActivesessionResponseCompoundAllOf';
 import ActivesessionResponseCompoundApikey from './ActivesessionResponseCompoundApikey';
 import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUser';
 import FieldEActivesessionOrigin from './FieldEActivesessionOrigin';
@@ -31,7 +30,6 @@ class ActivesessionResponseCompound {
      * Payload for GET /1/object/activesession/getCurrent
      * @alias module:eZmaxAPI/model/ActivesessionResponseCompound
      * @implements module:eZmaxAPI/model/ActivesessionResponse
-     * @implements module:eZmaxAPI/model/ActivesessionResponseCompoundAllOf
      * @param eActivesessionUsertype {module:eZmaxAPI/model/FieldEActivesessionUsertype} 
      * @param eActivesessionOrigin {module:eZmaxAPI/model/FieldEActivesessionOrigin} 
      * @param eActivesessionWeekdaystart {module:eZmaxAPI/model/FieldEActivesessionWeekdaystart} 
@@ -46,7 +44,7 @@ class ActivesessionResponseCompound {
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
     constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
-        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode);ActivesessionResponseCompoundAllOf.initialize(this, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode);
         ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
@@ -81,7 +79,6 @@ class ActivesessionResponseCompound {
         if (data) {
             obj = obj || new ActivesessionResponseCompound();
             ActivesessionResponse.constructFromObject(data, obj);
-            ActivesessionResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('eActivesessionUsertype')) {
                 obj['eActivesessionUsertype'] = FieldEActivesessionUsertype.constructFromObject(data['eActivesessionUsertype']);
@@ -565,29 +562,6 @@ ActivesessionResponse.prototype['fkiSystemconfigurationtypeID'] = undefined;
  * @member {Number} fkiSignatureID
  */
 ActivesessionResponse.prototype['fkiSignatureID'] = undefined;
-// Implement ActivesessionResponseCompoundAllOf interface:
-/**
- * An array of permissions granted to the user or api key
- * @member {Array.<Number>} a_pkiPermissionID
- */
-ActivesessionResponseCompoundAllOf.prototype['a_pkiPermissionID'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserReal
- */
-ActivesessionResponseCompoundAllOf.prototype['objUserReal'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} objUserCloned
- */
-ActivesessionResponseCompoundAllOf.prototype['objUserCloned'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/ActivesessionResponseCompoundApikey} objApikey
- */
-ActivesessionResponseCompoundAllOf.prototype['objApikey'] = undefined;
-/**
- * An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
- * @member {Array.<String>} a_eModuleInternalname
- */
-ActivesessionResponseCompoundAllOf.prototype['a_eModuleInternalname'] = undefined;
 
 
 

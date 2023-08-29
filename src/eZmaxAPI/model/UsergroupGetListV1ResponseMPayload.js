@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import UsergroupGetListV1ResponseMPayloadAllOf from './UsergroupGetListV1ResponseMPayloadAllOf';
 import UsergroupListElement from './UsergroupListElement';
 
 /**
@@ -26,15 +25,14 @@ class UsergroupGetListV1ResponseMPayload {
      * Constructs a new <code>UsergroupGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/usergroup/getList
      * @alias module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/UsergroupGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objUsergroup {Array.<module:eZmaxAPI/model/UsergroupListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objUsergroup {Array.<module:eZmaxAPI/model/UsergroupListElement>} 
      */
-    constructor(a_objUsergroup, iRowReturned, iRowFiltered) { 
-        UsergroupGetListV1ResponseMPayloadAllOf.initialize(this, a_objUsergroup);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        UsergroupGetListV1ResponseMPayload.initialize(this, a_objUsergroup, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objUsergroup) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        UsergroupGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objUsergroup);
     }
 
     /**
@@ -42,10 +40,10 @@ class UsergroupGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objUsergroup, iRowReturned, iRowFiltered) { 
-        obj['a_objUsergroup'] = a_objUsergroup;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objUsergroup) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objUsergroup'] = a_objUsergroup;
     }
 
     /**
@@ -58,17 +56,16 @@ class UsergroupGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UsergroupGetListV1ResponseMPayload();
-            UsergroupGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objUsergroup')) {
-                obj['a_objUsergroup'] = ApiClient.convertToType(data['a_objUsergroup'], [UsergroupListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objUsergroup')) {
+                obj['a_objUsergroup'] = ApiClient.convertToType(data['a_objUsergroup'], [UsergroupListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class UsergroupGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/UsergroupListElement>}
-     */
-    getAObjUsergroup() {
-        return this.a_objUsergroup;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/UsergroupListElement>} a_objUsergroup
-     */
-    setAObjUsergroup(a_objUsergroup) {
-        this['a_objUsergroup'] = a_objUsergroup;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class UsergroupGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/UsergroupListElement>}
+     */
+    getAObjUsergroup() {
+        return this.a_objUsergroup;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/UsergroupListElement>} a_objUsergroup
+     */
+    setAObjUsergroup(a_objUsergroup) {
+        this['a_objUsergroup'] = a_objUsergroup;
+    }
 
 }
 
-UsergroupGetListV1ResponseMPayload.RequiredProperties = ["a_objUsergroup", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/UsergroupListElement>} a_objUsergroup
- */
-UsergroupGetListV1ResponseMPayload.prototype['a_objUsergroup'] = undefined;
+UsergroupGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objUsergroup"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ UsergroupGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 UsergroupGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement UsergroupGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/UsergroupListElement>} a_objUsergroup
  */
-UsergroupGetListV1ResponseMPayloadAllOf.prototype['a_objUsergroup'] = undefined;
+UsergroupGetListV1ResponseMPayload.prototype['a_objUsergroup'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

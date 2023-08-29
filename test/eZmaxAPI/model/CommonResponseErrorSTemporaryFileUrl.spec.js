@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl);
     });
 
-    it('should have the property sTemporaryFileUrl (base name: "sTemporaryFileUrl")', function() {
-      // uncomment below and update the code to test the property sTemporaryFileUrl
-      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
-      //expect(instance).to.be();
-    });
-
     it('should have the property sErrorMessage (base name: "sErrorMessage")', function() {
       // uncomment below and update the code to test the property sErrorMessage
       //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
@@ -68,6 +62,12 @@
 
     it('should have the property eErrorCode (base name: "eErrorCode")', function() {
       // uncomment below and update the code to test the property eErrorCode
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sTemporaryFileUrl (base name: "sTemporaryFileUrl")', function() {
+      // uncomment below and update the code to test the property sTemporaryFileUrl
       //var instance = new EZmaxApiDefinitionFull.CommonResponseErrorSTemporaryFileUrl();
       //expect(instance).to.be();
     });

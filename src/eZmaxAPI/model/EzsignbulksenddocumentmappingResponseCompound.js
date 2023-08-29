@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzsignbulksenddocumentmappingResponse from './EzsignbulksenddocumentmappingResponse';
-import EzsignbulksenddocumentmappingResponseCompoundAllOf from './EzsignbulksenddocumentmappingResponseCompoundAllOf';
 import EzsigntemplateResponseCompound from './EzsigntemplateResponseCompound';
 import EzsigntemplatepackageResponseCompound from './EzsigntemplatepackageResponseCompound';
 
@@ -28,13 +27,12 @@ class EzsignbulksenddocumentmappingResponseCompound {
      * A Ezsignbulksenddocumentmapping Object
      * @alias module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompound
      * @implements module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponse
-     * @implements module:eZmaxAPI/model/EzsignbulksenddocumentmappingResponseCompoundAllOf
      * @param pkiEzsignbulksenddocumentmappingID {Number} The unique ID of the Ezsignbulksenddocumentmapping.
      * @param fkiEzsignbulksendID {Number} The unique ID of the Ezsignbulksend
      * @param iEzsignbulksenddocumentmappingOrder {Number} The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder.
      */
     constructor(pkiEzsignbulksenddocumentmappingID, fkiEzsignbulksendID, iEzsignbulksenddocumentmappingOrder) { 
-        EzsignbulksenddocumentmappingResponse.initialize(this, pkiEzsignbulksenddocumentmappingID, fkiEzsignbulksendID, iEzsignbulksenddocumentmappingOrder);EzsignbulksenddocumentmappingResponseCompoundAllOf.initialize(this);
+        EzsignbulksenddocumentmappingResponse.initialize(this, pkiEzsignbulksenddocumentmappingID, fkiEzsignbulksendID, iEzsignbulksenddocumentmappingOrder);
         EzsignbulksenddocumentmappingResponseCompound.initialize(this, pkiEzsignbulksenddocumentmappingID, fkiEzsignbulksendID, iEzsignbulksenddocumentmappingOrder);
     }
 
@@ -60,7 +58,6 @@ class EzsignbulksenddocumentmappingResponseCompound {
         if (data) {
             obj = obj || new EzsignbulksenddocumentmappingResponseCompound();
             EzsignbulksenddocumentmappingResponse.constructFromObject(data, obj);
-            EzsignbulksenddocumentmappingResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignbulksenddocumentmappingID')) {
                 obj['pkiEzsignbulksenddocumentmappingID'] = ApiClient.convertToType(data['pkiEzsignbulksenddocumentmappingID'], 'Number');
@@ -289,15 +286,6 @@ EzsignbulksenddocumentmappingResponse.prototype['fkiEzsigntemplateID'] = undefin
  * @member {Number} iEzsignbulksenddocumentmappingOrder
  */
 EzsignbulksenddocumentmappingResponse.prototype['iEzsignbulksenddocumentmappingOrder'] = undefined;
-// Implement EzsignbulksenddocumentmappingResponseCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplateResponseCompound} objEzsigntemplate
- */
-EzsignbulksenddocumentmappingResponseCompoundAllOf.prototype['objEzsigntemplate'] = undefined;
-/**
- * @member {module:eZmaxAPI/model/EzsigntemplatepackageResponseCompound} objEzsigntemplatepackage
- */
-EzsignbulksenddocumentmappingResponseCompoundAllOf.prototype['objEzsigntemplatepackage'] = undefined;
 
 
 

@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import CustomEzsignfoldertransmissionResponse from './CustomEzsignfoldertransmissionResponse';
 import EzsignbulksendtransmissionResponse from './EzsignbulksendtransmissionResponse';
-import EzsignbulksendtransmissionResponseCompoundAllOf from './EzsignbulksendtransmissionResponseCompoundAllOf';
 
 /**
  * The EzsignbulksendtransmissionResponseCompound model module.
@@ -28,7 +27,6 @@ class EzsignbulksendtransmissionResponseCompound {
      * An Ezsignbulksendtransmission Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignbulksendtransmissionResponseCompound
      * @implements module:eZmaxAPI/model/EzsignbulksendtransmissionResponse
-     * @implements module:eZmaxAPI/model/EzsignbulksendtransmissionResponseCompoundAllOf
      * @param pkiEzsignbulksendtransmissionID {Number} The unique ID of the Ezsignbulksendtransmission
      * @param fkiEzsignbulksendID {Number} The unique ID of the Ezsignbulksend
      * @param sEzsignbulksendtransmissionDescription {String} The description of the Ezsignbulksendtransmission
@@ -37,7 +35,7 @@ class EzsignbulksendtransmissionResponseCompound {
      * @param a_objEzsignfoldertransmission {Array.<module:eZmaxAPI/model/CustomEzsignfoldertransmissionResponse>} 
      */
     constructor(pkiEzsignbulksendtransmissionID, fkiEzsignbulksendID, sEzsignbulksendtransmissionDescription, iEzsignbulksendtransmissionErrors, objAudit, a_objEzsignfoldertransmission) { 
-        EzsignbulksendtransmissionResponse.initialize(this, pkiEzsignbulksendtransmissionID, fkiEzsignbulksendID, sEzsignbulksendtransmissionDescription, iEzsignbulksendtransmissionErrors, objAudit);EzsignbulksendtransmissionResponseCompoundAllOf.initialize(this, a_objEzsignfoldertransmission);
+        EzsignbulksendtransmissionResponse.initialize(this, pkiEzsignbulksendtransmissionID, fkiEzsignbulksendID, sEzsignbulksendtransmissionDescription, iEzsignbulksendtransmissionErrors, objAudit);
         EzsignbulksendtransmissionResponseCompound.initialize(this, pkiEzsignbulksendtransmissionID, fkiEzsignbulksendID, sEzsignbulksendtransmissionDescription, iEzsignbulksendtransmissionErrors, objAudit, a_objEzsignfoldertransmission);
     }
 
@@ -66,7 +64,6 @@ class EzsignbulksendtransmissionResponseCompound {
         if (data) {
             obj = obj || new EzsignbulksendtransmissionResponseCompound();
             EzsignbulksendtransmissionResponse.constructFromObject(data, obj);
-            EzsignbulksendtransmissionResponseCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignbulksendtransmissionID')) {
                 obj['pkiEzsignbulksendtransmissionID'] = ApiClient.convertToType(data['pkiEzsignbulksendtransmissionID'], 'Number');
@@ -278,11 +275,6 @@ EzsignbulksendtransmissionResponse.prototype['iEzsignbulksendtransmissionErrors'
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsignbulksendtransmissionResponse.prototype['objAudit'] = undefined;
-// Implement EzsignbulksendtransmissionResponseCompoundAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomEzsignfoldertransmissionResponse>} a_objEzsignfoldertransmission
- */
-EzsignbulksendtransmissionResponseCompoundAllOf.prototype['a_objEzsignfoldertransmission'] = undefined;
 
 
 

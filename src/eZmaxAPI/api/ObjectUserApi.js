@@ -21,12 +21,14 @@ import UserEditObjectV1Request from '../model/UserEditObjectV1Request';
 import UserEditObjectV1Response from '../model/UserEditObjectV1Response';
 import UserEditPermissionsV1Request from '../model/UserEditPermissionsV1Request';
 import UserEditPermissionsV1Response from '../model/UserEditPermissionsV1Response';
+import UserGetApikeysV1Response from '../model/UserGetApikeysV1Response';
 import UserGetAutocompleteV2Response from '../model/UserGetAutocompleteV2Response';
 import UserGetEffectivePermissionsV1Response from '../model/UserGetEffectivePermissionsV1Response';
 import UserGetListV1Response from '../model/UserGetListV1Response';
 import UserGetObjectV2Response from '../model/UserGetObjectV2Response';
 import UserGetPermissionsV1Response from '../model/UserGetPermissionsV1Response';
 import UserGetSubnetsV1Response from '../model/UserGetSubnetsV1Response';
+import UserSendPasswordResetV1Response from '../model/UserSendPasswordResetV1Response';
 
 /**
 * ObjectUser service.
@@ -180,6 +182,48 @@ export default class ObjectUserApi {
       let returnType = UserEditPermissionsV1Response;
       return this.apiClient.callApi(
         '/1/object/user/{pkiUserID}/editPermissions', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userGetApikeysV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUserApi~userGetApikeysV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UserGetApikeysV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing User's Apikeys
+     * @param {Number} pkiUserID 
+     * @param {module:eZmaxAPI/api/ObjectUserApi~userGetApikeysV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UserGetApikeysV1Response}
+     */
+    userGetApikeysV1(pkiUserID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUserID' is set
+      if (pkiUserID === undefined || pkiUserID === null) {
+        throw new Error("Missing the required parameter 'pkiUserID' when calling userGetApikeysV1");
+      }
+
+      let pathParams = {
+        'pkiUserID': pkiUserID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserGetApikeysV1Response;
+      return this.apiClient.callApi(
+        '/1/object/user/{pkiUserID}/getApikeys', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -450,6 +494,54 @@ export default class ObjectUserApi {
       let returnType = UserGetSubnetsV1Response;
       return this.apiClient.callApi(
         '/1/object/user/{pkiUserID}/getSubnets', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userSendPasswordResetV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUserApi~userSendPasswordResetV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UserSendPasswordResetV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Send password reset
+     * Send the password reset email
+     * @param {Number} pkiUserID 
+     * @param {Object.<String, Object>} body 
+     * @param {module:eZmaxAPI/api/ObjectUserApi~userSendPasswordResetV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UserSendPasswordResetV1Response}
+     */
+    userSendPasswordResetV1(pkiUserID, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'pkiUserID' is set
+      if (pkiUserID === undefined || pkiUserID === null) {
+        throw new Error("Missing the required parameter 'pkiUserID' when calling userSendPasswordResetV1");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userSendPasswordResetV1");
+      }
+
+      let pathParams = {
+        'pkiUserID': pkiUserID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UserSendPasswordResetV1Response;
+      return this.apiClient.callApi(
+        '/1/object/user/{pkiUserID}/sendPasswordReset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CustomWebhooklogResponse from './CustomWebhooklogResponse';
-import WebhookGetHistoryV1ResponseMPayloadAllOf from './WebhookGetHistoryV1ResponseMPayloadAllOf';
 
 /**
  * The WebhookGetHistoryV1ResponseMPayload model module.
@@ -25,11 +24,10 @@ class WebhookGetHistoryV1ResponseMPayload {
      * Constructs a new <code>WebhookGetHistoryV1ResponseMPayload</code>.
      * Payload for GET /1/object/webhook/{pkiWebhookID}/getHistory
      * @alias module:eZmaxAPI/model/WebhookGetHistoryV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/WebhookGetHistoryV1ResponseMPayloadAllOf
      * @param a_objWebhooklog {Array.<module:eZmaxAPI/model/CustomWebhooklogResponse>} 
      */
     constructor(a_objWebhooklog) { 
-        WebhookGetHistoryV1ResponseMPayloadAllOf.initialize(this, a_objWebhooklog);
+        
         WebhookGetHistoryV1ResponseMPayload.initialize(this, a_objWebhooklog);
     }
 
@@ -52,7 +50,6 @@ class WebhookGetHistoryV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookGetHistoryV1ResponseMPayload();
-            WebhookGetHistoryV1ResponseMPayloadAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('a_objWebhooklog')) {
                 obj['a_objWebhooklog'] = ApiClient.convertToType(data['a_objWebhooklog'], [CustomWebhooklogResponse]);
@@ -111,11 +108,6 @@ WebhookGetHistoryV1ResponseMPayload.RequiredProperties = ["a_objWebhooklog"];
 WebhookGetHistoryV1ResponseMPayload.prototype['a_objWebhooklog'] = undefined;
 
 
-// Implement WebhookGetHistoryV1ResponseMPayloadAllOf interface:
-/**
- * @member {Array.<module:eZmaxAPI/model/CustomWebhooklogResponse>} a_objWebhooklog
- */
-WebhookGetHistoryV1ResponseMPayloadAllOf.prototype['a_objWebhooklog'] = undefined;
 
 
 

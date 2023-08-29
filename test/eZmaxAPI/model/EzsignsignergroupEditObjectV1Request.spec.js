@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignergroupEditObjectV1Request);
     });
 
-    it('should have the property objBranding (base name: "objBranding")', function() {
-      // uncomment below and update the code to test the property objBranding
+    it('should have the property objEzsignsignergroup (base name: "objEzsignsignergroup")', function() {
+      // uncomment below and update the code to test the property objEzsignsignergroup
       //var instance = new EZmaxApiDefinitionFull.EzsignsignergroupEditObjectV1Request();
       //expect(instance).to.be();
     });

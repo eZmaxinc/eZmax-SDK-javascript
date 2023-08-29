@@ -16,7 +16,6 @@ import AttemptResponseCompound from './AttemptResponseCompound';
 import CommonWebhook from './CommonWebhook';
 import CustomWebhookResponse from './CustomWebhookResponse';
 import UserResponseCompound from './UserResponseCompound';
-import WebhookUserUserCreatedAllOf from './WebhookUserUserCreatedAllOf';
 
 /**
  * The WebhookUserUserCreated model module.
@@ -28,15 +27,14 @@ class WebhookUserUserCreated {
      * Constructs a new <code>WebhookUserUserCreated</code>.
      * This is the base Webhook object
      * @alias module:eZmaxAPI/model/WebhookUserUserCreated
-     * @implements module:eZmaxAPI/model/WebhookUserUserCreatedAllOf
      * @implements module:eZmaxAPI/model/CommonWebhook
-     * @param objUser {module:eZmaxAPI/model/UserResponseCompound} 
      * @param objWebhook {module:eZmaxAPI/model/CustomWebhookResponse} 
      * @param a_objAttempt {Array.<module:eZmaxAPI/model/AttemptResponseCompound>} An array containing details of previous attempts that were made to deliver the message. The array is empty if it's the first attempt.
+     * @param objUser {module:eZmaxAPI/model/UserResponseCompound} 
      */
-    constructor(objUser, objWebhook, a_objAttempt) { 
-        WebhookUserUserCreatedAllOf.initialize(this, objUser);CommonWebhook.initialize(this, objWebhook, a_objAttempt);
-        WebhookUserUserCreated.initialize(this, objUser, objWebhook, a_objAttempt);
+    constructor(objWebhook, a_objAttempt, objUser) { 
+        CommonWebhook.initialize(this, objWebhook, a_objAttempt);
+        WebhookUserUserCreated.initialize(this, objWebhook, a_objAttempt, objUser);
     }
 
     /**
@@ -44,10 +42,10 @@ class WebhookUserUserCreated {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objUser, objWebhook, a_objAttempt) { 
-        obj['objUser'] = objUser;
+    static initialize(obj, objWebhook, a_objAttempt, objUser) { 
         obj['objWebhook'] = objWebhook;
         obj['a_objAttempt'] = a_objAttempt;
+        obj['objUser'] = objUser;
     }
 
     /**
@@ -60,17 +58,16 @@ class WebhookUserUserCreated {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WebhookUserUserCreated();
-            WebhookUserUserCreatedAllOf.constructFromObject(data, obj);
             CommonWebhook.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('objUser')) {
-                obj['objUser'] = UserResponseCompound.constructFromObject(data['objUser']);
-            }
             if (data.hasOwnProperty('objWebhook')) {
                 obj['objWebhook'] = CustomWebhookResponse.constructFromObject(data['objWebhook']);
             }
             if (data.hasOwnProperty('a_objAttempt')) {
                 obj['a_objAttempt'] = ApiClient.convertToType(data['a_objAttempt'], [AttemptResponseCompound]);
+            }
+            if (data.hasOwnProperty('objUser')) {
+                obj['objUser'] = UserResponseCompound.constructFromObject(data['objUser']);
             }
         }
         return obj;
@@ -88,10 +85,6 @@ class WebhookUserUserCreated {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `objUser`
-        if (data['objUser']) { // data not null
-          UserResponseCompound.validateJSON(data['objUser']);
-        }
         // validate the optional field `objWebhook`
         if (data['objWebhook']) { // data not null
           CustomWebhookResponse.validateJSON(data['objWebhook']);
@@ -106,23 +99,14 @@ class WebhookUserUserCreated {
                 AttemptResponseCompound.validateJSON(item);
             };
         }
+        // validate the optional field `objUser`
+        if (data['objUser']) { // data not null
+          UserResponseCompound.validateJSON(data['objUser']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/UserResponseCompound}
-     */
-    getObjUser() {
-        return this.objUser;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/UserResponseCompound} objUser
-     */
-    setObjUser(objUser) {
-        this['objUser'] = objUser;
-    }
 /**
      * @return {module:eZmaxAPI/model/CustomWebhookResponse}
      */
@@ -151,15 +135,23 @@ class WebhookUserUserCreated {
     setAObjAttempt(a_objAttempt) {
         this['a_objAttempt'] = a_objAttempt;
     }
+/**
+     * @return {module:eZmaxAPI/model/UserResponseCompound}
+     */
+    getObjUser() {
+        return this.objUser;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/UserResponseCompound} objUser
+     */
+    setObjUser(objUser) {
+        this['objUser'] = objUser;
+    }
 
 }
 
-WebhookUserUserCreated.RequiredProperties = ["objUser", "objWebhook", "a_objAttempt"];
-
-/**
- * @member {module:eZmaxAPI/model/UserResponseCompound} objUser
- */
-WebhookUserUserCreated.prototype['objUser'] = undefined;
+WebhookUserUserCreated.RequiredProperties = ["objWebhook", "a_objAttempt", "objUser"];
 
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook
@@ -172,12 +164,12 @@ WebhookUserUserCreated.prototype['objWebhook'] = undefined;
  */
 WebhookUserUserCreated.prototype['a_objAttempt'] = undefined;
 
-
-// Implement WebhookUserUserCreatedAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/UserResponseCompound} objUser
  */
-WebhookUserUserCreatedAllOf.prototype['objUser'] = undefined;
+WebhookUserUserCreated.prototype['objUser'] = undefined;
+
+
 // Implement CommonWebhook interface:
 /**
  * @member {module:eZmaxAPI/model/CustomWebhookResponse} objWebhook

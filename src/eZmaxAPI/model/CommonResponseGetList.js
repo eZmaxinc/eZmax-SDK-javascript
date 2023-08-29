@@ -25,10 +25,11 @@ class CommonResponseGetList {
      * Constructs a new <code>CommonResponseGetList</code>.
      * All API response will inherit this based Response
      * @alias module:eZmaxAPI/model/CommonResponseGetList
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} 
      */
-    constructor() { 
+    constructor(objDebugPayload) { 
         
-        CommonResponseGetList.initialize(this);
+        CommonResponseGetList.initialize(this, objDebugPayload);
     }
 
     /**
@@ -36,7 +37,8 @@ class CommonResponseGetList {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objDebugPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
     }
 
     /**
@@ -66,6 +68,12 @@ class CommonResponseGetList {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>CommonResponseGetList</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of CommonResponseGetList.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayloadGetList.validateJSON(data['objDebugPayload']);
@@ -107,7 +115,7 @@ class CommonResponseGetList {
 
 }
 
-
+CommonResponseGetList.RequiredProperties = ["objDebugPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList} objDebugPayload

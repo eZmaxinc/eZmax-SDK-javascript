@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bVersionDeprecated (base name: "bVersionDeprecated")', function() {
+      // uncomment below and update the code to test the property bVersionDeprecated
+      //var instance = new EZmaxApiDefinitionFull.CommonResponseObjDebugPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

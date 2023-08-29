@@ -27,10 +27,11 @@ class EzsigntemplatesignerEditObjectV1Response {
      * Response for PUT /1/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}
      * @alias module:eZmaxAPI/model/EzsigntemplatesignerEditObjectV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      */
-    constructor() { 
-        CommonResponse.initialize(this);
-        EzsigntemplatesignerEditObjectV1Response.initialize(this);
+    constructor(objDebugPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        EzsigntemplatesignerEditObjectV1Response.initialize(this, objDebugPayload);
     }
 
     /**
@@ -38,7 +39,8 @@ class EzsigntemplatesignerEditObjectV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, objDebugPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
     }
 
     /**
@@ -69,6 +71,12 @@ class EzsigntemplatesignerEditObjectV1Response {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EzsigntemplatesignerEditObjectV1Response</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EzsigntemplatesignerEditObjectV1Response.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -110,7 +118,7 @@ class EzsigntemplatesignerEditObjectV1Response {
 
 }
 
-
+EzsigntemplatesignerEditObjectV1Response.RequiredProperties = ["objDebugPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

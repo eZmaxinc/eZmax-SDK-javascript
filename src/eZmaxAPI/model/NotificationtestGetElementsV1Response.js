@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import NotificationtestGetElementsV1ResponseAllOf from './NotificationtestGetElementsV1ResponseAllOf';
 import NotificationtestGetElementsV1ResponseMPayload from './NotificationtestGetElementsV1ResponseMPayload';
 
 /**
@@ -28,13 +27,13 @@ class NotificationtestGetElementsV1Response {
      * Constructs a new <code>NotificationtestGetElementsV1Response</code>.
      * Response for GET /1/object/notificationtest/{pkiNotificationtestID}/getElements
      * @alias module:eZmaxAPI/model/NotificationtestGetElementsV1Response
-     * @implements module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseAllOf
      * @implements module:eZmaxAPI/model/CommonResponse
+     * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
      * @param mPayload {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload} 
      */
-    constructor(mPayload) { 
-        NotificationtestGetElementsV1ResponseAllOf.initialize(this, mPayload);CommonResponse.initialize(this);
-        NotificationtestGetElementsV1Response.initialize(this, mPayload);
+    constructor(objDebugPayload, mPayload) { 
+        CommonResponse.initialize(this, objDebugPayload);
+        NotificationtestGetElementsV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -42,7 +41,8 @@ class NotificationtestGetElementsV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
+        obj['objDebugPayload'] = objDebugPayload;
         obj['mPayload'] = mPayload;
     }
 
@@ -56,17 +56,16 @@ class NotificationtestGetElementsV1Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new NotificationtestGetElementsV1Response();
-            NotificationtestGetElementsV1ResponseAllOf.constructFromObject(data, obj);
             CommonResponse.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('mPayload')) {
-                obj['mPayload'] = NotificationtestGetElementsV1ResponseMPayload.constructFromObject(data['mPayload']);
-            }
             if (data.hasOwnProperty('objDebugPayload')) {
                 obj['objDebugPayload'] = CommonResponseObjDebugPayload.constructFromObject(data['objDebugPayload']);
             }
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
+            }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = NotificationtestGetElementsV1ResponseMPayload.constructFromObject(data['mPayload']);
             }
         }
         return obj;
@@ -84,10 +83,6 @@ class NotificationtestGetElementsV1Response {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
-        // validate the optional field `mPayload`
-        if (data['mPayload']) { // data not null
-          NotificationtestGetElementsV1ResponseMPayload.validateJSON(data['mPayload']);
-        }
         // validate the optional field `objDebugPayload`
         if (data['objDebugPayload']) { // data not null
           CommonResponseObjDebugPayload.validateJSON(data['objDebugPayload']);
@@ -96,23 +91,14 @@ class NotificationtestGetElementsV1Response {
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
         }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          NotificationtestGetElementsV1ResponseMPayload.validateJSON(data['mPayload']);
+        }
 
         return true;
     }
 
-/**
-     * @return {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload}
-     */
-    getMPayload() {
-        return this.mPayload;
-    }
-
-    /**
-     * @param {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload} mPayload
-     */
-    setMPayload(mPayload) {
-        this['mPayload'] = mPayload;
-    }
 /**
      * @return {module:eZmaxAPI/model/CommonResponseObjDebugPayload}
      */
@@ -139,15 +125,23 @@ class NotificationtestGetElementsV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-NotificationtestGetElementsV1Response.RequiredProperties = ["mPayload"];
-
-/**
- * @member {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload} mPayload
- */
-NotificationtestGetElementsV1Response.prototype['mPayload'] = undefined;
+NotificationtestGetElementsV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
@@ -159,12 +153,12 @@ NotificationtestGetElementsV1Response.prototype['objDebugPayload'] = undefined;
  */
 NotificationtestGetElementsV1Response.prototype['objDebug'] = undefined;
 
-
-// Implement NotificationtestGetElementsV1ResponseAllOf interface:
 /**
  * @member {module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload} mPayload
  */
-NotificationtestGetElementsV1ResponseAllOf.prototype['mPayload'] = undefined;
+NotificationtestGetElementsV1Response.prototype['mPayload'] = undefined;
+
+
 // Implement CommonResponse interface:
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload

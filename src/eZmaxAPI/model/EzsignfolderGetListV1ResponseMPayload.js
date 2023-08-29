@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonGetListV1ResponseMPayload from './CommonGetListV1ResponseMPayload';
-import EzsignfolderGetListV1ResponseMPayloadAllOf from './EzsignfolderGetListV1ResponseMPayloadAllOf';
 import EzsignfolderListElement from './EzsignfolderListElement';
 
 /**
@@ -26,15 +25,14 @@ class EzsignfolderGetListV1ResponseMPayload {
      * Constructs a new <code>EzsignfolderGetListV1ResponseMPayload</code>.
      * Payload for GET /1/object/ezsignfolder/getList
      * @alias module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayload
-     * @implements module:eZmaxAPI/model/EzsignfolderGetListV1ResponseMPayloadAllOf
      * @implements module:eZmaxAPI/model/CommonGetListV1ResponseMPayload
-     * @param a_objEzsignfolder {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} 
      * @param iRowReturned {Number} The number of rows returned
      * @param iRowFiltered {Number} The number of rows matching your filters (if any) or the total number of rows
+     * @param a_objEzsignfolder {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} 
      */
-    constructor(a_objEzsignfolder, iRowReturned, iRowFiltered) { 
-        EzsignfolderGetListV1ResponseMPayloadAllOf.initialize(this, a_objEzsignfolder);CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
-        EzsignfolderGetListV1ResponseMPayload.initialize(this, a_objEzsignfolder, iRowReturned, iRowFiltered);
+    constructor(iRowReturned, iRowFiltered, a_objEzsignfolder) { 
+        CommonGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered);
+        EzsignfolderGetListV1ResponseMPayload.initialize(this, iRowReturned, iRowFiltered, a_objEzsignfolder);
     }
 
     /**
@@ -42,10 +40,10 @@ class EzsignfolderGetListV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objEzsignfolder, iRowReturned, iRowFiltered) { 
-        obj['a_objEzsignfolder'] = a_objEzsignfolder;
+    static initialize(obj, iRowReturned, iRowFiltered, a_objEzsignfolder) { 
         obj['iRowReturned'] = iRowReturned;
         obj['iRowFiltered'] = iRowFiltered;
+        obj['a_objEzsignfolder'] = a_objEzsignfolder;
     }
 
     /**
@@ -58,17 +56,16 @@ class EzsignfolderGetListV1ResponseMPayload {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EzsignfolderGetListV1ResponseMPayload();
-            EzsignfolderGetListV1ResponseMPayloadAllOf.constructFromObject(data, obj);
             CommonGetListV1ResponseMPayload.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('a_objEzsignfolder')) {
-                obj['a_objEzsignfolder'] = ApiClient.convertToType(data['a_objEzsignfolder'], [EzsignfolderListElement]);
-            }
             if (data.hasOwnProperty('iRowReturned')) {
                 obj['iRowReturned'] = ApiClient.convertToType(data['iRowReturned'], 'Number');
             }
             if (data.hasOwnProperty('iRowFiltered')) {
                 obj['iRowFiltered'] = ApiClient.convertToType(data['iRowFiltered'], 'Number');
+            }
+            if (data.hasOwnProperty('a_objEzsignfolder')) {
+                obj['a_objEzsignfolder'] = ApiClient.convertToType(data['a_objEzsignfolder'], [EzsignfolderListElement]);
             }
         }
         return obj;
@@ -101,19 +98,6 @@ class EzsignfolderGetListV1ResponseMPayload {
     }
 
 /**
-     * @return {Array.<module:eZmaxAPI/model/EzsignfolderListElement>}
-     */
-    getAObjEzsignfolder() {
-        return this.a_objEzsignfolder;
-    }
-
-    /**
-     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
-     */
-    setAObjEzsignfolder(a_objEzsignfolder) {
-        this['a_objEzsignfolder'] = a_objEzsignfolder;
-    }
-/**
      * Returns The number of rows returned
      * @return {Number}
      */
@@ -143,15 +127,23 @@ class EzsignfolderGetListV1ResponseMPayload {
     setIRowFiltered(iRowFiltered) {
         this['iRowFiltered'] = iRowFiltered;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsignfolderListElement>}
+     */
+    getAObjEzsignfolder() {
+        return this.a_objEzsignfolder;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
+     */
+    setAObjEzsignfolder(a_objEzsignfolder) {
+        this['a_objEzsignfolder'] = a_objEzsignfolder;
+    }
 
 }
 
-EzsignfolderGetListV1ResponseMPayload.RequiredProperties = ["a_objEzsignfolder", "iRowReturned", "iRowFiltered"];
-
-/**
- * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
- */
-EzsignfolderGetListV1ResponseMPayload.prototype['a_objEzsignfolder'] = undefined;
+EzsignfolderGetListV1ResponseMPayload.RequiredProperties = ["iRowReturned", "iRowFiltered", "a_objEzsignfolder"];
 
 /**
  * The number of rows returned
@@ -165,12 +157,12 @@ EzsignfolderGetListV1ResponseMPayload.prototype['iRowReturned'] = undefined;
  */
 EzsignfolderGetListV1ResponseMPayload.prototype['iRowFiltered'] = undefined;
 
-
-// Implement EzsignfolderGetListV1ResponseMPayloadAllOf interface:
 /**
  * @member {Array.<module:eZmaxAPI/model/EzsignfolderListElement>} a_objEzsignfolder
  */
-EzsignfolderGetListV1ResponseMPayloadAllOf.prototype['a_objEzsignfolder'] = undefined;
+EzsignfolderGetListV1ResponseMPayload.prototype['a_objEzsignfolder'] = undefined;
+
+
 // Implement CommonGetListV1ResponseMPayload interface:
 /**
  * The number of rows returned

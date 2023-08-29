@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import CommonResponseError from './CommonResponseError';
-import CommonResponseErrorSTemporaryFileUrlAllOf from './CommonResponseErrorSTemporaryFileUrlAllOf';
 import FieldEErrorCode from './FieldEErrorCode';
 
 /**
@@ -26,13 +25,12 @@ class CommonResponseErrorSTemporaryFileUrl {
      * Constructs a new <code>CommonResponseErrorSTemporaryFileUrl</code>.
      * Generic Error Message
      * @alias module:eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrl
-     * @implements module:eZmaxAPI/model/CommonResponseErrorSTemporaryFileUrlAllOf
      * @implements module:eZmaxAPI/model/CommonResponseError
      * @param sErrorMessage {String} The message giving details about the error
      * @param eErrorCode {module:eZmaxAPI/model/FieldEErrorCode} 
      */
     constructor(sErrorMessage, eErrorCode) { 
-        CommonResponseErrorSTemporaryFileUrlAllOf.initialize(this);CommonResponseError.initialize(this, sErrorMessage, eErrorCode);
+        CommonResponseError.initialize(this, sErrorMessage, eErrorCode);
         CommonResponseErrorSTemporaryFileUrl.initialize(this, sErrorMessage, eErrorCode);
     }
 
@@ -56,17 +54,16 @@ class CommonResponseErrorSTemporaryFileUrl {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CommonResponseErrorSTemporaryFileUrl();
-            CommonResponseErrorSTemporaryFileUrlAllOf.constructFromObject(data, obj);
             CommonResponseError.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('sTemporaryFileUrl')) {
-                obj['sTemporaryFileUrl'] = ApiClient.convertToType(data['sTemporaryFileUrl'], 'String');
-            }
             if (data.hasOwnProperty('sErrorMessage')) {
                 obj['sErrorMessage'] = ApiClient.convertToType(data['sErrorMessage'], 'String');
             }
             if (data.hasOwnProperty('eErrorCode')) {
                 obj['eErrorCode'] = FieldEErrorCode.constructFromObject(data['eErrorCode']);
+            }
+            if (data.hasOwnProperty('sTemporaryFileUrl')) {
+                obj['sTemporaryFileUrl'] = ApiClient.convertToType(data['sTemporaryFileUrl'], 'String');
             }
         }
         return obj;
@@ -85,32 +82,17 @@ class CommonResponseErrorSTemporaryFileUrl {
             }
         }
         // ensure the json data is a string
-        if (data['sTemporaryFileUrl'] && !(typeof data['sTemporaryFileUrl'] === 'string' || data['sTemporaryFileUrl'] instanceof String)) {
-            throw new Error("Expected the field `sTemporaryFileUrl` to be a primitive type in the JSON string but got " + data['sTemporaryFileUrl']);
-        }
-        // ensure the json data is a string
         if (data['sErrorMessage'] && !(typeof data['sErrorMessage'] === 'string' || data['sErrorMessage'] instanceof String)) {
             throw new Error("Expected the field `sErrorMessage` to be a primitive type in the JSON string but got " + data['sErrorMessage']);
+        }
+        // ensure the json data is a string
+        if (data['sTemporaryFileUrl'] && !(typeof data['sTemporaryFileUrl'] === 'string' || data['sTemporaryFileUrl'] instanceof String)) {
+            throw new Error("Expected the field `sTemporaryFileUrl` to be a primitive type in the JSON string but got " + data['sTemporaryFileUrl']);
         }
 
         return true;
     }
 
-/**
-     * Returns The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
-     * @return {String}
-     */
-    getSTemporaryFileUrl() {
-        return this.sTemporaryFileUrl;
-    }
-
-    /**
-     * Sets The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
-     * @param {String} sTemporaryFileUrl The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
-     */
-    setSTemporaryFileUrl(sTemporaryFileUrl) {
-        this['sTemporaryFileUrl'] = sTemporaryFileUrl;
-    }
 /**
      * Returns The message giving details about the error
      * @return {String}
@@ -139,16 +121,25 @@ class CommonResponseErrorSTemporaryFileUrl {
     setEErrorCode(eErrorCode) {
         this['eErrorCode'] = eErrorCode;
     }
+/**
+     * Returns The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
+     * @return {String}
+     */
+    getSTemporaryFileUrl() {
+        return this.sTemporaryFileUrl;
+    }
+
+    /**
+     * Sets The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
+     * @param {String} sTemporaryFileUrl The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
+     */
+    setSTemporaryFileUrl(sTemporaryFileUrl) {
+        this['sTemporaryFileUrl'] = sTemporaryFileUrl;
+    }
 
 }
 
 CommonResponseErrorSTemporaryFileUrl.RequiredProperties = ["sErrorMessage", "eErrorCode"];
-
-/**
- * The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
- * @member {String} sTemporaryFileUrl
- */
-CommonResponseErrorSTemporaryFileUrl.prototype['sTemporaryFileUrl'] = undefined;
 
 /**
  * The message giving details about the error
@@ -161,13 +152,13 @@ CommonResponseErrorSTemporaryFileUrl.prototype['sErrorMessage'] = undefined;
  */
 CommonResponseErrorSTemporaryFileUrl.prototype['eErrorCode'] = undefined;
 
-
-// Implement CommonResponseErrorSTemporaryFileUrlAllOf interface:
 /**
  * The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
  * @member {String} sTemporaryFileUrl
  */
-CommonResponseErrorSTemporaryFileUrlAllOf.prototype['sTemporaryFileUrl'] = undefined;
+CommonResponseErrorSTemporaryFileUrl.prototype['sTemporaryFileUrl'] = undefined;
+
+
 // Implement CommonResponseError interface:
 /**
  * The message giving details about the error

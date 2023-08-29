@@ -14,7 +14,6 @@
 import ApiClient from '../ApiClient';
 import CommonResponseFilter from './CommonResponseFilter';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
-import CommonResponseObjDebugPayloadGetListAllOf from './CommonResponseObjDebugPayloadGetListAllOf';
 
 /**
  * The CommonResponseObjDebugPayloadGetList model module.
@@ -27,16 +26,16 @@ class CommonResponseObjDebugPayloadGetList {
      * This is a debug object containing debugging information on the actual function
      * @alias module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetList
      * @implements module:eZmaxAPI/model/CommonResponseObjDebugPayload
-     * @implements module:eZmaxAPI/model/CommonResponseObjDebugPayloadGetListAllOf
      * @param iVersionMin {Number} The minimum version of the function that can be called
      * @param iVersionMax {Number} The maximum version of the function that can be called
      * @param a_RequiredPermission {Array.<Number>} An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don't need to have all of them.
+     * @param bVersionDeprecated {Boolean} Wheter the current route is deprecated or not
      * @param a_Filter {module:eZmaxAPI/model/CommonResponseFilter} 
      * @param a_OrderBy {Object.<String, String>} List of available values for *eOrderBy*
      */
-    constructor(iVersionMin, iVersionMax, a_RequiredPermission, a_Filter, a_OrderBy) { 
-        CommonResponseObjDebugPayload.initialize(this, iVersionMin, iVersionMax, a_RequiredPermission);CommonResponseObjDebugPayloadGetListAllOf.initialize(this, a_Filter, a_OrderBy);
-        CommonResponseObjDebugPayloadGetList.initialize(this, iVersionMin, iVersionMax, a_RequiredPermission, a_Filter, a_OrderBy);
+    constructor(iVersionMin, iVersionMax, a_RequiredPermission, bVersionDeprecated, a_Filter, a_OrderBy) { 
+        CommonResponseObjDebugPayload.initialize(this, iVersionMin, iVersionMax, a_RequiredPermission, bVersionDeprecated);
+        CommonResponseObjDebugPayloadGetList.initialize(this, iVersionMin, iVersionMax, a_RequiredPermission, bVersionDeprecated, a_Filter, a_OrderBy);
     }
 
     /**
@@ -44,10 +43,11 @@ class CommonResponseObjDebugPayloadGetList {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, iVersionMin, iVersionMax, a_RequiredPermission, a_Filter, a_OrderBy) { 
+    static initialize(obj, iVersionMin, iVersionMax, a_RequiredPermission, bVersionDeprecated, a_Filter, a_OrderBy) { 
         obj['iVersionMin'] = iVersionMin;
         obj['iVersionMax'] = iVersionMax;
         obj['a_RequiredPermission'] = a_RequiredPermission;
+        obj['bVersionDeprecated'] = bVersionDeprecated;
         obj['a_Filter'] = a_Filter;
         obj['a_OrderBy'] = a_OrderBy;
     }
@@ -63,7 +63,6 @@ class CommonResponseObjDebugPayloadGetList {
         if (data) {
             obj = obj || new CommonResponseObjDebugPayloadGetList();
             CommonResponseObjDebugPayload.constructFromObject(data, obj);
-            CommonResponseObjDebugPayloadGetListAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('iVersionMin')) {
                 obj['iVersionMin'] = ApiClient.convertToType(data['iVersionMin'], 'Number');
@@ -73,6 +72,9 @@ class CommonResponseObjDebugPayloadGetList {
             }
             if (data.hasOwnProperty('a_RequiredPermission')) {
                 obj['a_RequiredPermission'] = ApiClient.convertToType(data['a_RequiredPermission'], ['Number']);
+            }
+            if (data.hasOwnProperty('bVersionDeprecated')) {
+                obj['bVersionDeprecated'] = ApiClient.convertToType(data['bVersionDeprecated'], 'Boolean');
             }
             if (data.hasOwnProperty('a_Filter')) {
                 obj['a_Filter'] = CommonResponseFilter.constructFromObject(data['a_Filter']);
@@ -154,6 +156,21 @@ class CommonResponseObjDebugPayloadGetList {
         this['a_RequiredPermission'] = a_RequiredPermission;
     }
 /**
+     * Returns Wheter the current route is deprecated or not
+     * @return {Boolean}
+     */
+    getBVersionDeprecated() {
+        return this.bVersionDeprecated;
+    }
+
+    /**
+     * Sets Wheter the current route is deprecated or not
+     * @param {Boolean} bVersionDeprecated Wheter the current route is deprecated or not
+     */
+    setBVersionDeprecated(bVersionDeprecated) {
+        this['bVersionDeprecated'] = bVersionDeprecated;
+    }
+/**
      * @return {module:eZmaxAPI/model/CommonResponseFilter}
      */
     getAFilter() {
@@ -184,7 +201,7 @@ class CommonResponseObjDebugPayloadGetList {
 
 }
 
-CommonResponseObjDebugPayloadGetList.RequiredProperties = ["iVersionMin", "iVersionMax", "a_RequiredPermission", "a_Filter", "a_OrderBy"];
+CommonResponseObjDebugPayloadGetList.RequiredProperties = ["iVersionMin", "iVersionMax", "a_RequiredPermission", "bVersionDeprecated", "a_Filter", "a_OrderBy"];
 
 /**
  * The minimum version of the function that can be called
@@ -203,6 +220,12 @@ CommonResponseObjDebugPayloadGetList.prototype['iVersionMax'] = undefined;
  * @member {Array.<Number>} a_RequiredPermission
  */
 CommonResponseObjDebugPayloadGetList.prototype['a_RequiredPermission'] = undefined;
+
+/**
+ * Wheter the current route is deprecated or not
+ * @member {Boolean} bVersionDeprecated
+ */
+CommonResponseObjDebugPayloadGetList.prototype['bVersionDeprecated'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseFilter} a_Filter
@@ -232,16 +255,11 @@ CommonResponseObjDebugPayload.prototype['iVersionMax'] = undefined;
  * @member {Array.<Number>} a_RequiredPermission
  */
 CommonResponseObjDebugPayload.prototype['a_RequiredPermission'] = undefined;
-// Implement CommonResponseObjDebugPayloadGetListAllOf interface:
 /**
- * @member {module:eZmaxAPI/model/CommonResponseFilter} a_Filter
+ * Wheter the current route is deprecated or not
+ * @member {Boolean} bVersionDeprecated
  */
-CommonResponseObjDebugPayloadGetListAllOf.prototype['a_Filter'] = undefined;
-/**
- * List of available values for *eOrderBy*
- * @member {Object.<String, String>} a_OrderBy
- */
-CommonResponseObjDebugPayloadGetListAllOf.prototype['a_OrderBy'] = undefined;
+CommonResponseObjDebugPayload.prototype['bVersionDeprecated'] = undefined;
 
 
 

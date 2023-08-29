@@ -13,7 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import EzsignfoldersignerassociationRequest from './EzsignfoldersignerassociationRequest';
-import EzsignfoldersignerassociationRequestCompoundAllOf from './EzsignfoldersignerassociationRequestCompoundAllOf';
 import EzsignsignerRequestCompound from './EzsignsignerRequestCompound';
 
 /**
@@ -27,11 +26,10 @@ class EzsignfoldersignerassociationRequestCompound {
      * An Ezsignfoldersignerassociation Object and children to create a complete structure
      * @alias module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompound
      * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequest
-     * @implements module:eZmaxAPI/model/EzsignfoldersignerassociationRequestCompoundAllOf
      * @param fkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
      */
     constructor(fkiEzsignfolderID) { 
-        EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);EzsignfoldersignerassociationRequestCompoundAllOf.initialize(this);
+        EzsignfoldersignerassociationRequest.initialize(this, fkiEzsignfolderID);
         EzsignfoldersignerassociationRequestCompound.initialize(this, fkiEzsignfolderID);
     }
 
@@ -55,7 +53,6 @@ class EzsignfoldersignerassociationRequestCompound {
         if (data) {
             obj = obj || new EzsignfoldersignerassociationRequestCompound();
             EzsignfoldersignerassociationRequest.constructFromObject(data, obj);
-            EzsignfoldersignerassociationRequestCompoundAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiEzsignfoldersignerassociationID')) {
                 obj['pkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['pkiEzsignfoldersignerassociationID'], 'Number');
@@ -292,11 +289,6 @@ EzsignfoldersignerassociationRequest.prototype['bEzsignfoldersignerassociationRe
  * @member {String} tEzsignfoldersignerassociationMessage
  */
 EzsignfoldersignerassociationRequest.prototype['tEzsignfoldersignerassociationMessage'] = undefined;
-// Implement EzsignfoldersignerassociationRequestCompoundAllOf interface:
-/**
- * @member {module:eZmaxAPI/model/EzsignsignerRequestCompound} objEzsignsigner
- */
-EzsignfoldersignerassociationRequestCompoundAllOf.prototype['objEzsignsigner'] = undefined;
 
 
 
