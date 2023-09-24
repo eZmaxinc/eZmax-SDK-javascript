@@ -166,6 +166,7 @@ docs/CustomEzsignfoldersignerassociationmineResponse.md
 docs/CustomEzsignfoldersignerassociationstatusResponse.md
 docs/CustomEzsignfoldertransmissionResponse.md
 docs/CustomEzsignfoldertransmissionSignerResponse.md
+docs/CustomEzsignfoldertypeResponse.md
 docs/CustomEzsignformfieldRequest.md
 docs/CustomEzsignformfielderrorResponse.md
 docs/CustomEzsignformfielderrortestResponse.md
@@ -1362,6 +1363,7 @@ src/eZmaxAPI/model/CustomEzsignfoldersignerassociationmineResponse.js
 src/eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse.js
 src/eZmaxAPI/model/CustomEzsignfoldertransmissionResponse.js
 src/eZmaxAPI/model/CustomEzsignfoldertransmissionSignerResponse.js
+src/eZmaxAPI/model/CustomEzsignfoldertypeResponse.js
 src/eZmaxAPI/model/CustomEzsignformfieldRequest.js
 src/eZmaxAPI/model/CustomEzsignformfielderrorResponse.js
 src/eZmaxAPI/model/CustomEzsignformfielderrortestResponse.js
@@ -2482,6 +2484,7 @@ test/eZmaxAPI/model/CustomEzsignfoldersignerassociationmineResponse.spec.js
 test/eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse.spec.js
 test/eZmaxAPI/model/CustomEzsignfoldertransmissionResponse.spec.js
 test/eZmaxAPI/model/CustomEzsignfoldertransmissionSignerResponse.spec.js
+test/eZmaxAPI/model/CustomEzsignfoldertypeResponse.spec.js
 test/eZmaxAPI/model/CustomEzsignformfieldRequest.spec.js
 test/eZmaxAPI/model/CustomEzsignformfielderrorResponse.spec.js
 test/eZmaxAPI/model/CustomEzsignformfielderrortestResponse.spec.js
