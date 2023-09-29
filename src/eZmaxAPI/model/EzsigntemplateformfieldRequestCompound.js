@@ -87,6 +87,9 @@ class EzsigntemplateformfieldRequestCompound {
             if (data.hasOwnProperty('iEzsigntemplateformfieldHeight')) {
                 obj['iEzsigntemplateformfieldHeight'] = ApiClient.convertToType(data['iEzsigntemplateformfieldHeight'], 'Number');
             }
+            if (data.hasOwnProperty('bEzsigntemplateformfieldAutocomplete')) {
+                obj['bEzsigntemplateformfieldAutocomplete'] = ApiClient.convertToType(data['bEzsigntemplateformfieldAutocomplete'], 'Boolean');
+            }
             if (data.hasOwnProperty('bEzsigntemplateformfieldSelected')) {
                 obj['bEzsigntemplateformfieldSelected'] = ApiClient.convertToType(data['bEzsigntemplateformfieldSelected'], 'Boolean');
             }
@@ -245,6 +248,21 @@ class EzsigntemplateformfieldRequestCompound {
         this['iEzsigntemplateformfieldHeight'] = iEzsigntemplateformfieldHeight;
     }
 /**
+     * Returns Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+     * @return {Boolean}
+     */
+    getBEzsigntemplateformfieldAutocomplete() {
+        return this.bEzsigntemplateformfieldAutocomplete;
+    }
+
+    /**
+     * Sets Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+     * @param {Boolean} bEzsigntemplateformfieldAutocomplete Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+     */
+    setBEzsigntemplateformfieldAutocomplete(bEzsigntemplateformfieldAutocomplete) {
+        this['bEzsigntemplateformfieldAutocomplete'] = bEzsigntemplateformfieldAutocomplete;
+    }
+/**
      * Returns Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
      * @return {Boolean}
      */
@@ -313,6 +331,12 @@ EzsigntemplateformfieldRequestCompound.prototype['iEzsigntemplateformfieldWidth'
 EzsigntemplateformfieldRequestCompound.prototype['iEzsigntemplateformfieldHeight'] = undefined;
 
 /**
+ * Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+ * @member {Boolean} bEzsigntemplateformfieldAutocomplete
+ */
+EzsigntemplateformfieldRequestCompound.prototype['bEzsigntemplateformfieldAutocomplete'] = undefined;
+
+/**
  * Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
  * @member {Boolean} bEzsigntemplateformfieldSelected
  */
@@ -360,6 +384,11 @@ EzsigntemplateformfieldRequest.prototype['iEzsigntemplateformfieldWidth'] = unde
  * @member {Number} iEzsigntemplateformfieldHeight
  */
 EzsigntemplateformfieldRequest.prototype['iEzsigntemplateformfieldHeight'] = undefined;
+/**
+ * Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+ * @member {Boolean} bEzsigntemplateformfieldAutocomplete
+ */
+EzsigntemplateformfieldRequest.prototype['bEzsigntemplateformfieldAutocomplete'] = undefined;
 /**
  * Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
  * @member {Boolean} bEzsigntemplateformfieldSelected

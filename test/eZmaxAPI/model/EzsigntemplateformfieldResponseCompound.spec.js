@@ -102,6 +102,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsigntemplateformfieldAutocomplete (base name: "bEzsigntemplateformfieldAutocomplete")', function() {
+      // uncomment below and update the code to test the property bEzsigntemplateformfieldAutocomplete
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsigntemplateformfieldSelected (base name: "bEzsigntemplateformfieldSelected")', function() {
       // uncomment below and update the code to test the property bEzsigntemplateformfieldSelected
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldResponseCompound();

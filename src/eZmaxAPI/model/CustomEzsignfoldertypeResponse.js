@@ -24,13 +24,10 @@ class CustomEzsignfoldertypeResponse {
      * A Custom Ezsignfoldertype Object
      * @alias module:eZmaxAPI/model/CustomEzsignfoldertypeResponse
      * @param pkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
-     * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
-     * @param bEzsignfoldertypeIncludeproofsigner {Boolean} Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @param bEzsignfoldertypeIncludeproofuser {Boolean} Whether we include the proof with the signed Ezsigndocument for users
      */
-    constructor(pkiEzsignfoldertypeID, sEzsignfoldertypeNameX, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser) { 
+    constructor(pkiEzsignfoldertypeID) { 
         
-        CustomEzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, sEzsignfoldertypeNameX, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser);
+        CustomEzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID);
     }
 
     /**
@@ -38,11 +35,8 @@ class CustomEzsignfoldertypeResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldertypeID, sEzsignfoldertypeNameX, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser) { 
+    static initialize(obj, pkiEzsignfoldertypeID) { 
         obj['pkiEzsignfoldertypeID'] = pkiEzsignfoldertypeID;
-        obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
-        obj['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
-        obj['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
     }
 
     /**
@@ -192,7 +186,7 @@ class CustomEzsignfoldertypeResponse {
 
 }
 
-CustomEzsignfoldertypeResponse.RequiredProperties = ["pkiEzsignfoldertypeID", "sEzsignfoldertypeNameX", "bEzsignfoldertypeIncludeproofsigner", "bEzsignfoldertypeIncludeproofuser"];
+CustomEzsignfoldertypeResponse.RequiredProperties = ["pkiEzsignfoldertypeID"];
 
 /**
  * The unique ID of the Ezsignfoldertype.

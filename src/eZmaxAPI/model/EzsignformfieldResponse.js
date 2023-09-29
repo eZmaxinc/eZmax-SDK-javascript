@@ -86,6 +86,9 @@ class EzsignformfieldResponse {
             if (data.hasOwnProperty('iEzsignformfieldHeight')) {
                 obj['iEzsignformfieldHeight'] = ApiClient.convertToType(data['iEzsignformfieldHeight'], 'Number');
             }
+            if (data.hasOwnProperty('bEzsignformfieldAutocomplete')) {
+                obj['bEzsignformfieldAutocomplete'] = ApiClient.convertToType(data['bEzsignformfieldAutocomplete'], 'Boolean');
+            }
             if (data.hasOwnProperty('bEzsignformfieldSelected')) {
                 obj['bEzsignformfieldSelected'] = ApiClient.convertToType(data['bEzsignformfieldSelected'], 'Boolean');
             }
@@ -251,6 +254,21 @@ class EzsignformfieldResponse {
         this['iEzsignformfieldHeight'] = iEzsignformfieldHeight;
     }
 /**
+     * Returns Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+     * @return {Boolean}
+     */
+    getBEzsignformfieldAutocomplete() {
+        return this.bEzsignformfieldAutocomplete;
+    }
+
+    /**
+     * Sets Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+     * @param {Boolean} bEzsignformfieldAutocomplete Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+     */
+    setBEzsignformfieldAutocomplete(bEzsignformfieldAutocomplete) {
+        this['bEzsignformfieldAutocomplete'] = bEzsignformfieldAutocomplete;
+    }
+/**
      * Returns Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
      * @return {Boolean}
      */
@@ -332,6 +350,12 @@ EzsignformfieldResponse.prototype['iEzsignformfieldWidth'] = undefined;
  * @member {Number} iEzsignformfieldHeight
  */
 EzsignformfieldResponse.prototype['iEzsignformfieldHeight'] = undefined;
+
+/**
+ * Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+ * @member {Boolean} bEzsignformfieldAutocomplete
+ */
+EzsignformfieldResponse.prototype['bEzsignformfieldAutocomplete'] = undefined;
 
 /**
  * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**

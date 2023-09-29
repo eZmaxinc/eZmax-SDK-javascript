@@ -172,7 +172,6 @@ import CustomEzsigndocumentEzsignsignaturesAutomaticResponse from './model/Custo
 import CustomEzsignfolderEzsignsignaturesAutomaticResponse from './model/CustomEzsignfolderEzsignsignaturesAutomaticResponse';
 import CustomEzsignfoldersignerassociationActionableElementResponse from './model/CustomEzsignfoldersignerassociationActionableElementResponse';
 import CustomEzsignfoldersignerassociationmessageRequest from './model/CustomEzsignfoldersignerassociationmessageRequest';
-import CustomEzsignfoldersignerassociationmineResponse from './model/CustomEzsignfoldersignerassociationmineResponse';
 import CustomEzsignfoldersignerassociationstatusResponse from './model/CustomEzsignfoldersignerassociationstatusResponse';
 import CustomEzsignfoldertransmissionResponse from './model/CustomEzsignfoldertransmissionResponse';
 import CustomEzsignfoldertransmissionSignerResponse from './model/CustomEzsignfoldertransmissionSignerResponse';
@@ -388,8 +387,6 @@ import EzsignfolderGetEzsigndocumentsV1Response from './model/EzsignfolderGetEzs
 import EzsignfolderGetEzsigndocumentsV1ResponseMPayload from './model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload';
 import EzsignfolderGetEzsignfoldersignerassociationsV1Response from './model/EzsignfolderGetEzsignfoldersignerassociationsV1Response';
 import EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload from './model/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload';
-import EzsignfolderGetEzsignfoldersignerassociationsmineV1Response from './model/EzsignfolderGetEzsignfoldersignerassociationsmineV1Response';
-import EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload from './model/EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload';
 import EzsignfolderGetEzsignsignaturesAutomaticV1Response from './model/EzsignfolderGetEzsignsignaturesAutomaticV1Response';
 import EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload from './model/EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload';
 import EzsignfolderGetFormsDataV1Response from './model/EzsignfolderGetFormsDataV1Response';
@@ -2129,12 +2126,6 @@ export {
     CustomEzsignfoldersignerassociationmessageRequest,
 
     /**
-     * The CustomEzsignfoldersignerassociationmineResponse model constructor.
-     * @property {module:eZmaxAPI/model/CustomEzsignfoldersignerassociationmineResponse}
-     */
-    CustomEzsignfoldersignerassociationmineResponse,
-
-    /**
      * The CustomEzsignfoldersignerassociationstatusResponse model constructor.
      * @property {module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse}
      */
@@ -3423,18 +3414,6 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload}
      */
     EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload,
-
-    /**
-     * The EzsignfolderGetEzsignfoldersignerassociationsmineV1Response model constructor.
-     * @property {module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsmineV1Response}
-     */
-    EzsignfolderGetEzsignfoldersignerassociationsmineV1Response,
-
-    /**
-     * The EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload model constructor.
-     * @property {module:eZmaxAPI/model/EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload}
-     */
-    EzsignfolderGetEzsignfoldersignerassociationsmineV1ResponseMPayload,
 
     /**
      * The EzsignfolderGetEzsignsignaturesAutomaticV1Response model constructor.

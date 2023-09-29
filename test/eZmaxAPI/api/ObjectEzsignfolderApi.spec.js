@@ -178,16 +178,6 @@
         done();
       });
     });
-    describe('ezsignfolderGetEzsignfoldersignerassociationsmineV1', function() {
-      it('should call ezsignfolderGetEzsignfoldersignerassociationsmineV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfolderGetEzsignfoldersignerassociationsmineV1
-        //instance.ezsignfolderGetEzsignfoldersignerassociationsmineV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezsignfolderGetEzsignsignaturesAutomaticV1', function() {
       it('should call ezsignfolderGetEzsignsignaturesAutomaticV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetEzsignsignaturesAutomaticV1
