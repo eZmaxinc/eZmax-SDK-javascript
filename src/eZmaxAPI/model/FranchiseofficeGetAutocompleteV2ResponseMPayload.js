@@ -24,10 +24,11 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload {
      * Constructs a new <code>FranchiseofficeGetAutocompleteV2ResponseMPayload</code>.
      * Payload for POST /2/object/franchiseoffice/getAutocomplete
      * @alias module:eZmaxAPI/model/FranchiseofficeGetAutocompleteV2ResponseMPayload
+     * @param a_objFranchiseoffice {Array.<module:eZmaxAPI/model/FranchiseofficeAutocompleteElementResponse>} An array of Franchiseoffice autocomplete element response.
      */
-    constructor() { 
+    constructor(a_objFranchiseoffice) { 
         
-        FranchiseofficeGetAutocompleteV2ResponseMPayload.initialize(this);
+        FranchiseofficeGetAutocompleteV2ResponseMPayload.initialize(this, a_objFranchiseoffice);
     }
 
     /**
@@ -35,7 +36,8 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objFranchiseoffice) { 
+        obj['a_objFranchiseoffice'] = a_objFranchiseoffice;
     }
 
     /**
@@ -62,6 +64,12 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>FranchiseofficeGetAutocompleteV2ResponseMPayload</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of FranchiseofficeGetAutocompleteV2ResponseMPayload.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         if (data['a_objFranchiseoffice']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['a_objFranchiseoffice'])) {
@@ -94,7 +102,7 @@ class FranchiseofficeGetAutocompleteV2ResponseMPayload {
 
 }
 
-
+FranchiseofficeGetAutocompleteV2ResponseMPayload.RequiredProperties = ["a_objFranchiseoffice"];
 
 /**
  * An array of Franchiseoffice autocomplete element response.

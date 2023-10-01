@@ -25,11 +25,12 @@ class NotificationtestGetElementsV1ResponseMPayload {
      * @alias module:eZmaxAPI/model/NotificationtestGetElementsV1ResponseMPayload
      * @param pkiNotificationtestID {Number} The unique ID of the Notificationtest
      * @param sNotificationtestFunction {String} The function name of the Notificationtest
+     * @param a_sVariableobjectProperty {Array.<String>} 
      * @param a_objVariableobject {Array.<Object.<String, Object>>} 
      */
-    constructor(pkiNotificationtestID, sNotificationtestFunction, a_objVariableobject) { 
+    constructor(pkiNotificationtestID, sNotificationtestFunction, a_sVariableobjectProperty, a_objVariableobject) { 
         
-        NotificationtestGetElementsV1ResponseMPayload.initialize(this, pkiNotificationtestID, sNotificationtestFunction, a_objVariableobject);
+        NotificationtestGetElementsV1ResponseMPayload.initialize(this, pkiNotificationtestID, sNotificationtestFunction, a_sVariableobjectProperty, a_objVariableobject);
     }
 
     /**
@@ -37,9 +38,10 @@ class NotificationtestGetElementsV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiNotificationtestID, sNotificationtestFunction, a_objVariableobject) { 
+    static initialize(obj, pkiNotificationtestID, sNotificationtestFunction, a_sVariableobjectProperty, a_objVariableobject) { 
         obj['pkiNotificationtestID'] = pkiNotificationtestID;
         obj['sNotificationtestFunction'] = sNotificationtestFunction;
+        obj['a_sVariableobjectProperty'] = a_sVariableobjectProperty;
         obj['a_objVariableobject'] = a_objVariableobject;
     }
 
@@ -158,7 +160,7 @@ class NotificationtestGetElementsV1ResponseMPayload {
 
 }
 
-NotificationtestGetElementsV1ResponseMPayload.RequiredProperties = ["pkiNotificationtestID", "sNotificationtestFunction", "a_objVariableobject"];
+NotificationtestGetElementsV1ResponseMPayload.RequiredProperties = ["pkiNotificationtestID", "sNotificationtestFunction", "a_sVariableobjectProperty", "a_objVariableobject"];
 
 /**
  * The unique ID of the Notificationtest

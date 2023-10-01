@@ -34,10 +34,11 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
      * @param bEzsignfoldersignerassociationReceivecopy {Boolean} If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain't required to sign the document.
      * @param tEzsignfoldersignerassociationMessage {String} A custom text message that will be added to the email sent.
      * @param bEzsignfoldersignerassociationHasactionableelementsCurrent {Boolean} Indicates if the Ezsignfoldersignerassociation has actionable elements in the current step
+     * @param bEzsignfoldersignerassociationHasactionableelementsFuture {Boolean} Indicates if the Ezsignfoldersignerassociation has actionable elements in a future step
      */
-    constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent) { 
+    constructor(pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent, bEzsignfoldersignerassociationHasactionableelementsFuture) { 
         EzsignfoldersignerassociationResponseCompound.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage);
-        CustomEzsignfoldersignerassociationActionableElementResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent);
+        CustomEzsignfoldersignerassociationActionableElementResponse.initialize(this, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent, bEzsignfoldersignerassociationHasactionableelementsFuture);
     }
 
     /**
@@ -45,13 +46,14 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent) { 
+    static initialize(obj, pkiEzsignfoldersignerassociationID, fkiEzsignfolderID, bEzsignfoldersignerassociationDelayedsend, bEzsignfoldersignerassociationReceivecopy, tEzsignfoldersignerassociationMessage, bEzsignfoldersignerassociationHasactionableelementsCurrent, bEzsignfoldersignerassociationHasactionableelementsFuture) { 
         obj['pkiEzsignfoldersignerassociationID'] = pkiEzsignfoldersignerassociationID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['bEzsignfoldersignerassociationDelayedsend'] = bEzsignfoldersignerassociationDelayedsend;
         obj['bEzsignfoldersignerassociationReceivecopy'] = bEzsignfoldersignerassociationReceivecopy;
         obj['tEzsignfoldersignerassociationMessage'] = tEzsignfoldersignerassociationMessage;
         obj['bEzsignfoldersignerassociationHasactionableelementsCurrent'] = bEzsignfoldersignerassociationHasactionableelementsCurrent;
+        obj['bEzsignfoldersignerassociationHasactionableelementsFuture'] = bEzsignfoldersignerassociationHasactionableelementsFuture;
     }
 
     /**
@@ -281,7 +283,7 @@ class CustomEzsignfoldersignerassociationActionableElementResponse {
 
 }
 
-CustomEzsignfoldersignerassociationActionableElementResponse.RequiredProperties = ["pkiEzsignfoldersignerassociationID", "fkiEzsignfolderID", "bEzsignfoldersignerassociationDelayedsend", "bEzsignfoldersignerassociationReceivecopy", "tEzsignfoldersignerassociationMessage", "bEzsignfoldersignerassociationHasactionableelementsCurrent"];
+CustomEzsignfoldersignerassociationActionableElementResponse.RequiredProperties = ["pkiEzsignfoldersignerassociationID", "fkiEzsignfolderID", "bEzsignfoldersignerassociationDelayedsend", "bEzsignfoldersignerassociationReceivecopy", "tEzsignfoldersignerassociationMessage", "bEzsignfoldersignerassociationHasactionableelementsCurrent", "bEzsignfoldersignerassociationHasactionableelementsFuture"];
 
 /**
  * The unique ID of the Ezsignfoldersignerassociation

@@ -32,11 +32,10 @@ class ModuleResponseCompound {
      * @param sModuleNameX {String} The Name of the Module in the language of the requester
      * @param bModuleRegistered {Boolean} Whether the Module is registered or not
      * @param bModuleRegisteredapi {Boolean} Whether the Module is registered or not for api use
-     * @param a_objModulesection {Array.<module:eZmaxAPI/model/ModulesectionResponseCompound>} 
      */
-    constructor(pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi, a_objModulesection) { 
+    constructor(pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi) { 
         ModuleResponse.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi);
-        ModuleResponseCompound.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi, a_objModulesection);
+        ModuleResponseCompound.initialize(this, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi);
     }
 
     /**
@@ -44,14 +43,13 @@ class ModuleResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi, a_objModulesection) { 
+    static initialize(obj, pkiModuleID, fkiModulegroupID, eModuleInternalname, sModuleNameX, bModuleRegistered, bModuleRegisteredapi) { 
         obj['pkiModuleID'] = pkiModuleID;
         obj['fkiModulegroupID'] = fkiModulegroupID;
         obj['eModuleInternalname'] = eModuleInternalname;
         obj['sModuleNameX'] = sModuleNameX;
         obj['bModuleRegistered'] = bModuleRegistered;
         obj['bModuleRegisteredapi'] = bModuleRegisteredapi;
-        obj['a_objModulesection'] = a_objModulesection;
     }
 
     /**
@@ -234,7 +232,7 @@ class ModuleResponseCompound {
 
 }
 
-ModuleResponseCompound.RequiredProperties = ["pkiModuleID", "fkiModulegroupID", "eModuleInternalname", "sModuleNameX", "bModuleRegistered", "bModuleRegisteredapi", "a_objModulesection"];
+ModuleResponseCompound.RequiredProperties = ["pkiModuleID", "fkiModulegroupID", "eModuleInternalname", "sModuleNameX", "bModuleRegistered", "bModuleRegisteredapi"];
 
 /**
  * The unique ID of the Module

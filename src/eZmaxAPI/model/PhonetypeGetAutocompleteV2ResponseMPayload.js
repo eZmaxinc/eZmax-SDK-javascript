@@ -24,10 +24,11 @@ class PhonetypeGetAutocompleteV2ResponseMPayload {
      * Constructs a new <code>PhonetypeGetAutocompleteV2ResponseMPayload</code>.
      * Payload for POST /2/object/phonetype/getAutocomplete
      * @alias module:eZmaxAPI/model/PhonetypeGetAutocompleteV2ResponseMPayload
+     * @param a_objPhonetype {Array.<module:eZmaxAPI/model/PhonetypeAutocompleteElementResponse>} An array of Phonetype autocomplete element response.
      */
-    constructor() { 
+    constructor(a_objPhonetype) { 
         
-        PhonetypeGetAutocompleteV2ResponseMPayload.initialize(this);
+        PhonetypeGetAutocompleteV2ResponseMPayload.initialize(this, a_objPhonetype);
     }
 
     /**
@@ -35,7 +36,8 @@ class PhonetypeGetAutocompleteV2ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objPhonetype) { 
+        obj['a_objPhonetype'] = a_objPhonetype;
     }
 
     /**
@@ -62,6 +64,12 @@ class PhonetypeGetAutocompleteV2ResponseMPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>PhonetypeGetAutocompleteV2ResponseMPayload</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of PhonetypeGetAutocompleteV2ResponseMPayload.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         if (data['a_objPhonetype']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['a_objPhonetype'])) {
@@ -94,7 +102,7 @@ class PhonetypeGetAutocompleteV2ResponseMPayload {
 
 }
 
-
+PhonetypeGetAutocompleteV2ResponseMPayload.RequiredProperties = ["a_objPhonetype"];
 
 /**
  * An array of Phonetype autocomplete element response.

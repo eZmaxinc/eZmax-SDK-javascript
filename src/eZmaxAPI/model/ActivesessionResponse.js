@@ -35,10 +35,11 @@ class ActivesessionResponse {
      * @param bActivesessionDebug {Boolean} Whether the active session is in debug or not
      * @param bActivesessionIssuperadmin {Boolean} Whether the active session is superadmin or not
      * @param pksCustomerCode {String} The customer code assigned to your account
+     * @param fkiSystemconfigurationtypeID {Number} The unique ID of the Systemconfigurationtype
      */
-    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode) { 
+    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID) { 
         
-        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode);
+        ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID);
     }
 
     /**
@@ -46,7 +47,7 @@ class ActivesessionResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode) { 
+    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID) { 
         obj['eActivesessionUsertype'] = eActivesessionUsertype;
         obj['eActivesessionOrigin'] = eActivesessionOrigin;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
@@ -56,6 +57,7 @@ class ActivesessionResponse {
         obj['bActivesessionDebug'] = bActivesessionDebug;
         obj['bActivesessionIssuperadmin'] = bActivesessionIssuperadmin;
         obj['pksCustomerCode'] = pksCustomerCode;
+        obj['fkiSystemconfigurationtypeID'] = fkiSystemconfigurationtypeID;
     }
 
     /**
@@ -301,7 +303,7 @@ class ActivesessionResponse {
 
 }
 
-ActivesessionResponse.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode"];
+ActivesessionResponse.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "fkiSystemconfigurationtypeID"];
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype

@@ -38,12 +38,11 @@ class FranchisereferalincomeRequestCompound {
      * @param tFranchisereferalincomeComment {String} Comment about the transaction
      * @param fkiFranchiseofficeID {Number} The unique ID of the Franchisereoffice
      * @param sFranchisereferalincomeRemoteid {String} 
-     * @param objAddress {module:eZmaxAPI/model/AddressRequest} 
      * @param a_objContact {Array.<module:eZmaxAPI/model/ContactRequestCompound>} 
      */
-    constructor(fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact) { 
+    constructor(fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, a_objContact) { 
         FranchisereferalincomeRequest.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid);
-        FranchisereferalincomeRequestCompound.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact);
+        FranchisereferalincomeRequestCompound.initialize(this, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, a_objContact);
     }
 
     /**
@@ -51,7 +50,7 @@ class FranchisereferalincomeRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, objAddress, a_objContact) { 
+    static initialize(obj, fkiFranchisebrokerID, fkiFranchisereferalincomeprogramID, fkiPeriodID, dFranchisereferalincomeLoan, dFranchisereferalincomeFranchiseamount, dFranchisereferalincomeFranchisoramount, dFranchisereferalincomeAgentamount, dtFranchisereferalincomeDisbursed, tFranchisereferalincomeComment, fkiFranchiseofficeID, sFranchisereferalincomeRemoteid, a_objContact) { 
         obj['fkiFranchisebrokerID'] = fkiFranchisebrokerID;
         obj['fkiFranchisereferalincomeprogramID'] = fkiFranchisereferalincomeprogramID;
         obj['fkiPeriodID'] = fkiPeriodID;
@@ -63,7 +62,6 @@ class FranchisereferalincomeRequestCompound {
         obj['tFranchisereferalincomeComment'] = tFranchisereferalincomeComment;
         obj['fkiFranchiseofficeID'] = fkiFranchiseofficeID;
         obj['sFranchisereferalincomeRemoteid'] = sFranchisereferalincomeRemoteid;
-        obj['objAddress'] = objAddress;
         obj['a_objContact'] = a_objContact;
     }
 
@@ -397,7 +395,7 @@ class FranchisereferalincomeRequestCompound {
 
 }
 
-FranchisereferalincomeRequestCompound.RequiredProperties = ["fkiFranchisebrokerID", "fkiFranchisereferalincomeprogramID", "fkiPeriodID", "dFranchisereferalincomeLoan", "dFranchisereferalincomeFranchiseamount", "dFranchisereferalincomeFranchisoramount", "dFranchisereferalincomeAgentamount", "dtFranchisereferalincomeDisbursed", "tFranchisereferalincomeComment", "fkiFranchiseofficeID", "sFranchisereferalincomeRemoteid", "objAddress", "a_objContact"];
+FranchisereferalincomeRequestCompound.RequiredProperties = ["fkiFranchisebrokerID", "fkiFranchisereferalincomeprogramID", "fkiPeriodID", "dFranchisereferalincomeLoan", "dFranchisereferalincomeFranchiseamount", "dFranchisereferalincomeFranchisoramount", "dFranchisereferalincomeAgentamount", "dtFranchisereferalincomeDisbursed", "tFranchisereferalincomeComment", "fkiFranchiseofficeID", "sFranchisereferalincomeRemoteid", "a_objContact"];
 
 /**
  * The unique ID of the Franchisereferalincome

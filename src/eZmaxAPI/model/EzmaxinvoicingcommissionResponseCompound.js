@@ -30,11 +30,10 @@ class EzmaxinvoicingcommissionResponseCompound {
      * @param dtEzmaxinvoicingcommissionEnd {String} The end date for the Ezmaxinvoicingcommission
      * @param iEzmaxinvoicingcommissionDays {Number} This is the number of days during the month on which the Ezmaxinvoigcommission applies
      * @param dEzmaxinvoicingcommissionAmount {String} The amount of Ezmaxinvoicingcommission
-     * @param objContactName {module:eZmaxAPI/model/CustomContactNameResponse} 
      */
-    constructor(dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount, objContactName) { 
+    constructor(dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount) { 
         EzmaxinvoicingcommissionResponse.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount);
-        EzmaxinvoicingcommissionResponseCompound.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount, objContactName);
+        EzmaxinvoicingcommissionResponseCompound.initialize(this, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount);
     }
 
     /**
@@ -42,12 +41,11 @@ class EzmaxinvoicingcommissionResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount, objContactName) { 
+    static initialize(obj, dtEzmaxinvoicingcommissionStart, dtEzmaxinvoicingcommissionEnd, iEzmaxinvoicingcommissionDays, dEzmaxinvoicingcommissionAmount) { 
         obj['dtEzmaxinvoicingcommissionStart'] = dtEzmaxinvoicingcommissionStart;
         obj['dtEzmaxinvoicingcommissionEnd'] = dtEzmaxinvoicingcommissionEnd;
         obj['iEzmaxinvoicingcommissionDays'] = iEzmaxinvoicingcommissionDays;
         obj['dEzmaxinvoicingcommissionAmount'] = dEzmaxinvoicingcommissionAmount;
-        obj['objContactName'] = objContactName;
     }
 
     /**
@@ -265,7 +263,7 @@ class EzmaxinvoicingcommissionResponseCompound {
 
 }
 
-EzmaxinvoicingcommissionResponseCompound.RequiredProperties = ["dtEzmaxinvoicingcommissionStart", "dtEzmaxinvoicingcommissionEnd", "iEzmaxinvoicingcommissionDays", "dEzmaxinvoicingcommissionAmount", "objContactName"];
+EzmaxinvoicingcommissionResponseCompound.RequiredProperties = ["dtEzmaxinvoicingcommissionStart", "dtEzmaxinvoicingcommissionEnd", "iEzmaxinvoicingcommissionDays", "dEzmaxinvoicingcommissionAmount"];
 
 /**
  * The unique ID of the Ezmaxinvoicingcommission

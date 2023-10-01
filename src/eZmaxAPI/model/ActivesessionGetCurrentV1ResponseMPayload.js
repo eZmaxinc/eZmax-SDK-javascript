@@ -39,13 +39,14 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * @param bActivesessionDebug {Boolean} Whether the active session is in debug or not
      * @param bActivesessionIssuperadmin {Boolean} Whether the active session is superadmin or not
      * @param pksCustomerCode {String} The customer code assigned to your account
+     * @param fkiSystemconfigurationtypeID {Number} The unique ID of the Systemconfigurationtype
      * @param a_pkiPermissionID {Array.<Number>} An array of permissions granted to the user or api key
      * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
-    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
-        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
-        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionGetCurrentV1ResponseMPayload.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
     /**
@@ -53,7 +54,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
         obj['eActivesessionUsertype'] = eActivesessionUsertype;
         obj['eActivesessionOrigin'] = eActivesessionOrigin;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
@@ -63,6 +64,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
         obj['bActivesessionDebug'] = bActivesessionDebug;
         obj['bActivesessionIssuperadmin'] = bActivesessionIssuperadmin;
         obj['pksCustomerCode'] = pksCustomerCode;
+        obj['fkiSystemconfigurationtypeID'] = fkiSystemconfigurationtypeID;
         obj['a_pkiPermissionID'] = a_pkiPermissionID;
         obj['objUserReal'] = objUserReal;
         obj['a_eModuleInternalname'] = a_eModuleInternalname;
@@ -416,7 +418,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
 
 }
 
-ActivesessionGetCurrentV1ResponseMPayload.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
+ActivesessionGetCurrentV1ResponseMPayload.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "fkiSystemconfigurationtypeID", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype

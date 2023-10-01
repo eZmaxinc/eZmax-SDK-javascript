@@ -28,11 +28,10 @@ class ModulegroupResponseCompound {
      * @implements module:eZmaxAPI/model/ModulegroupResponse
      * @param pkiModulegroupID {Number} The unique ID of the Modulegroup
      * @param sModulegroupNameX {String} The name of the Modulegroup in the language of the requester
-     * @param a_objModule {Array.<module:eZmaxAPI/model/ModuleResponseCompound>} 
      */
-    constructor(pkiModulegroupID, sModulegroupNameX, a_objModule) { 
+    constructor(pkiModulegroupID, sModulegroupNameX) { 
         ModulegroupResponse.initialize(this, pkiModulegroupID, sModulegroupNameX);
-        ModulegroupResponseCompound.initialize(this, pkiModulegroupID, sModulegroupNameX, a_objModule);
+        ModulegroupResponseCompound.initialize(this, pkiModulegroupID, sModulegroupNameX);
     }
 
     /**
@@ -40,10 +39,9 @@ class ModulegroupResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiModulegroupID, sModulegroupNameX, a_objModule) { 
+    static initialize(obj, pkiModulegroupID, sModulegroupNameX) { 
         obj['pkiModulegroupID'] = pkiModulegroupID;
         obj['sModulegroupNameX'] = sModulegroupNameX;
-        obj['a_objModule'] = a_objModule;
     }
 
     /**
@@ -149,7 +147,7 @@ class ModulegroupResponseCompound {
 
 }
 
-ModulegroupResponseCompound.RequiredProperties = ["pkiModulegroupID", "sModulegroupNameX", "a_objModule"];
+ModulegroupResponseCompound.RequiredProperties = ["pkiModulegroupID", "sModulegroupNameX"];
 
 /**
  * The unique ID of the Modulegroup

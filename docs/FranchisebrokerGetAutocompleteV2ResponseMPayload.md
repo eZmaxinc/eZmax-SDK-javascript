@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objFranchisebroker** | [**[FranchisebrokerAutocompleteElementResponse]**](FranchisebrokerAutocompleteElementResponse.md) | An array of Franchisebroker autocomplete element response. | [optional] 
+**a_objFranchisebroker** | [**[FranchisebrokerAutocompleteElementResponse]**](FranchisebrokerAutocompleteElementResponse.md) | An array of Franchisebroker autocomplete element response. | 
 
 

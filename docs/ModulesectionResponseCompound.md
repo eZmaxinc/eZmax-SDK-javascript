@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **fkiModuleID** | **Number** | The unique ID of the Module | 
 **sModulesectionInternalname** | **String** | The Internal name of the Module section. | 
 **sModulesectionNameX** | **String** | The Name of the Modulesection in the language of the requester | 
-**a_objPermission** | [**[PermissionResponseCompound]**](PermissionResponseCompound.md) |  | 
+**a_objPermission** | [**[PermissionResponseCompound]**](PermissionResponseCompound.md) |  | [optional] 
 
 

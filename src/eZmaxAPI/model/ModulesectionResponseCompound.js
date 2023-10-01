@@ -30,11 +30,10 @@ class ModulesectionResponseCompound {
      * @param fkiModuleID {Number} The unique ID of the Module
      * @param sModulesectionInternalname {String} The Internal name of the Module section.
      * @param sModulesectionNameX {String} The Name of the Modulesection in the language of the requester
-     * @param a_objPermission {Array.<module:eZmaxAPI/model/PermissionResponseCompound>} 
      */
-    constructor(pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX, a_objPermission) { 
+    constructor(pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX) { 
         ModulesectionResponse.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX);
-        ModulesectionResponseCompound.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX, a_objPermission);
+        ModulesectionResponseCompound.initialize(this, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX);
     }
 
     /**
@@ -42,12 +41,11 @@ class ModulesectionResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX, a_objPermission) { 
+    static initialize(obj, pkiModulesectionID, fkiModuleID, sModulesectionInternalname, sModulesectionNameX) { 
         obj['pkiModulesectionID'] = pkiModulesectionID;
         obj['fkiModuleID'] = fkiModuleID;
         obj['sModulesectionInternalname'] = sModulesectionInternalname;
         obj['sModulesectionNameX'] = sModulesectionNameX;
-        obj['a_objPermission'] = a_objPermission;
     }
 
     /**
@@ -193,7 +191,7 @@ class ModulesectionResponseCompound {
 
 }
 
-ModulesectionResponseCompound.RequiredProperties = ["pkiModulesectionID", "fkiModuleID", "sModulesectionInternalname", "sModulesectionNameX", "a_objPermission"];
+ModulesectionResponseCompound.RequiredProperties = ["pkiModulesectionID", "fkiModuleID", "sModulesectionInternalname", "sModulesectionNameX"];
 
 /**
  * The unique ID of the Modulesection

@@ -24,10 +24,11 @@ class EmailtypeGetAutocompleteV2ResponseMPayload {
      * Constructs a new <code>EmailtypeGetAutocompleteV2ResponseMPayload</code>.
      * Payload for POST /2/object/emailtype/getAutocomplete
      * @alias module:eZmaxAPI/model/EmailtypeGetAutocompleteV2ResponseMPayload
+     * @param a_objEmailtype {Array.<module:eZmaxAPI/model/EmailtypeAutocompleteElementResponse>} An array of Emailtype autocomplete element response.
      */
-    constructor() { 
+    constructor(a_objEmailtype) { 
         
-        EmailtypeGetAutocompleteV2ResponseMPayload.initialize(this);
+        EmailtypeGetAutocompleteV2ResponseMPayload.initialize(this, a_objEmailtype);
     }
 
     /**
@@ -35,7 +36,8 @@ class EmailtypeGetAutocompleteV2ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, a_objEmailtype) { 
+        obj['a_objEmailtype'] = a_objEmailtype;
     }
 
     /**
@@ -62,6 +64,12 @@ class EmailtypeGetAutocompleteV2ResponseMPayload {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EmailtypeGetAutocompleteV2ResponseMPayload</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EmailtypeGetAutocompleteV2ResponseMPayload.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         if (data['a_objEmailtype']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['a_objEmailtype'])) {
@@ -94,7 +102,7 @@ class EmailtypeGetAutocompleteV2ResponseMPayload {
 
 }
 
-
+EmailtypeGetAutocompleteV2ResponseMPayload.RequiredProperties = ["a_objEmailtype"];
 
 /**
  * An array of Emailtype autocomplete element response.

@@ -24,13 +24,14 @@ class CustomCreditcardtransactionResponse {
      * Constructs a new <code>CustomCreditcardtransactionResponse</code>.
      * A custom Creditcardtransaction Object
      * @alias module:eZmaxAPI/model/CustomCreditcardtransactionResponse
+     * @param eCreditcardtypeCodename {module:eZmaxAPI/model/FieldECreditcardtypeCodename} 
      * @param dCreditcardtransactionAmount {String} The amount of the Creditcardtransaction
      * @param sCreditcardtransactionPartiallydecryptednumber {String} The partially decrypted credit card number used in the Creditcardtransaction
      * @param sCreditcardtransactionReferencenumber {String} The reference number on the creditcard service for the Creditcardtransaction
      */
-    constructor(dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber) { 
+    constructor(eCreditcardtypeCodename, dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber) { 
         
-        CustomCreditcardtransactionResponse.initialize(this, dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber);
+        CustomCreditcardtransactionResponse.initialize(this, eCreditcardtypeCodename, dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber);
     }
 
     /**
@@ -38,7 +39,8 @@ class CustomCreditcardtransactionResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber) { 
+    static initialize(obj, eCreditcardtypeCodename, dCreditcardtransactionAmount, sCreditcardtransactionPartiallydecryptednumber, sCreditcardtransactionReferencenumber) { 
+        obj['eCreditcardtypeCodename'] = eCreditcardtypeCodename;
         obj['dCreditcardtransactionAmount'] = dCreditcardtransactionAmount;
         obj['sCreditcardtransactionPartiallydecryptednumber'] = sCreditcardtransactionPartiallydecryptednumber;
         obj['sCreditcardtransactionReferencenumber'] = sCreditcardtransactionReferencenumber;
@@ -160,7 +162,7 @@ class CustomCreditcardtransactionResponse {
 
 }
 
-CustomCreditcardtransactionResponse.RequiredProperties = ["dCreditcardtransactionAmount", "sCreditcardtransactionPartiallydecryptednumber", "sCreditcardtransactionReferencenumber"];
+CustomCreditcardtransactionResponse.RequiredProperties = ["eCreditcardtypeCodename", "dCreditcardtransactionAmount", "sCreditcardtransactionPartiallydecryptednumber", "sCreditcardtransactionReferencenumber"];
 
 /**
  * @member {module:eZmaxAPI/model/FieldECreditcardtypeCodename} eCreditcardtypeCodename

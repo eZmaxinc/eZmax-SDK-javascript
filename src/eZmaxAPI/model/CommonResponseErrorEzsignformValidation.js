@@ -24,6 +24,7 @@ import FieldEErrorCode from './FieldEErrorCode';
 class CommonResponseErrorEzsignformValidation {
     /**
      * Constructs a new <code>CommonResponseErrorEzsignformValidation</code>.
+     * Generic Error Message
      * @alias module:eZmaxAPI/model/CommonResponseErrorEzsignformValidation
      * @implements module:eZmaxAPI/model/CommonResponseError
      * @param sErrorMessage {String} The message giving details about the error

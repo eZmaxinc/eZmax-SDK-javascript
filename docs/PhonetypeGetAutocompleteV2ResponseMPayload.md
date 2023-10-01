@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_objPhonetype** | [**[PhonetypeAutocompleteElementResponse]**](PhonetypeAutocompleteElementResponse.md) | An array of Phonetype autocomplete element response. | [optional] 
+**a_objPhonetype** | [**[PhonetypeAutocompleteElementResponse]**](PhonetypeAutocompleteElementResponse.md) | An array of Phonetype autocomplete element response. | 
 
 
