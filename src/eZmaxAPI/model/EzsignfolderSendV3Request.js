@@ -23,12 +23,11 @@ class EzsignfolderSendV3Request {
      * Constructs a new <code>EzsignfolderSendV3Request</code>.
      * Request for POST /3/object/ezsignfolder/{pkiEzsignfolderID}/send
      * @alias module:eZmaxAPI/model/EzsignfolderSendV3Request
-     * @param tEzsignfolderMessage {String} A custom text message that will be added to the email sent.
      * @param a_fkiEzsignfoldersignerassociationID {Array.<Number>} 
      */
-    constructor(tEzsignfolderMessage, a_fkiEzsignfoldersignerassociationID) { 
+    constructor(a_fkiEzsignfoldersignerassociationID) { 
         
-        EzsignfolderSendV3Request.initialize(this, tEzsignfolderMessage, a_fkiEzsignfoldersignerassociationID);
+        EzsignfolderSendV3Request.initialize(this, a_fkiEzsignfoldersignerassociationID);
     }
 
     /**
@@ -36,8 +35,7 @@ class EzsignfolderSendV3Request {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, tEzsignfolderMessage, a_fkiEzsignfoldersignerassociationID) { 
-        obj['tEzsignfolderMessage'] = tEzsignfolderMessage;
+    static initialize(obj, a_fkiEzsignfoldersignerassociationID) { 
         obj['a_fkiEzsignfoldersignerassociationID'] = a_fkiEzsignfoldersignerassociationID;
     }
 
@@ -139,7 +137,7 @@ class EzsignfolderSendV3Request {
 
 }
 
-EzsignfolderSendV3Request.RequiredProperties = ["tEzsignfolderMessage", "a_fkiEzsignfoldersignerassociationID"];
+EzsignfolderSendV3Request.RequiredProperties = ["a_fkiEzsignfoldersignerassociationID"];
 
 /**
  * A custom text message that will be added to the email sent.

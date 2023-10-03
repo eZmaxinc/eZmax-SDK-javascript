@@ -26,12 +26,11 @@ class EzsignfolderRequest {
      * @alias module:eZmaxAPI/model/EzsignfolderRequest
      * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
-     * @param tEzsignfolderNote {String} Note about the Ezsignfolder
      * @param eEzsignfolderSendreminderfrequency {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency} 
      */
-    constructor(fkiEzsignfoldertypeID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
+    constructor(fkiEzsignfoldertypeID, sEzsignfolderDescription, eEzsignfolderSendreminderfrequency) { 
         
-        EzsignfolderRequest.initialize(this, fkiEzsignfoldertypeID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency);
+        EzsignfolderRequest.initialize(this, fkiEzsignfoldertypeID, sEzsignfolderDescription, eEzsignfolderSendreminderfrequency);
     }
 
     /**
@@ -39,10 +38,9 @@ class EzsignfolderRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsignfoldertypeID, sEzsignfolderDescription, tEzsignfolderNote, eEzsignfolderSendreminderfrequency) { 
+    static initialize(obj, fkiEzsignfoldertypeID, sEzsignfolderDescription, eEzsignfolderSendreminderfrequency) { 
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
-        obj['tEzsignfolderNote'] = tEzsignfolderNote;
         obj['eEzsignfolderSendreminderfrequency'] = eEzsignfolderSendreminderfrequency;
     }
 
@@ -220,7 +218,7 @@ class EzsignfolderRequest {
 
 }
 
-EzsignfolderRequest.RequiredProperties = ["fkiEzsignfoldertypeID", "sEzsignfolderDescription", "tEzsignfolderNote", "eEzsignfolderSendreminderfrequency"];
+EzsignfolderRequest.RequiredProperties = ["fkiEzsignfoldertypeID", "sEzsignfolderDescription", "eEzsignfolderSendreminderfrequency"];
 
 /**
  * The unique ID of the Ezsignfolder
