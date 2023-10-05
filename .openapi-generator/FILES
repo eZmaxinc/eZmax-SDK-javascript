@@ -788,6 +788,9 @@ docs/GlobalEzmaxclientVersionV1Response.md
 docs/GlobalEzmaxcustomerApi.md
 docs/GlobalEzmaxcustomerGetConfigurationV1Response.md
 docs/HeaderAcceptLanguage.md
+docs/LanguageAutocompleteElementResponse.md
+docs/LanguageGetAutocompleteV2Response.md
+docs/LanguageGetAutocompleteV2ResponseMPayload.md
 docs/ModuleEzsignApi.md
 docs/ModuleReportApi.md
 docs/ModuleResponse.md
@@ -858,6 +861,7 @@ docs/ObjectFontApi.md
 docs/ObjectFranchisebrokerApi.md
 docs/ObjectFranchiseofficeApi.md
 docs/ObjectFranchisereferalincomeApi.md
+docs/ObjectLanguageApi.md
 docs/ObjectModulegroupApi.md
 docs/ObjectNotificationsectionApi.md
 docs/ObjectNotificationtestApi.md
@@ -1187,6 +1191,7 @@ src/eZmaxAPI/api/ObjectFontApi.js
 src/eZmaxAPI/api/ObjectFranchisebrokerApi.js
 src/eZmaxAPI/api/ObjectFranchiseofficeApi.js
 src/eZmaxAPI/api/ObjectFranchisereferalincomeApi.js
+src/eZmaxAPI/api/ObjectLanguageApi.js
 src/eZmaxAPI/api/ObjectModulegroupApi.js
 src/eZmaxAPI/api/ObjectNotificationsectionApi.js
 src/eZmaxAPI/api/ObjectNotificationtestApi.js
@@ -1995,6 +2000,9 @@ src/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.js
 src/eZmaxAPI/model/GlobalEzmaxclientVersionV1Response.js
 src/eZmaxAPI/model/GlobalEzmaxcustomerGetConfigurationV1Response.js
 src/eZmaxAPI/model/HeaderAcceptLanguage.js
+src/eZmaxAPI/model/LanguageAutocompleteElementResponse.js
+src/eZmaxAPI/model/LanguageGetAutocompleteV2Response.js
+src/eZmaxAPI/model/LanguageGetAutocompleteV2ResponseMPayload.js
 src/eZmaxAPI/model/ModuleResponse.js
 src/eZmaxAPI/model/ModuleResponseCompound.js
 src/eZmaxAPI/model/ModulegroupGetAllV1Response.js
@@ -2322,6 +2330,7 @@ test/eZmaxAPI/api/ObjectFontApi.spec.js
 test/eZmaxAPI/api/ObjectFranchisebrokerApi.spec.js
 test/eZmaxAPI/api/ObjectFranchiseofficeApi.spec.js
 test/eZmaxAPI/api/ObjectFranchisereferalincomeApi.spec.js
+test/eZmaxAPI/api/ObjectLanguageApi.spec.js
 test/eZmaxAPI/api/ObjectModulegroupApi.spec.js
 test/eZmaxAPI/api/ObjectNotificationsectionApi.spec.js
 test/eZmaxAPI/api/ObjectNotificationtestApi.spec.js
@@ -3129,6 +3138,9 @@ test/eZmaxAPI/model/GlobalCustomerGetEndpointV1Response.spec.js
 test/eZmaxAPI/model/GlobalEzmaxclientVersionV1Response.spec.js
 test/eZmaxAPI/model/GlobalEzmaxcustomerGetConfigurationV1Response.spec.js
 test/eZmaxAPI/model/HeaderAcceptLanguage.spec.js
+test/eZmaxAPI/model/LanguageAutocompleteElementResponse.spec.js
+test/eZmaxAPI/model/LanguageGetAutocompleteV2Response.spec.js
+test/eZmaxAPI/model/LanguageGetAutocompleteV2ResponseMPayload.spec.js
 test/eZmaxAPI/model/ModuleResponse.spec.js
 test/eZmaxAPI/model/ModuleResponseCompound.spec.js
 test/eZmaxAPI/model/ModulegroupGetAllV1Response.spec.js

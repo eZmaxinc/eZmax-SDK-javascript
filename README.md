@@ -331,6 +331,7 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectFranchiseofficeApi* | [**franchiseofficeGetAutocompleteV2**](docs/ObjectFranchiseofficeApi.md#franchiseofficeGetAutocompleteV2) | **GET** /2/object/franchiseoffice/getAutocomplete/{sSelector} | Retrieve Franchiseoffices and IDs
 *EZmaxApiDefinitionFull.ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV1**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV1) | **POST** /1/object/franchisereferalincome | Create a new Franchisereferalincome
 *EZmaxApiDefinitionFull.ObjectFranchisereferalincomeApi* | [**franchisereferalincomeCreateObjectV2**](docs/ObjectFranchisereferalincomeApi.md#franchisereferalincomeCreateObjectV2) | **POST** /2/object/franchisereferalincome | Create a new Franchisereferalincome
+*EZmaxApiDefinitionFull.ObjectLanguageApi* | [**languageGetAutocompleteV2**](docs/ObjectLanguageApi.md#languageGetAutocompleteV2) | **GET** /2/object/language/getAutocomplete/{sSelector} | Retrieve Languages and IDs
 *EZmaxApiDefinitionFull.ObjectModulegroupApi* | [**modulegroupGetAllV1**](docs/ObjectModulegroupApi.md#modulegroupGetAllV1) | **GET** /1/object/modulegroup/getAll/{eContext} | Retrieve all Modulegroups
 *EZmaxApiDefinitionFull.ObjectNotificationsectionApi* | [**notificationsectionGetNotificationtestsV1**](docs/ObjectNotificationsectionApi.md#notificationsectionGetNotificationtestsV1) | **GET** /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests | Retrieve an existing Notificationsection&#39;s Notificationtests
 *EZmaxApiDefinitionFull.ObjectNotificationtestApi* | [**notificationtestGetElementsV1**](docs/ObjectNotificationtestApi.md#notificationtestGetElementsV1) | **GET** /1/object/notificationtest/{pkiNotificationtestID}/getElements | Retrieve an existing Notificationtest&#39;s Elements
@@ -1205,6 +1206,9 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.GlobalEzmaxclientVersionV1Response](docs/GlobalEzmaxclientVersionV1Response.md)
  - [EZmaxApiDefinitionFull.GlobalEzmaxcustomerGetConfigurationV1Response](docs/GlobalEzmaxcustomerGetConfigurationV1Response.md)
  - [EZmaxApiDefinitionFull.HeaderAcceptLanguage](docs/HeaderAcceptLanguage.md)
+ - [EZmaxApiDefinitionFull.LanguageAutocompleteElementResponse](docs/LanguageAutocompleteElementResponse.md)
+ - [EZmaxApiDefinitionFull.LanguageGetAutocompleteV2Response](docs/LanguageGetAutocompleteV2Response.md)
+ - [EZmaxApiDefinitionFull.LanguageGetAutocompleteV2ResponseMPayload](docs/LanguageGetAutocompleteV2ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.ModuleResponse](docs/ModuleResponse.md)
  - [EZmaxApiDefinitionFull.ModuleResponseCompound](docs/ModuleResponseCompound.md)
  - [EZmaxApiDefinitionFull.ModulegroupGetAllV1Response](docs/ModulegroupGetAllV1Response.md)

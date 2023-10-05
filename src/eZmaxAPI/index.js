@@ -795,6 +795,9 @@ import GlobalCustomerGetEndpointV1Response from './model/GlobalCustomerGetEndpoi
 import GlobalEzmaxclientVersionV1Response from './model/GlobalEzmaxclientVersionV1Response';
 import GlobalEzmaxcustomerGetConfigurationV1Response from './model/GlobalEzmaxcustomerGetConfigurationV1Response';
 import HeaderAcceptLanguage from './model/HeaderAcceptLanguage';
+import LanguageAutocompleteElementResponse from './model/LanguageAutocompleteElementResponse';
+import LanguageGetAutocompleteV2Response from './model/LanguageGetAutocompleteV2Response';
+import LanguageGetAutocompleteV2ResponseMPayload from './model/LanguageGetAutocompleteV2ResponseMPayload';
 import ModuleResponse from './model/ModuleResponse';
 import ModuleResponseCompound from './model/ModuleResponseCompound';
 import ModulegroupGetAllV1Response from './model/ModulegroupGetAllV1Response';
@@ -1122,6 +1125,7 @@ import ObjectFontApi from './api/ObjectFontApi';
 import ObjectFranchisebrokerApi from './api/ObjectFranchisebrokerApi';
 import ObjectFranchiseofficeApi from './api/ObjectFranchiseofficeApi';
 import ObjectFranchisereferalincomeApi from './api/ObjectFranchisereferalincomeApi';
+import ObjectLanguageApi from './api/ObjectLanguageApi';
 import ObjectModulegroupApi from './api/ObjectModulegroupApi';
 import ObjectNotificationsectionApi from './api/ObjectNotificationsectionApi';
 import ObjectNotificationtestApi from './api/ObjectNotificationtestApi';
@@ -5880,6 +5884,24 @@ export {
     HeaderAcceptLanguage,
 
     /**
+     * The LanguageAutocompleteElementResponse model constructor.
+     * @property {module:eZmaxAPI/model/LanguageAutocompleteElementResponse}
+     */
+    LanguageAutocompleteElementResponse,
+
+    /**
+     * The LanguageGetAutocompleteV2Response model constructor.
+     * @property {module:eZmaxAPI/model/LanguageGetAutocompleteV2Response}
+     */
+    LanguageGetAutocompleteV2Response,
+
+    /**
+     * The LanguageGetAutocompleteV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/LanguageGetAutocompleteV2ResponseMPayload}
+     */
+    LanguageGetAutocompleteV2ResponseMPayload,
+
+    /**
      * The ModuleResponse model constructor.
      * @property {module:eZmaxAPI/model/ModuleResponse}
      */
@@ -7840,6 +7862,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectFranchisereferalincomeApi}
     */
     ObjectFranchisereferalincomeApi,
+
+    /**
+    * The ObjectLanguageApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectLanguageApi}
+    */
+    ObjectLanguageApi,
 
     /**
     * The ObjectModulegroupApi service constructor.
