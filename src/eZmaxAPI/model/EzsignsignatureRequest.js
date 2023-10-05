@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsignsignatureAttachmentnamesource from './FieldEEzsignsignatureAttachmentnamesource';
+import FieldEEzsignsignatureDependencyrequirement from './FieldEEzsignsignatureDependencyrequirement';
 import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
 import FieldEEzsignsignatureTooltipposition from './FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
@@ -129,6 +130,9 @@ class EzsignsignatureRequest {
             }
             if (data.hasOwnProperty('sEzsignsignatureRegexp')) {
                 obj['sEzsignsignatureRegexp'] = ApiClient.convertToType(data['sEzsignsignatureRegexp'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsignsignatureDependencyrequirement')) {
+                obj['eEzsignsignatureDependencyrequirement'] = FieldEEzsignsignatureDependencyrequirement.constructFromObject(data['eEzsignsignatureDependencyrequirement']);
             }
         }
         return obj;
@@ -478,6 +482,19 @@ class EzsignsignatureRequest {
     setSEzsignsignatureRegexp(sEzsignsignatureRegexp) {
         this['sEzsignsignatureRegexp'] = sEzsignsignatureRegexp;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement}
+     */
+    getEEzsignsignatureDependencyrequirement() {
+        return this.eEzsignsignatureDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+     */
+    setEEzsignsignatureDependencyrequirement(eEzsignsignatureDependencyrequirement) {
+        this['eEzsignsignatureDependencyrequirement'] = eEzsignsignatureDependencyrequirement;
+    }
 
 }
 
@@ -603,6 +620,11 @@ EzsignsignatureRequest.prototype['eEzsignsignatureTextvalidation'] = undefined;
  * @member {String} sEzsignsignatureRegexp
  */
 EzsignsignatureRequest.prototype['sEzsignsignatureRegexp'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+ */
+EzsignsignatureRequest.prototype['eEzsignsignatureDependencyrequirement'] = undefined;
 
 
 

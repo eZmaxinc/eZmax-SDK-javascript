@@ -120,6 +120,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignformfieldDependencyrequirement (base name: "eEzsignformfieldDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignelementdependency (base name: "a_objEzsignelementdependency")', function() {
+      // uncomment below and update the code to test the property a_objEzsignelementdependency
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldRequestCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

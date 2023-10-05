@@ -13,9 +13,11 @@
 
 import ApiClient from '../ApiClient';
 import EnumTextvalidation from './EnumTextvalidation';
+import EzsigntemplateelementdependencyRequestCompound from './EzsigntemplateelementdependencyRequestCompound';
 import EzsigntemplatesignatureRequest from './EzsigntemplatesignatureRequest';
 import EzsigntemplatesignaturecustomdateRequestCompound from './EzsigntemplatesignaturecustomdateRequestCompound';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './FieldEEzsigntemplatesignatureAttachmentnamesource';
+import FieldEEzsigntemplatesignatureDependencyrequirement from './FieldEEzsigntemplatesignatureDependencyrequirement';
 import FieldEEzsigntemplatesignatureFont from './FieldEEzsigntemplatesignatureFont';
 import FieldEEzsigntemplatesignatureTooltipposition from './FieldEEzsigntemplatesignatureTooltipposition';
 import FieldEEzsigntemplatesignatureType from './FieldEEzsigntemplatesignatureType';
@@ -134,11 +136,17 @@ class EzsigntemplatesignatureRequestCompound {
             if (data.hasOwnProperty('eEzsigntemplatesignatureTextvalidation')) {
                 obj['eEzsigntemplatesignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplatesignatureTextvalidation']);
             }
+            if (data.hasOwnProperty('eEzsigntemplatesignatureDependencyrequirement')) {
+                obj['eEzsigntemplatesignatureDependencyrequirement'] = FieldEEzsigntemplatesignatureDependencyrequirement.constructFromObject(data['eEzsigntemplatesignatureDependencyrequirement']);
+            }
             if (data.hasOwnProperty('bEzsigntemplatesignatureCustomdate')) {
                 obj['bEzsigntemplatesignatureCustomdate'] = ApiClient.convertToType(data['bEzsigntemplatesignatureCustomdate'], 'Boolean');
             }
             if (data.hasOwnProperty('a_objEzsigntemplatesignaturecustomdate')) {
                 obj['a_objEzsigntemplatesignaturecustomdate'] = ApiClient.convertToType(data['a_objEzsigntemplatesignaturecustomdate'], [EzsigntemplatesignaturecustomdateRequestCompound]);
+            }
+            if (data.hasOwnProperty('a_objEzsigntemplateelementdependency')) {
+                obj['a_objEzsigntemplateelementdependency'] = ApiClient.convertToType(data['a_objEzsigntemplateelementdependency'], [EzsigntemplateelementdependencyRequestCompound]);
             }
         }
         return obj;
@@ -176,6 +184,16 @@ class EzsigntemplatesignatureRequestCompound {
             // validate the optional field `a_objEzsigntemplatesignaturecustomdate` (array)
             for (const item of data['a_objEzsigntemplatesignaturecustomdate']) {
                 EzsigntemplatesignaturecustomdateRequestCompound.validateJSON(item);
+            };
+        }
+        if (data['a_objEzsigntemplateelementdependency']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objEzsigntemplateelementdependency'])) {
+                throw new Error("Expected the field `a_objEzsigntemplateelementdependency` to be an array in the JSON data but got " + data['a_objEzsigntemplateelementdependency']);
+            }
+            // validate the optional field `a_objEzsigntemplateelementdependency` (array)
+            for (const item of data['a_objEzsigntemplateelementdependency']) {
+                EzsigntemplateelementdependencyRequestCompound.validateJSON(item);
             };
         }
 
@@ -500,6 +518,19 @@ class EzsigntemplatesignatureRequestCompound {
         this['eEzsigntemplatesignatureTextvalidation'] = eEzsigntemplatesignatureTextvalidation;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement}
+     */
+    getEEzsigntemplatesignatureDependencyrequirement() {
+        return this.eEzsigntemplatesignatureDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
+     */
+    setEEzsigntemplatesignatureDependencyrequirement(eEzsigntemplatesignatureDependencyrequirement) {
+        this['eEzsigntemplatesignatureDependencyrequirement'] = eEzsigntemplatesignatureDependencyrequirement;
+    }
+/**
      * Returns Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
@@ -528,6 +559,19 @@ class EzsigntemplatesignatureRequestCompound {
      */
     setAObjEzsigntemplatesignaturecustomdate(a_objEzsigntemplatesignaturecustomdate) {
         this['a_objEzsigntemplatesignaturecustomdate'] = a_objEzsigntemplatesignaturecustomdate;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyRequestCompound>}
+     */
+    getAObjEzsigntemplateelementdependency() {
+        return this.a_objEzsigntemplateelementdependency;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyRequestCompound>} a_objEzsigntemplateelementdependency
+     */
+    setAObjEzsigntemplateelementdependency(a_objEzsigntemplateelementdependency) {
+        this['a_objEzsigntemplateelementdependency'] = a_objEzsigntemplateelementdependency;
     }
 
 }
@@ -656,6 +700,11 @@ EzsigntemplatesignatureRequestCompound.prototype['sEzsigntemplatesignatureRegexp
 EzsigntemplatesignatureRequestCompound.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
+ */
+EzsigntemplatesignatureRequestCompound.prototype['eEzsigntemplatesignatureDependencyrequirement'] = undefined;
+
+/**
  * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsigntemplatesignatureCustomdate
  */
@@ -666,6 +715,11 @@ EzsigntemplatesignatureRequestCompound.prototype['bEzsigntemplatesignatureCustom
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatesignaturecustomdateRequestCompound>} a_objEzsigntemplatesignaturecustomdate
  */
 EzsigntemplatesignatureRequestCompound.prototype['a_objEzsigntemplatesignaturecustomdate'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyRequestCompound>} a_objEzsigntemplateelementdependency
+ */
+EzsigntemplatesignatureRequestCompound.prototype['a_objEzsigntemplateelementdependency'] = undefined;
 
 
 // Implement EzsigntemplatesignatureRequest interface:
@@ -769,6 +823,10 @@ EzsigntemplatesignatureRequest.prototype['sEzsigntemplatesignatureRegexp'] = und
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
  */
 EzsigntemplatesignatureRequest.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
+ */
+EzsigntemplatesignatureRequest.prototype['eEzsigntemplatesignatureDependencyrequirement'] = undefined;
 
 
 

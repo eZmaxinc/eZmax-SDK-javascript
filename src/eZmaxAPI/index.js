@@ -363,6 +363,10 @@ import EzsigndocumentSubmitEzsignformV1Response from './model/EzsigndocumentSubm
 import EzsigndocumentUnsendV1Response from './model/EzsigndocumentUnsendV1Response';
 import EzsigndocumentlogResponse from './model/EzsigndocumentlogResponse';
 import EzsigndocumentlogResponseCompound from './model/EzsigndocumentlogResponseCompound';
+import EzsignelementdependencyRequest from './model/EzsignelementdependencyRequest';
+import EzsignelementdependencyRequestCompound from './model/EzsignelementdependencyRequestCompound';
+import EzsignelementdependencyResponse from './model/EzsignelementdependencyResponse';
+import EzsignelementdependencyResponseCompound from './model/EzsignelementdependencyResponseCompound';
 import EzsignfolderArchiveV1Response from './model/EzsignfolderArchiveV1Response';
 import EzsignfolderBatchDownloadV1Request from './model/EzsignfolderBatchDownloadV1Request';
 import EzsignfolderCreateObjectV1Request from './model/EzsignfolderCreateObjectV1Request';
@@ -594,6 +598,10 @@ import EzsigntemplatedocumentResponse from './model/EzsigntemplatedocumentRespon
 import EzsigntemplatedocumentResponseCompound from './model/EzsigntemplatedocumentResponseCompound';
 import EzsigntemplatedocumentpageResponse from './model/EzsigntemplatedocumentpageResponse';
 import EzsigntemplatedocumentpageResponseCompound from './model/EzsigntemplatedocumentpageResponseCompound';
+import EzsigntemplateelementdependencyRequest from './model/EzsigntemplateelementdependencyRequest';
+import EzsigntemplateelementdependencyRequestCompound from './model/EzsigntemplateelementdependencyRequestCompound';
+import EzsigntemplateelementdependencyResponse from './model/EzsigntemplateelementdependencyResponse';
+import EzsigntemplateelementdependencyResponseCompound from './model/EzsigntemplateelementdependencyResponseCompound';
 import EzsigntemplateformfieldRequest from './model/EzsigntemplateformfieldRequest';
 import EzsigntemplateformfieldRequestCompound from './model/EzsigntemplateformfieldRequestCompound';
 import EzsigntemplateformfieldResponse from './model/EzsigntemplateformfieldResponse';
@@ -719,22 +727,30 @@ import FieldEEzmaxinvoicinguserVariationezsign from './model/FieldEEzmaxinvoicin
 import FieldEEzsignannotationType from './model/FieldEEzsignannotationType';
 import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsigndocumentlogType from './model/FieldEEzsigndocumentlogType';
+import FieldEEzsignelementdependencyOperator from './model/FieldEEzsignelementdependencyOperator';
+import FieldEEzsignelementdependencyValidation from './model/FieldEEzsignelementdependencyValidation';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
 import FieldEEzsignfoldertypeDisposal from './model/FieldEEzsignfoldertypeDisposal';
 import FieldEEzsignfoldertypePrivacylevel from './model/FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignfoldertypeSendreminderfrequency from './model/FieldEEzsignfoldertypeSendreminderfrequency';
+import FieldEEzsignformfieldDependencyrequirement from './model/FieldEEzsignformfieldDependencyrequirement';
 import FieldEEzsignformfieldgroupSignerrequirement from './model/FieldEEzsignformfieldgroupSignerrequirement';
 import FieldEEzsignformfieldgroupTooltipposition from './model/FieldEEzsignformfieldgroupTooltipposition';
 import FieldEEzsignformfieldgroupType from './model/FieldEEzsignformfieldgroupType';
 import FieldEEzsignsignatureAttachmentnamesource from './model/FieldEEzsignsignatureAttachmentnamesource';
+import FieldEEzsignsignatureDependencyrequirement from './model/FieldEEzsignsignatureDependencyrequirement';
 import FieldEEzsignsignatureFont from './model/FieldEEzsignsignatureFont';
 import FieldEEzsignsignatureTooltipposition from './model/FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './model/FieldEEzsignsignatureType';
+import FieldEEzsigntemplateelementdependencyOperator from './model/FieldEEzsigntemplateelementdependencyOperator';
+import FieldEEzsigntemplateelementdependencyValidation from './model/FieldEEzsigntemplateelementdependencyValidation';
+import FieldEEzsigntemplateformfieldDependencyrequirement from './model/FieldEEzsigntemplateformfieldDependencyrequirement';
 import FieldEEzsigntemplateformfieldgroupSignerrequirement from './model/FieldEEzsigntemplateformfieldgroupSignerrequirement';
 import FieldEEzsigntemplateformfieldgroupTooltipposition from './model/FieldEEzsigntemplateformfieldgroupTooltipposition';
 import FieldEEzsigntemplateformfieldgroupType from './model/FieldEEzsigntemplateformfieldgroupType';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './model/FieldEEzsigntemplatesignatureAttachmentnamesource';
+import FieldEEzsigntemplatesignatureDependencyrequirement from './model/FieldEEzsigntemplatesignatureDependencyrequirement';
 import FieldEEzsigntemplatesignatureFont from './model/FieldEEzsigntemplatesignatureFont';
 import FieldEEzsigntemplatesignatureTooltipposition from './model/FieldEEzsigntemplatesignatureTooltipposition';
 import FieldEEzsigntemplatesignatureType from './model/FieldEEzsigntemplatesignatureType';
@@ -3272,6 +3288,30 @@ export {
     EzsigndocumentlogResponseCompound,
 
     /**
+     * The EzsignelementdependencyRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsignelementdependencyRequest}
+     */
+    EzsignelementdependencyRequest,
+
+    /**
+     * The EzsignelementdependencyRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignelementdependencyRequestCompound}
+     */
+    EzsignelementdependencyRequestCompound,
+
+    /**
+     * The EzsignelementdependencyResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsignelementdependencyResponse}
+     */
+    EzsignelementdependencyResponse,
+
+    /**
+     * The EzsignelementdependencyResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsignelementdependencyResponseCompound}
+     */
+    EzsignelementdependencyResponseCompound,
+
+    /**
      * The EzsignfolderArchiveV1Response model constructor.
      * @property {module:eZmaxAPI/model/EzsignfolderArchiveV1Response}
      */
@@ -4658,6 +4698,30 @@ export {
     EzsigntemplatedocumentpageResponseCompound,
 
     /**
+     * The EzsigntemplateelementdependencyRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplateelementdependencyRequest}
+     */
+    EzsigntemplateelementdependencyRequest,
+
+    /**
+     * The EzsigntemplateelementdependencyRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplateelementdependencyRequestCompound}
+     */
+    EzsigntemplateelementdependencyRequestCompound,
+
+    /**
+     * The EzsigntemplateelementdependencyResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplateelementdependencyResponse}
+     */
+    EzsigntemplateelementdependencyResponse,
+
+    /**
+     * The EzsigntemplateelementdependencyResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound}
+     */
+    EzsigntemplateelementdependencyResponseCompound,
+
+    /**
      * The EzsigntemplateformfieldRequest model constructor.
      * @property {module:eZmaxAPI/model/EzsigntemplateformfieldRequest}
      */
@@ -5408,6 +5472,18 @@ export {
     FieldEEzsigndocumentlogType,
 
     /**
+     * The FieldEEzsignelementdependencyOperator model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignelementdependencyOperator}
+     */
+    FieldEEzsignelementdependencyOperator,
+
+    /**
+     * The FieldEEzsignelementdependencyValidation model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignelementdependencyValidation}
+     */
+    FieldEEzsignelementdependencyValidation,
+
+    /**
      * The FieldEEzsignfolderSendreminderfrequency model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency}
      */
@@ -5438,6 +5514,12 @@ export {
     FieldEEzsignfoldertypeSendreminderfrequency,
 
     /**
+     * The FieldEEzsignformfieldDependencyrequirement model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement}
+     */
+    FieldEEzsignformfieldDependencyrequirement,
+
+    /**
      * The FieldEEzsignformfieldgroupSignerrequirement model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsignformfieldgroupSignerrequirement}
      */
@@ -5462,6 +5544,12 @@ export {
     FieldEEzsignsignatureAttachmentnamesource,
 
     /**
+     * The FieldEEzsignsignatureDependencyrequirement model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement}
+     */
+    FieldEEzsignsignatureDependencyrequirement,
+
+    /**
      * The FieldEEzsignsignatureFont model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsignsignatureFont}
      */
@@ -5478,6 +5566,24 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsignsignatureType}
      */
     FieldEEzsignsignatureType,
+
+    /**
+     * The FieldEEzsigntemplateelementdependencyOperator model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplateelementdependencyOperator}
+     */
+    FieldEEzsigntemplateelementdependencyOperator,
+
+    /**
+     * The FieldEEzsigntemplateelementdependencyValidation model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplateelementdependencyValidation}
+     */
+    FieldEEzsigntemplateelementdependencyValidation,
+
+    /**
+     * The FieldEEzsigntemplateformfieldDependencyrequirement model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement}
+     */
+    FieldEEzsigntemplateformfieldDependencyrequirement,
 
     /**
      * The FieldEEzsigntemplateformfieldgroupSignerrequirement model constructor.
@@ -5502,6 +5608,12 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureAttachmentnamesource}
      */
     FieldEEzsigntemplatesignatureAttachmentnamesource,
+
+    /**
+     * The FieldEEzsigntemplatesignatureDependencyrequirement model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement}
+     */
+    FieldEEzsigntemplatesignatureDependencyrequirement,
 
     /**
      * The FieldEEzsigntemplatesignatureFont model constructor.

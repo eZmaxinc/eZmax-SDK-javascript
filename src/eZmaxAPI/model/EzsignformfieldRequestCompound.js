@@ -12,7 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import EzsignelementdependencyRequestCompound from './EzsignelementdependencyRequestCompound';
 import EzsignformfieldRequest from './EzsignformfieldRequest';
+import FieldEEzsignformfieldDependencyrequirement from './FieldEEzsignformfieldDependencyrequirement';
 
 /**
  * The EzsignformfieldRequestCompound model module.
@@ -96,6 +98,12 @@ class EzsignformfieldRequestCompound {
             if (data.hasOwnProperty('sEzsignformfieldEnteredvalue')) {
                 obj['sEzsignformfieldEnteredvalue'] = ApiClient.convertToType(data['sEzsignformfieldEnteredvalue'], 'String');
             }
+            if (data.hasOwnProperty('eEzsignformfieldDependencyrequirement')) {
+                obj['eEzsignformfieldDependencyrequirement'] = FieldEEzsignformfieldDependencyrequirement.constructFromObject(data['eEzsignformfieldDependencyrequirement']);
+            }
+            if (data.hasOwnProperty('a_objEzsignelementdependency')) {
+                obj['a_objEzsignelementdependency'] = ApiClient.convertToType(data['a_objEzsignelementdependency'], [EzsignelementdependencyRequestCompound]);
+            }
         }
         return obj;
     }
@@ -123,6 +131,16 @@ class EzsignformfieldRequestCompound {
         // ensure the json data is a string
         if (data['sEzsignformfieldEnteredvalue'] && !(typeof data['sEzsignformfieldEnteredvalue'] === 'string' || data['sEzsignformfieldEnteredvalue'] instanceof String)) {
             throw new Error("Expected the field `sEzsignformfieldEnteredvalue` to be a primitive type in the JSON string but got " + data['sEzsignformfieldEnteredvalue']);
+        }
+        if (data['a_objEzsignelementdependency']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objEzsignelementdependency'])) {
+                throw new Error("Expected the field `a_objEzsignelementdependency` to be an array in the JSON data but got " + data['a_objEzsignelementdependency']);
+            }
+            // validate the optional field `a_objEzsignelementdependency` (array)
+            for (const item of data['a_objEzsignelementdependency']) {
+                EzsignelementdependencyRequestCompound.validateJSON(item);
+            };
         }
 
         return true;
@@ -299,6 +317,32 @@ class EzsignformfieldRequestCompound {
     setSEzsignformfieldEnteredvalue(sEzsignformfieldEnteredvalue) {
         this['sEzsignformfieldEnteredvalue'] = sEzsignformfieldEnteredvalue;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement}
+     */
+    getEEzsignformfieldDependencyrequirement() {
+        return this.eEzsignformfieldDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement} eEzsignformfieldDependencyrequirement
+     */
+    setEEzsignformfieldDependencyrequirement(eEzsignformfieldDependencyrequirement) {
+        this['eEzsignformfieldDependencyrequirement'] = eEzsignformfieldDependencyrequirement;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsignelementdependencyRequestCompound>}
+     */
+    getAObjEzsignelementdependency() {
+        return this.a_objEzsignelementdependency;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsignelementdependencyRequestCompound>} a_objEzsignelementdependency
+     */
+    setAObjEzsignelementdependency(a_objEzsignelementdependency) {
+        this['a_objEzsignelementdependency'] = a_objEzsignelementdependency;
+    }
 
 }
 
@@ -370,6 +414,16 @@ EzsignformfieldRequestCompound.prototype['bEzsignformfieldSelected'] = undefined
  */
 EzsignformfieldRequestCompound.prototype['sEzsignformfieldEnteredvalue'] = undefined;
 
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement} eEzsignformfieldDependencyrequirement
+ */
+EzsignformfieldRequestCompound.prototype['eEzsignformfieldDependencyrequirement'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignelementdependencyRequestCompound>} a_objEzsignelementdependency
+ */
+EzsignformfieldRequestCompound.prototype['a_objEzsignelementdependency'] = undefined;
+
 
 // Implement EzsignformfieldRequest interface:
 /**
@@ -427,6 +481,10 @@ EzsignformfieldRequest.prototype['bEzsignformfieldSelected'] = undefined;
  * @member {String} sEzsignformfieldEnteredvalue
  */
 EzsignformfieldRequest.prototype['sEzsignformfieldEnteredvalue'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement} eEzsignformfieldDependencyrequirement
+ */
+EzsignformfieldRequest.prototype['eEzsignformfieldDependencyrequirement'] = undefined;
 
 
 

@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignsignatureDependencyrequirement (base name: "eEzsignsignatureDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsignsignatureDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignsignatureRegexp (base name: "sEzsignsignatureRegexp")', function() {
       // uncomment below and update the code to test the property sEzsignsignatureRegexp
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
@@ -230,6 +236,12 @@
 
     it('should have the property objCreditcardtransaction (base name: "objCreditcardtransaction")', function() {
       // uncomment below and update the code to test the property objCreditcardtransaction
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsignelementdependency (base name: "a_objEzsignelementdependency")', function() {
+      // uncomment below and update the code to test the property a_objEzsignelementdependency
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponseCompound();
       //expect(instance).to.be();
     });

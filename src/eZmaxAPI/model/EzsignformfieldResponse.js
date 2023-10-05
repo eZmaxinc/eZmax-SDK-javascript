@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsignformfieldDependencyrequirement from './FieldEEzsignformfieldDependencyrequirement';
 
 /**
  * The EzsignformfieldResponse model module.
@@ -94,6 +95,9 @@ class EzsignformfieldResponse {
             }
             if (data.hasOwnProperty('sEzsignformfieldEnteredvalue')) {
                 obj['sEzsignformfieldEnteredvalue'] = ApiClient.convertToType(data['sEzsignformfieldEnteredvalue'], 'String');
+            }
+            if (data.hasOwnProperty('eEzsignformfieldDependencyrequirement')) {
+                obj['eEzsignformfieldDependencyrequirement'] = FieldEEzsignformfieldDependencyrequirement.constructFromObject(data['eEzsignformfieldDependencyrequirement']);
             }
         }
         return obj;
@@ -298,6 +302,19 @@ class EzsignformfieldResponse {
     setSEzsignformfieldEnteredvalue(sEzsignformfieldEnteredvalue) {
         this['sEzsignformfieldEnteredvalue'] = sEzsignformfieldEnteredvalue;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement}
+     */
+    getEEzsignformfieldDependencyrequirement() {
+        return this.eEzsignformfieldDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement} eEzsignformfieldDependencyrequirement
+     */
+    setEEzsignformfieldDependencyrequirement(eEzsignformfieldDependencyrequirement) {
+        this['eEzsignformfieldDependencyrequirement'] = eEzsignformfieldDependencyrequirement;
+    }
 
 }
 
@@ -368,6 +385,11 @@ EzsignformfieldResponse.prototype['bEzsignformfieldSelected'] = undefined;
  * @member {String} sEzsignformfieldEnteredvalue
  */
 EzsignformfieldResponse.prototype['sEzsignformfieldEnteredvalue'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignformfieldDependencyrequirement} eEzsignformfieldDependencyrequirement
+ */
+EzsignformfieldResponse.prototype['eEzsignformfieldDependencyrequirement'] = undefined;
 
 
 

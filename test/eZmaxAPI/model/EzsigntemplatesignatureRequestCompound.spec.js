@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplatesignatureDependencyrequirement (base name: "eEzsigntemplatesignatureDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplatesignatureDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsigntemplatesignatureCustomdate (base name: "bEzsigntemplatesignatureCustomdate")', function() {
       // uncomment below and update the code to test the property bEzsigntemplatesignatureCustomdate
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureRequestCompound();
@@ -188,6 +194,12 @@
 
     it('should have the property a_objEzsigntemplatesignaturecustomdate (base name: "a_objEzsigntemplatesignaturecustomdate")', function() {
       // uncomment below and update the code to test the property a_objEzsigntemplatesignaturecustomdate
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objEzsigntemplateelementdependency (base name: "a_objEzsigntemplateelementdependency")', function() {
+      // uncomment below and update the code to test the property a_objEzsigntemplateelementdependency
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureRequestCompound();
       //expect(instance).to.be();
     });

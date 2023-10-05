@@ -15,9 +15,11 @@ import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
 import CustomCreditcardtransactionResponse from './CustomCreditcardtransactionResponse';
 import EnumTextvalidation from './EnumTextvalidation';
+import EzsignelementdependencyResponseCompound from './EzsignelementdependencyResponseCompound';
 import EzsignsignatureResponse from './EzsignsignatureResponse';
 import EzsignsignaturecustomdateResponseCompound from './EzsignsignaturecustomdateResponseCompound';
 import FieldEEzsignsignatureAttachmentnamesource from './FieldEEzsignsignatureAttachmentnamesource';
+import FieldEEzsignsignatureDependencyrequirement from './FieldEEzsignsignatureDependencyrequirement';
 import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
 import FieldEEzsignsignatureTooltipposition from './FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
@@ -147,6 +149,9 @@ class EzsignsignatureResponseCompound {
             if (data.hasOwnProperty('eEzsignsignatureTextvalidation')) {
                 obj['eEzsignsignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignsignatureTextvalidation']);
             }
+            if (data.hasOwnProperty('eEzsignsignatureDependencyrequirement')) {
+                obj['eEzsignsignatureDependencyrequirement'] = FieldEEzsignsignatureDependencyrequirement.constructFromObject(data['eEzsignsignatureDependencyrequirement']);
+            }
             if (data.hasOwnProperty('sEzsignsignatureRegexp')) {
                 obj['sEzsignsignatureRegexp'] = ApiClient.convertToType(data['sEzsignsignatureRegexp'], 'String');
             }
@@ -167,6 +172,9 @@ class EzsignsignatureResponseCompound {
             }
             if (data.hasOwnProperty('objCreditcardtransaction')) {
                 obj['objCreditcardtransaction'] = CustomCreditcardtransactionResponse.constructFromObject(data['objCreditcardtransaction']);
+            }
+            if (data.hasOwnProperty('a_objEzsignelementdependency')) {
+                obj['a_objEzsignelementdependency'] = ApiClient.convertToType(data['a_objEzsignelementdependency'], [EzsignelementdependencyResponseCompound]);
             }
         }
         return obj;
@@ -229,6 +237,16 @@ class EzsignsignatureResponseCompound {
         // validate the optional field `objCreditcardtransaction`
         if (data['objCreditcardtransaction']) { // data not null
           CustomCreditcardtransactionResponse.validateJSON(data['objCreditcardtransaction']);
+        }
+        if (data['a_objEzsignelementdependency']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objEzsignelementdependency'])) {
+                throw new Error("Expected the field `a_objEzsignelementdependency` to be an array in the JSON data but got " + data['a_objEzsignelementdependency']);
+            }
+            // validate the optional field `a_objEzsignelementdependency` (array)
+            for (const item of data['a_objEzsignelementdependency']) {
+                EzsignelementdependencyResponseCompound.validateJSON(item);
+            };
         }
 
         return true;
@@ -581,6 +599,19 @@ class EzsignsignatureResponseCompound {
         this['eEzsignsignatureTextvalidation'] = eEzsignsignatureTextvalidation;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement}
+     */
+    getEEzsignsignatureDependencyrequirement() {
+        return this.eEzsignsignatureDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+     */
+    setEEzsignsignatureDependencyrequirement(eEzsignsignatureDependencyrequirement) {
+        this['eEzsignsignatureDependencyrequirement'] = eEzsignsignatureDependencyrequirement;
+    }
+/**
      * Returns A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @return {String}
      */
@@ -676,6 +707,19 @@ class EzsignsignatureResponseCompound {
      */
     setObjCreditcardtransaction(objCreditcardtransaction) {
         this['objCreditcardtransaction'] = objCreditcardtransaction;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsignelementdependencyResponseCompound>}
+     */
+    getAObjEzsignelementdependency() {
+        return this.a_objEzsignelementdependency;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsignelementdependencyResponseCompound>} a_objEzsignelementdependency
+     */
+    setAObjEzsignelementdependency(a_objEzsignelementdependency) {
+        this['a_objEzsignelementdependency'] = a_objEzsignelementdependency;
     }
 
 }
@@ -816,6 +860,11 @@ EzsignsignatureResponseCompound.prototype['iEzsignsignatureMaxlength'] = undefin
 EzsignsignatureResponseCompound.prototype['eEzsignsignatureTextvalidation'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+ */
+EzsignsignatureResponseCompound.prototype['eEzsignsignatureDependencyrequirement'] = undefined;
+
+/**
  * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
  * @member {String} sEzsignsignatureRegexp
  */
@@ -852,6 +901,11 @@ EzsignsignatureResponseCompound.prototype['a_objEzsignsignaturecustomdate'] = un
  * @member {module:eZmaxAPI/model/CustomCreditcardtransactionResponse} objCreditcardtransaction
  */
 EzsignsignatureResponseCompound.prototype['objCreditcardtransaction'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsignelementdependencyResponseCompound>} a_objEzsignelementdependency
+ */
+EzsignsignatureResponseCompound.prototype['a_objEzsignelementdependency'] = undefined;
 
 
 // Implement EzsignsignatureResponse interface:
@@ -965,6 +1019,10 @@ EzsignsignatureResponse.prototype['iEzsignsignatureMaxlength'] = undefined;
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignsignatureTextvalidation
  */
 EzsignsignatureResponse.prototype['eEzsignsignatureTextvalidation'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+ */
+EzsignsignatureResponse.prototype['eEzsignsignatureDependencyrequirement'] = undefined;
 /**
  * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
  * @member {String} sEzsignsignatureRegexp

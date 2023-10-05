@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsigntemplateformfieldDependencyrequirement from './FieldEEzsigntemplateformfieldDependencyrequirement';
 
 /**
  * The EzsigntemplateformfieldResponse model module.
@@ -91,6 +92,9 @@ class EzsigntemplateformfieldResponse {
             }
             if (data.hasOwnProperty('bEzsigntemplateformfieldSelected')) {
                 obj['bEzsigntemplateformfieldSelected'] = ApiClient.convertToType(data['bEzsigntemplateformfieldSelected'], 'Boolean');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldDependencyrequirement')) {
+                obj['eEzsigntemplateformfieldDependencyrequirement'] = FieldEEzsigntemplateformfieldDependencyrequirement.constructFromObject(data['eEzsigntemplateformfieldDependencyrequirement']);
             }
         }
         return obj;
@@ -276,6 +280,19 @@ class EzsigntemplateformfieldResponse {
     setBEzsigntemplateformfieldSelected(bEzsigntemplateformfieldSelected) {
         this['bEzsigntemplateformfieldSelected'] = bEzsigntemplateformfieldSelected;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement}
+     */
+    getEEzsigntemplateformfieldDependencyrequirement() {
+        return this.eEzsigntemplateformfieldDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
+     */
+    setEEzsigntemplateformfieldDependencyrequirement(eEzsigntemplateformfieldDependencyrequirement) {
+        this['eEzsigntemplateformfieldDependencyrequirement'] = eEzsigntemplateformfieldDependencyrequirement;
+    }
 
 }
 
@@ -340,6 +357,11 @@ EzsigntemplateformfieldResponse.prototype['bEzsigntemplateformfieldAutocomplete'
  * @member {Boolean} bEzsigntemplateformfieldSelected
  */
 EzsigntemplateformfieldResponse.prototype['bEzsigntemplateformfieldSelected'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
+ */
+EzsigntemplateformfieldResponse.prototype['eEzsigntemplateformfieldDependencyrequirement'] = undefined;
 
 
 

@@ -201,6 +201,13 @@ export default class FieldEEzsigndocumentlogType {
         "RegeneratePageForm" = "RegeneratePageForm";
 
     
+        /**
+         * value: "Reassign"
+         * @const
+         */
+        "Reassign" = "Reassign";
+
+    
 
     /**
     * Returns a <code>FieldEEzsigndocumentlogType</code> enum value from a Javascript object name.

@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplatesignatureDependencyrequirement (base name: "eEzsigntemplatesignatureDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplatesignatureDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -192,6 +192,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignsignatureDependencyrequirement (base name: "eEzsignsignatureDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsignsignatureDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignsignatureRegexp (base name: "sEzsignsignatureRegexp")', function() {
       // uncomment below and update the code to test the property sEzsignsignatureRegexp
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();

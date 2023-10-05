@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignformfieldDependencyrequirement (base name: "eEzsignformfieldDependencyrequirement")', function() {
+      // uncomment below and update the code to test the property eEzsignformfieldDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsignformfieldRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

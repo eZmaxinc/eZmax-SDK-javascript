@@ -12,7 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import EzsigntemplateelementdependencyResponseCompound from './EzsigntemplateelementdependencyResponseCompound';
 import EzsigntemplateformfieldResponse from './EzsigntemplateformfieldResponse';
+import FieldEEzsigntemplateformfieldDependencyrequirement from './FieldEEzsigntemplateformfieldDependencyrequirement';
 
 /**
  * The EzsigntemplateformfieldResponseCompound model module.
@@ -95,6 +97,12 @@ class EzsigntemplateformfieldResponseCompound {
             if (data.hasOwnProperty('bEzsigntemplateformfieldSelected')) {
                 obj['bEzsigntemplateformfieldSelected'] = ApiClient.convertToType(data['bEzsigntemplateformfieldSelected'], 'Boolean');
             }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldDependencyrequirement')) {
+                obj['eEzsigntemplateformfieldDependencyrequirement'] = FieldEEzsigntemplateformfieldDependencyrequirement.constructFromObject(data['eEzsigntemplateformfieldDependencyrequirement']);
+            }
+            if (data.hasOwnProperty('a_objEzsigntemplateelementdependency')) {
+                obj['a_objEzsigntemplateelementdependency'] = ApiClient.convertToType(data['a_objEzsigntemplateelementdependency'], [EzsigntemplateelementdependencyResponseCompound]);
+            }
         }
         return obj;
     }
@@ -118,6 +126,16 @@ class EzsigntemplateformfieldResponseCompound {
         // ensure the json data is a string
         if (data['sEzsigntemplateformfieldValue'] && !(typeof data['sEzsigntemplateformfieldValue'] === 'string' || data['sEzsigntemplateformfieldValue'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplateformfieldValue` to be a primitive type in the JSON string but got " + data['sEzsigntemplateformfieldValue']);
+        }
+        if (data['a_objEzsigntemplateelementdependency']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objEzsigntemplateelementdependency'])) {
+                throw new Error("Expected the field `a_objEzsigntemplateelementdependency` to be an array in the JSON data but got " + data['a_objEzsigntemplateelementdependency']);
+            }
+            // validate the optional field `a_objEzsigntemplateelementdependency` (array)
+            for (const item of data['a_objEzsigntemplateelementdependency']) {
+                EzsigntemplateelementdependencyResponseCompound.validateJSON(item);
+            };
         }
 
         return true;
@@ -279,6 +297,32 @@ class EzsigntemplateformfieldResponseCompound {
     setBEzsigntemplateformfieldSelected(bEzsigntemplateformfieldSelected) {
         this['bEzsigntemplateformfieldSelected'] = bEzsigntemplateformfieldSelected;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement}
+     */
+    getEEzsigntemplateformfieldDependencyrequirement() {
+        return this.eEzsigntemplateformfieldDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
+     */
+    setEEzsigntemplateformfieldDependencyrequirement(eEzsigntemplateformfieldDependencyrequirement) {
+        this['eEzsigntemplateformfieldDependencyrequirement'] = eEzsigntemplateformfieldDependencyrequirement;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound>}
+     */
+    getAObjEzsigntemplateelementdependency() {
+        return this.a_objEzsigntemplateelementdependency;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound>} a_objEzsigntemplateelementdependency
+     */
+    setAObjEzsigntemplateelementdependency(a_objEzsigntemplateelementdependency) {
+        this['a_objEzsigntemplateelementdependency'] = a_objEzsigntemplateelementdependency;
+    }
 
 }
 
@@ -344,6 +388,16 @@ EzsigntemplateformfieldResponseCompound.prototype['bEzsigntemplateformfieldAutoc
  */
 EzsigntemplateformfieldResponseCompound.prototype['bEzsigntemplateformfieldSelected'] = undefined;
 
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
+ */
+EzsigntemplateformfieldResponseCompound.prototype['eEzsigntemplateformfieldDependencyrequirement'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound>} a_objEzsigntemplateelementdependency
+ */
+EzsigntemplateformfieldResponseCompound.prototype['a_objEzsigntemplateelementdependency'] = undefined;
+
 
 // Implement EzsigntemplateformfieldResponse interface:
 /**
@@ -396,6 +450,10 @@ EzsigntemplateformfieldResponse.prototype['bEzsigntemplateformfieldAutocomplete'
  * @member {Boolean} bEzsigntemplateformfieldSelected
  */
 EzsigntemplateformfieldResponse.prototype['bEzsigntemplateformfieldSelected'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
+ */
+EzsigntemplateformfieldResponse.prototype['eEzsigntemplateformfieldDependencyrequirement'] = undefined;
 
 
 

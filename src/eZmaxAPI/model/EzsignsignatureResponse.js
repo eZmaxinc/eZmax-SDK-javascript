@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
 import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsignsignatureAttachmentnamesource from './FieldEEzsignsignatureAttachmentnamesource';
+import FieldEEzsignsignatureDependencyrequirement from './FieldEEzsignsignatureDependencyrequirement';
 import FieldEEzsignsignatureFont from './FieldEEzsignsignatureFont';
 import FieldEEzsignsignatureTooltipposition from './FieldEEzsignsignatureTooltipposition';
 import FieldEEzsignsignatureType from './FieldEEzsignsignatureType';
@@ -141,6 +142,9 @@ class EzsignsignatureResponse {
             }
             if (data.hasOwnProperty('eEzsignsignatureTextvalidation')) {
                 obj['eEzsignsignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsignsignatureTextvalidation']);
+            }
+            if (data.hasOwnProperty('eEzsignsignatureDependencyrequirement')) {
+                obj['eEzsignsignatureDependencyrequirement'] = FieldEEzsignsignatureDependencyrequirement.constructFromObject(data['eEzsignsignatureDependencyrequirement']);
             }
             if (data.hasOwnProperty('sEzsignsignatureRegexp')) {
                 obj['sEzsignsignatureRegexp'] = ApiClient.convertToType(data['sEzsignsignatureRegexp'], 'String');
@@ -553,6 +557,19 @@ class EzsignsignatureResponse {
         this['eEzsignsignatureTextvalidation'] = eEzsignsignatureTextvalidation;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement}
+     */
+    getEEzsignsignatureDependencyrequirement() {
+        return this.eEzsignsignatureDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+     */
+    setEEzsignsignatureDependencyrequirement(eEzsignsignatureDependencyrequirement) {
+        this['eEzsignsignatureDependencyrequirement'] = eEzsignsignatureDependencyrequirement;
+    }
+/**
      * Returns A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @return {String}
      */
@@ -743,6 +760,11 @@ EzsignsignatureResponse.prototype['iEzsignsignatureMaxlength'] = undefined;
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsignsignatureTextvalidation
  */
 EzsignsignatureResponse.prototype['eEzsignsignatureTextvalidation'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignsignatureDependencyrequirement} eEzsignsignatureDependencyrequirement
+ */
+EzsignsignatureResponse.prototype['eEzsignsignatureDependencyrequirement'] = undefined;
 
 /**
  * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**

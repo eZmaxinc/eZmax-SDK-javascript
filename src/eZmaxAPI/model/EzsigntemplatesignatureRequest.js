@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import EnumTextvalidation from './EnumTextvalidation';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './FieldEEzsigntemplatesignatureAttachmentnamesource';
+import FieldEEzsigntemplatesignatureDependencyrequirement from './FieldEEzsigntemplatesignatureDependencyrequirement';
 import FieldEEzsigntemplatesignatureFont from './FieldEEzsigntemplatesignatureFont';
 import FieldEEzsigntemplatesignatureTooltipposition from './FieldEEzsigntemplatesignatureTooltipposition';
 import FieldEEzsigntemplatesignatureType from './FieldEEzsigntemplatesignatureType';
@@ -129,6 +130,9 @@ class EzsigntemplatesignatureRequest {
             }
             if (data.hasOwnProperty('eEzsigntemplatesignatureTextvalidation')) {
                 obj['eEzsigntemplatesignatureTextvalidation'] = EnumTextvalidation.constructFromObject(data['eEzsigntemplatesignatureTextvalidation']);
+            }
+            if (data.hasOwnProperty('eEzsigntemplatesignatureDependencyrequirement')) {
+                obj['eEzsigntemplatesignatureDependencyrequirement'] = FieldEEzsigntemplatesignatureDependencyrequirement.constructFromObject(data['eEzsigntemplatesignatureDependencyrequirement']);
             }
         }
         return obj;
@@ -479,6 +483,19 @@ class EzsigntemplatesignatureRequest {
     setEEzsigntemplatesignatureTextvalidation(eEzsigntemplatesignatureTextvalidation) {
         this['eEzsigntemplatesignatureTextvalidation'] = eEzsigntemplatesignatureTextvalidation;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement}
+     */
+    getEEzsigntemplatesignatureDependencyrequirement() {
+        return this.eEzsigntemplatesignatureDependencyrequirement;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
+     */
+    setEEzsigntemplatesignatureDependencyrequirement(eEzsigntemplatesignatureDependencyrequirement) {
+        this['eEzsigntemplatesignatureDependencyrequirement'] = eEzsigntemplatesignatureDependencyrequirement;
+    }
 
 }
 
@@ -604,6 +621,11 @@ EzsigntemplatesignatureRequest.prototype['sEzsigntemplatesignatureRegexp'] = und
  * @member {module:eZmaxAPI/model/EnumTextvalidation} eEzsigntemplatesignatureTextvalidation
  */
 EzsigntemplatesignatureRequest.prototype['eEzsigntemplatesignatureTextvalidation'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
+ */
+EzsigntemplatesignatureRequest.prototype['eEzsigntemplatesignatureDependencyrequirement'] = undefined;
 
 
 
