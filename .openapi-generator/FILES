@@ -880,6 +880,7 @@ docs/ObjectUserApi.md
 docs/ObjectUsergroupApi.md
 docs/ObjectUsergroupdelegationApi.md
 docs/ObjectUsergroupmembershipApi.md
+docs/ObjectUserlogintypeApi.md
 docs/ObjectUserstagedApi.md
 docs/ObjectVariableexpenseApi.md
 docs/ObjectVersionhistoryApi.md
@@ -1075,6 +1076,9 @@ docs/UsergroupmembershipRequest.md
 docs/UsergroupmembershipRequestCompound.md
 docs/UsergroupmembershipResponse.md
 docs/UsergroupmembershipResponseCompound.md
+docs/UserlogintypeAutocompleteElementResponse.md
+docs/UserlogintypeGetAutocompleteV2Response.md
+docs/UserlogintypeGetAutocompleteV2ResponseMPayload.md
 docs/UserstagedCreateUserV1Response.md
 docs/UserstagedCreateUserV1ResponseMPayload.md
 docs/UserstagedDeleteObjectV1Response.md
@@ -1210,6 +1214,7 @@ src/eZmaxAPI/api/ObjectUserApi.js
 src/eZmaxAPI/api/ObjectUsergroupApi.js
 src/eZmaxAPI/api/ObjectUsergroupdelegationApi.js
 src/eZmaxAPI/api/ObjectUsergroupmembershipApi.js
+src/eZmaxAPI/api/ObjectUserlogintypeApi.js
 src/eZmaxAPI/api/ObjectUserstagedApi.js
 src/eZmaxAPI/api/ObjectVariableexpenseApi.js
 src/eZmaxAPI/api/ObjectVersionhistoryApi.js
@@ -2218,6 +2223,9 @@ src/eZmaxAPI/model/UsergroupmembershipRequest.js
 src/eZmaxAPI/model/UsergroupmembershipRequestCompound.js
 src/eZmaxAPI/model/UsergroupmembershipResponse.js
 src/eZmaxAPI/model/UsergroupmembershipResponseCompound.js
+src/eZmaxAPI/model/UserlogintypeAutocompleteElementResponse.js
+src/eZmaxAPI/model/UserlogintypeGetAutocompleteV2Response.js
+src/eZmaxAPI/model/UserlogintypeGetAutocompleteV2ResponseMPayload.js
 src/eZmaxAPI/model/UserstagedCreateUserV1Response.js
 src/eZmaxAPI/model/UserstagedCreateUserV1ResponseMPayload.js
 src/eZmaxAPI/model/UserstagedDeleteObjectV1Response.js
@@ -2349,6 +2357,7 @@ test/eZmaxAPI/api/ObjectUserApi.spec.js
 test/eZmaxAPI/api/ObjectUsergroupApi.spec.js
 test/eZmaxAPI/api/ObjectUsergroupdelegationApi.spec.js
 test/eZmaxAPI/api/ObjectUsergroupmembershipApi.spec.js
+test/eZmaxAPI/api/ObjectUserlogintypeApi.spec.js
 test/eZmaxAPI/api/ObjectUserstagedApi.spec.js
 test/eZmaxAPI/api/ObjectVariableexpenseApi.spec.js
 test/eZmaxAPI/api/ObjectVersionhistoryApi.spec.js
@@ -3356,6 +3365,9 @@ test/eZmaxAPI/model/UsergroupmembershipRequest.spec.js
 test/eZmaxAPI/model/UsergroupmembershipRequestCompound.spec.js
 test/eZmaxAPI/model/UsergroupmembershipResponse.spec.js
 test/eZmaxAPI/model/UsergroupmembershipResponseCompound.spec.js
+test/eZmaxAPI/model/UserlogintypeAutocompleteElementResponse.spec.js
+test/eZmaxAPI/model/UserlogintypeGetAutocompleteV2Response.spec.js
+test/eZmaxAPI/model/UserlogintypeGetAutocompleteV2ResponseMPayload.spec.js
 test/eZmaxAPI/model/UserstagedCreateUserV1Response.spec.js
 test/eZmaxAPI/model/UserstagedCreateUserV1ResponseMPayload.spec.js
 test/eZmaxAPI/model/UserstagedDeleteObjectV1Response.spec.js

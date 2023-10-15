@@ -55,6 +55,20 @@ export default class FieldEEzsigndocumentlogType {
 
     
         /**
+         * value: "Badresponse"
+         * @const
+         */
+        "Badresponse" = "Badresponse";
+
+    
+        /**
+         * value: "Goodresponse"
+         * @const
+         */
+        "Goodresponse" = "Goodresponse";
+
+    
+        /**
          * value: "Authentication"
          * @const
          */
@@ -185,6 +199,20 @@ export default class FieldEEzsigndocumentlogType {
          * @const
          */
         "DelayedSendEmail" = "DelayedSendEmail";
+
+    
+        /**
+         * value: "AnnotationAdded"
+         * @const
+         */
+        "AnnotationAdded" = "AnnotationAdded";
+
+    
+        /**
+         * value: "Flatten"
+         * @const
+         */
+        "Flatten" = "Flatten";
 
     
         /**

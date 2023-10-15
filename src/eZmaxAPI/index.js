@@ -1013,6 +1013,9 @@ import UsergroupmembershipRequest from './model/UsergroupmembershipRequest';
 import UsergroupmembershipRequestCompound from './model/UsergroupmembershipRequestCompound';
 import UsergroupmembershipResponse from './model/UsergroupmembershipResponse';
 import UsergroupmembershipResponseCompound from './model/UsergroupmembershipResponseCompound';
+import UserlogintypeAutocompleteElementResponse from './model/UserlogintypeAutocompleteElementResponse';
+import UserlogintypeGetAutocompleteV2Response from './model/UserlogintypeGetAutocompleteV2Response';
+import UserlogintypeGetAutocompleteV2ResponseMPayload from './model/UserlogintypeGetAutocompleteV2ResponseMPayload';
 import UserstagedCreateUserV1Response from './model/UserstagedCreateUserV1Response';
 import UserstagedCreateUserV1ResponseMPayload from './model/UserstagedCreateUserV1ResponseMPayload';
 import UserstagedDeleteObjectV1Response from './model/UserstagedDeleteObjectV1Response';
@@ -1144,6 +1147,7 @@ import ObjectUserApi from './api/ObjectUserApi';
 import ObjectUsergroupApi from './api/ObjectUsergroupApi';
 import ObjectUsergroupdelegationApi from './api/ObjectUsergroupdelegationApi';
 import ObjectUsergroupmembershipApi from './api/ObjectUsergroupmembershipApi';
+import ObjectUserlogintypeApi from './api/ObjectUserlogintypeApi';
 import ObjectUserstagedApi from './api/ObjectUserstagedApi';
 import ObjectVariableexpenseApi from './api/ObjectVariableexpenseApi';
 import ObjectVersionhistoryApi from './api/ObjectVersionhistoryApi';
@@ -7192,6 +7196,24 @@ export {
     UsergroupmembershipResponseCompound,
 
     /**
+     * The UserlogintypeAutocompleteElementResponse model constructor.
+     * @property {module:eZmaxAPI/model/UserlogintypeAutocompleteElementResponse}
+     */
+    UserlogintypeAutocompleteElementResponse,
+
+    /**
+     * The UserlogintypeGetAutocompleteV2Response model constructor.
+     * @property {module:eZmaxAPI/model/UserlogintypeGetAutocompleteV2Response}
+     */
+    UserlogintypeGetAutocompleteV2Response,
+
+    /**
+     * The UserlogintypeGetAutocompleteV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/UserlogintypeGetAutocompleteV2ResponseMPayload}
+     */
+    UserlogintypeGetAutocompleteV2ResponseMPayload,
+
+    /**
      * The UserstagedCreateUserV1Response model constructor.
      * @property {module:eZmaxAPI/model/UserstagedCreateUserV1Response}
      */
@@ -7976,6 +7998,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectUsergroupmembershipApi}
     */
     ObjectUsergroupmembershipApi,
+
+    /**
+    * The ObjectUserlogintypeApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectUserlogintypeApi}
+    */
+    ObjectUserlogintypeApi,
 
     /**
     * The ObjectUserstagedApi service constructor.

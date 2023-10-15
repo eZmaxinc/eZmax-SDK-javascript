@@ -391,6 +391,7 @@ Class | Method | HTTP request | Description
 *EZmaxApiDefinitionFull.ObjectUsergroupmembershipApi* | [**usergroupmembershipDeleteObjectV1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembershipDeleteObjectV1) | **DELETE** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Delete an existing Usergroupmembership
 *EZmaxApiDefinitionFull.ObjectUsergroupmembershipApi* | [**usergroupmembershipEditObjectV1**](docs/ObjectUsergroupmembershipApi.md#usergroupmembershipEditObjectV1) | **PUT** /1/object/usergroupmembership/{pkiUsergroupmembershipID} | Edit an existing Usergroupmembership
 *EZmaxApiDefinitionFull.ObjectUsergroupmembershipApi* | [**usergroupmembershipGetObjectV2**](docs/ObjectUsergroupmembershipApi.md#usergroupmembershipGetObjectV2) | **GET** /2/object/usergroupmembership/{pkiUsergroupmembershipID} | Retrieve an existing Usergroupmembership
+*EZmaxApiDefinitionFull.ObjectUserlogintypeApi* | [**userlogintypeGetAutocompleteV2**](docs/ObjectUserlogintypeApi.md#userlogintypeGetAutocompleteV2) | **GET** /2/object/userlogintype/getAutocomplete/{sSelector} | Retrieve Userlogintypes and IDs
 *EZmaxApiDefinitionFull.ObjectUserstagedApi* | [**userstagedCreateUserV1**](docs/ObjectUserstagedApi.md#userstagedCreateUserV1) | **POST** /1/object/userstaged/{pkiUserstagedID}/createUser | Create a User from a Userstaged and then map it
 *EZmaxApiDefinitionFull.ObjectUserstagedApi* | [**userstagedDeleteObjectV1**](docs/ObjectUserstagedApi.md#userstagedDeleteObjectV1) | **DELETE** /1/object/userstaged/{pkiUserstagedID} | Delete an existing Userstaged
 *EZmaxApiDefinitionFull.ObjectUserstagedApi* | [**userstagedGetListV1**](docs/ObjectUserstagedApi.md#userstagedGetListV1) | **GET** /1/object/userstaged/getList | Retrieve Userstaged list
@@ -1424,6 +1425,9 @@ Class | Method | HTTP request | Description
  - [EZmaxApiDefinitionFull.UsergroupmembershipRequestCompound](docs/UsergroupmembershipRequestCompound.md)
  - [EZmaxApiDefinitionFull.UsergroupmembershipResponse](docs/UsergroupmembershipResponse.md)
  - [EZmaxApiDefinitionFull.UsergroupmembershipResponseCompound](docs/UsergroupmembershipResponseCompound.md)
+ - [EZmaxApiDefinitionFull.UserlogintypeAutocompleteElementResponse](docs/UserlogintypeAutocompleteElementResponse.md)
+ - [EZmaxApiDefinitionFull.UserlogintypeGetAutocompleteV2Response](docs/UserlogintypeGetAutocompleteV2Response.md)
+ - [EZmaxApiDefinitionFull.UserlogintypeGetAutocompleteV2ResponseMPayload](docs/UserlogintypeGetAutocompleteV2ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.UserstagedCreateUserV1Response](docs/UserstagedCreateUserV1Response.md)
  - [EZmaxApiDefinitionFull.UserstagedCreateUserV1ResponseMPayload](docs/UserstagedCreateUserV1ResponseMPayload.md)
  - [EZmaxApiDefinitionFull.UserstagedDeleteObjectV1Response](docs/UserstagedDeleteObjectV1Response.md)
