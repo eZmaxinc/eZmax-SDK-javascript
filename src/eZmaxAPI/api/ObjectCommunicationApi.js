@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonResponseError from '../model/CommonResponseError';
-import CommunicationGetObjectV2Response from '../model/CommunicationGetObjectV2Response';
+import CommunicationSendV1Request from '../model/CommunicationSendV1Request';
+import CommunicationSendV1Response from '../model/CommunicationSendV1Response';
 
 /**
 * ObjectCommunication service.
@@ -36,29 +36,28 @@ export default class ObjectCommunicationApi {
 
 
     /**
-     * Callback function to receive the result of the communicationGetObjectV2 operation.
-     * @callback module:eZmaxAPI/api/ObjectCommunicationApi~communicationGetObjectV2Callback
+     * Callback function to receive the result of the communicationSendV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectCommunicationApi~communicationSendV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommunicationGetObjectV2Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/CommunicationSendV1Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieve an existing Communication
-     * 
-     * @param {Number} pkiCommunicationID 
-     * @param {module:eZmaxAPI/api/ObjectCommunicationApi~communicationGetObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommunicationGetObjectV2Response}
+     * Send a new Communication
+     * The endpoint allows to send one or many elements at once.
+     * @param {module:eZmaxAPI/model/CommunicationSendV1Request} CommunicationSendV1Request 
+     * @param {module:eZmaxAPI/api/ObjectCommunicationApi~communicationSendV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/CommunicationSendV1Response}
      */
-    communicationGetObjectV2(pkiCommunicationID, callback) {
-      let postBody = null;
-      // verify the required parameter 'pkiCommunicationID' is set
-      if (pkiCommunicationID === undefined || pkiCommunicationID === null) {
-        throw new Error("Missing the required parameter 'pkiCommunicationID' when calling communicationGetObjectV2");
+    communicationSendV1(CommunicationSendV1Request, callback) {
+      let postBody = CommunicationSendV1Request;
+      // verify the required parameter 'CommunicationSendV1Request' is set
+      if (CommunicationSendV1Request === undefined || CommunicationSendV1Request === null) {
+        throw new Error("Missing the required parameter 'CommunicationSendV1Request' when calling communicationSendV1");
       }
 
       let pathParams = {
-        'pkiCommunicationID': pkiCommunicationID
       };
       let queryParams = {
       };
@@ -68,11 +67,11 @@ export default class ObjectCommunicationApi {
       };
 
       let authNames = ['Authorization'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CommunicationGetObjectV2Response;
+      let returnType = CommunicationSendV1Response;
       return this.apiClient.callApi(
-        '/2/object/communication/{pkiCommunicationID}', 'GET',
+        '/1/object/communication/send', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

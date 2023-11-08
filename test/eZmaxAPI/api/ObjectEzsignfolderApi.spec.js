@@ -158,6 +158,26 @@
         done();
       });
     });
+    describe('ezsignfolderGetCommunicationrecipientsV1', function() {
+      it('should call ezsignfolderGetCommunicationrecipientsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetCommunicationrecipientsV1
+        //instance.ezsignfolderGetCommunicationrecipientsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderGetCommunicationsendersV1', function() {
+      it('should call ezsignfolderGetCommunicationsendersV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetCommunicationsendersV1
+        //instance.ezsignfolderGetCommunicationsendersV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetEzsigndocumentsV1', function() {
       it('should call ezsignfolderGetEzsigndocumentsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetEzsigndocumentsV1

@@ -290,7 +290,7 @@ export default class ObjectEzsigntemplatepackageApi {
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
      * @param {Object} opts Optional parameters
      * @param {module:eZmaxAPI/model/String} [eOrderBy] Specify how you want the results to be sorted
-     * @param {Number} [iRowMax = 10000)] 
+     * @param {Number} [iRowMax] 
      * @param {Number} [iRowOffset = 0)] 
      * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
      * @param {String} [sFilter] 

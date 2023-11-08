@@ -48,10 +48,10 @@
   }
 
   describe('ObjectCommunicationApi', function() {
-    describe('communicationGetObjectV2', function() {
-      it('should call communicationGetObjectV2 successfully', function(done) {
-        //uncomment below and update the code to test communicationGetObjectV2
-        //instance.communicationGetObjectV2(function(error) {
+    describe('communicationSendV1', function() {
+      it('should call communicationSendV1 successfully', function(done) {
+        //uncomment below and update the code to test communicationSendV1
+        //instance.communicationSendV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

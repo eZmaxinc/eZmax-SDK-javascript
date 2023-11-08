@@ -33,11 +33,12 @@ class WebhookResponseCompound {
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
      * @param sWebhookUrl {String} The URL of the Webhook callback
      * @param sWebhookEmailfailed {String} The email that will receive the Webhook in case all attempts fail
+     * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
-        WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation) { 
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation);
+        WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation);
     }
 
     /**
@@ -45,12 +46,13 @@ class WebhookResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
         obj['sWebhookUrl'] = sWebhookUrl;
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
+        obj['bWebhookIsactive'] = bWebhookIsactive;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
 
@@ -320,7 +322,7 @@ class WebhookResponseCompound {
 
 }
 
-WebhookResponseCompound.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookSkipsslvalidation"];
+WebhookResponseCompound.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookSkipsslvalidation"];
 
 /**
  * The unique ID of the Webhook

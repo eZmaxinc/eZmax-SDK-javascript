@@ -33,13 +33,14 @@ class CustomWebhookResponse {
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
      * @param sWebhookUrl {String} The URL of the Webhook callback
      * @param sWebhookEmailfailed {String} The email that will receive the Webhook in case all attempts fail
+     * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
      * @param pksCustomerCode {String} The customer code assigned to your account
      * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation);
-        CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest);
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation);
+        CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest);
     }
 
     /**
@@ -47,12 +48,13 @@ class CustomWebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
         obj['sWebhookUrl'] = sWebhookUrl;
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
+        obj['bWebhookIsactive'] = bWebhookIsactive;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
         obj['pksCustomerCode'] = pksCustomerCode;
         obj['bWebhookTest'] = bWebhookTest;
@@ -342,7 +344,7 @@ class CustomWebhookResponse {
 
 }
 
-CustomWebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookSkipsslvalidation", "pksCustomerCode", "bWebhookTest"];
+CustomWebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookSkipsslvalidation", "pksCustomerCode", "bWebhookTest"];
 
 /**
  * The unique ID of the Webhook

@@ -50,6 +50,7 @@ import ApikeyRequest from './model/ApikeyRequest';
 import ApikeyRequestCompound from './model/ApikeyRequestCompound';
 import ApikeyResponse from './model/ApikeyResponse';
 import ApikeyResponseCompound from './model/ApikeyResponseCompound';
+import AttachmentDownloadV1Response from './model/AttachmentDownloadV1Response';
 import AttemptResponse from './model/AttemptResponse';
 import AttemptResponseCompound from './model/AttemptResponseCompound';
 import BillingentityexternalAutocompleteElementResponse from './model/BillingentityexternalAutocompleteElementResponse';
@@ -93,6 +94,8 @@ import BrandingRequest from './model/BrandingRequest';
 import BrandingRequestCompound from './model/BrandingRequestCompound';
 import BrandingResponse from './model/BrandingResponse';
 import BrandingResponseCompound from './model/BrandingResponseCompound';
+import BuyercontractGetCommunicationListV1Response from './model/BuyercontractGetCommunicationListV1Response';
+import BuyercontractGetCommunicationListV1ResponseMPayload from './model/BuyercontractGetCommunicationListV1ResponseMPayload';
 import ClonehistoryGetListV1Response from './model/ClonehistoryGetListV1Response';
 import ClonehistoryGetListV1ResponseMPayload from './model/ClonehistoryGetListV1ResponseMPayload';
 import ClonehistoryListElement from './model/ClonehistoryListElement';
@@ -126,16 +129,19 @@ import CommonResponseObjSQLQuery from './model/CommonResponseObjSQLQuery';
 import CommonResponseRedirectSSecretquestionTextX from './model/CommonResponseRedirectSSecretquestionTextX';
 import CommonResponseWarning from './model/CommonResponseWarning';
 import CommonWebhook from './model/CommonWebhook';
-import CommunicationGetObjectV2Response from './model/CommunicationGetObjectV2Response';
-import CommunicationGetObjectV2ResponseMPayload from './model/CommunicationGetObjectV2ResponseMPayload';
-import CommunicationResponse from './model/CommunicationResponse';
-import CommunicationResponseCompound from './model/CommunicationResponseCompound';
-import CommunicationattachmentResponse from './model/CommunicationattachmentResponse';
-import CommunicationattachmentResponseCompound from './model/CommunicationattachmentResponseCompound';
-import CommunicationexternalrecipientResponse from './model/CommunicationexternalrecipientResponse';
-import CommunicationexternalrecipientResponseCompound from './model/CommunicationexternalrecipientResponseCompound';
-import CommunicationrecipientResponse from './model/CommunicationrecipientResponse';
-import CommunicationrecipientResponseCompound from './model/CommunicationrecipientResponseCompound';
+import CommunicationCreateObjectV1ResponseMPayload from './model/CommunicationCreateObjectV1ResponseMPayload';
+import CommunicationRequest from './model/CommunicationRequest';
+import CommunicationRequestCompound from './model/CommunicationRequestCompound';
+import CommunicationSendV1Request from './model/CommunicationSendV1Request';
+import CommunicationSendV1Response from './model/CommunicationSendV1Response';
+import CommunicationattachmentRequest from './model/CommunicationattachmentRequest';
+import CommunicationattachmentRequestCompound from './model/CommunicationattachmentRequestCompound';
+import CommunicationexternalrecipientRequest from './model/CommunicationexternalrecipientRequest';
+import CommunicationexternalrecipientRequestCompound from './model/CommunicationexternalrecipientRequestCompound';
+import CommunicationrecipientRequest from './model/CommunicationrecipientRequest';
+import CommunicationrecipientRequestCompound from './model/CommunicationrecipientRequestCompound';
+import CommunicationreferenceRequest from './model/CommunicationreferenceRequest';
+import CommunicationreferenceRequestCompound from './model/CommunicationreferenceRequestCompound';
 import CompanyAutocompleteElementResponse from './model/CompanyAutocompleteElementResponse';
 import CompanyGetAutocompleteV2Response from './model/CompanyGetAutocompleteV2Response';
 import CompanyGetAutocompleteV2ResponseMPayload from './model/CompanyGetAutocompleteV2ResponseMPayload';
@@ -159,6 +165,11 @@ import CorsResponse from './model/CorsResponse';
 import CorsResponseCompound from './model/CorsResponseCompound';
 import CustomAutocompleteElementResponse from './model/CustomAutocompleteElementResponse';
 import CustomCommunicationListElementResponse from './model/CustomCommunicationListElementResponse';
+import CustomCommunicationattachmentRequest from './model/CustomCommunicationattachmentRequest';
+import CustomCommunicationrecipientsgroupResponse from './model/CustomCommunicationrecipientsgroupResponse';
+import CustomCommunicationrecipientsrecipientResponse from './model/CustomCommunicationrecipientsrecipientResponse';
+import CustomCommunicationsenderRequest from './model/CustomCommunicationsenderRequest';
+import CustomCommunicationsenderResponse from './model/CustomCommunicationsenderResponse';
 import CustomContactNameResponse from './model/CustomContactNameResponse';
 import CustomCreditcardtransactionResponse from './model/CustomCreditcardtransactionResponse';
 import CustomDropdownElementRequest from './model/CustomDropdownElementRequest';
@@ -198,14 +209,12 @@ import CustomWordPositionWordResponse from './model/CustomWordPositionWordRespon
 import DepartmentAutocompleteElementResponse from './model/DepartmentAutocompleteElementResponse';
 import DepartmentGetAutocompleteV2Response from './model/DepartmentGetAutocompleteV2Response';
 import DepartmentGetAutocompleteV2ResponseMPayload from './model/DepartmentGetAutocompleteV2ResponseMPayload';
-import DescriptionstaticResponse from './model/DescriptionstaticResponse';
-import DescriptionstaticResponseCompound from './model/DescriptionstaticResponseCompound';
+import ElectronicfundstransferGetCommunicationListV1Response from './model/ElectronicfundstransferGetCommunicationListV1Response';
+import ElectronicfundstransferGetCommunicationListV1ResponseMPayload from './model/ElectronicfundstransferGetCommunicationListV1ResponseMPayload';
 import EmailRequest from './model/EmailRequest';
 import EmailRequestCompound from './model/EmailRequestCompound';
 import EmailResponse from './model/EmailResponse';
 import EmailResponseCompound from './model/EmailResponseCompound';
-import EmailstaticResponse from './model/EmailstaticResponse';
-import EmailstaticResponseCompound from './model/EmailstaticResponseCompound';
 import EmailtypeAutocompleteElementResponse from './model/EmailtypeAutocompleteElementResponse';
 import EmailtypeGetAutocompleteV2Response from './model/EmailtypeGetAutocompleteV2Response';
 import EmailtypeGetAutocompleteV2ResponseMPayload from './model/EmailtypeGetAutocompleteV2ResponseMPayload';
@@ -387,6 +396,10 @@ import EzsignfolderGetCommunicationCountV1Response from './model/EzsignfolderGet
 import EzsignfolderGetCommunicationCountV1ResponseMPayload from './model/EzsignfolderGetCommunicationCountV1ResponseMPayload';
 import EzsignfolderGetCommunicationListV1Response from './model/EzsignfolderGetCommunicationListV1Response';
 import EzsignfolderGetCommunicationListV1ResponseMPayload from './model/EzsignfolderGetCommunicationListV1ResponseMPayload';
+import EzsignfolderGetCommunicationrecipientsV1Response from './model/EzsignfolderGetCommunicationrecipientsV1Response';
+import EzsignfolderGetCommunicationrecipientsV1ResponseMPayload from './model/EzsignfolderGetCommunicationrecipientsV1ResponseMPayload';
+import EzsignfolderGetCommunicationsendersV1Response from './model/EzsignfolderGetCommunicationsendersV1Response';
+import EzsignfolderGetCommunicationsendersV1ResponseMPayload from './model/EzsignfolderGetCommunicationsendersV1ResponseMPayload';
 import EzsignfolderGetEzsigndocumentsV1Response from './model/EzsignfolderGetEzsigndocumentsV1Response';
 import EzsignfolderGetEzsigndocumentsV1ResponseMPayload from './model/EzsignfolderGetEzsigndocumentsV1ResponseMPayload';
 import EzsignfolderGetEzsignfoldersignerassociationsV1Response from './model/EzsignfolderGetEzsignfoldersignerassociationsV1Response';
@@ -715,7 +728,6 @@ import FieldEBrandingLogo from './model/FieldEBrandingLogo';
 import FieldECommunicationImportance from './model/FieldECommunicationImportance';
 import FieldECommunicationType from './model/FieldECommunicationType';
 import FieldECommunicationexternalrecipientType from './model/FieldECommunicationexternalrecipientType';
-import FieldECommunicationrecipientObjecttype from './model/FieldECommunicationrecipientObjecttype';
 import FieldECommunicationrecipientType from './model/FieldECommunicationrecipientType';
 import FieldECreditcardtypeCodename from './model/FieldECreditcardtypeCodename';
 import FieldEErrorCode from './model/FieldEErrorCode';
@@ -795,6 +807,14 @@ import GlobalCustomerGetEndpointV1Response from './model/GlobalCustomerGetEndpoi
 import GlobalEzmaxclientVersionV1Response from './model/GlobalEzmaxclientVersionV1Response';
 import GlobalEzmaxcustomerGetConfigurationV1Response from './model/GlobalEzmaxcustomerGetConfigurationV1Response';
 import HeaderAcceptLanguage from './model/HeaderAcceptLanguage';
+import InscriptionGetCommunicationListV1Response from './model/InscriptionGetCommunicationListV1Response';
+import InscriptionGetCommunicationListV1ResponseMPayload from './model/InscriptionGetCommunicationListV1ResponseMPayload';
+import InscriptionnotauthenticatedGetCommunicationListV1Response from './model/InscriptionnotauthenticatedGetCommunicationListV1Response';
+import InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload from './model/InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload';
+import InscriptiontempGetCommunicationListV1Response from './model/InscriptiontempGetCommunicationListV1Response';
+import InscriptiontempGetCommunicationListV1ResponseMPayload from './model/InscriptiontempGetCommunicationListV1ResponseMPayload';
+import InvoiceGetCommunicationListV1Response from './model/InvoiceGetCommunicationListV1Response';
+import InvoiceGetCommunicationListV1ResponseMPayload from './model/InvoiceGetCommunicationListV1ResponseMPayload';
 import LanguageAutocompleteElementResponse from './model/LanguageAutocompleteElementResponse';
 import LanguageGetAutocompleteV2Response from './model/LanguageGetAutocompleteV2Response';
 import LanguageGetAutocompleteV2ResponseMPayload from './model/LanguageGetAutocompleteV2ResponseMPayload';
@@ -825,6 +845,8 @@ import NotificationsubsectionResponse from './model/NotificationsubsectionRespon
 import NotificationtestGetElementsV1Response from './model/NotificationtestGetElementsV1Response';
 import NotificationtestGetElementsV1ResponseMPayload from './model/NotificationtestGetElementsV1ResponseMPayload';
 import NotificationtestResponse from './model/NotificationtestResponse';
+import OtherincomeGetCommunicationListV1Response from './model/OtherincomeGetCommunicationListV1Response';
+import OtherincomeGetCommunicationListV1ResponseMPayload from './model/OtherincomeGetCommunicationListV1ResponseMPayload';
 import PaymenttermAutocompleteElementResponse from './model/PaymenttermAutocompleteElementResponse';
 import PaymenttermCreateObjectV1Request from './model/PaymenttermCreateObjectV1Request';
 import PaymenttermCreateObjectV1Response from './model/PaymenttermCreateObjectV1Response';
@@ -861,11 +883,11 @@ import PhoneRequest from './model/PhoneRequest';
 import PhoneRequestCompound from './model/PhoneRequestCompound';
 import PhoneResponse from './model/PhoneResponse';
 import PhoneResponseCompound from './model/PhoneResponseCompound';
-import PhonestaticResponse from './model/PhonestaticResponse';
-import PhonestaticResponseCompound from './model/PhonestaticResponseCompound';
 import PhonetypeAutocompleteElementResponse from './model/PhonetypeAutocompleteElementResponse';
 import PhonetypeGetAutocompleteV2Response from './model/PhonetypeGetAutocompleteV2Response';
 import PhonetypeGetAutocompleteV2ResponseMPayload from './model/PhonetypeGetAutocompleteV2ResponseMPayload';
+import RejectedoffertopurchaseGetCommunicationListV1Response from './model/RejectedoffertopurchaseGetCommunicationListV1Response';
+import RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload from './model/RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload';
 import ScimAuthenticationScheme from './model/ScimAuthenticationScheme';
 import ScimEmail from './model/ScimEmail';
 import ScimGroup from './model/ScimGroup';
@@ -1090,14 +1112,17 @@ import ModuleReportApi from './api/ModuleReportApi';
 import ModuleUserApi from './api/ModuleUserApi';
 import ObjectActivesessionApi from './api/ObjectActivesessionApi';
 import ObjectApikeyApi from './api/ObjectApikeyApi';
+import ObjectAttachmentApi from './api/ObjectAttachmentApi';
 import ObjectBillingentityexternalApi from './api/ObjectBillingentityexternalApi';
 import ObjectBillingentityinternalApi from './api/ObjectBillingentityinternalApi';
 import ObjectBrandingApi from './api/ObjectBrandingApi';
+import ObjectBuyercontractApi from './api/ObjectBuyercontractApi';
 import ObjectClonehistoryApi from './api/ObjectClonehistoryApi';
 import ObjectCommunicationApi from './api/ObjectCommunicationApi';
 import ObjectCompanyApi from './api/ObjectCompanyApi';
 import ObjectCorsApi from './api/ObjectCorsApi';
 import ObjectDepartmentApi from './api/ObjectDepartmentApi';
+import ObjectElectronicfundstransferApi from './api/ObjectElectronicfundstransferApi';
 import ObjectEmailtypeApi from './api/ObjectEmailtypeApi';
 import ObjectEzmaxinvoicingApi from './api/ObjectEzmaxinvoicingApi';
 import ObjectEzmaxproductApi from './api/ObjectEzmaxproductApi';
@@ -1128,14 +1153,20 @@ import ObjectFontApi from './api/ObjectFontApi';
 import ObjectFranchisebrokerApi from './api/ObjectFranchisebrokerApi';
 import ObjectFranchiseofficeApi from './api/ObjectFranchiseofficeApi';
 import ObjectFranchisereferalincomeApi from './api/ObjectFranchisereferalincomeApi';
+import ObjectInscriptionApi from './api/ObjectInscriptionApi';
+import ObjectInscriptionnotauthenticatedApi from './api/ObjectInscriptionnotauthenticatedApi';
+import ObjectInscriptiontempApi from './api/ObjectInscriptiontempApi';
+import ObjectInvoiceApi from './api/ObjectInvoiceApi';
 import ObjectLanguageApi from './api/ObjectLanguageApi';
 import ObjectModulegroupApi from './api/ObjectModulegroupApi';
 import ObjectNotificationsectionApi from './api/ObjectNotificationsectionApi';
 import ObjectNotificationtestApi from './api/ObjectNotificationtestApi';
+import ObjectOtherincomeApi from './api/ObjectOtherincomeApi';
 import ObjectPaymenttermApi from './api/ObjectPaymenttermApi';
 import ObjectPeriodApi from './api/ObjectPeriodApi';
 import ObjectPermissionApi from './api/ObjectPermissionApi';
 import ObjectPhonetypeApi from './api/ObjectPhonetypeApi';
+import ObjectRejectedoffertopurchaseApi from './api/ObjectRejectedoffertopurchaseApi';
 import ObjectSecretquestionApi from './api/ObjectSecretquestionApi';
 import ObjectSessionhistoryApi from './api/ObjectSessionhistoryApi';
 import ObjectSignatureApi from './api/ObjectSignatureApi';
@@ -1418,6 +1449,12 @@ export {
     ApikeyResponseCompound,
 
     /**
+     * The AttachmentDownloadV1Response model constructor.
+     * @property {module:eZmaxAPI/model/AttachmentDownloadV1Response}
+     */
+    AttachmentDownloadV1Response,
+
+    /**
      * The AttemptResponse model constructor.
      * @property {module:eZmaxAPI/model/AttemptResponse}
      */
@@ -1676,6 +1713,18 @@ export {
     BrandingResponseCompound,
 
     /**
+     * The BuyercontractGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/BuyercontractGetCommunicationListV1Response}
+     */
+    BuyercontractGetCommunicationListV1Response,
+
+    /**
+     * The BuyercontractGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/BuyercontractGetCommunicationListV1ResponseMPayload}
+     */
+    BuyercontractGetCommunicationListV1ResponseMPayload,
+
+    /**
      * The ClonehistoryGetListV1Response model constructor.
      * @property {module:eZmaxAPI/model/ClonehistoryGetListV1Response}
      */
@@ -1874,64 +1923,82 @@ export {
     CommonWebhook,
 
     /**
-     * The CommunicationGetObjectV2Response model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationGetObjectV2Response}
+     * The CommunicationCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationCreateObjectV1ResponseMPayload}
      */
-    CommunicationGetObjectV2Response,
+    CommunicationCreateObjectV1ResponseMPayload,
 
     /**
-     * The CommunicationGetObjectV2ResponseMPayload model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationGetObjectV2ResponseMPayload}
+     * The CommunicationRequest model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationRequest}
      */
-    CommunicationGetObjectV2ResponseMPayload,
+    CommunicationRequest,
 
     /**
-     * The CommunicationResponse model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationResponse}
+     * The CommunicationRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationRequestCompound}
      */
-    CommunicationResponse,
+    CommunicationRequestCompound,
 
     /**
-     * The CommunicationResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationResponseCompound}
+     * The CommunicationSendV1Request model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationSendV1Request}
      */
-    CommunicationResponseCompound,
+    CommunicationSendV1Request,
 
     /**
-     * The CommunicationattachmentResponse model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationattachmentResponse}
+     * The CommunicationSendV1Response model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationSendV1Response}
      */
-    CommunicationattachmentResponse,
+    CommunicationSendV1Response,
 
     /**
-     * The CommunicationattachmentResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationattachmentResponseCompound}
+     * The CommunicationattachmentRequest model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationattachmentRequest}
      */
-    CommunicationattachmentResponseCompound,
+    CommunicationattachmentRequest,
 
     /**
-     * The CommunicationexternalrecipientResponse model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationexternalrecipientResponse}
+     * The CommunicationattachmentRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationattachmentRequestCompound}
      */
-    CommunicationexternalrecipientResponse,
+    CommunicationattachmentRequestCompound,
 
     /**
-     * The CommunicationexternalrecipientResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationexternalrecipientResponseCompound}
+     * The CommunicationexternalrecipientRequest model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationexternalrecipientRequest}
      */
-    CommunicationexternalrecipientResponseCompound,
+    CommunicationexternalrecipientRequest,
 
     /**
-     * The CommunicationrecipientResponse model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationrecipientResponse}
+     * The CommunicationexternalrecipientRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationexternalrecipientRequestCompound}
      */
-    CommunicationrecipientResponse,
+    CommunicationexternalrecipientRequestCompound,
 
     /**
-     * The CommunicationrecipientResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/CommunicationrecipientResponseCompound}
+     * The CommunicationrecipientRequest model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationrecipientRequest}
      */
-    CommunicationrecipientResponseCompound,
+    CommunicationrecipientRequest,
+
+    /**
+     * The CommunicationrecipientRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationrecipientRequestCompound}
+     */
+    CommunicationrecipientRequestCompound,
+
+    /**
+     * The CommunicationreferenceRequest model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationreferenceRequest}
+     */
+    CommunicationreferenceRequest,
+
+    /**
+     * The CommunicationreferenceRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/CommunicationreferenceRequestCompound}
+     */
+    CommunicationreferenceRequestCompound,
 
     /**
      * The CompanyAutocompleteElementResponse model constructor.
@@ -2070,6 +2137,36 @@ export {
      * @property {module:eZmaxAPI/model/CustomCommunicationListElementResponse}
      */
     CustomCommunicationListElementResponse,
+
+    /**
+     * The CustomCommunicationattachmentRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomCommunicationattachmentRequest}
+     */
+    CustomCommunicationattachmentRequest,
+
+    /**
+     * The CustomCommunicationrecipientsgroupResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomCommunicationrecipientsgroupResponse}
+     */
+    CustomCommunicationrecipientsgroupResponse,
+
+    /**
+     * The CustomCommunicationrecipientsrecipientResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomCommunicationrecipientsrecipientResponse}
+     */
+    CustomCommunicationrecipientsrecipientResponse,
+
+    /**
+     * The CustomCommunicationsenderRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomCommunicationsenderRequest}
+     */
+    CustomCommunicationsenderRequest,
+
+    /**
+     * The CustomCommunicationsenderResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomCommunicationsenderResponse}
+     */
+    CustomCommunicationsenderResponse,
 
     /**
      * The CustomContactNameResponse model constructor.
@@ -2306,16 +2403,16 @@ export {
     DepartmentGetAutocompleteV2ResponseMPayload,
 
     /**
-     * The DescriptionstaticResponse model constructor.
-     * @property {module:eZmaxAPI/model/DescriptionstaticResponse}
+     * The ElectronicfundstransferGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/ElectronicfundstransferGetCommunicationListV1Response}
      */
-    DescriptionstaticResponse,
+    ElectronicfundstransferGetCommunicationListV1Response,
 
     /**
-     * The DescriptionstaticResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/DescriptionstaticResponseCompound}
+     * The ElectronicfundstransferGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/ElectronicfundstransferGetCommunicationListV1ResponseMPayload}
      */
-    DescriptionstaticResponseCompound,
+    ElectronicfundstransferGetCommunicationListV1ResponseMPayload,
 
     /**
      * The EmailRequest model constructor.
@@ -2340,18 +2437,6 @@ export {
      * @property {module:eZmaxAPI/model/EmailResponseCompound}
      */
     EmailResponseCompound,
-
-    /**
-     * The EmailstaticResponse model constructor.
-     * @property {module:eZmaxAPI/model/EmailstaticResponse}
-     */
-    EmailstaticResponse,
-
-    /**
-     * The EmailstaticResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/EmailstaticResponseCompound}
-     */
-    EmailstaticResponseCompound,
 
     /**
      * The EmailtypeAutocompleteElementResponse model constructor.
@@ -3438,6 +3523,30 @@ export {
      * @property {module:eZmaxAPI/model/EzsignfolderGetCommunicationListV1ResponseMPayload}
      */
     EzsignfolderGetCommunicationListV1ResponseMPayload,
+
+    /**
+     * The EzsignfolderGetCommunicationrecipientsV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderGetCommunicationrecipientsV1Response}
+     */
+    EzsignfolderGetCommunicationrecipientsV1Response,
+
+    /**
+     * The EzsignfolderGetCommunicationrecipientsV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderGetCommunicationrecipientsV1ResponseMPayload}
+     */
+    EzsignfolderGetCommunicationrecipientsV1ResponseMPayload,
+
+    /**
+     * The EzsignfolderGetCommunicationsendersV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderGetCommunicationsendersV1Response}
+     */
+    EzsignfolderGetCommunicationsendersV1Response,
+
+    /**
+     * The EzsignfolderGetCommunicationsendersV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsignfolderGetCommunicationsendersV1ResponseMPayload}
+     */
+    EzsignfolderGetCommunicationsendersV1ResponseMPayload,
 
     /**
      * The EzsignfolderGetEzsigndocumentsV1Response model constructor.
@@ -5408,12 +5517,6 @@ export {
     FieldECommunicationexternalrecipientType,
 
     /**
-     * The FieldECommunicationrecipientObjecttype model constructor.
-     * @property {module:eZmaxAPI/model/FieldECommunicationrecipientObjecttype}
-     */
-    FieldECommunicationrecipientObjecttype,
-
-    /**
      * The FieldECommunicationrecipientType model constructor.
      * @property {module:eZmaxAPI/model/FieldECommunicationrecipientType}
      */
@@ -5888,6 +5991,54 @@ export {
     HeaderAcceptLanguage,
 
     /**
+     * The InscriptionGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/InscriptionGetCommunicationListV1Response}
+     */
+    InscriptionGetCommunicationListV1Response,
+
+    /**
+     * The InscriptionGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/InscriptionGetCommunicationListV1ResponseMPayload}
+     */
+    InscriptionGetCommunicationListV1ResponseMPayload,
+
+    /**
+     * The InscriptionnotauthenticatedGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/InscriptionnotauthenticatedGetCommunicationListV1Response}
+     */
+    InscriptionnotauthenticatedGetCommunicationListV1Response,
+
+    /**
+     * The InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload}
+     */
+    InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload,
+
+    /**
+     * The InscriptiontempGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/InscriptiontempGetCommunicationListV1Response}
+     */
+    InscriptiontempGetCommunicationListV1Response,
+
+    /**
+     * The InscriptiontempGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/InscriptiontempGetCommunicationListV1ResponseMPayload}
+     */
+    InscriptiontempGetCommunicationListV1ResponseMPayload,
+
+    /**
+     * The InvoiceGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/InvoiceGetCommunicationListV1Response}
+     */
+    InvoiceGetCommunicationListV1Response,
+
+    /**
+     * The InvoiceGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/InvoiceGetCommunicationListV1ResponseMPayload}
+     */
+    InvoiceGetCommunicationListV1ResponseMPayload,
+
+    /**
      * The LanguageAutocompleteElementResponse model constructor.
      * @property {module:eZmaxAPI/model/LanguageAutocompleteElementResponse}
      */
@@ -6066,6 +6217,18 @@ export {
      * @property {module:eZmaxAPI/model/NotificationtestResponse}
      */
     NotificationtestResponse,
+
+    /**
+     * The OtherincomeGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/OtherincomeGetCommunicationListV1Response}
+     */
+    OtherincomeGetCommunicationListV1Response,
+
+    /**
+     * The OtherincomeGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/OtherincomeGetCommunicationListV1ResponseMPayload}
+     */
+    OtherincomeGetCommunicationListV1ResponseMPayload,
 
     /**
      * The PaymenttermAutocompleteElementResponse model constructor.
@@ -6284,18 +6447,6 @@ export {
     PhoneResponseCompound,
 
     /**
-     * The PhonestaticResponse model constructor.
-     * @property {module:eZmaxAPI/model/PhonestaticResponse}
-     */
-    PhonestaticResponse,
-
-    /**
-     * The PhonestaticResponseCompound model constructor.
-     * @property {module:eZmaxAPI/model/PhonestaticResponseCompound}
-     */
-    PhonestaticResponseCompound,
-
-    /**
      * The PhonetypeAutocompleteElementResponse model constructor.
      * @property {module:eZmaxAPI/model/PhonetypeAutocompleteElementResponse}
      */
@@ -6312,6 +6463,18 @@ export {
      * @property {module:eZmaxAPI/model/PhonetypeGetAutocompleteV2ResponseMPayload}
      */
     PhonetypeGetAutocompleteV2ResponseMPayload,
+
+    /**
+     * The RejectedoffertopurchaseGetCommunicationListV1Response model constructor.
+     * @property {module:eZmaxAPI/model/RejectedoffertopurchaseGetCommunicationListV1Response}
+     */
+    RejectedoffertopurchaseGetCommunicationListV1Response,
+
+    /**
+     * The RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload}
+     */
+    RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload,
 
     /**
      * The ScimAuthenticationScheme model constructor.
@@ -7658,6 +7821,12 @@ export {
     ObjectApikeyApi,
 
     /**
+    * The ObjectAttachmentApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectAttachmentApi}
+    */
+    ObjectAttachmentApi,
+
+    /**
     * The ObjectBillingentityexternalApi service constructor.
     * @property {module:eZmaxAPI/api/ObjectBillingentityexternalApi}
     */
@@ -7674,6 +7843,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectBrandingApi}
     */
     ObjectBrandingApi,
+
+    /**
+    * The ObjectBuyercontractApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectBuyercontractApi}
+    */
+    ObjectBuyercontractApi,
 
     /**
     * The ObjectClonehistoryApi service constructor.
@@ -7704,6 +7879,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectDepartmentApi}
     */
     ObjectDepartmentApi,
+
+    /**
+    * The ObjectElectronicfundstransferApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectElectronicfundstransferApi}
+    */
+    ObjectElectronicfundstransferApi,
 
     /**
     * The ObjectEmailtypeApi service constructor.
@@ -7886,6 +8067,30 @@ export {
     ObjectFranchisereferalincomeApi,
 
     /**
+    * The ObjectInscriptionApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectInscriptionApi}
+    */
+    ObjectInscriptionApi,
+
+    /**
+    * The ObjectInscriptionnotauthenticatedApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectInscriptionnotauthenticatedApi}
+    */
+    ObjectInscriptionnotauthenticatedApi,
+
+    /**
+    * The ObjectInscriptiontempApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectInscriptiontempApi}
+    */
+    ObjectInscriptiontempApi,
+
+    /**
+    * The ObjectInvoiceApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectInvoiceApi}
+    */
+    ObjectInvoiceApi,
+
+    /**
     * The ObjectLanguageApi service constructor.
     * @property {module:eZmaxAPI/api/ObjectLanguageApi}
     */
@@ -7910,6 +8115,12 @@ export {
     ObjectNotificationtestApi,
 
     /**
+    * The ObjectOtherincomeApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectOtherincomeApi}
+    */
+    ObjectOtherincomeApi,
+
+    /**
     * The ObjectPaymenttermApi service constructor.
     * @property {module:eZmaxAPI/api/ObjectPaymenttermApi}
     */
@@ -7932,6 +8143,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectPhonetypeApi}
     */
     ObjectPhonetypeApi,
+
+    /**
+    * The ObjectRejectedoffertopurchaseApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectRejectedoffertopurchaseApi}
+    */
+    ObjectRejectedoffertopurchaseApi,
 
     /**
     * The ObjectSecretquestionApi service constructor.

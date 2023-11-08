@@ -24,7 +24,7 @@ import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
 class EzsignfolderSendV1Response {
     /**
      * Constructs a new <code>EzsignfolderSendV1Response</code>.
-     * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
+     * Response for GET /1/object/attachment/{pkiAttachmentID}/download
      * @alias module:eZmaxAPI/model/EzsignfolderSendV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 

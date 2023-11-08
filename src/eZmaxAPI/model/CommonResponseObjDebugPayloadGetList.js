@@ -32,7 +32,7 @@ class CommonResponseObjDebugPayloadGetList {
      * @param bVersionDeprecated {Boolean} Wheter the current route is deprecated or not
      * @param a_Filter {module:eZmaxAPI/model/CommonResponseFilter} 
      * @param a_OrderBy {Object.<String, String>} List of available values for *eOrderBy*
-     * @param iRowMax {Number} The maximum numbers of results to be returned
+     * @param iRowMax {Number} The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
      * @param iRowOffset {Number} The starting element from where to start retrieving the results. For example if you started at iRowOffset=0 and asked for iRowMax=100, to get the next 100 results, you could specify iRowOffset=100&iRowMax=100,
      */
     constructor(iVersionMin, iVersionMax, a_RequiredPermission, bVersionDeprecated, a_Filter, a_OrderBy, iRowMax, iRowOffset) { 
@@ -52,7 +52,7 @@ class CommonResponseObjDebugPayloadGetList {
         obj['bVersionDeprecated'] = bVersionDeprecated;
         obj['a_Filter'] = a_Filter;
         obj['a_OrderBy'] = a_OrderBy;
-        obj['iRowMax'] = iRowMax || 10000;
+        obj['iRowMax'] = iRowMax;
         obj['iRowOffset'] = iRowOffset || 0;
     }
 
@@ -209,7 +209,7 @@ class CommonResponseObjDebugPayloadGetList {
         this['a_OrderBy'] = a_OrderBy;
     }
 /**
-     * Returns The maximum numbers of results to be returned
+     * Returns The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
      * minimum: 1
      * maximum: 10000
      * @return {Number}
@@ -219,8 +219,8 @@ class CommonResponseObjDebugPayloadGetList {
     }
 
     /**
-     * Sets The maximum numbers of results to be returned
-     * @param {Number} iRowMax The maximum numbers of results to be returned
+     * Sets The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
+     * @param {Number} iRowMax The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
      */
     setIRowMax(iRowMax) {
         this['iRowMax'] = iRowMax;
@@ -282,11 +282,10 @@ CommonResponseObjDebugPayloadGetList.prototype['a_Filter'] = undefined;
 CommonResponseObjDebugPayloadGetList.prototype['a_OrderBy'] = undefined;
 
 /**
- * The maximum numbers of results to be returned
+ * The maximum numbers of results to be returned.  When the content-type is **application/json** there is an implicit default of 10 000.  When it's **application/vnd.openxmlformats-officedocument.spreadsheetml.sheet** the is no implicit default so if you do not specify iRowMax, all records will be returned.
  * @member {Number} iRowMax
- * @default 10000
  */
-CommonResponseObjDebugPayloadGetList.prototype['iRowMax'] = 10000;
+CommonResponseObjDebugPayloadGetList.prototype['iRowMax'] = undefined;
 
 /**
  * The starting element from where to start retrieving the results. For example if you started at iRowOffset=0 and asked for iRowMax=100, to get the next 100 results, you could specify iRowOffset=100&iRowMax=100,

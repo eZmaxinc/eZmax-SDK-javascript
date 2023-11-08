@@ -362,7 +362,7 @@ Authorization.apiKey = 'YOUR API KEY';
 let apiInstance = new EZmaxApiDefinitionFull.ObjectUsergroupApi();
 let opts = {
   'eOrderBy': "eOrderBy_example", // String | Specify how you want the results to be sorted
-  'iRowMax': 10000, // Number | 
+  'iRowMax': 56, // Number | 
   'iRowOffset': 0, // Number | 
   'Accept_Language': new EZmaxApiDefinitionFull.HeaderAcceptLanguage(), // HeaderAcceptLanguage | 
   'sFilter': "sFilter_example" // String | 
@@ -382,7 +382,7 @@ apiInstance.usergroupGetListV1(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **eOrderBy** | **String**| Specify how you want the results to be sorted | [optional] 
- **iRowMax** | **Number**|  | [optional] [default to 10000]
+ **iRowMax** | **Number**|  | [optional] 
  **iRowOffset** | **Number**|  | [optional] [default to 0]
  **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
  **sFilter** | **String**|  | [optional] 
