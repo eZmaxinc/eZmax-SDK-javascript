@@ -51,6 +51,9 @@ class EzsignsignatureSignV1Request {
         if (data) {
             obj = obj || new EzsignsignatureSignV1Request();
 
+            if (data.hasOwnProperty('fkiEzsignsigningreasonID')) {
+                obj['fkiEzsignsigningreasonID'] = ApiClient.convertToType(data['fkiEzsignsigningreasonID'], 'Number');
+            }
             if (data.hasOwnProperty('sValue')) {
                 obj['sValue'] = ApiClient.convertToType(data['sValue'], 'String');
             }
@@ -115,6 +118,23 @@ class EzsignsignatureSignV1Request {
         return true;
     }
 
+/**
+     * Returns The unique ID of the Ezsignsigningreason
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiEzsignsigningreasonID() {
+        return this.fkiEzsignsigningreasonID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsigningreason
+     * @param {Number} fkiEzsignsigningreasonID The unique ID of the Ezsignsigningreason
+     */
+    setFkiEzsignsigningreasonID(fkiEzsignsigningreasonID) {
+        this['fkiEzsignsigningreasonID'] = fkiEzsignsigningreasonID;
+    }
 /**
      * Returns The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**
      * @return {String}
@@ -207,6 +227,12 @@ class EzsignsignatureSignV1Request {
 }
 
 EzsignsignatureSignV1Request.RequiredProperties = ["bIsAutomatic"];
+
+/**
+ * The unique ID of the Ezsignsigningreason
+ * @member {Number} fkiEzsignsigningreasonID
+ */
+EzsignsignatureSignV1Request.prototype['fkiEzsignsigningreasonID'] = undefined;
 
 /**
  * The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**

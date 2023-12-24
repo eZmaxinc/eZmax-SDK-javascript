@@ -13,7 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import AttachmentDownloadV1Response from '../model/AttachmentDownloadV1Response';
+import AttachmentGetAttachmentlogsV1Response from '../model/AttachmentGetAttachmentlogsV1Response';
+import AttachmentGetDownloadUrlV1Response from '../model/AttachmentGetDownloadUrlV1Response';
 import CommonResponseError from '../model/CommonResponseError';
 
 /**
@@ -39,7 +40,7 @@ export default class ObjectAttachmentApi {
      * Callback function to receive the result of the attachmentDownloadV1 operation.
      * @callback module:eZmaxAPI/api/ObjectAttachmentApi~attachmentDownloadV1Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/AttachmentDownloadV1Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -48,7 +49,6 @@ export default class ObjectAttachmentApi {
      * Using this endpoint, you can retrieve the content of an attachment.
      * @param {Number} pkiAttachmentID 
      * @param {module:eZmaxAPI/api/ObjectAttachmentApi~attachmentDownloadV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/AttachmentDownloadV1Response}
      */
     attachmentDownloadV1(pkiAttachmentID, callback) {
       let postBody = null;
@@ -67,12 +67,98 @@ export default class ObjectAttachmentApi {
       let formParams = {
       };
 
+      let authNames = ['Authorization', 'Presigned'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/1/object/attachment/{pkiAttachmentID}/download', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the attachmentGetAttachmentlogsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectAttachmentApi~attachmentGetAttachmentlogsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/AttachmentGetAttachmentlogsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve the Attachmentlogs
+     * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
+     * @param {Number} pkiAttachmentID 
+     * @param {module:eZmaxAPI/api/ObjectAttachmentApi~attachmentGetAttachmentlogsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/AttachmentGetAttachmentlogsV1Response}
+     */
+    attachmentGetAttachmentlogsV1(pkiAttachmentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiAttachmentID' is set
+      if (pkiAttachmentID === undefined || pkiAttachmentID === null) {
+        throw new Error("Missing the required parameter 'pkiAttachmentID' when calling attachmentGetAttachmentlogsV1");
+      }
+
+      let pathParams = {
+        'pkiAttachmentID': pkiAttachmentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
       let authNames = ['Authorization'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = AttachmentDownloadV1Response;
+      let returnType = AttachmentGetAttachmentlogsV1Response;
       return this.apiClient.callApi(
-        '/1/object/attachment/{pkiAttachmentID}/download', 'GET',
+        '/1/object/attachment/{pkiAttachmentID}/getAttachmentlogs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the attachmentGetDownloadUrlV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectAttachmentApi~attachmentGetDownloadUrlV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/AttachmentGetDownloadUrlV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve a URL to download attachments.
+     * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
+     * @param {Number} pkiAttachmentID 
+     * @param {module:eZmaxAPI/api/ObjectAttachmentApi~attachmentGetDownloadUrlV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/AttachmentGetDownloadUrlV1Response}
+     */
+    attachmentGetDownloadUrlV1(pkiAttachmentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiAttachmentID' is set
+      if (pkiAttachmentID === undefined || pkiAttachmentID === null) {
+        throw new Error("Missing the required parameter 'pkiAttachmentID' when calling attachmentGetDownloadUrlV1");
+      }
+
+      let pathParams = {
+        'pkiAttachmentID': pkiAttachmentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = AttachmentGetDownloadUrlV1Response;
+      return this.apiClient.callApi(
+        '/1/object/attachment/{pkiAttachmentID}/getDownloadUrl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -13,6 +13,8 @@
 
 * `Name` (value: `"Name"`)
 
+* `NameReason` (value: `"NameReason"`)
+
 * `Attachments` (value: `"Attachments"`)
 
 * `FieldText` (value: `"FieldText"`)

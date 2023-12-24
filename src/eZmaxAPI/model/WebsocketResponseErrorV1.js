@@ -25,11 +25,12 @@ class WebsocketResponseErrorV1 {
      * Response for Websocket Error V1
      * @alias module:eZmaxAPI/model/WebsocketResponseErrorV1
      * @param eWebsocketMessagetype {module:eZmaxAPI/model/WebsocketResponseErrorV1.EWebsocketMessagetypeEnum} The Type of message
+     * @param sWebsocketChannel {String} The Channel on which to route the websocket message
      * @param mPayload {module:eZmaxAPI/model/WebsocketResponseErrorV1MPayload} 
      */
-    constructor(eWebsocketMessagetype, mPayload) { 
+    constructor(eWebsocketMessagetype, sWebsocketChannel, mPayload) { 
         
-        WebsocketResponseErrorV1.initialize(this, eWebsocketMessagetype, mPayload);
+        WebsocketResponseErrorV1.initialize(this, eWebsocketMessagetype, sWebsocketChannel, mPayload);
     }
 
     /**
@@ -37,8 +38,9 @@ class WebsocketResponseErrorV1 {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eWebsocketMessagetype, mPayload) { 
+    static initialize(obj, eWebsocketMessagetype, sWebsocketChannel, mPayload) { 
         obj['eWebsocketMessagetype'] = eWebsocketMessagetype;
+        obj['sWebsocketChannel'] = sWebsocketChannel;
         obj['mPayload'] = mPayload;
     }
 
@@ -55,6 +57,9 @@ class WebsocketResponseErrorV1 {
 
             if (data.hasOwnProperty('eWebsocketMessagetype')) {
                 obj['eWebsocketMessagetype'] = ApiClient.convertToType(data['eWebsocketMessagetype'], 'String');
+            }
+            if (data.hasOwnProperty('sWebsocketChannel')) {
+                obj['sWebsocketChannel'] = ApiClient.convertToType(data['sWebsocketChannel'], 'String');
             }
             if (data.hasOwnProperty('mPayload')) {
                 obj['mPayload'] = WebsocketResponseErrorV1MPayload.constructFromObject(data['mPayload']);
@@ -78,6 +83,10 @@ class WebsocketResponseErrorV1 {
         // ensure the json data is a string
         if (data['eWebsocketMessagetype'] && !(typeof data['eWebsocketMessagetype'] === 'string' || data['eWebsocketMessagetype'] instanceof String)) {
             throw new Error("Expected the field `eWebsocketMessagetype` to be a primitive type in the JSON string but got " + data['eWebsocketMessagetype']);
+        }
+        // ensure the json data is a string
+        if (data['sWebsocketChannel'] && !(typeof data['sWebsocketChannel'] === 'string' || data['sWebsocketChannel'] instanceof String)) {
+            throw new Error("Expected the field `sWebsocketChannel` to be a primitive type in the JSON string but got " + data['sWebsocketChannel']);
         }
         // validate the optional field `mPayload`
         if (data['mPayload']) { // data not null
@@ -103,6 +112,21 @@ class WebsocketResponseErrorV1 {
         this['eWebsocketMessagetype'] = eWebsocketMessagetype;
     }
 /**
+     * Returns The Channel on which to route the websocket message
+     * @return {String}
+     */
+    getSWebsocketChannel() {
+        return this.sWebsocketChannel;
+    }
+
+    /**
+     * Sets The Channel on which to route the websocket message
+     * @param {String} sWebsocketChannel The Channel on which to route the websocket message
+     */
+    setSWebsocketChannel(sWebsocketChannel) {
+        this['sWebsocketChannel'] = sWebsocketChannel;
+    }
+/**
      * @return {module:eZmaxAPI/model/WebsocketResponseErrorV1MPayload}
      */
     getMPayload() {
@@ -118,13 +142,19 @@ class WebsocketResponseErrorV1 {
 
 }
 
-WebsocketResponseErrorV1.RequiredProperties = ["eWebsocketMessagetype", "mPayload"];
+WebsocketResponseErrorV1.RequiredProperties = ["eWebsocketMessagetype", "sWebsocketChannel", "mPayload"];
 
 /**
  * The Type of message
  * @member {module:eZmaxAPI/model/WebsocketResponseErrorV1.EWebsocketMessagetypeEnum} eWebsocketMessagetype
  */
 WebsocketResponseErrorV1.prototype['eWebsocketMessagetype'] = undefined;
+
+/**
+ * The Channel on which to route the websocket message
+ * @member {String} sWebsocketChannel
+ */
+WebsocketResponseErrorV1.prototype['sWebsocketChannel'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/WebsocketResponseErrorV1MPayload} mPayload

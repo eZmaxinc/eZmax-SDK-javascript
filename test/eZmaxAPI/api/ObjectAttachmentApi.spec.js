@@ -58,6 +58,26 @@
         done();
       });
     });
+    describe('attachmentGetAttachmentlogsV1', function() {
+      it('should call attachmentGetAttachmentlogsV1 successfully', function(done) {
+        //uncomment below and update the code to test attachmentGetAttachmentlogsV1
+        //instance.attachmentGetAttachmentlogsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('attachmentGetDownloadUrlV1', function() {
+      it('should call attachmentGetDownloadUrlV1 successfully', function(done) {
+        //uncomment below and update the code to test attachmentGetDownloadUrlV1
+        //instance.attachmentGetDownloadUrlV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

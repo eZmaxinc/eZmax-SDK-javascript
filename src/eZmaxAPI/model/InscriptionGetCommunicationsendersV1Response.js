@@ -15,23 +15,25 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import InscriptionGetCommunicationsendersV1ResponseMPayload from './InscriptionGetCommunicationsendersV1ResponseMPayload';
 
 /**
- * The AttachmentDownloadV1Response model module.
- * @module eZmaxAPI/model/AttachmentDownloadV1Response
+ * The InscriptionGetCommunicationsendersV1Response model module.
+ * @module eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response
  * @version 1.2.0
  */
-class AttachmentDownloadV1Response {
+class InscriptionGetCommunicationsendersV1Response {
     /**
-     * Constructs a new <code>AttachmentDownloadV1Response</code>.
-     * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
-     * @alias module:eZmaxAPI/model/AttachmentDownloadV1Response
+     * Constructs a new <code>InscriptionGetCommunicationsendersV1Response</code>.
+     * Response for GET /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients
+     * @alias module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response
      * @implements module:eZmaxAPI/model/CommonResponse
      * @param objDebugPayload {module:eZmaxAPI/model/CommonResponseObjDebugPayload} 
+     * @param mPayload {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1ResponseMPayload} 
      */
-    constructor(objDebugPayload) { 
+    constructor(objDebugPayload, mPayload) { 
         CommonResponse.initialize(this, objDebugPayload);
-        AttachmentDownloadV1Response.initialize(this, objDebugPayload);
+        InscriptionGetCommunicationsendersV1Response.initialize(this, objDebugPayload, mPayload);
     }
 
     /**
@@ -39,20 +41,21 @@ class AttachmentDownloadV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, objDebugPayload) { 
+    static initialize(obj, objDebugPayload, mPayload) { 
         obj['objDebugPayload'] = objDebugPayload;
+        obj['mPayload'] = mPayload;
     }
 
     /**
-     * Constructs a <code>AttachmentDownloadV1Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InscriptionGetCommunicationsendersV1Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:eZmaxAPI/model/AttachmentDownloadV1Response} obj Optional instance to populate.
-     * @return {module:eZmaxAPI/model/AttachmentDownloadV1Response} The populated <code>AttachmentDownloadV1Response</code> instance.
+     * @param {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response} obj Optional instance to populate.
+     * @return {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response} The populated <code>InscriptionGetCommunicationsendersV1Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new AttachmentDownloadV1Response();
+            obj = obj || new InscriptionGetCommunicationsendersV1Response();
             CommonResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('objDebugPayload')) {
@@ -61,18 +64,21 @@ class AttachmentDownloadV1Response {
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
             }
+            if (data.hasOwnProperty('mPayload')) {
+                obj['mPayload'] = InscriptionGetCommunicationsendersV1ResponseMPayload.constructFromObject(data['mPayload']);
+            }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>AttachmentDownloadV1Response</code>.
+     * Validates the JSON data with respect to <code>InscriptionGetCommunicationsendersV1Response</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>AttachmentDownloadV1Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>InscriptionGetCommunicationsendersV1Response</code>.
      */
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
-        for (const property of AttachmentDownloadV1Response.RequiredProperties) {
+        for (const property of InscriptionGetCommunicationsendersV1Response.RequiredProperties) {
             if (!data[property]) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
@@ -84,6 +90,10 @@ class AttachmentDownloadV1Response {
         // validate the optional field `objDebug`
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
+        }
+        // validate the optional field `mPayload`
+        if (data['mPayload']) { // data not null
+          InscriptionGetCommunicationsendersV1ResponseMPayload.validateJSON(data['mPayload']);
         }
 
         return true;
@@ -115,20 +125,38 @@ class AttachmentDownloadV1Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1ResponseMPayload}
+     */
+    getMPayload() {
+        return this.mPayload;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1ResponseMPayload} mPayload
+     */
+    setMPayload(mPayload) {
+        this['mPayload'] = mPayload;
+    }
 
 }
 
-AttachmentDownloadV1Response.RequiredProperties = ["objDebugPayload"];
+InscriptionGetCommunicationsendersV1Response.RequiredProperties = ["objDebugPayload", "mPayload"];
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebugPayload} objDebugPayload
  */
-AttachmentDownloadV1Response.prototype['objDebugPayload'] = undefined;
+InscriptionGetCommunicationsendersV1Response.prototype['objDebugPayload'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
-AttachmentDownloadV1Response.prototype['objDebug'] = undefined;
+InscriptionGetCommunicationsendersV1Response.prototype['objDebug'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1ResponseMPayload} mPayload
+ */
+InscriptionGetCommunicationsendersV1Response.prototype['mPayload'] = undefined;
 
 
 // Implement CommonResponse interface:
@@ -144,5 +172,5 @@ CommonResponse.prototype['objDebug'] = undefined;
 
 
 
-export default AttachmentDownloadV1Response;
+export default InscriptionGetCommunicationsendersV1Response;
 

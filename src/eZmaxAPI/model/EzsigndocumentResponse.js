@@ -34,10 +34,11 @@ class EzsigndocumentResponse {
      * @param iEzsigndocumentPagetotal {Number} The number of pages in the Ezsigndocument.
      * @param iEzsigndocumentSignaturesigned {Number} The number of signatures that were signed in the document.
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
+     * @param iEzsigndocumentEzsignsignatureattachmenttotal {Number} The number of Ezsigndocumentattachment total
      */
-    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal) { 
+    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal) { 
         
-        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal);
+        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal);
     }
 
     /**
@@ -45,7 +46,7 @@ class EzsigndocumentResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal) { 
+    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal) { 
         obj['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
@@ -55,6 +56,7 @@ class EzsigndocumentResponse {
         obj['iEzsigndocumentPagetotal'] = iEzsigndocumentPagetotal;
         obj['iEzsigndocumentSignaturesigned'] = iEzsigndocumentSignaturesigned;
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
+        obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
     }
 
     /**
@@ -130,6 +132,9 @@ class EzsigndocumentResponse {
             }
             if (data.hasOwnProperty('sEzsigndocumentExternalid')) {
                 obj['sEzsigndocumentExternalid'] = ApiClient.convertToType(data['sEzsigndocumentExternalid'], 'String');
+            }
+            if (data.hasOwnProperty('iEzsigndocumentEzsignsignatureattachmenttotal')) {
+                obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = ApiClient.convertToType(data['iEzsigndocumentEzsignsignatureattachmenttotal'], 'Number');
             }
         }
         return obj;
@@ -511,10 +516,26 @@ class EzsigndocumentResponse {
     setSEzsigndocumentExternalid(sEzsigndocumentExternalid) {
         this['sEzsigndocumentExternalid'] = sEzsigndocumentExternalid;
     }
+/**
+     * Returns The number of Ezsigndocumentattachment total
+     * minimum: 0
+     * @return {Number}
+     */
+    getIEzsigndocumentEzsignsignatureattachmenttotal() {
+        return this.iEzsigndocumentEzsignsignatureattachmenttotal;
+    }
+
+    /**
+     * Sets The number of Ezsigndocumentattachment total
+     * @param {Number} iEzsigndocumentEzsignsignatureattachmenttotal The number of Ezsigndocumentattachment total
+     */
+    setIEzsigndocumentEzsignsignatureattachmenttotal(iEzsigndocumentEzsignsignatureattachmenttotal) {
+        this['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
+    }
 
 }
 
-EzsigndocumentResponse.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal"];
+EzsigndocumentResponse.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentEzsignsignatureattachmenttotal"];
 
 /**
  * The unique ID of the Ezsigndocument
@@ -639,6 +660,12 @@ EzsigndocumentResponse.prototype['objAudit'] = undefined;
  * @member {String} sEzsigndocumentExternalid
  */
 EzsigndocumentResponse.prototype['sEzsigndocumentExternalid'] = undefined;
+
+/**
+ * The number of Ezsigndocumentattachment total
+ * @member {Number} iEzsigndocumentEzsignsignatureattachmenttotal
+ */
+EzsigndocumentResponse.prototype['iEzsigndocumentEzsignsignatureattachmenttotal'] = undefined;
 
 
 

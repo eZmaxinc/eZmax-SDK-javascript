@@ -66,14 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiAgentincorporationID (base name: "fkiAgentincorporationID")', function() {
-      // uncomment below and update the code to test the property fkiAgentincorporationID
+    it('should have the property fkiBrokerID (base name: "fkiBrokerID")', function() {
+      // uncomment below and update the code to test the property fkiBrokerID
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property fkiBrokerID (base name: "fkiBrokerID")', function() {
-      // uncomment below and update the code to test the property fkiBrokerID
+    it('should have the property fkiContactID (base name: "fkiContactID")', function() {
+      // uncomment below and update the code to test the property fkiContactID
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientRequest();
       //expect(instance).to.be();
     });
@@ -122,6 +122,18 @@
 
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiMailboxsharedID (base name: "fkiMailboxsharedID")', function() {
+      // uncomment below and update the code to test the property fkiMailboxsharedID
+      //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fkiPhonelinesharedID (base name: "fkiPhonelinesharedID")', function() {
+      // uncomment below and update the code to test the property fkiPhonelinesharedID
       //var instance = new EZmaxApiDefinitionFull.CommunicationrecipientRequest();
       //expect(instance).to.be();
     });

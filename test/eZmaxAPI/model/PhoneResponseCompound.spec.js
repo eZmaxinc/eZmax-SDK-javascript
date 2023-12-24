@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bPhoneInternational (base name: "bPhoneInternational")', function() {
+      // uncomment below and update the code to test the property bPhoneInternational
+      //var instance = new EZmaxApiDefinitionFull.PhoneResponseCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

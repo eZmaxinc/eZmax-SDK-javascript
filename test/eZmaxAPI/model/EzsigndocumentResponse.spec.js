@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsigndocumentEzsignsignatureattachmenttotal (base name: "iEzsigndocumentEzsignsignatureattachmenttotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentEzsignsignatureattachmenttotal
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

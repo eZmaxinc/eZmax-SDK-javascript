@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import CustomContactNameResponse from './CustomContactNameResponse';
+import EmailResponseCompound from './EmailResponseCompound';
+import PhoneResponseCompound from './PhoneResponseCompound';
 
 /**
  * The CustomCommunicationsenderResponse model module.
@@ -65,17 +67,23 @@ class CustomCommunicationsenderResponse {
             if (data.hasOwnProperty('fkiMailboxsharedID')) {
                 obj['fkiMailboxsharedID'] = ApiClient.convertToType(data['fkiMailboxsharedID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiPhonelinesharedID')) {
+                obj['fkiPhonelinesharedID'] = ApiClient.convertToType(data['fkiPhonelinesharedID'], 'Number');
+            }
             if (data.hasOwnProperty('eCommunicationsenderObjecttype')) {
                 obj['eCommunicationsenderObjecttype'] = ApiClient.convertToType(data['eCommunicationsenderObjecttype'], 'String');
             }
             if (data.hasOwnProperty('objContactName')) {
                 obj['objContactName'] = CustomContactNameResponse.constructFromObject(data['objContactName']);
             }
-            if (data.hasOwnProperty('sEmailAddress')) {
-                obj['sEmailAddress'] = ApiClient.convertToType(data['sEmailAddress'], 'String');
+            if (data.hasOwnProperty('objEmail')) {
+                obj['objEmail'] = EmailResponseCompound.constructFromObject(data['objEmail']);
             }
-            if (data.hasOwnProperty('sPhoneE164')) {
-                obj['sPhoneE164'] = ApiClient.convertToType(data['sPhoneE164'], 'String');
+            if (data.hasOwnProperty('objPhoneFax')) {
+                obj['objPhoneFax'] = PhoneResponseCompound.constructFromObject(data['objPhoneFax']);
+            }
+            if (data.hasOwnProperty('objPhoneSMS')) {
+                obj['objPhoneSMS'] = PhoneResponseCompound.constructFromObject(data['objPhoneSMS']);
             }
         }
         return obj;
@@ -101,13 +109,17 @@ class CustomCommunicationsenderResponse {
         if (data['objContactName']) { // data not null
           CustomContactNameResponse.validateJSON(data['objContactName']);
         }
-        // ensure the json data is a string
-        if (data['sEmailAddress'] && !(typeof data['sEmailAddress'] === 'string' || data['sEmailAddress'] instanceof String)) {
-            throw new Error("Expected the field `sEmailAddress` to be a primitive type in the JSON string but got " + data['sEmailAddress']);
+        // validate the optional field `objEmail`
+        if (data['objEmail']) { // data not null
+          EmailResponseCompound.validateJSON(data['objEmail']);
         }
-        // ensure the json data is a string
-        if (data['sPhoneE164'] && !(typeof data['sPhoneE164'] === 'string' || data['sPhoneE164'] instanceof String)) {
-            throw new Error("Expected the field `sPhoneE164` to be a primitive type in the JSON string but got " + data['sPhoneE164']);
+        // validate the optional field `objPhoneFax`
+        if (data['objPhoneFax']) { // data not null
+          PhoneResponseCompound.validateJSON(data['objPhoneFax']);
+        }
+        // validate the optional field `objPhoneSMS`
+        if (data['objPhoneSMS']) { // data not null
+          PhoneResponseCompound.validateJSON(data['objPhoneSMS']);
         }
 
         return true;
@@ -179,6 +191,23 @@ class CustomCommunicationsenderResponse {
         this['fkiMailboxsharedID'] = fkiMailboxsharedID;
     }
 /**
+     * Returns The unique ID of the Phonelineshared
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiPhonelinesharedID() {
+        return this.fkiPhonelinesharedID;
+    }
+
+    /**
+     * Sets The unique ID of the Phonelineshared
+     * @param {Number} fkiPhonelinesharedID The unique ID of the Phonelineshared
+     */
+    setFkiPhonelinesharedID(fkiPhonelinesharedID) {
+        this['fkiPhonelinesharedID'] = fkiPhonelinesharedID;
+    }
+/**
      * @return {module:eZmaxAPI/model/CustomCommunicationsenderResponse.ECommunicationsenderObjecttypeEnum}
      */
     getECommunicationsenderObjecttype() {
@@ -205,34 +234,43 @@ class CustomCommunicationsenderResponse {
         this['objContactName'] = objContactName;
     }
 /**
-     * Returns The email address.
-     * @return {String}
+     * @return {module:eZmaxAPI/model/EmailResponseCompound}
      */
-    getSEmailAddress() {
-        return this.sEmailAddress;
+    getObjEmail() {
+        return this.objEmail;
     }
 
     /**
-     * Sets The email address.
-     * @param {String} sEmailAddress The email address.
+     * @param {module:eZmaxAPI/model/EmailResponseCompound} objEmail
      */
-    setSEmailAddress(sEmailAddress) {
-        this['sEmailAddress'] = sEmailAddress;
+    setObjEmail(objEmail) {
+        this['objEmail'] = objEmail;
     }
 /**
-     * Returns A phone number in E.164 Format
-     * @return {String}
+     * @return {module:eZmaxAPI/model/PhoneResponseCompound}
      */
-    getSPhoneE164() {
-        return this.sPhoneE164;
+    getObjPhoneFax() {
+        return this.objPhoneFax;
     }
 
     /**
-     * Sets A phone number in E.164 Format
-     * @param {String} sPhoneE164 A phone number in E.164 Format
+     * @param {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneFax
      */
-    setSPhoneE164(sPhoneE164) {
-        this['sPhoneE164'] = sPhoneE164;
+    setObjPhoneFax(objPhoneFax) {
+        this['objPhoneFax'] = objPhoneFax;
+    }
+/**
+     * @return {module:eZmaxAPI/model/PhoneResponseCompound}
+     */
+    getObjPhoneSMS() {
+        return this.objPhoneSMS;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSMS
+     */
+    setObjPhoneSMS(objPhoneSMS) {
+        this['objPhoneSMS'] = objPhoneSMS;
     }
 
 }
@@ -264,6 +302,12 @@ CustomCommunicationsenderResponse.prototype['fkiUserID'] = undefined;
 CustomCommunicationsenderResponse.prototype['fkiMailboxsharedID'] = undefined;
 
 /**
+ * The unique ID of the Phonelineshared
+ * @member {Number} fkiPhonelinesharedID
+ */
+CustomCommunicationsenderResponse.prototype['fkiPhonelinesharedID'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/CustomCommunicationsenderResponse.ECommunicationsenderObjecttypeEnum} eCommunicationsenderObjecttype
  */
 CustomCommunicationsenderResponse.prototype['eCommunicationsenderObjecttype'] = undefined;
@@ -274,16 +318,19 @@ CustomCommunicationsenderResponse.prototype['eCommunicationsenderObjecttype'] = 
 CustomCommunicationsenderResponse.prototype['objContactName'] = undefined;
 
 /**
- * The email address.
- * @member {String} sEmailAddress
+ * @member {module:eZmaxAPI/model/EmailResponseCompound} objEmail
  */
-CustomCommunicationsenderResponse.prototype['sEmailAddress'] = undefined;
+CustomCommunicationsenderResponse.prototype['objEmail'] = undefined;
 
 /**
- * A phone number in E.164 Format
- * @member {String} sPhoneE164
+ * @member {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneFax
  */
-CustomCommunicationsenderResponse.prototype['sPhoneE164'] = undefined;
+CustomCommunicationsenderResponse.prototype['objPhoneFax'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/PhoneResponseCompound} objPhoneSMS
+ */
+CustomCommunicationsenderResponse.prototype['objPhoneSMS'] = undefined;
 
 
 
@@ -318,7 +365,13 @@ CustomCommunicationsenderResponse['ECommunicationsenderObjecttypeEnum'] = {
      * value: "Mailboxshared"
      * @const
      */
-    "Mailboxshared": "Mailboxshared"
+    "Mailboxshared": "Mailboxshared",
+
+    /**
+     * value: "Phonelineshared"
+     * @const
+     */
+    "Phonelineshared": "Phonelineshared"
 };
 
 

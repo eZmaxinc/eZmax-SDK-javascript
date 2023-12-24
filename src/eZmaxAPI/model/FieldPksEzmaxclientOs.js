@@ -27,6 +27,13 @@ export default class FieldPksEzmaxclientOs {
 
     
         /**
+         * value: "iPadOS"
+         * @const
+         */
+        "iPadOS" = "iPadOS";
+
+    
+        /**
          * value: "macOS"
          * @const
          */

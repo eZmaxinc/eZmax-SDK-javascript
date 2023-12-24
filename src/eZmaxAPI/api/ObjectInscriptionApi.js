@@ -14,7 +14,9 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import InscriptionGetAttachmentsV1Response from '../model/InscriptionGetAttachmentsV1Response';
 import InscriptionGetCommunicationListV1Response from '../model/InscriptionGetCommunicationListV1Response';
+import InscriptionGetCommunicationsendersV1Response from '../model/InscriptionGetCommunicationsendersV1Response';
 
 /**
 * ObjectInscription service.
@@ -34,6 +36,49 @@ export default class ObjectInscriptionApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the inscriptionGetAttachmentsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectInscriptionApi~inscriptionGetAttachmentsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/InscriptionGetAttachmentsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Inscription's Attachments
+     * 
+     * @param {Number} pkiInscriptionID 
+     * @param {module:eZmaxAPI/api/ObjectInscriptionApi~inscriptionGetAttachmentsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/InscriptionGetAttachmentsV1Response}
+     */
+    inscriptionGetAttachmentsV1(pkiInscriptionID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiInscriptionID' is set
+      if (pkiInscriptionID === undefined || pkiInscriptionID === null) {
+        throw new Error("Missing the required parameter 'pkiInscriptionID' when calling inscriptionGetAttachmentsV1");
+      }
+
+      let pathParams = {
+        'pkiInscriptionID': pkiInscriptionID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InscriptionGetAttachmentsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/inscription/{pkiInscriptionID}/getAttachments', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the inscriptionGetCommunicationListV1 operation.
@@ -73,6 +118,49 @@ export default class ObjectInscriptionApi {
       let returnType = InscriptionGetCommunicationListV1Response;
       return this.apiClient.callApi(
         '/1/object/inscription/{pkiInscriptionID}/getCommunicationList', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the inscriptionGetCommunicationsendersV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectInscriptionApi~inscriptionGetCommunicationsendersV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Inscription's Communicationsender
+     * 
+     * @param {Number} pkiInscriptionID 
+     * @param {module:eZmaxAPI/api/ObjectInscriptionApi~inscriptionGetCommunicationsendersV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/InscriptionGetCommunicationsendersV1Response}
+     */
+    inscriptionGetCommunicationsendersV1(pkiInscriptionID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiInscriptionID' is set
+      if (pkiInscriptionID === undefined || pkiInscriptionID === null) {
+        throw new Error("Missing the required parameter 'pkiInscriptionID' when calling inscriptionGetCommunicationsendersV1");
+      }
+
+      let pathParams = {
+        'pkiInscriptionID': pkiInscriptionID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InscriptionGetCommunicationsendersV1Response;
+      return this.apiClient.callApi(
+        '/1/object/inscription/{pkiInscriptionID}/getCommunicationsenders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

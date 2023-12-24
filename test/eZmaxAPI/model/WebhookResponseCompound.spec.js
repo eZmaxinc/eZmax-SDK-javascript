@@ -108,8 +108,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sWebhookApikey (base name: "sWebhookApikey")', function() {
+      // uncomment below and update the code to test the property sWebhookApikey
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sWebhookSecret (base name: "sWebhookSecret")', function() {
+      // uncomment below and update the code to test the property sWebhookSecret
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bWebhookIsactive (base name: "bWebhookIsactive")', function() {
       // uncomment below and update the code to test the property bWebhookIsactive
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bWebhookIssigned (base name: "bWebhookIssigned")', function() {
+      // uncomment below and update the code to test the property bWebhookIssigned
       //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
       //expect(instance).to.be();
     });

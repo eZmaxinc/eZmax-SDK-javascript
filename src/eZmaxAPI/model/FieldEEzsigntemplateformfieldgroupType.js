@@ -54,6 +54,20 @@ export default class FieldEEzsigntemplateformfieldgroupType {
         "Checkbox" = "Checkbox";
 
     
+        /**
+         * value: "Number"
+         * @const
+         */
+        "Number" = "Number";
+
+    
+        /**
+         * value: "Date"
+         * @const
+         */
+        "Date" = "Date";
+
+    
 
     /**
     * Returns a <code>FieldEEzsigntemplateformfieldgroupType</code> enum value from a Javascript object name.

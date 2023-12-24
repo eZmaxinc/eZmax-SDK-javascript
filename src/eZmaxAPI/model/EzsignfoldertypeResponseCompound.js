@@ -37,20 +37,18 @@ class EzsignfoldertypeResponseCompound {
      * @param iEzsignfoldertypeArchivaldays {Number} The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype
      * @param eEzsignfoldertypeDisposal {module:eZmaxAPI/model/FieldEEzsignfoldertypeDisposal} 
      * @param iEzsignfoldertypeDeadlinedays {Number} The number of days to get all Ezsignsignatures
-     * @param bEzsignfoldertypeSendattatchmentsigner {Boolean} Whether we send the Ezsigndocument and the proof as attachment in the email
      * @param bEzsignfoldertypeSendsignedtodocumentowner {Boolean} Whether we send the signed Ezsigndocument to the Ezsigndocument's owner
      * @param bEzsignfoldertypeSendsignedtofolderowner {Boolean} Whether we send the signed Ezsigndocument to the Ezsignfolder's owner
      * @param bEzsignfoldertypeSendsignedtocolleague {Boolean} Whether we send the signed Ezsigndocument to the colleagues
      * @param bEzsignfoldertypeSendsummarytodocumentowner {Boolean} Whether we send the summary to the Ezsigndocument's owner
      * @param bEzsignfoldertypeSendsummarytofolderowner {Boolean} Whether we send the summary to the Ezsignfolder's owner
      * @param bEzsignfoldertypeSendsummarytocolleague {Boolean} Whether we send the summary to the colleagues
-     * @param bEzsignfoldertypeIncludeproofsigner {Boolean} Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @param bEzsignfoldertypeIncludeproofuser {Boolean} Whether we include the proof with the signed Ezsigndocument for users
      * @param bEzsignfoldertypeIsactive {Boolean} Whether the Ezsignfoldertype is active or not
      */
-    constructor(pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
-        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
-        EzsignfoldertypeResponseCompound.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
+    constructor(pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
+        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
+        EzsignfoldertypeResponseCompound.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
     }
 
     /**
@@ -58,7 +56,7 @@ class EzsignfoldertypeResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendattatchmentsigner, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofsigner, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
+    static initialize(obj, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
         obj['pkiEzsignfoldertypeID'] = pkiEzsignfoldertypeID;
         obj['objEzsignfoldertypeName'] = objEzsignfoldertypeName;
         obj['fkiBrandingID'] = fkiBrandingID;
@@ -67,14 +65,12 @@ class EzsignfoldertypeResponseCompound {
         obj['iEzsignfoldertypeArchivaldays'] = iEzsignfoldertypeArchivaldays;
         obj['eEzsignfoldertypeDisposal'] = eEzsignfoldertypeDisposal;
         obj['iEzsignfoldertypeDeadlinedays'] = iEzsignfoldertypeDeadlinedays;
-        obj['bEzsignfoldertypeSendattatchmentsigner'] = bEzsignfoldertypeSendattatchmentsigner;
         obj['bEzsignfoldertypeSendsignedtodocumentowner'] = bEzsignfoldertypeSendsignedtodocumentowner;
         obj['bEzsignfoldertypeSendsignedtofolderowner'] = bEzsignfoldertypeSendsignedtofolderowner;
         obj['bEzsignfoldertypeSendsignedtocolleague'] = bEzsignfoldertypeSendsignedtocolleague;
         obj['bEzsignfoldertypeSendsummarytodocumentowner'] = bEzsignfoldertypeSendsummarytodocumentowner;
         obj['bEzsignfoldertypeSendsummarytofolderowner'] = bEzsignfoldertypeSendsummarytofolderowner;
         obj['bEzsignfoldertypeSendsummarytocolleague'] = bEzsignfoldertypeSendsummarytocolleague;
-        obj['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
         obj['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
         obj['bEzsignfoldertypeIsactive'] = bEzsignfoldertypeIsactive;
     }
@@ -159,6 +155,36 @@ class EzsignfoldertypeResponseCompound {
             }
             if (data.hasOwnProperty('bEzsignfoldertypeSendattatchmentsigner')) {
                 obj['bEzsignfoldertypeSendattatchmentsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendattatchmentsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendsignedtoezsignsigner')) {
+                obj['bEzsignfoldertypeSendsignedtoezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendsignedtoezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendsignedtouser')) {
+                obj['bEzsignfoldertypeSendsignedtouser'] = ApiClient.convertToType(data['bEzsignfoldertypeSendsignedtouser'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendattachmentezsignsigner')) {
+                obj['bEzsignfoldertypeSendattachmentezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendattachmentezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendproofezsignsigner')) {
+                obj['bEzsignfoldertypeSendproofezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendattachmentuser')) {
+                obj['bEzsignfoldertypeSendattachmentuser'] = ApiClient.convertToType(data['bEzsignfoldertypeSendattachmentuser'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendproofuser')) {
+                obj['bEzsignfoldertypeSendproofuser'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofuser'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendproofemail')) {
+                obj['bEzsignfoldertypeSendproofemail'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofemail'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeAllowdownloadattachmentezsignsigner')) {
+                obj['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeAllowdownloadproofezsignsigner')) {
+                obj['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeAllowdownloadproofezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendproofreceivealldocument')) {
+                obj['bEzsignfoldertypeSendproofreceivealldocument'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofreceivealldocument'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeSendsignedtodocumentowner')) {
                 obj['bEzsignfoldertypeSendsignedtodocumentowner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendsignedtodocumentowner'], 'Boolean');
@@ -603,7 +629,7 @@ class EzsignfoldertypeResponseCompound {
         this['bEzsignfoldertypeReassign'] = bEzsignfoldertypeReassign;
     }
 /**
-     * Returns Whether we send the Ezsigndocument and the proof as attachment in the email
+     * Returns THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
      * @return {Boolean}
      */
     getBEzsignfoldertypeSendattatchmentsigner() {
@@ -611,11 +637,161 @@ class EzsignfoldertypeResponseCompound {
     }
 
     /**
-     * Sets Whether we send the Ezsigndocument and the proof as attachment in the email
-     * @param {Boolean} bEzsignfoldertypeSendattatchmentsigner Whether we send the Ezsigndocument and the proof as attachment in the email
+     * Sets THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
+     * @param {Boolean} bEzsignfoldertypeSendattatchmentsigner THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
      */
     setBEzsignfoldertypeSendattatchmentsigner(bEzsignfoldertypeSendattatchmentsigner) {
         this['bEzsignfoldertypeSendattatchmentsigner'] = bEzsignfoldertypeSendattatchmentsigner;
+    }
+/**
+     * Returns Whether we send an email to Ezsignsigner  when document is completed
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendsignedtoezsignsigner() {
+        return this.bEzsignfoldertypeSendsignedtoezsignsigner;
+    }
+
+    /**
+     * Sets Whether we send an email to Ezsignsigner  when document is completed
+     * @param {Boolean} bEzsignfoldertypeSendsignedtoezsignsigner Whether we send an email to Ezsignsigner  when document is completed
+     */
+    setBEzsignfoldertypeSendsignedtoezsignsigner(bEzsignfoldertypeSendsignedtoezsignsigner) {
+        this['bEzsignfoldertypeSendsignedtoezsignsigner'] = bEzsignfoldertypeSendsignedtoezsignsigner;
+    }
+/**
+     * Returns Whether we send an email to User who signed when document is completed
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendsignedtouser() {
+        return this.bEzsignfoldertypeSendsignedtouser;
+    }
+
+    /**
+     * Sets Whether we send an email to User who signed when document is completed
+     * @param {Boolean} bEzsignfoldertypeSendsignedtouser Whether we send an email to User who signed when document is completed
+     */
+    setBEzsignfoldertypeSendsignedtouser(bEzsignfoldertypeSendsignedtouser) {
+        this['bEzsignfoldertypeSendsignedtouser'] = bEzsignfoldertypeSendsignedtouser;
+    }
+/**
+     * Returns Whether we send the Ezsigndocument in the email to Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendattachmentezsignsigner() {
+        return this.bEzsignfoldertypeSendattachmentezsignsigner;
+    }
+
+    /**
+     * Sets Whether we send the Ezsigndocument in the email to Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeSendattachmentezsignsigner Whether we send the Ezsigndocument in the email to Ezsignsigner
+     */
+    setBEzsignfoldertypeSendattachmentezsignsigner(bEzsignfoldertypeSendattachmentezsignsigner) {
+        this['bEzsignfoldertypeSendattachmentezsignsigner'] = bEzsignfoldertypeSendattachmentezsignsigner;
+    }
+/**
+     * Returns Whether we send the proof in the email to Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendproofezsignsigner() {
+        return this.bEzsignfoldertypeSendproofezsignsigner;
+    }
+
+    /**
+     * Sets Whether we send the proof in the email to Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeSendproofezsignsigner Whether we send the proof in the email to Ezsignsigner
+     */
+    setBEzsignfoldertypeSendproofezsignsigner(bEzsignfoldertypeSendproofezsignsigner) {
+        this['bEzsignfoldertypeSendproofezsignsigner'] = bEzsignfoldertypeSendproofezsignsigner;
+    }
+/**
+     * Returns Whether we send the Ezsigndocument in the email to User
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendattachmentuser() {
+        return this.bEzsignfoldertypeSendattachmentuser;
+    }
+
+    /**
+     * Sets Whether we send the Ezsigndocument in the email to User
+     * @param {Boolean} bEzsignfoldertypeSendattachmentuser Whether we send the Ezsigndocument in the email to User
+     */
+    setBEzsignfoldertypeSendattachmentuser(bEzsignfoldertypeSendattachmentuser) {
+        this['bEzsignfoldertypeSendattachmentuser'] = bEzsignfoldertypeSendattachmentuser;
+    }
+/**
+     * Returns Whether we send the proof in the email to User
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendproofuser() {
+        return this.bEzsignfoldertypeSendproofuser;
+    }
+
+    /**
+     * Sets Whether we send the proof in the email to User
+     * @param {Boolean} bEzsignfoldertypeSendproofuser Whether we send the proof in the email to User
+     */
+    setBEzsignfoldertypeSendproofuser(bEzsignfoldertypeSendproofuser) {
+        this['bEzsignfoldertypeSendproofuser'] = bEzsignfoldertypeSendproofuser;
+    }
+/**
+     * Returns Whether we send the proof in the email to external recipient
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendproofemail() {
+        return this.bEzsignfoldertypeSendproofemail;
+    }
+
+    /**
+     * Sets Whether we send the proof in the email to external recipient
+     * @param {Boolean} bEzsignfoldertypeSendproofemail Whether we send the proof in the email to external recipient
+     */
+    setBEzsignfoldertypeSendproofemail(bEzsignfoldertypeSendproofemail) {
+        this['bEzsignfoldertypeSendproofemail'] = bEzsignfoldertypeSendproofemail;
+    }
+/**
+     * Returns Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeAllowdownloadattachmentezsignsigner() {
+        return this.bEzsignfoldertypeAllowdownloadattachmentezsignsigner;
+    }
+
+    /**
+     * Sets Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     */
+    setBEzsignfoldertypeAllowdownloadattachmentezsignsigner(bEzsignfoldertypeAllowdownloadattachmentezsignsigner) {
+        this['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = bEzsignfoldertypeAllowdownloadattachmentezsignsigner;
+    }
+/**
+     * Returns Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeAllowdownloadproofezsignsigner() {
+        return this.bEzsignfoldertypeAllowdownloadproofezsignsigner;
+    }
+
+    /**
+     * Sets Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeAllowdownloadproofezsignsigner Whether we allow the proof to be downloaded by an Ezsignsigner
+     */
+    setBEzsignfoldertypeAllowdownloadproofezsignsigner(bEzsignfoldertypeAllowdownloadproofezsignsigner) {
+        this['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = bEzsignfoldertypeAllowdownloadproofezsignsigner;
+    }
+/**
+     * Returns Whether we send the proof to user and Ezsignsigner who receive all documents.
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendproofreceivealldocument() {
+        return this.bEzsignfoldertypeSendproofreceivealldocument;
+    }
+
+    /**
+     * Sets Whether we send the proof to user and Ezsignsigner who receive all documents.
+     * @param {Boolean} bEzsignfoldertypeSendproofreceivealldocument Whether we send the proof to user and Ezsignsigner who receive all documents.
+     */
+    setBEzsignfoldertypeSendproofreceivealldocument(bEzsignfoldertypeSendproofreceivealldocument) {
+        this['bEzsignfoldertypeSendproofreceivealldocument'] = bEzsignfoldertypeSendproofreceivealldocument;
     }
 /**
      * Returns Whether we send the signed Ezsigndocument to the Ezsigndocument's owner
@@ -663,7 +839,7 @@ class EzsignfoldertypeResponseCompound {
         this['bEzsignfoldertypeSendsignedtofullgroup'] = bEzsignfoldertypeSendsignedtofullgroup;
     }
 /**
-     * Returns Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+     * Returns THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
      * @return {Boolean}
      */
     getBEzsignfoldertypeSendsignedtolimitedgroup() {
@@ -671,8 +847,8 @@ class EzsignfoldertypeResponseCompound {
     }
 
     /**
-     * Sets Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
-     * @param {Boolean} bEzsignfoldertypeSendsignedtolimitedgroup Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+     * Sets THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+     * @param {Boolean} bEzsignfoldertypeSendsignedtolimitedgroup THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
      */
     setBEzsignfoldertypeSendsignedtolimitedgroup(bEzsignfoldertypeSendsignedtolimitedgroup) {
         this['bEzsignfoldertypeSendsignedtolimitedgroup'] = bEzsignfoldertypeSendsignedtolimitedgroup;
@@ -768,7 +944,7 @@ class EzsignfoldertypeResponseCompound {
         this['bEzsignfoldertypeSendsummarytocolleague'] = bEzsignfoldertypeSendsummarytocolleague;
     }
 /**
-     * Returns Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * Returns THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @return {Boolean}
      */
     getBEzsignfoldertypeIncludeproofsigner() {
@@ -776,8 +952,8 @@ class EzsignfoldertypeResponseCompound {
     }
 
     /**
-     * Sets Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * Sets THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      */
     setBEzsignfoldertypeIncludeproofsigner(bEzsignfoldertypeIncludeproofsigner) {
         this['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
@@ -841,7 +1017,7 @@ class EzsignfoldertypeResponseCompound {
 
 }
 
-EzsignfoldertypeResponseCompound.RequiredProperties = ["pkiEzsignfoldertypeID", "objEzsignfoldertypeName", "fkiBrandingID", "sBrandingDescriptionX", "eEzsignfoldertypePrivacylevel", "iEzsignfoldertypeArchivaldays", "eEzsignfoldertypeDisposal", "iEzsignfoldertypeDeadlinedays", "bEzsignfoldertypeSendattatchmentsigner", "bEzsignfoldertypeSendsignedtodocumentowner", "bEzsignfoldertypeSendsignedtofolderowner", "bEzsignfoldertypeSendsignedtocolleague", "bEzsignfoldertypeSendsummarytodocumentowner", "bEzsignfoldertypeSendsummarytofolderowner", "bEzsignfoldertypeSendsummarytocolleague", "bEzsignfoldertypeIncludeproofsigner", "bEzsignfoldertypeIncludeproofuser", "bEzsignfoldertypeIsactive"];
+EzsignfoldertypeResponseCompound.RequiredProperties = ["pkiEzsignfoldertypeID", "objEzsignfoldertypeName", "fkiBrandingID", "sBrandingDescriptionX", "eEzsignfoldertypePrivacylevel", "iEzsignfoldertypeArchivaldays", "eEzsignfoldertypeDisposal", "iEzsignfoldertypeDeadlinedays", "bEzsignfoldertypeSendsignedtodocumentowner", "bEzsignfoldertypeSendsignedtofolderowner", "bEzsignfoldertypeSendsignedtocolleague", "bEzsignfoldertypeSendsummarytodocumentowner", "bEzsignfoldertypeSendsummarytofolderowner", "bEzsignfoldertypeSendsummarytocolleague", "bEzsignfoldertypeIncludeproofuser", "bEzsignfoldertypeIsactive"];
 
 /**
  * The unique ID of the Ezsignfoldertype.
@@ -972,10 +1148,70 @@ EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeDelegate'] = undefi
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeReassign'] = undefined;
 
 /**
- * Whether we send the Ezsigndocument and the proof as attachment in the email
+ * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
  * @member {Boolean} bEzsignfoldertypeSendattatchmentsigner
  */
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendattatchmentsigner'] = undefined;
+
+/**
+ * Whether we send an email to Ezsignsigner  when document is completed
+ * @member {Boolean} bEzsignfoldertypeSendsignedtoezsignsigner
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsignedtoezsignsigner'] = undefined;
+
+/**
+ * Whether we send an email to User who signed when document is completed
+ * @member {Boolean} bEzsignfoldertypeSendsignedtouser
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsignedtouser'] = undefined;
+
+/**
+ * Whether we send the Ezsigndocument in the email to Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeSendattachmentezsignsigner
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendattachmentezsignsigner'] = undefined;
+
+/**
+ * Whether we send the proof in the email to Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeSendproofezsignsigner
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendproofezsignsigner'] = undefined;
+
+/**
+ * Whether we send the Ezsigndocument in the email to User
+ * @member {Boolean} bEzsignfoldertypeSendattachmentuser
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendattachmentuser'] = undefined;
+
+/**
+ * Whether we send the proof in the email to User
+ * @member {Boolean} bEzsignfoldertypeSendproofuser
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendproofuser'] = undefined;
+
+/**
+ * Whether we send the proof in the email to external recipient
+ * @member {Boolean} bEzsignfoldertypeSendproofemail
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendproofemail'] = undefined;
+
+/**
+ * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = undefined;
+
+/**
+ * Whether we allow the proof to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadproofezsignsigner
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = undefined;
+
+/**
+ * Whether we send the proof to user and Ezsignsigner who receive all documents.
+ * @member {Boolean} bEzsignfoldertypeSendproofreceivealldocument
+ */
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendproofreceivealldocument'] = undefined;
 
 /**
  * Whether we send the signed Ezsigndocument to the Ezsigndocument's owner
@@ -996,7 +1232,7 @@ EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsignedtofoldero
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsignedtofullgroup'] = undefined;
 
 /**
- * Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+ * THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
  * @member {Boolean} bEzsignfoldertypeSendsignedtolimitedgroup
  */
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsignedtolimitedgroup'] = undefined;
@@ -1038,7 +1274,7 @@ EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsummarytolimite
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsummarytocolleague'] = undefined;
 
 /**
- * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+ * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
  * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
  */
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;
@@ -1174,10 +1410,60 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeDelegate'] = undefined;
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassign'] = undefined;
 /**
- * Whether we send the Ezsigndocument and the proof as attachment in the email
+ * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
  * @member {Boolean} bEzsignfoldertypeSendattatchmentsigner
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendattatchmentsigner'] = undefined;
+/**
+ * Whether we send an email to Ezsignsigner  when document is completed
+ * @member {Boolean} bEzsignfoldertypeSendsignedtoezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsignedtoezsignsigner'] = undefined;
+/**
+ * Whether we send an email to User who signed when document is completed
+ * @member {Boolean} bEzsignfoldertypeSendsignedtouser
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsignedtouser'] = undefined;
+/**
+ * Whether we send the Ezsigndocument in the email to Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeSendattachmentezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendattachmentezsignsigner'] = undefined;
+/**
+ * Whether we send the proof in the email to Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeSendproofezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofezsignsigner'] = undefined;
+/**
+ * Whether we send the Ezsigndocument in the email to User
+ * @member {Boolean} bEzsignfoldertypeSendattachmentuser
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendattachmentuser'] = undefined;
+/**
+ * Whether we send the proof in the email to User
+ * @member {Boolean} bEzsignfoldertypeSendproofuser
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofuser'] = undefined;
+/**
+ * Whether we send the proof in the email to external recipient
+ * @member {Boolean} bEzsignfoldertypeSendproofemail
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofemail'] = undefined;
+/**
+ * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = undefined;
+/**
+ * Whether we allow the proof to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadproofezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = undefined;
+/**
+ * Whether we send the proof to user and Ezsignsigner who receive all documents.
+ * @member {Boolean} bEzsignfoldertypeSendproofreceivealldocument
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofreceivealldocument'] = undefined;
 /**
  * Whether we send the signed Ezsigndocument to the Ezsigndocument's owner
  * @member {Boolean} bEzsignfoldertypeSendsignedtodocumentowner
@@ -1194,7 +1480,7 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsignedtofolderowner'] =
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsignedtofullgroup'] = undefined;
 /**
- * Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+ * THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
  * @member {Boolean} bEzsignfoldertypeSendsignedtolimitedgroup
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsignedtolimitedgroup'] = undefined;
@@ -1229,7 +1515,7 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsummarytolimitedgroup']
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsummarytocolleague'] = undefined;
 /**
- * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+ * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
  * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;

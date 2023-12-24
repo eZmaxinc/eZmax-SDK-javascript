@@ -48,6 +48,16 @@
   }
 
   describe('ObjectInvoiceApi', function() {
+    describe('invoiceGetAttachmentsV1', function() {
+      it('should call invoiceGetAttachmentsV1 successfully', function(done) {
+        //uncomment below and update the code to test invoiceGetAttachmentsV1
+        //instance.invoiceGetAttachmentsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('invoiceGetCommunicationListV1', function() {
       it('should call invoiceGetCommunicationListV1 successfully', function(done) {
         //uncomment below and update the code to test invoiceGetCommunicationListV1

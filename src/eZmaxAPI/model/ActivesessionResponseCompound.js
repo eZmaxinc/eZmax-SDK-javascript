@@ -18,6 +18,8 @@ import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUs
 import FieldEActivesessionOrigin from './FieldEActivesessionOrigin';
 import FieldEActivesessionUsertype from './FieldEActivesessionUsertype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
+import FieldEUserEzsignaccess from './FieldEUserEzsignaccess';
+import FieldEUserEzsignprepaid from './FieldEUserEzsignprepaid';
 
 /**
  * The ActivesessionResponseCompound model module.
@@ -40,13 +42,14 @@ class ActivesessionResponseCompound {
      * @param bActivesessionIssuperadmin {Boolean} Whether the active session is superadmin or not
      * @param pksCustomerCode {String} The customer code assigned to your account
      * @param fkiSystemconfigurationtypeID {Number} The unique ID of the Systemconfigurationtype
+     * @param eUserEzsignaccess {module:eZmaxAPI/model/FieldEUserEzsignaccess} 
      * @param a_pkiPermissionID {Array.<Number>} An array of permissions granted to the user or api key
      * @param objUserReal {module:eZmaxAPI/model/ActivesessionResponseCompoundUser} 
      * @param a_eModuleInternalname {Array.<String>} An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key.
      */
-    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+    constructor(eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, eUserEzsignaccess, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
         ActivesessionResponse.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID);
-        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
+        ActivesessionResponseCompound.initialize(this, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, eUserEzsignaccess, a_pkiPermissionID, objUserReal, a_eModuleInternalname);
     }
 
     /**
@@ -54,7 +57,7 @@ class ActivesessionResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
+    static initialize(obj, eActivesessionUsertype, eActivesessionOrigin, eActivesessionWeekdaystart, fkiLanguageID, sCompanyNameX, sDepartmentNameX, bActivesessionDebug, bActivesessionIssuperadmin, pksCustomerCode, fkiSystemconfigurationtypeID, eUserEzsignaccess, a_pkiPermissionID, objUserReal, a_eModuleInternalname) { 
         obj['eActivesessionUsertype'] = eActivesessionUsertype;
         obj['eActivesessionOrigin'] = eActivesessionOrigin;
         obj['eActivesessionWeekdaystart'] = eActivesessionWeekdaystart;
@@ -65,6 +68,7 @@ class ActivesessionResponseCompound {
         obj['bActivesessionIssuperadmin'] = bActivesessionIssuperadmin;
         obj['pksCustomerCode'] = pksCustomerCode;
         obj['fkiSystemconfigurationtypeID'] = fkiSystemconfigurationtypeID;
+        obj['eUserEzsignaccess'] = eUserEzsignaccess;
         obj['a_pkiPermissionID'] = a_pkiPermissionID;
         obj['objUserReal'] = objUserReal;
         obj['a_eModuleInternalname'] = a_eModuleInternalname;
@@ -115,6 +119,15 @@ class ActivesessionResponseCompound {
             if (data.hasOwnProperty('fkiSignatureID')) {
                 obj['fkiSignatureID'] = ApiClient.convertToType(data['fkiSignatureID'], 'Number');
             }
+            if (data.hasOwnProperty('eUserEzsignaccess')) {
+                obj['eUserEzsignaccess'] = FieldEUserEzsignaccess.constructFromObject(data['eUserEzsignaccess']);
+            }
+            if (data.hasOwnProperty('eUserEzsignprepaid')) {
+                obj['eUserEzsignprepaid'] = FieldEUserEzsignprepaid.constructFromObject(data['eUserEzsignprepaid']);
+            }
+            if (data.hasOwnProperty('dtUserEzsignprepaidexpiration')) {
+                obj['dtUserEzsignprepaidexpiration'] = ApiClient.convertToType(data['dtUserEzsignprepaidexpiration'], 'String');
+            }
             if (data.hasOwnProperty('a_pkiPermissionID')) {
                 obj['a_pkiPermissionID'] = ApiClient.convertToType(data['a_pkiPermissionID'], ['Number']);
             }
@@ -157,6 +170,10 @@ class ActivesessionResponseCompound {
         // ensure the json data is a string
         if (data['pksCustomerCode'] && !(typeof data['pksCustomerCode'] === 'string' || data['pksCustomerCode'] instanceof String)) {
             throw new Error("Expected the field `pksCustomerCode` to be a primitive type in the JSON string but got " + data['pksCustomerCode']);
+        }
+        // ensure the json data is a string
+        if (data['dtUserEzsignprepaidexpiration'] && !(typeof data['dtUserEzsignprepaidexpiration'] === 'string' || data['dtUserEzsignprepaidexpiration'] instanceof String)) {
+            throw new Error("Expected the field `dtUserEzsignprepaidexpiration` to be a primitive type in the JSON string but got " + data['dtUserEzsignprepaidexpiration']);
         }
         // ensure the json data is an array
         if (!Array.isArray(data['a_pkiPermissionID'])) {
@@ -347,6 +364,47 @@ class ActivesessionResponseCompound {
         this['fkiSignatureID'] = fkiSignatureID;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEUserEzsignaccess}
+     */
+    getEUserEzsignaccess() {
+        return this.eUserEzsignaccess;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEUserEzsignaccess} eUserEzsignaccess
+     */
+    setEUserEzsignaccess(eUserEzsignaccess) {
+        this['eUserEzsignaccess'] = eUserEzsignaccess;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEUserEzsignprepaid}
+     */
+    getEUserEzsignprepaid() {
+        return this.eUserEzsignprepaid;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEUserEzsignprepaid} eUserEzsignprepaid
+     */
+    setEUserEzsignprepaid(eUserEzsignprepaid) {
+        this['eUserEzsignprepaid'] = eUserEzsignprepaid;
+    }
+/**
+     * Returns The eZsign prepaid expiration date
+     * @return {String}
+     */
+    getDtUserEzsignprepaidexpiration() {
+        return this.dtUserEzsignprepaidexpiration;
+    }
+
+    /**
+     * Sets The eZsign prepaid expiration date
+     * @param {String} dtUserEzsignprepaidexpiration The eZsign prepaid expiration date
+     */
+    setDtUserEzsignprepaidexpiration(dtUserEzsignprepaidexpiration) {
+        this['dtUserEzsignprepaidexpiration'] = dtUserEzsignprepaidexpiration;
+    }
+/**
      * Returns An array of permissions granted to the user or api key
      * @return {Array.<Number>}
      */
@@ -418,7 +476,7 @@ class ActivesessionResponseCompound {
 
 }
 
-ActivesessionResponseCompound.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "fkiSystemconfigurationtypeID", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
+ActivesessionResponseCompound.RequiredProperties = ["eActivesessionUsertype", "eActivesessionOrigin", "eActivesessionWeekdaystart", "fkiLanguageID", "sCompanyNameX", "sDepartmentNameX", "bActivesessionDebug", "bActivesessionIssuperadmin", "pksCustomerCode", "fkiSystemconfigurationtypeID", "eUserEzsignaccess", "a_pkiPermissionID", "objUserReal", "a_eModuleInternalname"];
 
 /**
  * @member {module:eZmaxAPI/model/FieldEActivesessionUsertype} eActivesessionUsertype
@@ -482,6 +540,22 @@ ActivesessionResponseCompound.prototype['fkiSystemconfigurationtypeID'] = undefi
  * @member {Number} fkiSignatureID
  */
 ActivesessionResponseCompound.prototype['fkiSignatureID'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEUserEzsignaccess} eUserEzsignaccess
+ */
+ActivesessionResponseCompound.prototype['eUserEzsignaccess'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEUserEzsignprepaid} eUserEzsignprepaid
+ */
+ActivesessionResponseCompound.prototype['eUserEzsignprepaid'] = undefined;
+
+/**
+ * The eZsign prepaid expiration date
+ * @member {String} dtUserEzsignprepaidexpiration
+ */
+ActivesessionResponseCompound.prototype['dtUserEzsignprepaidexpiration'] = undefined;
 
 /**
  * An array of permissions granted to the user or api key

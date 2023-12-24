@@ -32,11 +32,12 @@ class WebhookResponse {
      * @param sWebhookUrl {String} The URL of the Webhook callback
      * @param sWebhookEmailfailed {String} The email that will receive the Webhook in case all attempts fail
      * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
+     * @param bWebhookIssigned {Boolean} Whether the requests will be signed or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation) { 
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
         
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation);
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation);
     }
 
     /**
@@ -44,13 +45,14 @@ class WebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookSkipsslvalidation) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
         obj['sWebhookUrl'] = sWebhookUrl;
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
         obj['bWebhookIsactive'] = bWebhookIsactive;
+        obj['bWebhookIssigned'] = bWebhookIssigned;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
 
@@ -92,8 +94,17 @@ class WebhookResponse {
             if (data.hasOwnProperty('sWebhookEmailfailed')) {
                 obj['sWebhookEmailfailed'] = ApiClient.convertToType(data['sWebhookEmailfailed'], 'String');
             }
+            if (data.hasOwnProperty('sWebhookApikey')) {
+                obj['sWebhookApikey'] = ApiClient.convertToType(data['sWebhookApikey'], 'String');
+            }
+            if (data.hasOwnProperty('sWebhookSecret')) {
+                obj['sWebhookSecret'] = ApiClient.convertToType(data['sWebhookSecret'], 'String');
+            }
             if (data.hasOwnProperty('bWebhookIsactive')) {
                 obj['bWebhookIsactive'] = ApiClient.convertToType(data['bWebhookIsactive'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bWebhookIssigned')) {
+                obj['bWebhookIssigned'] = ApiClient.convertToType(data['bWebhookIssigned'], 'Boolean');
             }
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
@@ -129,6 +140,14 @@ class WebhookResponse {
         // ensure the json data is a string
         if (data['sWebhookEmailfailed'] && !(typeof data['sWebhookEmailfailed'] === 'string' || data['sWebhookEmailfailed'] instanceof String)) {
             throw new Error("Expected the field `sWebhookEmailfailed` to be a primitive type in the JSON string but got " + data['sWebhookEmailfailed']);
+        }
+        // ensure the json data is a string
+        if (data['sWebhookApikey'] && !(typeof data['sWebhookApikey'] === 'string' || data['sWebhookApikey'] instanceof String)) {
+            throw new Error("Expected the field `sWebhookApikey` to be a primitive type in the JSON string but got " + data['sWebhookApikey']);
+        }
+        // ensure the json data is a string
+        if (data['sWebhookSecret'] && !(typeof data['sWebhookSecret'] === 'string' || data['sWebhookSecret'] instanceof String)) {
+            throw new Error("Expected the field `sWebhookSecret` to be a primitive type in the JSON string but got " + data['sWebhookSecret']);
         }
 
         return true;
@@ -265,6 +284,36 @@ class WebhookResponse {
         this['sWebhookEmailfailed'] = sWebhookEmailfailed;
     }
 /**
+     * Returns The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @return {String}
+     */
+    getSWebhookApikey() {
+        return this.sWebhookApikey;
+    }
+
+    /**
+     * Sets The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @param {String} sWebhookApikey The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     */
+    setSWebhookApikey(sWebhookApikey) {
+        this['sWebhookApikey'] = sWebhookApikey;
+    }
+/**
+     * Returns The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @return {String}
+     */
+    getSWebhookSecret() {
+        return this.sWebhookSecret;
+    }
+
+    /**
+     * Sets The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @param {String} sWebhookSecret The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     */
+    setSWebhookSecret(sWebhookSecret) {
+        this['sWebhookSecret'] = sWebhookSecret;
+    }
+/**
      * Returns Whether the Webhook is active or not
      * @return {Boolean}
      */
@@ -278,6 +327,21 @@ class WebhookResponse {
      */
     setBWebhookIsactive(bWebhookIsactive) {
         this['bWebhookIsactive'] = bWebhookIsactive;
+    }
+/**
+     * Returns Whether the requests will be signed or not
+     * @return {Boolean}
+     */
+    getBWebhookIssigned() {
+        return this.bWebhookIssigned;
+    }
+
+    /**
+     * Sets Whether the requests will be signed or not
+     * @param {Boolean} bWebhookIssigned Whether the requests will be signed or not
+     */
+    setBWebhookIssigned(bWebhookIssigned) {
+        this['bWebhookIssigned'] = bWebhookIssigned;
     }
 /**
      * Returns Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
@@ -297,7 +361,7 @@ class WebhookResponse {
 
 }
 
-WebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookSkipsslvalidation"];
+WebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation"];
 
 /**
  * The unique ID of the Webhook
@@ -351,10 +415,28 @@ WebhookResponse.prototype['sWebhookUrl'] = undefined;
 WebhookResponse.prototype['sWebhookEmailfailed'] = undefined;
 
 /**
+ * The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+ * @member {String} sWebhookApikey
+ */
+WebhookResponse.prototype['sWebhookApikey'] = undefined;
+
+/**
+ * The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+ * @member {String} sWebhookSecret
+ */
+WebhookResponse.prototype['sWebhookSecret'] = undefined;
+
+/**
  * Whether the Webhook is active or not
  * @member {Boolean} bWebhookIsactive
  */
 WebhookResponse.prototype['bWebhookIsactive'] = undefined;
+
+/**
+ * Whether the requests will be signed or not
+ * @member {Boolean} bWebhookIssigned
+ */
+WebhookResponse.prototype['bWebhookIssigned'] = undefined;
 
 /**
  * Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use

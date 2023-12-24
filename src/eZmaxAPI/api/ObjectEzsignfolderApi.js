@@ -27,6 +27,8 @@ import EzsignfolderDisposeV1Response from '../model/EzsignfolderDisposeV1Respons
 import EzsignfolderEditObjectV1Request from '../model/EzsignfolderEditObjectV1Request';
 import EzsignfolderEditObjectV1Response from '../model/EzsignfolderEditObjectV1Response';
 import EzsignfolderGetActionableElementsV1Response from '../model/EzsignfolderGetActionableElementsV1Response';
+import EzsignfolderGetAttachmentCountV1Response from '../model/EzsignfolderGetAttachmentCountV1Response';
+import EzsignfolderGetAttachmentsV1Response from '../model/EzsignfolderGetAttachmentsV1Response';
 import EzsignfolderGetCommunicationCountV1Response from '../model/EzsignfolderGetCommunicationCountV1Response';
 import EzsignfolderGetCommunicationListV1Response from '../model/EzsignfolderGetCommunicationListV1Response';
 import EzsignfolderGetCommunicationrecipientsV1Response from '../model/EzsignfolderGetCommunicationrecipientsV1Response';
@@ -469,6 +471,92 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderGetActionableElementsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderGetAttachmentCountV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetAttachmentCountV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetAttachmentCountV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Attachment count
+     * 
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetAttachmentCountV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetAttachmentCountV1Response}
+     */
+    ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetAttachmentCountV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetAttachmentCountV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderGetAttachmentsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetAttachmentsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderGetAttachmentsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Ezsignfolder's Attachments
+     * 
+     * @param {Number} pkiEzsignfolderID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderGetAttachmentsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderGetAttachmentsV1Response}
+     */
+    ezsignfolderGetAttachmentsV1(pkiEzsignfolderID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderGetAttachmentsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderGetAttachmentsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

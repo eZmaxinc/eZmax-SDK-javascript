@@ -24,10 +24,11 @@ class GlobalEzmaxclientVersionV1Response {
      * Response for GET /1/ezmaxclient/{pksEzmaxclientOs}/version
      * @alias module:eZmaxAPI/model/GlobalEzmaxclientVersionV1Response
      * @param sEzmaxclientVersion {String} The version on the store
+     * @param sEzmaxclientOslatestversion {String} The latest OS version of the system running the application at the time of release
      */
-    constructor(sEzmaxclientVersion) { 
+    constructor(sEzmaxclientVersion, sEzmaxclientOslatestversion) { 
         
-        GlobalEzmaxclientVersionV1Response.initialize(this, sEzmaxclientVersion);
+        GlobalEzmaxclientVersionV1Response.initialize(this, sEzmaxclientVersion, sEzmaxclientOslatestversion);
     }
 
     /**
@@ -35,8 +36,9 @@ class GlobalEzmaxclientVersionV1Response {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, sEzmaxclientVersion) { 
+    static initialize(obj, sEzmaxclientVersion, sEzmaxclientOslatestversion) { 
         obj['sEzmaxclientVersion'] = sEzmaxclientVersion;
+        obj['sEzmaxclientOslatestversion'] = sEzmaxclientOslatestversion || '11';
     }
 
     /**
@@ -52,6 +54,9 @@ class GlobalEzmaxclientVersionV1Response {
 
             if (data.hasOwnProperty('sEzmaxclientVersion')) {
                 obj['sEzmaxclientVersion'] = ApiClient.convertToType(data['sEzmaxclientVersion'], 'String');
+            }
+            if (data.hasOwnProperty('sEzmaxclientOslatestversion')) {
+                obj['sEzmaxclientOslatestversion'] = ApiClient.convertToType(data['sEzmaxclientOslatestversion'], 'String');
             }
         }
         return obj;
@@ -73,6 +78,10 @@ class GlobalEzmaxclientVersionV1Response {
         if (data['sEzmaxclientVersion'] && !(typeof data['sEzmaxclientVersion'] === 'string' || data['sEzmaxclientVersion'] instanceof String)) {
             throw new Error("Expected the field `sEzmaxclientVersion` to be a primitive type in the JSON string but got " + data['sEzmaxclientVersion']);
         }
+        // ensure the json data is a string
+        if (data['sEzmaxclientOslatestversion'] && !(typeof data['sEzmaxclientOslatestversion'] === 'string' || data['sEzmaxclientOslatestversion'] instanceof String)) {
+            throw new Error("Expected the field `sEzmaxclientOslatestversion` to be a primitive type in the JSON string but got " + data['sEzmaxclientOslatestversion']);
+        }
 
         return true;
     }
@@ -92,16 +101,38 @@ class GlobalEzmaxclientVersionV1Response {
     setSEzmaxclientVersion(sEzmaxclientVersion) {
         this['sEzmaxclientVersion'] = sEzmaxclientVersion;
     }
+/**
+     * Returns The latest OS version of the system running the application at the time of release
+     * @return {String}
+     */
+    getSEzmaxclientOslatestversion() {
+        return this.sEzmaxclientOslatestversion;
+    }
+
+    /**
+     * Sets The latest OS version of the system running the application at the time of release
+     * @param {String} sEzmaxclientOslatestversion The latest OS version of the system running the application at the time of release
+     */
+    setSEzmaxclientOslatestversion(sEzmaxclientOslatestversion) {
+        this['sEzmaxclientOslatestversion'] = sEzmaxclientOslatestversion;
+    }
 
 }
 
-GlobalEzmaxclientVersionV1Response.RequiredProperties = ["sEzmaxclientVersion"];
+GlobalEzmaxclientVersionV1Response.RequiredProperties = ["sEzmaxclientVersion", "sEzmaxclientOslatestversion"];
 
 /**
  * The version on the store
  * @member {String} sEzmaxclientVersion
  */
 GlobalEzmaxclientVersionV1Response.prototype['sEzmaxclientVersion'] = undefined;
+
+/**
+ * The latest OS version of the system running the application at the time of release
+ * @member {String} sEzmaxclientOslatestversion
+ * @default '11'
+ */
+GlobalEzmaxclientVersionV1Response.prototype['sEzmaxclientOslatestversion'] = '11';
 
 
 

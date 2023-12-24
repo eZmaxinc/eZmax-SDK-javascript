@@ -180,6 +180,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsigndocumentEzsignsignatureattachmenttotal (base name: "iEzsigndocumentEzsignsignatureattachmenttotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentEzsignsignatureattachmenttotal
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsigndocumentSteptype (base name: "eEzsigndocumentSteptype")', function() {
       // uncomment below and update the code to test the property eEzsigndocumentSteptype
       //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompound();

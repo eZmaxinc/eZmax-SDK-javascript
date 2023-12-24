@@ -48,10 +48,30 @@
   }
 
   describe('ObjectInscriptionApi', function() {
+    describe('inscriptionGetAttachmentsV1', function() {
+      it('should call inscriptionGetAttachmentsV1 successfully', function(done) {
+        //uncomment below and update the code to test inscriptionGetAttachmentsV1
+        //instance.inscriptionGetAttachmentsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('inscriptionGetCommunicationListV1', function() {
       it('should call inscriptionGetCommunicationListV1 successfully', function(done) {
         //uncomment below and update the code to test inscriptionGetCommunicationListV1
         //instance.inscriptionGetCommunicationListV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('inscriptionGetCommunicationsendersV1', function() {
+      it('should call inscriptionGetCommunicationsendersV1 successfully', function(done) {
+        //uncomment below and update the code to test inscriptionGetCommunicationsendersV1
+        //instance.inscriptionGetCommunicationsendersV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

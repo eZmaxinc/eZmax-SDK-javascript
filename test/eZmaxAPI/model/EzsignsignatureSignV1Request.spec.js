@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(EZmaxApiDefinitionFull.EzsignsignatureSignV1Request);
     });
 
+    it('should have the property fkiEzsignsigningreasonID (base name: "fkiEzsignsigningreasonID")', function() {
+      // uncomment below and update the code to test the property fkiEzsignsigningreasonID
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureSignV1Request();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sValue (base name: "sValue")', function() {
       // uncomment below and update the code to test the property sValue
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureSignV1Request();

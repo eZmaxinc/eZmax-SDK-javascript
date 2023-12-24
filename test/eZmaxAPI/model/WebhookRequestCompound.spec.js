@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bWebhookIssigned (base name: "bWebhookIssigned")', function() {
+      // uncomment below and update the code to test the property bWebhookIssigned
+      //var instance = new EZmaxApiDefinitionFull.WebhookRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bWebhookSkipsslvalidation (base name: "bWebhookSkipsslvalidation")', function() {
       // uncomment below and update the code to test the property bWebhookSkipsslvalidation
       //var instance = new EZmaxApiDefinitionFull.WebhookRequestCompound();

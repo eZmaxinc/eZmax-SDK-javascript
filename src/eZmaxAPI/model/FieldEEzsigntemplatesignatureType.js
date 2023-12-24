@@ -55,6 +55,13 @@ export default class FieldEEzsigntemplatesignatureType {
 
     
         /**
+         * value: "NameReason"
+         * @const
+         */
+        "NameReason" = "NameReason";
+
+    
+        /**
          * value: "Attachments"
          * @const
          */

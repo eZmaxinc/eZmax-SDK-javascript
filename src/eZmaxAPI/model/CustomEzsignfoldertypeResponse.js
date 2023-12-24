@@ -56,11 +56,20 @@ class CustomEzsignfoldertypeResponse {
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
             }
+            if (data.hasOwnProperty('bEzsignfoldertypeSendproofezsignsigner')) {
+                obj['bEzsignfoldertypeSendproofezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofezsignsigner'], 'Boolean');
+            }
             if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofsigner')) {
                 obj['bEzsignfoldertypeIncludeproofsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofsigner'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofuser')) {
                 obj['bEzsignfoldertypeIncludeproofuser'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofuser'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeAllowdownloadattachmentezsignsigner')) {
+                obj['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeAllowdownloadproofezsignsigner')) {
+                obj['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeAllowdownloadproofezsignsigner'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeDelegate')) {
                 obj['bEzsignfoldertypeDelegate'] = ApiClient.convertToType(data['bEzsignfoldertypeDelegate'], 'Boolean');
@@ -124,7 +133,22 @@ class CustomEzsignfoldertypeResponse {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
 /**
-     * Returns Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * Returns Whether we send the proof in the email to Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeSendproofezsignsigner() {
+        return this.bEzsignfoldertypeSendproofezsignsigner;
+    }
+
+    /**
+     * Sets Whether we send the proof in the email to Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeSendproofezsignsigner Whether we send the proof in the email to Ezsignsigner
+     */
+    setBEzsignfoldertypeSendproofezsignsigner(bEzsignfoldertypeSendproofezsignsigner) {
+        this['bEzsignfoldertypeSendproofezsignsigner'] = bEzsignfoldertypeSendproofezsignsigner;
+    }
+/**
+     * Returns THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @return {Boolean}
      */
     getBEzsignfoldertypeIncludeproofsigner() {
@@ -132,8 +156,8 @@ class CustomEzsignfoldertypeResponse {
     }
 
     /**
-     * Sets Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * Sets THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      */
     setBEzsignfoldertypeIncludeproofsigner(bEzsignfoldertypeIncludeproofsigner) {
         this['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
@@ -152,6 +176,36 @@ class CustomEzsignfoldertypeResponse {
      */
     setBEzsignfoldertypeIncludeproofuser(bEzsignfoldertypeIncludeproofuser) {
         this['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
+    }
+/**
+     * Returns Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeAllowdownloadattachmentezsignsigner() {
+        return this.bEzsignfoldertypeAllowdownloadattachmentezsignsigner;
+    }
+
+    /**
+     * Sets Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     */
+    setBEzsignfoldertypeAllowdownloadattachmentezsignsigner(bEzsignfoldertypeAllowdownloadattachmentezsignsigner) {
+        this['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = bEzsignfoldertypeAllowdownloadattachmentezsignsigner;
+    }
+/**
+     * Returns Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeAllowdownloadproofezsignsigner() {
+        return this.bEzsignfoldertypeAllowdownloadproofezsignsigner;
+    }
+
+    /**
+     * Sets Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @param {Boolean} bEzsignfoldertypeAllowdownloadproofezsignsigner Whether we allow the proof to be downloaded by an Ezsignsigner
+     */
+    setBEzsignfoldertypeAllowdownloadproofezsignsigner(bEzsignfoldertypeAllowdownloadproofezsignsigner) {
+        this['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = bEzsignfoldertypeAllowdownloadproofezsignsigner;
     }
 /**
      * Returns Wheter if delegation of signature is allowed to another user or not
@@ -201,7 +255,13 @@ CustomEzsignfoldertypeResponse.prototype['pkiEzsignfoldertypeID'] = undefined;
 CustomEzsignfoldertypeResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
 
 /**
- * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+ * Whether we send the proof in the email to Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeSendproofezsignsigner
+ */
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofezsignsigner'] = undefined;
+
+/**
+ * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
  * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
  */
 CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;
@@ -211,6 +271,18 @@ CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofsigner'] 
  * @member {Boolean} bEzsignfoldertypeIncludeproofuser
  */
 CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofuser'] = undefined;
+
+/**
+ * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner
+ */
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = undefined;
+
+/**
+ * Whether we allow the proof to be downloaded by an Ezsignsigner
+ * @member {Boolean} bEzsignfoldertypeAllowdownloadproofezsignsigner
+ */
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeAllowdownloadproofezsignsigner'] = undefined;
 
 /**
  * Wheter if delegation of signature is allowed to another user or not

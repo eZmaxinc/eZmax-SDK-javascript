@@ -48,10 +48,10 @@
   }
 
   describe('ObjectElectronicfundstransferApi', function() {
-    describe('eletronicfundstransferGetCommunicationListV1', function() {
-      it('should call eletronicfundstransferGetCommunicationListV1 successfully', function(done) {
-        //uncomment below and update the code to test eletronicfundstransferGetCommunicationListV1
-        //instance.eletronicfundstransferGetCommunicationListV1(function(error) {
+    describe('electronicfundstransferGetCommunicationListV1', function() {
+      it('should call electronicfundstransferGetCommunicationListV1 successfully', function(done) {
+        //uncomment below and update the code to test electronicfundstransferGetCommunicationListV1
+        //instance.electronicfundstransferGetCommunicationListV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

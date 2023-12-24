@@ -57,6 +57,9 @@ class CustomCommunicationsenderRequest {
             if (data.hasOwnProperty('fkiMailboxsharedID')) {
                 obj['fkiMailboxsharedID'] = ApiClient.convertToType(data['fkiMailboxsharedID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiPhonelinesharedID')) {
+                obj['fkiPhonelinesharedID'] = ApiClient.convertToType(data['fkiPhonelinesharedID'], 'Number');
+            }
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
@@ -124,6 +127,23 @@ class CustomCommunicationsenderRequest {
         this['fkiMailboxsharedID'] = fkiMailboxsharedID;
     }
 /**
+     * Returns The unique ID of the Phonelineshared
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiPhonelinesharedID() {
+        return this.fkiPhonelinesharedID;
+    }
+
+    /**
+     * Sets The unique ID of the Phonelineshared
+     * @param {Number} fkiPhonelinesharedID The unique ID of the Phonelineshared
+     */
+    setFkiPhonelinesharedID(fkiPhonelinesharedID) {
+        this['fkiPhonelinesharedID'] = fkiPhonelinesharedID;
+    }
+/**
      * Returns The unique ID of the User
      * minimum: 0
      * @return {Number}
@@ -161,6 +181,12 @@ CustomCommunicationsenderRequest.prototype['fkiBrokerID'] = undefined;
  * @member {Number} fkiMailboxsharedID
  */
 CustomCommunicationsenderRequest.prototype['fkiMailboxsharedID'] = undefined;
+
+/**
+ * The unique ID of the Phonelineshared
+ * @member {Number} fkiPhonelinesharedID
+ */
+CustomCommunicationsenderRequest.prototype['fkiPhonelinesharedID'] = undefined;
 
 /**
  * The unique ID of the User

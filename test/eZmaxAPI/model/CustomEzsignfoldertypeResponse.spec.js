@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsignfoldertypeSendproofezsignsigner (base name: "bEzsignfoldertypeSendproofezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendproofezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsignfoldertypeIncludeproofsigner (base name: "bEzsignfoldertypeIncludeproofsigner")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeIncludeproofsigner
       //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
@@ -74,6 +80,18 @@
 
     it('should have the property bEzsignfoldertypeIncludeproofuser (base name: "bEzsignfoldertypeIncludeproofuser")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeIncludeproofuser
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeAllowdownloadattachmentezsignsigner (base name: "bEzsignfoldertypeAllowdownloadattachmentezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeAllowdownloadattachmentezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeAllowdownloadproofezsignsigner (base name: "bEzsignfoldertypeAllowdownloadproofezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeAllowdownloadproofezsignsigner
       //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
       //expect(instance).to.be();
     });

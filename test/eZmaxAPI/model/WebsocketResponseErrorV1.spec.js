@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sWebsocketChannel (base name: "sWebsocketChannel")', function() {
+      // uncomment below and update the code to test the property sWebsocketChannel
+      //var instance = new EZmaxApiDefinitionFull.WebsocketResponseErrorV1();
+      //expect(instance).to.be();
+    });
+
     it('should have the property mPayload (base name: "mPayload")', function() {
       // uncomment below and update the code to test the property mPayload
       //var instance = new EZmaxApiDefinitionFull.WebsocketResponseErrorV1();

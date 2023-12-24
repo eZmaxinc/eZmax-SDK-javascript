@@ -83,6 +83,12 @@ class EzsignsignatureResponse {
             if (data.hasOwnProperty('fkiEzsignfoldersignerassociationID')) {
                 obj['fkiEzsignfoldersignerassociationID'] = ApiClient.convertToType(data['fkiEzsignfoldersignerassociationID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiEzsignsigningreasonID')) {
+                obj['fkiEzsignsigningreasonID'] = ApiClient.convertToType(data['fkiEzsignsigningreasonID'], 'Number');
+            }
+            if (data.hasOwnProperty('sEzsignsigningreasonDescriptionX')) {
+                obj['sEzsignsigningreasonDescriptionX'] = ApiClient.convertToType(data['sEzsignsigningreasonDescriptionX'], 'String');
+            }
             if (data.hasOwnProperty('iEzsignpagePagenumber')) {
                 obj['iEzsignpagePagenumber'] = ApiClient.convertToType(data['iEzsignpagePagenumber'], 'Number');
             }
@@ -175,6 +181,10 @@ class EzsignsignatureResponse {
             }
         }
         // ensure the json data is a string
+        if (data['sEzsignsigningreasonDescriptionX'] && !(typeof data['sEzsignsigningreasonDescriptionX'] === 'string' || data['sEzsignsigningreasonDescriptionX'] instanceof String)) {
+            throw new Error("Expected the field `sEzsignsigningreasonDescriptionX` to be a primitive type in the JSON string but got " + data['sEzsignsigningreasonDescriptionX']);
+        }
+        // ensure the json data is a string
         if (data['tEzsignsignatureTooltip'] && !(typeof data['tEzsignsignatureTooltip'] === 'string' || data['tEzsignsignatureTooltip'] instanceof String)) {
             throw new Error("Expected the field `tEzsignsignatureTooltip` to be a primitive type in the JSON string but got " + data['tEzsignsignatureTooltip']);
         }
@@ -257,6 +267,38 @@ class EzsignsignatureResponse {
      */
     setFkiEzsignfoldersignerassociationID(fkiEzsignfoldersignerassociationID) {
         this['fkiEzsignfoldersignerassociationID'] = fkiEzsignfoldersignerassociationID;
+    }
+/**
+     * Returns The unique ID of the Ezsignsigningreason
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiEzsignsigningreasonID() {
+        return this.fkiEzsignsigningreasonID;
+    }
+
+    /**
+     * Sets The unique ID of the Ezsignsigningreason
+     * @param {Number} fkiEzsignsigningreasonID The unique ID of the Ezsignsigningreason
+     */
+    setFkiEzsignsigningreasonID(fkiEzsignsigningreasonID) {
+        this['fkiEzsignsigningreasonID'] = fkiEzsignsigningreasonID;
+    }
+/**
+     * Returns The description of the Ezsignsigningreason in the language of the requester
+     * @return {String}
+     */
+    getSEzsignsigningreasonDescriptionX() {
+        return this.sEzsignsigningreasonDescriptionX;
+    }
+
+    /**
+     * Sets The description of the Ezsignsigningreason in the language of the requester
+     * @param {String} sEzsignsigningreasonDescriptionX The description of the Ezsignsigningreason in the language of the requester
+     */
+    setSEzsignsigningreasonDescriptionX(sEzsignsigningreasonDescriptionX) {
+        this['sEzsignsigningreasonDescriptionX'] = sEzsignsigningreasonDescriptionX;
     }
 /**
      * Returns The page number in the Ezsigndocument
@@ -645,6 +687,18 @@ EzsignsignatureResponse.prototype['fkiEzsigndocumentID'] = undefined;
  * @member {Number} fkiEzsignfoldersignerassociationID
  */
 EzsignsignatureResponse.prototype['fkiEzsignfoldersignerassociationID'] = undefined;
+
+/**
+ * The unique ID of the Ezsignsigningreason
+ * @member {Number} fkiEzsignsigningreasonID
+ */
+EzsignsignatureResponse.prototype['fkiEzsignsigningreasonID'] = undefined;
+
+/**
+ * The description of the Ezsignsigningreason in the language of the requester
+ * @member {String} sEzsignsigningreasonDescriptionX
+ */
+EzsignsignatureResponse.prototype['sEzsignsigningreasonDescriptionX'] = undefined;
 
 /**
  * The page number in the Ezsigndocument

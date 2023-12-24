@@ -36,8 +36,8 @@ export default class ObjectElectronicfundstransferApi {
 
 
     /**
-     * Callback function to receive the result of the eletronicfundstransferGetCommunicationListV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectElectronicfundstransferApi~eletronicfundstransferGetCommunicationListV1Callback
+     * Callback function to receive the result of the electronicfundstransferGetCommunicationListV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectElectronicfundstransferApi~electronicfundstransferGetCommunicationListV1Callback
      * @param {String} error Error message, if any.
      * @param {module:eZmaxAPI/model/ElectronicfundstransferGetCommunicationListV1Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -47,14 +47,14 @@ export default class ObjectElectronicfundstransferApi {
      * Retrieve Communication list
      * 
      * @param {Number} pkiElectronicfundstransferID 
-     * @param {module:eZmaxAPI/api/ObjectElectronicfundstransferApi~eletronicfundstransferGetCommunicationListV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:eZmaxAPI/api/ObjectElectronicfundstransferApi~electronicfundstransferGetCommunicationListV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/ElectronicfundstransferGetCommunicationListV1Response}
      */
-    eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, callback) {
+    electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, callback) {
       let postBody = null;
       // verify the required parameter 'pkiElectronicfundstransferID' is set
       if (pkiElectronicfundstransferID === undefined || pkiElectronicfundstransferID === null) {
-        throw new Error("Missing the required parameter 'pkiElectronicfundstransferID' when calling eletronicfundstransferGetCommunicationListV1");
+        throw new Error("Missing the required parameter 'pkiElectronicfundstransferID' when calling electronicfundstransferGetCommunicationListV1");
       }
 
       let pathParams = {

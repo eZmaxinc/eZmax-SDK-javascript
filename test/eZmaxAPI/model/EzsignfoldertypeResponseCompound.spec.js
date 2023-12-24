@@ -192,6 +192,66 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsignfoldertypeSendsignedtoezsignsigner (base name: "bEzsignfoldertypeSendsignedtoezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendsignedtoezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendsignedtouser (base name: "bEzsignfoldertypeSendsignedtouser")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendsignedtouser
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendattachmentezsignsigner (base name: "bEzsignfoldertypeSendattachmentezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendattachmentezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendproofezsignsigner (base name: "bEzsignfoldertypeSendproofezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendproofezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendattachmentuser (base name: "bEzsignfoldertypeSendattachmentuser")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendattachmentuser
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendproofuser (base name: "bEzsignfoldertypeSendproofuser")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendproofuser
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendproofemail (base name: "bEzsignfoldertypeSendproofemail")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendproofemail
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeAllowdownloadattachmentezsignsigner (base name: "bEzsignfoldertypeAllowdownloadattachmentezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeAllowdownloadattachmentezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeAllowdownloadproofezsignsigner (base name: "bEzsignfoldertypeAllowdownloadproofezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeAllowdownloadproofezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeSendproofreceivealldocument (base name: "bEzsignfoldertypeSendproofreceivealldocument")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeSendproofreceivealldocument
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsignfoldertypeSendsignedtodocumentowner (base name: "bEzsignfoldertypeSendsignedtodocumentowner")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeSendsignedtodocumentowner
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeResponseCompound();

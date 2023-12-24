@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzmaxclientOslatestversion (base name: "sEzmaxclientOslatestversion")', function() {
+      // uncomment below and update the code to test the property sEzmaxclientOslatestversion
+      //var instance = new EZmaxApiDefinitionFull.GlobalEzmaxclientVersionV1Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

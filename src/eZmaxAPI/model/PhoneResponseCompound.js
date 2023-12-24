@@ -71,6 +71,9 @@ class PhoneResponseCompound {
             if (data.hasOwnProperty('sPhoneExtension')) {
                 obj['sPhoneExtension'] = ApiClient.convertToType(data['sPhoneExtension'], 'String');
             }
+            if (data.hasOwnProperty('bPhoneInternational')) {
+                obj['bPhoneInternational'] = ApiClient.convertToType(data['bPhoneInternational'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -174,6 +177,21 @@ class PhoneResponseCompound {
     setSPhoneExtension(sPhoneExtension) {
         this['sPhoneExtension'] = sPhoneExtension;
     }
+/**
+     * Returns Indicate the phone number is an international phone number.
+     * @return {Boolean}
+     */
+    getBPhoneInternational() {
+        return this.bPhoneInternational;
+    }
+
+    /**
+     * Sets Indicate the phone number is an international phone number.
+     * @param {Boolean} bPhoneInternational Indicate the phone number is an international phone number.
+     */
+    setBPhoneInternational(bPhoneInternational) {
+        this['bPhoneInternational'] = bPhoneInternational;
+    }
 
 }
 
@@ -207,6 +225,12 @@ PhoneResponseCompound.prototype['sPhoneE164'] = undefined;
  * @member {String} sPhoneExtension
  */
 PhoneResponseCompound.prototype['sPhoneExtension'] = undefined;
+
+/**
+ * Indicate the phone number is an international phone number.
+ * @member {Boolean} bPhoneInternational
+ */
+PhoneResponseCompound.prototype['bPhoneInternational'] = undefined;
 
 
 // Implement PhoneResponse interface:

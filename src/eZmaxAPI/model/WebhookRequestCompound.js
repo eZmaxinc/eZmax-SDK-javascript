@@ -93,6 +93,9 @@ class WebhookRequestCompound {
             if (data.hasOwnProperty('bWebhookIsactive')) {
                 obj['bWebhookIsactive'] = ApiClient.convertToType(data['bWebhookIsactive'], 'Boolean');
             }
+            if (data.hasOwnProperty('bWebhookIssigned')) {
+                obj['bWebhookIssigned'] = ApiClient.convertToType(data['bWebhookIssigned'], 'Boolean');
+            }
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
@@ -259,6 +262,21 @@ class WebhookRequestCompound {
         this['bWebhookIsactive'] = bWebhookIsactive;
     }
 /**
+     * Returns Whether the requests will be signed or not
+     * @return {Boolean}
+     */
+    getBWebhookIssigned() {
+        return this.bWebhookIssigned;
+    }
+
+    /**
+     * Sets Whether the requests will be signed or not
+     * @param {Boolean} bWebhookIssigned Whether the requests will be signed or not
+     */
+    setBWebhookIssigned(bWebhookIssigned) {
+        this['bWebhookIssigned'] = bWebhookIssigned;
+    }
+/**
      * Returns Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
      * @return {Boolean}
      */
@@ -330,6 +348,12 @@ WebhookRequestCompound.prototype['sWebhookEmailfailed'] = undefined;
 WebhookRequestCompound.prototype['bWebhookIsactive'] = undefined;
 
 /**
+ * Whether the requests will be signed or not
+ * @member {Boolean} bWebhookIssigned
+ */
+WebhookRequestCompound.prototype['bWebhookIssigned'] = undefined;
+
+/**
  * Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
  * @member {Boolean} bWebhookSkipsslvalidation
  */
@@ -379,6 +403,11 @@ WebhookRequest.prototype['sWebhookEmailfailed'] = undefined;
  * @member {Boolean} bWebhookIsactive
  */
 WebhookRequest.prototype['bWebhookIsactive'] = undefined;
+/**
+ * Whether the requests will be signed or not
+ * @member {Boolean} bWebhookIssigned
+ */
+WebhookRequest.prototype['bWebhookIssigned'] = undefined;
 /**
  * Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
  * @member {Boolean} bWebhookSkipsslvalidation

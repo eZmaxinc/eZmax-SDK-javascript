@@ -55,11 +55,11 @@ class CommunicationrecipientRequest {
             if (data.hasOwnProperty('fkiAgentID')) {
                 obj['fkiAgentID'] = ApiClient.convertToType(data['fkiAgentID'], 'Number');
             }
-            if (data.hasOwnProperty('fkiAgentincorporationID')) {
-                obj['fkiAgentincorporationID'] = ApiClient.convertToType(data['fkiAgentincorporationID'], 'Number');
-            }
             if (data.hasOwnProperty('fkiBrokerID')) {
                 obj['fkiBrokerID'] = ApiClient.convertToType(data['fkiBrokerID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiContactID')) {
+                obj['fkiContactID'] = ApiClient.convertToType(data['fkiContactID'], 'Number');
             }
             if (data.hasOwnProperty('fkiCustomerID')) {
                 obj['fkiCustomerID'] = ApiClient.convertToType(data['fkiCustomerID'], 'Number');
@@ -84,6 +84,12 @@ class CommunicationrecipientRequest {
             }
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiMailboxsharedID')) {
+                obj['fkiMailboxsharedID'] = ApiClient.convertToType(data['fkiMailboxsharedID'], 'Number');
+            }
+            if (data.hasOwnProperty('fkiPhonelinesharedID')) {
+                obj['fkiPhonelinesharedID'] = ApiClient.convertToType(data['fkiPhonelinesharedID'], 'Number');
             }
             if (data.hasOwnProperty('eCommunicationrecipientType')) {
                 obj['eCommunicationrecipientType'] = FieldECommunicationrecipientType.constructFromObject(data['eCommunicationrecipientType']);
@@ -135,22 +141,6 @@ class CommunicationrecipientRequest {
         this['fkiAgentID'] = fkiAgentID;
     }
 /**
-     * Returns The unique ID of the Agentincorporation.
-     * minimum: 0
-     * @return {Number}
-     */
-    getFkiAgentincorporationID() {
-        return this.fkiAgentincorporationID;
-    }
-
-    /**
-     * Sets The unique ID of the Agentincorporation.
-     * @param {Number} fkiAgentincorporationID The unique ID of the Agentincorporation.
-     */
-    setFkiAgentincorporationID(fkiAgentincorporationID) {
-        this['fkiAgentincorporationID'] = fkiAgentincorporationID;
-    }
-/**
      * Returns The unique ID of the Broker.
      * minimum: 0
      * @return {Number}
@@ -165,6 +155,22 @@ class CommunicationrecipientRequest {
      */
     setFkiBrokerID(fkiBrokerID) {
         this['fkiBrokerID'] = fkiBrokerID;
+    }
+/**
+     * Returns The unique ID of the Contact
+     * minimum: 0
+     * @return {Number}
+     */
+    getFkiContactID() {
+        return this.fkiContactID;
+    }
+
+    /**
+     * Sets The unique ID of the Contact
+     * @param {Number} fkiContactID The unique ID of the Contact
+     */
+    setFkiContactID(fkiContactID) {
+        this['fkiContactID'] = fkiContactID;
     }
 /**
      * Returns The unique ID of the Customer.
@@ -295,6 +301,40 @@ class CommunicationrecipientRequest {
         this['fkiUserID'] = fkiUserID;
     }
 /**
+     * Returns The unique ID of the Mailboxshared
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiMailboxsharedID() {
+        return this.fkiMailboxsharedID;
+    }
+
+    /**
+     * Sets The unique ID of the Mailboxshared
+     * @param {Number} fkiMailboxsharedID The unique ID of the Mailboxshared
+     */
+    setFkiMailboxsharedID(fkiMailboxsharedID) {
+        this['fkiMailboxsharedID'] = fkiMailboxsharedID;
+    }
+/**
+     * Returns The unique ID of the Phonelineshared
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiPhonelinesharedID() {
+        return this.fkiPhonelinesharedID;
+    }
+
+    /**
+     * Sets The unique ID of the Phonelineshared
+     * @param {Number} fkiPhonelinesharedID The unique ID of the Phonelineshared
+     */
+    setFkiPhonelinesharedID(fkiPhonelinesharedID) {
+        this['fkiPhonelinesharedID'] = fkiPhonelinesharedID;
+    }
+/**
      * @return {module:eZmaxAPI/model/FieldECommunicationrecipientType}
      */
     getECommunicationrecipientType() {
@@ -325,16 +365,16 @@ CommunicationrecipientRequest.prototype['pkiCommunicationrecipientID'] = undefin
 CommunicationrecipientRequest.prototype['fkiAgentID'] = undefined;
 
 /**
- * The unique ID of the Agentincorporation.
- * @member {Number} fkiAgentincorporationID
- */
-CommunicationrecipientRequest.prototype['fkiAgentincorporationID'] = undefined;
-
-/**
  * The unique ID of the Broker.
  * @member {Number} fkiBrokerID
  */
 CommunicationrecipientRequest.prototype['fkiBrokerID'] = undefined;
+
+/**
+ * The unique ID of the Contact
+ * @member {Number} fkiContactID
+ */
+CommunicationrecipientRequest.prototype['fkiContactID'] = undefined;
 
 /**
  * The unique ID of the Customer.
@@ -383,6 +423,18 @@ CommunicationrecipientRequest.prototype['fkiSupplierID'] = undefined;
  * @member {Number} fkiUserID
  */
 CommunicationrecipientRequest.prototype['fkiUserID'] = undefined;
+
+/**
+ * The unique ID of the Mailboxshared
+ * @member {Number} fkiMailboxsharedID
+ */
+CommunicationrecipientRequest.prototype['fkiMailboxsharedID'] = undefined;
+
+/**
+ * The unique ID of the Phonelineshared
+ * @member {Number} fkiPhonelinesharedID
+ */
+CommunicationrecipientRequest.prototype['fkiPhonelinesharedID'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldECommunicationrecipientType} eCommunicationrecipientType

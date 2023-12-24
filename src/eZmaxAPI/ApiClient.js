@@ -602,6 +602,7 @@ class ApiClient {
                     'description': "The environment on on which to call the API. Should always be \"prod\" unless instructed otherwise by support.",
                     'default_value': "prod",
                     'enum_values': [
+                      "iso",
                       "prod",
                       "stg",
                       "qa",
@@ -626,8 +627,6 @@ class ApiClient {
                     'default_value': "prod",
                     'enum_values': [
                       "prod",
-                      "stg",
-                      "qa",
                       "dev"
                     ]
                   }
@@ -641,6 +640,7 @@ class ApiClient {
                     'description': "The environment on on which to call the API. Should always be \"prod\" unless instructed otherwise by support.",
                     'default_value': "prod",
                     'enum_values': [
+                      "iso",
                       "prod",
                       "stg",
                       "qa",

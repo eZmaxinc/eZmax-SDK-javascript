@@ -18,12 +18,16 @@ import CommonResponseErrorTooManyRequests from '../model/CommonResponseErrorTooM
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 import WebhookCreateObjectV1Request from '../model/WebhookCreateObjectV1Request';
 import WebhookCreateObjectV1Response from '../model/WebhookCreateObjectV1Response';
+import WebhookCreateObjectV2Request from '../model/WebhookCreateObjectV2Request';
+import WebhookCreateObjectV2Response from '../model/WebhookCreateObjectV2Response';
 import WebhookDeleteObjectV1Response from '../model/WebhookDeleteObjectV1Response';
 import WebhookEditObjectV1Request from '../model/WebhookEditObjectV1Request';
 import WebhookEditObjectV1Response from '../model/WebhookEditObjectV1Response';
 import WebhookGetHistoryV1Response from '../model/WebhookGetHistoryV1Response';
 import WebhookGetListV1Response from '../model/WebhookGetListV1Response';
 import WebhookGetObjectV2Response from '../model/WebhookGetObjectV2Response';
+import WebhookRegenerateApikeyV1Request from '../model/WebhookRegenerateApikeyV1Request';
+import WebhookRegenerateApikeyV1Response from '../model/WebhookRegenerateApikeyV1Response';
 import WebhookTestV1Response from '../model/WebhookTestV1Response';
 
 /**
@@ -82,6 +86,48 @@ export default class ObjectWebhookApi {
       let returnType = WebhookCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/webhook', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the webhookCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectWebhookApi~webhookCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/WebhookCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Webhook
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/WebhookCreateObjectV2Request} WebhookCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectWebhookApi~webhookCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/WebhookCreateObjectV2Response}
+     */
+    webhookCreateObjectV2(WebhookCreateObjectV2Request, callback) {
+      let postBody = WebhookCreateObjectV2Request;
+      // verify the required parameter 'WebhookCreateObjectV2Request' is set
+      if (WebhookCreateObjectV2Request === undefined || WebhookCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'WebhookCreateObjectV2Request' when calling webhookCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = WebhookCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/webhook', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -314,6 +360,54 @@ export default class ObjectWebhookApi {
       let returnType = WebhookGetObjectV2Response;
       return this.apiClient.callApi(
         '/2/object/webhook/{pkiWebhookID}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the webhookRegenerateApikeyV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectWebhookApi~webhookRegenerateApikeyV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/WebhookRegenerateApikeyV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Regenerate the Apikey
+     * 
+     * @param {Number} pkiWebhookID 
+     * @param {module:eZmaxAPI/model/WebhookRegenerateApikeyV1Request} WebhookRegenerateApikeyV1Request 
+     * @param {module:eZmaxAPI/api/ObjectWebhookApi~webhookRegenerateApikeyV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/WebhookRegenerateApikeyV1Response}
+     */
+    webhookRegenerateApikeyV1(pkiWebhookID, WebhookRegenerateApikeyV1Request, callback) {
+      let postBody = WebhookRegenerateApikeyV1Request;
+      // verify the required parameter 'pkiWebhookID' is set
+      if (pkiWebhookID === undefined || pkiWebhookID === null) {
+        throw new Error("Missing the required parameter 'pkiWebhookID' when calling webhookRegenerateApikeyV1");
+      }
+      // verify the required parameter 'WebhookRegenerateApikeyV1Request' is set
+      if (WebhookRegenerateApikeyV1Request === undefined || WebhookRegenerateApikeyV1Request === null) {
+        throw new Error("Missing the required parameter 'WebhookRegenerateApikeyV1Request' when calling webhookRegenerateApikeyV1");
+      }
+
+      let pathParams = {
+        'pkiWebhookID': pkiWebhookID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = WebhookRegenerateApikeyV1Response;
+      return this.apiClient.callApi(
+        '/1/object/webhook/{pkiWebhookID}/regenerateApikey', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -4,13 +4,13 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eletronicfundstransferGetCommunicationListV1**](ObjectElectronicfundstransferApi.md#eletronicfundstransferGetCommunicationListV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
+[**electronicfundstransferGetCommunicationListV1**](ObjectElectronicfundstransferApi.md#electronicfundstransferGetCommunicationListV1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list
 
 
 
-## eletronicfundstransferGetCommunicationListV1
+## electronicfundstransferGetCommunicationListV1
 
-> ElectronicfundstransferGetCommunicationListV1Response eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID)
+> ElectronicfundstransferGetCommunicationListV1Response electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID)
 
 Retrieve Communication list
 
@@ -29,7 +29,7 @@ Authorization.apiKey = 'YOUR API KEY';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectElectronicfundstransferApi();
 let pkiElectronicfundstransferID = 56; // Number | 
-apiInstance.eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, (error, data, response) => {
+apiInstance.electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

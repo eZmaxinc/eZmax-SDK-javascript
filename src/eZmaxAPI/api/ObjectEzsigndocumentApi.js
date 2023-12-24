@@ -34,6 +34,7 @@ import EzsigndocumentEditEzsignsignaturesV1Response from '../model/Ezsigndocumen
 import EzsigndocumentEndPrematurelyV1Response from '../model/EzsigndocumentEndPrematurelyV1Response';
 import EzsigndocumentFlattenV1Response from '../model/EzsigndocumentFlattenV1Response';
 import EzsigndocumentGetActionableElementsV1Response from '../model/EzsigndocumentGetActionableElementsV1Response';
+import EzsigndocumentGetAttachmentsV1Response from '../model/EzsigndocumentGetAttachmentsV1Response';
 import EzsigndocumentGetCompletedElementsV1Response from '../model/EzsigndocumentGetCompletedElementsV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignannotationsV1Response from '../model/EzsigndocumentGetEzsignannotationsV1Response';
@@ -573,6 +574,49 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentGetActionableElementsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentGetAttachmentsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetAttachmentsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetAttachmentsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Ezsigndocument's Attachments
+     * 
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetAttachmentsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetAttachmentsV1Response}
+     */
+    ezsigndocumentGetAttachmentsV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetAttachmentsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetAttachmentsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new EZmaxApiDefinitionFull.AttachmentDownloadV1Response();
+    instance = new EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,22 +47,28 @@
       object[property] = value;
   }
 
-  describe('AttachmentDownloadV1Response', function() {
-    it('should create an instance of AttachmentDownloadV1Response', function() {
-      // uncomment below and update the code to test AttachmentDownloadV1Response
-      //var instance = new EZmaxApiDefinitionFull.AttachmentDownloadV1Response();
-      //expect(instance).to.be.a(EZmaxApiDefinitionFull.AttachmentDownloadV1Response);
+  describe('InscriptionGetCommunicationsendersV1Response', function() {
+    it('should create an instance of InscriptionGetCommunicationsendersV1Response', function() {
+      // uncomment below and update the code to test InscriptionGetCommunicationsendersV1Response
+      //var instance = new EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response();
+      //expect(instance).to.be.a(EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response);
     });
 
     it('should have the property objDebugPayload (base name: "objDebugPayload")', function() {
       // uncomment below and update the code to test the property objDebugPayload
-      //var instance = new EZmaxApiDefinitionFull.AttachmentDownloadV1Response();
+      //var instance = new EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response();
       //expect(instance).to.be();
     });
 
     it('should have the property objDebug (base name: "objDebug")', function() {
       // uncomment below and update the code to test the property objDebug
-      //var instance = new EZmaxApiDefinitionFull.AttachmentDownloadV1Response();
+      //var instance = new EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mPayload (base name: "mPayload")', function() {
+      // uncomment below and update the code to test the property mPayload
+      //var instance = new EZmaxApiDefinitionFull.InscriptionGetCommunicationsendersV1Response();
       //expect(instance).to.be();
     });
 

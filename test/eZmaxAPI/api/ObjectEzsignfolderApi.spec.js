@@ -138,6 +138,26 @@
         done();
       });
     });
+    describe('ezsignfolderGetAttachmentCountV1', function() {
+      it('should call ezsignfolderGetAttachmentCountV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetAttachmentCountV1
+        //instance.ezsignfolderGetAttachmentCountV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfolderGetAttachmentsV1', function() {
+      it('should call ezsignfolderGetAttachmentsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderGetAttachmentsV1
+        //instance.ezsignfolderGetAttachmentsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetCommunicationCountV1', function() {
       it('should call ezsignfolderGetCommunicationCountV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetCommunicationCountV1

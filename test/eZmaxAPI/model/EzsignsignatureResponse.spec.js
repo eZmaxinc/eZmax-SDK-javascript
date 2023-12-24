@@ -72,6 +72,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiEzsignsigningreasonID (base name: "fkiEzsignsigningreasonID")', function() {
+      // uncomment below and update the code to test the property fkiEzsignsigningreasonID
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsignsigningreasonDescriptionX (base name: "sEzsignsigningreasonDescriptionX")', function() {
+      // uncomment below and update the code to test the property sEzsignsigningreasonDescriptionX
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsignpagePagenumber (base name: "iEzsignpagePagenumber")', function() {
       // uncomment below and update the code to test the property iEzsignpagePagenumber
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();

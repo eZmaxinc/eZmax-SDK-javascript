@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiPhonelinesharedID (base name: "fkiPhonelinesharedID")', function() {
+      // uncomment below and update the code to test the property fkiPhonelinesharedID
+      //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fkiUserID (base name: "fkiUserID")', function() {
       // uncomment below and update the code to test the property fkiUserID
       //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderRequest();

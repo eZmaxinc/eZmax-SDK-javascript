@@ -33,10 +33,11 @@ class WebhookListElement {
      * @param sWebhookEmailfailed {String} The email that will receive the Webhook in case all attempts fail
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
      * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
+     * @param bWebhookIssigned {Boolean} Whether the requests will be signed or not
      */
-    constructor(pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive) { 
+    constructor(pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive, bWebhookIssigned) { 
         
-        WebhookListElement.initialize(this, pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive);
+        WebhookListElement.initialize(this, pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive, bWebhookIssigned);
     }
 
     /**
@@ -44,7 +45,7 @@ class WebhookListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, sWebhookUrl, sWebhookEvent, sWebhookEmailfailed, eWebhookModule, bWebhookIsactive, bWebhookIssigned) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['sWebhookUrl'] = sWebhookUrl;
@@ -52,6 +53,7 @@ class WebhookListElement {
         obj['sWebhookEmailfailed'] = sWebhookEmailfailed;
         obj['eWebhookModule'] = eWebhookModule;
         obj['bWebhookIsactive'] = bWebhookIsactive;
+        obj['bWebhookIssigned'] = bWebhookIssigned;
     }
 
     /**
@@ -91,6 +93,9 @@ class WebhookListElement {
             }
             if (data.hasOwnProperty('bWebhookIsactive')) {
                 obj['bWebhookIsactive'] = ApiClient.convertToType(data['bWebhookIsactive'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bWebhookIssigned')) {
+                obj['bWebhookIssigned'] = ApiClient.convertToType(data['bWebhookIssigned'], 'Boolean');
             }
         }
         return obj;
@@ -257,10 +262,25 @@ class WebhookListElement {
     setBWebhookIsactive(bWebhookIsactive) {
         this['bWebhookIsactive'] = bWebhookIsactive;
     }
+/**
+     * Returns Whether the requests will be signed or not
+     * @return {Boolean}
+     */
+    getBWebhookIssigned() {
+        return this.bWebhookIssigned;
+    }
+
+    /**
+     * Sets Whether the requests will be signed or not
+     * @param {Boolean} bWebhookIssigned Whether the requests will be signed or not
+     */
+    setBWebhookIssigned(bWebhookIssigned) {
+        this['bWebhookIssigned'] = bWebhookIssigned;
+    }
 
 }
 
-WebhookListElement.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "sWebhookUrl", "sWebhookEvent", "sWebhookEmailfailed", "eWebhookModule", "bWebhookIsactive"];
+WebhookListElement.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "sWebhookUrl", "sWebhookEvent", "sWebhookEmailfailed", "eWebhookModule", "bWebhookIsactive", "bWebhookIssigned"];
 
 /**
  * The unique ID of the Webhook
@@ -312,6 +332,12 @@ WebhookListElement.prototype['eWebhookManagementevent'] = undefined;
  * @member {Boolean} bWebhookIsactive
  */
 WebhookListElement.prototype['bWebhookIsactive'] = undefined;
+
+/**
+ * Whether the requests will be signed or not
+ * @member {Boolean} bWebhookIssigned
+ */
+WebhookListElement.prototype['bWebhookIssigned'] = undefined;
 
 
 

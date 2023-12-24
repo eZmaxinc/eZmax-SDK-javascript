@@ -120,6 +120,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eUserEzsignaccess (base name: "eUserEzsignaccess")', function() {
+      // uncomment below and update the code to test the property eUserEzsignaccess
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eUserEzsignprepaid (base name: "eUserEzsignprepaid")', function() {
+      // uncomment below and update the code to test the property eUserEzsignprepaid
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dtUserEzsignprepaidexpiration (base name: "dtUserEzsignprepaidexpiration")', function() {
+      // uncomment below and update the code to test the property dtUserEzsignprepaidexpiration
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property a_pkiPermissionID (base name: "a_pkiPermissionID")', function() {
       // uncomment below and update the code to test the property a_pkiPermissionID
       //var instance = new EZmaxApiDefinitionFull.ActivesessionResponseCompound();

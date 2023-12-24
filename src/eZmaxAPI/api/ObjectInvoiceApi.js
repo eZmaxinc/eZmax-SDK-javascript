@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import InvoiceGetAttachmentsV1Response from '../model/InvoiceGetAttachmentsV1Response';
 import InvoiceGetCommunicationListV1Response from '../model/InvoiceGetCommunicationListV1Response';
 
 /**
@@ -34,6 +35,49 @@ export default class ObjectInvoiceApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the invoiceGetAttachmentsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectInvoiceApi~invoiceGetAttachmentsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/InvoiceGetAttachmentsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve Invoice's Attachments
+     * 
+     * @param {Number} pkiInvoiceID 
+     * @param {module:eZmaxAPI/api/ObjectInvoiceApi~invoiceGetAttachmentsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/InvoiceGetAttachmentsV1Response}
+     */
+    invoiceGetAttachmentsV1(pkiInvoiceID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiInvoiceID' is set
+      if (pkiInvoiceID === undefined || pkiInvoiceID === null) {
+        throw new Error("Missing the required parameter 'pkiInvoiceID' when calling invoiceGetAttachmentsV1");
+      }
+
+      let pathParams = {
+        'pkiInvoiceID': pkiInvoiceID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InvoiceGetAttachmentsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/invoice/{pkiInvoiceID}/getAttachments', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the invoiceGetCommunicationListV1 operation.

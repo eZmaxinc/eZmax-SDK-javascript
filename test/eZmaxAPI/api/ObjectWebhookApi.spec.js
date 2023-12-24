@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('webhookCreateObjectV2', function() {
+      it('should call webhookCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test webhookCreateObjectV2
+        //instance.webhookCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('webhookDeleteObjectV1', function() {
       it('should call webhookDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test webhookDeleteObjectV1
@@ -102,6 +112,16 @@
       it('should call webhookGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test webhookGetObjectV2
         //instance.webhookGetObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('webhookRegenerateApikeyV1', function() {
+      it('should call webhookRegenerateApikeyV1 successfully', function(done) {
+        //uncomment below and update the code to test webhookRegenerateApikeyV1
+        //instance.webhookRegenerateApikeyV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

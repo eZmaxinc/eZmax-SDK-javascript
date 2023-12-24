@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiPhonelinesharedID (base name: "fkiPhonelinesharedID")', function() {
+      // uncomment below and update the code to test the property fkiPhonelinesharedID
+      //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eCommunicationsenderObjecttype (base name: "eCommunicationsenderObjecttype")', function() {
       // uncomment below and update the code to test the property eCommunicationsenderObjecttype
       //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderResponse();
@@ -90,14 +96,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sEmailAddress (base name: "sEmailAddress")', function() {
-      // uncomment below and update the code to test the property sEmailAddress
+    it('should have the property objEmail (base name: "objEmail")', function() {
+      // uncomment below and update the code to test the property objEmail
       //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property sPhoneE164 (base name: "sPhoneE164")', function() {
-      // uncomment below and update the code to test the property sPhoneE164
+    it('should have the property objPhoneFax (base name: "objPhoneFax")', function() {
+      // uncomment below and update the code to test the property objPhoneFax
+      //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property objPhoneSMS (base name: "objPhoneSMS")', function() {
+      // uncomment below and update the code to test the property objPhoneSMS
       //var instance = new EZmaxApiDefinitionFull.CustomCommunicationsenderResponse();
       //expect(instance).to.be();
     });
