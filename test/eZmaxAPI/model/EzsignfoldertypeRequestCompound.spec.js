@@ -132,6 +132,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignfoldertypeCompletion (base name: "eEzsignfoldertypeCompletion")', function() {
+      // uncomment below and update the code to test the property eEzsignfoldertypeCompletion
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsignfoldertypeDisposaldays (base name: "iEzsignfoldertypeDisposaldays")', function() {
       // uncomment below and update the code to test the property iEzsignfoldertypeDisposaldays
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
@@ -152,6 +158,18 @@
 
     it('should have the property bEzsignfoldertypeReassign (base name: "bEzsignfoldertypeReassign")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeReassign
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeReassignezsignsigner (base name: "bEzsignfoldertypeReassignezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeReassignezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeReassignuser (base name: "bEzsignfoldertypeReassignuser")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeReassignuser
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
       //expect(instance).to.be();
     });

@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiBillingentityinternalID (base name: "fkiBillingentityinternalID")', function() {
+      // uncomment below and update the code to test the property fkiBillingentityinternalID
+      //var instance = new EZmaxApiDefinitionFull.CustomEzmaxinvoicingEzsigndocumentResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sName (base name: "sName")', function() {
       // uncomment below and update the code to test the property sName
       //var instance = new EZmaxApiDefinitionFull.CustomEzmaxinvoicingEzsigndocumentResponse();

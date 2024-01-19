@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import CustomEzsignfoldertypeResponse from './CustomEzsignfoldertypeResponse';
+import FieldEEzsignfolderCompletion from './FieldEEzsignfolderCompletion';
 import FieldEEzsignfolderSendreminderfrequency from './FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
 
@@ -64,6 +65,9 @@ class EzsignfolderResponse {
             }
             if (data.hasOwnProperty('objEzsignfoldertype')) {
                 obj['objEzsignfoldertype'] = CustomEzsignfoldertypeResponse.constructFromObject(data['objEzsignfoldertype']);
+            }
+            if (data.hasOwnProperty('eEzsignfolderCompletion')) {
+                obj['eEzsignfolderCompletion'] = FieldEEzsignfolderCompletion.constructFromObject(data['eEzsignfolderCompletion']);
             }
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
@@ -246,6 +250,19 @@ class EzsignfolderResponse {
      */
     setObjEzsignfoldertype(objEzsignfoldertype) {
         this['objEzsignfoldertype'] = objEzsignfoldertype;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignfolderCompletion}
+     */
+    getEEzsignfolderCompletion() {
+        return this.eEzsignfolderCompletion;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} eEzsignfolderCompletion
+     */
+    setEEzsignfolderCompletion(eEzsignfolderCompletion) {
+        this['eEzsignfolderCompletion'] = eEzsignfolderCompletion;
     }
 /**
      * @return {String}
@@ -548,6 +565,11 @@ EzsignfolderResponse.prototype['fkiEzsignfoldertypeID'] = undefined;
  * @member {module:eZmaxAPI/model/CustomEzsignfoldertypeResponse} objEzsignfoldertype
  */
 EzsignfolderResponse.prototype['objEzsignfoldertype'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} eEzsignfolderCompletion
+ */
+EzsignfolderResponse.prototype['eEzsignfolderCompletion'] = undefined;
 
 /**
  * @member {String} sEzsignfoldertypeNameX

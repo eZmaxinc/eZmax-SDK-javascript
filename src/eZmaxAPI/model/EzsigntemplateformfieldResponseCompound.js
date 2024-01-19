@@ -15,6 +15,8 @@ import ApiClient from '../ApiClient';
 import EzsigntemplateelementdependencyResponseCompound from './EzsigntemplateelementdependencyResponseCompound';
 import EzsigntemplateformfieldResponse from './EzsigntemplateformfieldResponse';
 import FieldEEzsigntemplateformfieldDependencyrequirement from './FieldEEzsigntemplateformfieldDependencyrequirement';
+import FieldEEzsigntemplateformfieldPositioning from './FieldEEzsigntemplateformfieldPositioning';
+import FieldEEzsigntemplateformfieldPositioningoccurence from './FieldEEzsigntemplateformfieldPositioningoccurence';
 
 /**
  * The EzsigntemplateformfieldResponseCompound model module.
@@ -30,14 +32,12 @@ class EzsigntemplateformfieldResponseCompound {
      * @param pkiEzsigntemplateformfieldID {Number} The unique ID of the Ezsigntemplateformfield
      * @param iEzsigntemplatedocumentpagePagenumber {Number} The page number in the Ezsigntemplatedocument
      * @param sEzsigntemplateformfieldLabel {String} The Label for the Ezsigntemplateformfield
-     * @param iEzsigntemplateformfieldX {Number} The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @param iEzsigntemplateformfieldY {Number} The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsigntemplateformfieldWidth {Number} The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
      * @param iEzsigntemplateformfieldHeight {Number} The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
      */
-    constructor(pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldX, iEzsigntemplateformfieldY, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight) { 
-        EzsigntemplateformfieldResponse.initialize(this, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldX, iEzsigntemplateformfieldY, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight);
-        EzsigntemplateformfieldResponseCompound.initialize(this, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldX, iEzsigntemplateformfieldY, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight);
+    constructor(pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight) { 
+        EzsigntemplateformfieldResponse.initialize(this, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight);
+        EzsigntemplateformfieldResponseCompound.initialize(this, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight);
     }
 
     /**
@@ -45,12 +45,10 @@ class EzsigntemplateformfieldResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldX, iEzsigntemplateformfieldY, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight) { 
+    static initialize(obj, pkiEzsigntemplateformfieldID, iEzsigntemplatedocumentpagePagenumber, sEzsigntemplateformfieldLabel, iEzsigntemplateformfieldWidth, iEzsigntemplateformfieldHeight) { 
         obj['pkiEzsigntemplateformfieldID'] = pkiEzsigntemplateformfieldID;
         obj['iEzsigntemplatedocumentpagePagenumber'] = iEzsigntemplatedocumentpagePagenumber;
         obj['sEzsigntemplateformfieldLabel'] = sEzsigntemplateformfieldLabel;
-        obj['iEzsigntemplateformfieldX'] = iEzsigntemplateformfieldX;
-        obj['iEzsigntemplateformfieldY'] = iEzsigntemplateformfieldY;
         obj['iEzsigntemplateformfieldWidth'] = iEzsigntemplateformfieldWidth;
         obj['iEzsigntemplateformfieldHeight'] = iEzsigntemplateformfieldHeight;
     }
@@ -69,6 +67,9 @@ class EzsigntemplateformfieldResponseCompound {
 
             if (data.hasOwnProperty('pkiEzsigntemplateformfieldID')) {
                 obj['pkiEzsigntemplateformfieldID'] = ApiClient.convertToType(data['pkiEzsigntemplateformfieldID'], 'Number');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldPositioning')) {
+                obj['eEzsigntemplateformfieldPositioning'] = FieldEEzsigntemplateformfieldPositioning.constructFromObject(data['eEzsigntemplateformfieldPositioning']);
             }
             if (data.hasOwnProperty('iEzsigntemplatedocumentpagePagenumber')) {
                 obj['iEzsigntemplatedocumentpagePagenumber'] = ApiClient.convertToType(data['iEzsigntemplatedocumentpagePagenumber'], 'Number');
@@ -100,6 +101,18 @@ class EzsigntemplateformfieldResponseCompound {
             if (data.hasOwnProperty('eEzsigntemplateformfieldDependencyrequirement')) {
                 obj['eEzsigntemplateformfieldDependencyrequirement'] = FieldEEzsigntemplateformfieldDependencyrequirement.constructFromObject(data['eEzsigntemplateformfieldDependencyrequirement']);
             }
+            if (data.hasOwnProperty('sEzsigntemplateformfieldPositioningpattern')) {
+                obj['sEzsigntemplateformfieldPositioningpattern'] = ApiClient.convertToType(data['sEzsigntemplateformfieldPositioningpattern'], 'String');
+            }
+            if (data.hasOwnProperty('iEzsigntemplateformfieldPositioningoffsetx')) {
+                obj['iEzsigntemplateformfieldPositioningoffsetx'] = ApiClient.convertToType(data['iEzsigntemplateformfieldPositioningoffsetx'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsigntemplateformfieldPositioningoffsety')) {
+                obj['iEzsigntemplateformfieldPositioningoffsety'] = ApiClient.convertToType(data['iEzsigntemplateformfieldPositioningoffsety'], 'Number');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateformfieldPositioningoccurence')) {
+                obj['eEzsigntemplateformfieldPositioningoccurence'] = FieldEEzsigntemplateformfieldPositioningoccurence.constructFromObject(data['eEzsigntemplateformfieldPositioningoccurence']);
+            }
             if (data.hasOwnProperty('a_objEzsigntemplateelementdependency')) {
                 obj['a_objEzsigntemplateelementdependency'] = ApiClient.convertToType(data['a_objEzsigntemplateelementdependency'], [EzsigntemplateelementdependencyResponseCompound]);
             }
@@ -126,6 +139,10 @@ class EzsigntemplateformfieldResponseCompound {
         // ensure the json data is a string
         if (data['sEzsigntemplateformfieldValue'] && !(typeof data['sEzsigntemplateformfieldValue'] === 'string' || data['sEzsigntemplateformfieldValue'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplateformfieldValue` to be a primitive type in the JSON string but got " + data['sEzsigntemplateformfieldValue']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplateformfieldPositioningpattern'] && !(typeof data['sEzsigntemplateformfieldPositioningpattern'] === 'string' || data['sEzsigntemplateformfieldPositioningpattern'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplateformfieldPositioningpattern` to be a primitive type in the JSON string but got " + data['sEzsigntemplateformfieldPositioningpattern']);
         }
         if (data['a_objEzsigntemplateelementdependency']) { // data not null
             // ensure the json data is an array
@@ -156,6 +173,19 @@ class EzsigntemplateformfieldResponseCompound {
      */
     setPkiEzsigntemplateformfieldID(pkiEzsigntemplateformfieldID) {
         this['pkiEzsigntemplateformfieldID'] = pkiEzsigntemplateformfieldID;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioning}
+     */
+    getEEzsigntemplateformfieldPositioning() {
+        return this.eEzsigntemplateformfieldPositioning;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioning} eEzsigntemplateformfieldPositioning
+     */
+    setEEzsigntemplateformfieldPositioning(eEzsigntemplateformfieldPositioning) {
+        this['eEzsigntemplateformfieldPositioning'] = eEzsigntemplateformfieldPositioning;
     }
 /**
      * Returns The page number in the Ezsigntemplatedocument
@@ -311,6 +341,64 @@ class EzsigntemplateformfieldResponseCompound {
         this['eEzsigntemplateformfieldDependencyrequirement'] = eEzsigntemplateformfieldDependencyrequirement;
     }
 /**
+     * Returns The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @return {String}
+     */
+    getSEzsigntemplateformfieldPositioningpattern() {
+        return this.sEzsigntemplateformfieldPositioningpattern;
+    }
+
+    /**
+     * Sets The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @param {String} sEzsigntemplateformfieldPositioningpattern The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     */
+    setSEzsigntemplateformfieldPositioningpattern(sEzsigntemplateformfieldPositioningpattern) {
+        this['sEzsigntemplateformfieldPositioningpattern'] = sEzsigntemplateformfieldPositioningpattern;
+    }
+/**
+     * Returns The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @return {Number}
+     */
+    getIEzsigntemplateformfieldPositioningoffsetx() {
+        return this.iEzsigntemplateformfieldPositioningoffsetx;
+    }
+
+    /**
+     * Sets The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @param {Number} iEzsigntemplateformfieldPositioningoffsetx The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     */
+    setIEzsigntemplateformfieldPositioningoffsetx(iEzsigntemplateformfieldPositioningoffsetx) {
+        this['iEzsigntemplateformfieldPositioningoffsetx'] = iEzsigntemplateformfieldPositioningoffsetx;
+    }
+/**
+     * Returns The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @return {Number}
+     */
+    getIEzsigntemplateformfieldPositioningoffsety() {
+        return this.iEzsigntemplateformfieldPositioningoffsety;
+    }
+
+    /**
+     * Sets The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @param {Number} iEzsigntemplateformfieldPositioningoffsety The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     */
+    setIEzsigntemplateformfieldPositioningoffsety(iEzsigntemplateformfieldPositioningoffsety) {
+        this['iEzsigntemplateformfieldPositioningoffsety'] = iEzsigntemplateformfieldPositioningoffsety;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioningoccurence}
+     */
+    getEEzsigntemplateformfieldPositioningoccurence() {
+        return this.eEzsigntemplateformfieldPositioningoccurence;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioningoccurence} eEzsigntemplateformfieldPositioningoccurence
+     */
+    setEEzsigntemplateformfieldPositioningoccurence(eEzsigntemplateformfieldPositioningoccurence) {
+        this['eEzsigntemplateformfieldPositioningoccurence'] = eEzsigntemplateformfieldPositioningoccurence;
+    }
+/**
      * @return {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound>}
      */
     getAObjEzsigntemplateelementdependency() {
@@ -326,13 +414,18 @@ class EzsigntemplateformfieldResponseCompound {
 
 }
 
-EzsigntemplateformfieldResponseCompound.RequiredProperties = ["pkiEzsigntemplateformfieldID", "iEzsigntemplatedocumentpagePagenumber", "sEzsigntemplateformfieldLabel", "iEzsigntemplateformfieldX", "iEzsigntemplateformfieldY", "iEzsigntemplateformfieldWidth", "iEzsigntemplateformfieldHeight"];
+EzsigntemplateformfieldResponseCompound.RequiredProperties = ["pkiEzsigntemplateformfieldID", "iEzsigntemplatedocumentpagePagenumber", "sEzsigntemplateformfieldLabel", "iEzsigntemplateformfieldWidth", "iEzsigntemplateformfieldHeight"];
 
 /**
  * The unique ID of the Ezsigntemplateformfield
  * @member {Number} pkiEzsigntemplateformfieldID
  */
 EzsigntemplateformfieldResponseCompound.prototype['pkiEzsigntemplateformfieldID'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioning} eEzsigntemplateformfieldPositioning
+ */
+EzsigntemplateformfieldResponseCompound.prototype['eEzsigntemplateformfieldPositioning'] = undefined;
 
 /**
  * The page number in the Ezsigntemplatedocument
@@ -394,6 +487,29 @@ EzsigntemplateformfieldResponseCompound.prototype['bEzsigntemplateformfieldSelec
 EzsigntemplateformfieldResponseCompound.prototype['eEzsigntemplateformfieldDependencyrequirement'] = undefined;
 
 /**
+ * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {String} sEzsigntemplateformfieldPositioningpattern
+ */
+EzsigntemplateformfieldResponseCompound.prototype['sEzsigntemplateformfieldPositioningpattern'] = undefined;
+
+/**
+ * The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplateformfieldPositioningoffsetx
+ */
+EzsigntemplateformfieldResponseCompound.prototype['iEzsigntemplateformfieldPositioningoffsetx'] = undefined;
+
+/**
+ * The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplateformfieldPositioningoffsety
+ */
+EzsigntemplateformfieldResponseCompound.prototype['iEzsigntemplateformfieldPositioningoffsety'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioningoccurence} eEzsigntemplateformfieldPositioningoccurence
+ */
+EzsigntemplateformfieldResponseCompound.prototype['eEzsigntemplateformfieldPositioningoccurence'] = undefined;
+
+/**
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplateelementdependencyResponseCompound>} a_objEzsigntemplateelementdependency
  */
 EzsigntemplateformfieldResponseCompound.prototype['a_objEzsigntemplateelementdependency'] = undefined;
@@ -405,6 +521,10 @@ EzsigntemplateformfieldResponseCompound.prototype['a_objEzsigntemplateelementdep
  * @member {Number} pkiEzsigntemplateformfieldID
  */
 EzsigntemplateformfieldResponse.prototype['pkiEzsigntemplateformfieldID'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioning} eEzsigntemplateformfieldPositioning
+ */
+EzsigntemplateformfieldResponse.prototype['eEzsigntemplateformfieldPositioning'] = undefined;
 /**
  * The page number in the Ezsigntemplatedocument
  * @member {Number} iEzsigntemplatedocumentpagePagenumber
@@ -454,6 +574,25 @@ EzsigntemplateformfieldResponse.prototype['bEzsigntemplateformfieldSelected'] = 
  * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldDependencyrequirement} eEzsigntemplateformfieldDependencyrequirement
  */
 EzsigntemplateformfieldResponse.prototype['eEzsigntemplateformfieldDependencyrequirement'] = undefined;
+/**
+ * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {String} sEzsigntemplateformfieldPositioningpattern
+ */
+EzsigntemplateformfieldResponse.prototype['sEzsigntemplateformfieldPositioningpattern'] = undefined;
+/**
+ * The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplateformfieldPositioningoffsetx
+ */
+EzsigntemplateformfieldResponse.prototype['iEzsigntemplateformfieldPositioningoffsetx'] = undefined;
+/**
+ * The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplateformfieldPositioningoffsety
+ */
+EzsigntemplateformfieldResponse.prototype['iEzsigntemplateformfieldPositioningoffsety'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioningoccurence} eEzsigntemplateformfieldPositioningoccurence
+ */
+EzsigntemplateformfieldResponse.prototype['eEzsigntemplateformfieldPositioningoccurence'] = undefined;
 
 
 

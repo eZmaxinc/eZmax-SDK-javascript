@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAudit from './CommonAudit';
 import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
@@ -36,12 +37,13 @@ class CustomWebhookResponse {
      * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
      * @param bWebhookIssigned {Boolean} Whether the requests will be signed or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
+     * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      * @param pksCustomerCode {String} The customer code assigned to your account
      * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation);
-        CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest);
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit, pksCustomerCode, bWebhookTest) { 
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
+        CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit, pksCustomerCode, bWebhookTest);
     }
 
     /**
@@ -49,7 +51,7 @@ class CustomWebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, pksCustomerCode, bWebhookTest) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit, pksCustomerCode, bWebhookTest) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
@@ -58,6 +60,7 @@ class CustomWebhookResponse {
         obj['bWebhookIsactive'] = bWebhookIsactive;
         obj['bWebhookIssigned'] = bWebhookIssigned;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
+        obj['objAudit'] = objAudit;
         obj['pksCustomerCode'] = pksCustomerCode;
         obj['bWebhookTest'] = bWebhookTest;
     }
@@ -116,6 +119,9 @@ class CustomWebhookResponse {
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
+            if (data.hasOwnProperty('objAudit')) {
+                obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
             if (data.hasOwnProperty('pksCustomerCode')) {
                 obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
             }
@@ -161,6 +167,10 @@ class CustomWebhookResponse {
         // ensure the json data is a string
         if (data['sWebhookSecret'] && !(typeof data['sWebhookSecret'] === 'string' || data['sWebhookSecret'] instanceof String)) {
             throw new Error("Expected the field `sWebhookSecret` to be a primitive type in the JSON string but got " + data['sWebhookSecret']);
+        }
+        // validate the optional field `objAudit`
+        if (data['objAudit']) { // data not null
+          CommonAudit.validateJSON(data['objAudit']);
         }
         // ensure the json data is a string
         if (data['pksCustomerCode'] && !(typeof data['pksCustomerCode'] === 'string' || data['pksCustomerCode'] instanceof String)) {
@@ -376,6 +386,19 @@ class CustomWebhookResponse {
         this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
 /**
+     * @return {module:eZmaxAPI/model/CommonAudit}
+     */
+    getObjAudit() {
+        return this.objAudit;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CommonAudit} objAudit
+     */
+    setObjAudit(objAudit) {
+        this['objAudit'] = objAudit;
+    }
+/**
      * Returns The customer code assigned to your account
      * @return {String}
      */
@@ -408,7 +431,7 @@ class CustomWebhookResponse {
 
 }
 
-CustomWebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation", "pksCustomerCode", "bWebhookTest"];
+CustomWebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation", "objAudit", "pksCustomerCode", "bWebhookTest"];
 
 /**
  * The unique ID of the Webhook
@@ -492,6 +515,11 @@ CustomWebhookResponse.prototype['bWebhookIssigned'] = undefined;
 CustomWebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+CustomWebhookResponse.prototype['objAudit'] = undefined;
+
+/**
  * The customer code assigned to your account
  * @member {String} pksCustomerCode
  */
@@ -572,6 +600,10 @@ WebhookResponse.prototype['bWebhookIssigned'] = undefined;
  * @member {Boolean} bWebhookSkipsslvalidation
  */
 WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+WebhookResponse.prototype['objAudit'] = undefined;
 
 
 

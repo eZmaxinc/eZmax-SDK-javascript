@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsignfolderCompletion (base name: "eEzsignfolderCompletion")', function() {
+      // uncomment below and update the code to test the property eEzsignfolderCompletion
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignfoldertypeNameX (base name: "sEzsignfoldertypeNameX")', function() {
       // uncomment below and update the code to test the property sEzsignfoldertypeNameX
       //var instance = new EZmaxApiDefinitionFull.EzsignfolderResponse();

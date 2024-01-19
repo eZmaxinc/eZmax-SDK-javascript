@@ -120,6 +120,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsignsignatureStepadjusted (base name: "iEzsignsignatureStepadjusted")', function() {
+      // uncomment below and update the code to test the property iEzsignsignatureStepadjusted
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsignsignatureType (base name: "eEzsignsignatureType")', function() {
       // uncomment below and update the code to test the property eEzsignsignatureType
       //var instance = new EZmaxApiDefinitionFull.EzsignsignatureResponse();

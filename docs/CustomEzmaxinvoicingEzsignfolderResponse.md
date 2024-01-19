@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fkiEzsignfolderID** | **Number** | The unique ID of the Ezsignfolder | 
+**fkiBillingentityinternalID** | **Number** | The unique ID of the Billingentityinternal. | [optional] 
 **sEzsignfolderDescription** | **String** | The description of the Ezsignfolder | 
 **bEzsigntsarequirementBillable** | **Boolean** | Whether the TSA requirement is billable or not | 
 **bEzsignfolderMfaused** | **Boolean** | Whether the MFA was used or not for the Ezsignfolder | 

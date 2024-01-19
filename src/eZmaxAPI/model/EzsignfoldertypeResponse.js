@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsignfoldertypeCompletion from './FieldEEzsignfoldertypeCompletion';
 import FieldEEzsignfoldertypeDisposal from './FieldEEzsignfoldertypeDisposal';
 import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignfoldertypeSendreminderfrequency from './FieldEEzsignfoldertypeSendreminderfrequency';
@@ -138,6 +139,9 @@ class EzsignfoldertypeResponse {
             if (data.hasOwnProperty('eEzsignfoldertypeDisposal')) {
                 obj['eEzsignfoldertypeDisposal'] = FieldEEzsignfoldertypeDisposal.constructFromObject(data['eEzsignfoldertypeDisposal']);
             }
+            if (data.hasOwnProperty('eEzsignfoldertypeCompletion')) {
+                obj['eEzsignfoldertypeCompletion'] = FieldEEzsignfoldertypeCompletion.constructFromObject(data['eEzsignfoldertypeCompletion']);
+            }
             if (data.hasOwnProperty('iEzsignfoldertypeDisposaldays')) {
                 obj['iEzsignfoldertypeDisposaldays'] = ApiClient.convertToType(data['iEzsignfoldertypeDisposaldays'], 'Number');
             }
@@ -149,6 +153,12 @@ class EzsignfoldertypeResponse {
             }
             if (data.hasOwnProperty('bEzsignfoldertypeReassign')) {
                 obj['bEzsignfoldertypeReassign'] = ApiClient.convertToType(data['bEzsignfoldertypeReassign'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeReassignezsignsigner')) {
+                obj['bEzsignfoldertypeReassignezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeReassignuser')) {
+                obj['bEzsignfoldertypeReassignuser'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignuser'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeSendattatchmentsigner')) {
                 obj['bEzsignfoldertypeSendattatchmentsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendattatchmentsigner'], 'Boolean');
@@ -548,6 +558,19 @@ class EzsignfoldertypeResponse {
         this['eEzsignfoldertypeDisposal'] = eEzsignfoldertypeDisposal;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEEzsignfoldertypeCompletion}
+     */
+    getEEzsignfoldertypeCompletion() {
+        return this.eEzsignfoldertypeCompletion;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignfoldertypeCompletion} eEzsignfoldertypeCompletion
+     */
+    setEEzsignfoldertypeCompletion(eEzsignfoldertypeCompletion) {
+        this['eEzsignfoldertypeCompletion'] = eEzsignfoldertypeCompletion;
+    }
+/**
      * Returns The number of days after the archival before the disposal of the Ezsignfolder
      * minimum: 0
      * maximum: 9999
@@ -610,6 +633,36 @@ class EzsignfoldertypeResponse {
      */
     setBEzsignfoldertypeReassign(bEzsignfoldertypeReassign) {
         this['bEzsignfoldertypeReassign'] = bEzsignfoldertypeReassign;
+    }
+/**
+     * Returns Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeReassignezsignsigner() {
+        return this.bEzsignfoldertypeReassignezsignsigner;
+    }
+
+    /**
+     * Sets Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @param {Boolean} bEzsignfoldertypeReassignezsignsigner Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     */
+    setBEzsignfoldertypeReassignezsignsigner(bEzsignfoldertypeReassignezsignsigner) {
+        this['bEzsignfoldertypeReassignezsignsigner'] = bEzsignfoldertypeReassignezsignsigner;
+    }
+/**
+     * Returns Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeReassignuser() {
+        return this.bEzsignfoldertypeReassignuser;
+    }
+
+    /**
+     * Sets Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @param {Boolean} bEzsignfoldertypeReassignuser Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     */
+    setBEzsignfoldertypeReassignuser(bEzsignfoldertypeReassignuser) {
+        this['bEzsignfoldertypeReassignuser'] = bEzsignfoldertypeReassignuser;
     }
 /**
      * Returns THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
@@ -1081,6 +1134,11 @@ EzsignfoldertypeResponse.prototype['iEzsignfoldertypeArchivaldays'] = undefined;
 EzsignfoldertypeResponse.prototype['eEzsignfoldertypeDisposal'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEEzsignfoldertypeCompletion} eEzsignfoldertypeCompletion
+ */
+EzsignfoldertypeResponse.prototype['eEzsignfoldertypeCompletion'] = undefined;
+
+/**
  * The number of days after the archival before the disposal of the Ezsignfolder
  * @member {Number} iEzsignfoldertypeDisposaldays
  */
@@ -1103,6 +1161,18 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeDelegate'] = undefined;
  * @member {Boolean} bEzsignfoldertypeReassign
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassign'] = undefined;
+
+/**
+ * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+ * @member {Boolean} bEzsignfoldertypeReassignezsignsigner
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignezsignsigner'] = undefined;
+
+/**
+ * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+ * @member {Boolean} bEzsignfoldertypeReassignuser
+ */
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignuser'] = undefined;
 
 /**
  * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email

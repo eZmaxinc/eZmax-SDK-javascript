@@ -138,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property objAudit (base name: "objAudit")', function() {
+      // uncomment below and update the code to test the property objAudit
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sWebhookEvent (base name: "sWebhookEvent")', function() {
       // uncomment below and update the code to test the property sWebhookEvent
       //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();

@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('ezsigndocumentCreateEzsignelementsPositionedByWordV1', function() {
+      it('should call ezsigndocumentCreateEzsignelementsPositionedByWordV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentCreateEzsignelementsPositionedByWordV1
+        //instance.ezsigndocumentCreateEzsignelementsPositionedByWordV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigndocumentCreateObjectV1', function() {
       it('should call ezsigndocumentCreateObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentCreateObjectV1
@@ -192,6 +202,16 @@
       it('should call ezsigndocumentGetEzsignannotationsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigndocumentGetEzsignannotationsV1
         //instance.ezsigndocumentGetEzsignannotationsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigndocumentGetEzsigndiscussionsV1', function() {
+      it('should call ezsigndocumentGetEzsigndiscussionsV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsigndocumentGetEzsigndiscussionsV1
+        //instance.ezsigndocumentGetEzsigndiscussionsV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

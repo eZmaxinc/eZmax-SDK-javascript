@@ -108,6 +108,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsignfoldertypeReassignezsignsigner (base name: "bEzsignfoldertypeReassignezsignsigner")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeReassignezsignsigner
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignfoldertypeReassignuser (base name: "bEzsignfoldertypeReassignuser")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeReassignuser
+      //var instance = new EZmaxApiDefinitionFull.CustomEzsignfoldertypeResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

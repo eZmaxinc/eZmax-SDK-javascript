@@ -89,6 +89,13 @@ export default class FieldEEzsignsignatureType {
         "FieldTextarea" = "FieldTextarea";
 
     
+        /**
+         * value: "Consultation"
+         * @const
+         */
+        "Consultation" = "Consultation";
+
+    
 
     /**
     * Returns a <code>FieldEEzsignsignatureType</code> enum value from a Javascript object name.

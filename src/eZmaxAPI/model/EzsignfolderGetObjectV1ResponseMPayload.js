@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
 import CustomEzsignfoldertypeResponse from './CustomEzsignfoldertypeResponse';
 import EzsignfolderResponseCompound from './EzsignfolderResponseCompound';
+import FieldEEzsignfolderCompletion from './FieldEEzsignfolderCompletion';
 import FieldEEzsignfolderSendreminderfrequency from './FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './FieldEEzsignfolderStep';
 
@@ -67,6 +68,9 @@ class EzsignfolderGetObjectV1ResponseMPayload {
             }
             if (data.hasOwnProperty('objEzsignfoldertype')) {
                 obj['objEzsignfoldertype'] = CustomEzsignfoldertypeResponse.constructFromObject(data['objEzsignfoldertype']);
+            }
+            if (data.hasOwnProperty('eEzsignfolderCompletion')) {
+                obj['eEzsignfolderCompletion'] = FieldEEzsignfolderCompletion.constructFromObject(data['eEzsignfolderCompletion']);
             }
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
@@ -249,6 +253,19 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      */
     setObjEzsignfoldertype(objEzsignfoldertype) {
         this['objEzsignfoldertype'] = objEzsignfoldertype;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsignfolderCompletion}
+     */
+    getEEzsignfolderCompletion() {
+        return this.eEzsignfolderCompletion;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} eEzsignfolderCompletion
+     */
+    setEEzsignfolderCompletion(eEzsignfolderCompletion) {
+        this['eEzsignfolderCompletion'] = eEzsignfolderCompletion;
     }
 /**
      * @return {String}
@@ -553,6 +570,11 @@ EzsignfolderGetObjectV1ResponseMPayload.prototype['fkiEzsignfoldertypeID'] = und
 EzsignfolderGetObjectV1ResponseMPayload.prototype['objEzsignfoldertype'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} eEzsignfolderCompletion
+ */
+EzsignfolderGetObjectV1ResponseMPayload.prototype['eEzsignfolderCompletion'] = undefined;
+
+/**
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsignfolderGetObjectV1ResponseMPayload.prototype['sEzsignfoldertypeNameX'] = undefined;
@@ -678,6 +700,10 @@ EzsignfolderResponseCompound.prototype['fkiEzsignfoldertypeID'] = undefined;
  * @member {module:eZmaxAPI/model/CustomEzsignfoldertypeResponse} objEzsignfoldertype
  */
 EzsignfolderResponseCompound.prototype['objEzsignfoldertype'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} eEzsignfolderCompletion
+ */
+EzsignfolderResponseCompound.prototype['eEzsignfolderCompletion'] = undefined;
 /**
  * @member {String} sEzsignfoldertypeNameX
  */

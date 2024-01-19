@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sUserJobtitle (base name: "sUserJobtitle")', function() {
+      // uncomment below and update the code to test the property sUserJobtitle
+      //var instance = new EZmaxApiDefinitionFull.UserListElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

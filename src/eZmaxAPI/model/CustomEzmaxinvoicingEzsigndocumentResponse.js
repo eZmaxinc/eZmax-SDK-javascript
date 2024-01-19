@@ -61,6 +61,9 @@ class CustomEzmaxinvoicingEzsigndocumentResponse {
             if (data.hasOwnProperty('fkiEzsignfolderID')) {
                 obj['fkiEzsignfolderID'] = ApiClient.convertToType(data['fkiEzsignfolderID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiBillingentityinternalID')) {
+                obj['fkiBillingentityinternalID'] = ApiClient.convertToType(data['fkiBillingentityinternalID'], 'Number');
+            }
             if (data.hasOwnProperty('sName')) {
                 obj['sName'] = ApiClient.convertToType(data['sName'], 'String');
             }
@@ -120,6 +123,22 @@ class CustomEzmaxinvoicingEzsigndocumentResponse {
      */
     setFkiEzsignfolderID(fkiEzsignfolderID) {
         this['fkiEzsignfolderID'] = fkiEzsignfolderID;
+    }
+/**
+     * Returns The unique ID of the Billingentityinternal.
+     * minimum: 0
+     * @return {Number}
+     */
+    getFkiBillingentityinternalID() {
+        return this.fkiBillingentityinternalID;
+    }
+
+    /**
+     * Sets The unique ID of the Billingentityinternal.
+     * @param {Number} fkiBillingentityinternalID The unique ID of the Billingentityinternal.
+     */
+    setFkiBillingentityinternalID(fkiBillingentityinternalID) {
+        this['fkiBillingentityinternalID'] = fkiBillingentityinternalID;
     }
 /**
      * @return {String}
@@ -189,6 +208,12 @@ CustomEzmaxinvoicingEzsigndocumentResponse.RequiredProperties = ["fkiEzsignfolde
  * @member {Number} fkiEzsignfolderID
  */
 CustomEzmaxinvoicingEzsigndocumentResponse.prototype['fkiEzsignfolderID'] = undefined;
+
+/**
+ * The unique ID of the Billingentityinternal.
+ * @member {Number} fkiBillingentityinternalID
+ */
+CustomEzmaxinvoicingEzsigndocumentResponse.prototype['fkiBillingentityinternalID'] = undefined;
 
 /**
  * @member {String} sName

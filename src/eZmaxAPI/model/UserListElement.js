@@ -99,6 +99,9 @@ class UserListElement {
             if (data.hasOwnProperty('sEmailAddress')) {
                 obj['sEmailAddress'] = ApiClient.convertToType(data['sEmailAddress'], 'String');
             }
+            if (data.hasOwnProperty('sUserJobtitle')) {
+                obj['sUserJobtitle'] = ApiClient.convertToType(data['sUserJobtitle'], 'String');
+            }
         }
         return obj;
     }
@@ -134,6 +137,10 @@ class UserListElement {
         // ensure the json data is a string
         if (data['sEmailAddress'] && !(typeof data['sEmailAddress'] === 'string' || data['sEmailAddress'] instanceof String)) {
             throw new Error("Expected the field `sEmailAddress` to be a primitive type in the JSON string but got " + data['sEmailAddress']);
+        }
+        // ensure the json data is a string
+        if (data['sUserJobtitle'] && !(typeof data['sUserJobtitle'] === 'string' || data['sUserJobtitle'] instanceof String)) {
+            throw new Error("Expected the field `sUserJobtitle` to be a primitive type in the JSON string but got " + data['sUserJobtitle']);
         }
 
         return true;
@@ -284,6 +291,21 @@ class UserListElement {
     setSEmailAddress(sEmailAddress) {
         this['sEmailAddress'] = sEmailAddress;
     }
+/**
+     * Returns The job title of the user
+     * @return {String}
+     */
+    getSUserJobtitle() {
+        return this.sUserJobtitle;
+    }
+
+    /**
+     * Sets The job title of the user
+     * @param {String} sUserJobtitle The job title of the user
+     */
+    setSUserJobtitle(sUserJobtitle) {
+        this['sUserJobtitle'] = sUserJobtitle;
+    }
 
 }
 
@@ -345,6 +367,12 @@ UserListElement.prototype['dtUserEzsignprepaidexpiration'] = undefined;
  * @member {String} sEmailAddress
  */
 UserListElement.prototype['sEmailAddress'] = undefined;
+
+/**
+ * The job title of the user
+ * @member {String} sUserJobtitle
+ */
+UserListElement.prototype['sUserJobtitle'] = undefined;
 
 
 

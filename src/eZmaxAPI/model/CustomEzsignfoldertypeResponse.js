@@ -77,6 +77,12 @@ class CustomEzsignfoldertypeResponse {
             if (data.hasOwnProperty('bEzsignfoldertypeReassign')) {
                 obj['bEzsignfoldertypeReassign'] = ApiClient.convertToType(data['bEzsignfoldertypeReassign'], 'Boolean');
             }
+            if (data.hasOwnProperty('bEzsignfoldertypeReassignezsignsigner')) {
+                obj['bEzsignfoldertypeReassignezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignezsignsigner'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bEzsignfoldertypeReassignuser')) {
+                obj['bEzsignfoldertypeReassignuser'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignuser'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -237,6 +243,36 @@ class CustomEzsignfoldertypeResponse {
     setBEzsignfoldertypeReassign(bEzsignfoldertypeReassign) {
         this['bEzsignfoldertypeReassign'] = bEzsignfoldertypeReassign;
     }
+/**
+     * Returns Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeReassignezsignsigner() {
+        return this.bEzsignfoldertypeReassignezsignsigner;
+    }
+
+    /**
+     * Sets Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @param {Boolean} bEzsignfoldertypeReassignezsignsigner Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     */
+    setBEzsignfoldertypeReassignezsignsigner(bEzsignfoldertypeReassignezsignsigner) {
+        this['bEzsignfoldertypeReassignezsignsigner'] = bEzsignfoldertypeReassignezsignsigner;
+    }
+/**
+     * Returns Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @return {Boolean}
+     */
+    getBEzsignfoldertypeReassignuser() {
+        return this.bEzsignfoldertypeReassignuser;
+    }
+
+    /**
+     * Sets Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @param {Boolean} bEzsignfoldertypeReassignuser Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     */
+    setBEzsignfoldertypeReassignuser(bEzsignfoldertypeReassignuser) {
+        this['bEzsignfoldertypeReassignuser'] = bEzsignfoldertypeReassignuser;
+    }
 
 }
 
@@ -295,6 +331,18 @@ CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeDelegate'] = undefine
  * @member {Boolean} bEzsignfoldertypeReassign
  */
 CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassign'] = undefined;
+
+/**
+ * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+ * @member {Boolean} bEzsignfoldertypeReassignezsignsigner
+ */
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignezsignsigner'] = undefined;
+
+/**
+ * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+ * @member {Boolean} bEzsignfoldertypeReassignuser
+ */
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignuser'] = undefined;
 
 
 

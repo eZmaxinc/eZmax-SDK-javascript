@@ -180,7 +180,9 @@ import CustomCommunicationrecipientsrecipientResponse from './model/CustomCommun
 import CustomCommunicationsenderRequest from './model/CustomCommunicationsenderRequest';
 import CustomCommunicationsenderResponse from './model/CustomCommunicationsenderResponse';
 import CustomContactNameResponse from './model/CustomContactNameResponse';
+import CustomCreateEzsignelementsPositionedByWordRequest from './model/CustomCreateEzsignelementsPositionedByWordRequest';
 import CustomCreditcardtransactionResponse from './model/CustomCreditcardtransactionResponse';
+import CustomDiscussionconfigurationResponse from './model/CustomDiscussionconfigurationResponse';
 import CustomDropdownElementRequest from './model/CustomDropdownElementRequest';
 import CustomDropdownElementRequestCompound from './model/CustomDropdownElementRequestCompound';
 import CustomDropdownElementResponse from './model/CustomDropdownElementResponse';
@@ -199,7 +201,9 @@ import CustomEzsignfoldertypeResponse from './model/CustomEzsignfoldertypeRespon
 import CustomEzsignformfieldRequest from './model/CustomEzsignformfieldRequest';
 import CustomEzsignformfielderrorResponse from './model/CustomEzsignformfielderrorResponse';
 import CustomEzsignformfielderrortestResponse from './model/CustomEzsignformfielderrortestResponse';
+import CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest from './model/CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest';
 import CustomEzsignformfieldgroupRequest from './model/CustomEzsignformfieldgroupRequest';
+import CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest from './model/CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest';
 import CustomEzsignsignatureEzsignsignaturesAutomaticResponse from './model/CustomEzsignsignatureEzsignsignaturesAutomaticResponse';
 import CustomEzsignsignaturestatusResponse from './model/CustomEzsignsignaturestatusResponse';
 import CustomFormDataDocumentResponse from './model/CustomFormDataDocumentResponse';
@@ -218,6 +222,40 @@ import CustomWordPositionWordResponse from './model/CustomWordPositionWordRespon
 import DepartmentAutocompleteElementResponse from './model/DepartmentAutocompleteElementResponse';
 import DepartmentGetAutocompleteV2Response from './model/DepartmentGetAutocompleteV2Response';
 import DepartmentGetAutocompleteV2ResponseMPayload from './model/DepartmentGetAutocompleteV2ResponseMPayload';
+import DiscussionCreateObjectV1Request from './model/DiscussionCreateObjectV1Request';
+import DiscussionCreateObjectV1Response from './model/DiscussionCreateObjectV1Response';
+import DiscussionCreateObjectV1ResponseMPayload from './model/DiscussionCreateObjectV1ResponseMPayload';
+import DiscussionDeleteObjectV1Response from './model/DiscussionDeleteObjectV1Response';
+import DiscussionGetObjectV2Response from './model/DiscussionGetObjectV2Response';
+import DiscussionGetObjectV2ResponseMPayload from './model/DiscussionGetObjectV2ResponseMPayload';
+import DiscussionPatchObjectV1Request from './model/DiscussionPatchObjectV1Request';
+import DiscussionPatchObjectV1Response from './model/DiscussionPatchObjectV1Response';
+import DiscussionRequest from './model/DiscussionRequest';
+import DiscussionRequestCompound from './model/DiscussionRequestCompound';
+import DiscussionRequestPatch from './model/DiscussionRequestPatch';
+import DiscussionResponse from './model/DiscussionResponse';
+import DiscussionResponseCompound from './model/DiscussionResponseCompound';
+import DiscussionUpdateDiscussionreadstatusV1Request from './model/DiscussionUpdateDiscussionreadstatusV1Request';
+import DiscussionUpdateDiscussionreadstatusV1Response from './model/DiscussionUpdateDiscussionreadstatusV1Response';
+import DiscussionmembershipCreateObjectV1Request from './model/DiscussionmembershipCreateObjectV1Request';
+import DiscussionmembershipCreateObjectV1Response from './model/DiscussionmembershipCreateObjectV1Response';
+import DiscussionmembershipCreateObjectV1ResponseMPayload from './model/DiscussionmembershipCreateObjectV1ResponseMPayload';
+import DiscussionmembershipDeleteObjectV1Response from './model/DiscussionmembershipDeleteObjectV1Response';
+import DiscussionmembershipRequest from './model/DiscussionmembershipRequest';
+import DiscussionmembershipRequestCompound from './model/DiscussionmembershipRequestCompound';
+import DiscussionmembershipResponse from './model/DiscussionmembershipResponse';
+import DiscussionmembershipResponseCompound from './model/DiscussionmembershipResponseCompound';
+import DiscussionmessageCreateObjectV1Request from './model/DiscussionmessageCreateObjectV1Request';
+import DiscussionmessageCreateObjectV1Response from './model/DiscussionmessageCreateObjectV1Response';
+import DiscussionmessageCreateObjectV1ResponseMPayload from './model/DiscussionmessageCreateObjectV1ResponseMPayload';
+import DiscussionmessageDeleteObjectV1Response from './model/DiscussionmessageDeleteObjectV1Response';
+import DiscussionmessagePatchObjectV1Request from './model/DiscussionmessagePatchObjectV1Request';
+import DiscussionmessagePatchObjectV1Response from './model/DiscussionmessagePatchObjectV1Response';
+import DiscussionmessageRequest from './model/DiscussionmessageRequest';
+import DiscussionmessageRequestCompound from './model/DiscussionmessageRequestCompound';
+import DiscussionmessageRequestPatch from './model/DiscussionmessageRequestPatch';
+import DiscussionmessageResponse from './model/DiscussionmessageResponse';
+import DiscussionmessageResponseCompound from './model/DiscussionmessageResponseCompound';
 import ElectronicfundstransferGetCommunicationListV1Response from './model/ElectronicfundstransferGetCommunicationListV1Response';
 import ElectronicfundstransferGetCommunicationListV1ResponseMPayload from './model/ElectronicfundstransferGetCommunicationListV1ResponseMPayload';
 import EmailRequest from './model/EmailRequest';
@@ -322,10 +360,23 @@ import EzsignbulksendtransmissionGetObjectV2Response from './model/Ezsignbulksen
 import EzsignbulksendtransmissionGetObjectV2ResponseMPayload from './model/EzsignbulksendtransmissionGetObjectV2ResponseMPayload';
 import EzsignbulksendtransmissionResponse from './model/EzsignbulksendtransmissionResponse';
 import EzsignbulksendtransmissionResponseCompound from './model/EzsignbulksendtransmissionResponseCompound';
+import EzsigndiscussionCreateObjectV1Request from './model/EzsigndiscussionCreateObjectV1Request';
+import EzsigndiscussionCreateObjectV1Response from './model/EzsigndiscussionCreateObjectV1Response';
+import EzsigndiscussionCreateObjectV1ResponseMPayload from './model/EzsigndiscussionCreateObjectV1ResponseMPayload';
+import EzsigndiscussionDeleteObjectV1Response from './model/EzsigndiscussionDeleteObjectV1Response';
+import EzsigndiscussionGetObjectV2Response from './model/EzsigndiscussionGetObjectV2Response';
+import EzsigndiscussionGetObjectV2ResponseMPayload from './model/EzsigndiscussionGetObjectV2ResponseMPayload';
+import EzsigndiscussionRequest from './model/EzsigndiscussionRequest';
+import EzsigndiscussionRequestCompound from './model/EzsigndiscussionRequestCompound';
+import EzsigndiscussionResponse from './model/EzsigndiscussionResponse';
+import EzsigndiscussionResponseCompound from './model/EzsigndiscussionResponseCompound';
 import EzsigndocumentApplyEzsigntemplateV1Request from './model/EzsigndocumentApplyEzsigntemplateV1Request';
 import EzsigndocumentApplyEzsigntemplateV1Response from './model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from './model/EzsigndocumentApplyEzsigntemplateV2Request';
 import EzsigndocumentApplyEzsigntemplateV2Response from './model/EzsigndocumentApplyEzsigntemplateV2Response';
+import EzsigndocumentCreateEzsignelementsPositionedByWordV1Request from './model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request';
+import EzsigndocumentCreateEzsignelementsPositionedByWordV1Response from './model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response';
+import EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload from './model/EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload';
 import EzsigndocumentCreateObjectV1Request from './model/EzsigndocumentCreateObjectV1Request';
 import EzsigndocumentCreateObjectV1Response from './model/EzsigndocumentCreateObjectV1Response';
 import EzsigndocumentCreateObjectV1ResponseMPayload from './model/EzsigndocumentCreateObjectV1ResponseMPayload';
@@ -353,6 +404,8 @@ import EzsigndocumentGetDownloadUrlV1Response from './model/EzsigndocumentGetDow
 import EzsigndocumentGetDownloadUrlV1ResponseMPayload from './model/EzsigndocumentGetDownloadUrlV1ResponseMPayload';
 import EzsigndocumentGetEzsignannotationsV1Response from './model/EzsigndocumentGetEzsignannotationsV1Response';
 import EzsigndocumentGetEzsignannotationsV1ResponseMPayload from './model/EzsigndocumentGetEzsignannotationsV1ResponseMPayload';
+import EzsigndocumentGetEzsigndiscussionsV1Response from './model/EzsigndocumentGetEzsigndiscussionsV1Response';
+import EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload from './model/EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload';
 import EzsigndocumentGetEzsignformfieldgroupsV1Response from './model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
 import EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload from './model/EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload';
 import EzsigndocumentGetEzsignpagesV1Response from './model/EzsigndocumentGetEzsignpagesV1Response';
@@ -767,6 +820,7 @@ import FieldECommunicationType from './model/FieldECommunicationType';
 import FieldECommunicationexternalrecipientType from './model/FieldECommunicationexternalrecipientType';
 import FieldECommunicationrecipientType from './model/FieldECommunicationrecipientType';
 import FieldECreditcardtypeCodename from './model/FieldECreditcardtypeCodename';
+import FieldEDiscussionmessageStatus from './model/FieldEDiscussionmessageStatus';
 import FieldEErrorCode from './model/FieldEErrorCode';
 import FieldEEzmaxinvoicingPaymenttype from './model/FieldEEzmaxinvoicingPaymenttype';
 import FieldEEzmaxinvoicingagentVariationezmax from './model/FieldEEzmaxinvoicingagentVariationezmax';
@@ -778,8 +832,10 @@ import FieldEEzsigndocumentStep from './model/FieldEEzsigndocumentStep';
 import FieldEEzsigndocumentlogType from './model/FieldEEzsigndocumentlogType';
 import FieldEEzsignelementdependencyOperator from './model/FieldEEzsignelementdependencyOperator';
 import FieldEEzsignelementdependencyValidation from './model/FieldEEzsignelementdependencyValidation';
+import FieldEEzsignfolderCompletion from './model/FieldEEzsignfolderCompletion';
 import FieldEEzsignfolderSendreminderfrequency from './model/FieldEEzsignfolderSendreminderfrequency';
 import FieldEEzsignfolderStep from './model/FieldEEzsignfolderStep';
+import FieldEEzsignfoldertypeCompletion from './model/FieldEEzsignfoldertypeCompletion';
 import FieldEEzsignfoldertypeDisposal from './model/FieldEEzsignfoldertypeDisposal';
 import FieldEEzsignfoldertypePrivacylevel from './model/FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignfoldertypeSendreminderfrequency from './model/FieldEEzsignfoldertypeSendreminderfrequency';
@@ -795,12 +851,16 @@ import FieldEEzsignsignatureType from './model/FieldEEzsignsignatureType';
 import FieldEEzsigntemplateelementdependencyOperator from './model/FieldEEzsigntemplateelementdependencyOperator';
 import FieldEEzsigntemplateelementdependencyValidation from './model/FieldEEzsigntemplateelementdependencyValidation';
 import FieldEEzsigntemplateformfieldDependencyrequirement from './model/FieldEEzsigntemplateformfieldDependencyrequirement';
+import FieldEEzsigntemplateformfieldPositioning from './model/FieldEEzsigntemplateformfieldPositioning';
+import FieldEEzsigntemplateformfieldPositioningoccurence from './model/FieldEEzsigntemplateformfieldPositioningoccurence';
 import FieldEEzsigntemplateformfieldgroupSignerrequirement from './model/FieldEEzsigntemplateformfieldgroupSignerrequirement';
 import FieldEEzsigntemplateformfieldgroupTooltipposition from './model/FieldEEzsigntemplateformfieldgroupTooltipposition';
 import FieldEEzsigntemplateformfieldgroupType from './model/FieldEEzsigntemplateformfieldgroupType';
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './model/FieldEEzsigntemplatesignatureAttachmentnamesource';
 import FieldEEzsigntemplatesignatureDependencyrequirement from './model/FieldEEzsigntemplatesignatureDependencyrequirement';
 import FieldEEzsigntemplatesignatureFont from './model/FieldEEzsigntemplatesignatureFont';
+import FieldEEzsigntemplatesignaturePositioning from './model/FieldEEzsigntemplatesignaturePositioning';
+import FieldEEzsigntemplatesignaturePositioningoccurence from './model/FieldEEzsigntemplatesignaturePositioningoccurence';
 import FieldEEzsigntemplatesignatureTooltipposition from './model/FieldEEzsigntemplatesignatureTooltipposition';
 import FieldEEzsigntemplatesignatureType from './model/FieldEEzsigntemplatesignatureType';
 import FieldENotificationpreferenceStatus from './model/FieldENotificationpreferenceStatus';
@@ -1173,6 +1233,9 @@ import ObjectCommunicationApi from './api/ObjectCommunicationApi';
 import ObjectCompanyApi from './api/ObjectCompanyApi';
 import ObjectCorsApi from './api/ObjectCorsApi';
 import ObjectDepartmentApi from './api/ObjectDepartmentApi';
+import ObjectDiscussionApi from './api/ObjectDiscussionApi';
+import ObjectDiscussionmembershipApi from './api/ObjectDiscussionmembershipApi';
+import ObjectDiscussionmessageApi from './api/ObjectDiscussionmessageApi';
 import ObjectElectronicfundstransferApi from './api/ObjectElectronicfundstransferApi';
 import ObjectEmailtypeApi from './api/ObjectEmailtypeApi';
 import ObjectEzmaxinvoicingApi from './api/ObjectEzmaxinvoicingApi';
@@ -1181,6 +1244,7 @@ import ObjectEzsignbulksendApi from './api/ObjectEzsignbulksendApi';
 import ObjectEzsignbulksenddocumentmappingApi from './api/ObjectEzsignbulksenddocumentmappingApi';
 import ObjectEzsignbulksendsignermappingApi from './api/ObjectEzsignbulksendsignermappingApi';
 import ObjectEzsignbulksendtransmissionApi from './api/ObjectEzsignbulksendtransmissionApi';
+import ObjectEzsigndiscussionApi from './api/ObjectEzsigndiscussionApi';
 import ObjectEzsigndocumentApi from './api/ObjectEzsigndocumentApi';
 import ObjectEzsignfolderApi from './api/ObjectEzsignfolderApi';
 import ObjectEzsignfoldersignerassociationApi from './api/ObjectEzsignfoldersignerassociationApi';
@@ -2281,10 +2345,22 @@ export {
     CustomContactNameResponse,
 
     /**
+     * The CustomCreateEzsignelementsPositionedByWordRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomCreateEzsignelementsPositionedByWordRequest}
+     */
+    CustomCreateEzsignelementsPositionedByWordRequest,
+
+    /**
      * The CustomCreditcardtransactionResponse model constructor.
      * @property {module:eZmaxAPI/model/CustomCreditcardtransactionResponse}
      */
     CustomCreditcardtransactionResponse,
+
+    /**
+     * The CustomDiscussionconfigurationResponse model constructor.
+     * @property {module:eZmaxAPI/model/CustomDiscussionconfigurationResponse}
+     */
+    CustomDiscussionconfigurationResponse,
 
     /**
      * The CustomDropdownElementRequest model constructor.
@@ -2395,10 +2471,22 @@ export {
     CustomEzsignformfielderrortestResponse,
 
     /**
+     * The CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest}
+     */
+    CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest,
+
+    /**
      * The CustomEzsignformfieldgroupRequest model constructor.
      * @property {module:eZmaxAPI/model/CustomEzsignformfieldgroupRequest}
      */
     CustomEzsignformfieldgroupRequest,
+
+    /**
+     * The CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest model constructor.
+     * @property {module:eZmaxAPI/model/CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest}
+     */
+    CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest,
 
     /**
      * The CustomEzsignsignatureEzsignsignaturesAutomaticResponse model constructor.
@@ -2507,6 +2595,210 @@ export {
      * @property {module:eZmaxAPI/model/DepartmentGetAutocompleteV2ResponseMPayload}
      */
     DepartmentGetAutocompleteV2ResponseMPayload,
+
+    /**
+     * The DiscussionCreateObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionCreateObjectV1Request}
+     */
+    DiscussionCreateObjectV1Request,
+
+    /**
+     * The DiscussionCreateObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionCreateObjectV1Response}
+     */
+    DiscussionCreateObjectV1Response,
+
+    /**
+     * The DiscussionCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionCreateObjectV1ResponseMPayload}
+     */
+    DiscussionCreateObjectV1ResponseMPayload,
+
+    /**
+     * The DiscussionDeleteObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionDeleteObjectV1Response}
+     */
+    DiscussionDeleteObjectV1Response,
+
+    /**
+     * The DiscussionGetObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionGetObjectV2Response}
+     */
+    DiscussionGetObjectV2Response,
+
+    /**
+     * The DiscussionGetObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionGetObjectV2ResponseMPayload}
+     */
+    DiscussionGetObjectV2ResponseMPayload,
+
+    /**
+     * The DiscussionPatchObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionPatchObjectV1Request}
+     */
+    DiscussionPatchObjectV1Request,
+
+    /**
+     * The DiscussionPatchObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionPatchObjectV1Response}
+     */
+    DiscussionPatchObjectV1Response,
+
+    /**
+     * The DiscussionRequest model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionRequest}
+     */
+    DiscussionRequest,
+
+    /**
+     * The DiscussionRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionRequestCompound}
+     */
+    DiscussionRequestCompound,
+
+    /**
+     * The DiscussionRequestPatch model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionRequestPatch}
+     */
+    DiscussionRequestPatch,
+
+    /**
+     * The DiscussionResponse model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionResponse}
+     */
+    DiscussionResponse,
+
+    /**
+     * The DiscussionResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionResponseCompound}
+     */
+    DiscussionResponseCompound,
+
+    /**
+     * The DiscussionUpdateDiscussionreadstatusV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionUpdateDiscussionreadstatusV1Request}
+     */
+    DiscussionUpdateDiscussionreadstatusV1Request,
+
+    /**
+     * The DiscussionUpdateDiscussionreadstatusV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionUpdateDiscussionreadstatusV1Response}
+     */
+    DiscussionUpdateDiscussionreadstatusV1Response,
+
+    /**
+     * The DiscussionmembershipCreateObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipCreateObjectV1Request}
+     */
+    DiscussionmembershipCreateObjectV1Request,
+
+    /**
+     * The DiscussionmembershipCreateObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipCreateObjectV1Response}
+     */
+    DiscussionmembershipCreateObjectV1Response,
+
+    /**
+     * The DiscussionmembershipCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipCreateObjectV1ResponseMPayload}
+     */
+    DiscussionmembershipCreateObjectV1ResponseMPayload,
+
+    /**
+     * The DiscussionmembershipDeleteObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipDeleteObjectV1Response}
+     */
+    DiscussionmembershipDeleteObjectV1Response,
+
+    /**
+     * The DiscussionmembershipRequest model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipRequest}
+     */
+    DiscussionmembershipRequest,
+
+    /**
+     * The DiscussionmembershipRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipRequestCompound}
+     */
+    DiscussionmembershipRequestCompound,
+
+    /**
+     * The DiscussionmembershipResponse model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipResponse}
+     */
+    DiscussionmembershipResponse,
+
+    /**
+     * The DiscussionmembershipResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmembershipResponseCompound}
+     */
+    DiscussionmembershipResponseCompound,
+
+    /**
+     * The DiscussionmessageCreateObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageCreateObjectV1Request}
+     */
+    DiscussionmessageCreateObjectV1Request,
+
+    /**
+     * The DiscussionmessageCreateObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageCreateObjectV1Response}
+     */
+    DiscussionmessageCreateObjectV1Response,
+
+    /**
+     * The DiscussionmessageCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageCreateObjectV1ResponseMPayload}
+     */
+    DiscussionmessageCreateObjectV1ResponseMPayload,
+
+    /**
+     * The DiscussionmessageDeleteObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageDeleteObjectV1Response}
+     */
+    DiscussionmessageDeleteObjectV1Response,
+
+    /**
+     * The DiscussionmessagePatchObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessagePatchObjectV1Request}
+     */
+    DiscussionmessagePatchObjectV1Request,
+
+    /**
+     * The DiscussionmessagePatchObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessagePatchObjectV1Response}
+     */
+    DiscussionmessagePatchObjectV1Response,
+
+    /**
+     * The DiscussionmessageRequest model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageRequest}
+     */
+    DiscussionmessageRequest,
+
+    /**
+     * The DiscussionmessageRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageRequestCompound}
+     */
+    DiscussionmessageRequestCompound,
+
+    /**
+     * The DiscussionmessageRequestPatch model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageRequestPatch}
+     */
+    DiscussionmessageRequestPatch,
+
+    /**
+     * The DiscussionmessageResponse model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageResponse}
+     */
+    DiscussionmessageResponse,
+
+    /**
+     * The DiscussionmessageResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/DiscussionmessageResponseCompound}
+     */
+    DiscussionmessageResponseCompound,
 
     /**
      * The ElectronicfundstransferGetCommunicationListV1Response model constructor.
@@ -3133,6 +3425,66 @@ export {
     EzsignbulksendtransmissionResponseCompound,
 
     /**
+     * The EzsigndiscussionCreateObjectV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionCreateObjectV1Request}
+     */
+    EzsigndiscussionCreateObjectV1Request,
+
+    /**
+     * The EzsigndiscussionCreateObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionCreateObjectV1Response}
+     */
+    EzsigndiscussionCreateObjectV1Response,
+
+    /**
+     * The EzsigndiscussionCreateObjectV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionCreateObjectV1ResponseMPayload}
+     */
+    EzsigndiscussionCreateObjectV1ResponseMPayload,
+
+    /**
+     * The EzsigndiscussionDeleteObjectV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionDeleteObjectV1Response}
+     */
+    EzsigndiscussionDeleteObjectV1Response,
+
+    /**
+     * The EzsigndiscussionGetObjectV2Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionGetObjectV2Response}
+     */
+    EzsigndiscussionGetObjectV2Response,
+
+    /**
+     * The EzsigndiscussionGetObjectV2ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionGetObjectV2ResponseMPayload}
+     */
+    EzsigndiscussionGetObjectV2ResponseMPayload,
+
+    /**
+     * The EzsigndiscussionRequest model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionRequest}
+     */
+    EzsigndiscussionRequest,
+
+    /**
+     * The EzsigndiscussionRequestCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionRequestCompound}
+     */
+    EzsigndiscussionRequestCompound,
+
+    /**
+     * The EzsigndiscussionResponse model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionResponse}
+     */
+    EzsigndiscussionResponse,
+
+    /**
+     * The EzsigndiscussionResponseCompound model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndiscussionResponseCompound}
+     */
+    EzsigndiscussionResponseCompound,
+
+    /**
      * The EzsigndocumentApplyEzsigntemplateV1Request model constructor.
      * @property {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV1Request}
      */
@@ -3155,6 +3507,24 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateV2Response}
      */
     EzsigndocumentApplyEzsigntemplateV2Response,
+
+    /**
+     * The EzsigndocumentCreateEzsignelementsPositionedByWordV1Request model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request}
+     */
+    EzsigndocumentCreateEzsignelementsPositionedByWordV1Request,
+
+    /**
+     * The EzsigndocumentCreateEzsignelementsPositionedByWordV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response}
+     */
+    EzsigndocumentCreateEzsignelementsPositionedByWordV1Response,
+
+    /**
+     * The EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload}
+     */
+    EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload,
 
     /**
      * The EzsigndocumentCreateObjectV1Request model constructor.
@@ -3317,6 +3687,18 @@ export {
      * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsignannotationsV1ResponseMPayload}
      */
     EzsigndocumentGetEzsignannotationsV1ResponseMPayload,
+
+    /**
+     * The EzsigndocumentGetEzsigndiscussionsV1Response model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsigndiscussionsV1Response}
+     */
+    EzsigndocumentGetEzsigndiscussionsV1Response,
+
+    /**
+     * The EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload model constructor.
+     * @property {module:eZmaxAPI/model/EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload}
+     */
+    EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload,
 
     /**
      * The EzsigndocumentGetEzsignformfieldgroupsV1Response model constructor.
@@ -5803,6 +6185,12 @@ export {
     FieldECreditcardtypeCodename,
 
     /**
+     * The FieldEDiscussionmessageStatus model constructor.
+     * @property {module:eZmaxAPI/model/FieldEDiscussionmessageStatus}
+     */
+    FieldEDiscussionmessageStatus,
+
+    /**
      * The FieldEErrorCode model constructor.
      * @property {module:eZmaxAPI/model/FieldEErrorCode}
      */
@@ -5869,6 +6257,12 @@ export {
     FieldEEzsignelementdependencyValidation,
 
     /**
+     * The FieldEEzsignfolderCompletion model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignfolderCompletion}
+     */
+    FieldEEzsignfolderCompletion,
+
+    /**
      * The FieldEEzsignfolderSendreminderfrequency model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsignfolderSendreminderfrequency}
      */
@@ -5879,6 +6273,12 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsignfolderStep}
      */
     FieldEEzsignfolderStep,
+
+    /**
+     * The FieldEEzsignfoldertypeCompletion model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsignfoldertypeCompletion}
+     */
+    FieldEEzsignfoldertypeCompletion,
 
     /**
      * The FieldEEzsignfoldertypeDisposal model constructor.
@@ -5971,6 +6371,18 @@ export {
     FieldEEzsigntemplateformfieldDependencyrequirement,
 
     /**
+     * The FieldEEzsigntemplateformfieldPositioning model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioning}
+     */
+    FieldEEzsigntemplateformfieldPositioning,
+
+    /**
+     * The FieldEEzsigntemplateformfieldPositioningoccurence model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldPositioningoccurence}
+     */
+    FieldEEzsigntemplateformfieldPositioningoccurence,
+
+    /**
      * The FieldEEzsigntemplateformfieldgroupSignerrequirement model constructor.
      * @property {module:eZmaxAPI/model/FieldEEzsigntemplateformfieldgroupSignerrequirement}
      */
@@ -6005,6 +6417,18 @@ export {
      * @property {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureFont}
      */
     FieldEEzsigntemplatesignatureFont,
+
+    /**
+     * The FieldEEzsigntemplatesignaturePositioning model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioning}
+     */
+    FieldEEzsigntemplatesignaturePositioning,
+
+    /**
+     * The FieldEEzsigntemplatesignaturePositioningoccurence model constructor.
+     * @property {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioningoccurence}
+     */
+    FieldEEzsigntemplatesignaturePositioningoccurence,
 
     /**
      * The FieldEEzsigntemplatesignatureTooltipposition model constructor.
@@ -8239,6 +8663,24 @@ export {
     ObjectDepartmentApi,
 
     /**
+    * The ObjectDiscussionApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectDiscussionApi}
+    */
+    ObjectDiscussionApi,
+
+    /**
+    * The ObjectDiscussionmembershipApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectDiscussionmembershipApi}
+    */
+    ObjectDiscussionmembershipApi,
+
+    /**
+    * The ObjectDiscussionmessageApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectDiscussionmessageApi}
+    */
+    ObjectDiscussionmessageApi,
+
+    /**
     * The ObjectElectronicfundstransferApi service constructor.
     * @property {module:eZmaxAPI/api/ObjectElectronicfundstransferApi}
     */
@@ -8285,6 +8727,12 @@ export {
     * @property {module:eZmaxAPI/api/ObjectEzsignbulksendtransmissionApi}
     */
     ObjectEzsignbulksendtransmissionApi,
+
+    /**
+    * The ObjectEzsigndiscussionApi service constructor.
+    * @property {module:eZmaxAPI/api/ObjectEzsigndiscussionApi}
+    */
+    ObjectEzsigndiscussionApi,
 
     /**
     * The ObjectEzsigndocumentApi service constructor.

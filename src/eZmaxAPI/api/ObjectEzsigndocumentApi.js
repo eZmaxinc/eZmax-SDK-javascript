@@ -20,6 +20,8 @@ import EzsigndocumentApplyEzsigntemplateV1Request from '../model/EzsigndocumentA
 import EzsigndocumentApplyEzsigntemplateV1Response from '../model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from '../model/EzsigndocumentApplyEzsigntemplateV2Request';
 import EzsigndocumentApplyEzsigntemplateV2Response from '../model/EzsigndocumentApplyEzsigntemplateV2Response';
+import EzsigndocumentCreateEzsignelementsPositionedByWordV1Request from '../model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request';
+import EzsigndocumentCreateEzsignelementsPositionedByWordV1Response from '../model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response';
 import EzsigndocumentCreateObjectV1Request from '../model/EzsigndocumentCreateObjectV1Request';
 import EzsigndocumentCreateObjectV1Response from '../model/EzsigndocumentCreateObjectV1Response';
 import EzsigndocumentCreateObjectV2Request from '../model/EzsigndocumentCreateObjectV2Request';
@@ -38,6 +40,7 @@ import EzsigndocumentGetAttachmentsV1Response from '../model/EzsigndocumentGetAt
 import EzsigndocumentGetCompletedElementsV1Response from '../model/EzsigndocumentGetCompletedElementsV1Response';
 import EzsigndocumentGetDownloadUrlV1Response from '../model/EzsigndocumentGetDownloadUrlV1Response';
 import EzsigndocumentGetEzsignannotationsV1Response from '../model/EzsigndocumentGetEzsignannotationsV1Response';
+import EzsigndocumentGetEzsigndiscussionsV1Response from '../model/EzsigndocumentGetEzsigndiscussionsV1Response';
 import EzsigndocumentGetEzsignformfieldgroupsV1Response from '../model/EzsigndocumentGetEzsignformfieldgroupsV1Response';
 import EzsigndocumentGetEzsignpagesV1Response from '../model/EzsigndocumentGetEzsignpagesV1Response';
 import EzsigndocumentGetEzsignsignaturesAutomaticV1Response from '../model/EzsigndocumentGetEzsignsignaturesAutomaticV1Response';
@@ -164,6 +167,54 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentApplyEzsigntemplateV2Response;
       return this.apiClient.callApi(
         '/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentCreateEzsignelementsPositionedByWordV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentCreateEzsignelementsPositionedByWordV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request} EzsigndocumentCreateEzsignelementsPositionedByWordV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentCreateEzsignelementsPositionedByWordV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response}
+     */
+    ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID, EzsigndocumentCreateEzsignelementsPositionedByWordV1Request, callback) {
+      let postBody = EzsigndocumentCreateEzsignelementsPositionedByWordV1Request;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentCreateEzsignelementsPositionedByWordV1");
+      }
+      // verify the required parameter 'EzsigndocumentCreateEzsignelementsPositionedByWordV1Request' is set
+      if (EzsigndocumentCreateEzsignelementsPositionedByWordV1Request === undefined || EzsigndocumentCreateEzsignelementsPositionedByWordV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsigndocumentCreateEzsignelementsPositionedByWordV1Request' when calling ezsigndocumentCreateEzsignelementsPositionedByWordV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentCreateEzsignelementsPositionedByWordV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -677,7 +728,7 @@ export default class ObjectEzsigndocumentApi {
      * Retrieve a URL to download documents.
      * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
      * @param {Number} pkiEzsigndocumentID 
-     * @param {module:eZmaxAPI/model/String} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+     * @param {module:eZmaxAPI/model/String} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.<br>     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
      * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetDownloadUrlV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetDownloadUrlV1Response}
      */
@@ -752,6 +803,49 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentGetEzsignannotationsV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentGetEzsigndiscussionsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsigndiscussionsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentGetEzsigndiscussionsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsigndocument's Ezsigndiscussions
+     * 
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentGetEzsigndiscussionsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentGetEzsigndiscussionsV1Response}
+     */
+    ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentGetEzsigndiscussionsV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentGetEzsigndiscussionsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

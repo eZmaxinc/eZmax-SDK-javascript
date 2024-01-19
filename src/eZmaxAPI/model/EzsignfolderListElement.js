@@ -93,6 +93,9 @@ class EzsignfolderListElement {
             if (data.hasOwnProperty('dtCreatedDate')) {
                 obj['dtCreatedDate'] = ApiClient.convertToType(data['dtCreatedDate'], 'String');
             }
+            if (data.hasOwnProperty('dtEzsignfolderDelayedsenddate')) {
+                obj['dtEzsignfolderDelayedsenddate'] = ApiClient.convertToType(data['dtEzsignfolderDelayedsenddate'], 'String');
+            }
             if (data.hasOwnProperty('dtEzsignfolderSentdate')) {
                 obj['dtEzsignfolderSentdate'] = ApiClient.convertToType(data['dtEzsignfolderSentdate'], 'String');
             }
@@ -138,6 +141,10 @@ class EzsignfolderListElement {
         // ensure the json data is a string
         if (data['dtCreatedDate'] && !(typeof data['dtCreatedDate'] === 'string' || data['dtCreatedDate'] instanceof String)) {
             throw new Error("Expected the field `dtCreatedDate` to be a primitive type in the JSON string but got " + data['dtCreatedDate']);
+        }
+        // ensure the json data is a string
+        if (data['dtEzsignfolderDelayedsenddate'] && !(typeof data['dtEzsignfolderDelayedsenddate'] === 'string' || data['dtEzsignfolderDelayedsenddate'] instanceof String)) {
+            throw new Error("Expected the field `dtEzsignfolderDelayedsenddate` to be a primitive type in the JSON string but got " + data['dtEzsignfolderDelayedsenddate']);
         }
         // ensure the json data is a string
         if (data['dtEzsignfolderSentdate'] && !(typeof data['dtEzsignfolderSentdate'] === 'string' || data['dtEzsignfolderSentdate'] instanceof String)) {
@@ -253,6 +260,21 @@ class EzsignfolderListElement {
      */
     setDtCreatedDate(dtCreatedDate) {
         this['dtCreatedDate'] = dtCreatedDate;
+    }
+/**
+     * Returns The date and time at which the Ezsignfolder will be sent in the future.
+     * @return {String}
+     */
+    getDtEzsignfolderDelayedsenddate() {
+        return this.dtEzsignfolderDelayedsenddate;
+    }
+
+    /**
+     * Sets The date and time at which the Ezsignfolder will be sent in the future.
+     * @param {String} dtEzsignfolderDelayedsenddate The date and time at which the Ezsignfolder will be sent in the future.
+     */
+    setDtEzsignfolderDelayedsenddate(dtEzsignfolderDelayedsenddate) {
+        this['dtEzsignfolderDelayedsenddate'] = dtEzsignfolderDelayedsenddate;
     }
 /**
      * Returns The date and time at which the Ezsignfolder was sent the last time.
@@ -388,6 +410,12 @@ EzsignfolderListElement.prototype['eEzsignfolderStep'] = undefined;
  * @member {String} dtCreatedDate
  */
 EzsignfolderListElement.prototype['dtCreatedDate'] = undefined;
+
+/**
+ * The date and time at which the Ezsignfolder will be sent in the future.
+ * @member {String} dtEzsignfolderDelayedsenddate
+ */
+EzsignfolderListElement.prototype['dtEzsignfolderDelayedsenddate'] = undefined;
 
 /**
  * The date and time at which the Ezsignfolder was sent the last time.

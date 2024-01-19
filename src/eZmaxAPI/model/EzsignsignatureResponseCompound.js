@@ -113,6 +113,9 @@ class EzsignsignatureResponseCompound {
             if (data.hasOwnProperty('iEzsignsignatureStep')) {
                 obj['iEzsignsignatureStep'] = ApiClient.convertToType(data['iEzsignsignatureStep'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsignsignatureStepadjusted')) {
+                obj['iEzsignsignatureStepadjusted'] = ApiClient.convertToType(data['iEzsignsignatureStepadjusted'], 'Number');
+            }
             if (data.hasOwnProperty('eEzsignsignatureType')) {
                 obj['eEzsignsignatureType'] = FieldEEzsignsignatureType.constructFromObject(data['eEzsignsignatureType']);
             }
@@ -436,6 +439,21 @@ class EzsignsignatureResponseCompound {
      */
     setIEzsignsignatureStep(iEzsignsignatureStep) {
         this['iEzsignsignatureStep'] = iEzsignsignatureStep;
+    }
+/**
+     * Returns The step when the Ezsignsigner will be invited to sign
+     * @return {Number}
+     */
+    getIEzsignsignatureStepadjusted() {
+        return this.iEzsignsignatureStepadjusted;
+    }
+
+    /**
+     * Sets The step when the Ezsignsigner will be invited to sign
+     * @param {Number} iEzsignsignatureStepadjusted The step when the Ezsignsigner will be invited to sign
+     */
+    setIEzsignsignatureStepadjusted(iEzsignsignatureStepadjusted) {
+        this['iEzsignsignatureStepadjusted'] = iEzsignsignatureStepadjusted;
     }
 /**
      * @return {module:eZmaxAPI/model/FieldEEzsignsignatureType}
@@ -835,6 +853,12 @@ EzsignsignatureResponseCompound.prototype['iEzsignsignatureWidth'] = undefined;
 EzsignsignatureResponseCompound.prototype['iEzsignsignatureStep'] = undefined;
 
 /**
+ * The step when the Ezsignsigner will be invited to sign
+ * @member {Number} iEzsignsignatureStepadjusted
+ */
+EzsignsignatureResponseCompound.prototype['iEzsignsignatureStepadjusted'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/FieldEEzsignsignatureType} eEzsignsignatureType
  */
 EzsignsignatureResponseCompound.prototype['eEzsignsignatureType'] = undefined;
@@ -1018,6 +1042,11 @@ EzsignsignatureResponse.prototype['iEzsignsignatureWidth'] = undefined;
  * @member {Number} iEzsignsignatureStep
  */
 EzsignsignatureResponse.prototype['iEzsignsignatureStep'] = undefined;
+/**
+ * The step when the Ezsignsigner will be invited to sign
+ * @member {Number} iEzsignsignatureStepadjusted
+ */
+EzsignsignatureResponse.prototype['iEzsignsignatureStepadjusted'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEEzsignsignatureType} eEzsignsignatureType
  */

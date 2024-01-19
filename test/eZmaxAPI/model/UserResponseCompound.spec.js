@@ -216,6 +216,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sUserJobtitle (base name: "sUserJobtitle")', function() {
+      // uncomment below and update the code to test the property sUserJobtitle
+      //var instance = new EZmaxApiDefinitionFull.UserResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eUserEzsignaccess (base name: "eUserEzsignaccess")', function() {
       // uncomment below and update the code to test the property eUserEzsignaccess
       //var instance = new EZmaxApiDefinitionFull.UserResponseCompound();

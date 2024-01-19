@@ -19,6 +19,8 @@ import EzsigntemplatesignaturecustomdateResponseCompound from './Ezsigntemplates
 import FieldEEzsigntemplatesignatureAttachmentnamesource from './FieldEEzsigntemplatesignatureAttachmentnamesource';
 import FieldEEzsigntemplatesignatureDependencyrequirement from './FieldEEzsigntemplatesignatureDependencyrequirement';
 import FieldEEzsigntemplatesignatureFont from './FieldEEzsigntemplatesignatureFont';
+import FieldEEzsigntemplatesignaturePositioning from './FieldEEzsigntemplatesignaturePositioning';
+import FieldEEzsigntemplatesignaturePositioningoccurence from './FieldEEzsigntemplatesignaturePositioningoccurence';
 import FieldEEzsigntemplatesignatureTooltipposition from './FieldEEzsigntemplatesignatureTooltipposition';
 import FieldEEzsigntemplatesignatureType from './FieldEEzsigntemplatesignatureType';
 
@@ -37,14 +39,12 @@ class EzsigntemplatesignatureResponseCompound {
      * @param fkiEzsigntemplatedocumentID {Number} The unique ID of the Ezsigntemplatedocument
      * @param fkiEzsigntemplatesignerID {Number} The unique ID of the Ezsigntemplatesigner
      * @param iEzsigntemplatedocumentpagePagenumber {Number} The page number in the Ezsigntemplatedocument
-     * @param iEzsigntemplatesignatureX {Number} The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @param iEzsigntemplatesignatureY {Number} The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @param iEzsigntemplatesignatureStep {Number} The step when the Ezsigntemplatesigner will be invited to sign
      * @param eEzsigntemplatesignatureType {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureType} 
      */
-    constructor(pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType) { 
-        EzsigntemplatesignatureResponse.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
-        EzsigntemplatesignatureResponseCompound.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
+    constructor(pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType) { 
+        EzsigntemplatesignatureResponse.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
+        EzsigntemplatesignatureResponseCompound.initialize(this, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType);
     }
 
     /**
@@ -52,13 +52,11 @@ class EzsigntemplatesignatureResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureX, iEzsigntemplatesignatureY, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType) { 
+    static initialize(obj, pkiEzsigntemplatesignatureID, fkiEzsigntemplatedocumentID, fkiEzsigntemplatesignerID, iEzsigntemplatedocumentpagePagenumber, iEzsigntemplatesignatureStep, eEzsigntemplatesignatureType) { 
         obj['pkiEzsigntemplatesignatureID'] = pkiEzsigntemplatesignatureID;
         obj['fkiEzsigntemplatedocumentID'] = fkiEzsigntemplatedocumentID;
         obj['fkiEzsigntemplatesignerID'] = fkiEzsigntemplatesignerID;
         obj['iEzsigntemplatedocumentpagePagenumber'] = iEzsigntemplatedocumentpagePagenumber;
-        obj['iEzsigntemplatesignatureX'] = iEzsigntemplatesignatureX;
-        obj['iEzsigntemplatesignatureY'] = iEzsigntemplatesignatureY;
         obj['iEzsigntemplatesignatureStep'] = iEzsigntemplatesignatureStep;
         obj['eEzsigntemplatesignatureType'] = eEzsigntemplatesignatureType;
     }
@@ -86,6 +84,9 @@ class EzsigntemplatesignatureResponseCompound {
             }
             if (data.hasOwnProperty('fkiEzsigntemplatesignerIDValidation')) {
                 obj['fkiEzsigntemplatesignerIDValidation'] = ApiClient.convertToType(data['fkiEzsigntemplatesignerIDValidation'], 'Number');
+            }
+            if (data.hasOwnProperty('eEzsigntemplatesignaturePositioning')) {
+                obj['eEzsigntemplatesignaturePositioning'] = FieldEEzsigntemplatesignaturePositioning.constructFromObject(data['eEzsigntemplatesignaturePositioning']);
             }
             if (data.hasOwnProperty('iEzsigntemplatedocumentpagePagenumber')) {
                 obj['iEzsigntemplatedocumentpagePagenumber'] = ApiClient.convertToType(data['iEzsigntemplatedocumentpagePagenumber'], 'Number');
@@ -141,6 +142,18 @@ class EzsigntemplatesignatureResponseCompound {
             if (data.hasOwnProperty('eEzsigntemplatesignatureDependencyrequirement')) {
                 obj['eEzsigntemplatesignatureDependencyrequirement'] = FieldEEzsigntemplatesignatureDependencyrequirement.constructFromObject(data['eEzsigntemplatesignatureDependencyrequirement']);
             }
+            if (data.hasOwnProperty('sEzsigntemplatesignaturePositioningpattern')) {
+                obj['sEzsigntemplatesignaturePositioningpattern'] = ApiClient.convertToType(data['sEzsigntemplatesignaturePositioningpattern'], 'String');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignaturePositioningoffsetx')) {
+                obj['iEzsigntemplatesignaturePositioningoffsetx'] = ApiClient.convertToType(data['iEzsigntemplatesignaturePositioningoffsetx'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsigntemplatesignaturePositioningoffsety')) {
+                obj['iEzsigntemplatesignaturePositioningoffsety'] = ApiClient.convertToType(data['iEzsigntemplatesignaturePositioningoffsety'], 'Number');
+            }
+            if (data.hasOwnProperty('eEzsigntemplatesignaturePositioningoccurence')) {
+                obj['eEzsigntemplatesignaturePositioningoccurence'] = FieldEEzsigntemplatesignaturePositioningoccurence.constructFromObject(data['eEzsigntemplatesignaturePositioningoccurence']);
+            }
             if (data.hasOwnProperty('bEzsigntemplatesignatureCustomdate')) {
                 obj['bEzsigntemplatesignatureCustomdate'] = ApiClient.convertToType(data['bEzsigntemplatesignatureCustomdate'], 'Boolean');
             }
@@ -177,6 +190,10 @@ class EzsigntemplatesignatureResponseCompound {
         // ensure the json data is a string
         if (data['sEzsigntemplatesignatureRegexp'] && !(typeof data['sEzsigntemplatesignatureRegexp'] === 'string' || data['sEzsigntemplatesignatureRegexp'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplatesignatureRegexp` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignatureRegexp']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplatesignaturePositioningpattern'] && !(typeof data['sEzsigntemplatesignaturePositioningpattern'] === 'string' || data['sEzsigntemplatesignaturePositioningpattern'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplatesignaturePositioningpattern` to be a primitive type in the JSON string but got " + data['sEzsigntemplatesignaturePositioningpattern']);
         }
         if (data['a_objEzsigntemplatesignaturecustomdate']) { // data not null
             // ensure the json data is an array
@@ -265,6 +282,19 @@ class EzsigntemplatesignatureResponseCompound {
      */
     setFkiEzsigntemplatesignerIDValidation(fkiEzsigntemplatesignerIDValidation) {
         this['fkiEzsigntemplatesignerIDValidation'] = fkiEzsigntemplatesignerIDValidation;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioning}
+     */
+    getEEzsigntemplatesignaturePositioning() {
+        return this.eEzsigntemplatesignaturePositioning;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioning} eEzsigntemplatesignaturePositioning
+     */
+    setEEzsigntemplatesignaturePositioning(eEzsigntemplatesignaturePositioning) {
+        this['eEzsigntemplatesignaturePositioning'] = eEzsigntemplatesignaturePositioning;
     }
 /**
      * Returns The page number in the Ezsigntemplatedocument
@@ -533,6 +563,64 @@ class EzsigntemplatesignatureResponseCompound {
         this['eEzsigntemplatesignatureDependencyrequirement'] = eEzsigntemplatesignatureDependencyrequirement;
     }
 /**
+     * Returns The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @return {String}
+     */
+    getSEzsigntemplatesignaturePositioningpattern() {
+        return this.sEzsigntemplatesignaturePositioningpattern;
+    }
+
+    /**
+     * Sets The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @param {String} sEzsigntemplatesignaturePositioningpattern The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     */
+    setSEzsigntemplatesignaturePositioningpattern(sEzsigntemplatesignaturePositioningpattern) {
+        this['sEzsigntemplatesignaturePositioningpattern'] = sEzsigntemplatesignaturePositioningpattern;
+    }
+/**
+     * Returns The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @return {Number}
+     */
+    getIEzsigntemplatesignaturePositioningoffsetx() {
+        return this.iEzsigntemplatesignaturePositioningoffsetx;
+    }
+
+    /**
+     * Sets The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @param {Number} iEzsigntemplatesignaturePositioningoffsetx The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     */
+    setIEzsigntemplatesignaturePositioningoffsetx(iEzsigntemplatesignaturePositioningoffsetx) {
+        this['iEzsigntemplatesignaturePositioningoffsetx'] = iEzsigntemplatesignaturePositioningoffsetx;
+    }
+/**
+     * Returns The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @return {Number}
+     */
+    getIEzsigntemplatesignaturePositioningoffsety() {
+        return this.iEzsigntemplatesignaturePositioningoffsety;
+    }
+
+    /**
+     * Sets The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @param {Number} iEzsigntemplatesignaturePositioningoffsety The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     */
+    setIEzsigntemplatesignaturePositioningoffsety(iEzsigntemplatesignaturePositioningoffsety) {
+        this['iEzsigntemplatesignaturePositioningoffsety'] = iEzsigntemplatesignaturePositioningoffsety;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioningoccurence}
+     */
+    getEEzsigntemplatesignaturePositioningoccurence() {
+        return this.eEzsigntemplatesignaturePositioningoccurence;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioningoccurence} eEzsigntemplatesignaturePositioningoccurence
+     */
+    setEEzsigntemplatesignaturePositioningoccurence(eEzsigntemplatesignaturePositioningoccurence) {
+        this['eEzsigntemplatesignaturePositioningoccurence'] = eEzsigntemplatesignaturePositioningoccurence;
+    }
+/**
      * Returns Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
      * @return {Boolean}
      */
@@ -578,7 +666,7 @@ class EzsigntemplatesignatureResponseCompound {
 
 }
 
-EzsigntemplatesignatureResponseCompound.RequiredProperties = ["pkiEzsigntemplatesignatureID", "fkiEzsigntemplatedocumentID", "fkiEzsigntemplatesignerID", "iEzsigntemplatedocumentpagePagenumber", "iEzsigntemplatesignatureX", "iEzsigntemplatesignatureY", "iEzsigntemplatesignatureStep", "eEzsigntemplatesignatureType"];
+EzsigntemplatesignatureResponseCompound.RequiredProperties = ["pkiEzsigntemplatesignatureID", "fkiEzsigntemplatedocumentID", "fkiEzsigntemplatesignerID", "iEzsigntemplatedocumentpagePagenumber", "iEzsigntemplatesignatureStep", "eEzsigntemplatesignatureType"];
 
 /**
  * The unique ID of the Ezsigntemplatesignature
@@ -603,6 +691,11 @@ EzsigntemplatesignatureResponseCompound.prototype['fkiEzsigntemplatesignerID'] =
  * @member {Number} fkiEzsigntemplatesignerIDValidation
  */
 EzsigntemplatesignatureResponseCompound.prototype['fkiEzsigntemplatesignerIDValidation'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioning} eEzsigntemplatesignaturePositioning
+ */
+EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignaturePositioning'] = undefined;
 
 /**
  * The page number in the Ezsigntemplatedocument
@@ -707,6 +800,29 @@ EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignatureTextv
 EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignatureDependencyrequirement'] = undefined;
 
 /**
+ * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {String} sEzsigntemplatesignaturePositioningpattern
+ */
+EzsigntemplatesignatureResponseCompound.prototype['sEzsigntemplatesignaturePositioningpattern'] = undefined;
+
+/**
+ * The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplatesignaturePositioningoffsetx
+ */
+EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignaturePositioningoffsetx'] = undefined;
+
+/**
+ * The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplatesignaturePositioningoffsety
+ */
+EzsigntemplatesignatureResponseCompound.prototype['iEzsigntemplatesignaturePositioningoffsety'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioningoccurence} eEzsigntemplatesignaturePositioningoccurence
+ */
+EzsigntemplatesignatureResponseCompound.prototype['eEzsigntemplatesignaturePositioningoccurence'] = undefined;
+
+/**
  * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
  * @member {Boolean} bEzsigntemplatesignatureCustomdate
  */
@@ -745,6 +861,10 @@ EzsigntemplatesignatureResponse.prototype['fkiEzsigntemplatesignerID'] = undefin
  * @member {Number} fkiEzsigntemplatesignerIDValidation
  */
 EzsigntemplatesignatureResponse.prototype['fkiEzsigntemplatesignerIDValidation'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioning} eEzsigntemplatesignaturePositioning
+ */
+EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignaturePositioning'] = undefined;
 /**
  * The page number in the Ezsigntemplatedocument
  * @member {Number} iEzsigntemplatedocumentpagePagenumber
@@ -829,6 +949,25 @@ EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureTextvalidatio
  * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignatureDependencyrequirement} eEzsigntemplatesignatureDependencyrequirement
  */
 EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignatureDependencyrequirement'] = undefined;
+/**
+ * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {String} sEzsigntemplatesignaturePositioningpattern
+ */
+EzsigntemplatesignatureResponse.prototype['sEzsigntemplatesignaturePositioningpattern'] = undefined;
+/**
+ * The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplatesignaturePositioningoffsetx
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignaturePositioningoffsetx'] = undefined;
+/**
+ * The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+ * @member {Number} iEzsigntemplatesignaturePositioningoffsety
+ */
+EzsigntemplatesignatureResponse.prototype['iEzsigntemplatesignaturePositioningoffsety'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplatesignaturePositioningoccurence} eEzsigntemplatesignaturePositioningoccurence
+ */
+EzsigntemplatesignatureResponse.prototype['eEzsigntemplatesignaturePositioningoccurence'] = undefined;
 
 
 

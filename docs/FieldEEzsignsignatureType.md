@@ -23,4 +23,6 @@
 
 * `FieldTextarea` (value: `"FieldTextarea"`)
 
+* `Consultation` (value: `"Consultation"`)
+
 

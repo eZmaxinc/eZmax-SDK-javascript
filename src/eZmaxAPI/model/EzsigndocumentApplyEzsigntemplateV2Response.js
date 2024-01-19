@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import CommonResponse from './CommonResponse';
 import CommonResponseObjDebug from './CommonResponseObjDebug';
 import CommonResponseObjDebugPayload from './CommonResponseObjDebugPayload';
+import CommonResponseWarning from './CommonResponseWarning';
 
 /**
  * The EzsigndocumentApplyEzsigntemplateV2Response model module.
@@ -61,6 +62,9 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
             if (data.hasOwnProperty('objDebug')) {
                 obj['objDebug'] = CommonResponseObjDebug.constructFromObject(data['objDebug']);
             }
+            if (data.hasOwnProperty('a_objWarning')) {
+                obj['a_objWarning'] = ApiClient.convertToType(data['a_objWarning'], [CommonResponseWarning]);
+            }
         }
         return obj;
     }
@@ -84,6 +88,16 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
         // validate the optional field `objDebug`
         if (data['objDebug']) { // data not null
           CommonResponseObjDebug.validateJSON(data['objDebug']);
+        }
+        if (data['a_objWarning']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objWarning'])) {
+                throw new Error("Expected the field `a_objWarning` to be an array in the JSON data but got " + data['a_objWarning']);
+            }
+            // validate the optional field `a_objWarning` (array)
+            for (const item of data['a_objWarning']) {
+                CommonResponseWarning.validateJSON(item);
+            };
         }
 
         return true;
@@ -115,6 +129,19 @@ class EzsigndocumentApplyEzsigntemplateV2Response {
     setObjDebug(objDebug) {
         this['objDebug'] = objDebug;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/CommonResponseWarning>}
+     */
+    getAObjWarning() {
+        return this.a_objWarning;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/CommonResponseWarning>} a_objWarning
+     */
+    setAObjWarning(a_objWarning) {
+        this['a_objWarning'] = a_objWarning;
+    }
 
 }
 
@@ -129,6 +156,11 @@ EzsigndocumentApplyEzsigntemplateV2Response.prototype['objDebugPayload'] = undef
  * @member {module:eZmaxAPI/model/CommonResponseObjDebug} objDebug
  */
 EzsigndocumentApplyEzsigntemplateV2Response.prototype['objDebug'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/CommonResponseWarning>} a_objWarning
+ */
+EzsigndocumentApplyEzsigntemplateV2Response.prototype['a_objWarning'] = undefined;
 
 
 // Implement CommonResponse interface:

@@ -55,6 +55,13 @@ export default class FieldEEzsigndocumentStep {
 
     
         /**
+         * value: "PendingCompletion"
+         * @const
+         */
+        "PendingCompletion" = "PendingCompletion";
+
+    
+        /**
          * value: "Completed"
          * @const
          */

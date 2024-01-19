@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property a_objWarning (base name: "a_objWarning")', function() {
+      // uncomment below and update the code to test the property a_objWarning
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentApplyEzsigntemplateV2Response();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

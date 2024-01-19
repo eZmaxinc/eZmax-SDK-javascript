@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplateformfieldPositioning (base name: "eEzsigntemplateformfieldPositioning")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplateformfieldPositioning
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsigntemplatedocumentpagePagenumber (base name: "iEzsigntemplatedocumentpagePagenumber")', function() {
       // uncomment below and update the code to test the property iEzsigntemplatedocumentpagePagenumber
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
@@ -116,6 +122,30 @@
 
     it('should have the property eEzsigntemplateformfieldDependencyrequirement (base name: "eEzsigntemplateformfieldDependencyrequirement")', function() {
       // uncomment below and update the code to test the property eEzsigntemplateformfieldDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigntemplateformfieldPositioningpattern (base name: "sEzsigntemplateformfieldPositioningpattern")', function() {
+      // uncomment below and update the code to test the property sEzsigntemplateformfieldPositioningpattern
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplateformfieldPositioningoffsetx (base name: "iEzsigntemplateformfieldPositioningoffsetx")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplateformfieldPositioningoffsetx
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplateformfieldPositioningoffsety (base name: "iEzsigntemplateformfieldPositioningoffsety")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplateformfieldPositioningoffsety
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigntemplateformfieldPositioningoccurence (base name: "eEzsigntemplateformfieldPositioningoccurence")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplateformfieldPositioningoccurence
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateformfieldRequest();
       //expect(instance).to.be();
     });

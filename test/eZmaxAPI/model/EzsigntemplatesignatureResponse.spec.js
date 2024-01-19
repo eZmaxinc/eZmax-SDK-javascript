@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplatesignaturePositioning (base name: "eEzsigntemplatesignaturePositioning")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplatesignaturePositioning
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iEzsigntemplatedocumentpagePagenumber (base name: "iEzsigntemplatedocumentpagePagenumber")', function() {
       // uncomment below and update the code to test the property iEzsigntemplatedocumentpagePagenumber
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
@@ -182,6 +188,30 @@
 
     it('should have the property eEzsigntemplatesignatureDependencyrequirement (base name: "eEzsigntemplatesignatureDependencyrequirement")', function() {
       // uncomment below and update the code to test the property eEzsigntemplatesignatureDependencyrequirement
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sEzsigntemplatesignaturePositioningpattern (base name: "sEzsigntemplatesignaturePositioningpattern")', function() {
+      // uncomment below and update the code to test the property sEzsigntemplatesignaturePositioningpattern
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplatesignaturePositioningoffsetx (base name: "iEzsigntemplatesignaturePositioningoffsetx")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplatesignaturePositioningoffsetx
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsigntemplatesignaturePositioningoffsety (base name: "iEzsigntemplatesignaturePositioningoffsety")', function() {
+      // uncomment below and update the code to test the property iEzsigntemplatesignaturePositioningoffsety
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigntemplatesignaturePositioningoccurence (base name: "eEzsigntemplatesignaturePositioningoccurence")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplatesignaturePositioningoccurence
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplatesignatureResponse();
       //expect(instance).to.be();
     });

@@ -180,6 +180,9 @@ class UserResponse {
             if (data.hasOwnProperty('sUserLoginname')) {
                 obj['sUserLoginname'] = ApiClient.convertToType(data['sUserLoginname'], 'String');
             }
+            if (data.hasOwnProperty('sUserJobtitle')) {
+                obj['sUserJobtitle'] = ApiClient.convertToType(data['sUserJobtitle'], 'String');
+            }
             if (data.hasOwnProperty('eUserEzsignaccess')) {
                 obj['eUserEzsignaccess'] = FieldEUserEzsignaccess.constructFromObject(data['eUserEzsignaccess']);
             }
@@ -273,6 +276,10 @@ class UserResponse {
         // ensure the json data is a string
         if (data['sUserLoginname'] && !(typeof data['sUserLoginname'] === 'string' || data['sUserLoginname'] instanceof String)) {
             throw new Error("Expected the field `sUserLoginname` to be a primitive type in the JSON string but got " + data['sUserLoginname']);
+        }
+        // ensure the json data is a string
+        if (data['sUserJobtitle'] && !(typeof data['sUserJobtitle'] === 'string' || data['sUserJobtitle'] instanceof String)) {
+            throw new Error("Expected the field `sUserJobtitle` to be a primitive type in the JSON string but got " + data['sUserJobtitle']);
         }
         // ensure the json data is a string
         if (data['dtUserLastlogondate'] && !(typeof data['dtUserLastlogondate'] === 'string' || data['dtUserLastlogondate'] instanceof String)) {
@@ -702,6 +709,21 @@ class UserResponse {
         this['sUserLoginname'] = sUserLoginname;
     }
 /**
+     * Returns The job title of the user
+     * @return {String}
+     */
+    getSUserJobtitle() {
+        return this.sUserJobtitle;
+    }
+
+    /**
+     * Sets The job title of the user
+     * @param {String} sUserJobtitle The job title of the user
+     */
+    setSUserJobtitle(sUserJobtitle) {
+        this['sUserJobtitle'] = sUserJobtitle;
+    }
+/**
      * @return {module:eZmaxAPI/model/FieldEUserEzsignaccess}
      */
     getEUserEzsignaccess() {
@@ -1007,6 +1029,12 @@ UserResponse.prototype['sUserLastname'] = undefined;
  * @member {String} sUserLoginname
  */
 UserResponse.prototype['sUserLoginname'] = undefined;
+
+/**
+ * The job title of the user
+ * @member {String} sUserJobtitle
+ */
+UserResponse.prototype['sUserJobtitle'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/FieldEUserEzsignaccess} eUserEzsignaccess

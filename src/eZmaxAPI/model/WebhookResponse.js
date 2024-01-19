@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAudit from './CommonAudit';
 import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
@@ -34,10 +35,11 @@ class WebhookResponse {
      * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
      * @param bWebhookIssigned {Boolean} Whether the requests will be signed or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
+     * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit) { 
         
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation);
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
     }
 
     /**
@@ -45,7 +47,7 @@ class WebhookResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
@@ -54,6 +56,7 @@ class WebhookResponse {
         obj['bWebhookIsactive'] = bWebhookIsactive;
         obj['bWebhookIssigned'] = bWebhookIssigned;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
+        obj['objAudit'] = objAudit;
     }
 
     /**
@@ -109,6 +112,9 @@ class WebhookResponse {
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
+            if (data.hasOwnProperty('objAudit')) {
+                obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
         }
         return obj;
     }
@@ -148,6 +154,10 @@ class WebhookResponse {
         // ensure the json data is a string
         if (data['sWebhookSecret'] && !(typeof data['sWebhookSecret'] === 'string' || data['sWebhookSecret'] instanceof String)) {
             throw new Error("Expected the field `sWebhookSecret` to be a primitive type in the JSON string but got " + data['sWebhookSecret']);
+        }
+        // validate the optional field `objAudit`
+        if (data['objAudit']) { // data not null
+          CommonAudit.validateJSON(data['objAudit']);
         }
 
         return true;
@@ -358,10 +368,23 @@ class WebhookResponse {
     setBWebhookSkipsslvalidation(bWebhookSkipsslvalidation) {
         this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
+/**
+     * @return {module:eZmaxAPI/model/CommonAudit}
+     */
+    getObjAudit() {
+        return this.objAudit;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CommonAudit} objAudit
+     */
+    setObjAudit(objAudit) {
+        this['objAudit'] = objAudit;
+    }
 
 }
 
-WebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation"];
+WebhookResponse.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation", "objAudit"];
 
 /**
  * The unique ID of the Webhook
@@ -443,6 +466,11 @@ WebhookResponse.prototype['bWebhookIssigned'] = undefined;
  * @member {Boolean} bWebhookSkipsslvalidation
  */
 WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+WebhookResponse.prototype['objAudit'] = undefined;
 
 
 

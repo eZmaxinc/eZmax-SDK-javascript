@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dtEzsignfolderDelayedsenddate (base name: "dtEzsignfolderDelayedsenddate")', function() {
+      // uncomment below and update the code to test the property dtEzsignfolderDelayedsenddate
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property dtEzsignfolderSentdate (base name: "dtEzsignfolderSentdate")', function() {
       // uncomment below and update the code to test the property dtEzsignfolderSentdate
       //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();

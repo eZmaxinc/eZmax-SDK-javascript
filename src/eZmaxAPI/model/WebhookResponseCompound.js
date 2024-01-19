@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import CommonAudit from './CommonAudit';
 import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
@@ -36,10 +37,11 @@ class WebhookResponseCompound {
      * @param bWebhookIsactive {Boolean} Whether the Webhook is active or not
      * @param bWebhookIssigned {Boolean} Whether the requests will be signed or not
      * @param bWebhookSkipsslvalidation {Boolean} Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
+     * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
      */
-    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation);
-        WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation);
+    constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit) { 
+        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
+        WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
     }
 
     /**
@@ -47,7 +49,7 @@ class WebhookResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation) { 
+    static initialize(obj, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit) { 
         obj['pkiWebhookID'] = pkiWebhookID;
         obj['sWebhookDescription'] = sWebhookDescription;
         obj['eWebhookModule'] = eWebhookModule;
@@ -56,6 +58,7 @@ class WebhookResponseCompound {
         obj['bWebhookIsactive'] = bWebhookIsactive;
         obj['bWebhookIssigned'] = bWebhookIssigned;
         obj['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
+        obj['objAudit'] = objAudit;
     }
 
     /**
@@ -112,6 +115,9 @@ class WebhookResponseCompound {
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
+            if (data.hasOwnProperty('objAudit')) {
+                obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
             if (data.hasOwnProperty('sWebhookEvent')) {
                 obj['sWebhookEvent'] = ApiClient.convertToType(data['sWebhookEvent'], 'String');
             }
@@ -154,6 +160,10 @@ class WebhookResponseCompound {
         // ensure the json data is a string
         if (data['sWebhookSecret'] && !(typeof data['sWebhookSecret'] === 'string' || data['sWebhookSecret'] instanceof String)) {
             throw new Error("Expected the field `sWebhookSecret` to be a primitive type in the JSON string but got " + data['sWebhookSecret']);
+        }
+        // validate the optional field `objAudit`
+        if (data['objAudit']) { // data not null
+          CommonAudit.validateJSON(data['objAudit']);
         }
         // ensure the json data is a string
         if (data['sWebhookEvent'] && !(typeof data['sWebhookEvent'] === 'string' || data['sWebhookEvent'] instanceof String)) {
@@ -369,6 +379,19 @@ class WebhookResponseCompound {
         this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
 /**
+     * @return {module:eZmaxAPI/model/CommonAudit}
+     */
+    getObjAudit() {
+        return this.objAudit;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/CommonAudit} objAudit
+     */
+    setObjAudit(objAudit) {
+        this['objAudit'] = objAudit;
+    }
+/**
      * Returns The concatenated string to describe the Webhook event
      * @return {String}
      */
@@ -386,7 +409,7 @@ class WebhookResponseCompound {
 
 }
 
-WebhookResponseCompound.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation"];
+WebhookResponseCompound.RequiredProperties = ["pkiWebhookID", "sWebhookDescription", "eWebhookModule", "sWebhookUrl", "sWebhookEmailfailed", "bWebhookIsactive", "bWebhookIssigned", "bWebhookSkipsslvalidation", "objAudit"];
 
 /**
  * The unique ID of the Webhook
@@ -470,6 +493,11 @@ WebhookResponseCompound.prototype['bWebhookIssigned'] = undefined;
 WebhookResponseCompound.prototype['bWebhookSkipsslvalidation'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+WebhookResponseCompound.prototype['objAudit'] = undefined;
+
+/**
  * The concatenated string to describe the Webhook event
  * @member {String} sWebhookEvent
  */
@@ -544,6 +572,10 @@ WebhookResponse.prototype['bWebhookIssigned'] = undefined;
  * @member {Boolean} bWebhookSkipsslvalidation
  */
 WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/CommonAudit} objAudit
+ */
+WebhookResponse.prototype['objAudit'] = undefined;
 
 
 
