@@ -90,6 +90,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsigntemplateFilenamepattern (base name: "sEzsigntemplateFilenamepattern")', function() {
+      // uncomment below and update the code to test the property sEzsigntemplateFilenamepattern
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsigntemplateAdminonly (base name: "bEzsigntemplateAdminonly")', function() {
       // uncomment below and update the code to test the property bEzsigntemplateAdminonly
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateResponse();
@@ -104,6 +110,18 @@
 
     it('should have the property objAudit (base name: "objAudit")', function() {
       // uncomment below and update the code to test the property objAudit
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsigntemplateEditallowed (base name: "bEzsigntemplateEditallowed")', function() {
+      // uncomment below and update the code to test the property bEzsigntemplateEditallowed
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eEzsigntemplateType (base name: "eEzsigntemplateType")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplateType
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateResponse();
       //expect(instance).to.be();
     });

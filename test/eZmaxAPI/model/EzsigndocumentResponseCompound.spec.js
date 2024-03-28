@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsigndocumentEzsigndiscussiontotal (base name: "iEzsigndocumentEzsigndiscussiontotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentEzsigndiscussiontotal
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eEzsigndocumentSteptype (base name: "eEzsigndocumentSteptype")', function() {
       // uncomment below and update the code to test the property eEzsigndocumentSteptype
       //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponseCompound();

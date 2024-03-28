@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **bWebhookIsactive** | **Boolean** | Whether the Webhook is active or not | 
 **bWebhookIssigned** | **Boolean** | Whether the requests will be signed or not | [optional] 
 **bWebhookSkipsslvalidation** | **Boolean** | Wheter the server&#39;s SSL certificate should be validated or not. Not recommended to skip for production use | 
+**a_objWebhookheader** | [**[WebhookheaderRequestCompound]**](WebhookheaderRequestCompound.md) |  | [optional] 
 
 

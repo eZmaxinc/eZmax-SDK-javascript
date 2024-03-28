@@ -26,6 +26,7 @@ import EzsignfolderDisposeEzsignfoldersV1Response from '../model/EzsignfolderDis
 import EzsignfolderDisposeV1Response from '../model/EzsignfolderDisposeV1Response';
 import EzsignfolderEditObjectV1Request from '../model/EzsignfolderEditObjectV1Request';
 import EzsignfolderEditObjectV1Response from '../model/EzsignfolderEditObjectV1Response';
+import EzsignfolderEndPrematurelyV1Response from '../model/EzsignfolderEndPrematurelyV1Response';
 import EzsignfolderGetActionableElementsV1Response from '../model/EzsignfolderGetActionableElementsV1Response';
 import EzsignfolderGetAttachmentCountV1Response from '../model/EzsignfolderGetAttachmentCountV1Response';
 import EzsignfolderGetAttachmentsV1Response from '../model/EzsignfolderGetAttachmentsV1Response';
@@ -48,8 +49,6 @@ import EzsignfolderReorderV1Request from '../model/EzsignfolderReorderV1Request'
 import EzsignfolderReorderV1Response from '../model/EzsignfolderReorderV1Response';
 import EzsignfolderSendV1Request from '../model/EzsignfolderSendV1Request';
 import EzsignfolderSendV1Response from '../model/EzsignfolderSendV1Response';
-import EzsignfolderSendV2Request from '../model/EzsignfolderSendV2Request';
-import EzsignfolderSendV2Response from '../model/EzsignfolderSendV2Response';
 import EzsignfolderSendV3Request from '../model/EzsignfolderSendV3Request';
 import EzsignfolderSendV3Response from '../model/EzsignfolderSendV3Response';
 import EzsignfolderUnsendV1Response from '../model/EzsignfolderUnsendV1Response';
@@ -428,6 +427,54 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderEditObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfolderEndPrematurelyV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEndPrematurelyV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfolderEndPrematurelyV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * End prematurely
+     * End prematurely all Ezsigndocument of Ezsignfolder when some signatures are still required
+     * @param {Number} pkiEzsignfolderID 
+     * @param {Object.<String, Object>} body 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderEndPrematurelyV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderEndPrematurelyV1Response}
+     */
+    ezsignfolderEndPrematurelyV1(pkiEzsignfolderID, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'pkiEzsignfolderID' is set
+      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderEndPrematurelyV1");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ezsignfolderEndPrematurelyV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfolderID': pkiEzsignfolderID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfolderEndPrematurelyV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -1226,54 +1273,6 @@ export default class ObjectEzsignfolderApi {
       let returnType = EzsignfolderSendV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsignfolder/{pkiEzsignfolderID}/send', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the ezsignfolderSendV2 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderSendV2Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignfolderSendV2Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Send the Ezsignfolder to the signatories for signature
-     * 
-     * @param {Number} pkiEzsignfolderID 
-     * @param {module:eZmaxAPI/model/EzsignfolderSendV2Request} EzsignfolderSendV2Request 
-     * @param {module:eZmaxAPI/api/ObjectEzsignfolderApi~ezsignfolderSendV2Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignfolderSendV2Response}
-     */
-    ezsignfolderSendV2(pkiEzsignfolderID, EzsignfolderSendV2Request, callback) {
-      let postBody = EzsignfolderSendV2Request;
-      // verify the required parameter 'pkiEzsignfolderID' is set
-      if (pkiEzsignfolderID === undefined || pkiEzsignfolderID === null) {
-        throw new Error("Missing the required parameter 'pkiEzsignfolderID' when calling ezsignfolderSendV2");
-      }
-      // verify the required parameter 'EzsignfolderSendV2Request' is set
-      if (EzsignfolderSendV2Request === undefined || EzsignfolderSendV2Request === null) {
-        throw new Error("Missing the required parameter 'EzsignfolderSendV2Request' when calling ezsignfolderSendV2");
-      }
-
-      let pathParams = {
-        'pkiEzsignfolderID': pkiEzsignfolderID
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = EzsignfolderSendV2Response;
-      return this.apiClient.callApi(
-        '/2/object/ezsignfolder/{pkiEzsignfolderID}/send', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

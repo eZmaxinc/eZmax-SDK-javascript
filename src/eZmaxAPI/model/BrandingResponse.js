@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import FieldEBrandingLogo from './FieldEBrandingLogo';
+import FieldEBrandingLogointerface from './FieldEBrandingLogointerface';
 import MultilingualBrandingDescription from './MultilingualBrandingDescription';
 
 /**
@@ -93,6 +94,9 @@ class BrandingResponse {
             if (data.hasOwnProperty('eBrandingLogo')) {
                 obj['eBrandingLogo'] = FieldEBrandingLogo.constructFromObject(data['eBrandingLogo']);
             }
+            if (data.hasOwnProperty('eBrandingLogointerface')) {
+                obj['eBrandingLogointerface'] = FieldEBrandingLogointerface.constructFromObject(data['eBrandingLogointerface']);
+            }
             if (data.hasOwnProperty('iBrandingColortext')) {
                 obj['iBrandingColortext'] = ApiClient.convertToType(data['iBrandingColortext'], 'Number');
             }
@@ -111,6 +115,9 @@ class BrandingResponse {
             if (data.hasOwnProperty('iBrandingColorbackgroundsmallbox')) {
                 obj['iBrandingColorbackgroundsmallbox'] = ApiClient.convertToType(data['iBrandingColorbackgroundsmallbox'], 'Number');
             }
+            if (data.hasOwnProperty('iBrandingInterfacecolor')) {
+                obj['iBrandingInterfacecolor'] = ApiClient.convertToType(data['iBrandingInterfacecolor'], 'Number');
+            }
             if (data.hasOwnProperty('bBrandingIsactive')) {
                 obj['bBrandingIsactive'] = ApiClient.convertToType(data['bBrandingIsactive'], 'Boolean');
             }
@@ -126,7 +133,7 @@ class BrandingResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of BrandingResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -255,6 +262,19 @@ class BrandingResponse {
         this['eBrandingLogo'] = eBrandingLogo;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldEBrandingLogointerface}
+     */
+    getEBrandingLogointerface() {
+        return this.eBrandingLogointerface;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEBrandingLogointerface} eBrandingLogointerface
+     */
+    setEBrandingLogointerface(eBrandingLogointerface) {
+        this['eBrandingLogointerface'] = eBrandingLogointerface;
+    }
+/**
      * Returns The color of the text. This is a RGB color converted into integer
      * minimum: 0
      * maximum: 16777215
@@ -357,6 +377,23 @@ class BrandingResponse {
         this['iBrandingColorbackgroundsmallbox'] = iBrandingColorbackgroundsmallbox;
     }
 /**
+     * Returns The color of the interface. This is a RGB color converted into integer
+     * minimum: 0
+     * maximum: 16777215
+     * @return {Number}
+     */
+    getIBrandingInterfacecolor() {
+        return this.iBrandingInterfacecolor;
+    }
+
+    /**
+     * Sets The color of the interface. This is a RGB color converted into integer
+     * @param {Number} iBrandingInterfacecolor The color of the interface. This is a RGB color converted into integer
+     */
+    setIBrandingInterfacecolor(iBrandingInterfacecolor) {
+        this['iBrandingInterfacecolor'] = iBrandingInterfacecolor;
+    }
+/**
      * Returns Whether the Branding is active or not
      * @return {Boolean}
      */
@@ -417,6 +454,11 @@ BrandingResponse.prototype['sEmailAddress'] = undefined;
 BrandingResponse.prototype['eBrandingLogo'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEBrandingLogointerface} eBrandingLogointerface
+ */
+BrandingResponse.prototype['eBrandingLogointerface'] = undefined;
+
+/**
  * The color of the text. This is a RGB color converted into integer
  * @member {Number} iBrandingColortext
  */
@@ -451,6 +493,12 @@ BrandingResponse.prototype['iBrandingColorbackgroundbutton'] = undefined;
  * @member {Number} iBrandingColorbackgroundsmallbox
  */
 BrandingResponse.prototype['iBrandingColorbackgroundsmallbox'] = undefined;
+
+/**
+ * The color of the interface. This is a RGB color converted into integer
+ * @member {Number} iBrandingInterfacecolor
+ */
+BrandingResponse.prototype['iBrandingInterfacecolor'] = undefined;
 
 /**
  * Whether the Branding is active or not

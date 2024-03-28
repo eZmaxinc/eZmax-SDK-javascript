@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sUsergroupNameX (base name: "sUsergroupNameX")', function() {
+      // uncomment below and update the code to test the property sUsergroupNameX
+      //var instance = new EZmaxApiDefinitionFull.UsergroupResponseCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -48,16 +48,6 @@
   }
 
   describe('ObjectEzmaxinvoicingApi', function() {
-    describe('ezmaxinvoicingGetAutocompleteV1', function() {
-      it('should call ezmaxinvoicingGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezmaxinvoicingGetAutocompleteV1
-        //instance.ezmaxinvoicingGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('ezmaxinvoicingGetAutocompleteV2', function() {
       it('should call ezmaxinvoicingGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test ezmaxinvoicingGetAutocompleteV2

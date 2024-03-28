@@ -26,18 +26,16 @@ class ActivesessionResponseCompoundUser {
      * @alias module:eZmaxAPI/model/ActivesessionResponseCompoundUser
      * @param pkiUserID {Number} The unique ID of the User
      * @param fkiTimezoneID {Number} The unique ID of the Timezone
-     * @param sAvatarUrl {String} The url of the picture used as avatar
      * @param sUserFirstname {String} The first name of the user
      * @param sUserLastname {String} The last name of the user
-     * @param sEmailAddress {String} The email address.
      * @param eUserEzsignsendreminderfrequency {module:eZmaxAPI/model/FieldEUserEzsignsendreminderfrequency} 
      * @param iUserInterfacecolor {Number} The int32 representation of the interface color. For example, RGB color #39435B would be 3752795
      * @param bUserInterfacedark {Boolean} Whether to use a dark mode interface
      * @param iUserListresult {Number} The number of rows to return by default in lists
      */
-    constructor(pkiUserID, fkiTimezoneID, sAvatarUrl, sUserFirstname, sUserLastname, sEmailAddress, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult) { 
+    constructor(pkiUserID, fkiTimezoneID, sUserFirstname, sUserLastname, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult) { 
         
-        ActivesessionResponseCompoundUser.initialize(this, pkiUserID, fkiTimezoneID, sAvatarUrl, sUserFirstname, sUserLastname, sEmailAddress, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult);
+        ActivesessionResponseCompoundUser.initialize(this, pkiUserID, fkiTimezoneID, sUserFirstname, sUserLastname, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult);
     }
 
     /**
@@ -45,13 +43,11 @@ class ActivesessionResponseCompoundUser {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiUserID, fkiTimezoneID, sAvatarUrl, sUserFirstname, sUserLastname, sEmailAddress, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult) { 
+    static initialize(obj, pkiUserID, fkiTimezoneID, sUserFirstname, sUserLastname, eUserEzsignsendreminderfrequency, iUserInterfacecolor, bUserInterfacedark, iUserListresult) { 
         obj['pkiUserID'] = pkiUserID;
         obj['fkiTimezoneID'] = fkiTimezoneID;
-        obj['sAvatarUrl'] = sAvatarUrl;
         obj['sUserFirstname'] = sUserFirstname;
         obj['sUserLastname'] = sUserLastname;
-        obj['sEmailAddress'] = sEmailAddress;
         obj['eUserEzsignsendreminderfrequency'] = eUserEzsignsendreminderfrequency;
         obj['iUserInterfacecolor'] = iUserInterfacecolor;
         obj['bUserInterfacedark'] = bUserInterfacedark;
@@ -111,7 +107,7 @@ class ActivesessionResponseCompoundUser {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of ActivesessionResponseCompoundUser.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -291,7 +287,7 @@ class ActivesessionResponseCompoundUser {
 
 }
 
-ActivesessionResponseCompoundUser.RequiredProperties = ["pkiUserID", "fkiTimezoneID", "sAvatarUrl", "sUserFirstname", "sUserLastname", "sEmailAddress", "eUserEzsignsendreminderfrequency", "iUserInterfacecolor", "bUserInterfacedark", "iUserListresult"];
+ActivesessionResponseCompoundUser.RequiredProperties = ["pkiUserID", "fkiTimezoneID", "sUserFirstname", "sUserLastname", "eUserEzsignsendreminderfrequency", "iUserInterfacecolor", "bUserInterfacedark", "iUserListresult"];
 
 /**
  * The unique ID of the User

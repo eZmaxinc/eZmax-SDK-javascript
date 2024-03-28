@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import BrandingRequest from './BrandingRequest';
 import FieldEBrandingLogo from './FieldEBrandingLogo';
+import FieldEBrandingLogointerface from './FieldEBrandingLogointerface';
 import MultilingualBrandingDescription from './MultilingualBrandingDescription';
 
 /**
@@ -83,6 +84,12 @@ class BrandingRequestCompound {
             if (data.hasOwnProperty('sBrandingBase64')) {
                 obj['sBrandingBase64'] = ApiClient.convertToType(data['sBrandingBase64'], 'Blob');
             }
+            if (data.hasOwnProperty('eBrandingLogointerface')) {
+                obj['eBrandingLogointerface'] = FieldEBrandingLogointerface.constructFromObject(data['eBrandingLogointerface']);
+            }
+            if (data.hasOwnProperty('sBrandingLogointerfaceBase64')) {
+                obj['sBrandingLogointerfaceBase64'] = ApiClient.convertToType(data['sBrandingLogointerfaceBase64'], 'Blob');
+            }
             if (data.hasOwnProperty('iBrandingColortext')) {
                 obj['iBrandingColortext'] = ApiClient.convertToType(data['iBrandingColortext'], 'Number');
             }
@@ -100,6 +107,9 @@ class BrandingRequestCompound {
             }
             if (data.hasOwnProperty('iBrandingColorbackgroundsmallbox')) {
                 obj['iBrandingColorbackgroundsmallbox'] = ApiClient.convertToType(data['iBrandingColorbackgroundsmallbox'], 'Number');
+            }
+            if (data.hasOwnProperty('iBrandingInterfacecolor')) {
+                obj['iBrandingInterfacecolor'] = ApiClient.convertToType(data['iBrandingInterfacecolor'], 'Number');
             }
             if (data.hasOwnProperty('sBrandingName')) {
                 obj['sBrandingName'] = ApiClient.convertToType(data['sBrandingName'], 'String');
@@ -122,7 +132,7 @@ class BrandingRequestCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of BrandingRequestCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -198,6 +208,34 @@ class BrandingRequestCompound {
      */
     setSBrandingBase64(sBrandingBase64) {
         this['sBrandingBase64'] = sBrandingBase64;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEBrandingLogointerface}
+     */
+    getEBrandingLogointerface() {
+        return this.eBrandingLogointerface;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEBrandingLogointerface} eBrandingLogointerface
+     */
+    setEBrandingLogointerface(eBrandingLogointerface) {
+        this['eBrandingLogointerface'] = eBrandingLogointerface;
+    }
+/**
+     * Returns The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select 'Default', the logo will be deleted and the default one will be used.
+     * @return {Blob}
+     */
+    getSBrandingLogointerfaceBase64() {
+        return this.sBrandingLogointerfaceBase64;
+    }
+
+    /**
+     * Sets The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select 'Default', the logo will be deleted and the default one will be used.
+     * @param {Blob} sBrandingLogointerfaceBase64 The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select 'Default', the logo will be deleted and the default one will be used.
+     */
+    setSBrandingLogointerfaceBase64(sBrandingLogointerfaceBase64) {
+        this['sBrandingLogointerfaceBase64'] = sBrandingLogointerfaceBase64;
     }
 /**
      * Returns The color of the text. This is a RGB color converted into integer
@@ -302,6 +340,23 @@ class BrandingRequestCompound {
         this['iBrandingColorbackgroundsmallbox'] = iBrandingColorbackgroundsmallbox;
     }
 /**
+     * Returns The color of the interface. This is a RGB color converted into integer
+     * minimum: 0
+     * maximum: 16777215
+     * @return {Number}
+     */
+    getIBrandingInterfacecolor() {
+        return this.iBrandingInterfacecolor;
+    }
+
+    /**
+     * Sets The color of the interface. This is a RGB color converted into integer
+     * @param {Number} iBrandingInterfacecolor The color of the interface. This is a RGB color converted into integer
+     */
+    setIBrandingInterfacecolor(iBrandingInterfacecolor) {
+        this['iBrandingInterfacecolor'] = iBrandingInterfacecolor;
+    }
+/**
      * Returns The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
      * @return {String}
      */
@@ -374,6 +429,17 @@ BrandingRequestCompound.prototype['eBrandingLogo'] = undefined;
 BrandingRequestCompound.prototype['sBrandingBase64'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldEBrandingLogointerface} eBrandingLogointerface
+ */
+BrandingRequestCompound.prototype['eBrandingLogointerface'] = undefined;
+
+/**
+ * The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select 'Default', the logo will be deleted and the default one will be used.
+ * @member {Blob} sBrandingLogointerfaceBase64
+ */
+BrandingRequestCompound.prototype['sBrandingLogointerfaceBase64'] = undefined;
+
+/**
  * The color of the text. This is a RGB color converted into integer
  * @member {Number} iBrandingColortext
  */
@@ -408,6 +474,12 @@ BrandingRequestCompound.prototype['iBrandingColorbackgroundbutton'] = undefined;
  * @member {Number} iBrandingColorbackgroundsmallbox
  */
 BrandingRequestCompound.prototype['iBrandingColorbackgroundsmallbox'] = undefined;
+
+/**
+ * The color of the interface. This is a RGB color converted into integer
+ * @member {Number} iBrandingInterfacecolor
+ */
+BrandingRequestCompound.prototype['iBrandingInterfacecolor'] = undefined;
 
 /**
  * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
@@ -448,6 +520,15 @@ BrandingRequest.prototype['eBrandingLogo'] = undefined;
  */
 BrandingRequest.prototype['sBrandingBase64'] = undefined;
 /**
+ * @member {module:eZmaxAPI/model/FieldEBrandingLogointerface} eBrandingLogointerface
+ */
+BrandingRequest.prototype['eBrandingLogointerface'] = undefined;
+/**
+ * The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select 'Default', the logo will be deleted and the default one will be used.
+ * @member {Blob} sBrandingLogointerfaceBase64
+ */
+BrandingRequest.prototype['sBrandingLogointerfaceBase64'] = undefined;
+/**
  * The color of the text. This is a RGB color converted into integer
  * @member {Number} iBrandingColortext
  */
@@ -477,6 +558,11 @@ BrandingRequest.prototype['iBrandingColorbackgroundbutton'] = undefined;
  * @member {Number} iBrandingColorbackgroundsmallbox
  */
 BrandingRequest.prototype['iBrandingColorbackgroundsmallbox'] = undefined;
+/**
+ * The color of the interface. This is a RGB color converted into integer
+ * @member {Number} iBrandingInterfacecolor
+ */
+BrandingRequest.prototype['iBrandingInterfacecolor'] = undefined;
 /**
  * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
  * @member {String} sBrandingName

@@ -48,10 +48,10 @@
   }
 
   describe('ObjectEzsignfoldertypeApi', function() {
-    describe('ezsignfoldertypeCreateObjectV1', function() {
-      it('should call ezsignfoldertypeCreateObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeCreateObjectV1
-        //instance.ezsignfoldertypeCreateObjectV1(function(error) {
+    describe('ezsignfoldertypeCreateObjectV2', function() {
+      it('should call ezsignfoldertypeCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldertypeCreateObjectV2
+        //instance.ezsignfoldertypeCreateObjectV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -68,10 +68,10 @@
         done();
       });
     });
-    describe('ezsignfoldertypeGetAutocompleteV1', function() {
-      it('should call ezsignfoldertypeGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfoldertypeGetAutocompleteV1
-        //instance.ezsignfoldertypeGetAutocompleteV1(function(error) {
+    describe('ezsignfoldertypeEditObjectV2', function() {
+      it('should call ezsignfoldertypeEditObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldertypeEditObjectV2
+        //instance.ezsignfoldertypeEditObjectV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -102,6 +102,16 @@
       it('should call ezsignfoldertypeGetObjectV2 successfully', function(done) {
         //uncomment below and update the code to test ezsignfoldertypeGetObjectV2
         //instance.ezsignfoldertypeGetObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsignfoldertypeGetObjectV3', function() {
+      it('should call ezsignfoldertypeGetObjectV3 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldertypeGetObjectV3
+        //instance.ezsignfoldertypeGetObjectV3(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

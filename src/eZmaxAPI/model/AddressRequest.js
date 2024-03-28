@@ -88,6 +88,12 @@ class AddressRequest {
             if (data.hasOwnProperty('sAddressZip')) {
                 obj['sAddressZip'] = ApiClient.convertToType(data['sAddressZip'], 'String');
             }
+            if (data.hasOwnProperty('fAddressLongitude')) {
+                obj['fAddressLongitude'] = ApiClient.convertToType(data['fAddressLongitude'], 'String');
+            }
+            if (data.hasOwnProperty('fAddressLatitude')) {
+                obj['fAddressLatitude'] = ApiClient.convertToType(data['fAddressLatitude'], 'String');
+            }
         }
         return obj;
     }
@@ -100,7 +106,7 @@ class AddressRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of AddressRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -123,6 +129,14 @@ class AddressRequest {
         // ensure the json data is a string
         if (data['sAddressZip'] && !(typeof data['sAddressZip'] === 'string' || data['sAddressZip'] instanceof String)) {
             throw new Error("Expected the field `sAddressZip` to be a primitive type in the JSON string but got " + data['sAddressZip']);
+        }
+        // ensure the json data is a string
+        if (data['fAddressLongitude'] && !(typeof data['fAddressLongitude'] === 'string' || data['fAddressLongitude'] instanceof String)) {
+            throw new Error("Expected the field `fAddressLongitude` to be a primitive type in the JSON string but got " + data['fAddressLongitude']);
+        }
+        // ensure the json data is a string
+        if (data['fAddressLatitude'] && !(typeof data['fAddressLatitude'] === 'string' || data['fAddressLatitude'] instanceof String)) {
+            throw new Error("Expected the field `fAddressLatitude` to be a primitive type in the JSON string but got " + data['fAddressLatitude']);
         }
 
         return true;
@@ -251,6 +265,36 @@ class AddressRequest {
     setSAddressZip(sAddressZip) {
         this['sAddressZip'] = sAddressZip;
     }
+/**
+     * Returns The Longitude of the Address
+     * @return {String}
+     */
+    getFAddressLongitude() {
+        return this.fAddressLongitude;
+    }
+
+    /**
+     * Sets The Longitude of the Address
+     * @param {String} fAddressLongitude The Longitude of the Address
+     */
+    setFAddressLongitude(fAddressLongitude) {
+        this['fAddressLongitude'] = fAddressLongitude;
+    }
+/**
+     * Returns The Latitude of the Address
+     * @return {String}
+     */
+    getFAddressLatitude() {
+        return this.fAddressLatitude;
+    }
+
+    /**
+     * Sets The Latitude of the Address
+     * @param {String} fAddressLatitude The Latitude of the Address
+     */
+    setFAddressLatitude(fAddressLatitude) {
+        this['fAddressLatitude'] = fAddressLatitude;
+    }
 
 }
 
@@ -303,6 +347,18 @@ AddressRequest.prototype['fkiCountryID'] = undefined;
  * @member {String} sAddressZip
  */
 AddressRequest.prototype['sAddressZip'] = undefined;
+
+/**
+ * The Longitude of the Address
+ * @member {String} fAddressLongitude
+ */
+AddressRequest.prototype['fAddressLongitude'] = undefined;
+
+/**
+ * The Latitude of the Address
+ * @member {String} fAddressLatitude
+ */
+AddressRequest.prototype['fAddressLatitude'] = undefined;
 
 
 

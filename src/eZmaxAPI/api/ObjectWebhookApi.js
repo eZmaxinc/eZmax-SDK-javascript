@@ -16,8 +16,6 @@ import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
 import CommonResponseErrorTooManyRequests from '../model/CommonResponseErrorTooManyRequests';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
-import WebhookCreateObjectV1Request from '../model/WebhookCreateObjectV1Request';
-import WebhookCreateObjectV1Response from '../model/WebhookCreateObjectV1Response';
 import WebhookCreateObjectV2Request from '../model/WebhookCreateObjectV2Request';
 import WebhookCreateObjectV2Response from '../model/WebhookCreateObjectV2Response';
 import WebhookDeleteObjectV1Response from '../model/WebhookDeleteObjectV1Response';
@@ -48,48 +46,6 @@ export default class ObjectWebhookApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the webhookCreateObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectWebhookApi~webhookCreateObjectV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/WebhookCreateObjectV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Create a new Webhook
-     * The endpoint allows to create one or many elements at once.
-     * @param {module:eZmaxAPI/model/WebhookCreateObjectV1Request} WebhookCreateObjectV1Request 
-     * @param {module:eZmaxAPI/api/ObjectWebhookApi~webhookCreateObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/WebhookCreateObjectV1Response}
-     */
-    webhookCreateObjectV1(WebhookCreateObjectV1Request, callback) {
-      let postBody = WebhookCreateObjectV1Request;
-      // verify the required parameter 'WebhookCreateObjectV1Request' is set
-      if (WebhookCreateObjectV1Request === undefined || WebhookCreateObjectV1Request === null) {
-        throw new Error("Missing the required parameter 'WebhookCreateObjectV1Request' when calling webhookCreateObjectV1");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = WebhookCreateObjectV1Response;
-      return this.apiClient.callApi(
-        '/1/object/webhook', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the webhookCreateObjectV2 operation.

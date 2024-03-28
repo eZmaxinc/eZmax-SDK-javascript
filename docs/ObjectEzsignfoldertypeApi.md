@@ -4,18 +4,19 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ezsignfoldertypeCreateObjectV1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV1) | **POST** /1/object/ezsignfoldertype | Create a new Ezsignfoldertype
+[**ezsignfoldertypeCreateObjectV2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeCreateObjectV2) | **POST** /2/object/ezsignfoldertype | Create a new Ezsignfoldertype
 [**ezsignfoldertypeEditObjectV1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV1) | **PUT** /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
-[**ezsignfoldertypeGetAutocompleteV1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV1) | **GET** /1/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
+[**ezsignfoldertypeEditObjectV2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeEditObjectV2) | **PUT** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype
 [**ezsignfoldertypeGetAutocompleteV2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetAutocompleteV2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs
 [**ezsignfoldertypeGetListV1**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetListV1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list
 [**ezsignfoldertypeGetObjectV2**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
+[**ezsignfoldertypeGetObjectV3**](ObjectEzsignfoldertypeApi.md#ezsignfoldertypeGetObjectV3) | **GET** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype
 
 
 
-## ezsignfoldertypeCreateObjectV1
+## ezsignfoldertypeCreateObjectV2
 
-> EzsignfoldertypeCreateObjectV1Response ezsignfoldertypeCreateObjectV1(EzsignfoldertypeCreateObjectV1Request)
+> EzsignfoldertypeCreateObjectV2Response ezsignfoldertypeCreateObjectV2(EzsignfoldertypeCreateObjectV2Request)
 
 Create a new Ezsignfoldertype
 
@@ -33,8 +34,8 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi();
-let EzsignfoldertypeCreateObjectV1Request = new EZmaxApiDefinitionFull.EzsignfoldertypeCreateObjectV1Request(); // EzsignfoldertypeCreateObjectV1Request | 
-apiInstance.ezsignfoldertypeCreateObjectV1(EzsignfoldertypeCreateObjectV1Request, (error, data, response) => {
+let EzsignfoldertypeCreateObjectV2Request = new EZmaxApiDefinitionFull.EzsignfoldertypeCreateObjectV2Request(); // EzsignfoldertypeCreateObjectV2Request | 
+apiInstance.ezsignfoldertypeCreateObjectV2(EzsignfoldertypeCreateObjectV2Request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,11 +49,11 @@ apiInstance.ezsignfoldertypeCreateObjectV1(EzsignfoldertypeCreateObjectV1Request
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **EzsignfoldertypeCreateObjectV1Request** | [**EzsignfoldertypeCreateObjectV1Request**](EzsignfoldertypeCreateObjectV1Request.md)|  | 
+ **EzsignfoldertypeCreateObjectV2Request** | [**EzsignfoldertypeCreateObjectV2Request**](EzsignfoldertypeCreateObjectV2Request.md)|  | 
 
 ### Return type
 
-[**EzsignfoldertypeCreateObjectV1Response**](EzsignfoldertypeCreateObjectV1Response.md)
+[**EzsignfoldertypeCreateObjectV2Response**](EzsignfoldertypeCreateObjectV2Response.md)
 
 ### Authorization
 
@@ -117,13 +118,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## ezsignfoldertypeGetAutocompleteV1
+## ezsignfoldertypeEditObjectV2
 
-> CommonGetAutocompleteV1Response ezsignfoldertypeGetAutocompleteV1(sSelector, opts)
+> EzsignfoldertypeEditObjectV2Response ezsignfoldertypeEditObjectV2(pkiEzsignfoldertypeID, EzsignfoldertypeEditObjectV2Request)
 
-Retrieve Ezsignfoldertypes and IDs
+Edit an existing Ezsignfoldertype
 
-Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
+
 
 ### Example
 
@@ -137,13 +138,9 @@ Authorization.apiKey = 'YOUR API KEY';
 //Authorization.apiKeyPrefix = 'Token';
 
 let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi();
-let sSelector = "sSelector_example"; // String | The type of Ezsignfoldertypes to return
-let opts = {
-  'eFilterActive': "'Active'", // String | Specify which results we want to display.
-  'sQuery': "sQuery_example", // String | Allow to filter the returned results
-  'Accept_Language': new EZmaxApiDefinitionFull.HeaderAcceptLanguage() // HeaderAcceptLanguage | 
-};
-apiInstance.ezsignfoldertypeGetAutocompleteV1(sSelector, opts, (error, data, response) => {
+let pkiEzsignfoldertypeID = 56; // Number | 
+let EzsignfoldertypeEditObjectV2Request = new EZmaxApiDefinitionFull.EzsignfoldertypeEditObjectV2Request(); // EzsignfoldertypeEditObjectV2Request | 
+apiInstance.ezsignfoldertypeEditObjectV2(pkiEzsignfoldertypeID, EzsignfoldertypeEditObjectV2Request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -157,14 +154,12 @@ apiInstance.ezsignfoldertypeGetAutocompleteV1(sSelector, opts, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sSelector** | **String**| The type of Ezsignfoldertypes to return | 
- **eFilterActive** | **String**| Specify which results we want to display. | [optional] [default to &#39;Active&#39;]
- **sQuery** | **String**| Allow to filter the returned results | [optional] 
- **Accept_Language** | [**HeaderAcceptLanguage**](.md)|  | [optional] 
+ **pkiEzsignfoldertypeID** | **Number**|  | 
+ **EzsignfoldertypeEditObjectV2Request** | [**EzsignfoldertypeEditObjectV2Request**](EzsignfoldertypeEditObjectV2Request.md)|  | 
 
 ### Return type
 
-[**CommonGetAutocompleteV1Response**](CommonGetAutocompleteV1Response.md)
+[**EzsignfoldertypeEditObjectV2Response**](EzsignfoldertypeEditObjectV2Response.md)
 
 ### Authorization
 
@@ -172,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -336,6 +331,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EzsignfoldertypeGetObjectV2Response**](EzsignfoldertypeGetObjectV2Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ezsignfoldertypeGetObjectV3
+
+> EzsignfoldertypeGetObjectV3Response ezsignfoldertypeGetObjectV3(pkiEzsignfoldertypeID)
+
+Retrieve an existing Ezsignfoldertype
+
+
+
+### Example
+
+```javascript
+import EZmaxApiDefinitionFull from 'e_zmax_api_definition__full';
+let defaultClient = EZmaxApiDefinitionFull.ApiClient.instance;
+// Configure API key authorization: Authorization
+let Authorization = defaultClient.authentications['Authorization'];
+Authorization.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.apiKeyPrefix = 'Token';
+
+let apiInstance = new EZmaxApiDefinitionFull.ObjectEzsignfoldertypeApi();
+let pkiEzsignfoldertypeID = 56; // Number | 
+apiInstance.ezsignfoldertypeGetObjectV3(pkiEzsignfoldertypeID, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiEzsignfoldertypeID** | **Number**|  | 
+
+### Return type
+
+[**EzsignfoldertypeGetObjectV3Response**](EzsignfoldertypeGetObjectV3Response.md)
 
 ### Authorization
 

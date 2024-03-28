@@ -6,5 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **a_objEzsigntemplate** | [**[EzsigntemplateResponseCompound]**](EzsigntemplateResponseCompound.md) |  | 
 **a_objEzsigntemplatepackage** | [**[EzsigntemplatepackageResponseCompound]**](EzsigntemplatepackageResponseCompound.md) |  | 
+**a_objEzsigntemplateglobal** | [**[EzsigntemplateglobalResponseCompound]**](EzsigntemplateglobalResponseCompound.md) |  | 
 
 

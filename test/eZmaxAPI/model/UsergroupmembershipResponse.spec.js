@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiUsergroupexternalID (base name: "fkiUsergroupexternalID")', function() {
+      // uncomment below and update the code to test the property fkiUsergroupexternalID
+      //var instance = new EZmaxApiDefinitionFull.UsergroupmembershipResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sUserFirstname (base name: "sUserFirstname")', function() {
       // uncomment below and update the code to test the property sUserFirstname
       //var instance = new EZmaxApiDefinitionFull.UsergroupmembershipResponse();
@@ -98,6 +104,12 @@
 
     it('should have the property sUsergroupNameX (base name: "sUsergroupNameX")', function() {
       // uncomment below and update the code to test the property sUsergroupNameX
+      //var instance = new EZmaxApiDefinitionFull.UsergroupmembershipResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sUsergroupexternalName (base name: "sUsergroupexternalName")', function() {
+      // uncomment below and update the code to test the property sUsergroupexternalName
       //var instance = new EZmaxApiDefinitionFull.UsergroupmembershipResponse();
       //expect(instance).to.be();
     });

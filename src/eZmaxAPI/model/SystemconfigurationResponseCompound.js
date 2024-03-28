@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import FieldESystemconfigurationEzsign from './FieldESystemconfigurationEzsign';
+import FieldESystemconfigurationEzsignofficeplan from './FieldESystemconfigurationEzsignofficeplan';
 import FieldESystemconfigurationLanguage1 from './FieldESystemconfigurationLanguage1';
 import FieldESystemconfigurationLanguage2 from './FieldESystemconfigurationLanguage2';
 import FieldESystemconfigurationNewexternaluseraction from './FieldESystemconfigurationNewexternaluseraction';
@@ -35,13 +36,12 @@ class SystemconfigurationResponseCompound {
      * @param eSystemconfigurationNewexternaluseraction {module:eZmaxAPI/model/FieldESystemconfigurationNewexternaluseraction} 
      * @param eSystemconfigurationLanguage1 {module:eZmaxAPI/model/FieldESystemconfigurationLanguage1} 
      * @param eSystemconfigurationLanguage2 {module:eZmaxAPI/model/FieldESystemconfigurationLanguage2} 
-     * @param eSystemconfigurationEzsign {module:eZmaxAPI/model/FieldESystemconfigurationEzsign} 
      * @param bSystemconfigurationEzsignpersonnal {Boolean} Whether if we allow the creation of personal files in eZsign
      * @param bSystemconfigurationSspr {Boolean} Whether if we allow SSPR
      */
-    constructor(pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, eSystemconfigurationEzsign, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr) { 
-        SystemconfigurationResponse.initialize(this, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, eSystemconfigurationEzsign, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr);
-        SystemconfigurationResponseCompound.initialize(this, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, eSystemconfigurationEzsign, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr);
+    constructor(pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr) { 
+        SystemconfigurationResponse.initialize(this, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr);
+        SystemconfigurationResponseCompound.initialize(this, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr);
     }
 
     /**
@@ -49,14 +49,13 @@ class SystemconfigurationResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, eSystemconfigurationEzsign, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr) { 
+    static initialize(obj, pkiSystemconfigurationID, fkiSystemconfigurationtypeID, sSystemconfigurationtypeDescriptionX, eSystemconfigurationNewexternaluseraction, eSystemconfigurationLanguage1, eSystemconfigurationLanguage2, bSystemconfigurationEzsignpersonnal, bSystemconfigurationSspr) { 
         obj['pkiSystemconfigurationID'] = pkiSystemconfigurationID;
         obj['fkiSystemconfigurationtypeID'] = fkiSystemconfigurationtypeID;
         obj['sSystemconfigurationtypeDescriptionX'] = sSystemconfigurationtypeDescriptionX;
         obj['eSystemconfigurationNewexternaluseraction'] = eSystemconfigurationNewexternaluseraction;
         obj['eSystemconfigurationLanguage1'] = eSystemconfigurationLanguage1;
         obj['eSystemconfigurationLanguage2'] = eSystemconfigurationLanguage2;
-        obj['eSystemconfigurationEzsign'] = eSystemconfigurationEzsign;
         obj['bSystemconfigurationEzsignpersonnal'] = bSystemconfigurationEzsignpersonnal;
         obj['bSystemconfigurationSspr'] = bSystemconfigurationSspr;
     }
@@ -94,8 +93,17 @@ class SystemconfigurationResponseCompound {
             if (data.hasOwnProperty('eSystemconfigurationEzsign')) {
                 obj['eSystemconfigurationEzsign'] = FieldESystemconfigurationEzsign.constructFromObject(data['eSystemconfigurationEzsign']);
             }
+            if (data.hasOwnProperty('eSystemconfigurationEzsignofficeplan')) {
+                obj['eSystemconfigurationEzsignofficeplan'] = FieldESystemconfigurationEzsignofficeplan.constructFromObject(data['eSystemconfigurationEzsignofficeplan']);
+            }
+            if (data.hasOwnProperty('bSystemconfigurationEzsignpaidbyoffice')) {
+                obj['bSystemconfigurationEzsignpaidbyoffice'] = ApiClient.convertToType(data['bSystemconfigurationEzsignpaidbyoffice'], 'Boolean');
+            }
             if (data.hasOwnProperty('bSystemconfigurationEzsignpersonnal')) {
                 obj['bSystemconfigurationEzsignpersonnal'] = ApiClient.convertToType(data['bSystemconfigurationEzsignpersonnal'], 'Boolean');
+            }
+            if (data.hasOwnProperty('bSystemconfigurationIsdisposalactive')) {
+                obj['bSystemconfigurationIsdisposalactive'] = ApiClient.convertToType(data['bSystemconfigurationIsdisposalactive'], 'Boolean');
             }
             if (data.hasOwnProperty('bSystemconfigurationSspr')) {
                 obj['bSystemconfigurationSspr'] = ApiClient.convertToType(data['bSystemconfigurationSspr'], 'Boolean');
@@ -118,7 +126,7 @@ class SystemconfigurationResponseCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of SystemconfigurationResponseCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -239,6 +247,34 @@ class SystemconfigurationResponseCompound {
         this['eSystemconfigurationEzsign'] = eSystemconfigurationEzsign;
     }
 /**
+     * @return {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan}
+     */
+    getESystemconfigurationEzsignofficeplan() {
+        return this.eSystemconfigurationEzsignofficeplan;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+     */
+    setESystemconfigurationEzsignofficeplan(eSystemconfigurationEzsignofficeplan) {
+        this['eSystemconfigurationEzsignofficeplan'] = eSystemconfigurationEzsignofficeplan;
+    }
+/**
+     * Returns Whether if Ezsign is paid by the company or not
+     * @return {Boolean}
+     */
+    getBSystemconfigurationEzsignpaidbyoffice() {
+        return this.bSystemconfigurationEzsignpaidbyoffice;
+    }
+
+    /**
+     * Sets Whether if Ezsign is paid by the company or not
+     * @param {Boolean} bSystemconfigurationEzsignpaidbyoffice Whether if Ezsign is paid by the company or not
+     */
+    setBSystemconfigurationEzsignpaidbyoffice(bSystemconfigurationEzsignpaidbyoffice) {
+        this['bSystemconfigurationEzsignpaidbyoffice'] = bSystemconfigurationEzsignpaidbyoffice;
+    }
+/**
      * Returns Whether if we allow the creation of personal files in eZsign
      * @return {Boolean}
      */
@@ -252,6 +288,21 @@ class SystemconfigurationResponseCompound {
      */
     setBSystemconfigurationEzsignpersonnal(bSystemconfigurationEzsignpersonnal) {
         this['bSystemconfigurationEzsignpersonnal'] = bSystemconfigurationEzsignpersonnal;
+    }
+/**
+     * Returns Whether is Disposal processus is active or not
+     * @return {Boolean}
+     */
+    getBSystemconfigurationIsdisposalactive() {
+        return this.bSystemconfigurationIsdisposalactive;
+    }
+
+    /**
+     * Sets Whether is Disposal processus is active or not
+     * @param {Boolean} bSystemconfigurationIsdisposalactive Whether is Disposal processus is active or not
+     */
+    setBSystemconfigurationIsdisposalactive(bSystemconfigurationIsdisposalactive) {
+        this['bSystemconfigurationIsdisposalactive'] = bSystemconfigurationIsdisposalactive;
     }
 /**
      * Returns Whether if we allow SSPR
@@ -301,7 +352,7 @@ class SystemconfigurationResponseCompound {
 
 }
 
-SystemconfigurationResponseCompound.RequiredProperties = ["pkiSystemconfigurationID", "fkiSystemconfigurationtypeID", "sSystemconfigurationtypeDescriptionX", "eSystemconfigurationNewexternaluseraction", "eSystemconfigurationLanguage1", "eSystemconfigurationLanguage2", "eSystemconfigurationEzsign", "bSystemconfigurationEzsignpersonnal", "bSystemconfigurationSspr"];
+SystemconfigurationResponseCompound.RequiredProperties = ["pkiSystemconfigurationID", "fkiSystemconfigurationtypeID", "sSystemconfigurationtypeDescriptionX", "eSystemconfigurationNewexternaluseraction", "eSystemconfigurationLanguage1", "eSystemconfigurationLanguage2", "bSystemconfigurationEzsignpersonnal", "bSystemconfigurationSspr"];
 
 /**
  * The unique ID of the Systemconfiguration
@@ -342,10 +393,27 @@ SystemconfigurationResponseCompound.prototype['eSystemconfigurationLanguage2'] =
 SystemconfigurationResponseCompound.prototype['eSystemconfigurationEzsign'] = undefined;
 
 /**
+ * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+ */
+SystemconfigurationResponseCompound.prototype['eSystemconfigurationEzsignofficeplan'] = undefined;
+
+/**
+ * Whether if Ezsign is paid by the company or not
+ * @member {Boolean} bSystemconfigurationEzsignpaidbyoffice
+ */
+SystemconfigurationResponseCompound.prototype['bSystemconfigurationEzsignpaidbyoffice'] = undefined;
+
+/**
  * Whether if we allow the creation of personal files in eZsign
  * @member {Boolean} bSystemconfigurationEzsignpersonnal
  */
 SystemconfigurationResponseCompound.prototype['bSystemconfigurationEzsignpersonnal'] = undefined;
+
+/**
+ * Whether is Disposal processus is active or not
+ * @member {Boolean} bSystemconfigurationIsdisposalactive
+ */
+SystemconfigurationResponseCompound.prototype['bSystemconfigurationIsdisposalactive'] = undefined;
 
 /**
  * Whether if we allow SSPR
@@ -399,10 +467,24 @@ SystemconfigurationResponse.prototype['eSystemconfigurationLanguage2'] = undefin
  */
 SystemconfigurationResponse.prototype['eSystemconfigurationEzsign'] = undefined;
 /**
+ * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+ */
+SystemconfigurationResponse.prototype['eSystemconfigurationEzsignofficeplan'] = undefined;
+/**
+ * Whether if Ezsign is paid by the company or not
+ * @member {Boolean} bSystemconfigurationEzsignpaidbyoffice
+ */
+SystemconfigurationResponse.prototype['bSystemconfigurationEzsignpaidbyoffice'] = undefined;
+/**
  * Whether if we allow the creation of personal files in eZsign
  * @member {Boolean} bSystemconfigurationEzsignpersonnal
  */
 SystemconfigurationResponse.prototype['bSystemconfigurationEzsignpersonnal'] = undefined;
+/**
+ * Whether is Disposal processus is active or not
+ * @member {Boolean} bSystemconfigurationIsdisposalactive
+ */
+SystemconfigurationResponse.prototype['bSystemconfigurationIsdisposalactive'] = undefined;
 /**
  * Whether if we allow SSPR
  * @member {Boolean} bSystemconfigurationSspr

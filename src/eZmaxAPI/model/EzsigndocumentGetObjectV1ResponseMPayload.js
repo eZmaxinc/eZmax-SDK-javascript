@@ -39,6 +39,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param iEzsigndocumentSignaturesigned {Number} The number of signatures that were signed in the document.
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
      * @param iEzsigndocumentEzsignsignatureattachmenttotal {Number} The number of Ezsigndocumentattachment total
+     * @param iEzsigndocumentEzsigndiscussiontotal {Number} The total number of Ezsigndiscussions
      * @param eEzsigndocumentSteptype {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} 
      * @param iEzsigndocumentStepformtotal {Number} The total number of steps in the form filling phase
      * @param iEzsigndocumentStepformcurrent {Number} The current step in the form filling phase
@@ -46,9 +47,9 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * @param iEzsigndocumentStepsignatureCurrent {Number} The current step in the signature phase
      * @param a_objEzsignfoldersignerassociationstatus {Array.<module:eZmaxAPI/model/CustomEzsignfoldersignerassociationstatusResponse>} 
      */
-    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
-        EzsigndocumentResponseCompound.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
-        EzsigndocumentGetObjectV1ResponseMPayload.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
+    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+        EzsigndocumentResponseCompound.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
+        EzsigndocumentGetObjectV1ResponseMPayload.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus);
     }
 
     /**
@@ -56,7 +57,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
+    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal, eEzsigndocumentSteptype, iEzsigndocumentStepformtotal, iEzsigndocumentStepformcurrent, iEzsigndocumentStepsignaturetotal, iEzsigndocumentStepsignatureCurrent, a_objEzsignfoldersignerassociationstatus) { 
         obj['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
@@ -67,6 +68,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
         obj['iEzsigndocumentSignaturesigned'] = iEzsigndocumentSignaturesigned;
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
         obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
+        obj['iEzsigndocumentEzsigndiscussiontotal'] = iEzsigndocumentEzsigndiscussiontotal;
         obj['eEzsigndocumentSteptype'] = eEzsigndocumentSteptype;
         obj['iEzsigndocumentStepformtotal'] = iEzsigndocumentStepformtotal;
         obj['iEzsigndocumentStepformcurrent'] = iEzsigndocumentStepformcurrent;
@@ -153,6 +155,9 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
             if (data.hasOwnProperty('iEzsigndocumentEzsignsignatureattachmenttotal')) {
                 obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = ApiClient.convertToType(data['iEzsigndocumentEzsignsignatureattachmenttotal'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsigndocumentEzsigndiscussiontotal')) {
+                obj['iEzsigndocumentEzsigndiscussiontotal'] = ApiClient.convertToType(data['iEzsigndocumentEzsigndiscussiontotal'], 'Number');
+            }
             if (data.hasOwnProperty('eEzsigndocumentSteptype')) {
                 obj['eEzsigndocumentSteptype'] = ComputedEEzsigndocumentSteptype.constructFromObject(data['eEzsigndocumentSteptype']);
             }
@@ -183,7 +188,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigndocumentGetObjectV1ResponseMPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -578,6 +583,21 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
         this['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
     }
 /**
+     * Returns The total number of Ezsigndiscussions
+     * @return {Number}
+     */
+    getIEzsigndocumentEzsigndiscussiontotal() {
+        return this.iEzsigndocumentEzsigndiscussiontotal;
+    }
+
+    /**
+     * Sets The total number of Ezsigndiscussions
+     * @param {Number} iEzsigndocumentEzsigndiscussiontotal The total number of Ezsigndiscussions
+     */
+    setIEzsigndocumentEzsigndiscussiontotal(iEzsigndocumentEzsigndiscussiontotal) {
+        this['iEzsigndocumentEzsigndiscussiontotal'] = iEzsigndocumentEzsigndiscussiontotal;
+    }
+/**
      * @return {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype}
      */
     getEEzsigndocumentSteptype() {
@@ -666,7 +686,7 @@ class EzsigndocumentGetObjectV1ResponseMPayload {
 
 }
 
-EzsigndocumentGetObjectV1ResponseMPayload.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentEzsignsignatureattachmenttotal", "eEzsigndocumentSteptype", "iEzsigndocumentStepformtotal", "iEzsigndocumentStepformcurrent", "iEzsigndocumentStepsignaturetotal", "iEzsigndocumentStepsignatureCurrent", "a_objEzsignfoldersignerassociationstatus"];
+EzsigndocumentGetObjectV1ResponseMPayload.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentEzsignsignatureattachmenttotal", "iEzsigndocumentEzsigndiscussiontotal", "eEzsigndocumentSteptype", "iEzsigndocumentStepformtotal", "iEzsigndocumentStepformcurrent", "iEzsigndocumentStepsignaturetotal", "iEzsigndocumentStepsignatureCurrent", "a_objEzsignfoldersignerassociationstatus"];
 
 /**
  * The unique ID of the Ezsigndocument
@@ -797,6 +817,12 @@ EzsigndocumentGetObjectV1ResponseMPayload.prototype['sEzsigndocumentExternalid']
  * @member {Number} iEzsigndocumentEzsignsignatureattachmenttotal
  */
 EzsigndocumentGetObjectV1ResponseMPayload.prototype['iEzsigndocumentEzsignsignatureattachmenttotal'] = undefined;
+
+/**
+ * The total number of Ezsigndiscussions
+ * @member {Number} iEzsigndocumentEzsigndiscussiontotal
+ */
+EzsigndocumentGetObjectV1ResponseMPayload.prototype['iEzsigndocumentEzsigndiscussiontotal'] = undefined;
 
 /**
  * @member {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} eEzsigndocumentSteptype
@@ -942,6 +968,11 @@ EzsigndocumentResponseCompound.prototype['sEzsigndocumentExternalid'] = undefine
  * @member {Number} iEzsigndocumentEzsignsignatureattachmenttotal
  */
 EzsigndocumentResponseCompound.prototype['iEzsigndocumentEzsignsignatureattachmenttotal'] = undefined;
+/**
+ * The total number of Ezsigndiscussions
+ * @member {Number} iEzsigndocumentEzsigndiscussiontotal
+ */
+EzsigndocumentResponseCompound.prototype['iEzsigndocumentEzsigndiscussiontotal'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/ComputedEEzsigndocumentSteptype} eEzsigndocumentSteptype
  */

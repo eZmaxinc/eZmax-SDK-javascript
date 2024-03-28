@@ -48,16 +48,6 @@
   }
 
   describe('ObjectWebhookApi', function() {
-    describe('webhookCreateObjectV1', function() {
-      it('should call webhookCreateObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test webhookCreateObjectV1
-        //instance.webhookCreateObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('webhookCreateObjectV2', function() {
       it('should call webhookCreateObjectV2 successfully', function(done) {
         //uncomment below and update the code to test webhookCreateObjectV2

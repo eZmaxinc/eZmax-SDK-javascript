@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CommonAudit from './CommonAudit';
+import FieldEEzsigntemplateType from './FieldEEzsigntemplateType';
 
 /**
  * The EzsigntemplateResponse model module.
@@ -25,17 +26,16 @@ class EzsigntemplateResponse {
      * A Ezsigntemplate Object
      * @alias module:eZmaxAPI/model/EzsigntemplateResponse
      * @param pkiEzsigntemplateID {Number} The unique ID of the Ezsigntemplate
-     * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sLanguageNameX {String} The Name of the Language in the language of the requester
      * @param sEzsigntemplateDescription {String} The description of the Ezsigntemplate
      * @param bEzsigntemplateAdminonly {Boolean} Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
-     * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
      * @param objAudit {module:eZmaxAPI/model/CommonAudit} 
+     * @param bEzsigntemplateEditallowed {Boolean} Whether the Ezsigntemplate if allowed to edit or not
      */
-    constructor(pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit) { 
+    constructor(pkiEzsigntemplateID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, objAudit, bEzsigntemplateEditallowed) { 
         
-        EzsigntemplateResponse.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit);
+        EzsigntemplateResponse.initialize(this, pkiEzsigntemplateID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, objAudit, bEzsigntemplateEditallowed);
     }
 
     /**
@@ -43,15 +43,14 @@ class EzsigntemplateResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, sEzsignfoldertypeNameX, objAudit) { 
+    static initialize(obj, pkiEzsigntemplateID, fkiLanguageID, sLanguageNameX, sEzsigntemplateDescription, bEzsigntemplateAdminonly, objAudit, bEzsigntemplateEditallowed) { 
         obj['pkiEzsigntemplateID'] = pkiEzsigntemplateID;
-        obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sLanguageNameX'] = sLanguageNameX;
         obj['sEzsigntemplateDescription'] = sEzsigntemplateDescription;
         obj['bEzsigntemplateAdminonly'] = bEzsigntemplateAdminonly;
-        obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
         obj['objAudit'] = objAudit;
+        obj['bEzsigntemplateEditallowed'] = bEzsigntemplateEditallowed;
     }
 
     /**
@@ -83,6 +82,9 @@ class EzsigntemplateResponse {
             if (data.hasOwnProperty('sEzsigntemplateDescription')) {
                 obj['sEzsigntemplateDescription'] = ApiClient.convertToType(data['sEzsigntemplateDescription'], 'String');
             }
+            if (data.hasOwnProperty('sEzsigntemplateFilenamepattern')) {
+                obj['sEzsigntemplateFilenamepattern'] = ApiClient.convertToType(data['sEzsigntemplateFilenamepattern'], 'String');
+            }
             if (data.hasOwnProperty('bEzsigntemplateAdminonly')) {
                 obj['bEzsigntemplateAdminonly'] = ApiClient.convertToType(data['bEzsigntemplateAdminonly'], 'Boolean');
             }
@@ -91,6 +93,12 @@ class EzsigntemplateResponse {
             }
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
+            }
+            if (data.hasOwnProperty('bEzsigntemplateEditallowed')) {
+                obj['bEzsigntemplateEditallowed'] = ApiClient.convertToType(data['bEzsigntemplateEditallowed'], 'Boolean');
+            }
+            if (data.hasOwnProperty('eEzsigntemplateType')) {
+                obj['eEzsigntemplateType'] = FieldEEzsigntemplateType.constructFromObject(data['eEzsigntemplateType']);
             }
         }
         return obj;
@@ -104,7 +112,7 @@ class EzsigntemplateResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplateResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -115,6 +123,10 @@ class EzsigntemplateResponse {
         // ensure the json data is a string
         if (data['sEzsigntemplateDescription'] && !(typeof data['sEzsigntemplateDescription'] === 'string' || data['sEzsigntemplateDescription'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplateDescription` to be a primitive type in the JSON string but got " + data['sEzsigntemplateDescription']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplateFilenamepattern'] && !(typeof data['sEzsigntemplateFilenamepattern'] === 'string' || data['sEzsigntemplateFilenamepattern'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplateFilenamepattern` to be a primitive type in the JSON string but got " + data['sEzsigntemplateFilenamepattern']);
         }
         // ensure the json data is a string
         if (data['sEzsignfoldertypeNameX'] && !(typeof data['sEzsignfoldertypeNameX'] === 'string' || data['sEzsignfoldertypeNameX'] instanceof String)) {
@@ -163,6 +175,7 @@ class EzsigntemplateResponse {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -224,6 +237,21 @@ class EzsigntemplateResponse {
         this['sEzsigntemplateDescription'] = sEzsigntemplateDescription;
     }
 /**
+     * Returns The filename pattern of the Ezsigntemplate
+     * @return {String}
+     */
+    getSEzsigntemplateFilenamepattern() {
+        return this.sEzsigntemplateFilenamepattern;
+    }
+
+    /**
+     * Sets The filename pattern of the Ezsigntemplate
+     * @param {String} sEzsigntemplateFilenamepattern The filename pattern of the Ezsigntemplate
+     */
+    setSEzsigntemplateFilenamepattern(sEzsigntemplateFilenamepattern) {
+        this['sEzsigntemplateFilenamepattern'] = sEzsigntemplateFilenamepattern;
+    }
+/**
      * Returns Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @return {Boolean}
      */
@@ -266,10 +294,38 @@ class EzsigntemplateResponse {
     setObjAudit(objAudit) {
         this['objAudit'] = objAudit;
     }
+/**
+     * Returns Whether the Ezsigntemplate if allowed to edit or not
+     * @return {Boolean}
+     */
+    getBEzsigntemplateEditallowed() {
+        return this.bEzsigntemplateEditallowed;
+    }
+
+    /**
+     * Sets Whether the Ezsigntemplate if allowed to edit or not
+     * @param {Boolean} bEzsigntemplateEditallowed Whether the Ezsigntemplate if allowed to edit or not
+     */
+    setBEzsigntemplateEditallowed(bEzsigntemplateEditallowed) {
+        this['bEzsigntemplateEditallowed'] = bEzsigntemplateEditallowed;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateType}
+     */
+    getEEzsigntemplateType() {
+        return this.eEzsigntemplateType;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateType} eEzsigntemplateType
+     */
+    setEEzsigntemplateType(eEzsigntemplateType) {
+        this['eEzsigntemplateType'] = eEzsigntemplateType;
+    }
 
 }
 
-EzsigntemplateResponse.RequiredProperties = ["pkiEzsigntemplateID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplateDescription", "bEzsigntemplateAdminonly", "sEzsignfoldertypeNameX", "objAudit"];
+EzsigntemplateResponse.RequiredProperties = ["pkiEzsigntemplateID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplateDescription", "bEzsigntemplateAdminonly", "objAudit", "bEzsigntemplateEditallowed"];
 
 /**
  * The unique ID of the Ezsigntemplate
@@ -308,6 +364,12 @@ EzsigntemplateResponse.prototype['sLanguageNameX'] = undefined;
 EzsigntemplateResponse.prototype['sEzsigntemplateDescription'] = undefined;
 
 /**
+ * The filename pattern of the Ezsigntemplate
+ * @member {String} sEzsigntemplateFilenamepattern
+ */
+EzsigntemplateResponse.prototype['sEzsigntemplateFilenamepattern'] = undefined;
+
+/**
  * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
  * @member {Boolean} bEzsigntemplateAdminonly
  */
@@ -323,6 +385,17 @@ EzsigntemplateResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
 EzsigntemplateResponse.prototype['objAudit'] = undefined;
+
+/**
+ * Whether the Ezsigntemplate if allowed to edit or not
+ * @member {Boolean} bEzsigntemplateEditallowed
+ */
+EzsigntemplateResponse.prototype['bEzsigntemplateEditallowed'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateType} eEzsigntemplateType
+ */
+EzsigntemplateResponse.prototype['eEzsigntemplateType'] = undefined;
 
 
 

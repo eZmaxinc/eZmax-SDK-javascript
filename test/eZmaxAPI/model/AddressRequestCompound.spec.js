@@ -102,6 +102,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fAddressLongitude (base name: "fAddressLongitude")', function() {
+      // uncomment below and update the code to test the property fAddressLongitude
+      //var instance = new EZmaxApiDefinitionFull.AddressRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fAddressLatitude (base name: "fAddressLatitude")', function() {
+      // uncomment below and update the code to test the property fAddressLatitude
+      //var instance = new EZmaxApiDefinitionFull.AddressRequestCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

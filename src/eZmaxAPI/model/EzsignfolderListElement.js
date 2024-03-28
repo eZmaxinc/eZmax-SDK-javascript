@@ -36,10 +36,13 @@ class EzsignfolderListElement {
      * @param iEzsigndocumentEdm {Number} The total number of Ezsigndocument in the folder that were saved in the edm system
      * @param iEzsignsignature {Number} The total number of signature blocks in all Ezsigndocuments in the folder
      * @param iEzsignsignatureSigned {Number} The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     * @param iEzsignformfieldgroup {Number} The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @param iEzsignformfieldgroupCompleted {Number} The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @param dEzsignfolderCompletedpercentage {String} Whether the Ezsignform/Ezsignsignatures has dependencies or not
      */
-    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
+    constructor(pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned, iEzsignformfieldgroup, iEzsignformfieldgroupCompleted, dEzsignfolderCompletedpercentage) { 
         
-        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned);
+        EzsignfolderListElement.initialize(this, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned, iEzsignformfieldgroup, iEzsignformfieldgroupCompleted, dEzsignfolderCompletedpercentage);
     }
 
     /**
@@ -47,7 +50,7 @@ class EzsignfolderListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned) { 
+    static initialize(obj, pkiEzsignfolderID, fkiEzsignfoldertypeID, eEzsignfoldertypePrivacylevel, sEzsignfoldertypeNameX, sEzsignfolderDescription, eEzsignfolderStep, dtCreatedDate, iEzsigndocument, iEzsigndocumentEdm, iEzsignsignature, iEzsignsignatureSigned, iEzsignformfieldgroup, iEzsignformfieldgroupCompleted, dEzsignfolderCompletedpercentage) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
@@ -59,6 +62,9 @@ class EzsignfolderListElement {
         obj['iEzsigndocumentEdm'] = iEzsigndocumentEdm;
         obj['iEzsignsignature'] = iEzsignsignature;
         obj['iEzsignsignatureSigned'] = iEzsignsignatureSigned;
+        obj['iEzsignformfieldgroup'] = iEzsignformfieldgroup;
+        obj['iEzsignformfieldgroupCompleted'] = iEzsignformfieldgroupCompleted;
+        obj['dEzsignfolderCompletedpercentage'] = dEzsignfolderCompletedpercentage;
     }
 
     /**
@@ -114,6 +120,18 @@ class EzsignfolderListElement {
             if (data.hasOwnProperty('iEzsignsignatureSigned')) {
                 obj['iEzsignsignatureSigned'] = ApiClient.convertToType(data['iEzsignsignatureSigned'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsignformfieldgroup')) {
+                obj['iEzsignformfieldgroup'] = ApiClient.convertToType(data['iEzsignformfieldgroup'], 'Number');
+            }
+            if (data.hasOwnProperty('iEzsignformfieldgroupCompleted')) {
+                obj['iEzsignformfieldgroupCompleted'] = ApiClient.convertToType(data['iEzsignformfieldgroupCompleted'], 'Number');
+            }
+            if (data.hasOwnProperty('bEzsignformHasdependencies')) {
+                obj['bEzsignformHasdependencies'] = ApiClient.convertToType(data['bEzsignformHasdependencies'], 'Boolean');
+            }
+            if (data.hasOwnProperty('dEzsignfolderCompletedpercentage')) {
+                obj['dEzsignfolderCompletedpercentage'] = ApiClient.convertToType(data['dEzsignfolderCompletedpercentage'], 'String');
+            }
         }
         return obj;
     }
@@ -126,7 +144,7 @@ class EzsignfolderListElement {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignfolderListElement.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -154,6 +172,10 @@ class EzsignfolderListElement {
         if (data['dtEzsignfolderDuedate'] && !(typeof data['dtEzsignfolderDuedate'] === 'string' || data['dtEzsignfolderDuedate'] instanceof String)) {
             throw new Error("Expected the field `dtEzsignfolderDuedate` to be a primitive type in the JSON string but got " + data['dtEzsignfolderDuedate']);
         }
+        // ensure the json data is a string
+        if (data['dEzsignfolderCompletedpercentage'] && !(typeof data['dEzsignfolderCompletedpercentage'] === 'string' || data['dEzsignfolderCompletedpercentage'] instanceof String)) {
+            throw new Error("Expected the field `dEzsignfolderCompletedpercentage` to be a primitive type in the JSON string but got " + data['dEzsignfolderCompletedpercentage']);
+        }
 
         return true;
     }
@@ -177,6 +199,7 @@ class EzsignfolderListElement {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -366,10 +389,70 @@ class EzsignfolderListElement {
     setIEzsignsignatureSigned(iEzsignsignatureSigned) {
         this['iEzsignsignatureSigned'] = iEzsignsignatureSigned;
     }
+/**
+     * Returns The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @return {Number}
+     */
+    getIEzsignformfieldgroup() {
+        return this.iEzsignformfieldgroup;
+    }
+
+    /**
+     * Sets The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @param {Number} iEzsignformfieldgroup The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     */
+    setIEzsignformfieldgroup(iEzsignformfieldgroup) {
+        this['iEzsignformfieldgroup'] = iEzsignformfieldgroup;
+    }
+/**
+     * Returns The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @return {Number}
+     */
+    getIEzsignformfieldgroupCompleted() {
+        return this.iEzsignformfieldgroupCompleted;
+    }
+
+    /**
+     * Sets The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @param {Number} iEzsignformfieldgroupCompleted The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     */
+    setIEzsignformfieldgroupCompleted(iEzsignformfieldgroupCompleted) {
+        this['iEzsignformfieldgroupCompleted'] = iEzsignformfieldgroupCompleted;
+    }
+/**
+     * Returns Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @return {Boolean}
+     */
+    getBEzsignformHasdependencies() {
+        return this.bEzsignformHasdependencies;
+    }
+
+    /**
+     * Sets Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @param {Boolean} bEzsignformHasdependencies Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     */
+    setBEzsignformHasdependencies(bEzsignformHasdependencies) {
+        this['bEzsignformHasdependencies'] = bEzsignformHasdependencies;
+    }
+/**
+     * Returns Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @return {String}
+     */
+    getDEzsignfolderCompletedpercentage() {
+        return this.dEzsignfolderCompletedpercentage;
+    }
+
+    /**
+     * Sets Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @param {String} dEzsignfolderCompletedpercentage Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     */
+    setDEzsignfolderCompletedpercentage(dEzsignfolderCompletedpercentage) {
+        this['dEzsignfolderCompletedpercentage'] = dEzsignfolderCompletedpercentage;
+    }
 
 }
 
-EzsignfolderListElement.RequiredProperties = ["pkiEzsignfolderID", "fkiEzsignfoldertypeID", "eEzsignfoldertypePrivacylevel", "sEzsignfoldertypeNameX", "sEzsignfolderDescription", "eEzsignfolderStep", "dtCreatedDate", "iEzsigndocument", "iEzsigndocumentEdm", "iEzsignsignature", "iEzsignsignatureSigned"];
+EzsignfolderListElement.RequiredProperties = ["pkiEzsignfolderID", "fkiEzsignfoldertypeID", "eEzsignfoldertypePrivacylevel", "sEzsignfoldertypeNameX", "sEzsignfolderDescription", "eEzsignfolderStep", "dtCreatedDate", "iEzsigndocument", "iEzsigndocumentEdm", "iEzsignsignature", "iEzsignsignatureSigned", "iEzsignformfieldgroup", "iEzsignformfieldgroupCompleted", "dEzsignfolderCompletedpercentage"];
 
 /**
  * The unique ID of the Ezsignfolder
@@ -452,6 +535,30 @@ EzsignfolderListElement.prototype['iEzsignsignature'] = undefined;
  * @member {Number} iEzsignsignatureSigned
  */
 EzsignfolderListElement.prototype['iEzsignsignatureSigned'] = undefined;
+
+/**
+ * The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+ * @member {Number} iEzsignformfieldgroup
+ */
+EzsignfolderListElement.prototype['iEzsignformfieldgroup'] = undefined;
+
+/**
+ * The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+ * @member {Number} iEzsignformfieldgroupCompleted
+ */
+EzsignfolderListElement.prototype['iEzsignformfieldgroupCompleted'] = undefined;
+
+/**
+ * Whether the Ezsignform/Ezsignsignatures has dependencies or not
+ * @member {Boolean} bEzsignformHasdependencies
+ */
+EzsignfolderListElement.prototype['bEzsignformHasdependencies'] = undefined;
+
+/**
+ * Whether the Ezsignform/Ezsignsignatures has dependencies or not
+ * @member {String} dEzsignfolderCompletedpercentage
+ */
+EzsignfolderListElement.prototype['dEzsignfolderCompletedpercentage'] = undefined;
 
 
 

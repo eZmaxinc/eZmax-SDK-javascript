@@ -59,12 +59,6 @@ class CustomEzsignfoldertypeResponse {
             if (data.hasOwnProperty('bEzsignfoldertypeSendproofezsignsigner')) {
                 obj['bEzsignfoldertypeSendproofezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendproofezsignsigner'], 'Boolean');
             }
-            if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofsigner')) {
-                obj['bEzsignfoldertypeIncludeproofsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofsigner'], 'Boolean');
-            }
-            if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofuser')) {
-                obj['bEzsignfoldertypeIncludeproofuser'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofuser'], 'Boolean');
-            }
             if (data.hasOwnProperty('bEzsignfoldertypeAllowdownloadattachmentezsignsigner')) {
                 obj['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeAllowdownloadattachmentezsignsigner'], 'Boolean');
             }
@@ -74,8 +68,8 @@ class CustomEzsignfoldertypeResponse {
             if (data.hasOwnProperty('bEzsignfoldertypeDelegate')) {
                 obj['bEzsignfoldertypeDelegate'] = ApiClient.convertToType(data['bEzsignfoldertypeDelegate'], 'Boolean');
             }
-            if (data.hasOwnProperty('bEzsignfoldertypeReassign')) {
-                obj['bEzsignfoldertypeReassign'] = ApiClient.convertToType(data['bEzsignfoldertypeReassign'], 'Boolean');
+            if (data.hasOwnProperty('bEzsignfoldertypeDiscussion')) {
+                obj['bEzsignfoldertypeDiscussion'] = ApiClient.convertToType(data['bEzsignfoldertypeDiscussion'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeReassignezsignsigner')) {
                 obj['bEzsignfoldertypeReassignezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignezsignsigner'], 'Boolean');
@@ -95,7 +89,7 @@ class CustomEzsignfoldertypeResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of CustomEzsignfoldertypeResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -110,6 +104,7 @@ class CustomEzsignfoldertypeResponse {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getPkiEzsignfoldertypeID() {
@@ -152,36 +147,6 @@ class CustomEzsignfoldertypeResponse {
      */
     setBEzsignfoldertypeSendproofezsignsigner(bEzsignfoldertypeSendproofezsignsigner) {
         this['bEzsignfoldertypeSendproofezsignsigner'] = bEzsignfoldertypeSendproofezsignsigner;
-    }
-/**
-     * Returns THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @return {Boolean}
-     */
-    getBEzsignfoldertypeIncludeproofsigner() {
-        return this.bEzsignfoldertypeIncludeproofsigner;
-    }
-
-    /**
-     * Sets THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     */
-    setBEzsignfoldertypeIncludeproofsigner(bEzsignfoldertypeIncludeproofsigner) {
-        this['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
-    }
-/**
-     * Returns Whether we include the proof with the signed Ezsigndocument for users
-     * @return {Boolean}
-     */
-    getBEzsignfoldertypeIncludeproofuser() {
-        return this.bEzsignfoldertypeIncludeproofuser;
-    }
-
-    /**
-     * Sets Whether we include the proof with the signed Ezsigndocument for users
-     * @param {Boolean} bEzsignfoldertypeIncludeproofuser Whether we include the proof with the signed Ezsigndocument for users
-     */
-    setBEzsignfoldertypeIncludeproofuser(bEzsignfoldertypeIncludeproofuser) {
-        this['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
     }
 /**
      * Returns Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
@@ -229,19 +194,19 @@ class CustomEzsignfoldertypeResponse {
         this['bEzsignfoldertypeDelegate'] = bEzsignfoldertypeDelegate;
     }
 /**
-     * Returns Wheter if Reassignment of signature is allowed to another signatory or not
+     * Returns Wheter if creating a new Discussion is allowed or not
      * @return {Boolean}
      */
-    getBEzsignfoldertypeReassign() {
-        return this.bEzsignfoldertypeReassign;
+    getBEzsignfoldertypeDiscussion() {
+        return this.bEzsignfoldertypeDiscussion;
     }
 
     /**
-     * Sets Wheter if Reassignment of signature is allowed to another signatory or not
-     * @param {Boolean} bEzsignfoldertypeReassign Wheter if Reassignment of signature is allowed to another signatory or not
+     * Sets Wheter if creating a new Discussion is allowed or not
+     * @param {Boolean} bEzsignfoldertypeDiscussion Wheter if creating a new Discussion is allowed or not
      */
-    setBEzsignfoldertypeReassign(bEzsignfoldertypeReassign) {
-        this['bEzsignfoldertypeReassign'] = bEzsignfoldertypeReassign;
+    setBEzsignfoldertypeDiscussion(bEzsignfoldertypeDiscussion) {
+        this['bEzsignfoldertypeDiscussion'] = bEzsignfoldertypeDiscussion;
     }
 /**
      * Returns Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
@@ -297,18 +262,6 @@ CustomEzsignfoldertypeResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
 CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendproofezsignsigner'] = undefined;
 
 /**
- * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
- * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
- */
-CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;
-
-/**
- * Whether we include the proof with the signed Ezsigndocument for users
- * @member {Boolean} bEzsignfoldertypeIncludeproofuser
- */
-CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofuser'] = undefined;
-
-/**
  * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
  * @member {Boolean} bEzsignfoldertypeAllowdownloadattachmentezsignsigner
  */
@@ -327,10 +280,10 @@ CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeAllowdownloadproofezs
 CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeDelegate'] = undefined;
 
 /**
- * Wheter if Reassignment of signature is allowed to another signatory or not
- * @member {Boolean} bEzsignfoldertypeReassign
+ * Wheter if creating a new Discussion is allowed or not
+ * @member {Boolean} bEzsignfoldertypeDiscussion
  */
-CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassign'] = undefined;
+CustomEzsignfoldertypeResponse.prototype['bEzsignfoldertypeDiscussion'] = undefined;
 
 /**
  * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not

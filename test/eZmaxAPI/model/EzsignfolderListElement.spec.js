@@ -138,6 +138,30 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsignformfieldgroup (base name: "iEzsignformfieldgroup")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroup
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsignformfieldgroupCompleted (base name: "iEzsignformfieldgroupCompleted")', function() {
+      // uncomment below and update the code to test the property iEzsignformfieldgroupCompleted
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bEzsignformHasdependencies (base name: "bEzsignformHasdependencies")', function() {
+      // uncomment below and update the code to test the property bEzsignformHasdependencies
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dEzsignfolderCompletedpercentage (base name: "dEzsignfolderCompletedpercentage")', function() {
+      // uncomment below and update the code to test the property dEzsignfolderCompletedpercentage
+      //var instance = new EZmaxApiDefinitionFull.EzsignfolderListElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -72,6 +72,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fkiUsergroupexternalID (base name: "fkiUsergroupexternalID")', function() {
+      // uncomment below and update the code to test the property fkiUsergroupexternalID
+      //var instance = new EZmaxApiDefinitionFull.UsergroupmembershipRequestCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

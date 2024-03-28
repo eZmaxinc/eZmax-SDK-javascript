@@ -186,6 +186,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsigndocumentEzsigndiscussiontotal (base name: "iEzsigndocumentEzsigndiscussiontotal")', function() {
+      // uncomment below and update the code to test the property iEzsigndocumentEzsigndiscussiontotal
+      //var instance = new EZmaxApiDefinitionFull.EzsigndocumentResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -18,6 +18,7 @@ import FieldEEzsignfoldertypeDisposal from './FieldEEzsignfoldertypeDisposal';
 import FieldEEzsignfoldertypePrivacylevel from './FieldEEzsignfoldertypePrivacylevel';
 import FieldEEzsignfoldertypeSendreminderfrequency from './FieldEEzsignfoldertypeSendreminderfrequency';
 import MultilingualEzsignfoldertypeName from './MultilingualEzsignfoldertypeName';
+import UserlogintypeResponse from './UserlogintypeResponse';
 
 /**
  * The EzsignfoldertypeResponseCompound model module.
@@ -37,6 +38,7 @@ class EzsignfoldertypeResponseCompound {
      * @param eEzsignfoldertypePrivacylevel {module:eZmaxAPI/model/FieldEEzsignfoldertypePrivacylevel} 
      * @param iEzsignfoldertypeArchivaldays {Number} The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype
      * @param eEzsignfoldertypeDisposal {module:eZmaxAPI/model/FieldEEzsignfoldertypeDisposal} 
+     * @param eEzsignfoldertypeCompletion {module:eZmaxAPI/model/FieldEEzsignfoldertypeCompletion} 
      * @param iEzsignfoldertypeDeadlinedays {Number} The number of days to get all Ezsignsignatures
      * @param bEzsignfoldertypeSendsignedtodocumentowner {Boolean} Whether we send the signed Ezsigndocument to the Ezsigndocument's owner
      * @param bEzsignfoldertypeSendsignedtofolderowner {Boolean} Whether we send the signed Ezsigndocument to the Ezsignfolder's owner
@@ -44,12 +46,12 @@ class EzsignfoldertypeResponseCompound {
      * @param bEzsignfoldertypeSendsummarytodocumentowner {Boolean} Whether we send the summary to the Ezsigndocument's owner
      * @param bEzsignfoldertypeSendsummarytofolderowner {Boolean} Whether we send the summary to the Ezsignfolder's owner
      * @param bEzsignfoldertypeSendsummarytocolleague {Boolean} Whether we send the summary to the colleagues
-     * @param bEzsignfoldertypeIncludeproofuser {Boolean} Whether we include the proof with the signed Ezsigndocument for users
      * @param bEzsignfoldertypeIsactive {Boolean} Whether the Ezsignfoldertype is active or not
+     * @param a_objUserlogintype {Array.<module:eZmaxAPI/model/UserlogintypeResponse>} 
      */
-    constructor(pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
-        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
-        EzsignfoldertypeResponseCompound.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive);
+    constructor(pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, eEzsignfoldertypeCompletion, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIsactive, a_objUserlogintype) { 
+        EzsignfoldertypeResponse.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, eEzsignfoldertypeCompletion, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIsactive, a_objUserlogintype);
+        EzsignfoldertypeResponseCompound.initialize(this, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, eEzsignfoldertypeCompletion, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIsactive, a_objUserlogintype);
     }
 
     /**
@@ -57,7 +59,7 @@ class EzsignfoldertypeResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIncludeproofuser, bEzsignfoldertypeIsactive) { 
+    static initialize(obj, pkiEzsignfoldertypeID, objEzsignfoldertypeName, fkiBrandingID, sBrandingDescriptionX, eEzsignfoldertypePrivacylevel, iEzsignfoldertypeArchivaldays, eEzsignfoldertypeDisposal, eEzsignfoldertypeCompletion, iEzsignfoldertypeDeadlinedays, bEzsignfoldertypeSendsignedtodocumentowner, bEzsignfoldertypeSendsignedtofolderowner, bEzsignfoldertypeSendsignedtocolleague, bEzsignfoldertypeSendsummarytodocumentowner, bEzsignfoldertypeSendsummarytofolderowner, bEzsignfoldertypeSendsummarytocolleague, bEzsignfoldertypeIsactive, a_objUserlogintype) { 
         obj['pkiEzsignfoldertypeID'] = pkiEzsignfoldertypeID;
         obj['objEzsignfoldertypeName'] = objEzsignfoldertypeName;
         obj['fkiBrandingID'] = fkiBrandingID;
@@ -65,6 +67,7 @@ class EzsignfoldertypeResponseCompound {
         obj['eEzsignfoldertypePrivacylevel'] = eEzsignfoldertypePrivacylevel;
         obj['iEzsignfoldertypeArchivaldays'] = iEzsignfoldertypeArchivaldays;
         obj['eEzsignfoldertypeDisposal'] = eEzsignfoldertypeDisposal;
+        obj['eEzsignfoldertypeCompletion'] = eEzsignfoldertypeCompletion;
         obj['iEzsignfoldertypeDeadlinedays'] = iEzsignfoldertypeDeadlinedays;
         obj['bEzsignfoldertypeSendsignedtodocumentowner'] = bEzsignfoldertypeSendsignedtodocumentowner;
         obj['bEzsignfoldertypeSendsignedtofolderowner'] = bEzsignfoldertypeSendsignedtofolderowner;
@@ -72,8 +75,8 @@ class EzsignfoldertypeResponseCompound {
         obj['bEzsignfoldertypeSendsummarytodocumentowner'] = bEzsignfoldertypeSendsummarytodocumentowner;
         obj['bEzsignfoldertypeSendsummarytofolderowner'] = bEzsignfoldertypeSendsummarytofolderowner;
         obj['bEzsignfoldertypeSendsummarytocolleague'] = bEzsignfoldertypeSendsummarytocolleague;
-        obj['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
         obj['bEzsignfoldertypeIsactive'] = bEzsignfoldertypeIsactive;
+        obj['a_objUserlogintype'] = a_objUserlogintype;
     }
 
     /**
@@ -154,17 +157,14 @@ class EzsignfoldertypeResponseCompound {
             if (data.hasOwnProperty('bEzsignfoldertypeDelegate')) {
                 obj['bEzsignfoldertypeDelegate'] = ApiClient.convertToType(data['bEzsignfoldertypeDelegate'], 'Boolean');
             }
-            if (data.hasOwnProperty('bEzsignfoldertypeReassign')) {
-                obj['bEzsignfoldertypeReassign'] = ApiClient.convertToType(data['bEzsignfoldertypeReassign'], 'Boolean');
+            if (data.hasOwnProperty('bEzsignfoldertypeDiscussion')) {
+                obj['bEzsignfoldertypeDiscussion'] = ApiClient.convertToType(data['bEzsignfoldertypeDiscussion'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeReassignezsignsigner')) {
                 obj['bEzsignfoldertypeReassignezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignezsignsigner'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeReassignuser')) {
                 obj['bEzsignfoldertypeReassignuser'] = ApiClient.convertToType(data['bEzsignfoldertypeReassignuser'], 'Boolean');
-            }
-            if (data.hasOwnProperty('bEzsignfoldertypeSendattatchmentsigner')) {
-                obj['bEzsignfoldertypeSendattatchmentsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendattatchmentsigner'], 'Boolean');
             }
             if (data.hasOwnProperty('bEzsignfoldertypeSendsignedtoezsignsigner')) {
                 obj['bEzsignfoldertypeSendsignedtoezsignsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeSendsignedtoezsignsigner'], 'Boolean');
@@ -226,14 +226,11 @@ class EzsignfoldertypeResponseCompound {
             if (data.hasOwnProperty('bEzsignfoldertypeSendsummarytocolleague')) {
                 obj['bEzsignfoldertypeSendsummarytocolleague'] = ApiClient.convertToType(data['bEzsignfoldertypeSendsummarytocolleague'], 'Boolean');
             }
-            if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofsigner')) {
-                obj['bEzsignfoldertypeIncludeproofsigner'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofsigner'], 'Boolean');
-            }
-            if (data.hasOwnProperty('bEzsignfoldertypeIncludeproofuser')) {
-                obj['bEzsignfoldertypeIncludeproofuser'] = ApiClient.convertToType(data['bEzsignfoldertypeIncludeproofuser'], 'Boolean');
-            }
             if (data.hasOwnProperty('bEzsignfoldertypeIsactive')) {
                 obj['bEzsignfoldertypeIsactive'] = ApiClient.convertToType(data['bEzsignfoldertypeIsactive'], 'Boolean');
+            }
+            if (data.hasOwnProperty('a_objUserlogintype')) {
+                obj['a_objUserlogintype'] = ApiClient.convertToType(data['a_objUserlogintype'], [UserlogintypeResponse]);
             }
             if (data.hasOwnProperty('a_fkiUserIDSigned')) {
                 obj['a_fkiUserIDSigned'] = ApiClient.convertToType(data['a_fkiUserIDSigned'], ['Number']);
@@ -253,7 +250,7 @@ class EzsignfoldertypeResponseCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignfoldertypeResponseCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -289,6 +286,16 @@ class EzsignfoldertypeResponseCompound {
         if (data['sUsergroupNameXRestricted'] && !(typeof data['sUsergroupNameXRestricted'] === 'string' || data['sUsergroupNameXRestricted'] instanceof String)) {
             throw new Error("Expected the field `sUsergroupNameXRestricted` to be a primitive type in the JSON string but got " + data['sUsergroupNameXRestricted']);
         }
+        if (data['a_objUserlogintype']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objUserlogintype'])) {
+                throw new Error("Expected the field `a_objUserlogintype` to be an array in the JSON data but got " + data['a_objUserlogintype']);
+            }
+            // validate the optional field `a_objUserlogintype` (array)
+            for (const item of data['a_objUserlogintype']) {
+                UserlogintypeResponse.validateJSON(item);
+            };
+        }
         // ensure the json data is an array
         if (!Array.isArray(data['a_fkiUserIDSigned'])) {
             throw new Error("Expected the field `a_fkiUserIDSigned` to be an array in the JSON data but got " + data['a_fkiUserIDSigned']);
@@ -304,6 +311,7 @@ class EzsignfoldertypeResponseCompound {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getPkiEzsignfoldertypeID() {
@@ -637,19 +645,19 @@ class EzsignfoldertypeResponseCompound {
         this['bEzsignfoldertypeDelegate'] = bEzsignfoldertypeDelegate;
     }
 /**
-     * Returns Wheter if Reassignment of signature is allowed to another signatory or not
+     * Returns Wheter if creating a new Discussion is allowed or not
      * @return {Boolean}
      */
-    getBEzsignfoldertypeReassign() {
-        return this.bEzsignfoldertypeReassign;
+    getBEzsignfoldertypeDiscussion() {
+        return this.bEzsignfoldertypeDiscussion;
     }
 
     /**
-     * Sets Wheter if Reassignment of signature is allowed to another signatory or not
-     * @param {Boolean} bEzsignfoldertypeReassign Wheter if Reassignment of signature is allowed to another signatory or not
+     * Sets Wheter if creating a new Discussion is allowed or not
+     * @param {Boolean} bEzsignfoldertypeDiscussion Wheter if creating a new Discussion is allowed or not
      */
-    setBEzsignfoldertypeReassign(bEzsignfoldertypeReassign) {
-        this['bEzsignfoldertypeReassign'] = bEzsignfoldertypeReassign;
+    setBEzsignfoldertypeDiscussion(bEzsignfoldertypeDiscussion) {
+        this['bEzsignfoldertypeDiscussion'] = bEzsignfoldertypeDiscussion;
     }
 /**
      * Returns Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
@@ -680,21 +688,6 @@ class EzsignfoldertypeResponseCompound {
      */
     setBEzsignfoldertypeReassignuser(bEzsignfoldertypeReassignuser) {
         this['bEzsignfoldertypeReassignuser'] = bEzsignfoldertypeReassignuser;
-    }
-/**
-     * Returns THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
-     * @return {Boolean}
-     */
-    getBEzsignfoldertypeSendattatchmentsigner() {
-        return this.bEzsignfoldertypeSendattatchmentsigner;
-    }
-
-    /**
-     * Sets THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
-     * @param {Boolean} bEzsignfoldertypeSendattatchmentsigner THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
-     */
-    setBEzsignfoldertypeSendattatchmentsigner(bEzsignfoldertypeSendattatchmentsigner) {
-        this['bEzsignfoldertypeSendattatchmentsigner'] = bEzsignfoldertypeSendattatchmentsigner;
     }
 /**
      * Returns Whether we send an email to Ezsignsigner  when document is completed
@@ -997,36 +990,6 @@ class EzsignfoldertypeResponseCompound {
         this['bEzsignfoldertypeSendsummarytocolleague'] = bEzsignfoldertypeSendsummarytocolleague;
     }
 /**
-     * Returns THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @return {Boolean}
-     */
-    getBEzsignfoldertypeIncludeproofsigner() {
-        return this.bEzsignfoldertypeIncludeproofsigner;
-    }
-
-    /**
-     * Sets THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @param {Boolean} bEzsignfoldertypeIncludeproofsigner THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     */
-    setBEzsignfoldertypeIncludeproofsigner(bEzsignfoldertypeIncludeproofsigner) {
-        this['bEzsignfoldertypeIncludeproofsigner'] = bEzsignfoldertypeIncludeproofsigner;
-    }
-/**
-     * Returns Whether we include the proof with the signed Ezsigndocument for users
-     * @return {Boolean}
-     */
-    getBEzsignfoldertypeIncludeproofuser() {
-        return this.bEzsignfoldertypeIncludeproofuser;
-    }
-
-    /**
-     * Sets Whether we include the proof with the signed Ezsigndocument for users
-     * @param {Boolean} bEzsignfoldertypeIncludeproofuser Whether we include the proof with the signed Ezsigndocument for users
-     */
-    setBEzsignfoldertypeIncludeproofuser(bEzsignfoldertypeIncludeproofuser) {
-        this['bEzsignfoldertypeIncludeproofuser'] = bEzsignfoldertypeIncludeproofuser;
-    }
-/**
      * Returns Whether the Ezsignfoldertype is active or not
      * @return {Boolean}
      */
@@ -1040,6 +1003,21 @@ class EzsignfoldertypeResponseCompound {
      */
     setBEzsignfoldertypeIsactive(bEzsignfoldertypeIsactive) {
         this['bEzsignfoldertypeIsactive'] = bEzsignfoldertypeIsactive;
+    }
+/**
+     * Returns 
+     * @return {Array.<module:eZmaxAPI/model/UserlogintypeResponse>}
+     */
+    getAObjUserlogintype() {
+        return this.a_objUserlogintype;
+    }
+
+    /**
+     * Sets 
+     * @param {Array.<module:eZmaxAPI/model/UserlogintypeResponse>} a_objUserlogintype 
+     */
+    setAObjUserlogintype(a_objUserlogintype) {
+        this['a_objUserlogintype'] = a_objUserlogintype;
     }
 /**
      * @return {Array.<Number>}
@@ -1070,7 +1048,7 @@ class EzsignfoldertypeResponseCompound {
 
 }
 
-EzsignfoldertypeResponseCompound.RequiredProperties = ["pkiEzsignfoldertypeID", "objEzsignfoldertypeName", "fkiBrandingID", "sBrandingDescriptionX", "eEzsignfoldertypePrivacylevel", "iEzsignfoldertypeArchivaldays", "eEzsignfoldertypeDisposal", "iEzsignfoldertypeDeadlinedays", "bEzsignfoldertypeSendsignedtodocumentowner", "bEzsignfoldertypeSendsignedtofolderowner", "bEzsignfoldertypeSendsignedtocolleague", "bEzsignfoldertypeSendsummarytodocumentowner", "bEzsignfoldertypeSendsummarytofolderowner", "bEzsignfoldertypeSendsummarytocolleague", "bEzsignfoldertypeIncludeproofuser", "bEzsignfoldertypeIsactive"];
+EzsignfoldertypeResponseCompound.RequiredProperties = ["pkiEzsignfoldertypeID", "objEzsignfoldertypeName", "fkiBrandingID", "sBrandingDescriptionX", "eEzsignfoldertypePrivacylevel", "iEzsignfoldertypeArchivaldays", "eEzsignfoldertypeDisposal", "eEzsignfoldertypeCompletion", "iEzsignfoldertypeDeadlinedays", "bEzsignfoldertypeSendsignedtodocumentowner", "bEzsignfoldertypeSendsignedtofolderowner", "bEzsignfoldertypeSendsignedtocolleague", "bEzsignfoldertypeSendsummarytodocumentowner", "bEzsignfoldertypeSendsummarytofolderowner", "bEzsignfoldertypeSendsummarytocolleague", "bEzsignfoldertypeIsactive", "a_objUserlogintype"];
 
 /**
  * The unique ID of the Ezsignfoldertype.
@@ -1200,10 +1178,10 @@ EzsignfoldertypeResponseCompound.prototype['iEzsignfoldertypeDeadlinedays'] = un
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeDelegate'] = undefined;
 
 /**
- * Wheter if Reassignment of signature is allowed to another signatory or not
- * @member {Boolean} bEzsignfoldertypeReassign
+ * Wheter if creating a new Discussion is allowed or not
+ * @member {Boolean} bEzsignfoldertypeDiscussion
  */
-EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeReassign'] = undefined;
+EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeDiscussion'] = undefined;
 
 /**
  * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
@@ -1216,12 +1194,6 @@ EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeReassignezsignsigne
  * @member {Boolean} bEzsignfoldertypeReassignuser
  */
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeReassignuser'] = undefined;
-
-/**
- * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
- * @member {Boolean} bEzsignfoldertypeSendattatchmentsigner
- */
-EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendattatchmentsigner'] = undefined;
 
 /**
  * Whether we send an email to Ezsignsigner  when document is completed
@@ -1344,22 +1316,16 @@ EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsummarytolimite
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeSendsummarytocolleague'] = undefined;
 
 /**
- * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
- * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
- */
-EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;
-
-/**
- * Whether we include the proof with the signed Ezsigndocument for users
- * @member {Boolean} bEzsignfoldertypeIncludeproofuser
- */
-EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeIncludeproofuser'] = undefined;
-
-/**
  * Whether the Ezsignfoldertype is active or not
  * @member {Boolean} bEzsignfoldertypeIsactive
  */
 EzsignfoldertypeResponseCompound.prototype['bEzsignfoldertypeIsactive'] = undefined;
+
+/**
+ * 
+ * @member {Array.<module:eZmaxAPI/model/UserlogintypeResponse>} a_objUserlogintype
+ */
+EzsignfoldertypeResponseCompound.prototype['a_objUserlogintype'] = undefined;
 
 /**
  * @member {Array.<Number>} a_fkiUserIDSigned
@@ -1479,10 +1445,10 @@ EzsignfoldertypeResponse.prototype['iEzsignfoldertypeDeadlinedays'] = undefined;
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeDelegate'] = undefined;
 /**
- * Wheter if Reassignment of signature is allowed to another signatory or not
- * @member {Boolean} bEzsignfoldertypeReassign
+ * Wheter if creating a new Discussion is allowed or not
+ * @member {Boolean} bEzsignfoldertypeDiscussion
  */
-EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassign'] = undefined;
+EzsignfoldertypeResponse.prototype['bEzsignfoldertypeDiscussion'] = undefined;
 /**
  * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
  * @member {Boolean} bEzsignfoldertypeReassignezsignsigner
@@ -1493,11 +1459,6 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignezsignsigner'] = un
  * @member {Boolean} bEzsignfoldertypeReassignuser
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeReassignuser'] = undefined;
-/**
- * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
- * @member {Boolean} bEzsignfoldertypeSendattatchmentsigner
- */
-EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendattatchmentsigner'] = undefined;
 /**
  * Whether we send an email to Ezsignsigner  when document is completed
  * @member {Boolean} bEzsignfoldertypeSendsignedtoezsignsigner
@@ -1599,20 +1560,15 @@ EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsummarytolimitedgroup']
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeSendsummarytocolleague'] = undefined;
 /**
- * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
- * @member {Boolean} bEzsignfoldertypeIncludeproofsigner
- */
-EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofsigner'] = undefined;
-/**
- * Whether we include the proof with the signed Ezsigndocument for users
- * @member {Boolean} bEzsignfoldertypeIncludeproofuser
- */
-EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIncludeproofuser'] = undefined;
-/**
  * Whether the Ezsignfoldertype is active or not
  * @member {Boolean} bEzsignfoldertypeIsactive
  */
 EzsignfoldertypeResponse.prototype['bEzsignfoldertypeIsactive'] = undefined;
+/**
+ * 
+ * @member {Array.<module:eZmaxAPI/model/UserlogintypeResponse>} a_objUserlogintype
+ */
+EzsignfoldertypeResponse.prototype['a_objUserlogintype'] = undefined;
 
 
 

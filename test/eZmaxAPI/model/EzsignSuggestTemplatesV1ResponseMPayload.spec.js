@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property a_objEzsigntemplateglobal (base name: "a_objEzsigntemplateglobal")', function() {
+      // uncomment below and update the code to test the property a_objEzsigntemplateglobal
+      //var instance = new EZmaxApiDefinitionFull.EzsignSuggestTemplatesV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

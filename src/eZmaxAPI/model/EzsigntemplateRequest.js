@@ -68,6 +68,9 @@ class EzsigntemplateRequest {
             if (data.hasOwnProperty('sEzsigntemplateDescription')) {
                 obj['sEzsigntemplateDescription'] = ApiClient.convertToType(data['sEzsigntemplateDescription'], 'String');
             }
+            if (data.hasOwnProperty('sEzsigntemplateFilenamepattern')) {
+                obj['sEzsigntemplateFilenamepattern'] = ApiClient.convertToType(data['sEzsigntemplateFilenamepattern'], 'String');
+            }
             if (data.hasOwnProperty('bEzsigntemplateAdminonly')) {
                 obj['bEzsigntemplateAdminonly'] = ApiClient.convertToType(data['bEzsigntemplateAdminonly'], 'Boolean');
             }
@@ -83,13 +86,17 @@ class EzsigntemplateRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplateRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
         // ensure the json data is a string
         if (data['sEzsigntemplateDescription'] && !(typeof data['sEzsigntemplateDescription'] === 'string' || data['sEzsigntemplateDescription'] instanceof String)) {
             throw new Error("Expected the field `sEzsigntemplateDescription` to be a primitive type in the JSON string but got " + data['sEzsigntemplateDescription']);
+        }
+        // ensure the json data is a string
+        if (data['sEzsigntemplateFilenamepattern'] && !(typeof data['sEzsigntemplateFilenamepattern'] === 'string' || data['sEzsigntemplateFilenamepattern'] instanceof String)) {
+            throw new Error("Expected the field `sEzsigntemplateFilenamepattern` to be a primitive type in the JSON string but got " + data['sEzsigntemplateFilenamepattern']);
         }
 
         return true;
@@ -114,6 +121,7 @@ class EzsigntemplateRequest {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -160,6 +168,21 @@ class EzsigntemplateRequest {
         this['sEzsigntemplateDescription'] = sEzsigntemplateDescription;
     }
 /**
+     * Returns The filename pattern of the Ezsigntemplate
+     * @return {String}
+     */
+    getSEzsigntemplateFilenamepattern() {
+        return this.sEzsigntemplateFilenamepattern;
+    }
+
+    /**
+     * Sets The filename pattern of the Ezsigntemplate
+     * @param {String} sEzsigntemplateFilenamepattern The filename pattern of the Ezsigntemplate
+     */
+    setSEzsigntemplateFilenamepattern(sEzsigntemplateFilenamepattern) {
+        this['sEzsigntemplateFilenamepattern'] = sEzsigntemplateFilenamepattern;
+    }
+/**
      * Returns Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @return {Boolean}
      */
@@ -202,6 +225,12 @@ EzsigntemplateRequest.prototype['fkiLanguageID'] = undefined;
  * @member {String} sEzsigntemplateDescription
  */
 EzsigntemplateRequest.prototype['sEzsigntemplateDescription'] = undefined;
+
+/**
+ * The filename pattern of the Ezsigntemplate
+ * @member {String} sEzsigntemplateFilenamepattern
+ */
+EzsigntemplateRequest.prototype['sEzsigntemplateFilenamepattern'] = undefined;
 
 /**
  * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)

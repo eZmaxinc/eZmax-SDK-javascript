@@ -17,6 +17,8 @@ import CommonResponseError from '../model/CommonResponseError';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 import UserCreateObjectV1Request from '../model/UserCreateObjectV1Request';
 import UserCreateObjectV1Response from '../model/UserCreateObjectV1Response';
+import UserCreateObjectV2Request from '../model/UserCreateObjectV2Request';
+import UserCreateObjectV2Response from '../model/UserCreateObjectV2Response';
 import UserEditObjectV1Request from '../model/UserEditObjectV1Request';
 import UserEditObjectV1Response from '../model/UserEditObjectV1Response';
 import UserEditPermissionsV1Request from '../model/UserEditPermissionsV1Request';
@@ -28,6 +30,8 @@ import UserGetListV1Response from '../model/UserGetListV1Response';
 import UserGetObjectV2Response from '../model/UserGetObjectV2Response';
 import UserGetPermissionsV1Response from '../model/UserGetPermissionsV1Response';
 import UserGetSubnetsV1Response from '../model/UserGetSubnetsV1Response';
+import UserGetUsergroupexternalsV1Response from '../model/UserGetUsergroupexternalsV1Response';
+import UserGetUsergroupsV1Response from '../model/UserGetUsergroupsV1Response';
 import UserSendPasswordResetV1Response from '../model/UserSendPasswordResetV1Response';
 
 /**
@@ -86,6 +90,48 @@ export default class ObjectUserApi {
       let returnType = UserCreateObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/user', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectUserApi~userCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UserCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new User
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/UserCreateObjectV2Request} UserCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectUserApi~userCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UserCreateObjectV2Response}
+     */
+    userCreateObjectV2(UserCreateObjectV2Request, callback) {
+      let postBody = UserCreateObjectV2Request;
+      // verify the required parameter 'UserCreateObjectV2Request' is set
+      if (UserCreateObjectV2Request === undefined || UserCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'UserCreateObjectV2Request' when calling userCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UserCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/user', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -494,6 +540,90 @@ export default class ObjectUserApi {
       let returnType = UserGetSubnetsV1Response;
       return this.apiClient.callApi(
         '/1/object/user/{pkiUserID}/getSubnets', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userGetUsergroupexternalsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUserApi~userGetUsergroupexternalsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UserGetUsergroupexternalsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get User's Usergroupexternals
+     * @param {Number} pkiUserID 
+     * @param {module:eZmaxAPI/api/ObjectUserApi~userGetUsergroupexternalsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UserGetUsergroupexternalsV1Response}
+     */
+    userGetUsergroupexternalsV1(pkiUserID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUserID' is set
+      if (pkiUserID === undefined || pkiUserID === null) {
+        throw new Error("Missing the required parameter 'pkiUserID' when calling userGetUsergroupexternalsV1");
+      }
+
+      let pathParams = {
+        'pkiUserID': pkiUserID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserGetUsergroupexternalsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/user/{pkiUserID}/getUsergroupexternals', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userGetUsergroupsV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectUserApi~userGetUsergroupsV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/UserGetUsergroupsV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get User's Usergroups
+     * @param {Number} pkiUserID 
+     * @param {module:eZmaxAPI/api/ObjectUserApi~userGetUsergroupsV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/UserGetUsergroupsV1Response}
+     */
+    userGetUsergroupsV1(pkiUserID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiUserID' is set
+      if (pkiUserID === undefined || pkiUserID === null) {
+        throw new Error("Missing the required parameter 'pkiUserID' when calling userGetUsergroupsV1");
+      }
+
+      let pathParams = {
+        'pkiUserID': pkiUserID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserGetUsergroupsV1Response;
+      return this.apiClient.callApi(
+        '/1/object/user/{pkiUserID}/getUsergroups', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

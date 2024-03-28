@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eBrandingLogointerface (base name: "eBrandingLogointerface")', function() {
+      // uncomment below and update the code to test the property eBrandingLogointerface
+      //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iBrandingColortext (base name: "iBrandingColortext")', function() {
       // uncomment below and update the code to test the property iBrandingColortext
       //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
@@ -132,6 +138,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iBrandingInterfacecolor (base name: "iBrandingInterfacecolor")', function() {
+      // uncomment below and update the code to test the property iBrandingInterfacecolor
+      //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bBrandingIsactive (base name: "bBrandingIsactive")', function() {
       // uncomment below and update the code to test the property bBrandingIsactive
       //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
@@ -140,6 +152,12 @@
 
     it('should have the property sBrandingLogourl (base name: "sBrandingLogourl")', function() {
       // uncomment below and update the code to test the property sBrandingLogourl
+      //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sBrandingLogointerfaceurl (base name: "sBrandingLogointerfaceurl")', function() {
+      // uncomment below and update the code to test the property sBrandingLogointerfaceurl
       //var instance = new EZmaxApiDefinitionFull.BrandingResponseCompound();
       //expect(instance).to.be();
     });

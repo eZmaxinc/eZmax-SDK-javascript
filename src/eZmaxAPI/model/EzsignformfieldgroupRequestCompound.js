@@ -34,7 +34,6 @@ class EzsignformfieldgroupRequestCompound {
      * @implements module:eZmaxAPI/model/EzsignformfieldgroupRequest
      * @param fkiEzsigndocumentID {Number} The unique ID of the Ezsigndocument
      * @param eEzsignformfieldgroupType {module:eZmaxAPI/model/FieldEEzsignformfieldgroupType} 
-     * @param eEzsignformfieldgroupSignerrequirement {module:eZmaxAPI/model/FieldEEzsignformfieldgroupSignerrequirement} 
      * @param sEzsignformfieldgroupLabel {String} The Label for the Ezsignformfieldgroup
      * @param iEzsignformfieldgroupStep {Number} The step when the Ezsignsigner will be invited to fill the form fields
      * @param iEzsignformfieldgroupFilledmin {Number} The minimum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup
@@ -43,9 +42,9 @@ class EzsignformfieldgroupRequestCompound {
      * @param a_objEzsignformfieldgroupsigner {Array.<module:eZmaxAPI/model/EzsignformfieldgroupsignerRequestCompound>} 
      * @param a_objEzsignformfield {Array.<module:eZmaxAPI/model/EzsignformfieldRequestCompound>} 
      */
-    constructor(fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield) { 
-        EzsignformfieldgroupRequest.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);
-        EzsignformfieldgroupRequestCompound.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield);
+    constructor(fkiEzsigndocumentID, eEzsignformfieldgroupType, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield) { 
+        EzsignformfieldgroupRequest.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly);
+        EzsignformfieldgroupRequestCompound.initialize(this, fkiEzsigndocumentID, eEzsignformfieldgroupType, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield);
     }
 
     /**
@@ -53,10 +52,9 @@ class EzsignformfieldgroupRequestCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiEzsigndocumentID, eEzsignformfieldgroupType, eEzsignformfieldgroupSignerrequirement, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield) { 
+    static initialize(obj, fkiEzsigndocumentID, eEzsignformfieldgroupType, sEzsignformfieldgroupLabel, iEzsignformfieldgroupStep, iEzsignformfieldgroupFilledmin, iEzsignformfieldgroupFilledmax, bEzsignformfieldgroupReadonly, a_objEzsignformfieldgroupsigner, a_objEzsignformfield) { 
         obj['fkiEzsigndocumentID'] = fkiEzsigndocumentID;
         obj['eEzsignformfieldgroupType'] = eEzsignformfieldgroupType;
-        obj['eEzsignformfieldgroupSignerrequirement'] = eEzsignformfieldgroupSignerrequirement;
         obj['sEzsignformfieldgroupLabel'] = sEzsignformfieldgroupLabel;
         obj['iEzsignformfieldgroupStep'] = iEzsignformfieldgroupStep;
         obj['iEzsignformfieldgroupFilledmin'] = iEzsignformfieldgroupFilledmin;
@@ -147,7 +145,7 @@ class EzsignformfieldgroupRequestCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignformfieldgroupRequestCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -291,7 +289,7 @@ class EzsignformfieldgroupRequestCompound {
         this['iEzsignformfieldgroupStep'] = iEzsignformfieldgroupStep;
     }
 /**
-     * Returns The default value for the Ezsignformfieldgroup
+     * Returns The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      * @return {String}
      */
     getSEzsignformfieldgroupDefaultvalue() {
@@ -299,8 +297,8 @@ class EzsignformfieldgroupRequestCompound {
     }
 
     /**
-     * Sets The default value for the Ezsignformfieldgroup
-     * @param {String} sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup
+     * Sets The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
+     * @param {String} sEzsignformfieldgroupDefaultvalue The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      */
     setSEzsignformfieldgroupDefaultvalue(sEzsignformfieldgroupDefaultvalue) {
         this['sEzsignformfieldgroupDefaultvalue'] = sEzsignformfieldgroupDefaultvalue;
@@ -482,7 +480,7 @@ class EzsignformfieldgroupRequestCompound {
 
 }
 
-EzsignformfieldgroupRequestCompound.RequiredProperties = ["fkiEzsigndocumentID", "eEzsignformfieldgroupType", "eEzsignformfieldgroupSignerrequirement", "sEzsignformfieldgroupLabel", "iEzsignformfieldgroupStep", "iEzsignformfieldgroupFilledmin", "iEzsignformfieldgroupFilledmax", "bEzsignformfieldgroupReadonly", "a_objEzsignformfieldgroupsigner", "a_objEzsignformfield"];
+EzsignformfieldgroupRequestCompound.RequiredProperties = ["fkiEzsigndocumentID", "eEzsignformfieldgroupType", "sEzsignformfieldgroupLabel", "iEzsignformfieldgroupStep", "iEzsignformfieldgroupFilledmin", "iEzsignformfieldgroupFilledmax", "bEzsignformfieldgroupReadonly", "a_objEzsignformfieldgroupsigner", "a_objEzsignformfield"];
 
 /**
  * The unique ID of the Ezsignformfieldgroup
@@ -519,7 +517,7 @@ EzsignformfieldgroupRequestCompound.prototype['sEzsignformfieldgroupLabel'] = un
 EzsignformfieldgroupRequestCompound.prototype['iEzsignformfieldgroupStep'] = undefined;
 
 /**
- * The default value for the Ezsignformfieldgroup
+ * The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
  * @member {String} sEzsignformfieldgroupDefaultvalue
  */
 EzsignformfieldgroupRequestCompound.prototype['sEzsignformfieldgroupDefaultvalue'] = undefined;
@@ -622,7 +620,7 @@ EzsignformfieldgroupRequest.prototype['sEzsignformfieldgroupLabel'] = undefined;
  */
 EzsignformfieldgroupRequest.prototype['iEzsignformfieldgroupStep'] = undefined;
 /**
- * The default value for the Ezsignformfieldgroup
+ * The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
  * @member {String} sEzsignformfieldgroupDefaultvalue
  */
 EzsignformfieldgroupRequest.prototype['sEzsignformfieldgroupDefaultvalue'] = undefined;

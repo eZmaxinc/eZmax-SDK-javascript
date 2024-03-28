@@ -62,6 +62,9 @@ class UsergroupResponseCompound {
             if (data.hasOwnProperty('objUsergroupName')) {
                 obj['objUsergroupName'] = MultilingualUsergroupName.constructFromObject(data['objUsergroupName']);
             }
+            if (data.hasOwnProperty('sUsergroupNameX')) {
+                obj['sUsergroupNameX'] = ApiClient.convertToType(data['sUsergroupNameX'], 'String');
+            }
         }
         return obj;
     }
@@ -74,13 +77,17 @@ class UsergroupResponseCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of UsergroupResponseCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
         // validate the optional field `objUsergroupName`
         if (data['objUsergroupName']) { // data not null
           MultilingualUsergroupName.validateJSON(data['objUsergroupName']);
+        }
+        // ensure the json data is a string
+        if (data['sUsergroupNameX'] && !(typeof data['sUsergroupNameX'] === 'string' || data['sUsergroupNameX'] instanceof String)) {
+            throw new Error("Expected the field `sUsergroupNameX` to be a primitive type in the JSON string but got " + data['sUsergroupNameX']);
         }
 
         return true;
@@ -116,6 +123,21 @@ class UsergroupResponseCompound {
     setObjUsergroupName(objUsergroupName) {
         this['objUsergroupName'] = objUsergroupName;
     }
+/**
+     * Returns The Name of the Usergroup in the language of the requester
+     * @return {String}
+     */
+    getSUsergroupNameX() {
+        return this.sUsergroupNameX;
+    }
+
+    /**
+     * Sets The Name of the Usergroup in the language of the requester
+     * @param {String} sUsergroupNameX The Name of the Usergroup in the language of the requester
+     */
+    setSUsergroupNameX(sUsergroupNameX) {
+        this['sUsergroupNameX'] = sUsergroupNameX;
+    }
 
 }
 
@@ -132,6 +154,12 @@ UsergroupResponseCompound.prototype['pkiUsergroupID'] = undefined;
  */
 UsergroupResponseCompound.prototype['objUsergroupName'] = undefined;
 
+/**
+ * The Name of the Usergroup in the language of the requester
+ * @member {String} sUsergroupNameX
+ */
+UsergroupResponseCompound.prototype['sUsergroupNameX'] = undefined;
+
 
 // Implement UsergroupResponse interface:
 /**
@@ -143,6 +171,11 @@ UsergroupResponse.prototype['pkiUsergroupID'] = undefined;
  * @member {module:eZmaxAPI/model/MultilingualUsergroupName} objUsergroupName
  */
 UsergroupResponse.prototype['objUsergroupName'] = undefined;
+/**
+ * The Name of the Usergroup in the language of the requester
+ * @member {String} sUsergroupNameX
+ */
+UsergroupResponse.prototype['sUsergroupNameX'] = undefined;
 
 
 

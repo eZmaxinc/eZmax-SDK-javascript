@@ -16,7 +16,8 @@ import CommonAudit from './CommonAudit';
 import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
-import WebhookResponse from './WebhookResponse';
+import WebhookResponseCompound from './WebhookResponseCompound';
+import WebhookheaderResponseCompound from './WebhookheaderResponseCompound';
 
 /**
  * The CustomWebhookResponse model module.
@@ -28,7 +29,7 @@ class CustomWebhookResponse {
      * Constructs a new <code>CustomWebhookResponse</code>.
      * A custom Webhook object
      * @alias module:eZmaxAPI/model/CustomWebhookResponse
-     * @implements module:eZmaxAPI/model/WebhookResponse
+     * @implements module:eZmaxAPI/model/WebhookResponseCompound
      * @param pkiWebhookID {Number} The unique ID of the Webhook
      * @param sWebhookDescription {String} The description of the Webhook
      * @param eWebhookModule {module:eZmaxAPI/model/FieldEWebhookModule} 
@@ -42,7 +43,7 @@ class CustomWebhookResponse {
      * @param bWebhookTest {Boolean} Wheter the webhook received is a manual test or a real event
      */
     constructor(pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit, pksCustomerCode, bWebhookTest) { 
-        WebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
+        WebhookResponseCompound.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit);
         CustomWebhookResponse.initialize(this, pkiWebhookID, sWebhookDescription, eWebhookModule, sWebhookUrl, sWebhookEmailfailed, bWebhookIsactive, bWebhookIssigned, bWebhookSkipsslvalidation, objAudit, pksCustomerCode, bWebhookTest);
     }
 
@@ -75,7 +76,7 @@ class CustomWebhookResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomWebhookResponse();
-            WebhookResponse.constructFromObject(data, obj);
+            WebhookResponseCompound.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('pkiWebhookID')) {
                 obj['pkiWebhookID'] = ApiClient.convertToType(data['pkiWebhookID'], 'Number');
@@ -122,6 +123,12 @@ class CustomWebhookResponse {
             if (data.hasOwnProperty('objAudit')) {
                 obj['objAudit'] = CommonAudit.constructFromObject(data['objAudit']);
             }
+            if (data.hasOwnProperty('sWebhookEvent')) {
+                obj['sWebhookEvent'] = ApiClient.convertToType(data['sWebhookEvent'], 'String');
+            }
+            if (data.hasOwnProperty('a_objWebhookheader')) {
+                obj['a_objWebhookheader'] = ApiClient.convertToType(data['a_objWebhookheader'], [WebhookheaderResponseCompound]);
+            }
             if (data.hasOwnProperty('pksCustomerCode')) {
                 obj['pksCustomerCode'] = ApiClient.convertToType(data['pksCustomerCode'], 'String');
             }
@@ -140,7 +147,7 @@ class CustomWebhookResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of CustomWebhookResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -171,6 +178,20 @@ class CustomWebhookResponse {
         // validate the optional field `objAudit`
         if (data['objAudit']) { // data not null
           CommonAudit.validateJSON(data['objAudit']);
+        }
+        // ensure the json data is a string
+        if (data['sWebhookEvent'] && !(typeof data['sWebhookEvent'] === 'string' || data['sWebhookEvent'] instanceof String)) {
+            throw new Error("Expected the field `sWebhookEvent` to be a primitive type in the JSON string but got " + data['sWebhookEvent']);
+        }
+        if (data['a_objWebhookheader']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objWebhookheader'])) {
+                throw new Error("Expected the field `a_objWebhookheader` to be an array in the JSON data but got " + data['a_objWebhookheader']);
+            }
+            // validate the optional field `a_objWebhookheader` (array)
+            for (const item of data['a_objWebhookheader']) {
+                WebhookheaderResponseCompound.validateJSON(item);
+            };
         }
         // ensure the json data is a string
         if (data['pksCustomerCode'] && !(typeof data['pksCustomerCode'] === 'string' || data['pksCustomerCode'] instanceof String)) {
@@ -213,6 +234,7 @@ class CustomWebhookResponse {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -399,6 +421,34 @@ class CustomWebhookResponse {
         this['objAudit'] = objAudit;
     }
 /**
+     * Returns The concatenated string to describe the Webhook event
+     * @return {String}
+     */
+    getSWebhookEvent() {
+        return this.sWebhookEvent;
+    }
+
+    /**
+     * Sets The concatenated string to describe the Webhook event
+     * @param {String} sWebhookEvent The concatenated string to describe the Webhook event
+     */
+    setSWebhookEvent(sWebhookEvent) {
+        this['sWebhookEvent'] = sWebhookEvent;
+    }
+/**
+     * @return {Array.<module:eZmaxAPI/model/WebhookheaderResponseCompound>}
+     */
+    getAObjWebhookheader() {
+        return this.a_objWebhookheader;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/WebhookheaderResponseCompound>} a_objWebhookheader
+     */
+    setAObjWebhookheader(a_objWebhookheader) {
+        this['a_objWebhookheader'] = a_objWebhookheader;
+    }
+/**
      * Returns The customer code assigned to your account
      * @return {String}
      */
@@ -520,6 +570,17 @@ CustomWebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
 CustomWebhookResponse.prototype['objAudit'] = undefined;
 
 /**
+ * The concatenated string to describe the Webhook event
+ * @member {String} sWebhookEvent
+ */
+CustomWebhookResponse.prototype['sWebhookEvent'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/WebhookheaderResponseCompound>} a_objWebhookheader
+ */
+CustomWebhookResponse.prototype['a_objWebhookheader'] = undefined;
+
+/**
  * The customer code assigned to your account
  * @member {String} pksCustomerCode
  */
@@ -532,78 +593,87 @@ CustomWebhookResponse.prototype['pksCustomerCode'] = undefined;
 CustomWebhookResponse.prototype['bWebhookTest'] = undefined;
 
 
-// Implement WebhookResponse interface:
+// Implement WebhookResponseCompound interface:
 /**
  * The unique ID of the Webhook
  * @member {Number} pkiWebhookID
  */
-WebhookResponse.prototype['pkiWebhookID'] = undefined;
+WebhookResponseCompound.prototype['pkiWebhookID'] = undefined;
 /**
  * The description of the Webhook
  * @member {String} sWebhookDescription
  */
-WebhookResponse.prototype['sWebhookDescription'] = undefined;
+WebhookResponseCompound.prototype['sWebhookDescription'] = undefined;
 /**
  * The unique ID of the Ezsignfoldertype.
  * @member {Number} fkiEzsignfoldertypeID
  */
-WebhookResponse.prototype['fkiEzsignfoldertypeID'] = undefined;
+WebhookResponseCompound.prototype['fkiEzsignfoldertypeID'] = undefined;
 /**
  * The name of the Ezsignfoldertype in the language of the requester
  * @member {String} sEzsignfoldertypeNameX
  */
-WebhookResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
+WebhookResponseCompound.prototype['sEzsignfoldertypeNameX'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEWebhookModule} eWebhookModule
  */
-WebhookResponse.prototype['eWebhookModule'] = undefined;
+WebhookResponseCompound.prototype['eWebhookModule'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEWebhookEzsignevent} eWebhookEzsignevent
  */
-WebhookResponse.prototype['eWebhookEzsignevent'] = undefined;
+WebhookResponseCompound.prototype['eWebhookEzsignevent'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEWebhookManagementevent} eWebhookManagementevent
  */
-WebhookResponse.prototype['eWebhookManagementevent'] = undefined;
+WebhookResponseCompound.prototype['eWebhookManagementevent'] = undefined;
 /**
  * The URL of the Webhook callback
  * @member {String} sWebhookUrl
  */
-WebhookResponse.prototype['sWebhookUrl'] = undefined;
+WebhookResponseCompound.prototype['sWebhookUrl'] = undefined;
 /**
  * The email that will receive the Webhook in case all attempts fail
  * @member {String} sWebhookEmailfailed
  */
-WebhookResponse.prototype['sWebhookEmailfailed'] = undefined;
+WebhookResponseCompound.prototype['sWebhookEmailfailed'] = undefined;
 /**
  * The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
  * @member {String} sWebhookApikey
  */
-WebhookResponse.prototype['sWebhookApikey'] = undefined;
+WebhookResponseCompound.prototype['sWebhookApikey'] = undefined;
 /**
  * The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
  * @member {String} sWebhookSecret
  */
-WebhookResponse.prototype['sWebhookSecret'] = undefined;
+WebhookResponseCompound.prototype['sWebhookSecret'] = undefined;
 /**
  * Whether the Webhook is active or not
  * @member {Boolean} bWebhookIsactive
  */
-WebhookResponse.prototype['bWebhookIsactive'] = undefined;
+WebhookResponseCompound.prototype['bWebhookIsactive'] = undefined;
 /**
  * Whether the requests will be signed or not
  * @member {Boolean} bWebhookIssigned
  */
-WebhookResponse.prototype['bWebhookIssigned'] = undefined;
+WebhookResponseCompound.prototype['bWebhookIssigned'] = undefined;
 /**
  * Wheter the server's SSL certificate should be validated or not. Not recommended to skip for production use
  * @member {Boolean} bWebhookSkipsslvalidation
  */
-WebhookResponse.prototype['bWebhookSkipsslvalidation'] = undefined;
+WebhookResponseCompound.prototype['bWebhookSkipsslvalidation'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/CommonAudit} objAudit
  */
-WebhookResponse.prototype['objAudit'] = undefined;
+WebhookResponseCompound.prototype['objAudit'] = undefined;
+/**
+ * The concatenated string to describe the Webhook event
+ * @member {String} sWebhookEvent
+ */
+WebhookResponseCompound.prototype['sWebhookEvent'] = undefined;
+/**
+ * @member {Array.<module:eZmaxAPI/model/WebhookheaderResponseCompound>} a_objWebhookheader
+ */
+WebhookResponseCompound.prototype['a_objWebhookheader'] = undefined;
 
 
 

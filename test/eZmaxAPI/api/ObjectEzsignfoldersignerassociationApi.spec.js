@@ -48,6 +48,16 @@
   }
 
   describe('ObjectEzsignfoldersignerassociationApi', function() {
+    describe('ezsignfoldersignerassociationCreateEmbeddedUrlV1', function() {
+      it('should call ezsignfoldersignerassociationCreateEmbeddedUrlV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfoldersignerassociationCreateEmbeddedUrlV1
+        //instance.ezsignfoldersignerassociationCreateEmbeddedUrlV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfoldersignerassociationCreateObjectV1', function() {
       it('should call ezsignfoldersignerassociationCreateObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfoldersignerassociationCreateObjectV1

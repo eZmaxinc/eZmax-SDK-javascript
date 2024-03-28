@@ -128,6 +128,16 @@
         done();
       });
     });
+    describe('ezsignfolderEndPrematurelyV1', function() {
+      it('should call ezsignfolderEndPrematurelyV1 successfully', function(done) {
+        //uncomment below and update the code to test ezsignfolderEndPrematurelyV1
+        //instance.ezsignfolderEndPrematurelyV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsignfolderGetActionableElementsV1', function() {
       it('should call ezsignfolderGetActionableElementsV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderGetActionableElementsV1
@@ -302,16 +312,6 @@
       it('should call ezsignfolderSendV1 successfully', function(done) {
         //uncomment below and update the code to test ezsignfolderSendV1
         //instance.ezsignfolderSendV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('ezsignfolderSendV2', function() {
-      it('should call ezsignfolderSendV2 successfully', function(done) {
-        //uncomment below and update the code to test ezsignfolderSendV2
-        //instance.ezsignfolderSendV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

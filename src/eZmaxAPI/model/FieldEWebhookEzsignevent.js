@@ -27,6 +27,20 @@ export default class FieldEWebhookEzsignevent {
 
     
         /**
+         * value: "DocumentFormCompleted"
+         * @const
+         */
+        "DocumentFormCompleted" = "DocumentFormCompleted";
+
+    
+        /**
+         * value: "DocumentUnsent"
+         * @const
+         */
+        "DocumentUnsent" = "DocumentUnsent";
+
+    
+        /**
          * value: "EzsignsignerAcceptclause"
          * @const
          */
@@ -45,6 +59,34 @@ export default class FieldEWebhookEzsignevent {
          * @const
          */
         "FolderCompleted" = "FolderCompleted";
+
+    
+        /**
+         * value: "FolderDisposed"
+         * @const
+         */
+        "FolderDisposed" = "FolderDisposed";
+
+    
+        /**
+         * value: "FolderSent"
+         * @const
+         */
+        "FolderSent" = "FolderSent";
+
+    
+        /**
+         * value: "FolderUnsent"
+         * @const
+         */
+        "FolderUnsent" = "FolderUnsent";
+
+    
+        /**
+         * value: "SignatureSigned"
+         * @const
+         */
+        "SignatureSigned" = "SignatureSigned";
 
     
 

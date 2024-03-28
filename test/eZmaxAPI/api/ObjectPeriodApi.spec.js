@@ -48,16 +48,6 @@
   }
 
   describe('ObjectPeriodApi', function() {
-    describe('periodGetAutocompleteV1', function() {
-      it('should call periodGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test periodGetAutocompleteV1
-        //instance.periodGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('periodGetAutocompleteV2', function() {
       it('should call periodGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test periodGetAutocompleteV2

@@ -20,6 +20,13 @@ import ApiClient from '../ApiClient';
 export default class FieldEUserEzsignprepaid {
     
         /**
+         * value: "No"
+         * @const
+         */
+        "No" = "No";
+
+    
+        /**
          * value: "Basic"
          * @const
          */
@@ -27,10 +34,10 @@ export default class FieldEUserEzsignprepaid {
 
     
         /**
-         * value: "Unlimited"
+         * value: "Standard"
          * @const
          */
-        "Unlimited" = "Unlimited";
+        "Standard" = "Standard";
 
     
         /**

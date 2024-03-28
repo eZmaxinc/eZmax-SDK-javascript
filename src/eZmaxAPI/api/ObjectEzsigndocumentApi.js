@@ -20,6 +20,8 @@ import EzsigndocumentApplyEzsigntemplateV1Request from '../model/EzsigndocumentA
 import EzsigndocumentApplyEzsigntemplateV1Response from '../model/EzsigndocumentApplyEzsigntemplateV1Response';
 import EzsigndocumentApplyEzsigntemplateV2Request from '../model/EzsigndocumentApplyEzsigntemplateV2Request';
 import EzsigndocumentApplyEzsigntemplateV2Response from '../model/EzsigndocumentApplyEzsigntemplateV2Response';
+import EzsigndocumentApplyEzsigntemplateglobalV1Request from '../model/EzsigndocumentApplyEzsigntemplateglobalV1Request';
+import EzsigndocumentApplyEzsigntemplateglobalV1Response from '../model/EzsigndocumentApplyEzsigntemplateglobalV1Response';
 import EzsigndocumentCreateEzsignelementsPositionedByWordV1Request from '../model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Request';
 import EzsigndocumentCreateEzsignelementsPositionedByWordV1Response from '../model/EzsigndocumentCreateEzsignelementsPositionedByWordV1Response';
 import EzsigndocumentCreateObjectV1Request from '../model/EzsigndocumentCreateObjectV1Request';
@@ -167,6 +169,54 @@ export default class ObjectEzsigndocumentApi {
       let returnType = EzsigndocumentApplyEzsigntemplateV2Response;
       return this.apiClient.callApi(
         '/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigndocumentApplyEzsigntemplateglobalV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentApplyEzsigntemplateglobalV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateglobalV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Apply an Ezsigntemplateglobal to the Ezsigndocument.
+     * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+     * @param {Number} pkiEzsigndocumentID 
+     * @param {module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateglobalV1Request} EzsigndocumentApplyEzsigntemplateglobalV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigndocumentApi~ezsigndocumentApplyEzsigntemplateglobalV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigndocumentApplyEzsigntemplateglobalV1Response}
+     */
+    ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, EzsigndocumentApplyEzsigntemplateglobalV1Request, callback) {
+      let postBody = EzsigndocumentApplyEzsigntemplateglobalV1Request;
+      // verify the required parameter 'pkiEzsigndocumentID' is set
+      if (pkiEzsigndocumentID === undefined || pkiEzsigndocumentID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigndocumentID' when calling ezsigndocumentApplyEzsigntemplateglobalV1");
+      }
+      // verify the required parameter 'EzsigndocumentApplyEzsigntemplateglobalV1Request' is set
+      if (EzsigndocumentApplyEzsigntemplateglobalV1Request === undefined || EzsigndocumentApplyEzsigntemplateglobalV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsigndocumentApplyEzsigntemplateglobalV1Request' when calling ezsigndocumentApplyEzsigntemplateglobalV1");
+      }
+
+      let pathParams = {
+        'pkiEzsigndocumentID': pkiEzsigndocumentID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigndocumentApplyEzsigntemplateglobalV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

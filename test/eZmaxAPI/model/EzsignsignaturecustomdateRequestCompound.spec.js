@@ -72,6 +72,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property iEzsignsignaturecustomdateOffsetx (base name: "iEzsignsignaturecustomdateOffsetx")', function() {
+      // uncomment below and update the code to test the property iEzsignsignaturecustomdateOffsetx
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iEzsignsignaturecustomdateOffsety (base name: "iEzsignsignaturecustomdateOffsety")', function() {
+      // uncomment below and update the code to test the property iEzsignsignaturecustomdateOffsety
+      //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sEzsignsignaturecustomdateFormat (base name: "sEzsignsignaturecustomdateFormat")', function() {
       // uncomment below and update the code to test the property sEzsignsignaturecustomdateFormat
       //var instance = new EZmaxApiDefinitionFull.EzsignsignaturecustomdateRequestCompound();

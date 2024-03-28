@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **sEzsigntemplatedocumentBase64** | **Blob** | The Base64 encoded binary content of the document.  This field is Required when eEzsigntemplatedocumentSource &#x3D; Base64. | [optional] 
 **sEzsigntemplatedocumentUrl** | **String** | The url where the document content resides.  This field is Required when eEzsigntemplatedocumentSource &#x3D; Url. | [optional] 
 **bEzsigntemplatedocumentForcerepair** | **Boolean** | Try to repair the document or flatten it if it cannot be used for electronic signature. | [optional] 
-**eEzsigntemplatedocumentForm** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID** | [optional] 
+**eEzsigntemplatedocumentForm** | **String** | If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document | [optional] 
 **sEzsigntemplatedocumentPassword** | **String** | If the source template is password protected, the password to open/modify it. | [optional] [default to &#39;&#39;]
 
 
@@ -59,6 +59,8 @@ Name | Type | Description | Notes
 * `Keep` (value: `"Keep"`)
 
 * `Convert` (value: `"Convert"`)
+
+* `Discard` (value: `"Discard"`)
 
 
 

@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eSystemconfigurationEzsignofficeplan (base name: "eSystemconfigurationEzsignofficeplan")', function() {
+      // uncomment below and update the code to test the property eSystemconfigurationEzsignofficeplan
+      //var instance = new EZmaxApiDefinitionFull.SystemconfigurationRequestCompound();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property bSystemconfigurationEzsignpaidbyoffice (base name: "bSystemconfigurationEzsignpaidbyoffice")', function() {
+      // uncomment below and update the code to test the property bSystemconfigurationEzsignpaidbyoffice
+      //var instance = new EZmaxApiDefinitionFull.SystemconfigurationRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bSystemconfigurationEzsignpersonnal (base name: "bSystemconfigurationEzsignpersonnal")', function() {
       // uncomment below and update the code to test the property bSystemconfigurationEzsignpersonnal
       //var instance = new EZmaxApiDefinitionFull.SystemconfigurationRequestCompound();

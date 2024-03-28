@@ -82,7 +82,7 @@ class EzsigntemplatesignaturecustomdateResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplatesignaturecustomdateResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -144,7 +144,6 @@ class EzsigntemplatesignaturecustomdateResponse {
     }
 /**
      * Returns The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the left of the signature, you would use \"200\" for the X coordinate.
-     * minimum: 0
      * @return {Number}
      */
     getIEzsigntemplatesignaturecustomdateOffsetx() {
@@ -160,7 +159,6 @@ class EzsigntemplatesignaturecustomdateResponse {
     }
 /**
      * Returns The X coordinate (Horizontal) where to put the Ezsigntemplatesignaturecustomdate on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignaturecustomdate 2 inches from the top of the signature, you would use \"200\" for the Y coordinate.
-     * minimum: 0
      * @return {Number}
      */
     getIEzsigntemplatesignaturecustomdateOffsety() {

@@ -14,6 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import CommonResponseError from '../model/CommonResponseError';
+import EzsignfoldersignerassociationCreateEmbeddedUrlV1Request from '../model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Request';
+import EzsignfoldersignerassociationCreateEmbeddedUrlV1Response from '../model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response';
 import EzsignfoldersignerassociationCreateObjectV1Request from '../model/EzsignfoldersignerassociationCreateObjectV1Request';
 import EzsignfoldersignerassociationCreateObjectV1Response from '../model/EzsignfoldersignerassociationCreateObjectV1Response';
 import EzsignfoldersignerassociationCreateObjectV2Request from '../model/EzsignfoldersignerassociationCreateObjectV2Request';
@@ -46,6 +48,54 @@ export default class ObjectEzsignfoldersignerassociationApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the ezsignfoldersignerassociationCreateEmbeddedUrlV1 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationCreateEmbeddedUrlV1Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates an Url to allow embedded signing
+     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+     * @param {Number} pkiEzsignfoldersignerassociationID 
+     * @param {module:eZmaxAPI/model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} EzsignfoldersignerassociationCreateEmbeddedUrlV1Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldersignerassociationApi~ezsignfoldersignerassociationCreateEmbeddedUrlV1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response}
+     */
+    ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, callback) {
+      let postBody = EzsignfoldersignerassociationCreateEmbeddedUrlV1Request;
+      // verify the required parameter 'pkiEzsignfoldersignerassociationID' is set
+      if (pkiEzsignfoldersignerassociationID === undefined || pkiEzsignfoldersignerassociationID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfoldersignerassociationID' when calling ezsignfoldersignerassociationCreateEmbeddedUrlV1");
+      }
+      // verify the required parameter 'EzsignfoldersignerassociationCreateEmbeddedUrlV1Request' is set
+      if (EzsignfoldersignerassociationCreateEmbeddedUrlV1Request === undefined || EzsignfoldersignerassociationCreateEmbeddedUrlV1Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfoldersignerassociationCreateEmbeddedUrlV1Request' when calling ezsignfoldersignerassociationCreateEmbeddedUrlV1");
+      }
+
+      let pathParams = {
+        'pkiEzsignfoldersignerassociationID': pkiEzsignfoldersignerassociationID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsignfoldersignerassociationCreateEmbeddedUrlV1Response;
+      return this.apiClient.callApi(
+        '/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the ezsignfoldersignerassociationCreateObjectV1 operation.

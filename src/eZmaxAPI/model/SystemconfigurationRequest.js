@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import FieldESystemconfigurationEzsign from './FieldESystemconfigurationEzsign';
+import FieldESystemconfigurationEzsignofficeplan from './FieldESystemconfigurationEzsignofficeplan';
 import FieldESystemconfigurationLanguage1 from './FieldESystemconfigurationLanguage1';
 import FieldESystemconfigurationLanguage2 from './FieldESystemconfigurationLanguage2';
 import FieldESystemconfigurationNewexternaluseraction from './FieldESystemconfigurationNewexternaluseraction';
@@ -77,6 +78,12 @@ class SystemconfigurationRequest {
             if (data.hasOwnProperty('eSystemconfigurationEzsign')) {
                 obj['eSystemconfigurationEzsign'] = FieldESystemconfigurationEzsign.constructFromObject(data['eSystemconfigurationEzsign']);
             }
+            if (data.hasOwnProperty('eSystemconfigurationEzsignofficeplan')) {
+                obj['eSystemconfigurationEzsignofficeplan'] = FieldESystemconfigurationEzsignofficeplan.constructFromObject(data['eSystemconfigurationEzsignofficeplan']);
+            }
+            if (data.hasOwnProperty('bSystemconfigurationEzsignpaidbyoffice')) {
+                obj['bSystemconfigurationEzsignpaidbyoffice'] = ApiClient.convertToType(data['bSystemconfigurationEzsignpaidbyoffice'], 'Boolean');
+            }
             if (data.hasOwnProperty('bSystemconfigurationEzsignpersonnal')) {
                 obj['bSystemconfigurationEzsignpersonnal'] = ApiClient.convertToType(data['bSystemconfigurationEzsignpersonnal'], 'Boolean');
             }
@@ -101,7 +108,7 @@ class SystemconfigurationRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of SystemconfigurationRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -185,6 +192,34 @@ class SystemconfigurationRequest {
      */
     setESystemconfigurationEzsign(eSystemconfigurationEzsign) {
         this['eSystemconfigurationEzsign'] = eSystemconfigurationEzsign;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan}
+     */
+    getESystemconfigurationEzsignofficeplan() {
+        return this.eSystemconfigurationEzsignofficeplan;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+     */
+    setESystemconfigurationEzsignofficeplan(eSystemconfigurationEzsignofficeplan) {
+        this['eSystemconfigurationEzsignofficeplan'] = eSystemconfigurationEzsignofficeplan;
+    }
+/**
+     * Returns Whether if Ezsign is paid by the company or not
+     * @return {Boolean}
+     */
+    getBSystemconfigurationEzsignpaidbyoffice() {
+        return this.bSystemconfigurationEzsignpaidbyoffice;
+    }
+
+    /**
+     * Sets Whether if Ezsign is paid by the company or not
+     * @param {Boolean} bSystemconfigurationEzsignpaidbyoffice Whether if Ezsign is paid by the company or not
+     */
+    setBSystemconfigurationEzsignpaidbyoffice(bSystemconfigurationEzsignpaidbyoffice) {
+        this['bSystemconfigurationEzsignpaidbyoffice'] = bSystemconfigurationEzsignpaidbyoffice;
     }
 /**
      * Returns Whether if we allow the creation of personal files in eZsign
@@ -276,6 +311,17 @@ SystemconfigurationRequest.prototype['eSystemconfigurationLanguage2'] = undefine
  * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsign} eSystemconfigurationEzsign
  */
 SystemconfigurationRequest.prototype['eSystemconfigurationEzsign'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+ */
+SystemconfigurationRequest.prototype['eSystemconfigurationEzsignofficeplan'] = undefined;
+
+/**
+ * Whether if Ezsign is paid by the company or not
+ * @member {Boolean} bSystemconfigurationEzsignpaidbyoffice
+ */
+SystemconfigurationRequest.prototype['bSystemconfigurationEzsignpaidbyoffice'] = undefined;
 
 /**
  * Whether if we allow the creation of personal files in eZsign

@@ -118,7 +118,7 @@ class EzsigndocumentRequestCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigndocumentRequestCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -330,7 +330,7 @@ class EzsigndocumentRequestCompound {
         this['sEzsigndocumentPassword'] = sEzsigndocumentPassword;
     }
 /**
-     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
      * @return {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentFormEnum}
      */
     getEEzsigndocumentForm() {
@@ -338,8 +338,8 @@ class EzsigndocumentRequestCompound {
     }
 
     /**
-     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
-     * @param {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentFormEnum} eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
+     * @param {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentFormEnum} eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
      */
     setEEzsigndocumentForm(eEzsigndocumentForm) {
         this['eEzsigndocumentForm'] = eEzsigndocumentForm;
@@ -462,7 +462,7 @@ EzsigndocumentRequestCompound.prototype['bEzsigndocumentForcerepair'] = true;
 EzsigndocumentRequestCompound.prototype['sEzsigndocumentPassword'] = undefined;
 
 /**
- * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+ * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
  * @member {module:eZmaxAPI/model/EzsigndocumentRequestCompound.EEzsigndocumentFormEnum} eEzsigndocumentForm
  */
 EzsigndocumentRequestCompound.prototype['eEzsigndocumentForm'] = undefined;
@@ -544,7 +544,7 @@ EzsigndocumentRequest.prototype['bEzsigndocumentForcerepair'] = true;
  */
 EzsigndocumentRequest.prototype['sEzsigndocumentPassword'] = undefined;
 /**
- * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+ * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
  * @member {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm
  */
 EzsigndocumentRequest.prototype['eEzsigndocumentForm'] = undefined;
@@ -661,7 +661,13 @@ EzsigndocumentRequestCompound['EEzsigndocumentFormEnum'] = {
      * value: "Convert"
      * @const
      */
-    "Convert": "Convert"
+    "Convert": "Convert",
+
+    /**
+     * value: "Discard"
+     * @const
+     */
+    "Discard": "Discard"
 };
 
 

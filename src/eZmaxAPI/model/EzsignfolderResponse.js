@@ -29,11 +29,12 @@ class EzsignfolderResponse {
      * An Ezsignfolder Object
      * @alias module:eZmaxAPI/model/EzsignfolderResponse
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
+     * @param eEzsignfolderCompletion {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} 
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      */
-    constructor(pkiEzsignfolderID, sEzsignfolderDescription) { 
+    constructor(pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription) { 
         
-        EzsignfolderResponse.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription);
+        EzsignfolderResponse.initialize(this, pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription);
     }
 
     /**
@@ -41,8 +42,9 @@ class EzsignfolderResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, sEzsignfolderDescription) { 
+    static initialize(obj, pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
+        obj['eEzsignfolderCompletion'] = eEzsignfolderCompletion;
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
     }
 
@@ -138,7 +140,7 @@ class EzsignfolderResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignfolderResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -225,6 +227,7 @@ class EzsignfolderResponse {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -547,7 +550,7 @@ class EzsignfolderResponse {
 
 }
 
-EzsignfolderResponse.RequiredProperties = ["pkiEzsignfolderID", "sEzsignfolderDescription"];
+EzsignfolderResponse.RequiredProperties = ["pkiEzsignfolderID", "eEzsignfolderCompletion", "sEzsignfolderDescription"];
 
 /**
  * The unique ID of the Ezsignfolder

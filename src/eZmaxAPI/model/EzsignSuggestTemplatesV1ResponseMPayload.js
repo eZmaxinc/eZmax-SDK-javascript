@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import EzsigntemplateResponseCompound from './EzsigntemplateResponseCompound';
+import EzsigntemplateglobalResponseCompound from './EzsigntemplateglobalResponseCompound';
 import EzsigntemplatepackageResponseCompound from './EzsigntemplatepackageResponseCompound';
 
 /**
@@ -27,10 +28,11 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
      * @alias module:eZmaxAPI/model/EzsignSuggestTemplatesV1ResponseMPayload
      * @param a_objEzsigntemplate {Array.<module:eZmaxAPI/model/EzsigntemplateResponseCompound>} 
      * @param a_objEzsigntemplatepackage {Array.<module:eZmaxAPI/model/EzsigntemplatepackageResponseCompound>} 
+     * @param a_objEzsigntemplateglobal {Array.<module:eZmaxAPI/model/EzsigntemplateglobalResponseCompound>} 
      */
-    constructor(a_objEzsigntemplate, a_objEzsigntemplatepackage) { 
+    constructor(a_objEzsigntemplate, a_objEzsigntemplatepackage, a_objEzsigntemplateglobal) { 
         
-        EzsignSuggestTemplatesV1ResponseMPayload.initialize(this, a_objEzsigntemplate, a_objEzsigntemplatepackage);
+        EzsignSuggestTemplatesV1ResponseMPayload.initialize(this, a_objEzsigntemplate, a_objEzsigntemplatepackage, a_objEzsigntemplateglobal);
     }
 
     /**
@@ -38,9 +40,10 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, a_objEzsigntemplate, a_objEzsigntemplatepackage) { 
+    static initialize(obj, a_objEzsigntemplate, a_objEzsigntemplatepackage, a_objEzsigntemplateglobal) { 
         obj['a_objEzsigntemplate'] = a_objEzsigntemplate;
         obj['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
+        obj['a_objEzsigntemplateglobal'] = a_objEzsigntemplateglobal;
     }
 
     /**
@@ -60,6 +63,9 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
             if (data.hasOwnProperty('a_objEzsigntemplatepackage')) {
                 obj['a_objEzsigntemplatepackage'] = ApiClient.convertToType(data['a_objEzsigntemplatepackage'], [EzsigntemplatepackageResponseCompound]);
             }
+            if (data.hasOwnProperty('a_objEzsigntemplateglobal')) {
+                obj['a_objEzsigntemplateglobal'] = ApiClient.convertToType(data['a_objEzsigntemplateglobal'], [EzsigntemplateglobalResponseCompound]);
+            }
         }
         return obj;
     }
@@ -72,7 +78,7 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignSuggestTemplatesV1ResponseMPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -94,6 +100,16 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
             // validate the optional field `a_objEzsigntemplatepackage` (array)
             for (const item of data['a_objEzsigntemplatepackage']) {
                 EzsigntemplatepackageResponseCompound.validateJSON(item);
+            };
+        }
+        if (data['a_objEzsigntemplateglobal']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objEzsigntemplateglobal'])) {
+                throw new Error("Expected the field `a_objEzsigntemplateglobal` to be an array in the JSON data but got " + data['a_objEzsigntemplateglobal']);
+            }
+            // validate the optional field `a_objEzsigntemplateglobal` (array)
+            for (const item of data['a_objEzsigntemplateglobal']) {
+                EzsigntemplateglobalResponseCompound.validateJSON(item);
             };
         }
 
@@ -126,10 +142,23 @@ class EzsignSuggestTemplatesV1ResponseMPayload {
     setAObjEzsigntemplatepackage(a_objEzsigntemplatepackage) {
         this['a_objEzsigntemplatepackage'] = a_objEzsigntemplatepackage;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/EzsigntemplateglobalResponseCompound>}
+     */
+    getAObjEzsigntemplateglobal() {
+        return this.a_objEzsigntemplateglobal;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/EzsigntemplateglobalResponseCompound>} a_objEzsigntemplateglobal
+     */
+    setAObjEzsigntemplateglobal(a_objEzsigntemplateglobal) {
+        this['a_objEzsigntemplateglobal'] = a_objEzsigntemplateglobal;
+    }
 
 }
 
-EzsignSuggestTemplatesV1ResponseMPayload.RequiredProperties = ["a_objEzsigntemplate", "a_objEzsigntemplatepackage"];
+EzsignSuggestTemplatesV1ResponseMPayload.RequiredProperties = ["a_objEzsigntemplate", "a_objEzsigntemplatepackage", "a_objEzsigntemplateglobal"];
 
 /**
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplateResponseCompound>} a_objEzsigntemplate
@@ -140,6 +169,11 @@ EzsignSuggestTemplatesV1ResponseMPayload.prototype['a_objEzsigntemplate'] = unde
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackageResponseCompound>} a_objEzsigntemplatepackage
  */
 EzsignSuggestTemplatesV1ResponseMPayload.prototype['a_objEzsigntemplatepackage'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/EzsigntemplateglobalResponseCompound>} a_objEzsigntemplateglobal
+ */
+EzsignSuggestTemplatesV1ResponseMPayload.prototype['a_objEzsigntemplateglobal'] = undefined;
 
 
 

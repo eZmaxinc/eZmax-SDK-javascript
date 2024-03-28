@@ -48,16 +48,6 @@
   }
 
   describe('ObjectFranchisereferalincomeApi', function() {
-    describe('franchisereferalincomeCreateObjectV1', function() {
-      it('should call franchisereferalincomeCreateObjectV1 successfully', function(done) {
-        //uncomment below and update the code to test franchisereferalincomeCreateObjectV1
-        //instance.franchisereferalincomeCreateObjectV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('franchisereferalincomeCreateObjectV2', function() {
       it('should call franchisereferalincomeCreateObjectV2 successfully', function(done) {
         //uncomment below and update the code to test franchisereferalincomeCreateObjectV2

@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bEzsigntemplatepackageEditallowed (base name: "bEzsigntemplatepackageEditallowed")', function() {
+      // uncomment below and update the code to test the property bEzsigntemplatepackageEditallowed
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplatepackageResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

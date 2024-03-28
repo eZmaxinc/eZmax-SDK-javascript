@@ -13,15 +13,17 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import CommonResponseError from '../model/CommonResponseError';
-import EzsignfoldertypeCreateObjectV1Request from '../model/EzsignfoldertypeCreateObjectV1Request';
-import EzsignfoldertypeCreateObjectV1Response from '../model/EzsignfoldertypeCreateObjectV1Response';
+import EzsignfoldertypeCreateObjectV2Request from '../model/EzsignfoldertypeCreateObjectV2Request';
+import EzsignfoldertypeCreateObjectV2Response from '../model/EzsignfoldertypeCreateObjectV2Response';
 import EzsignfoldertypeEditObjectV1Request from '../model/EzsignfoldertypeEditObjectV1Request';
 import EzsignfoldertypeEditObjectV1Response from '../model/EzsignfoldertypeEditObjectV1Response';
+import EzsignfoldertypeEditObjectV2Request from '../model/EzsignfoldertypeEditObjectV2Request';
+import EzsignfoldertypeEditObjectV2Response from '../model/EzsignfoldertypeEditObjectV2Response';
 import EzsignfoldertypeGetAutocompleteV2Response from '../model/EzsignfoldertypeGetAutocompleteV2Response';
 import EzsignfoldertypeGetListV1Response from '../model/EzsignfoldertypeGetListV1Response';
 import EzsignfoldertypeGetObjectV2Response from '../model/EzsignfoldertypeGetObjectV2Response';
+import EzsignfoldertypeGetObjectV3Response from '../model/EzsignfoldertypeGetObjectV3Response';
 import HeaderAcceptLanguage from '../model/HeaderAcceptLanguage';
 
 /**
@@ -44,25 +46,25 @@ export default class ObjectEzsignfoldertypeApi {
 
 
     /**
-     * Callback function to receive the result of the ezsignfoldertypeCreateObjectV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeCreateObjectV1Callback
+     * Callback function to receive the result of the ezsignfoldertypeCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeCreateObjectV2Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV1Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV2Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Create a new Ezsignfoldertype
      * The endpoint allows to create one or many elements at once.
-     * @param {module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV1Request} EzsignfoldertypeCreateObjectV1Request 
-     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeCreateObjectV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV1Response}
+     * @param {module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV2Request} EzsignfoldertypeCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeCreateObjectV2Response}
      */
-    ezsignfoldertypeCreateObjectV1(EzsignfoldertypeCreateObjectV1Request, callback) {
-      let postBody = EzsignfoldertypeCreateObjectV1Request;
-      // verify the required parameter 'EzsignfoldertypeCreateObjectV1Request' is set
-      if (EzsignfoldertypeCreateObjectV1Request === undefined || EzsignfoldertypeCreateObjectV1Request === null) {
-        throw new Error("Missing the required parameter 'EzsignfoldertypeCreateObjectV1Request' when calling ezsignfoldertypeCreateObjectV1");
+    ezsignfoldertypeCreateObjectV2(EzsignfoldertypeCreateObjectV2Request, callback) {
+      let postBody = EzsignfoldertypeCreateObjectV2Request;
+      // verify the required parameter 'EzsignfoldertypeCreateObjectV2Request' is set
+      if (EzsignfoldertypeCreateObjectV2Request === undefined || EzsignfoldertypeCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfoldertypeCreateObjectV2Request' when calling ezsignfoldertypeCreateObjectV2");
       }
 
       let pathParams = {
@@ -77,9 +79,9 @@ export default class ObjectEzsignfoldertypeApi {
       let authNames = ['Authorization'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = EzsignfoldertypeCreateObjectV1Response;
+      let returnType = EzsignfoldertypeCreateObjectV2Response;
       return this.apiClient.callApi(
-        '/1/object/ezsignfoldertype', 'POST',
+        '/2/object/ezsignfoldertype', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -134,51 +136,48 @@ export default class ObjectEzsignfoldertypeApi {
     }
 
     /**
-     * Callback function to receive the result of the ezsignfoldertypeGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetAutocompleteV1Callback
+     * Callback function to receive the result of the ezsignfoldertypeEditObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeEditObjectV2Callback
      * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
+     * @param {module:eZmaxAPI/model/EzsignfoldertypeEditObjectV2Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Retrieve Ezsignfoldertypes and IDs
-     * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Ezsignfoldertypes to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
-     * @param {String} [sQuery] Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
-     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
+     * Edit an existing Ezsignfoldertype
+     * 
+     * @param {Number} pkiEzsignfoldertypeID 
+     * @param {module:eZmaxAPI/model/EzsignfoldertypeEditObjectV2Request} EzsignfoldertypeEditObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeEditObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeEditObjectV2Response}
      */
-    ezsignfoldertypeGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling ezsignfoldertypeGetAutocompleteV1");
+    ezsignfoldertypeEditObjectV2(pkiEzsignfoldertypeID, EzsignfoldertypeEditObjectV2Request, callback) {
+      let postBody = EzsignfoldertypeEditObjectV2Request;
+      // verify the required parameter 'pkiEzsignfoldertypeID' is set
+      if (pkiEzsignfoldertypeID === undefined || pkiEzsignfoldertypeID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfoldertypeID' when calling ezsignfoldertypeEditObjectV2");
+      }
+      // verify the required parameter 'EzsignfoldertypeEditObjectV2Request' is set
+      if (EzsignfoldertypeEditObjectV2Request === undefined || EzsignfoldertypeEditObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsignfoldertypeEditObjectV2Request' when calling ezsignfoldertypeEditObjectV2");
       }
 
       let pathParams = {
-        'sSelector': sSelector
+        'pkiEzsignfoldertypeID': pkiEzsignfoldertypeID
       };
       let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
       };
       let headerParams = {
-        'Accept-Language': opts['Accept_Language']
       };
       let formParams = {
       };
 
       let authNames = ['Authorization'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
+      let returnType = EzsignfoldertypeEditObjectV2Response;
       return this.apiClient.callApi(
-        '/1/object/ezsignfoldertype/getAutocomplete/{sSelector}', 'GET',
+        '/2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -322,6 +321,49 @@ export default class ObjectEzsignfoldertypeApi {
       let returnType = EzsignfoldertypeGetObjectV2Response;
       return this.apiClient.callApi(
         '/2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsignfoldertypeGetObjectV3 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetObjectV3Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsignfoldertypeGetObjectV3Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve an existing Ezsignfoldertype
+     * 
+     * @param {Number} pkiEzsignfoldertypeID 
+     * @param {module:eZmaxAPI/api/ObjectEzsignfoldertypeApi~ezsignfoldertypeGetObjectV3Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsignfoldertypeGetObjectV3Response}
+     */
+    ezsignfoldertypeGetObjectV3(pkiEzsignfoldertypeID, callback) {
+      let postBody = null;
+      // verify the required parameter 'pkiEzsignfoldertypeID' is set
+      if (pkiEzsignfoldertypeID === undefined || pkiEzsignfoldertypeID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsignfoldertypeID' when calling ezsignfoldertypeGetObjectV3");
+      }
+
+      let pathParams = {
+        'pkiEzsignfoldertypeID': pkiEzsignfoldertypeID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EzsignfoldertypeGetObjectV3Response;
+      return this.apiClient.callApi(
+        '/3/object/ezsignfoldertype/{pkiEzsignfoldertypeID}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

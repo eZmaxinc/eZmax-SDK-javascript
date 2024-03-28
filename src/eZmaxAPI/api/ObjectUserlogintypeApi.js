@@ -48,6 +48,7 @@ export default class ObjectUserlogintypeApi {
      * Get the list of Userlogintype to be used in a dropdown or autocomplete control.
      * @param {module:eZmaxAPI/model/String} sSelector The type of Userlogintypes to return
      * @param {Object} opts Optional parameters
+     * @param {Number} [fkiEzsignfoldertypeID] 
      * @param {module:eZmaxAPI/model/String} [eFilterActive = 'Active')] Specify which results we want to display.
      * @param {String} [sQuery] Allow to filter the returned results
      * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
@@ -66,6 +67,7 @@ export default class ObjectUserlogintypeApi {
         'sSelector': sSelector
       };
       let queryParams = {
+        'fkiEzsignfoldertypeID': opts['fkiEzsignfoldertypeID'],
         'eFilterActive': opts['eFilterActive'],
         'sQuery': opts['sQuery']
       };

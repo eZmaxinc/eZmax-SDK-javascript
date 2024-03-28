@@ -27,15 +27,11 @@ class UsergroupmembershipResponseCompound {
      * @implements module:eZmaxAPI/model/UsergroupmembershipResponse
      * @param pkiUsergroupmembershipID {Number} The unique ID of the Usergroupmembership
      * @param fkiUsergroupID {Number} The unique ID of the Usergroup
-     * @param fkiUserID {Number} The unique ID of the User
-     * @param sUserFirstname {String} The first name of the user
-     * @param sUserLastname {String} The last name of the user
-     * @param sUserLoginname {String} The login name of the User.
      * @param sUsergroupNameX {String} The Name of the Usergroup in the language of the requester
      */
-    constructor(pkiUsergroupmembershipID, fkiUsergroupID, fkiUserID, sUserFirstname, sUserLastname, sUserLoginname, sUsergroupNameX) { 
-        UsergroupmembershipResponse.initialize(this, pkiUsergroupmembershipID, fkiUsergroupID, fkiUserID, sUserFirstname, sUserLastname, sUserLoginname, sUsergroupNameX);
-        UsergroupmembershipResponseCompound.initialize(this, pkiUsergroupmembershipID, fkiUsergroupID, fkiUserID, sUserFirstname, sUserLastname, sUserLoginname, sUsergroupNameX);
+    constructor(pkiUsergroupmembershipID, fkiUsergroupID, sUsergroupNameX) { 
+        UsergroupmembershipResponse.initialize(this, pkiUsergroupmembershipID, fkiUsergroupID, sUsergroupNameX);
+        UsergroupmembershipResponseCompound.initialize(this, pkiUsergroupmembershipID, fkiUsergroupID, sUsergroupNameX);
     }
 
     /**
@@ -43,13 +39,9 @@ class UsergroupmembershipResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiUsergroupmembershipID, fkiUsergroupID, fkiUserID, sUserFirstname, sUserLastname, sUserLoginname, sUsergroupNameX) { 
+    static initialize(obj, pkiUsergroupmembershipID, fkiUsergroupID, sUsergroupNameX) { 
         obj['pkiUsergroupmembershipID'] = pkiUsergroupmembershipID;
         obj['fkiUsergroupID'] = fkiUsergroupID;
-        obj['fkiUserID'] = fkiUserID;
-        obj['sUserFirstname'] = sUserFirstname;
-        obj['sUserLastname'] = sUserLastname;
-        obj['sUserLoginname'] = sUserLoginname;
         obj['sUsergroupNameX'] = sUsergroupNameX;
     }
 
@@ -74,6 +66,9 @@ class UsergroupmembershipResponseCompound {
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiUsergroupexternalID')) {
+                obj['fkiUsergroupexternalID'] = ApiClient.convertToType(data['fkiUsergroupexternalID'], 'Number');
+            }
             if (data.hasOwnProperty('sUserFirstname')) {
                 obj['sUserFirstname'] = ApiClient.convertToType(data['sUserFirstname'], 'String');
             }
@@ -89,6 +84,9 @@ class UsergroupmembershipResponseCompound {
             if (data.hasOwnProperty('sUsergroupNameX')) {
                 obj['sUsergroupNameX'] = ApiClient.convertToType(data['sUsergroupNameX'], 'String');
             }
+            if (data.hasOwnProperty('sUsergroupexternalName')) {
+                obj['sUsergroupexternalName'] = ApiClient.convertToType(data['sUsergroupexternalName'], 'String');
+            }
         }
         return obj;
     }
@@ -101,7 +99,7 @@ class UsergroupmembershipResponseCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of UsergroupmembershipResponseCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -124,6 +122,10 @@ class UsergroupmembershipResponseCompound {
         // ensure the json data is a string
         if (data['sUsergroupNameX'] && !(typeof data['sUsergroupNameX'] === 'string' || data['sUsergroupNameX'] instanceof String)) {
             throw new Error("Expected the field `sUsergroupNameX` to be a primitive type in the JSON string but got " + data['sUsergroupNameX']);
+        }
+        // ensure the json data is a string
+        if (data['sUsergroupexternalName'] && !(typeof data['sUsergroupexternalName'] === 'string' || data['sUsergroupexternalName'] instanceof String)) {
+            throw new Error("Expected the field `sUsergroupexternalName` to be a primitive type in the JSON string but got " + data['sUsergroupexternalName']);
         }
 
         return true;
@@ -178,6 +180,23 @@ class UsergroupmembershipResponseCompound {
      */
     setFkiUserID(fkiUserID) {
         this['fkiUserID'] = fkiUserID;
+    }
+/**
+     * Returns The unique ID of the Usergroupexternal
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiUsergroupexternalID() {
+        return this.fkiUsergroupexternalID;
+    }
+
+    /**
+     * Sets The unique ID of the Usergroupexternal
+     * @param {Number} fkiUsergroupexternalID The unique ID of the Usergroupexternal
+     */
+    setFkiUsergroupexternalID(fkiUsergroupexternalID) {
+        this['fkiUsergroupexternalID'] = fkiUsergroupexternalID;
     }
 /**
      * Returns The first name of the user
@@ -254,10 +273,25 @@ class UsergroupmembershipResponseCompound {
     setSUsergroupNameX(sUsergroupNameX) {
         this['sUsergroupNameX'] = sUsergroupNameX;
     }
+/**
+     * Returns The name of the Usergroupexternal
+     * @return {String}
+     */
+    getSUsergroupexternalName() {
+        return this.sUsergroupexternalName;
+    }
+
+    /**
+     * Sets The name of the Usergroupexternal
+     * @param {String} sUsergroupexternalName The name of the Usergroupexternal
+     */
+    setSUsergroupexternalName(sUsergroupexternalName) {
+        this['sUsergroupexternalName'] = sUsergroupexternalName;
+    }
 
 }
 
-UsergroupmembershipResponseCompound.RequiredProperties = ["pkiUsergroupmembershipID", "fkiUsergroupID", "fkiUserID", "sUserFirstname", "sUserLastname", "sUserLoginname", "sUsergroupNameX"];
+UsergroupmembershipResponseCompound.RequiredProperties = ["pkiUsergroupmembershipID", "fkiUsergroupID", "sUsergroupNameX"];
 
 /**
  * The unique ID of the Usergroupmembership
@@ -276,6 +310,12 @@ UsergroupmembershipResponseCompound.prototype['fkiUsergroupID'] = undefined;
  * @member {Number} fkiUserID
  */
 UsergroupmembershipResponseCompound.prototype['fkiUserID'] = undefined;
+
+/**
+ * The unique ID of the Usergroupexternal
+ * @member {Number} fkiUsergroupexternalID
+ */
+UsergroupmembershipResponseCompound.prototype['fkiUsergroupexternalID'] = undefined;
 
 /**
  * The first name of the user
@@ -307,6 +347,12 @@ UsergroupmembershipResponseCompound.prototype['sEmailAddress'] = undefined;
  */
 UsergroupmembershipResponseCompound.prototype['sUsergroupNameX'] = undefined;
 
+/**
+ * The name of the Usergroupexternal
+ * @member {String} sUsergroupexternalName
+ */
+UsergroupmembershipResponseCompound.prototype['sUsergroupexternalName'] = undefined;
+
 
 // Implement UsergroupmembershipResponse interface:
 /**
@@ -324,6 +370,11 @@ UsergroupmembershipResponse.prototype['fkiUsergroupID'] = undefined;
  * @member {Number} fkiUserID
  */
 UsergroupmembershipResponse.prototype['fkiUserID'] = undefined;
+/**
+ * The unique ID of the Usergroupexternal
+ * @member {Number} fkiUsergroupexternalID
+ */
+UsergroupmembershipResponse.prototype['fkiUsergroupexternalID'] = undefined;
 /**
  * The first name of the user
  * @member {String} sUserFirstname
@@ -349,6 +400,11 @@ UsergroupmembershipResponse.prototype['sEmailAddress'] = undefined;
  * @member {String} sUsergroupNameX
  */
 UsergroupmembershipResponse.prototype['sUsergroupNameX'] = undefined;
+/**
+ * The name of the Usergroupexternal
+ * @member {String} sUsergroupexternalName
+ */
+UsergroupmembershipResponse.prototype['sUsergroupexternalName'] = undefined;
 
 
 

@@ -78,6 +78,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eBrandingLogointerface (base name: "eBrandingLogointerface")', function() {
+      // uncomment below and update the code to test the property eBrandingLogointerface
+      //var instance = new EZmaxApiDefinitionFull.BrandingRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sBrandingLogointerfaceBase64 (base name: "sBrandingLogointerfaceBase64")', function() {
+      // uncomment below and update the code to test the property sBrandingLogointerfaceBase64
+      //var instance = new EZmaxApiDefinitionFull.BrandingRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property iBrandingColortext (base name: "iBrandingColortext")', function() {
       // uncomment below and update the code to test the property iBrandingColortext
       //var instance = new EZmaxApiDefinitionFull.BrandingRequest();
@@ -110,6 +122,12 @@
 
     it('should have the property iBrandingColorbackgroundsmallbox (base name: "iBrandingColorbackgroundsmallbox")', function() {
       // uncomment below and update the code to test the property iBrandingColorbackgroundsmallbox
+      //var instance = new EZmaxApiDefinitionFull.BrandingRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property iBrandingInterfacecolor (base name: "iBrandingInterfacecolor")', function() {
+      // uncomment below and update the code to test the property iBrandingInterfacecolor
       //var instance = new EZmaxApiDefinitionFull.BrandingRequest();
       //expect(instance).to.be();
     });

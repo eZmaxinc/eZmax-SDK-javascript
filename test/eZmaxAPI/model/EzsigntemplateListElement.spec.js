@@ -108,6 +108,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eEzsigntemplateType (base name: "eEzsigntemplateType")', function() {
+      // uncomment below and update the code to test the property eEzsigntemplateType
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateListElement();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

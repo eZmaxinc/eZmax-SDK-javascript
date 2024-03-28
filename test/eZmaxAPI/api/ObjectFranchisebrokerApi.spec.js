@@ -48,16 +48,6 @@
   }
 
   describe('ObjectFranchisebrokerApi', function() {
-    describe('franchisebrokerGetAutocompleteV1', function() {
-      it('should call franchisebrokerGetAutocompleteV1 successfully', function(done) {
-        //uncomment below and update the code to test franchisebrokerGetAutocompleteV1
-        //instance.franchisebrokerGetAutocompleteV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('franchisebrokerGetAutocompleteV2', function() {
       it('should call franchisebrokerGetAutocompleteV2 successfully', function(done) {
         //uncomment below and update the code to test franchisebrokerGetAutocompleteV2

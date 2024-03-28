@@ -16,6 +16,7 @@ import FieldEWebhookEzsignevent from './FieldEWebhookEzsignevent';
 import FieldEWebhookManagementevent from './FieldEWebhookManagementevent';
 import FieldEWebhookModule from './FieldEWebhookModule';
 import WebhookRequest from './WebhookRequest';
+import WebhookheaderRequestCompound from './WebhookheaderRequestCompound';
 
 /**
  * The WebhookRequestCompound model module.
@@ -99,6 +100,9 @@ class WebhookRequestCompound {
             if (data.hasOwnProperty('bWebhookSkipsslvalidation')) {
                 obj['bWebhookSkipsslvalidation'] = ApiClient.convertToType(data['bWebhookSkipsslvalidation'], 'Boolean');
             }
+            if (data.hasOwnProperty('a_objWebhookheader')) {
+                obj['a_objWebhookheader'] = ApiClient.convertToType(data['a_objWebhookheader'], [WebhookheaderRequestCompound]);
+            }
         }
         return obj;
     }
@@ -111,7 +115,7 @@ class WebhookRequestCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of WebhookRequestCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -126,6 +130,16 @@ class WebhookRequestCompound {
         // ensure the json data is a string
         if (data['sWebhookEmailfailed'] && !(typeof data['sWebhookEmailfailed'] === 'string' || data['sWebhookEmailfailed'] instanceof String)) {
             throw new Error("Expected the field `sWebhookEmailfailed` to be a primitive type in the JSON string but got " + data['sWebhookEmailfailed']);
+        }
+        if (data['a_objWebhookheader']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['a_objWebhookheader'])) {
+                throw new Error("Expected the field `a_objWebhookheader` to be an array in the JSON data but got " + data['a_objWebhookheader']);
+            }
+            // validate the optional field `a_objWebhookheader` (array)
+            for (const item of data['a_objWebhookheader']) {
+                WebhookheaderRequestCompound.validateJSON(item);
+            };
         }
 
         return true;
@@ -149,6 +163,7 @@ class WebhookRequestCompound {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -291,6 +306,19 @@ class WebhookRequestCompound {
     setBWebhookSkipsslvalidation(bWebhookSkipsslvalidation) {
         this['bWebhookSkipsslvalidation'] = bWebhookSkipsslvalidation;
     }
+/**
+     * @return {Array.<module:eZmaxAPI/model/WebhookheaderRequestCompound>}
+     */
+    getAObjWebhookheader() {
+        return this.a_objWebhookheader;
+    }
+
+    /**
+     * @param {Array.<module:eZmaxAPI/model/WebhookheaderRequestCompound>} a_objWebhookheader
+     */
+    setAObjWebhookheader(a_objWebhookheader) {
+        this['a_objWebhookheader'] = a_objWebhookheader;
+    }
 
 }
 
@@ -358,6 +386,11 @@ WebhookRequestCompound.prototype['bWebhookIssigned'] = undefined;
  * @member {Boolean} bWebhookSkipsslvalidation
  */
 WebhookRequestCompound.prototype['bWebhookSkipsslvalidation'] = undefined;
+
+/**
+ * @member {Array.<module:eZmaxAPI/model/WebhookheaderRequestCompound>} a_objWebhookheader
+ */
+WebhookRequestCompound.prototype['a_objWebhookheader'] = undefined;
 
 
 // Implement WebhookRequest interface:

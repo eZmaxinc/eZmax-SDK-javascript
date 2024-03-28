@@ -18,6 +18,7 @@ import ActivesessionResponseCompoundUser from './ActivesessionResponseCompoundUs
 import FieldEActivesessionOrigin from './FieldEActivesessionOrigin';
 import FieldEActivesessionUsertype from './FieldEActivesessionUsertype';
 import FieldEActivesessionWeekdaystart from './FieldEActivesessionWeekdaystart';
+import FieldESystemconfigurationEzsignofficeplan from './FieldESystemconfigurationEzsignofficeplan';
 import FieldEUserEzsignaccess from './FieldEUserEzsignaccess';
 import FieldEUserEzsignprepaid from './FieldEUserEzsignprepaid';
 
@@ -119,6 +120,12 @@ class ActivesessionGetCurrentV1ResponseMPayload {
             if (data.hasOwnProperty('fkiSignatureID')) {
                 obj['fkiSignatureID'] = ApiClient.convertToType(data['fkiSignatureID'], 'Number');
             }
+            if (data.hasOwnProperty('bSystemconfigurationEzsignpaidbyoffice')) {
+                obj['bSystemconfigurationEzsignpaidbyoffice'] = ApiClient.convertToType(data['bSystemconfigurationEzsignpaidbyoffice'], 'Boolean');
+            }
+            if (data.hasOwnProperty('eSystemconfigurationEzsignofficeplan')) {
+                obj['eSystemconfigurationEzsignofficeplan'] = FieldESystemconfigurationEzsignofficeplan.constructFromObject(data['eSystemconfigurationEzsignofficeplan']);
+            }
             if (data.hasOwnProperty('eUserEzsignaccess')) {
                 obj['eUserEzsignaccess'] = FieldEUserEzsignaccess.constructFromObject(data['eUserEzsignaccess']);
             }
@@ -155,7 +162,7 @@ class ActivesessionGetCurrentV1ResponseMPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of ActivesessionGetCurrentV1ResponseMPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -364,6 +371,34 @@ class ActivesessionGetCurrentV1ResponseMPayload {
         this['fkiSignatureID'] = fkiSignatureID;
     }
 /**
+     * Returns Whether if Ezsign is paid by the company or not
+     * @return {Boolean}
+     */
+    getBSystemconfigurationEzsignpaidbyoffice() {
+        return this.bSystemconfigurationEzsignpaidbyoffice;
+    }
+
+    /**
+     * Sets Whether if Ezsign is paid by the company or not
+     * @param {Boolean} bSystemconfigurationEzsignpaidbyoffice Whether if Ezsign is paid by the company or not
+     */
+    setBSystemconfigurationEzsignpaidbyoffice(bSystemconfigurationEzsignpaidbyoffice) {
+        this['bSystemconfigurationEzsignpaidbyoffice'] = bSystemconfigurationEzsignpaidbyoffice;
+    }
+/**
+     * @return {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan}
+     */
+    getESystemconfigurationEzsignofficeplan() {
+        return this.eSystemconfigurationEzsignofficeplan;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+     */
+    setESystemconfigurationEzsignofficeplan(eSystemconfigurationEzsignofficeplan) {
+        this['eSystemconfigurationEzsignofficeplan'] = eSystemconfigurationEzsignofficeplan;
+    }
+/**
      * @return {module:eZmaxAPI/model/FieldEUserEzsignaccess}
      */
     getEUserEzsignaccess() {
@@ -542,6 +577,17 @@ ActivesessionGetCurrentV1ResponseMPayload.prototype['fkiSystemconfigurationtypeI
 ActivesessionGetCurrentV1ResponseMPayload.prototype['fkiSignatureID'] = undefined;
 
 /**
+ * Whether if Ezsign is paid by the company or not
+ * @member {Boolean} bSystemconfigurationEzsignpaidbyoffice
+ */
+ActivesessionGetCurrentV1ResponseMPayload.prototype['bSystemconfigurationEzsignpaidbyoffice'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+ */
+ActivesessionGetCurrentV1ResponseMPayload.prototype['eSystemconfigurationEzsignofficeplan'] = undefined;
+
+/**
  * @member {module:eZmaxAPI/model/FieldEUserEzsignaccess} eUserEzsignaccess
  */
 ActivesessionGetCurrentV1ResponseMPayload.prototype['eUserEzsignaccess'] = undefined;
@@ -638,6 +684,15 @@ ActivesessionResponseCompound.prototype['fkiSystemconfigurationtypeID'] = undefi
  * @member {Number} fkiSignatureID
  */
 ActivesessionResponseCompound.prototype['fkiSignatureID'] = undefined;
+/**
+ * Whether if Ezsign is paid by the company or not
+ * @member {Boolean} bSystemconfigurationEzsignpaidbyoffice
+ */
+ActivesessionResponseCompound.prototype['bSystemconfigurationEzsignpaidbyoffice'] = undefined;
+/**
+ * @member {module:eZmaxAPI/model/FieldESystemconfigurationEzsignofficeplan} eSystemconfigurationEzsignofficeplan
+ */
+ActivesessionResponseCompound.prototype['eSystemconfigurationEzsignofficeplan'] = undefined;
 /**
  * @member {module:eZmaxAPI/model/FieldEUserEzsignaccess} eUserEzsignaccess
  */

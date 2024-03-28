@@ -24,11 +24,10 @@ class UsergroupmembershipRequest {
      * A Usergroupmembership Object
      * @alias module:eZmaxAPI/model/UsergroupmembershipRequest
      * @param fkiUsergroupID {Number} The unique ID of the Usergroup
-     * @param fkiUserID {Number} The unique ID of the User
      */
-    constructor(fkiUsergroupID, fkiUserID) { 
+    constructor(fkiUsergroupID) { 
         
-        UsergroupmembershipRequest.initialize(this, fkiUsergroupID, fkiUserID);
+        UsergroupmembershipRequest.initialize(this, fkiUsergroupID);
     }
 
     /**
@@ -36,9 +35,8 @@ class UsergroupmembershipRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, fkiUsergroupID, fkiUserID) { 
+    static initialize(obj, fkiUsergroupID) { 
         obj['fkiUsergroupID'] = fkiUsergroupID;
-        obj['fkiUserID'] = fkiUserID;
     }
 
     /**
@@ -61,6 +59,9 @@ class UsergroupmembershipRequest {
             if (data.hasOwnProperty('fkiUserID')) {
                 obj['fkiUserID'] = ApiClient.convertToType(data['fkiUserID'], 'Number');
             }
+            if (data.hasOwnProperty('fkiUsergroupexternalID')) {
+                obj['fkiUsergroupexternalID'] = ApiClient.convertToType(data['fkiUsergroupexternalID'], 'Number');
+            }
         }
         return obj;
     }
@@ -73,7 +74,7 @@ class UsergroupmembershipRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of UsergroupmembershipRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -131,10 +132,27 @@ class UsergroupmembershipRequest {
     setFkiUserID(fkiUserID) {
         this['fkiUserID'] = fkiUserID;
     }
+/**
+     * Returns The unique ID of the Usergroupexternal
+     * minimum: 0
+     * maximum: 255
+     * @return {Number}
+     */
+    getFkiUsergroupexternalID() {
+        return this.fkiUsergroupexternalID;
+    }
+
+    /**
+     * Sets The unique ID of the Usergroupexternal
+     * @param {Number} fkiUsergroupexternalID The unique ID of the Usergroupexternal
+     */
+    setFkiUsergroupexternalID(fkiUsergroupexternalID) {
+        this['fkiUsergroupexternalID'] = fkiUsergroupexternalID;
+    }
 
 }
 
-UsergroupmembershipRequest.RequiredProperties = ["fkiUsergroupID", "fkiUserID"];
+UsergroupmembershipRequest.RequiredProperties = ["fkiUsergroupID"];
 
 /**
  * The unique ID of the Usergroupmembership
@@ -153,6 +171,12 @@ UsergroupmembershipRequest.prototype['fkiUsergroupID'] = undefined;
  * @member {Number} fkiUserID
  */
 UsergroupmembershipRequest.prototype['fkiUserID'] = undefined;
+
+/**
+ * The unique ID of the Usergroupexternal
+ * @member {Number} fkiUsergroupexternalID
+ */
+UsergroupmembershipRequest.prototype['fkiUsergroupexternalID'] = undefined;
 
 
 

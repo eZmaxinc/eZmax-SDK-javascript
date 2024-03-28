@@ -35,10 +35,11 @@ class EzsigndocumentResponse {
      * @param iEzsigndocumentSignaturesigned {Number} The number of signatures that were signed in the document.
      * @param iEzsigndocumentSignaturetotal {Number} The number of total signatures that were requested in the Ezsigndocument.
      * @param iEzsigndocumentEzsignsignatureattachmenttotal {Number} The number of Ezsigndocumentattachment total
+     * @param iEzsigndocumentEzsigndiscussiontotal {Number} The total number of Ezsigndiscussions
      */
-    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal) { 
+    constructor(pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal) { 
         
-        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal);
+        EzsigndocumentResponse.initialize(this, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal);
     }
 
     /**
@@ -46,7 +47,7 @@ class EzsigndocumentResponse {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal) { 
+    static initialize(obj, pkiEzsigndocumentID, fkiEzsignfolderID, dtEzsigndocumentDuedate, sEzsigndocumentName, eEzsigndocumentStep, iEzsigndocumentOrder, iEzsigndocumentPagetotal, iEzsigndocumentSignaturesigned, iEzsigndocumentSignaturetotal, iEzsigndocumentEzsignsignatureattachmenttotal, iEzsigndocumentEzsigndiscussiontotal) { 
         obj['pkiEzsigndocumentID'] = pkiEzsigndocumentID;
         obj['fkiEzsignfolderID'] = fkiEzsignfolderID;
         obj['dtEzsigndocumentDuedate'] = dtEzsigndocumentDuedate;
@@ -57,6 +58,7 @@ class EzsigndocumentResponse {
         obj['iEzsigndocumentSignaturesigned'] = iEzsigndocumentSignaturesigned;
         obj['iEzsigndocumentSignaturetotal'] = iEzsigndocumentSignaturetotal;
         obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
+        obj['iEzsigndocumentEzsigndiscussiontotal'] = iEzsigndocumentEzsigndiscussiontotal;
     }
 
     /**
@@ -136,6 +138,9 @@ class EzsigndocumentResponse {
             if (data.hasOwnProperty('iEzsigndocumentEzsignsignatureattachmenttotal')) {
                 obj['iEzsigndocumentEzsignsignatureattachmenttotal'] = ApiClient.convertToType(data['iEzsigndocumentEzsignsignatureattachmenttotal'], 'Number');
             }
+            if (data.hasOwnProperty('iEzsigndocumentEzsigndiscussiontotal')) {
+                obj['iEzsigndocumentEzsigndiscussiontotal'] = ApiClient.convertToType(data['iEzsigndocumentEzsigndiscussiontotal'], 'Number');
+            }
         }
         return obj;
     }
@@ -148,7 +153,7 @@ class EzsigndocumentResponse {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigndocumentResponse.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -532,10 +537,25 @@ class EzsigndocumentResponse {
     setIEzsigndocumentEzsignsignatureattachmenttotal(iEzsigndocumentEzsignsignatureattachmenttotal) {
         this['iEzsigndocumentEzsignsignatureattachmenttotal'] = iEzsigndocumentEzsignsignatureattachmenttotal;
     }
+/**
+     * Returns The total number of Ezsigndiscussions
+     * @return {Number}
+     */
+    getIEzsigndocumentEzsigndiscussiontotal() {
+        return this.iEzsigndocumentEzsigndiscussiontotal;
+    }
+
+    /**
+     * Sets The total number of Ezsigndiscussions
+     * @param {Number} iEzsigndocumentEzsigndiscussiontotal The total number of Ezsigndiscussions
+     */
+    setIEzsigndocumentEzsigndiscussiontotal(iEzsigndocumentEzsigndiscussiontotal) {
+        this['iEzsigndocumentEzsigndiscussiontotal'] = iEzsigndocumentEzsigndiscussiontotal;
+    }
 
 }
 
-EzsigndocumentResponse.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentEzsignsignatureattachmenttotal"];
+EzsigndocumentResponse.RequiredProperties = ["pkiEzsigndocumentID", "fkiEzsignfolderID", "dtEzsigndocumentDuedate", "sEzsigndocumentName", "eEzsigndocumentStep", "iEzsigndocumentOrder", "iEzsigndocumentPagetotal", "iEzsigndocumentSignaturesigned", "iEzsigndocumentSignaturetotal", "iEzsigndocumentEzsignsignatureattachmenttotal", "iEzsigndocumentEzsigndiscussiontotal"];
 
 /**
  * The unique ID of the Ezsigndocument
@@ -666,6 +686,12 @@ EzsigndocumentResponse.prototype['sEzsigndocumentExternalid'] = undefined;
  * @member {Number} iEzsigndocumentEzsignsignatureattachmenttotal
  */
 EzsigndocumentResponse.prototype['iEzsigndocumentEzsignsignatureattachmenttotal'] = undefined;
+
+/**
+ * The total number of Ezsigndiscussions
+ * @member {Number} iEzsigndocumentEzsigndiscussiontotal
+ */
+EzsigndocumentResponse.prototype['iEzsigndocumentEzsigndiscussiontotal'] = undefined;
 
 
 

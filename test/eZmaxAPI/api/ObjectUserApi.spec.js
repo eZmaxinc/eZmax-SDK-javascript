@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('userCreateObjectV2', function() {
+      it('should call userCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test userCreateObjectV2
+        //instance.userCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('userEditObjectV1', function() {
       it('should call userEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test userEditObjectV1
@@ -142,6 +152,26 @@
       it('should call userGetSubnetsV1 successfully', function(done) {
         //uncomment below and update the code to test userGetSubnetsV1
         //instance.userGetSubnetsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('userGetUsergroupexternalsV1', function() {
+      it('should call userGetUsergroupexternalsV1 successfully', function(done) {
+        //uncomment below and update the code to test userGetUsergroupexternalsV1
+        //instance.userGetUsergroupexternalsV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('userGetUsergroupsV1', function() {
+      it('should call userGetUsergroupsV1 successfully', function(done) {
+        //uncomment below and update the code to test userGetUsergroupsV1
+        //instance.userGetUsergroupsV1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

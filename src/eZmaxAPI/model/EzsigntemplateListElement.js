@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import FieldEEzsigntemplateType from './FieldEEzsigntemplateType';
 
 /**
  * The EzsigntemplateListElement model module.
@@ -24,15 +25,14 @@ class EzsigntemplateListElement {
      * A Ezsigntemplate List Element
      * @alias module:eZmaxAPI/model/EzsigntemplateListElement
      * @param pkiEzsigntemplateID {Number} The unique ID of the Ezsigntemplate
-     * @param fkiEzsignfoldertypeID {Number} The unique ID of the Ezsignfoldertype.
      * @param fkiLanguageID {Number} The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @param sEzsigntemplateDescription {String} The description of the Ezsigntemplate
      * @param bEzsigntemplateIncomplete {Boolean} Indicate the Ezsigntemplate is incomplete and cannot be used
-     * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
+     * @param eEzsigntemplateType {module:eZmaxAPI/model/FieldEEzsigntemplateType} 
      */
-    constructor(pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, sEzsignfoldertypeNameX) { 
+    constructor(pkiEzsigntemplateID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, eEzsigntemplateType) { 
         
-        EzsigntemplateListElement.initialize(this, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, sEzsignfoldertypeNameX);
+        EzsigntemplateListElement.initialize(this, pkiEzsigntemplateID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, eEzsigntemplateType);
     }
 
     /**
@@ -40,13 +40,12 @@ class EzsigntemplateListElement {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplateID, fkiEzsignfoldertypeID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, sEzsignfoldertypeNameX) { 
+    static initialize(obj, pkiEzsigntemplateID, fkiLanguageID, sEzsigntemplateDescription, bEzsigntemplateIncomplete, eEzsigntemplateType) { 
         obj['pkiEzsigntemplateID'] = pkiEzsigntemplateID;
-        obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiLanguageID'] = fkiLanguageID;
         obj['sEzsigntemplateDescription'] = sEzsigntemplateDescription;
         obj['bEzsigntemplateIncomplete'] = bEzsigntemplateIncomplete;
-        obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
+        obj['eEzsigntemplateType'] = eEzsigntemplateType;
     }
 
     /**
@@ -87,6 +86,9 @@ class EzsigntemplateListElement {
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
             }
+            if (data.hasOwnProperty('eEzsigntemplateType')) {
+                obj['eEzsigntemplateType'] = FieldEEzsigntemplateType.constructFromObject(data['eEzsigntemplateType']);
+            }
         }
         return obj;
     }
@@ -99,7 +101,7 @@ class EzsigntemplateListElement {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplateListElement.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -134,6 +136,7 @@ class EzsigntemplateListElement {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -255,10 +258,23 @@ class EzsigntemplateListElement {
     setSEzsignfoldertypeNameX(sEzsignfoldertypeNameX) {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
+/**
+     * @return {module:eZmaxAPI/model/FieldEEzsigntemplateType}
+     */
+    getEEzsigntemplateType() {
+        return this.eEzsigntemplateType;
+    }
+
+    /**
+     * @param {module:eZmaxAPI/model/FieldEEzsigntemplateType} eEzsigntemplateType
+     */
+    setEEzsigntemplateType(eEzsigntemplateType) {
+        this['eEzsigntemplateType'] = eEzsigntemplateType;
+    }
 
 }
 
-EzsigntemplateListElement.RequiredProperties = ["pkiEzsigntemplateID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sEzsigntemplateDescription", "bEzsigntemplateIncomplete", "sEzsignfoldertypeNameX"];
+EzsigntemplateListElement.RequiredProperties = ["pkiEzsigntemplateID", "fkiLanguageID", "sEzsigntemplateDescription", "bEzsigntemplateIncomplete", "eEzsigntemplateType"];
 
 /**
  * The unique ID of the Ezsigntemplate
@@ -313,6 +329,11 @@ EzsigntemplateListElement.prototype['bEzsigntemplateIncomplete'] = undefined;
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsigntemplateListElement.prototype['sEzsignfoldertypeNameX'] = undefined;
+
+/**
+ * @member {module:eZmaxAPI/model/FieldEEzsigntemplateType} eEzsigntemplateType
+ */
+EzsigntemplateListElement.prototype['eEzsigntemplateType'] = undefined;
 
 
 

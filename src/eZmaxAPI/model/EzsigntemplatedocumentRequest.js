@@ -102,7 +102,7 @@ class EzsigntemplatedocumentRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplatedocumentRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -289,7 +289,7 @@ class EzsigntemplatedocumentRequest {
         this['bEzsigntemplatedocumentForcerepair'] = bEzsigntemplatedocumentForcerepair;
     }
 /**
-     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**
+     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
      * @return {module:eZmaxAPI/model/EzsigntemplatedocumentRequest.EEzsigntemplatedocumentFormEnum}
      */
     getEEzsigntemplatedocumentForm() {
@@ -297,8 +297,8 @@ class EzsigntemplatedocumentRequest {
     }
 
     /**
-     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**
-     * @param {module:eZmaxAPI/model/EzsigntemplatedocumentRequest.EEzsigntemplatedocumentFormEnum} eEzsigntemplatedocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**
+     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
+     * @param {module:eZmaxAPI/model/EzsigntemplatedocumentRequest.EEzsigntemplatedocumentFormEnum} eEzsigntemplatedocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
      */
     setEEzsigntemplatedocumentForm(eEzsigntemplatedocumentForm) {
         this['eEzsigntemplatedocumentForm'] = eEzsigntemplatedocumentForm;
@@ -384,7 +384,7 @@ EzsigntemplatedocumentRequest.prototype['sEzsigntemplatedocumentUrl'] = undefine
 EzsigntemplatedocumentRequest.prototype['bEzsigntemplatedocumentForcerepair'] = undefined;
 
 /**
- * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**
+ * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
  * @member {module:eZmaxAPI/model/EzsigntemplatedocumentRequest.EEzsigntemplatedocumentFormEnum} eEzsigntemplatedocumentForm
  */
 EzsigntemplatedocumentRequest.prototype['eEzsigntemplatedocumentForm'] = undefined;
@@ -495,7 +495,13 @@ EzsigntemplatedocumentRequest['EEzsigntemplatedocumentFormEnum'] = {
      * value: "Convert"
      * @const
      */
-    "Convert": "Convert"
+    "Convert": "Convert",
+
+    /**
+     * value: "Discard"
+     * @const
+     */
+    "Discard": "Discard"
 };
 
 

@@ -36,12 +36,13 @@ class EzsigntemplatepackageResponseCompound {
      * @param bEzsigntemplatepackageNeedvalidation {Boolean} Whether the Ezsignbulksend was automatically modified and needs a manual validation
      * @param bEzsigntemplatepackageIsactive {Boolean} Whether the Ezsigntemplatepackage is active or not
      * @param sEzsignfoldertypeNameX {String} The name of the Ezsignfoldertype in the language of the requester
+     * @param bEzsigntemplatepackageEditallowed {Boolean} Whether the Ezsigntemplatepackage if allowed to edit or not
      * @param a_objEzsigntemplatepackagesigner {Array.<module:eZmaxAPI/model/EzsigntemplatepackagesignerResponseCompound>} 
      * @param a_objEzsigntemplatepackagemembership {Array.<module:eZmaxAPI/model/EzsigntemplatepackagemembershipResponseCompound>} 
      */
-    constructor(pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership) { 
-        EzsigntemplatepackageResponse.initialize(this, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX);
-        EzsigntemplatepackageResponseCompound.initialize(this, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership);
+    constructor(pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, bEzsigntemplatepackageEditallowed, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership) { 
+        EzsigntemplatepackageResponse.initialize(this, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, bEzsigntemplatepackageEditallowed);
+        EzsigntemplatepackageResponseCompound.initialize(this, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, bEzsigntemplatepackageEditallowed, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership);
     }
 
     /**
@@ -49,7 +50,7 @@ class EzsigntemplatepackageResponseCompound {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership) { 
+    static initialize(obj, pkiEzsigntemplatepackageID, fkiEzsignfoldertypeID, fkiLanguageID, sLanguageNameX, sEzsigntemplatepackageDescription, bEzsigntemplatepackageAdminonly, bEzsigntemplatepackageNeedvalidation, bEzsigntemplatepackageIsactive, sEzsignfoldertypeNameX, bEzsigntemplatepackageEditallowed, a_objEzsigntemplatepackagesigner, a_objEzsigntemplatepackagemembership) { 
         obj['pkiEzsigntemplatepackageID'] = pkiEzsigntemplatepackageID;
         obj['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
         obj['fkiLanguageID'] = fkiLanguageID;
@@ -59,6 +60,7 @@ class EzsigntemplatepackageResponseCompound {
         obj['bEzsigntemplatepackageNeedvalidation'] = bEzsigntemplatepackageNeedvalidation;
         obj['bEzsigntemplatepackageIsactive'] = bEzsigntemplatepackageIsactive;
         obj['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
+        obj['bEzsigntemplatepackageEditallowed'] = bEzsigntemplatepackageEditallowed;
         obj['a_objEzsigntemplatepackagesigner'] = a_objEzsigntemplatepackagesigner;
         obj['a_objEzsigntemplatepackagemembership'] = a_objEzsigntemplatepackagemembership;
     }
@@ -102,6 +104,9 @@ class EzsigntemplatepackageResponseCompound {
             if (data.hasOwnProperty('sEzsignfoldertypeNameX')) {
                 obj['sEzsignfoldertypeNameX'] = ApiClient.convertToType(data['sEzsignfoldertypeNameX'], 'String');
             }
+            if (data.hasOwnProperty('bEzsigntemplatepackageEditallowed')) {
+                obj['bEzsigntemplatepackageEditallowed'] = ApiClient.convertToType(data['bEzsigntemplatepackageEditallowed'], 'Boolean');
+            }
             if (data.hasOwnProperty('a_objEzsigntemplatepackagesigner')) {
                 obj['a_objEzsigntemplatepackagesigner'] = ApiClient.convertToType(data['a_objEzsigntemplatepackagesigner'], [EzsigntemplatepackagesignerResponseCompound]);
             }
@@ -120,7 +125,7 @@ class EzsigntemplatepackageResponseCompound {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigntemplatepackageResponseCompound.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -179,6 +184,7 @@ class EzsigntemplatepackageResponseCompound {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -300,6 +306,21 @@ class EzsigntemplatepackageResponseCompound {
         this['sEzsignfoldertypeNameX'] = sEzsignfoldertypeNameX;
     }
 /**
+     * Returns Whether the Ezsigntemplatepackage if allowed to edit or not
+     * @return {Boolean}
+     */
+    getBEzsigntemplatepackageEditallowed() {
+        return this.bEzsigntemplatepackageEditallowed;
+    }
+
+    /**
+     * Sets Whether the Ezsigntemplatepackage if allowed to edit or not
+     * @param {Boolean} bEzsigntemplatepackageEditallowed Whether the Ezsigntemplatepackage if allowed to edit or not
+     */
+    setBEzsigntemplatepackageEditallowed(bEzsigntemplatepackageEditallowed) {
+        this['bEzsigntemplatepackageEditallowed'] = bEzsigntemplatepackageEditallowed;
+    }
+/**
      * @return {Array.<module:eZmaxAPI/model/EzsigntemplatepackagesignerResponseCompound>}
      */
     getAObjEzsigntemplatepackagesigner() {
@@ -328,7 +349,7 @@ class EzsigntemplatepackageResponseCompound {
 
 }
 
-EzsigntemplatepackageResponseCompound.RequiredProperties = ["pkiEzsigntemplatepackageID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplatepackageDescription", "bEzsigntemplatepackageAdminonly", "bEzsigntemplatepackageNeedvalidation", "bEzsigntemplatepackageIsactive", "sEzsignfoldertypeNameX", "a_objEzsigntemplatepackagesigner", "a_objEzsigntemplatepackagemembership"];
+EzsigntemplatepackageResponseCompound.RequiredProperties = ["pkiEzsigntemplatepackageID", "fkiEzsignfoldertypeID", "fkiLanguageID", "sLanguageNameX", "sEzsigntemplatepackageDescription", "bEzsigntemplatepackageAdminonly", "bEzsigntemplatepackageNeedvalidation", "bEzsigntemplatepackageIsactive", "sEzsignfoldertypeNameX", "bEzsigntemplatepackageEditallowed", "a_objEzsigntemplatepackagesigner", "a_objEzsigntemplatepackagemembership"];
 
 /**
  * The unique ID of the Ezsigntemplatepackage
@@ -383,6 +404,12 @@ EzsigntemplatepackageResponseCompound.prototype['bEzsigntemplatepackageIsactive'
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsigntemplatepackageResponseCompound.prototype['sEzsignfoldertypeNameX'] = undefined;
+
+/**
+ * Whether the Ezsigntemplatepackage if allowed to edit or not
+ * @member {Boolean} bEzsigntemplatepackageEditallowed
+ */
+EzsigntemplatepackageResponseCompound.prototype['bEzsigntemplatepackageEditallowed'] = undefined;
 
 /**
  * @member {Array.<module:eZmaxAPI/model/EzsigntemplatepackagesignerResponseCompound>} a_objEzsigntemplatepackagesigner
@@ -441,6 +468,11 @@ EzsigntemplatepackageResponse.prototype['bEzsigntemplatepackageIsactive'] = unde
  * @member {String} sEzsignfoldertypeNameX
  */
 EzsigntemplatepackageResponse.prototype['sEzsignfoldertypeNameX'] = undefined;
+/**
+ * Whether the Ezsigntemplatepackage if allowed to edit or not
+ * @member {Boolean} bEzsigntemplatepackageEditallowed
+ */
+EzsigntemplatepackageResponse.prototype['bEzsigntemplatepackageEditallowed'] = undefined;
 
 
 

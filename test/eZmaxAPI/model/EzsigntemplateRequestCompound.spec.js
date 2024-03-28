@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sEzsigntemplateFilenamepattern (base name: "sEzsigntemplateFilenamepattern")', function() {
+      // uncomment below and update the code to test the property sEzsigntemplateFilenamepattern
+      //var instance = new EZmaxApiDefinitionFull.EzsigntemplateRequestCompound();
+      //expect(instance).to.be();
+    });
+
     it('should have the property bEzsigntemplateAdminonly (base name: "bEzsigntemplateAdminonly")', function() {
       // uncomment below and update the code to test the property bEzsigntemplateAdminonly
       //var instance = new EZmaxApiDefinitionFull.EzsigntemplateRequestCompound();

@@ -18,9 +18,13 @@ import EzsigntemplateCopyV1Request from '../model/EzsigntemplateCopyV1Request';
 import EzsigntemplateCopyV1Response from '../model/EzsigntemplateCopyV1Response';
 import EzsigntemplateCreateObjectV1Request from '../model/EzsigntemplateCreateObjectV1Request';
 import EzsigntemplateCreateObjectV1Response from '../model/EzsigntemplateCreateObjectV1Response';
+import EzsigntemplateCreateObjectV2Request from '../model/EzsigntemplateCreateObjectV2Request';
+import EzsigntemplateCreateObjectV2Response from '../model/EzsigntemplateCreateObjectV2Response';
 import EzsigntemplateDeleteObjectV1Response from '../model/EzsigntemplateDeleteObjectV1Response';
 import EzsigntemplateEditObjectV1Request from '../model/EzsigntemplateEditObjectV1Request';
 import EzsigntemplateEditObjectV1Response from '../model/EzsigntemplateEditObjectV1Response';
+import EzsigntemplateEditObjectV2Request from '../model/EzsigntemplateEditObjectV2Request';
+import EzsigntemplateEditObjectV2Response from '../model/EzsigntemplateEditObjectV2Response';
 import EzsigntemplateGetAutocompleteV2Response from '../model/EzsigntemplateGetAutocompleteV2Response';
 import EzsigntemplateGetListV1Response from '../model/EzsigntemplateGetListV1Response';
 import EzsigntemplateGetObjectV1Response from '../model/EzsigntemplateGetObjectV1Response';
@@ -137,6 +141,48 @@ export default class ObjectEzsigntemplateApi {
     }
 
     /**
+     * Callback function to receive the result of the ezsigntemplateCreateObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateCreateObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigntemplateCreateObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new Ezsigntemplate
+     * The endpoint allows to create one or many elements at once.
+     * @param {module:eZmaxAPI/model/EzsigntemplateCreateObjectV2Request} EzsigntemplateCreateObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateCreateObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplateCreateObjectV2Response}
+     */
+    ezsigntemplateCreateObjectV2(EzsigntemplateCreateObjectV2Request, callback) {
+      let postBody = EzsigntemplateCreateObjectV2Request;
+      // verify the required parameter 'EzsigntemplateCreateObjectV2Request' is set
+      if (EzsigntemplateCreateObjectV2Request === undefined || EzsigntemplateCreateObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsigntemplateCreateObjectV2Request' when calling ezsigntemplateCreateObjectV2");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigntemplateCreateObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsigntemplate', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the ezsigntemplateDeleteObjectV1 operation.
      * @callback module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateDeleteObjectV1Callback
      * @param {String} error Error message, if any.
@@ -222,6 +268,54 @@ export default class ObjectEzsigntemplateApi {
       let returnType = EzsigntemplateEditObjectV1Response;
       return this.apiClient.callApi(
         '/1/object/ezsigntemplate/{pkiEzsigntemplateID}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the ezsigntemplateEditObjectV2 operation.
+     * @callback module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateEditObjectV2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:eZmaxAPI/model/EzsigntemplateEditObjectV2Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Edit an existing Ezsigntemplate
+     * 
+     * @param {Number} pkiEzsigntemplateID 
+     * @param {module:eZmaxAPI/model/EzsigntemplateEditObjectV2Request} EzsigntemplateEditObjectV2Request 
+     * @param {module:eZmaxAPI/api/ObjectEzsigntemplateApi~ezsigntemplateEditObjectV2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:eZmaxAPI/model/EzsigntemplateEditObjectV2Response}
+     */
+    ezsigntemplateEditObjectV2(pkiEzsigntemplateID, EzsigntemplateEditObjectV2Request, callback) {
+      let postBody = EzsigntemplateEditObjectV2Request;
+      // verify the required parameter 'pkiEzsigntemplateID' is set
+      if (pkiEzsigntemplateID === undefined || pkiEzsigntemplateID === null) {
+        throw new Error("Missing the required parameter 'pkiEzsigntemplateID' when calling ezsigntemplateEditObjectV2");
+      }
+      // verify the required parameter 'EzsigntemplateEditObjectV2Request' is set
+      if (EzsigntemplateEditObjectV2Request === undefined || EzsigntemplateEditObjectV2Request === null) {
+        throw new Error("Missing the required parameter 'EzsigntemplateEditObjectV2Request' when calling ezsigntemplateEditObjectV2");
+      }
+
+      let pathParams = {
+        'pkiEzsigntemplateID': pkiEzsigntemplateID
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['Authorization'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = EzsigntemplateEditObjectV2Response;
+      return this.apiClient.callApi(
+        '/2/object/ezsigntemplate/{pkiEzsigntemplateID}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

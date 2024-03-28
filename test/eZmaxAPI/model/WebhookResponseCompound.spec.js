@@ -150,6 +150,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property a_objWebhookheader (base name: "a_objWebhookheader")', function() {
+      // uncomment below and update the code to test the property a_objWebhookheader
+      //var instance = new EZmaxApiDefinitionFull.WebhookResponseCompound();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

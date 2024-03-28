@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('ezsigntemplateCreateObjectV2', function() {
+      it('should call ezsigntemplateCreateObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplateCreateObjectV2
+        //instance.ezsigntemplateCreateObjectV2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('ezsigntemplateDeleteObjectV1', function() {
       it('should call ezsigntemplateDeleteObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplateDeleteObjectV1
@@ -82,6 +92,16 @@
       it('should call ezsigntemplateEditObjectV1 successfully', function(done) {
         //uncomment below and update the code to test ezsigntemplateEditObjectV1
         //instance.ezsigntemplateEditObjectV1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('ezsigntemplateEditObjectV2', function() {
+      it('should call ezsigntemplateEditObjectV2 successfully', function(done) {
+        //uncomment below and update the code to test ezsigntemplateEditObjectV2
+        //instance.ezsigntemplateEditObjectV2(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

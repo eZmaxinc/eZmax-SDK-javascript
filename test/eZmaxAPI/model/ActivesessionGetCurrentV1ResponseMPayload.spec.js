@@ -120,6 +120,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bSystemconfigurationEzsignpaidbyoffice (base name: "bSystemconfigurationEzsignpaidbyoffice")', function() {
+      // uncomment below and update the code to test the property bSystemconfigurationEzsignpaidbyoffice
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eSystemconfigurationEzsignofficeplan (base name: "eSystemconfigurationEzsignofficeplan")', function() {
+      // uncomment below and update the code to test the property eSystemconfigurationEzsignofficeplan
+      //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eUserEzsignaccess (base name: "eUserEzsignaccess")', function() {
       // uncomment below and update the code to test the property eUserEzsignaccess
       //var instance = new EZmaxApiDefinitionFull.ActivesessionGetCurrentV1ResponseMPayload();

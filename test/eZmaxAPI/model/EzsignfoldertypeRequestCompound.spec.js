@@ -156,8 +156,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property bEzsignfoldertypeReassign (base name: "bEzsignfoldertypeReassign")', function() {
-      // uncomment below and update the code to test the property bEzsignfoldertypeReassign
+    it('should have the property bEzsignfoldertypeDiscussion (base name: "bEzsignfoldertypeDiscussion")', function() {
+      // uncomment below and update the code to test the property bEzsignfoldertypeDiscussion
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
       //expect(instance).to.be();
     });
@@ -170,12 +170,6 @@
 
     it('should have the property bEzsignfoldertypeReassignuser (base name: "bEzsignfoldertypeReassignuser")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeReassignuser
-      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bEzsignfoldertypeSendattatchmentsigner (base name: "bEzsignfoldertypeSendattatchmentsigner")', function() {
-      // uncomment below and update the code to test the property bEzsignfoldertypeSendattatchmentsigner
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
       //expect(instance).to.be();
     });
@@ -296,18 +290,6 @@
 
     it('should have the property bEzsignfoldertypeSendsummarytocolleague (base name: "bEzsignfoldertypeSendsummarytocolleague")', function() {
       // uncomment below and update the code to test the property bEzsignfoldertypeSendsummarytocolleague
-      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bEzsignfoldertypeIncludeproofsigner (base name: "bEzsignfoldertypeIncludeproofsigner")', function() {
-      // uncomment below and update the code to test the property bEzsignfoldertypeIncludeproofsigner
-      //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property bEzsignfoldertypeIncludeproofuser (base name: "bEzsignfoldertypeIncludeproofuser")', function() {
-      // uncomment below and update the code to test the property bEzsignfoldertypeIncludeproofuser
       //var instance = new EZmaxApiDefinitionFull.EzsignfoldertypeRequestCompound();
       //expect(instance).to.be();
     });

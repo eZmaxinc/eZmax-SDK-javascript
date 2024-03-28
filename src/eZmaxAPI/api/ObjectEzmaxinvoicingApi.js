@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import CommonGetAutocompleteV1Response from '../model/CommonGetAutocompleteV1Response';
 import CommonResponseError from '../model/CommonResponseError';
 import EzmaxinvoicingGetAutocompleteV2Response from '../model/EzmaxinvoicingGetAutocompleteV2Response';
 import EzmaxinvoicingGetObjectV2Response from '../model/EzmaxinvoicingGetObjectV2Response';
@@ -38,57 +37,6 @@ export default class ObjectEzmaxinvoicingApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the ezmaxinvoicingGetAutocompleteV1 operation.
-     * @callback module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetAutocompleteV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:eZmaxAPI/model/CommonGetAutocompleteV1Response} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Retrieve Ezmaxinvoicings and IDs
-     * Get the list of Ezmaxinvoicing to be used in a dropdown or autocomplete control.
-     * @param {module:eZmaxAPI/model/String} sSelector The type of Ezmaxinvoicings to return
-     * @param {Object} opts Optional parameters
-     * @param {module:eZmaxAPI/model/String} [eFilterActive] Specify which results we want to display. Active is the default value.
-     * @param {String} [sQuery] Allow to filter the returned results
-     * @param {module:eZmaxAPI/model/HeaderAcceptLanguage} [Accept_Language] 
-     * @param {module:eZmaxAPI/api/ObjectEzmaxinvoicingApi~ezmaxinvoicingGetAutocompleteV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:eZmaxAPI/model/CommonGetAutocompleteV1Response}
-     */
-    ezmaxinvoicingGetAutocompleteV1(sSelector, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'sSelector' is set
-      if (sSelector === undefined || sSelector === null) {
-        throw new Error("Missing the required parameter 'sSelector' when calling ezmaxinvoicingGetAutocompleteV1");
-      }
-
-      let pathParams = {
-        'sSelector': sSelector
-      };
-      let queryParams = {
-        'eFilterActive': opts['eFilterActive'],
-        'sQuery': opts['sQuery']
-      };
-      let headerParams = {
-        'Accept-Language': opts['Accept_Language']
-      };
-      let formParams = {
-      };
-
-      let authNames = ['Authorization'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = CommonGetAutocompleteV1Response;
-      return this.apiClient.callApi(
-        '/1/object/ezmaxinvoicing/getAutocomplete/{sSelector}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the ezmaxinvoicingGetAutocompleteV2 operation.

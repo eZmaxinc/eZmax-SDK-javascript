@@ -144,6 +144,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sWebhookEvent (base name: "sWebhookEvent")', function() {
+      // uncomment below and update the code to test the property sWebhookEvent
+      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property a_objWebhookheader (base name: "a_objWebhookheader")', function() {
+      // uncomment below and update the code to test the property a_objWebhookheader
+      //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pksCustomerCode (base name: "pksCustomerCode")', function() {
       // uncomment below and update the code to test the property pksCustomerCode
       //var instance = new EZmaxApiDefinitionFull.CustomWebhookResponse();

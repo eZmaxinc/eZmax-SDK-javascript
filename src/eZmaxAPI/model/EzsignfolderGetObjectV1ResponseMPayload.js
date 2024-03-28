@@ -31,11 +31,12 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * @alias module:eZmaxAPI/model/EzsignfolderGetObjectV1ResponseMPayload
      * @implements module:eZmaxAPI/model/EzsignfolderResponseCompound
      * @param pkiEzsignfolderID {Number} The unique ID of the Ezsignfolder
+     * @param eEzsignfolderCompletion {module:eZmaxAPI/model/FieldEEzsignfolderCompletion} 
      * @param sEzsignfolderDescription {String} The description of the Ezsignfolder
      */
-    constructor(pkiEzsignfolderID, sEzsignfolderDescription) { 
-        EzsignfolderResponseCompound.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription);
-        EzsignfolderGetObjectV1ResponseMPayload.initialize(this, pkiEzsignfolderID, sEzsignfolderDescription);
+    constructor(pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription) { 
+        EzsignfolderResponseCompound.initialize(this, pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription);
+        EzsignfolderGetObjectV1ResponseMPayload.initialize(this, pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription);
     }
 
     /**
@@ -43,8 +44,9 @@ class EzsignfolderGetObjectV1ResponseMPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pkiEzsignfolderID, sEzsignfolderDescription) { 
+    static initialize(obj, pkiEzsignfolderID, eEzsignfolderCompletion, sEzsignfolderDescription) { 
         obj['pkiEzsignfolderID'] = pkiEzsignfolderID;
+        obj['eEzsignfolderCompletion'] = eEzsignfolderCompletion;
         obj['sEzsignfolderDescription'] = sEzsignfolderDescription;
     }
 
@@ -141,7 +143,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsignfolderGetObjectV1ResponseMPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -228,6 +230,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
 /**
      * Returns The unique ID of the Ezsignfoldertype.
      * minimum: 0
+     * maximum: 65535
      * @return {Number}
      */
     getFkiEzsignfoldertypeID() {
@@ -550,7 +553,7 @@ class EzsignfolderGetObjectV1ResponseMPayload {
 
 }
 
-EzsignfolderGetObjectV1ResponseMPayload.RequiredProperties = ["pkiEzsignfolderID", "sEzsignfolderDescription"];
+EzsignfolderGetObjectV1ResponseMPayload.RequiredProperties = ["pkiEzsignfolderID", "eEzsignfolderCompletion", "sEzsignfolderDescription"];
 
 /**
  * The unique ID of the Ezsignfolder

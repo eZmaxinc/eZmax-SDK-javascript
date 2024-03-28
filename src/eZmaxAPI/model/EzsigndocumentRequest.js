@@ -115,7 +115,7 @@ class EzsigndocumentRequest {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EzsigndocumentRequest.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -327,7 +327,7 @@ class EzsigndocumentRequest {
         this['sEzsigndocumentPassword'] = sEzsigndocumentPassword;
     }
 /**
-     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * Returns If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
      * @return {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum}
      */
     getEEzsigndocumentForm() {
@@ -335,8 +335,8 @@ class EzsigndocumentRequest {
     }
 
     /**
-     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
-     * @param {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * Sets If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
+     * @param {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
      */
     setEEzsigndocumentForm(eEzsigndocumentForm) {
         this['eEzsigndocumentForm'] = eEzsigndocumentForm;
@@ -459,7 +459,7 @@ EzsigndocumentRequest.prototype['bEzsigndocumentForcerepair'] = true;
 EzsigndocumentRequest.prototype['sEzsigndocumentPassword'] = undefined;
 
 /**
- * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+ * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
  * @member {module:eZmaxAPI/model/EzsigndocumentRequest.EEzsigndocumentFormEnum} eEzsigndocumentForm
  */
 EzsigndocumentRequest.prototype['eEzsigndocumentForm'] = undefined;
@@ -581,7 +581,13 @@ EzsigndocumentRequest['EEzsigndocumentFormEnum'] = {
      * value: "Convert"
      * @const
      */
-    "Convert": "Convert"
+    "Convert": "Convert",
+
+    /**
+     * value: "Discard"
+     * @const
+     */
+    "Discard": "Discard"
 };
 
 
